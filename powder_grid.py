@@ -36,6 +36,7 @@ class PowderGridSaver:
                 "prompt_max_chars": ("INT", {"default": 100, "min": 10, "max": 500, "step": 10}),
                 "font_size": ("INT", {"default": 36, "min": 12, "max": 100, "step": 2}),
                 "save_json": ("BOOLEAN", {"default": True}),
+                "add_model_to_filename": ("BOOLEAN", {"default": True}),
                 "filename_prefix": ("STRING", {"default": "grid"}),
                 "subfolder": ("STRING", {"default": "grids"}),
             },
@@ -68,7 +69,7 @@ class PowderGridSaver:
 
     def create_grid(self, images, layout, gap, background, show_model_name,
                     show_lora_names, show_prompts, prompt_max_chars, font_size,
-                    save_json, filename_prefix, subfolder,
+                    save_json, add_model_to_filename, filename_prefix, subfolder,
                     lora_info=None, prompts=None, negative_prompts=None, prompt=None, extra_pnginfo=None):
 
         # Unpack scalars
@@ -87,6 +88,7 @@ class PowderGridSaver:
         prompt_max_chars = prompt_max_chars[0] if isinstance(prompt_max_chars, list) else prompt_max_chars
         font_size = font_size[0] if isinstance(font_size, list) else font_size
         save_json = save_json[0] if isinstance(save_json, list) else save_json
+        add_model_to_filename = add_model_to_filename[0] if isinstance(add_model_to_filename, list) else add_model_to_filename
         filename_prefix = filename_prefix[0] if isinstance(filename_prefix, list) else filename_prefix
         subfolder = subfolder[0] if isinstance(subfolder, list) else subfolder
 
@@ -137,42 +139,58 @@ class PowderGridSaver:
 
         num_loras = len(lora_names) if lora_names else 1
 
-        if num_loras > 0 and len(images) > 0:
-            num_prompts = len(images) // num_loras
-        else:
-            num_prompts = len(images) if images else 1
-
-        display_prompts = prompt_list[:num_prompts] if prompt_list else []
-
-        log(f"[PowderGridSaver] === START ===")
-        log(f"[PowderGridSaver] Model: {model_display_name or 'Not detected'}")
-        log(f"[PowderGridSaver] Images: {len(images)}, Loras: {num_loras}, Prompts: {num_prompts}")
-        log(f"[PowderGridSaver] Layout: {layout}, Order: {combination_order}, Mode: {lora_mode}")
-
         output_dir = folder_paths.get_output_directory()
         if subfolder:
             output_dir = os.path.join(output_dir, subfolder)
             os.makedirs(output_dir, exist_ok=True)
 
         timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+
+        # Build filename base: optionally prepend sanitized model name
+        if add_model_to_filename and model_display_name:
+            safe_model = model_display_name.replace(" ", "_")
+            safe_model = "".join(c for c in safe_model if c.isalnum() or c in "_-.")
+            file_base = f"{safe_model}_{filename_prefix}_{timestamp}"
+        else:
+            file_base = f"{filename_prefix}_{timestamp}"
+
         saved_paths = []
 
-        # Convert tensors to PIL — with .detach() and size validation
+        # Convert tensors to PIL — unpack batches, .detach() and size validation
         pil_images = []
         target_size = None
         for img_tensor in images:
+            # Unpack batch dimension: [B, H, W, C] → B individual [H, W, C] frames
             if len(img_tensor.shape) == 4:
-                img_tensor = img_tensor[0]
-            img_np = (img_tensor.detach().cpu().numpy() * 255).astype(np.uint8)
-            pil_img = Image.fromarray(img_np)
+                frames = [img_tensor[i] for i in range(img_tensor.shape[0])]
+            else:
+                frames = [img_tensor]
 
-            if target_size is None:
-                target_size = (pil_img.width, pil_img.height)
-            elif (pil_img.width, pil_img.height) != target_size:
-                warn(f"Image size mismatch: {pil_img.size} vs {target_size}, resizing")
-                pil_img = pil_img.resize(target_size, Image.LANCZOS)
+            for frame in frames:
+                img_np = (frame.detach().cpu().numpy() * 255).astype(np.uint8)
+                pil_img = Image.fromarray(img_np)
 
-            pil_images.append(pil_img)
+                if target_size is None:
+                    target_size = (pil_img.width, pil_img.height)
+                elif (pil_img.width, pil_img.height) != target_size:
+                    warn(f"Image size mismatch: {pil_img.size} vs {target_size}, resizing")
+                    pil_img = pil_img.resize(target_size, Image.LANCZOS)
+
+                pil_images.append(pil_img)
+
+        # Calculate grid dimensions AFTER unpacking batches
+        total_images = len(pil_images)
+        if num_loras > 0 and total_images > 0:
+            num_prompts = total_images // num_loras
+        else:
+            num_prompts = total_images if total_images else 1
+
+        display_prompts = prompt_list[:num_prompts] if prompt_list else []
+
+        log(f"[PowderGridSaver] === START ===")
+        log(f"[PowderGridSaver] Model: {model_display_name or 'Not detected'}")
+        log(f"[PowderGridSaver] Images: {total_images}, Loras: {num_loras}, Prompts: {num_prompts}")
+        log(f"[PowderGridSaver] Layout: {layout}, Order: {combination_order}, Mode: {lora_mode}")
 
         if not pil_images:
             warn("No images!")
@@ -219,14 +237,14 @@ class PowderGridSaver:
             model_display_name if show_model_name else None,
         )
 
-        final_path = os.path.join(output_dir, f"{filename_prefix}_{timestamp}.png")
+        final_path = os.path.join(output_dir, f"{file_base}.png")
         final_grid.save(final_path, "PNG")
         saved_paths.append(final_path)
         json_data["files"].append(os.path.basename(final_path))
         log(f"[PowderGridSaver] Saved grid: {os.path.basename(final_path)}")
 
         if save_json:
-            json_path = os.path.join(output_dir, f"{filename_prefix}_{timestamp}.json")
+            json_path = os.path.join(output_dir, f"{file_base}.json")
             with open(json_path, "w", encoding="utf-8") as f:
                 json.dump(json_data, f, indent=2, ensure_ascii=False)
             saved_paths.append(json_path)
