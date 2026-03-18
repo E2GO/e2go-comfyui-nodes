@@ -1,0 +1,104 @@
+[
+  {
+    "name": "sai-3d-model",
+    "prefix": "professional 3d model",
+    "suffix": "octane render, highly detailed, volumetric, dramatic lighting",
+    "negative": "ugly, deformed, noisy, low poly, blurry, painting"
+  },
+  {
+    "name": "sai-analog film",
+    "prefix": "analog film photo",
+    "suffix": "faded film, desaturated, 35mm photo, grainy, vignette, vintage, Kodachrome, Lomography, stained, highly detailed, found footage",
+    "negative": "painting, drawing, illustration, glitch, deformed, mutated, cross-eyed, ugly, disfigured"
+  },
+  {
+    "name": "sai-anime",
+    "prefix": "anime artwork",
+    "suffix": "anime style, key visual, vibrant, studio anime, highly detailed",
+    "negative": "photo, deformed, black and white, realism, disfigured, low contrast"
+  },
+  {
+    "name": "sai-cinematic",
+    "prefix": "cinematic film still",
+    "suffix": "shallow depth of field, vignette, highly detailed, high budget, bokeh, cinemascope, moody, epic, gorgeous, film grain, grainy",
+    "negative": "anime, cartoon, graphic, text, painting, crayon, graphite, abstract, glitch, deformed, mutated, ugly, disfigured"
+  },
+  {
+    "name": "sai-comic book",
+    "prefix": "comic",
+    "suffix": "graphic illustration, comic art, graphic novel art, vibrant, highly detailed",
+    "negative": "photograph, deformed, glitch, noisy, realistic, stock photo"
+  },
+  {
+    "name": "sai-craft clay",
+    "prefix": "play-doh style",
+    "suffix": "sculpture, clay art, centered composition, Claymation",
+    "negative": "sloppy, messy, grainy, highly detailed, ultra textured, photo"
+  },
+  {
+    "name": "sai-digital art",
+    "prefix": "concept art",
+    "suffix": "digital artwork, illustrative, painterly, matte painting, highly detailed",
+    "negative": "photo, photorealistic, realism, ugly"
+  },
+  {
+    "name": "sai-enhance",
+    "prefix": "breathtaking",
+    "suffix": "award-winning, professional, highly detailed",
+    "negative": "ugly, deformed, noisy, blurry, distorted, grainy"
+  },
+  {
+    "name": "sai-fantasy art",
+    "prefix": "ethereal fantasy concept art of",
+    "suffix": "magnificent, celestial, ethereal, painterly, epic, majestic, magical, fantasy art, cover art, dreamy",
+    "negative": "photographic, realistic, realism, 35mm film, dslr, cropped, frame, text, deformed, glitch, noise, noisy, off-center, cross-eyed, closed eyes, bad anatomy, ugly, disfigured, sloppy, duplicate, mutated, black and white"
+  },
+  {
+    "name": "sai-isometric",
+    "prefix": "isometric style",
+    "suffix": "vibrant, beautiful, crisp, detailed, ultra detailed, intricate",
+    "negative": "deformed, mutated, ugly, disfigured, blur, blurry, noise, noisy, realistic, photographic"
+  },
+  {
+    "name": "sai-line art",
+    "prefix": "line art drawing",
+    "suffix": "professional, sleek, modern, minimalist, graphic, line art, vector graphics",
+    "negative": "anime, photorealistic, 35mm film, deformed, glitch, blurry, noisy, off-center, cross-eyed, closed eyes, bad anatomy, ugly, disfigured, mutated, realism, realistic, impressionism, expressionism, oil, acrylic"
+  },
+  {
+    "name": "sai-lowpoly",
+    "prefix": "low-poly style",
+    "suffix": "low-poly game art, polygon mesh, jagged, blocky, wireframe edges, centered composition",
+    "negative": "noisy, sloppy, messy, grainy, highly detailed, ultra textured, photo"
+  },
+  {
+    "name": "sai-neonpunk",
+    "prefix": "neonpunk style",
+    "suffix": "cyberpunk, vaporwave, neon, vibes, vibrant, stunningly beautiful, crisp, detailed, sleek, ultramodern, magenta highlights, dark purple shadows, high contrast, cinematic, ultra detailed, intricate, professional",
+    "negative": "painting, drawing, illustration, glitch, deformed, mutated, cross-eyed, ugly, disfigured"
+  },
+  {
+    "name": "sai-origami",
+    "prefix": "origami style",
+    "suffix": "paper art, pleated paper, folded, origami art, pleats, cut and fold, centered composition",
+    "negative": "noisy, sloppy, messy, grainy, highly detailed, ultra textured, photo"
+  },
+  {
+    "name": "sai-photographic",
+    "prefix": "cinematic photo",
+    "suffix": "35mm photograph, film, bokeh, professional, 4k, highly detailed",
+    "negative": "drawing, painting, crayon, sketch, graphite, impressionist, noisy, blurry, soft, deformed, ugly"
+  },
+  {
+    "name": "sai-pixel art",
+    "prefix": "pixel-art",
+    "suffix": "low-res, blocky, pixel art style, 8-bit graphics",
+    "negative": "sloppy, messy, blurry, noisy, highly detailed, ultra textured, photo, realistic"
+  },
+  {
+    "name": "sai-texture",
+    "prefix": "texture",
+    "suffix": "top down close-up",
+    "negative": "ugly, deformed, noisy, blurry"
+  }
+]

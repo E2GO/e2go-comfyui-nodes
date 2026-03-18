@@ -1,0 +1,2876 @@
+[
+  {
+    "name": "+ Natural Skin",
+    "prefix": "(natural skin texture, hyperrealism, soft light, sharp)",
+    "suffix": "",
+    "negative": "(cgi:0.9), {prompt}, 3d, illustration, cartoon, (doll:0.9)"
+  },
+  {
+    "name": "16‑bit Fantasy RPG",
+    "prefix": "",
+    "suffix": "vibrant 16‑bit pixel art, SNES style, detailed sprites, overhead perspective, lush fantasy scenery",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, nsfw, photorealistic, gritty textures"
+  },
+  {
+    "name": "1920s Rubber Hose",
+    "prefix": "convert to 1920s rubber hose animation style with noodle-like boneless limbs, pie-cut eyes, white gloves, constant bouncing synchronized to rhythm, black and white with film grain, vintage film scratches and dust",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "3d (movie)",
+    "prefix": "epic realistic, pixar style, disney, (cycles render:1.3), caustics, (glossy:0.58), (artstation:0.2), cute",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "3d 2",
+    "prefix": "epic realistic, hyperdetailed, (cycles render:1.3), caustics, (glossy:0.58), (artstation:0.82)",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "3d 1",
+    "prefix": "eevee, 3d, render, 3 point light, (glossy:0.76), ambient occlusion",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "7W_Icons",
+    "prefix": "",
+    "suffix": "symbol, game icon, isolated object element, <lora:Casuality_2:0.35> plrx, isometric view, solid background",
+    "negative": "complex scene, hand"
+  },
+  {
+    "name": "8bit",
+    "prefix": "pixel art, 8bit, aliasing, contrast, complex stuff",
+    "suffix": "",
+    "negative": "fabric, realistic, material, grain, grainy"
+  },
+  {
+    "name": "Aboriginal Dot Painting",
+    "prefix": "convert to Aboriginal dot painting with intricate circular patterns, ochre earth tones, and dreamtime symbolism",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Abstract_Expressionism",
+    "prefix": "Transform to abstract expressionist style with gestural brushstrokes, emotional color fields, non-representational forms, emphasizing expressive abstraction over realistic detailed or photographic precision, while maintaining the essential composition",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Academia",
+    "prefix": "Academia",
+    "suffix": "preppy Ivy League style, stark, dramatic, chic boarding school",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, grunge, sloppy, unkempt"
+  },
+  {
+    "name": "Action Figure",
+    "prefix": "Action Figure",
+    "suffix": "plastic collectable action figure, collectable toy action figure",
+    "negative": "ugly, deformed, noisy, blurry, low contrast"
+  },
+  {
+    "name": "Adorable 3D Character",
+    "prefix": "Adorable 3D Character",
+    "suffix": "3D render, adorable character, 3D art",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, grunge, sloppy, unkempt, photograph, photo, realistic"
+  },
+  {
+    "name": "Adorable Kawaii",
+    "prefix": "Adorable Kawaii",
+    "suffix": "pretty, cute, adorable, kawaii",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, gothic, dark, moody, monochromatic"
+  },
+  {
+    "name": "Adventure Time Style",
+    "prefix": "convert to Adventure Time 2D cartoon with noodle limbs, simple dot eyes, organic shapes, and pastel candy colors",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Alex Ross Style",
+    "prefix": "convert to Alex Ross painted comic style with photorealistic gouache painting, Norman Rockwell influenced composition, realistic natural lighting, lifelike color palette, classical heroic poses, fine art painting quality",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Among Us",
+    "prefix": "",
+    "suffix": "super‑flat vector look, bold primary colors, thick outlines, minimal shading, spaceship backdrop",
+    "negative": "ugly, deformed, noisy, blurry, gradients, nsfw, realistic detail"
+  },
+  {
+    "name": "Ancient Egyptian",
+    "prefix": "transform to ancient Egyptian setting, massive stone columns with hieroglyphs, people in linen clothing and golden jewelry, pharaoh headdresses, Eye of Horus symbols, pyramid structures, sphinx statues, papyrus scrolls, golden sarcophagi, desert sand backdrop, monumental architecture scale",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Ancient Slavic Culture",
+    "prefix": "transform to ancient Slavic cultural setting, wooden log architecture with carved details, people in traditional vyshyvanka embroidered clothing, kokoshnik headdresses, folk patterns and symbols, birch forest surroundings, Orthodox church domes in distance, rich red and gold color scheme, firebird and folkloric elements",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Animal Crossing",
+    "prefix": "",
+    "suffix": "cute pastel low‑poly island life, round edges, anthropomorphic villagers, sunny soft lighting",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, nsfw, gritty, high‑detail textures"
+  },
+  {
+    "name": "Anime",
+    "prefix": "(anime), (illustration), cartoon, detailed",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Anime JRPG Splash",
+    "prefix": "",
+    "suffix": "high energy anime illustration, clean line art, vibrant gradients, sparkles, dynamic composition",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, nsfw, muddy colors, sketchy"
+  },
+  {
+    "name": "Arabian Nights Fantasy",
+    "prefix": "transform to Arabian Nights setting, ornate palace with geometric tile patterns, minarets and onion domes, people in flowing robes and turbans, magic carpets, brass oil lamps, intricate arabesque decorations, fountain courtyards, silk curtains, golden treasures, desert oasis backdrop",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Arcane Style",
+    "prefix": "convert to Arcane Fortiche animation style mixing 3D models with 2D hand-drawn effects, oil painting textures creating living artwork, rough tactile quality with visible brushstrokes, Piltover golden brass tones contrasting Zaun's toxic green-purple palette, hextech blue neon accents, dramatic chiaroscuro lighting with deep shadows, cel-shaded expressive faces, hand-drawn smoke and particle effects overlaid on 3D",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Art_Deco",
+    "prefix": "Transform to Art Deco style with geometric patterns, metallic accents, bold lines, symmetrical designs, emphasizing 1920s decorative aesthetics over organic natural or rough rustic styles, while maintaining the original pose",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Art_Nouveau",
+    "prefix": "Change to Art Nouveau style with flowing lines, floral motifs, decorative elements, organic curves, focusing on ornate decorative arts rather than geometric modern or industrial styles, while keeping the character features unchanged",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "ArtStation Trending Style",
+    "prefix": "convert to ArtStation trending concept art style with dramatic cinematic lighting, epic scale, professional polish, volumetric effects, and industry-standard quality",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "ASCII Roguelike",
+    "prefix": "",
+    "suffix": "monochrome bitmap glyphs, terminal font, grid layout, retro DOS aesthetics, atmospheric screen glow",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, nsfw, photorealistic, detailed textures"
+  },
+  {
+    "name": "Asterix Style",
+    "prefix": "convert to Asterix comic style with exaggerated cartoonish characters, humorous expressions, dynamic action scenes, and vibrant Gaulish village atmosphere",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Astral Aura",
+    "prefix": "Astral Aura",
+    "suffix": "astral, colorful aura, vibrant energy",
+    "negative": "ugly, deformed, noisy, blurry, low contrast"
+  },
+  {
+    "name": "Attack on Titan Style",
+    "prefix": "convert to Attack on Titan anime style with realistic proportions, military uniform with survey corps emblem, muted desaturated colors, cross-hatching shading technique, gritty dark atmosphere, intense facial expressions, gothic horror aesthetic",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Avant-garde",
+    "prefix": "Avant-garde",
+    "suffix": "unusual, experimental, avant-garde art",
+    "negative": "ugly, deformed, noisy, blurry, low contrast"
+  },
+  {
+    "name": "Aztec Art",
+    "prefix": "convert to Aztec art with stepped geometric patterns, turquoise and gold colors, symbolic imagery, and pre-Columbian stone carving aesthetics",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Aztec-Mayan Civilization",
+    "prefix": "transform to Aztec-Mayan setting, massive step pyramids with steep stairs, people in feathered headdresses and jade jewelry, intricate stone carvings, serpent motifs, ritual masks, jungle vegetation, colorful murals, obsidian and gold ornaments, hieroglyphic calendar stones, ceremonial plaza",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Banksy Style",
+    "prefix": "convert to Banksy street art with sharp stencil technique, high contrast black and white, selective red accents, and political urban graffiti aesthetic",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Baroque",
+    "prefix": "Change to baroque art style with dramatic lighting, rich colors, ornate details, religious themes, focusing on classical European ornate aesthetics over modern minimalist or secular simple styles, while preserving the same subject positioning",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Bauhaus Design",
+    "prefix": "convert to Bauhaus design style with primary geometric shapes, red yellow blue color scheme, grid-based composition, sans-serif typography, form follows function aesthetic, minimal German design school approach",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Bauhaus-Style Poster",
+    "prefix": "Bauhaus-Style Poster",
+    "suffix": "simple geometric shapes, clean lines, primary colors",
+    "negative": "ugly, deformed, noisy, blurry, low contrast"
+  },
+  {
+    "name": "Bauhaus_Geometric",
+    "prefix": "Change to Bauhaus style with clean geometric shapes, primary colors, minimal design, functional aesthetics, focusing on modernist design principles over ornate decorative or traditional organic styles, while preserving the same composition",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Behance Featured Illustration",
+    "prefix": "convert to Behance featured illustration style with innovative design, bold creative choices, sophisticated color palette, cutting-edge techniques, and award-winning quality",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Bioshock",
+    "prefix": "",
+    "suffix": "art‑deco retro‑futuristic underwater city, teal‑orange mood lighting, brass details, volumetric fog",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, nsfw, cartoon, pastel"
+  },
+  {
+    "name": "Black and White Film Noir",
+    "prefix": "(b&w, Monochromatic, Film Photography:1.3), Photorealistic, Hyperrealistic, Hyperdetailed, film noir, analog style, hip cocked, demure, low cut, soft lighting, subsurface scattering, realistic, heavy shadow, masterpiece, best quality, ultra realistic, 8k, golden ratio, Intricate, High Detail, film photography, soft focus",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Black_White_High_Contrast",
+    "prefix": "Transform to high contrast black and white with deep shadows, bright highlights, dramatic lighting, emphasizing monochromatic photographic drama over colorful low contrast or soft muted gray representation, while maintaining the same pose",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Blade Runner Style",
+    "prefix": "convert to Blade Runner dystopian style with dark blue atmosphere drenched in neon lights, perpetual rain with wet street reflections, dense fog diffusing light, giant holographic advertisements, urban decay with Asian neon signage",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Blueprint Schematic Drawing",
+    "prefix": "Blueprint Schematic Drawing",
+    "suffix": "technical drawing, blueprint, schematic",
+    "negative": "ugly, deformed, noisy, blurry, low contrast"
+  },
+  {
+    "name": "Borderlands",
+    "prefix": "",
+    "suffix": "ink‑outline cel‑shaded wasteland, grungy textures, bold black lines, comic book halftone shading",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, nsfw, smooth surfaces, photorealistic"
+  },
+  {
+    "name": "Brutalist Graphic Design",
+    "prefix": "convert to brutalist graphic design style, raw concrete textures, harsh bold typography, anti-design aesthetic with intentional ugliness, monochromatic palette with warning color accents, distressed digital artifacts, broken grid layout",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Brutalist_Concrete",
+    "prefix": "Transform to Brutalist architecture with raw concrete, geometric blocks, monolithic structures, emphasizing stark modernist construction over ornate decorative or traditional detailed architecture, while maintaining the original proportions",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "BWphoto",
+    "prefix": "Photorealistic, Hyperrealistic, Hyperdetailed, film noir, analog style, hip cocked, demure, low cut, black lace, detailed skin, pores, smirk, smiling eyes, matte skin, outdoor cafe, soft lighting, subsurface scattering, realistic, heavy shadow, b&w, masterpiece, best quality, ultra realistic, 8k, golden ratio, Intricate, High Detail, film photography, soft focus",
+    "suffix": "",
+    "negative": "logo, Glasses, Watermark, bad artist, blur, blurry, text, b&w, 3d, bad art, poorly drawn, disfigured, deformed, extra limbs, ugly hands, extra fingers, canvas frame, cartoon, weird colors, duplicate, morbid, mutilated, out of frame, mutated hands, poorly drawn hands, poorly drawn face, mutation, ugly, bad anatomy, bad proportions, cloned face, gross proportions, malformed limbs, missing arms, missing legs, extra arms, extra legs, fused fingers, too many fingers, long neck, Photoshop, video game, tiling, poorly drawn feet, mutated, cross-eye, body out of frame, 3d render"
+  },
+  {
+    "name": "Candy Crush Style",
+    "prefix": "convert to Candy Crush game style with glossy 3D candy shapes, vibrant candy colors, translucent jelly effects, sugary textures, and sweet treat aesthetic",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Caricature",
+    "prefix": "Caricature",
+    "suffix": "exaggerated, comical",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, realistic"
+  },
+  {
+    "name": "Cartoon Casual Mobile",
+    "prefix": "",
+    "suffix": "bright pastel palette, thick outlines, simplified shapes, minimal shading, cute mobile game aesthetic",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, nsfw, gritty, photorealistic detail"
+  },
+  {
+    "name": "Cartoon_Western",
+    "prefix": "Transform to western cartoon style with exaggerated features, bold outlines, simplified shapes, bright colors, emphasizing animated cartoon aesthetics over realistic or anime styles, while maintaining the same character identity",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Cel Shaded Art",
+    "prefix": "Cel Shaded Art",
+    "suffix": "2D, flat color, toon shading, cel shaded style",
+    "negative": "ugly, deformed, noisy, blurry, low contrast"
+  },
+  {
+    "name": "Celtic Druid Culture",
+    "prefix": "transform to Celtic druid setting, ancient stone circles like Stonehenge, people in hooded druid robes, celtic knotwork patterns, sacred oak groves, mystical mist, carved standing stones with spiral designs, torcs and bronze jewelry, woad face paint, ritual fires, connection to nature magic",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Cel‑Shaded Hero Shooter",
+    "prefix": "",
+    "suffix": "dynamic cel‑shading, bold ink outlines, high contrast colors, comic book style, action pose",
+    "negative": "ugly, deformed, noisy, blurry, greyscale, nsfw, muddy colors, photorealistic shading"
+  },
+  {
+    "name": "Chalkboard Educational Game",
+    "prefix": "",
+    "suffix": "white chalk line art, dusty blackboard texture, smudged edges, classroom atmosphere, playful diagrams",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, nsfw, vivid neon, glossy surfaces"
+  },
+  {
+    "name": "Character 2D Illustration",
+    "prefix": "convert to professional 2D character illustration style, digital vector painting, character with exaggerated proportions, oversized expressive eyes with highlights, stylized hands and feet, smooth gradient shading with soft edges, colorful gradient background, warm skin tones with subsurface scattering, theatrical pose with gesture, simplified facial features with expression, sculptural hair with gradient highlights, clothing with smooth vector shapes, soft ambient lighting with colored rim lights, polished quality, centered composition",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Character Design Sheet",
+    "prefix": "Character Design Sheet",
+    "suffix": "character reference sheet, character turn around",
+    "negative": "ugly, deformed, noisy, blurry, low contrast"
+  },
+  {
+    "name": "Character Sheet",
+    "prefix": "transform into character sheet concept art style, maintaining original character identity while presenting in professional character design sheet format with clear silhouette, detailed costume design, material indication, expressive poses showing personality, consistent lighting, anatomically correct proportions, multiple view angles, industry-standard presentation",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Charcoal_Drawing",
+    "prefix": "Change to charcoal drawing with deep blacks, soft grays, blending effects, textured paper, focusing on monochromatic charcoal media rather than bright colors or clean digital lines, while keeping the subject in exact same position",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Chibi Style",
+    "prefix": "convert to chibi super-deformed style with oversized head in 2:1 ratio to tiny body, huge expressive eyes, stubby simplified limbs, minimal facial features, bright cute colors, comedy-friendly proportions",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Chinese Imperial Dynasty",
+    "prefix": "transform to Chinese imperial setting, Forbidden City architecture with golden roofs, people in silk hanfu robes with dragon embroidery, jade ornaments, red lacquered pillars, imperial throne room, porcelain vases, chinese calligraphy scrolls, guardian lion statues, traditional garden with koi pond",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Cinematic",
+    "prefix": "(cinematic look:1.4), soothing tones, insane details, intricate details, hyperdetailed, low contrast, soft cinematic light, dim colors, exposure blend, hdr, faded, slate gray atmosphere",
+    "suffix": "",
+    "negative": "grayscale, black and white, bw, {prompt}, monochrome"
+  },
+  {
+    "name": "Cinematic (art)",
+    "prefix": "art by greg rutkowski and artgerm, soft cinematic light, adobe lightroom, photolab, hdr, intricate, highly detailed, (depth of field:1.4)",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Cinematic (horror)",
+    "prefix": "slate atmosphere, cinematic, dimmed colors, dark shot, muted colors, film grainy, lut, spooky",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "cinematic-diva",
+    "prefix": "UHD, 8K, ultra detailed, a cinematic photograph of",
+    "suffix": "beautiful lighting, great composition",
+    "negative": "ugly, deformed, noisy, blurry, NSFW"
+  },
+  {
+    "name": "Clash of Clans Style",
+    "prefix": "convert to Clash of Clans game style with chunky 3D character models rendered as sprites, Pixar-esque proportions, bright high-contrast colors, distinctive silhouettes, bold stylized texturing, mobile-optimized clarity",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Classic_Anime",
+    "prefix": "Change to classic anime art style with large eyes, expressive features, traditional cel animation, focusing on vintage Japanese animation aesthetics over realistic western or photographic small-eyed muted representation, while keeping character identity",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Classical_Greek",
+    "prefix": "Change to Classical Greek architecture with marble columns, pediments, friezes, symmetrical design, focusing on ancient classical proportions over modern asymmetrical or rough industrial styles, while preserving the same positioning",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Classicism Art",
+    "prefix": "Classicism Art",
+    "suffix": "inspired by Roman and Greek culture, clarity, harmonious",
+    "negative": "ugly, deformed, noisy, blurry, low contrast"
+  },
+  {
+    "name": "Clay Sculpture Transformation",
+    "prefix": "transform into handmade clay sculpture, terracotta or ceramic material, visible fingerprints and tool marks, earthy natural clay colors, matte unglazed surface, artisanal pottery aesthetic, organic handcrafted shapes, workshop setting, artistic imperfections showing human touch",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Clockwork Steampunk Metroidvania",
+    "prefix": "",
+    "suffix": "intricate brass machinery, cog motifs, warm sepia lighting, hand‑painted textures, side‑scroll layout",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, nsfw, neon, minimalist flat"
+  },
+  {
+    "name": "Color Field Painting",
+    "prefix": "Color Field Painting",
+    "suffix": "abstract, simple, geometric, color field painting style",
+    "negative": "ugly, deformed, noisy, blurry, low contrast"
+  },
+  {
+    "name": "Colored Pencil Art",
+    "prefix": "Colored Pencil Art",
+    "suffix": "colored pencil strokes, light color, visible paper texture",
+    "negative": "ugly, deformed, noisy, blurry, low contrast"
+  },
+  {
+    "name": "Comic Noir Style",
+    "prefix": "convert to comic noir style with heavy shadow work, rain-slicked streets, limited color palette with selective highlights, and crime story atmosphere",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Comic_Book",
+    "prefix": "Change to comic book style with bold outlines, halftone patterns, speech bubbles, dynamic poses, focusing on sequential art aesthetics rather than realistic or soft painting styles, while keeping the same scene composition",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Conceptual Art",
+    "prefix": "Conceptual Art",
+    "suffix": "concept art",
+    "negative": "ugly, deformed, noisy, blurry, low contrast"
+  },
+  {
+    "name": "Constructivism",
+    "prefix": "Constructivism Art",
+    "suffix": "minimalistic, geometric forms",
+    "negative": "ugly, deformed, noisy, blurry, low contrast"
+  },
+  {
+    "name": "Cozy Cottagecore Builder",
+    "prefix": "",
+    "suffix": "warm pastel tones, round soft shapes, knitted textures, gentle sunlight, wholesome countryside vibe",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, nsfw, gritty, high contrast"
+  },
+  {
+    "name": "Cozy Farming Sim",
+    "prefix": "",
+    "suffix": "warm pastel tones, soft edges, stylized low‑poly 3D, cute vegetation, wholesome atmosphere",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, nsfw, gritty, high contrast"
+  },
+  {
+    "name": "Craig Mullins Style",
+    "prefix": "convert to Craig Mullins concept art style, loose confident brushstrokes, atmospheric environment painting, dramatic light and shadow, limited color palette with temperature shifts, digital impressionism technique, cinematic mood, masterful value control",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Create new illustration using same style. [prompt]",
+    "prefix": "Create new illustration using same style. [prompt]",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Creature Concept Art",
+    "prefix": "transform existing subjects into detailed creature concept art, reimagine as fantastical beings with believable anatomy, add detailed texture breakdowns, natural color patterns, bioluminescent accents, evolutionary adaptations, professional presentation maintaining original pose and composition, movie-quality creature transformation",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Cubism",
+    "prefix": "Cubism Art",
+    "suffix": "flat geometric forms",
+    "negative": "ugly, deformed, noisy, blurry, low contrast"
+  },
+  {
+    "name": "Cubist",
+    "prefix": "Change to cubist art style with geometric shapes, multiple perspectives, fragmented forms, analytical approach, focusing on abstract geometric interpretation over realistic single perspective or smooth traditional photographic representation, while keeping character features recognizable",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Cuphead",
+    "prefix": "",
+    "suffix": "1930s rubber‑hose cartoon, grainy film texture, watercolor backgrounds, limited four‑color process",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, nsfw, modern CG shading, gradients"
+  },
+  {
+    "name": "Cyanotype Photography",
+    "prefix": "convert to cyanotype photography style, Prussian blue monochromatic print, sun-exposed photogram aesthetic, botanical blueprint quality, white silhouettes on deep cyan background, historic alternative photography process",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Cyberpunk 3D Action",
+    "prefix": "",
+    "suffix": "neon cyberpunk cityscape, rain reflections, photoreal UE5 style, vivid pink and teal lights, cinematic 3D render",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, nsfw, daylight, flat lighting"
+  },
+  {
+    "name": "Cyberpunk Future",
+    "prefix": "transform to cyberpunk future cityscape, neon signs in Japanese and English, holographic advertisements, flying vehicles between buildings, cybernetic augmentations on people, rain-slicked streets reflecting neon, vertical urban sprawl, corporate megastructures, dark atmospheric nights, tech-noir aesthetic",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Cyberpunk_Industrial",
+    "prefix": "Change to industrial cyberpunk with exposed cables, mechanical parts, steam vents, metal grating, LED strips, focusing on high-tech industrial elements rather than clean minimalist design, while keeping character features and expressions unchanged",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Cyberpunk_Neon",
+    "prefix": "Transform to cyberpunk style with bright neon lighting, holographic displays, digital screens, chrome surfaces, rain-slicked streets, avoiding organic or vintage aesthetics, while maintaining the original composition",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Cyberpunk 2077",
+    "prefix": "",
+    "suffix": "neon‑drenched dystopian cityscape, holographic ads, rain‑soaked streets, vibrant magenta‑cyan glow, hi‑detail photoreal style",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, nsfw, daylight, flat colors"
+  },
+  {
+    "name": "Dadaism",
+    "prefix": "Dadaism Art",
+    "suffix": "satirical, nonsensical",
+    "negative": "ugly, deformed, noisy, blurry, low contrast"
+  },
+  {
+    "name": "Dalí Surrealism",
+    "prefix": "convert to Salvador Dalí surrealist style, melting clocks and objects, dreamlike desert landscape, impossible physics, meticulous photorealistic detail within surreal context, paranoiac-critical double images",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Dark Fantasy",
+    "prefix": "Dark Fantasy Art",
+    "suffix": "dark, moody, dark fantasy style",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, bright, sunny"
+  },
+  {
+    "name": "Dark Horse Comics Style",
+    "prefix": "convert to Dark Horse Comics style with independent comic aesthetics, creative panel layouts, and genre-blending visual elements",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Dark Moody Atmosphere",
+    "prefix": "Dark Moody Atmosphere",
+    "suffix": "dramatic, mysterious",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, vibrant, colorful, bright"
+  },
+  {
+    "name": "Darkest Dungeon",
+    "prefix": "",
+    "suffix": "grim gothic comic art, thick black linework, limited desaturated palette, dramatic crimson accents, heavy shadows",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, nsfw, neon, glossy"
+  },
+  {
+    "name": "DC Comics Style",
+    "prefix": "convert to DC Comics style with Gothic architectural backgrounds, heavy dramatic shadows, iconic hero silhouettes, darker muted color palette, film noir lighting influences, psychological complexity, night urban settings",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Deluxe Children's Book Art",
+    "prefix": "convert to deluxe children's book illustration with soft fluffy textures, warm pastel colors, gentle characters, whimsical storytelling details, and high-quality painterly finish",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Diablo",
+    "prefix": "",
+    "suffix": "dark gothic dungeon, dramatic chiaroscuro, flickering torch‑light, ornate demonic armor, gritty textures",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, nsfw, cartoonish, pastel"
+  },
+  {
+    "name": "Digital Art",
+    "prefix": "convert to professional digital illustration with clean vector-like lines, vibrant colors, and polished rendering",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Digital Comic Art",
+    "prefix": "convert to modern digital comic art with clean vector-like lines, smooth digital gradients, vibrant colors, and polished digital effects",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Digital/Oil Painting",
+    "prefix": "(Extremely Detailed Oil Painting:1.2), glow effects, godrays, Hand drawn, render, 8k, octane render, cinema 4d, blender, dark, atmospheric 4k ultra detailed, cinematic sensual, Sharp focus, humorous illustration, big depth of field, Masterpiece, colors, 3d octane render, 4k, concept art, trending on artstation, hyperrealistic, Vivid colors, extremely detailed CG unity 8k wallpaper, trending on CGSociety, Intricate, High Detail, dramatic",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Digital_Art_Concept",
+    "prefix": "Transform to digital concept art with bold brush strokes, dramatic lighting, saturated colors, fantasy elements, emphasizing digital painting techniques over traditional media or photographic realism, while maintaining the original layout",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Disney Renaissance (90s)",
+    "prefix": "convert to classic Disney 2D animation style with flowing hand-drawn lines, Technicolor three-strip color process, watercolor painted backgrounds, baby face character proportions, traditional cel animation quality, romantic golden age aesthetic",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Disney Xerography Era (60s-70s)",
+    "prefix": "convert to Disney 1970s xerography animation style with rough sketchy black outlines, visible construction lines, angular Ken Anderson character designs, muted earthy medieval color palette, xeroxed lines that don't align perfectly with colors, Milt Kahl angular drawing style like Sword in the Stone or Robin Hood",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "DMT Art Style",
+    "prefix": "DMT Art Style",
+    "suffix": "bright colors, surreal visuals, swirling patterns",
+    "negative": "ugly, deformed, noisy, blurry, low contrast"
+  },
+  {
+    "name": "Doodle Art",
+    "prefix": "Doodle Art Style",
+    "suffix": "drawing, freeform, swirling patterns",
+    "negative": "ugly, deformed, noisy, blurry, low contrast"
+  },
+  {
+    "name": "Double Exposure",
+    "prefix": "Double Exposure Style",
+    "suffix": "double image ghost effect, image combination",
+    "negative": "ugly, deformed, noisy, blurry, low contrast"
+  },
+  {
+    "name": "Dripping Paint Splatter Art",
+    "prefix": "Dripping Paint Splatter Art",
+    "suffix": "dramatic, paint drips, splatters, dripping paint",
+    "negative": "ugly, deformed, noisy, blurry, low contrast"
+  },
+  {
+    "name": "Elden Ring",
+    "prefix": "",
+    "suffix": "dark epic fantasy, sweeping landscapes, golden embers, high‑detail concept art",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, nsfw, cartoon, pastel"
+  },
+  {
+    "name": "Elven Fantasy Realm",
+    "prefix": "transform to elven fantasy realm, organic architecture grown from living trees, elegant flowing robes with silver embroidery, pointed ears on characters, glowing magical crystals, delicate filigree metalwork, integration with nature, ethereal lighting, mystical forest setting, elvish script decorations",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Engraving",
+    "prefix": "(grayscale, woodcut:1.2), (etching:1.1), (engraving:0.2)",
+    "suffix": "detailed",
+    "negative": "colored"
+  },
+  {
+    "name": "Environment Concept Art",
+    "prefix": "convert to environment concept art style, epic landscape with atmospheric perspective, professional matte painting technique, cinematic composition, detailed architectural elements, mood-driven color palette with strong value hierarchy, environmental storytelling, production-ready concept art quality",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Ernest & Celestine Style",
+    "prefix": "convert to Ernest & Celestine French animation style with soft watercolor aesthetic, dissolving edges, muted pastel colors, children's book illustration quality, gentle storybook atmosphere, impressionistic backgrounds with minimalist design",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Expressionism",
+    "prefix": "Expressionism Art Style",
+    "suffix": "movement, contrast, emotional, exaggerated forms",
+    "negative": "ugly, deformed, noisy, blurry, low contrast"
+  },
+  {
+    "name": "Faded Polaroid Photo",
+    "prefix": "Faded Polaroid Photo",
+    "suffix": "analog, old faded photo, old polaroid",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, vibrant, colorful"
+  },
+  {
+    "name": "Fallout",
+    "prefix": "",
+    "suffix": "retro‑futuristic post‑apocalyptic wasteland, 1950s Americana posters, dusty muted earth tones, power armor",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, nsfw, neon, glossy"
+  },
+  {
+    "name": "Fallout Poster Style",
+    "prefix": "convert to Fallout game retro-futuristic poster style with 1950s Atompunk aesthetic, Vault Boy mascot design, atomic age propaganda art, faded vintage colors with rust and decay, nuclear green glow effects, distressed poster textures",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Family Guy Style",
+    "prefix": "convert to Family Guy 2D cartoon style with oversized round heads, small dot pupils, prominent square chins, thick black outlines, flat coloring without shading, simplified character anatomy with tiny bodies, suburban setting elements",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Fauvism",
+    "prefix": "Fauvism Art",
+    "suffix": "painterly, bold colors, textured brushwork",
+    "negative": "ugly, deformed, noisy, blurry, low contrast"
+  },
+  {
+    "name": "Feng Zhu Style",
+    "prefix": "convert to Feng Zhu concept art style, clear design communication, functional aesthetic choices, strong perspective and form, environmentally integrated elements, efficient digital painting technique, Singapore school of design approach, entertainment industry quality",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Film_Noir",
+    "prefix": "Transform to film noir style with high contrast black and white, dramatic shadows, venetian blind lighting, cigarette smoke, emphasizing classic cinema aesthetics over bright colorful or modern digital styles, while maintaining the original composition",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Flat 2D Art",
+    "prefix": "Flat 2D Art",
+    "suffix": "simple flat color, 2-dimensional, Flat 2D Art Style",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, 3D, photo, realistic"
+  },
+  {
+    "name": "Fleischer Studios Style",
+    "prefix": "convert to Fleischer Studios animation style with rotoscoped fluid movement, surreal transformations, urban 1930s setting, German Expressionist shadows, dream logic with sentient objects, jazz-age synchronized animation",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Fooocus Cinematic",
+    "prefix": "cinematic still",
+    "suffix": "emotional, harmonious, vignette, highly detailed, high budget, bokeh, cinemascope, moody, epic, gorgeous, film grain, grainy",
+    "negative": "anime, cartoon, graphic, text, painting, crayon, graphite, abstract, glitch, deformed, mutated, ugly, disfigured"
+  },
+  {
+    "name": "Fooocus Enhance",
+    "prefix": "",
+    "suffix": "",
+    "negative": "(worst quality, low quality, normal quality, lowres, low details, oversaturated, undersaturated, overexposed, underexposed, grayscale, bw, bad photo, bad photography, bad art:1.4), (watermark, signature, text font, username, error, logo, words, letters, digits, autograph, trademark, name:1.2), (blur, blurry, grainy), morbid, ugly, asymmetrical, mutated malformed, mutilated, poorly lit, bad shadow, draft, cropped, out of frame, cut off, censored, jpeg artifacts, out of focus, glitch, duplicate, (airbrushed, cartoon, anime, semi-realistic, cgi, render, blender, digital art, manga, amateur:1.3), (3D, 3D Game, 3D Game Scene, 3D Character:1.1), (bad hands, bad anatomy, bad body, bad face, bad teeth, bad arms, bad legs, deformities:1.3)"
+  },
+  {
+    "name": "Fooocus Masterpiece",
+    "prefix": "(masterpiece), (best quality), (ultra-detailed)",
+    "suffix": "illustration, disheveled hair, detailed eyes, perfect composition, moist skin, intricate details, earrings, by wlop",
+    "negative": "longbody, lowres, bad anatomy, bad hands, missing fingers, pubic hair, extra digit, fewer digits, cropped, worst quality, low quality"
+  },
+  {
+    "name": "Fooocus Negative",
+    "prefix": "",
+    "suffix": "",
+    "negative": "deformed, bad anatomy, disfigured, poorly drawn face, mutated, extra limb, ugly, poorly drawn hands, missing limb, floating limbs, disconnected limbs, disconnected head, malformed hands, long neck, mutated hands and fingers, bad hands, missing fingers, cropped, worst quality, low quality, mutation, poorly drawn, huge calf, fused hand, missing hand, disappearing arms, disappearing thigh, disappearing calf, disappearing legs, fused fingers, abnormal eye proportion, Abnormal hands, abnormal legs, abnormal feet, abnormal fingers, drawing, painting, crayon, sketch, graphite, impressionist, noisy, blurry, soft, anime, cartoon, graphic, text, abstract, glitch"
+  },
+  {
+    "name": "Fooocus Photograph",
+    "prefix": "photograph",
+    "suffix": "50mm . cinematic 4k epic detailed 4k epic detailed photograph shot on kodak detailed cinematic hbo dark moody, 35mm photo, grainy, vignette, vintage, Kodachrome, Lomography, stained, highly detailed, found footage",
+    "negative": "Brad Pitt, bokeh, depth of field, blurry, cropped, regular face, saturated, contrast, deformed iris, deformed pupils, semi-realistic, cgi, 3d, render, sketch, cartoon, drawing, anime, text, out of frame, worst quality, low quality, jpeg artifacts, ugly, duplicate, morbid, mutilated, extra fingers, mutated hands, poorly drawn hands, poorly drawn face, mutation, deformed, dehydrated, bad anatomy, bad proportions, extra limbs, cloned face, disfigured, gross proportions, malformed limbs, missing arms, missing legs, extra arms, extra legs, fused fingers, too many fingers, long neck"
+  },
+  {
+    "name": "Fooocus Sharp",
+    "prefix": "cinematic still",
+    "suffix": "emotional, harmonious, vignette, 4k epic detailed, shot on kodak, 35mm photo, sharp focus, high budget, cinemascope, moody, epic, gorgeous, film grain, grainy",
+    "negative": "anime, cartoon, graphic, (blur, blurry, bokeh), text, painting, crayon, graphite, abstract, glitch, deformed, mutated, ugly, disfigured"
+  },
+  {
+    "name": "For_3D_Anime",
+    "prefix": "",
+    "suffix": "",
+    "negative": "painting by bad-artist-anime, painting by bad-artist, lowres, disfigured, ostentatious, oversaturated, grain, low resolution, blurry, bad anatomy, poorly drawn face, mutant, extra limb, ugly, poorly drawn hands, missing limbs, blurred, floating limbs, disjointed limbs, deformed hands, out of focus, long neck, long body, (cropped), distorted, imperfect, (bad hands), error, worst quality, low quality, normal quality, signature, watermark, username, artist name, extra limbs, (extra fingers), conjoined fingers, deformed fingers, ugly eyes, imperfect eyes, skewed eyes, unnatural face, stiff face, stiff body, unbalanced body, unnatural body, details are not clear, (ugly hands), imperfect hands"
+  },
+  {
+    "name": "For_Anime",
+    "prefix": "",
+    "suffix": "",
+    "negative": "nsfw, (worst quality, low quality:1.4), (lip, nose, tooth, rouge, lipstick, eyeshadow:1.4), (blush:1.2), (jpeg artifacts:1.4), (depth of field, bokeh, blurry, film grain, chromatic aberration, lens flare:1.0), (1boy, abs, muscular, rib:1.0), greyscale, monochrome, dusty sunbeams, trembling, motion lines, motion blur, emphasis lines, text, title, logo, signature"
+  },
+  {
+    "name": "For_Realistic",
+    "prefix": "",
+    "suffix": "",
+    "negative": "illustration, 3d, sepia, painting, cartoons, sketch, (worst quality:2), (low quality:2), (normal quality:2), lowres, bad anatomy, bad hands, ((monochrome)), ((grayscale)), futanari, full-package_futanari, penis_from_girl, newhalf, nipplepierces, glans penis, collapsed eyeshadow, multiple eyeblows, vaginas in breasts, holes on breasts, (cropped), oversaturated, extra limb, ugly, missing limbs, deformed hands, long neck, long body, imperfect, (bad hands), signature, watermark, username, artist name, conjoined fingers, deformed fingers, ugly eyes, imperfect eyes, skewed eyes, unnatural face, unbalanced body, unnatural body, error"
+  },
+  {
+    "name": "Fortnite",
+    "prefix": "",
+    "suffix": "vibrant toon‑shader, bold outlines, saturated palette, dynamic action pose, glossy 3D surfaces",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, nsfw, muddy colors, photorealistic grain"
+  },
+  {
+    "name": "Fortnite_Art_Style",
+    "prefix": "Change to Fortnite game art style with colorful cartoonish graphics, cel-shading, exaggerated proportions, emphasizing playful game aesthetics over realistic photographic or muted serious adult themes, while keeping character identity",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Franco-Belgian Comics",
+    "prefix": "convert to Franco-Belgian ligne claire comic style with uniform line weights, no cross-hatching, flat vibrant color blocks, detailed realistic backgrounds, cartoonish characters, exceptional clarity and readability, Tintin-like precision",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Frank Miller Sin City Style",
+    "prefix": "convert to Frank Miller Sin City style with pure black and white high contrast, no gray tones, selective spot color in red or yellow, angular sharp linework, negative space composition, film noir rain effects",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Futurama Style",
+    "prefix": "convert to Futurama animation style with 2½-D hybrid technique, CGI spaceships and buildings textured to look 2D, saturated tertiary color palette featuring olive/gold/taupe as main colors NOT primaries, aqua/cyan for technology, brick red architecture, Googie retro-futuristic design with atomic age boomerang shapes, realistic human skin tones, sleek mechanical designs",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Future_Sci_Fi",
+    "prefix": "Change to futuristic sci-fi style with holographic elements, sleek surfaces, advanced technology, focusing on speculative future design over historical primitive or low-tech traditional analog representation, while preserving the same composition",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Futurism",
+    "prefix": "Futurism Art Style",
+    "suffix": "dynamic, dramatic",
+    "negative": "ugly, deformed, noisy, blurry, low contrast"
+  },
+  {
+    "name": "Gekiga Style",
+    "prefix": "convert to Gekiga dramatic manga style with realistic proportions, gritty urban settings, heavy shadows, and mature psychological themes",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Genshin Impact Style",
+    "prefix": "convert to Genshin Impact game anime style with cel-shaded 3D characters, soft shadow transitions, thin dark outlines, vibrant fantasy colors, elemental particle effects, anime-inspired facial features, painterly environment backgrounds",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Ghibli_1",
+    "prefix": "(Studio ghibli style, Art by Hayao Miyazaki:1.2), Anime Style, Manga Style, Hand drawn, cinematic sensual, Sharp focus, humorous illustration, big depth of field, Masterpiece, concept art, trending on artstation, Vivid colors, Simplified style, trending on CGSociety, Intricate, Vibrant colors, Soft Shading, Simplistic Features, Sharp Angles, Playful",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Ghibli_2",
+    "prefix": "Studio ghibli style",
+    "suffix": "",
+    "negative": "logo, Glasses, Watermark, bad artist, blur, blurry, text, b&w, 3d, bad art, poorly drawn, disfigured, deformed, extra limbs, ugly hands, extra fingers, canvas frame, cartoon, weird colors, duplicate, morbid, mutilated, out of frame, mutated hands, poorly drawn hands, poorly drawn face, mutation, ugly, bad anatomy, bad proportions, cloned face, gross proportions, malformed limbs, missing arms, missing legs, extra arms, extra legs, fused fingers, too many fingers, long neck, Photoshop, video game, tiling, poorly drawn feet, mutated, cross-eye, body out of frame, 3d render"
+  },
+  {
+    "name": "Ghibli_Studio_Style",
+    "prefix": "Transform to Studio Ghibli art style with hand-drawn animation, natural themes, magical realism, emphasizing Japanese animation studio's organic aesthetic over digital technological or harsh urban artificial themes, while maintaining the original composition",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Glitchcore",
+    "prefix": "Glitchcore Art Style",
+    "suffix": "dynamic, dramatic, distorted, vibrant colors",
+    "negative": "ugly, deformed, noisy, blurry, low contrast"
+  },
+  {
+    "name": "Glo-fi",
+    "prefix": "Glo-fi Art Style",
+    "suffix": "dynamic, dramatic, vibrant colors",
+    "negative": "ugly, deformed, noisy, blurry, low contrast"
+  },
+  {
+    "name": "Gloomy",
+    "prefix": "complex background, stuff in the background, highly detailed, (gloomy:1.3), dark, dimmed, hdr, vignette, grimy, (slate atmosphere:0.8), (by ben templesmith:0.2)",
+    "suffix": "",
+    "negative": "(depth of field:1.3), (bokeh:1.2), (blur), blurred, pink"
+  },
+  {
+    "name": "God of War",
+    "prefix": "",
+    "suffix": "epic mythic realism, muscular hero, nordic snowy fjord backdrop, dramatic rim‑lighting, hi‑detail 3D concept art",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, nsfw, cel‑shade, pastel tones"
+  },
+  {
+    "name": "Googie Art Style",
+    "prefix": "Googie Art Style",
+    "suffix": "dynamic, dramatic, 1950's futurism, bold boomerang angles",
+    "negative": "ugly, deformed, noisy, blurry, low contrast"
+  },
+  {
+    "name": "Gothic_Architecture",
+    "prefix": "Change to Gothic architectural style with pointed arches, flying buttresses, stone gargoyles, stained glass, emphasizing medieval cathedral architecture over modern minimalist or glass construction, while keeping the same building layout",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Gouache Illustration",
+    "prefix": "convert to gouache illustration style with opaque flat colors, matte finish, crisp edges between color areas, vibrant pigments with uniform coverage, traditional illustration technique with layered opacity",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Graffiti Art",
+    "prefix": "Graffiti Art Style",
+    "suffix": "dynamic, dramatic, vibrant colors",
+    "negative": "ugly, deformed, noisy, blurry, low contrast"
+  },
+  {
+    "name": "Gravity Falls Style",
+    "prefix": "convert to Gravity Falls 2D cartoon style with geometric character construction, large expressive eyes, clean vector outlines, forest color palette with warm browns and mystery purples, detailed backgrounds with hidden symbols, triangle shapes integrated throughout",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Grimdark Soulslike",
+    "prefix": "",
+    "suffix": "dark gothic fantasy, moody volumetric lighting, gritty textures, dramatic atmosphere, cinematic concept art",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, nsfw, cartoonish, washed out"
+  },
+  {
+    "name": "GTA_Game_Style",
+    "prefix": "Transform to Grand Theft Auto game art style with urban aesthetics, gritty realism, saturated colors, focusing on street culture video game style over cartoon anime or bright cheerful fantasy themes, while maintaining the original composition",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "GTA V",
+    "prefix": "",
+    "suffix": "high‑contrast key‑art style, cinematic lighting, pseudo‑realistic textures, Los Santos vibe",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, nsfw, cartoonish, over‑saturated"
+  },
+  {
+    "name": "Gustav Klimt Style",
+    "prefix": "convert to Gustav Klimt style with gold leaf patterns, decorative Byzantine motifs, sensual Art Nouveau figures, rich jewel tone accents, symbolic elements, mosaic-like backgrounds, Vienna Secession aesthetic",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Hand‑Drawn Storybook",
+    "prefix": "",
+    "suffix": "colored‑pencil linework, textured paper grain, whimsical children’s illustration, soft pastel palette",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, nsfw, harsh shadows, realistic photo"
+  },
+  {
+    "name": "Hanna-Barbera Style",
+    "prefix": "convert to Hanna-Barbera 1960s TV cartoon style with limited animation aesthetic, geometric character shapes, thick uniform black outlines, flat candy-bright primary colors, static poses with moving mouth only, wraparound repeating backgrounds",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Harlem_Renaissance_Art",
+    "prefix": "Transform to Harlem Renaissance art style with bold social themes, vibrant cultural expression, jazz age aesthetics, emphasizing 1920s African-American cultural movement over conservative traditional or apolitical themes, while maintaining character identity",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Hay Day Style",
+    "prefix": "convert to Hay Day game farm style with chunky 3D models, friendly cartoon animals, warm earth tone colors, hand-painted textures, and cozy farm atmosphere",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "HDR_Photography",
+    "prefix": "Transform to HDR photography with enhanced details, dramatic skies, saturated colors, high dynamic range, emphasizing enhanced photographic technique over flat low contrast or muted underexposed simple representation, while maintaining the original composition",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Hentai",
+    "prefix": "(ahegao), (anime, hentai painting), naked nao tomori, (",
+    "suffix": ":1.15), intricate, glossy, realism, art by rossdraws, soft light, (muted colors), warm, dramatic, (cum dripping)",
+    "negative": ""
+  },
+  {
+    "name": "Hergé Tintin Style",
+    "prefix": "convert to Hergé Tintin clear line style with uniform black outlines, flat colors, detailed backgrounds, and classic adventure comic aesthetics",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "High Fashion",
+    "prefix": "High Fashion",
+    "suffix": "dynamic, dramatic, haute couture, elegant, ornate clothing",
+    "negative": "ugly, deformed, noisy, blurry, low contrast"
+  },
+  {
+    "name": "High‑Fantasy MOBA Splash",
+    "prefix": "",
+    "suffix": "epic action splash art, exaggerated perspective, glowing magic effects, painterly digital art",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, nsfw, dull colors, pixelated"
+  },
+  {
+    "name": "Hitchcock Style",
+    "prefix": "convert to Hitchcock suspense style with dramatic shadow placement revealing character psychology, voyeuristic camera angles, ordinary objects highlighted ominously, dolly zoom effect, building tension through anticipation",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Hokusai Ukiyo-e",
+    "prefix": "convert to Hokusai ukiyo-e style, bold woodblock print aesthetic, Great Wave composition, Prussian blue dominant, Mount Fuji in background, dynamic natural forces, traditional Japanese art technique",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Hollow Knight",
+    "prefix": "",
+    "suffix": "stylized 2D inked visuals, minimal color palette, strong glow accents, ethereal cavern atmosphere",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, nsfw, bright pastel, photorealistic"
+  },
+  {
+    "name": "Ice Sculpture",
+    "prefix": "transform into crystal-clear ice sculpture, transparent frozen water with blue tints, expertly carved details with chainsaw and chisel marks, polished glassy surfaces, internal reflections and refractions, cool blue lighting, winter festival display, melting drops for realism",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Idyllic",
+    "prefix": "Idyllic",
+    "suffix": "peaceful, happy, pleasant, harmonious, picturesque, charming",
+    "negative": "ugly, deformed, noisy, blurry, low contrast"
+  },
+  {
+    "name": "Illustration",
+    "prefix": "illustration, cartoon, soothing tones, calm colors",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Image Comics Style",
+    "prefix": "convert to Image Comics style with detailed modern comic art, cinematic panel composition, sophisticated digital coloring, and mature visual themes",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Impressionism",
+    "prefix": "Impressionism",
+    "suffix": "painterly, small brushstrokes, visible brushstrokes, impressionistic style",
+    "negative": "ugly, deformed, noisy, blurry, low contrast"
+  },
+  {
+    "name": "Impressionist",
+    "prefix": "convert to French impressionist painting with broken color technique, visible brushstrokes, and captured light moments",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Indie Game",
+    "prefix": "Indie game art, (",
+    "suffix": "), (Vector Art, Borderlands style, Arcane style, Cartoon style), Line art, Disctinct features, Hand drawn, Technical illustration, Graphic design, Vector graphics, High contrast, Precision artwork, Linear compositions, Scalable artwork, Digital art, cinematic sensual, Sharp focus, humorous illustration, big depth of field, Masterpiece, trending on artstation, Vivid colors, trending on CGSociety, Intricate, Low Detail, dramatic",
+    "negative": ""
+  },
+  {
+    "name": "Industrial_Warehouse",
+    "prefix": "Transform to industrial warehouse style with exposed beams, brick walls, metal fixtures, utilitarian design, emphasizing functional industrial aesthetics over residential decorative or refined polished styles, while maintaining the original layout",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Infographic Drawing",
+    "prefix": "Infographic Drawing",
+    "suffix": "diagram, infographic",
+    "negative": "ugly, deformed, noisy, blurry, low contrast"
+  },
+  {
+    "name": "Infrared_Photography",
+    "prefix": "Transform to infrared photography with white foliage, dark skies, ethereal glow, emphasizing false-color photographic spectrum over normal visible light or realistic standard color photography, while maintaining the original landscape composition",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Ink Dripping Drawing",
+    "prefix": "Ink Dripping Drawing",
+    "suffix": "ink drawing, dripping ink",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, colorful, vibrant"
+  },
+  {
+    "name": "Ink Wash Painting",
+    "prefix": "convert to traditional ink wash painting with flowing black ink gradients, expressive brushstrokes, and zen-like negative space",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Isometric ARPG Dungeon",
+    "prefix": "",
+    "suffix": "isometric perspective, hand‑painted textures, detailed dungeon environment, dramatic firelight",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, nsfw, flat perspective, photorealistic"
+  },
+  {
+    "name": "Isometric Pixel City Sim",
+    "prefix": "",
+    "suffix": "detailed isometric pixel art, bustling micro‑city, animated traffic, day‑night lighting cycle",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, nsfw, hi‑poly 3D, photorealistic"
+  },
+  {
+    "name": "Isometric Style",
+    "prefix": "convert to true isometric game style, camera positioned at 45-degree horizontal rotation and 30-degree downward tilt, 2:1 pixel ratio dimetric projection creating 26.565-degree angles, tile-based grid construction, orthographic view with no perspective distortion, atmospheric color gradients for depth, classic isometric RPG aesthetic maintaining original subject composition",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "James Gurney Style",
+    "prefix": "convert to James Gurney concept art style, imaginative realism combining fantasy with naturalistic detail, plein air lighting quality, Dinotopia-inspired world-building, traditional painting techniques, warm natural color harmony, narrative storytelling through environment",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Japanese Edo Period",
+    "prefix": "transform to Japanese Edo period, traditional wooden architecture with curved roofs, people in elaborate kimono with obi, cherry blossom trees, red torii gates, paper lanterns, koi ponds with wooden bridges, mount fuji in distance, ukiyo-e art influence, tea ceremony elements, zen garden features",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Japanese Ink Drawing",
+    "prefix": "Japanese Ink Drawing",
+    "suffix": "ink drawing, inkwash",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, colorful, vibrant"
+  },
+  {
+    "name": "Japanese_Traditional",
+    "prefix": "Transform to traditional Japanese architecture with wooden structures, curved roofs, paper screens, zen aesthetics, emphasizing Eastern architectural principles over western modern concrete or angular busy design, while maintaining the composition",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Jim Lee Style",
+    "prefix": "convert to Jim Lee comic art style with intricate crosshatching technique, highly detailed costume rendering, flowing dynamic hair, idealized superhero anatomy, modern gradient coloring with metallic effects",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Journey",
+    "prefix": "",
+    "suffix": "minimalist desert vista, warm cel‑shaded gradients, flowing scarf, blowing sand, tranquil cinematic wide shot",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, nsfw, busy detail, photorealistic grain"
+  },
+  {
+    "name": "JRPG_Splash_Art",
+    "prefix": "Transform to JRPG splash art style with detailed character portraits, fantasy elements, dramatic lighting, emphasizing Japanese role-playing game illustration over simple minimalist or realistic modern plain representation, while maintaining facial features",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Jujutsu Kaisen Style",
+    "prefix": "convert to Jujutsu Kaisen anime style with cursed energy aura effects in blue and purple, black school uniform, modern shounen character design, dynamic action pose, MAPPA animation quality with fluid movements, supernatural battle aesthetic",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Junji Ito Horror Style",
+    "prefix": "convert to Junji Ito horror manga style with intricate spiral patterns, disturbing body horror elements, detailed crosshatching, and psychological terror",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Knolling Photography",
+    "prefix": "Knolling Photography",
+    "suffix": "flat lay photography, object arrangement",
+    "negative": "ugly, deformed, noisy, blurry, low contrast"
+  },
+  {
+    "name": "League of Legends",
+    "prefix": "",
+    "suffix": "epic MOBA splash art, painterly rendering, exaggerated perspective, glowing magical effects, dramatic lighting",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, nsfw, dull colors, pixelated"
+  },
+  {
+    "name": "LEGO Brick Style",
+    "prefix": "transform into LEGO brick construction, colorful plastic building blocks with visible studs, modular brick-by-brick assembly, official LEGO color palette, glossy plastic surfaces, blocky geometric interpretation, technical building techniques, playful toy aesthetic, clean Danish design",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Light Cheery Atmosphere",
+    "prefix": "Light Cheery Atmosphere",
+    "suffix": "happy, joyful, cheerful, carefree, gleeful, lighthearted, pleasant atmosphere",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, monochromatic, dark, moody"
+  },
+  {
+    "name": "Literary Graphic Novel",
+    "prefix": "convert to literary graphic novel style with sophisticated panel composition, atmospheric watercolor effects, symbolic visual metaphors, and mature storytelling",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Little Nightmares",
+    "prefix": "",
+    "suffix": "eerie whimsical diorama, oversized props, moody low‑key lighting, muted palette, deep atmospheric depth",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, nsfw, bright pastel, cartoonish"
+  },
+  {
+    "name": "Logo",
+    "prefix": "(logo:1.3), vector graphics, brand, design, inspired, (straight:1.3), (symmetrical:0.4)",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Logo (minimalistic)",
+    "prefix": "art by keith negley, (logo:1.3), vector graphics, design, (straight:1.3), (symmetrical:0.4), by keith negley, [[jean arp]], minimalistic",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Logo Design",
+    "prefix": "Logo Design",
+    "suffix": "dynamic graphic art, vector art, minimalist, professional logo design",
+    "negative": "ugly, deformed, noisy, blurry, low contrast"
+  },
+  {
+    "name": "Logo_Minimalistic",
+    "prefix": "Transform to minimalistic logo style with simple geometric shapes, clean typography, limited colors, scalable design, emphasizing graphic design simplicity over complex detailed or ornate photographic cluttered elements, while maintaining brand recognition",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Long Exposure",
+    "prefix": "create long exposure photography with smooth motion blur, streaming light trails, silky water, and time-lapse effects",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Looney Tunes Style",
+    "prefix": "convert to Looney Tunes theatrical cartoon style with extreme squash and stretch, wild eye-popping takes, smear frames for fast motion, bright Technicolor palette, slapstick physics with anvils and dynamite, Tex Avery-style exaggeration",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Low‑Poly PS1 Horror",
+    "prefix": "",
+    "suffix": "low poly PlayStation 1 graphics, chunky textures, dithering, retro lighting, horror vibe",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, nsfw, hi‑poly, smooth surfaces, modern graphics"
+  },
+  {
+    "name": "Low‑Saturation Survival Horror",
+    "prefix": "",
+    "suffix": "desaturated palette, film grain, flickering flashlight, damp textures, claustrophobic framing",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, nsfw, bright pastel, cartoon"
+  },
+  {
+    "name": "Luxurious Elegance",
+    "prefix": "Luxurious Elegance",
+    "suffix": "extravagant, ornate, designer, opulent, picturesque, lavish",
+    "negative": "ugly, deformed, noisy, blurry, low contrast"
+  },
+  {
+    "name": "Macro_Photography",
+    "prefix": "Change to macro photography style with extreme close-up details, shallow depth of field, texture emphasis, focusing on magnified photographic detail over wide angle or distant soft focus general views, while preserving the subject scale",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Mandola Art",
+    "prefix": "Mandola art style",
+    "suffix": "complex, circular design, mandola",
+    "negative": "ugly, deformed, noisy, blurry, low contrast"
+  },
+  {
+    "name": "Manga Noir",
+    "prefix": "convert to manga noir style with heavy beta-nuri black fills, white lines for details within black areas, high contrast chiaroscuro lighting, rain-soaked urban setting, psychological shadow placement, atmospheric smoke effects",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Manga Style",
+    "prefix": "convert to traditional manga style with clean black ink lines, screentone shading patterns, beta-nuri solid black fills, speed lines for motion, emotional iconography, classic black and white aesthetic with spot whites",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Manga_1",
+    "prefix": "(Manga Style, Yusuke Murata, Satoshi Kon, Ken Sugimori, Hiromu Arakawa), Pencil drawing, (B&W:1.2), Low detail, sketch, concept art, Anime style, line art, webtoon, manhua, chalk, hand drawn, defined lines, simple shades, simplistic, manga page, minimalistic, High contrast, Precision artwork, Linear compositions, Scalable artwork, Digital art, High Contrast Shadows",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Manga_2",
+    "prefix": "Pencil drawing, Black and White, B&W, Low detail, sketch, concept art, Manga style, Anime style, line art, webtoon, manhua, chalk, hand drawn, defined lines, simple shades, simplistic, manga page, minimalistic",
+    "suffix": "",
+    "negative": "pencil, logo, Glasses, Watermark, bad artist, blur, blurry, text, 3d, bad art, poorly drawn, disfigured, deformed, extra limbs, ugly hands, extra fingers"
+  },
+  {
+    "name": "Manga_Black_White",
+    "prefix": "Transform to manga art style with black and white line work, speed lines, dramatic expressions, emphasizing Japanese comic book aesthetics over colorful photographic or subtle western comic realistic styles, while maintaining character proportions",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Manga_Colored",
+    "prefix": "Change to colored manga art style with anime aesthetics, cel-shading, vibrant colors, focusing on Japanese comic illustration style over realistic photographic or muted western live-action representation, while preserving the same pose",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Marble Statue Transformation",
+    "prefix": "transform into classical marble statue, pure white Carrara marble with grey veining, polished stone surface, classical Greek/Roman sculptural style, draped fabric carved in stone, heroic proportions, museum pedestal display, dramatic lighting emphasizing form, timeless artistic beauty",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Mario_Game_Style",
+    "prefix": "Change to Super Mario game art style with bright colors, simple shapes, cartoon aesthetics, playful design, emphasizing Nintendo's family-friendly game style over realistic dark or complex serious photographic themes, while preserving character features",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Marker Drawing",
+    "prefix": "Marker Drawing",
+    "suffix": "bold marker lines, visible paper texture",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, photograph, realistic"
+  },
+  {
+    "name": "Martial Arts Beat‑’em‑Up Arcade",
+    "prefix": "",
+    "suffix": "dynamic sprite animation, chunky pixels, bold impact flashes, urban back‑alleys, 90s arcade feel",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, nsfw, pastel watercolor, photorealistic"
+  },
+  {
+    "name": "Marvel Comics Style",
+    "prefix": "convert to Marvel Comics superhero style with dynamic action poses, Kirby Krackle energy effects, detailed muscular anatomy, bright heroic color palette, flowing cape dynamics, explosive composition with motion lines",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Mass Effect",
+    "prefix": "",
+    "suffix": "cinematic sci‑fi space opera, sleek N7 armor, nebula backdrop, luminous holographic UI elements",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, nsfw, cartoony, grainy film"
+  },
+  {
+    "name": "Matrix Style",
+    "prefix": "convert to Matrix style with green-tinted digital world, falling code rain with Japanese characters, bullet time frozen motion effect, black leather and sunglasses aesthetic, cyberpunk wire-fu action, CRT monitor green glow",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Mecha Anime Style",
+    "prefix": "transform into mecha anime style, enhance existing subjects with detailed mechanical armor and robotic augmentations, add complex panel lines, rivets, hydraulics, thrusters, metallic surfaces with weathering, glowing power cores, mechanical joint details, scale indicators, warning decals, and dramatic mecha aesthetic while maintaining original composition",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Medieval European",
+    "prefix": "transform to medieval European setting, stone castle architecture with Gothic elements, people in period-accurate tunics and dresses, knights in armor, heraldic banners and shields, cobblestone streets, market stalls, thatched roof houses, torch and candlelight illumination, medieval atmosphere",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Medieval_Illuminated",
+    "prefix": "Transform to medieval illuminated manuscript style with gold leaf, ornate borders, gothic lettering, rich colors, emphasizing historical manuscript aesthetics over modern minimalist or digital design, while maintaining the same layout",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Medievalism",
+    "prefix": "Medievalism",
+    "suffix": "inspired by The Middle Ages, medieval art, elaborate patterns and decoration",
+    "negative": "ugly, deformed, noisy, blurry, low contrast"
+  },
+  {
+    "name": "Metroidvania Concept",
+    "prefix": "",
+    "suffix": "2.5D hand‑painted environment, layered parallax backgrounds, moody color palette, mysterious lighting",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, nsfw, bright daylight, realistic photo"
+  },
+  {
+    "name": "Midjourney",
+    "prefix": "(dark shot:1.1), epic realistic",
+    "suffix": "faded, (neutral colors:1.2), (hdr:1.4), (muted colors:1.2), hyperdetailed, (artstation:1.4), cinematic, warm lights, dramatic light, (intricate details:1.1), complex background, (rutkowski:0.66), (teal and orange:0.4)",
+    "negative": ""
+  },
+  {
+    "name": "Midjourney (warm)",
+    "prefix": "epic realistic",
+    "suffix": "faded, (neutral colors:1.2), art, (hdr:1.5), (muted colors:1.1), (pastel:0.2), hyperdetailed, (artstation:1.4), warm lights, dramatic light, (intricate details:1.2), vignette, complex background, rutkowski",
+    "negative": ""
+  },
+  {
+    "name": "Minecraft",
+    "prefix": "",
+    "suffix": "blocky voxel world, low‑res textures, bright primary colors, simplistic lighting, chunky 3D models",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, nsfw, realistic textures, photorealistic"
+  },
+  {
+    "name": "Minimalism",
+    "prefix": "Minimalism",
+    "suffix": "abstract, simple geometric shapes, hard edges, sleek contours",
+    "negative": "ugly, deformed, noisy, blurry, low contrast"
+  },
+  {
+    "name": "Minimalist Geometry Puzzle",
+    "prefix": "",
+    "suffix": "clean vector shapes, solid background, limited two‑tone palette, crisp edges, abstract composition",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, nsfw, complex textures, gradients"
+  },
+  {
+    "name": "Minimalist_Art",
+    "prefix": "Change to minimalist art style with simple forms, limited color palette, clean lines, essential elements only, focusing on reductive simplicity over busy ornate or complex decorative maximalist design, while preserving the core composition",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "MK adnate-style",
+    "prefix": "Painting by Adnate",
+    "suffix": "realistic portraits, street art, large-scale murals, subdued color palette, social narratives",
+    "negative": "abstract, vibrant colors, small-scale art"
+  },
+  {
+    "name": "MK afrofuturism",
+    "prefix": "Afrofuturism illustration",
+    "suffix": "vibrant colors, futuristic elements, cultural symbolism, cosmic imagery, dynamic patterns, empowering narratives",
+    "negative": "monochromatic"
+  },
+  {
+    "name": "MK Albumen Print",
+    "prefix": "Albumen print",
+    "suffix": "Sepia tones, fine details, subtle tonal gradations, delicate highlights, vintage aesthetic, soft and muted atmosphere, historical charm, rich textures, meticulous craftsmanship, classic photographic technique, vignetting",
+    "negative": "vibrant colors, high contrast, modern, digital appearance, sharp details, contemporary style"
+  },
+  {
+    "name": "MK Alcohol Ink Art",
+    "prefix": "Alcohol ink art",
+    "suffix": "Fluid and vibrant colors, unpredictable patterns, organic textures, translucent layers, abstract compositions, ethereal and dreamy effects, free-flowing movement, expressive brushstrokes, contemporary aesthetic, wet textured paper",
+    "negative": "monochromatic, controlled patterns"
+  },
+  {
+    "name": "MK Andy Warhol",
+    "prefix": "Artwork in the style of Andy Warhol",
+    "suffix": "Pop art, vibrant colors, bold compositions, repetition of iconic imagery, celebrity culture, commercial aesthetics, mass production influence, stylized simplicity, cultural commentary, graphical elements, distinctive portraits",
+    "negative": "subdued colors, realistic, lack of repetition, minimalistic"
+  },
+  {
+    "name": "MK Anthotype Print",
+    "prefix": "Anthotype print",
+    "suffix": "Monochrome dye, soft and muted colors, organic textures, ephemeral and delicate appearance, low details, watercolor canvas, low contrast, overexposed, silhouette, textured paper",
+    "negative": "vibrant synthetic dyes, bold and saturated colors"
+  },
+  {
+    "name": "MK Aquatint Print",
+    "prefix": "Aquatint print",
+    "suffix": "Soft tonal gradations, atmospheric effects, velvety textures, rich contrasts, fine details, etching process, delicate lines, nuanced shading, expressive and moody atmosphere, artistic depth",
+    "negative": "sharp contrasts, bold lines, minimalistic"
+  },
+  {
+    "name": "MK atompunk",
+    "prefix": "Atompunk illustation",
+    "suffix": "retro-futuristic, atomic age aesthetics, sleek lines, metallic textures, futuristic technology, optimism, energy",
+    "negative": "organic, natural textures, rustic, dystopian"
+  },
+  {
+    "name": "MK Basquiat",
+    "prefix": "Artwork by Jean-Michel Basquiat",
+    "suffix": "Neo-expressionism, street art influence, graffiti-inspired, raw, energetic, bold colors, dynamic composition, chaotic, layered, textural, expressive, spontaneous, distinctive, symbolic, energetic brushstrokes",
+    "negative": "(realistic:1.5), (photorealistic:1.5), calm, precise lines, conventional composition, subdued"
+  },
+  {
+    "name": "MK bauhaus-style",
+    "prefix": "Bauhaus-inspired",
+    "suffix": "minimalism, geometric precision, primary colors, sans-serif typography, asymmetry, functional design",
+    "negative": "ornate, intricate, excessive detail, complex patterns, serif typography"
+  },
+  {
+    "name": "MK Blacklight Paint",
+    "prefix": "Blacklight paint",
+    "suffix": "Fluorescent pigments, vibrant and surreal colors, ethereal glow, otherworldly effects, dynamic and psychedelic compositions, neon aesthetics, transformative in ultraviolet light, contemporary and experimental",
+    "negative": "muted colors, traditional and realistic compositions"
+  },
+  {
+    "name": "MK Bromoil Print",
+    "prefix": "Bromoil print",
+    "suffix": "Painterly effects, sepia tones, textured surfaces, rich contrasts, expressive brushwork, tonal variations, vintage aesthetic, atmospheric mood, handmade quality, artistic experimentation, darkroom craftsmanship, vignetting",
+    "negative": "smooth surfaces, minimal brushwork, contemporary digital appearance"
+  },
+  {
+    "name": "MK Calotype Print",
+    "prefix": "Calotype print",
+    "suffix": "Soft focus, subtle tonal range, paper negative process, fine details, vintage aesthetic, artistic experimentation, atmospheric mood, early photographic charm, handmade quality, vignetting",
+    "negative": "sharp focus, bold contrasts, modern aesthetic, digital photography"
+  },
+  {
+    "name": "MK Carnival Glass",
+    "prefix": "A sculpture made of Carnival glass",
+    "suffix": "Iridescent surfaces, vibrant colors, intricate patterns, opalescent hues, reflective and prismatic effects, Art Nouveau and Art Deco influences, vintage charm, intricate detailing, lustrous and luminous appearance, Carnival Glass style",
+    "negative": "non-iridescent surfaces, muted colors, absence of intricate patterns, lack of opalescent hues, modern and minimalist aesthetic"
+  },
+  {
+    "name": "MK chicano-art",
+    "prefix": "Chicano art",
+    "suffix": "bold colors, cultural symbolism, muralism, lowrider aesthetics, barrio life, political messages, social activism, Mexico",
+    "negative": "monochromatic, minimalist, mainstream aesthetics"
+  },
+  {
+    "name": "MK Chromolithography",
+    "prefix": "Chromolithograph",
+    "suffix": "Vibrant colors, intricate details, rich color saturation, meticulous registration, multi-layered printing, decorative elements, historical charm, artistic reproductions, commercial posters, nostalgic, ornate compositions",
+    "negative": "monochromatic, simple designs, limited color palette, imprecise registration, minimalistic, modern aesthetic, digital appearance"
+  },
+  {
+    "name": "MK Cibulak Porcelain",
+    "prefix": "A sculpture made of blue pattern porcelain of",
+    "suffix": "Classic design, blue and white color scheme, intricate detailing, floral motifs, onion-shaped elements, historical charm, rococo, white ware, cobalt blue, underglaze pattern, fine craftsmanship, traditional elegance, delicate patterns, vintage aesthetic, Meissen, Blue Onion pattern, Cibulak",
+    "negative": "tea, teapot, cup, teacup, bright colors, bold and modern design, absence of intricate detailing, lack of floral motifs, non-traditional shapes"
+  },
+  {
+    "name": "MK Color Sketchnote",
+    "prefix": "Color sketchnote",
+    "suffix": "Hand-drawn elements, vibrant colors, visual hierarchy, playful illustrations, varied typography, graphic icons, organic and dynamic layout, personalized touches, creative expression, engaging storytelling",
+    "negative": "monochromatic, geometric layout"
+  },
+  {
+    "name": "MK Coloring Book",
+    "prefix": "centered black and white high contrast line drawing, coloring book style",
+    "suffix": "monochrome, blank white background",
+    "negative": "greyscale, gradients, shadows, shadow, colored, Red, Blue, Yellow, Green, Orange, Purple, Pink, Brown, Gray, Beige, Turquoise, Lavender, Cyan, Magenta, Olive, Indigo, black background"
+  },
+  {
+    "name": "MK constructivism",
+    "prefix": "Constructivism",
+    "suffix": "geometric abstraction, bold colors, industrial aesthetics, dynamic compositions, utilitarian design, revolutionary spirit",
+    "negative": "organic shapes, muted colors, ornate elements, traditional"
+  },
+  {
+    "name": "MK Cross Processing Print",
+    "prefix": "Cross processing print",
+    "suffix": "Experimental color shifts, unconventional tonalities, vibrant and surreal hues, heightened contrasts, unpredictable results, artistic unpredictability, retro and vintage feel, dynamic color interplay, abstract and dreamlike",
+    "negative": "predictable color tones, traditional processing, realistic color representation, subdued contrasts, standard photographic aesthetics"
+  },
+  {
+    "name": "MK Cross-Stitching",
+    "prefix": "Cross-stitching",
+    "suffix": "Intricate patterns, embroidery thread, sewing, fine details, precise stitches, textile artistry, symmetrical designs, varied color palette, traditional and contemporary motifs, handmade and crafted, canvas, nostalgic charm",
+    "negative": "paper, paint, ink, photography"
+  },
+  {
+    "name": "MK Cyanotype Print",
+    "prefix": "Cyanotype print",
+    "suffix": "Prussian blue tones, distinctive coloration, high contrast, blueprint aesthetics, atmospheric mood, sun-exposed paper, silhouette effects, delicate details, historical charm, handmade and experimental quality",
+    "negative": "vibrant colors, low contrast, modern and polished appearance"
+  },
+  {
+    "name": "MK dayak-art",
+    "prefix": "Dayak art sculpture of",
+    "suffix": "intricate patterns, nature-inspired motifs, vibrant colors, traditional craftsmanship, cultural symbolism, storytelling",
+    "negative": "minimalist, monochromatic, modern"
+  },
+  {
+    "name": "MK de-stijl",
+    "prefix": "De Stijl Art",
+    "suffix": "neoplasticism, primary colors, geometric abstraction, horizontal and vertical lines, simplicity, harmony, utopian ideals",
+    "negative": "complex patterns, muted colors, ornate elements, asymmetry"
+  },
+  {
+    "name": "MK Dufaycolor Photograph",
+    "prefix": "Dufaycolor photograph",
+    "suffix": "Vintage color palette, distinctive color rendering, soft and dreamy atmosphere, historical charm, unique color process, grainy texture, evocative mood, nostalgic aesthetic, hand-tinted appearance, artistic patina",
+    "negative": "modern color reproduction, hyperrealistic tones, sharp and clear details, digital precision, contemporary aesthetic"
+  },
+  {
+    "name": "MK Embroidery",
+    "prefix": "Embroidery",
+    "suffix": "Intricate stitching, embroidery thread, fine details, varied thread textures, textile artistry, embellished surfaces, diverse color palette, traditional and contemporary motifs, handmade and crafted, tactile and ornate",
+    "negative": "minimalist, monochromatic"
+  },
+  {
+    "name": "MK Encaustic Paint",
+    "prefix": "Encaustic paint",
+    "suffix": "Textured surfaces, translucent layers, luminous quality, wax medium, rich color saturation, fluid and organic shapes, contemporary and historical influences, mixed media elements, atmospheric depth",
+    "negative": "flat surfaces, opaque layers, lack of wax medium, muted color palette, absence of textured surfaces, non-mixed media"
+  },
+  {
+    "name": "MK fayum-portrait",
+    "prefix": "Fayum portrait",
+    "suffix": "encaustic painting, realistic facial features, warm earth tones, serene expressions, ancient Egyptian influences",
+    "negative": "abstract, vibrant colors, exaggerated features, modern"
+  },
+  {
+    "name": "MK Gond Painting",
+    "prefix": "Gond painting",
+    "suffix": "Intricate patterns, vibrant colors, detailed motifs, nature-inspired themes, tribal folklore, fine lines, intricate detailing, storytelling compositions, mystical and folkloric, cultural richness",
+    "negative": "monochromatic, abstract shapes, minimalistic"
+  },
+  {
+    "name": "MK Gyotaku",
+    "prefix": "Gyotaku",
+    "suffix": "Fish impressions, realistic details, ink rubbings, textured surfaces, traditional Japanese art form, nature-inspired compositions, artistic representation of marine life, black and white contrasts, cultural significance",
+    "negative": "photography"
+  },
+  {
+    "name": "MK Halftone print",
+    "prefix": "Halftone print of",
+    "suffix": "Dot matrix pattern, grayscale tones, vintage aesthetic, newspaper print vibe, stylized dots, visual texture, black and white contrasts, retro appearance, artistic pointillism, pop culture, (Roy Lichtenstein style:1.5)",
+    "negative": "smooth gradients, continuous tones, vibrant colors"
+  },
+  {
+    "name": "MK Herbarium",
+    "prefix": "Herbarium drawing",
+    "suffix": "Botanical accuracy, old botanical book illustration, detailed illustrations, pressed plants, delicate and precise linework, scientific documentation, meticulous presentation, educational purpose, organic compositions, timeless aesthetic, naturalistic beauty",
+    "negative": "abstract representation, vibrant colors, artistic interpretation, chaotic compositions, fantastical elements, digital appearance"
+  },
+  {
+    "name": "MK illuminated-manuscript",
+    "prefix": "Illuminated manuscript",
+    "suffix": "intricate calligraphy, rich colors, detailed illustrations, gold leaf accents, ornate borders, religious, historical, medieval",
+    "negative": "modern typography, minimalist design, monochromatic, abstract themes"
+  },
+  {
+    "name": "MK Inuit Carving",
+    "prefix": "A sculpture made of ivory",
+    "suffix": "made of . Sculptures, Inuit art style, intricate carvings, natural materials, storytelling motifs, arctic wildlife themes, symbolic representations, cultural traditions, earthy tones, harmonious compositions, spiritual and mythological elements",
+    "negative": "abstract, vibrant colors"
+  },
+  {
+    "name": "MK kalighat-painting",
+    "prefix": "Kalighat painting",
+    "suffix": "bold lines, vibrant colors, narrative storytelling, cultural motifs, flat compositions, expressive characters",
+    "negative": "subdued colors, intricate details, realistic portrayal, modern aesthetics"
+  },
+  {
+    "name": "MK Lite Brite Art",
+    "prefix": "Lite Brite art",
+    "suffix": "Luminous and colorful designs, pixelated compositions, retro aesthetic, glowing effects, creative patterns, interactive and playful, nostalgic charm, vibrant and dynamic arrangements",
+    "negative": "monochromatic"
+  },
+  {
+    "name": "MK Luminogram",
+    "prefix": "Luminogram",
+    "suffix": "Photogram technique, ethereal and abstract effects, light and shadow interplay, luminous quality, experimental process, direct light exposure, unique and unpredictable results, artistic experimentation",
+    "negative": ""
+  },
+  {
+    "name": "MK madhubani-painting",
+    "prefix": "Madhubani painting",
+    "suffix": "intricate patterns, vibrant colors, nature-inspired motifs, cultural storytelling, symmetry, folk art aesthetics",
+    "negative": "abstract, muted colors, minimalistic design, modern aesthetics"
+  },
+  {
+    "name": "MK Mokume-gane",
+    "prefix": "Mokume-gane",
+    "suffix": "Wood-grain patterns, mixed metal layers, intricate and organic designs, traditional Japanese metalwork, harmonious color combinations, artisanal craftsmanship, unique and layered textures, cultural and historical significance",
+    "negative": "uniform metal surfaces"
+  },
+  {
+    "name": "MK mosaic",
+    "prefix": "mosaic style",
+    "suffix": "fragmented, assembled, colorful, highly detailed",
+    "negative": "whole, unbroken, monochrome"
+  },
+  {
+    "name": "MK One Line Art",
+    "prefix": "One line art",
+    "suffix": "Continuous and unbroken black line, minimalistic, simplicity, economical use of space, flowing and dynamic, symbolic representations, contemporary aesthetic, evocative and abstract, white background",
+    "negative": "disjointed lines, complexity, complex detailing"
+  },
+  {
+    "name": "MK Palekh",
+    "prefix": "Palekh art",
+    "suffix": "Miniature paintings, intricate details, vivid colors, folkloric themes, lacquer finish, storytelling compositions, symbolic elements, Russian folklore influence, cultural and historical significance",
+    "negative": "large-scale paintings"
+  },
+  {
+    "name": "MK patachitra-painting",
+    "prefix": "Patachitra painting",
+    "suffix": "bold outlines, vibrant colors, intricate detailing, mythological themes, storytelling, traditional craftsmanship",
+    "negative": "subdued colors, minimalistic, abstract, modern aesthetics"
+  },
+  {
+    "name": "MK pichwai-painting",
+    "prefix": "Pichwai painting",
+    "suffix": "intricate detailing, vibrant colors, religious themes, nature motifs, devotional storytelling, gold leaf accents",
+    "negative": "minimalist, subdued colors, abstract design"
+  },
+  {
+    "name": "MK pictorialism",
+    "prefix": "Pictorialism illustration",
+    "suffix": "soft focus, atmospheric effects, artistic interpretation, tonality, muted colors, evocative storytelling",
+    "negative": "sharp focus, high contrast, realistic depiction, vivid colors"
+  },
+  {
+    "name": "MK Pollock",
+    "prefix": "Oil painting by Jackson Pollock",
+    "suffix": "Abstract expressionism, drip painting, chaotic composition, energetic, spontaneous, unconventional technique, dynamic, bold, distinctive, vibrant, intense, expressive, layered, non-representational, gestural",
+    "negative": "(realistic:1.5), (photorealistic:1.5), representational, calm, ordered composition, precise lines, detailed forms, subdued colors, quiet, static, traditional, figurative"
+  },
+  {
+    "name": "MK Punk Collage",
+    "prefix": "punk collage style",
+    "suffix": "mixed media, papercut, textured paper, overlapping, ripped posters, safety pins, chaotic layers, graffiti-style elements, anarchy symbols, vintage photos, cut-and-paste aesthetic, bold typography, distorted images, political messages, urban decay, distressed textures, newspaper clippings, spray paint, rebellious icons, DIY spirit, vivid colors, punk band logos, edgy and raw compositions",
+    "negative": "conventional, blurry, noisy, low contrast"
+  },
+  {
+    "name": "MK ron-english-style",
+    "prefix": "Painting by Ron English",
+    "suffix": "pop-surrealism, cultural subversion, iconic mash-ups, vibrant and bold colors, satirical commentary",
+    "negative": "traditional, monochromatic"
+  },
+  {
+    "name": "MK samoan-art-inspired",
+    "prefix": "Samoan art-inspired wooden sculpture",
+    "suffix": "traditional motifs, natural elements, bold colors, cultural symbolism, storytelling, craftsmanship",
+    "negative": "modern aesthetics, minimalist, abstract"
+  },
+  {
+    "name": "MK Scrimshaw",
+    "prefix": "A Scrimshaw engraving of",
+    "suffix": "Intricate engravings on a spermwhale's teeth, marine motifs, detailed scenes, nautical themes, black and white contrasts, historical craftsmanship, artisanal carving, storytelling compositions, maritime heritage",
+    "negative": "colorful, modern"
+  },
+  {
+    "name": "MK shepard-fairey-style",
+    "prefix": "Painting by Shepard Fairey",
+    "suffix": "street art, political activism, iconic stencils, bold typography, high contrast, red, black, and white color palette",
+    "negative": "traditional, muted colors"
+  },
+  {
+    "name": "MK Shibori",
+    "prefix": "Shibori",
+    "suffix": "Textured fabric, intricate patterns, resist-dyeing technique, indigo or vibrant colors, organic and flowing designs, Japanese textile art, cultural tradition, tactile and visual interest",
+    "negative": "monochromatic"
+  },
+  {
+    "name": "MK Singer Sargent",
+    "prefix": "Oil painting by John Singer Sargent",
+    "suffix": "Elegant, refined, masterful technique, realistic portrayal, subtle play of light, captivating expression, rich details, harmonious colors, skillful composition, brush strokes, chiaroscuro",
+    "negative": "realistic, photorealistic, abstract, overly stylized, excessive contrasts, distorted, bright colors, disorder"
+  },
+  {
+    "name": "MK Suminagashi",
+    "prefix": "Suminagashi",
+    "suffix": "Floating ink patterns, marbled effects, delicate and ethereal designs, water-based ink, fluid and unpredictable compositions, meditative process, monochromatic or subtle color palette, Japanese artistic tradition",
+    "negative": "vibrant and bold color palette"
+  },
+  {
+    "name": "MK tlingit-art",
+    "prefix": "Tlingit art",
+    "suffix": "formline design, natural elements, animal motifs, bold colors, cultural storytelling, traditional craftsmanship, Alaska traditional art, (totem:1.5)",
+    "negative": ""
+  },
+  {
+    "name": "MK Ukiyo-e",
+    "prefix": "Ukiyo-e",
+    "suffix": "Woodblock prints, vibrant colors, intricate details, depictions of landscapes, kabuki actors, beautiful women, cultural scenes, traditional Japanese art, artistic craftsmanship, historical significance",
+    "negative": "absence of woodblock prints, muted colors, lack of intricate details, non-traditional Japanese themes, absence of cultural scenes"
+  },
+  {
+    "name": "MK Van Gogh",
+    "prefix": "Oil painting by Van Gogh",
+    "suffix": "Expressive, impasto, swirling brushwork, vibrant, brush strokes, Brushstroke-heavy, Textured, Colorful, Dynamic, Bold, Distinctive, Whirling, Expressive, Dramatic, Swirling, Layered, Intense, Contrastive, Atmospheric, Luminous, Textural, Evocative, SpiraledVan Gogh style",
+    "negative": "realistic, photorealistic, calm, straight lines, signature, frame, text, watermark"
+  },
+  {
+    "name": "MK vintage-airline-poster",
+    "prefix": "vintage airline poster",
+    "suffix": "classic aviation fonts, pastel colors, elegant aircraft illustrations, scenic destinations, distressed textures, retro travel allure",
+    "negative": "modern fonts, bold colors, hyper-realistic, sleek design"
+  },
+  {
+    "name": "MK vintage-travel-poster",
+    "prefix": "vintage travel poster",
+    "suffix": "retro fonts, muted colors, scenic illustrations, iconic landmarks, distressed textures, nostalgic vibes",
+    "negative": "modern fonts, vibrant colors, hyper-realistic, sleek design"
+  },
+  {
+    "name": "Mobile Game 2D Style",
+    "prefix": "convert to professional mobile game 2D style with clean vector art, oversized character heads, bright primary colors, clear readable designs optimized for small screens, material-specific rendering for gold, wood, and gems",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Modern Anime",
+    "prefix": "convert to modern anime style with hyper-realistic body proportions, stylized facial features, saturated colors with neon accents, soft 3D-like shading, clean digital linework, cinematic quality backgrounds, atmospheric lighting effects",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Modern Webcomic Style",
+    "prefix": "convert to modern webcomic style with simple clean lines, expressive character faces, bright digital colors, and internet-friendly aesthetics",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Modern_Glass",
+    "prefix": "Change to modern glass architecture with reflective surfaces, steel frames, minimalist design, focusing on contemporary transparent construction over traditional opaque or ornate decorative styles, while keeping the same building scale",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Moebius Concept Art Style",
+    "prefix": "convert to Moebius concept art style, surreal science fiction landscape, organic flowing architecture, crystal clear ligne claire technique, desert color palette with psychedelic accents, dreamlike atmospheric quality, European bande dessinée aesthetic",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Moebius Style",
+    "prefix": "convert to Moebius French sci-fi comic style with intricate detailed linework, expansive alien desert landscapes, vivid dreamlike color palette, surreal organic forms, philosophical visual themes, psychedelic atmosphere",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Monet Impressionism",
+    "prefix": "convert to Claude Monet impressionist style, broken color technique, capturing fleeting light effects, loose brushwork with visible strokes, atmospheric perspective, water reflections, garden scenes with dappled sunlight",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Monet Style",
+    "prefix": "convert to Claude Monet impressionist painting with soft natural light like Water Lilies series, broken color patches, and atmospheric perspective",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "mre-ancient-illustration",
+    "prefix": "sublime ancient illustration of",
+    "suffix": "predating human civilization. crude and simple, but also surprisingly beautiful artwork, made by genius primeval artist. best quality, high resolution",
+    "negative": "low quality, low resolution"
+  },
+  {
+    "name": "mre-anime",
+    "prefix": "anime artwork illustrating",
+    "suffix": "created by japanese anime studio. highly emotional. best quality, high resolution",
+    "negative": "low quality, low resolution"
+  },
+  {
+    "name": "mre-artistic-vision",
+    "prefix": "powerful artistic vision of",
+    "suffix": "breathtaking masterpiece made by great artist. best quality, high resolution",
+    "negative": "insignificant, flawed, made by bad artist. low quality, low resolution"
+  },
+  {
+    "name": "mre-bad-dream",
+    "prefix": "picture from really bad dream about terrifying",
+    "suffix": "true horror. bone-chilling vision. mad world that shouldn't exist. best quality, high resolution",
+    "negative": "nice dream, pleasant experience. low quality, low resolution"
+  },
+  {
+    "name": "mre-brave-art",
+    "prefix": "brave, shocking, and brutally true art showing",
+    "suffix": "inspired by courage and unlimited creativity. truth found in chaos. best quality, high resolution",
+    "negative": "low quality, low resolution"
+  },
+  {
+    "name": "mre-cinematic-dynamic",
+    "prefix": "epic cinematic shot of dynamic",
+    "suffix": "in motion. main subject of high budget action movie. raw photo, motion blur. best quality, high resolution",
+    "negative": "static, still, motionless, sluggish. drawing, painting, illustration, rendered. low budget. low quality, low resolution"
+  },
+  {
+    "name": "mre-comic",
+    "prefix": "breathtaking illustration from adult comic book presenting",
+    "suffix": "fabulous artwork. best quality, high resolution",
+    "negative": "deformed, ugly, low quality, low resolution"
+  },
+  {
+    "name": "mre-dark-cyberpunk",
+    "prefix": "dark cyberpunk illustration of brutal",
+    "suffix": "in a world without hope, ruled by ruthless criminal corporations. best quality, high resolution",
+    "negative": "low quality, low resolution"
+  },
+  {
+    "name": "mre-dark-dream",
+    "prefix": "dark and unsettling dream showing",
+    "suffix": "best quality, high resolution. created by genius but depressed mad artist. grim beauty",
+    "negative": "naive, cheerful. comfortable, casual, boring, cliche. low quality, low resolution"
+  },
+  {
+    "name": "mre-dynamic-illustration",
+    "prefix": "insanely dynamic illustration of",
+    "suffix": "best quality, high resolution. crazy artstyle, careless brushstrokes, emotional and fun",
+    "negative": "photography, realistic. static, still, slow, boring. low quality, low resolution"
+  },
+  {
+    "name": "mre-elemental-art",
+    "prefix": "art illustrating insane amounts of raging elemental energy turning into",
+    "suffix": "avatar of elements. magical surrealism, wizardry. best quality, high resolution",
+    "negative": "photography, realistic, real. low quality, low resolution"
+  },
+  {
+    "name": "mre-gloomy-art",
+    "prefix": "astonishing gloomy art made mainly of shadows and lighting, forming",
+    "suffix": "masterful usage of lighting, shadows and chiaroscuro. made by black-hearted artist, drawing from darkness. best quality, high resolution",
+    "negative": "low quality, low resolution"
+  },
+  {
+    "name": "mre-heroic-fantasy",
+    "prefix": "heroic fantasy painting of",
+    "suffix": "in the dangerous fantasy world. airbrush over oil on canvas. best quality, high resolution",
+    "negative": "low quality, low resolution"
+  },
+  {
+    "name": "mre-lyrical-geometry",
+    "prefix": "geometric and lyrical abstraction painting presenting",
+    "suffix": "oil on metal. best quality, high resolution",
+    "negative": "photography, realistic, drawing, rendered. low quality, low resolution"
+  },
+  {
+    "name": "mre-manga",
+    "prefix": "manga artwork presenting",
+    "suffix": "created by japanese manga artist. highly emotional. best quality, high resolution",
+    "negative": "low quality, low resolution"
+  },
+  {
+    "name": "mre-space-art",
+    "prefix": "winner of inter-galactic art contest illustrating",
+    "suffix": "symbol of the interstellar singularity. best quality, high resolution. artstyle previously unseen in the whole galaxy",
+    "negative": "created by human race, low quality, low resolution"
+  },
+  {
+    "name": "mre-spontaneous-picture",
+    "prefix": "spontaneous picture of",
+    "suffix": "taken by talented amateur. best quality, high resolution. magical moment, natural look. simple but good looking",
+    "negative": "overthinked. low quality, low resolution"
+  },
+  {
+    "name": "mre-sumi-e-detailed",
+    "prefix": "highly detailed black sumi-e painting of",
+    "suffix": "in-depth study of perfection, created by a master. best quality, high resolution",
+    "negative": "low quality, low resolution"
+  },
+  {
+    "name": "mre-sumi-e-symbolic",
+    "prefix": "big long brushstrokes of deep black sumi-e turning into symbolic painting of",
+    "suffix": "master level raw art. best quality, high resolution",
+    "negative": "photography, rendered. low quality, low resolution"
+  },
+  {
+    "name": "mre-surreal-painting",
+    "prefix": "surreal painting representing strange vision of",
+    "suffix": "harmonious madness, synergy with chance. unique artstyle, mindbending art, magical surrealism. best quality, high resolution",
+    "negative": "photography, illustration, drawing. realistic, possible. logical, sane. low quality, low resolution"
+  },
+  {
+    "name": "mre-undead-art",
+    "prefix": "long forgotten art created by undead artist illustrating",
+    "suffix": "tribute to the death and decay. miserable art of the damned. wretched and decaying world. best quality, high resolution",
+    "negative": "alive, playful, living. low quality, low resolution"
+  },
+  {
+    "name": "mre-underground",
+    "prefix": "uncanny caliginous vision of",
+    "suffix": "created by remarkable underground artist. best quality, high resolution. raw and brutal art, careless but impressive style. inspired by darkness and chaos",
+    "negative": "photography, mainstream, civilized. low quality, low resolution"
+  },
+  {
+    "name": "My Hero Academia Style",
+    "prefix": "convert to My Hero Academia anime style with superhero costume design, colorful quirk power effects, comic book aesthetic with bold lines, bright primary colors, muscular hero proportions, dynamic action pose with impact effects",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Mythic Ink Wash",
+    "prefix": "",
+    "suffix": "East‑Asian sumi‑e brush strokes, flowing black ink, subtle color splashes, expansive negative space",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, nsfw, crisp digital lines, photorealistic"
+  },
+  {
+    "name": "Naruto Style",
+    "prefix": "convert to Naruto anime style with ninja headband, whisker marks on cheeks, orange and blue color scheme, dynamic action pose, sharp anime features, chakra energy effects, shounen manga aesthetic with martial arts action",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Neo-Byzantine",
+    "prefix": "Neo-Byzantine",
+    "suffix": "grand decorative religious style, Orthodox Christian inspired",
+    "negative": "ugly, deformed, noisy, blurry, low contrast"
+  },
+  {
+    "name": "Neo-Futurism",
+    "prefix": "Neo-Futurism",
+    "suffix": "high-tech, curves, spirals, flowing lines, idealistic future",
+    "negative": "ugly, deformed, noisy, blurry, low contrast"
+  },
+  {
+    "name": "Neo-Impressionism",
+    "prefix": "Neo-Impressionism",
+    "suffix": "tiny dabs of color, Pointillism, painterly",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, photograph, realistic"
+  },
+  {
+    "name": "Neo-Rococo",
+    "prefix": "Neo-Rococo",
+    "suffix": "curved forms, naturalistic ornamentation, elaborate, decorative, gaudy",
+    "negative": "ugly, deformed, noisy, blurry, low contrast"
+  },
+  {
+    "name": "Neo_Baroque",
+    "prefix": "Change to neo-baroque style with contemporary twist on classical ornate details, modern materials, dramatic contrasts, focusing on elaborate decorative elements over minimalist simple or flat modern design, while keeping the original layout",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Neoclassicism",
+    "prefix": "Neoclassicism",
+    "suffix": "ancient Rome and Greece inspired, idyllic, sober colors",
+    "negative": "ugly, deformed, noisy, blurry, low contrast"
+  },
+  {
+    "name": "Neon Synthwave Shooter",
+    "prefix": "",
+    "suffix": "electric purple‑cyan palette, wireframe landscapes, glowing grid floor, chrome weaponry, lens flare",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, nsfw, earthy tones, realistic textures"
+  },
+  {
+    "name": "Neo‑Noir Detective Panel",
+    "prefix": "",
+    "suffix": "cinematic noir comic panel, moody chiaroscuro, selective red accents, rain‑soaked streets, grainy texture",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, nsfw, bright pastel, cel‑shade"
+  },
+  {
+    "name": "Norse Viking Culture",
+    "prefix": "transform to Norse Viking setting, wooden longhouses with dragon head decorations, warriors in fur cloaks and iron helmets, rune stone monuments, viking longships, Thor's hammer symbols, mead halls with carved pillars, northern lights sky, fjord landscape, norse mythology elements",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Oil Painting",
+    "prefix": "modelshoot style, (extremely detailed CG unity 8k wallpaper), professional majestic oil painting by Ed Blinkey, Atey Ghailan, Studio Ghibli, by Jeremy Mann, Greg Manchess, Antonio Moro, trending on ArtStation, trending on CGSociety, Intricate, High Detail, Sharp focus, dramatic, photorealistic painting art by midjourney and greg rutkowski",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Oil_Painting_Classical",
+    "prefix": "Transform to classical oil painting with thick visible brushstrokes, rich paint texture, canvas grain, warm color palette, chiaroscuro lighting, emphasizing traditional painting techniques over digital or flat vector styles, while maintaining the same composition",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Oil_Painting_Impressionist",
+    "prefix": "Change to impressionist oil painting with loose brushwork, dappled light, color mixing on canvas, outdoor lighting effects, focusing on painterly qualities rather than photorealistic precision, while keeping the exact same subject positioning",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "One Piece Style",
+    "prefix": "convert to One Piece anime style with wildly exaggerated proportions, unique character shapes, bright saturated colors, cartoonish expressions, pirate adventure theme, Eiichiro Oda's no-rules character design, extreme body variations",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Op Art",
+    "prefix": "Op Art",
+    "suffix": "optical illusion, abstract, geometric pattern, impression of movement",
+    "negative": "ugly, deformed, noisy, blurry, low contrast"
+  },
+  {
+    "name": "Origami Paper Art",
+    "prefix": "transform into origami paper art, precisely folded colored paper, sharp geometric edges and creases, traditional Japanese paper folding aesthetic, clean angular forms, visible paper texture, modular construction, delicate paper engineering, cast shadows showing depth",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Original Photo Style",
+    "prefix": "Photorealistic, Hyperrealistic, Hyperdetailed, analog style, hip cocked, demure, low cut, black lace, detailed skin, matte skin, soft lighting, subsurface scattering, realistic, heavy shadow, masterpiece, best quality, ultra realistic, 8k, golden ratio, Intricate, High Detail, film photography, soft focus",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Ornate and Intricate",
+    "prefix": "Ornate and Intricate",
+    "suffix": "decorative, highly detailed, elaborate, ornate, intricate",
+    "negative": "ugly, deformed, noisy, blurry, low contrast"
+  },
+  {
+    "name": "Overwatch",
+    "prefix": "",
+    "suffix": "stylized Pixar‑quality hero shooter, vibrant palette, dynamic action pose, glossy 3D surfaces, sharp rim‑light",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, nsfw, muddy colors, photorealistic grain"
+  },
+  {
+    "name": "Painted Comic Style",
+    "prefix": "convert to painted comic style with rich painterly textures, soft edge rendering, atmospheric color depth, and fine art painting techniques",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Painting (3d)",
+    "prefix": "rutkowski, intricate digital art, soothing tones, (cartoon:0.3), art, epic realistic, faded, neutral colors, (hdr:1.4), (muted colors:1.4), (artstation:1.3), dramatic, (technicolor:0.9), cinematic, (detailed:1.3)",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Painting (vivid)",
+    "prefix": "(pascal campion:0.38), vivid colors, (painting art:0.06), [eclectic:clear:0.8]",
+    "suffix": "",
+    "negative": "vignette, cinematic, grayscale, bokeh, blurred, depth of field"
+  },
+  {
+    "name": "Paper Cutout Platformer",
+    "prefix": "",
+    "suffix": "layered construction‑paper shapes, visible paper fibers, drop‑shadow edges, playful craft aesthetic",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, nsfw, metallic textures, photorealistic"
+  },
+  {
+    "name": "Paper-cut",
+    "prefix": "(paper-cut craft:1.2)",
+    "suffix": "detailed",
+    "negative": ""
+  },
+  {
+    "name": "Pebble Art",
+    "prefix": "a sculpture made of peebles",
+    "suffix": "Pebble art style, natural materials, textured surfaces, balanced compositions, organic forms, harmonious arrangements, tactile and 3D effects, beach-inspired aesthetic, creative storytelling, artisanal craftsmanship",
+    "negative": "non-natural materials, lack of textured surfaces, imbalanced compositions, absence of organic forms, non-tactile appearance"
+  },
+  {
+    "name": "Pen and Ink Illustration",
+    "prefix": "convert to pen and ink illustration with detailed cross-hatching, stippling textures, varied line weights, and technical precision",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Pencil Sketch Drawing",
+    "prefix": "Pencil Sketch Drawing",
+    "suffix": "black and white drawing, graphite drawing",
+    "negative": "ugly, deformed, noisy, blurry, low contrast"
+  },
+  {
+    "name": "Pencil_Sketch",
+    "prefix": "Transform to pencil sketch with natural graphite lines, cross-hatching, visible paper texture, smudging effects, emphasizing hand-drawn graphite work over colorful painted or digital styles, while maintaining the same pose and composition",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Peppa Pig Style",
+    "prefix": "convert to Peppa Pig 2D cartoon style with sideways profile view, both eyes visible on one side of face, extremely simple geometric shapes, flat solid colors with no shading, minimalist British preschool animation aesthetic, picasso-like abstract character design",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Perfect_Portrait 1",
+    "prefix": "looking straight",
+    "suffix": "(by ross tran:1.2), masterpiece, best quality, hyper detailed, cinematic light, intricate details, highres, 8k, extremely detailed, 8k uhd, dslr, soft lighting, high quality, shallow depth of field, natural light, perfect face",
+    "negative": ""
+  },
+  {
+    "name": "Perfect_Portrait 2",
+    "prefix": "",
+    "suffix": "",
+    "negative": "(big breasts, voluptuous, giant breasts:1.2), b&w, grayscale, bad anatomy, deformed, disconnected limb, disfigured, extra arms, extra digits, extra fingers, extra hands, extra legs, extra limbs, fused arms, fused digit, fused fingers, fused hands, fused legs, fused limbs, malformed arms, malformed digits, malformed feet, malformed hands, malformed legs, malformed limbs, mangled, missing arm, missing digits, missing feet, missing fingers, missing hands, missing legs, missing limbs, morbid, mutilated"
+  },
+  {
+    "name": "Persona 5",
+    "prefix": "",
+    "suffix": "bold anime‑noir style, stark black‑white‑red palette, halftone textures, dynamic comic perspective, stylish UI motifs",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, nsfw, muddy colors, realistic shading"
+  },
+  {
+    "name": "Phineas and Ferb Style",
+    "prefix": "convert to Phineas and Ferb 2D cartoon style with extreme geometric character designs, triangle-shaped heads, rectangle shapes, bright summer colors with orange and blue dominance, clean angular lines, geometric shapes integrated into backgrounds, inventive mechanical elements",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Photography",
+    "prefix": "Photorealistic, Hyperrealistic, Hyperdetailed, analog style, hip cocked, demure, low cut, black lace, detailed skin, pores, smirk, smiling eyes, matte skin, outdoor cafe, soft lighting, subsurface scattering, realistic, heavy shadow, masterpiece, best quality, ultra realistic, 8k, golden ratio, Intricate, High Detail, film photography, soft focus",
+    "suffix": "",
+    "negative": "B&W, logo, Glasses, Watermark, bad artist, blur, blurry, text, 3d, bad art, poorly drawn, disfigured, deformed, extra limbs, ugly hands, extra fingers, canvas frame, cartoon, weird colors, duplicate, morbid, mutilated, out of frame, mutated hands, poorly drawn hands, poorly drawn face, mutation, ugly, bad anatomy, bad proportions, cloned face, gross proportions, malformed limbs, missing arms, missing legs, extra arms, extra legs, fused fingers, too many fingers, long neck, Photoshop, video game, tiling, poorly drawn feet, mutated, cross-eye, body out of frame, 3d render"
+  },
+  {
+    "name": "Photorealism_v2",
+    "prefix": "RAW candid cinema, woman, studio, 16mm, ((color graded portra 400 film)) ((remarkable color)), (ultra realistic), textured skin, remarkable detailed pupils, ((realistic dull skin noise)), ((visible skin detail)), ((skin fuzz)), (dry skin) shot with cinematic camera",
+    "suffix": "",
+    "negative": "B&W, logo, Watermark, bad artist, blur, blurry, text, 3d, bad art, poorly drawn, disfigured, deformed, extra limbs, ugly hands, extra fingers, canvas frame, cartoon, weird colors, duplicate, morbid, mutilated, out of frame, mutated hands, poorly drawn hands, poorly drawn face, mutation, ugly, bad anatomy, bad proportions, cloned face, gross proportions, malformed limbs, missing arms, missing legs, extra arms, extra legs, fused fingers, too many fingers, long neck, Photoshop, video game, tiling, poorly drawn feet, mutated, cross-eye, body out of frame, 3d render"
+  },
+  {
+    "name": "Photorealistic_Studio",
+    "prefix": "Transform to photorealistic studio photography with professional lighting, sharp focus, high detail, perfect skin, emphasizing camera-quality precision over artistic stylized or painted sketched abstract representation, while maintaining the same facial features",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Picasso Cubism",
+    "prefix": "convert to Picasso cubist style with geometric fragmentation, multiple simultaneous viewpoints, angular abstracted forms, muted earth tone palette, analytical cubism technique, flattened perspective planes",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Picasso Style",
+    "prefix": "convert to Picasso analytical cubist painting with geometric fragmentation, multiple simultaneous viewpoints, and muted earth tones",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Pixar 3D Style",
+    "prefix": "convert to Pixar 3D animation style with smooth rounded characters, subsurface scattering on skin, warm cinematic lighting, RenderMan quality rendering, expressive character animation with squash and stretch, detailed hair and cloth simulation",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Pixel Art",
+    "prefix": "convert to pixel art game style with visible pixel blocks, limited color palette, dithering for shading, 16-bit era graphics, sprite-based character design, indexed colors without anti-aliasing, retro game aesthetic",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Plush Toy Transformation",
+    "prefix": "transform into soft plush toy version, fuzzy fabric textures, visible stitched seams, button eyes, simplified cuddly proportions, stuffed animal aesthetic with cotton filling, sewn-on details, felt accessories, toy-like charm, handmade quality with slight imperfections",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Pokemon_Style",
+    "prefix": "Change to Pokemon game art style with anime-inspired characters, bright colors, fantasy creatures, focusing on Japanese creature collection game aesthetics over realistic dark or serious human-only muted themes, while keeping the same positioning",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Ponyo Style",
+    "prefix": "convert to Ponyo Studio Ghibli style with watercolor aesthetic, bright ocean colors, fluid organic shapes, childlike character designs, hand-drawn animation with no CGI, magical underwater atmosphere, warm rainbow color palette",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Pop Art 2",
+    "prefix": "Pop Art",
+    "suffix": "vivid colors, flat color, 2D, strong lines",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, photo, realistic"
+  },
+  {
+    "name": "Pop_Art",
+    "prefix": "Transform to pop art style with bright colors, commercial imagery, bold graphics, mass culture references, emphasizing vibrant consumer culture aesthetics over classical traditional or muted academic styles, while maintaining the same composition",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Portal",
+    "prefix": "",
+    "suffix": "clean white test‑chamber, minimalistic sci‑fi panels, stark lighting, glossy surfaces, playful signage",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, nsfw, grunge, gritty textures"
+  },
+  {
+    "name": "Post-Apocalyptic World",
+    "prefix": "transform to post-apocalyptic wasteland, crumbling buildings with exposed rebar, nature reclaiming urban spaces, rust and decay on all metal, makeshift survivor camps, toxic sky with dust particles, abandoned vehicles, overgrown vegetation breaking through concrete, scavenged materials, desolate atmosphere",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Premium Digital Illustration",
+    "prefix": "convert to premium digital illustration with ultra high quality, meticulous attention to detail, sophisticated color harmony, flawless rendering, and gallery-worthy professional finish",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Princess Mononoke Style",
+    "prefix": "convert to Princess Mononoke Studio Ghibli style with detailed forest backgrounds, nature spirit designs, earth tone color palette, traditional Japanese aesthetic, hand-drawn animation quality, mystical atmosphere with spiritual elements",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Professional photo",
+    "prefix": "(dark shot:1.2), 80mm",
+    "suffix": "soft light, sharp, exposure blend, medium shot, bokeh, (hdr:1.3), high contrast, (cinematic:0.9), (muted colors, dim colors, soothing tones:1.15), (hyperdetailed:1.2), (noir:0.4)",
+    "negative": "bw, grayscale, dof, neon, {prompt}, over saturated"
+  },
+  {
+    "name": "Prop/Weapon Concept Art",
+    "prefix": "transform objects in image into detailed prop or weapon concept art, enhance existing items with ornamental details, material breakdowns, functional mechanisms, realistic wear patterns, cultural decorations, maintain original composition while elevating objects to game-ready prop concepts with professional presentation",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "PS1 Graphics",
+    "prefix": "convert to authentic lowpoly 3D graphics from 1996. Low primitive blocky details, visible aliasing with jagged edges, triangulated, no lighting, muted desaturated simple shading. 320x240 resolution aesthetic",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Psychedelic Bullet Hell",
+    "prefix": "",
+    "suffix": "vibrant fractal patterns, glowing rainbow particles, swirling motion blur, trippy shooter chaos",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, nsfw, muted palette, realistic shading"
+  },
+  {
+    "name": "Ralph McQuarrie Style",
+    "prefix": "convert to Ralph McQuarrie concept art style, Star Wars production design aesthetic, traditional painted quality, muted color palette with atmospheric haze, dramatic sky compositions, heroic character proportions, classic sci-fi matte painting technique",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Red Dead Redemption Poster Style",
+    "prefix": "convert to Red Dead Redemption poster art style, vintage western movie poster aesthetic, sepia-toned with weathered parchment texture, dramatic character composition like classic western films, sunset silhouettes, painted illustration technique inspired by Drew Struzan, aged paper effects with yellowing, layered narrative elements, dusty amber color grading, 1960s-70s western movie poster design",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Red Dead Redemption 2",
+    "prefix": "",
+    "suffix": "cinematic Wild West realism, detailed frontier textures, dusty trails, golden‑hour lighting, atmospheric haze",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, nsfw, bright neon, cel‑shade"
+  },
+  {
+    "name": "Renaissance",
+    "prefix": "Transform to Renaissance art style with perfect proportions, classical beauty, sfumato technique, religious themes, emphasizing Italian master painting techniques over modern abstract or rough secular styles, while maintaining the same pose",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Renaissance Art",
+    "prefix": "convert to Italian Renaissance painting with classical triangular composition, sfumato technique, rich earth tones, and chiaroscuro lighting",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Retro FMV Adventure",
+    "prefix": "",
+    "suffix": "90s VHS scanlines, slight color bleed, live‑action characters composited on low‑res backdrops, nostalgic UI",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, nsfw, modern HD clarity, smooth gradients"
+  },
+  {
+    "name": "Retro futuristic",
+    "prefix": "",
+    "suffix": "art by angus mckie",
+    "negative": ""
+  },
+  {
+    "name": "Retro LCD Handheld",
+    "prefix": "",
+    "suffix": "monochrome green screen pixel graphics, thick bezel frame, ghosting trail, nostalgic handheld game vibe",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, nsfw, high‑color, photorealistic"
+  },
+  {
+    "name": "Retro Pixel Platformer",
+    "prefix": "",
+    "suffix": "2D 8‑bit pixel art, NES palette, crisp limited colors, simple shading, nostalgic arcade screenshot",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, nsfw, photorealistic, realistic textures, gradients"
+  },
+  {
+    "name": "Retro_50s",
+    "prefix": "Change to 1950s retro style with pastel colors, atomic age design, mid-century modern, focusing on post-war optimistic design over contemporary digital or futuristic current trend representation, while keeping the same positioning",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Retro_80s",
+    "prefix": "Transform to 1980s retro style with neon colors, geometric patterns, chrome details, synthwave aesthetics, emphasizing decade-specific design over modern muted or organic natural current trends, while maintaining character identity",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Rick and Morty Style",
+    "prefix": "convert to Rick and Morty 2D cartoon style with oversized white orb eyes, squiggly wavy pupils, wobbly rough outlines, drooling characters, muted sci-fi color palette with portal greens, crude imperfect linework, grotesque character features",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Risograph Print Style",
+    "prefix": "convert to risograph print style with limited fluorescent color palette, visible grain texture, slight misregistration between color layers, halftone dot patterns, trendy duplicator printing aesthetic with intentional imperfections",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Rococo",
+    "prefix": "Rococo",
+    "suffix": "flamboyant, pastel colors, curved lines, elaborate detail",
+    "negative": "ugly, deformed, noisy, blurry, low contrast"
+  },
+  {
+    "name": "Sailor Moon Style",
+    "prefix": "convert to Sailor Moon 90s shoujo anime style with huge expressive eyes, elongated elegant proportions, flowing hair, sailor uniform, pastel colors with pink ribbons, sparkles and star effects, transformation sequence aesthetic, classic magical girl design",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Salvador Dali Style",
+    "prefix": "convert to Salvador Dali surrealist painting with melting clocks like The Persistence of Memory, Catalonian desert landscapes, dreamlike imagery, and photorealistic detail",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "SDXL_ConceptArt_Default_1",
+    "prefix": "",
+    "suffix": "masterpiece illustration, professional top quality concept art, trending on ArtStation.com, featured at CGSociety.com, gorgeous mood, perfect composition, soothing tones, deep colors, intricate, high details, sharp focus, CGI",
+    "negative": "canvas frame, out of frame, cartoon, 3d, 3D render, totem pole effect, poorly drawn, bad art"
+  },
+  {
+    "name": "Shaun the Sheep Style",
+    "prefix": "convert to Shaun the Sheep stop-motion claymation style with plasticine texture, woolly sheep characters with black faces and legs, visible fingerprints and modelling marks, Aardman animation aesthetic, handcrafted stop-motion quality with textured surfaces",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Shoujo Manga Style",
+    "prefix": "convert to shoujo manga style with huge sparkling eyes with galaxy reflections, flowing elegant hair, decorative flower and rose backgrounds, pastel color scheme, romantic bubble effects, lanky graceful proportions, dreamy atmosphere",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Shounen Manga Style",
+    "prefix": "convert to shounen manga style with dynamic action poses, speed lines showing motion trajectory, impact effects with angular shapes, muscular character builds, determined facial expressions, high contrast with bold colors, power aura effects",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Silhouette Art",
+    "prefix": "Silhouette Art",
+    "suffix": "high contrast, well defined",
+    "negative": "ugly, deformed, noisy, blurry, low contrast"
+  },
+  {
+    "name": "Simple Vector Art",
+    "prefix": "Simple Vector Art",
+    "suffix": "2D flat, simple shapes, minimalistic, professional graphic, flat color, high contrast",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, 3D, photo, realistic"
+  },
+  {
+    "name": "Simple_Body_Negative",
+    "prefix": "",
+    "suffix": "",
+    "negative": "longbody, lowres, bad anatomy, bad hands, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality"
+  },
+  {
+    "name": "Simple_Negative",
+    "prefix": "",
+    "suffix": "",
+    "negative": "ugly, tiling, poorly drawn hands, poorly drawn feet, poorly drawn face, out of frame, extra limbs, disfigured, deformed, body out of frame, blurry, bad anatomy, blurred, watermark, grainy, signature, cut off, draft"
+  },
+  {
+    "name": "Sketch",
+    "prefix": "Sketch, Manga Sketch, Pencil drawing, Black and White, Manga, Manga style, Low detail, Line art, vector art, Monochromatic, by katsuhiro otomo and masamune shirow and studio ghilibi and yukito kishiro",
+    "suffix": "",
+    "negative": "pencil, logo, Glasses, Watermark, bad artist, blur, blurry, text, 3d, bad art, poorly drawn, disfigured, deformed, extra limbs, ugly hands, extra fingers"
+  },
+  {
+    "name": "Sketchup",
+    "prefix": "Sketchup",
+    "suffix": "CAD, professional design",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, photo, photograph"
+  },
+  {
+    "name": "Skin Enhancer 1",
+    "prefix": "detailed skin texture, (blush:0.5), (goosebumps:0.5), subsurface scattering",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Skin Enhancer 2",
+    "prefix": "detailed skin texture, (blush:0.2), (goosebumps:0.3), subsurface scattering",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Skyrim",
+    "prefix": "",
+    "suffix": "high‑fantasy Nordic landscape, rugged mountains, ancient stone ruins, swirling fog, painterly concept art",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, nsfw, futuristic neon, harsh gradients"
+  },
+  {
+    "name": "SmoothFace",
+    "prefix": "Anime style photo, Manga style, Digital art, glow effects, Hand drawn, render, 8k, octane render, cinema 4d, blender, dark, atmospheric 4k ultra detailed, cinematic sensual, Sharp focus, humorous illustration, hyperrealistic, big depth of field, Masterpiece, colors, 3d octane render, 4k, concept art, trending on artstation, Vivid colors",
+    "suffix": "",
+    "negative": "logo, dog, Glasses, Watermark, bad artist, helmet, blur, blurry, text, b&w, 3d, bad art, poorly drawn, disfigured, deformed, extra limbs, ugly hands, extra fingers"
+  },
+  {
+    "name": "Soft render",
+    "prefix": "convert to deluxe children's book illustration with soft puffy textures, warm pastel colors, gentle characters, whimsical storytelling details, and high-quality painterly finish, without outline strokes",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Sparth (Nicolas Bouvier) Style",
+    "prefix": "convert to Sparth concept art style, geometric mega-structures, minimalist sci-fi architecture, monochromatic color scheme with subtle accents, massive scale with tiny human figures, atmospheric fog and depth, Halo-inspired environmental design, structural abstraction",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Splatoon",
+    "prefix": "",
+    "suffix": "bright ink‑splatter punk style, candy colors, cel‑shading, graffiti patterns, energetic composition",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, nsfw, photorealistic, muted tones"
+  },
+  {
+    "name": "SpongeBob SquarePants Style",
+    "prefix": "convert to SpongeBob SquarePants 2D cartoon style with underwater theme, bright yellow sponge character with porous texture, deep ocean blue backgrounds, bold black outlines, exaggerated facial expressions, bubble effects, tropical colors with Hawaiian Tiki design influences",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Stained Glass Window",
+    "prefix": "transform into stained glass window art, brilliant jewel-toned colored glass panels, black lead lines separating segments, translucent light shining through, cathedral window aesthetic, religious or decorative motifs, traditional glasswork craftsmanship, luminous backlit effect",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Star Wars Style",
+    "prefix": "convert to Star Wars space opera style with epic wide shots of alien worlds, used lived-in aesthetic not shiny and new, lightsaber glow effects, space battles with practical model aesthetics, binary sunset lighting",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Stardew Valley",
+    "prefix": "",
+    "suffix": "cozy 16‑bit pixel art farm scene, pastel palette, simple shading, wholesome aesthetic",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, nsfw, hi‑res photorealistic"
+  },
+  {
+    "name": "Steampunk 2",
+    "prefix": "Steampunk",
+    "suffix": "retrofuturistic science fantasy, steam-powered tech, vintage industry, gears, neo-victorian",
+    "negative": "ugly, deformed, noisy, blurry, low contrast"
+  },
+  {
+    "name": "Steampunk Hidden Object",
+    "prefix": "",
+    "suffix": "cluttered steampunk workshop, sepia tint, intricate gears and brass details, painterly style",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, nsfw, sci‑fi neon, minimalist"
+  },
+  {
+    "name": "Steampunk Transformation",
+    "prefix": "transform to steampunk alternate history, brass gears and copper pipes everywhere, steam-powered machinery, Victorian architecture with industrial modifications, airships in sky, people wearing goggles and top hats, clockwork mechanisms visible, sepia-toned atmosphere, coal smoke and steam",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Steampunk_Mechanical",
+    "prefix": "Change to steampunk machinery with visible clockwork, bronze gears, leather details, wood paneling, coal smoke, featuring traditional mechanical engineering rather than electric or digital components, while preserving the original layout",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Steampunk_Victorian",
+    "prefix": "Transform to steampunk aesthetic with brass mechanisms, copper pipes, steam pressure gauges, Victorian architecture, gear systems, emphasizing mechanical clockwork over modern digital elements, while maintaining the same facial features and pose",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Steven Universe Style",
+    "prefix": "convert to Steven Universe 2D cartoon style with soft rounded character shapes, unique body proportions and silhouettes, pastel color palette with gem-inspired hues, smooth flowing lines, star and gem motifs, warm atmospheric lighting, diverse character designs",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Sticker Designs",
+    "prefix": "Vector Art Stickers",
+    "suffix": "professional vector design, sticker designs, Sticker Sheet",
+    "negative": "ugly, deformed, noisy, blurry, low contrast"
+  },
+  {
+    "name": "Studio Ghibli Style",
+    "prefix": "convert to Studio Ghibli style with hand-painted watercolor backgrounds, clean character lines with subtle expressions, dominant nature greens, soft organic color transitions, detailed environmental storytelling, traditional animation aesthetic",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Studio Portrait",
+    "prefix": "make as professional studio portrait with three-point lighting, seamless backdrop, natural skin tones, and sharp focus",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Suprematism",
+    "prefix": "Suprematism",
+    "suffix": "abstract, limited color palette, geometric forms",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, realistic"
+  },
+  {
+    "name": "Surrealism",
+    "prefix": "Change to surrealist style with dreamlike imagery, impossible combinations, subconscious elements, focusing on fantastic impossible scenes over realistic logical or conventional straightforward imagery, while preserving the basic structure",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Syd Mead Style",
+    "prefix": "convert to Syd Mead concept art style, retro-futuristic vehicle design, streamlined chrome surfaces, integrated architecture, marker rendering technique with airbrushed gradients, sunset lighting with neon accents, blade runner aesthetic, visionary industrial design",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Synthwave",
+    "prefix": "Change to synthwave style with neon grids, retro-futuristic design, Miami Vice aesthetics, focusing on electronic music culture visuals over organic natural or non-electronic muted realistic representation, while keeping the same composition",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "TellTale",
+    "prefix": "Arcane Style, Borderlands style, Telltale Games style, Oil painting, Simple colors, low detail, Vivid colors, Defined lines, defined edges, Digital art, Cartoon look, Cartoon style, Sharp shadows, Dark",
+    "suffix": "",
+    "negative": "logo, Glasses, Watermark, bad artist, blur, blurry, text, b&w, 3d, bad art, poorly drawn, disfigured, deformed, extra limbs, ugly hands, extra fingers, canvas frame, cartoon, weird colors, duplicate, morbid, mutilated, out of frame, mutated hands, poorly drawn hands, poorly drawn face, mutation, ugly, bad anatomy, bad proportions, cloned face, gross proportions, malformed limbs, missing arms, missing legs, extra arms, extra legs, fused fingers, too many fingers, long neck, Photoshop, video game, tiling, poorly drawn feet, mutated, cross-eye, body out of frame, 3d render"
+  },
+  {
+    "name": "Terragen",
+    "prefix": "Terragen",
+    "suffix": "beautiful massive landscape, epic scenery",
+    "negative": "ugly, deformed, noisy, blurry, low contrast"
+  },
+  {
+    "name": "The Amazing World of Gumball Style",
+    "prefix": "convert to Amazing World of Gumball mixed-media style with simple 2D cartoon characters overlaid on photographic backgrounds, bright saturated character colors, multiple animation techniques combined, blue cat-like protagonist, intentional stylistic contrast between elements",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "The Legend of Zelda BOTW",
+    "prefix": "",
+    "suffix": "anime‑inspired cel‑shading, painterly open‑world vista, vivid Hyrule colors, swirling brush strokes",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, nsfw, photorealistic, gritty textures"
+  },
+  {
+    "name": "The Nightmare Before Christmas Style",
+    "prefix": "convert to Nightmare Before Christmas stop-motion puppet style with physical puppet construction visible, replacement animation aesthetic, elongated gothic proportions with metal armature poses, hand-painted textures and engraved details, limited grayed-down color palette, dramatic three-point lighting creating expressionistic shadows, miniature set with full dimensional depth",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "The Simpsons Style",
+    "prefix": "convert to The Simpsons 2D cartoon style with yellow skin tones, overbite character design, thick black outlines, and flat colors",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "The Witcher 3",
+    "prefix": "",
+    "suffix": "gritty Slavic dark‑fantasy, painterly concept art, rich muted colors, dramatic atmosphere",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, nsfw, bright neon, cel‑shade"
+  },
+  {
+    "name": "The_Witcher_Style",
+    "prefix": "Change to The Witcher 3 game art style with medieval fantasy, dark atmosphere, realistic textures, focusing on CD Projekt's fantasy RPG aesthetics over modern bright or technological cheerful futuristic representation, while preserving the original positioning",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Thermal_Imaging",
+    "prefix": "Change to thermal imaging style with heat signature colors, temperature gradients, scientific visualization, focusing on heat-based false color imaging over visible light or normal photographic realistic color representation, while preserving the same layout",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Tilt-Shift Photography",
+    "prefix": "create tilt-shift photography with miniature diorama effect, selective focus blur, high saturation, and toy-like appearance",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Todd McFarlane Style",
+    "prefix": "convert to Todd McFarlane Spawn style with intricate organic details, flowing capes and chains, dark atmospheric colors, and horror-influenced design",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Toybox Diorama",
+    "prefix": "",
+    "suffix": "plastic miniature world, tilt‑shift focus, saturated toy colors, glossy surfaces, playful set pieces",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, nsfw, gritty textures, muted tones"
+  },
+  {
+    "name": "Tranquil Relaxing Atmosphere",
+    "prefix": "Tranquil Relaxing Atmosphere",
+    "suffix": "calming style, soothing colors, peaceful, idyllic",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, oversaturated"
+  },
+  {
+    "name": "Transparency",
+    "prefix": "fully transparent",
+    "suffix": "concept design, award winning, polycarbonate, pcb, wires, electronics, fully visible mechanical components",
+    "negative": ""
+  },
+  {
+    "name": "Ukiyo-e",
+    "prefix": "convert to Ukiyo-e Japanese woodblock print with flat color areas, bold black outlines, traditional wave patterns, and limited color palette",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Ukiyo‑e Side‑Scroller",
+    "prefix": "",
+    "suffix": "Edo‑period woodblock texture, flat perspective waves and clouds, limited muted palette, flowing outlines",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, nsfw, glossy gradients, modern CG"
+  },
+  {
+    "name": "Underground Comix Style",
+    "prefix": "convert to underground comix style with rough heavily crosshatched pen and ink linework, exaggerated cartoon features, thick rounded lettering, raw DIY aesthetic, countercultural themes, 1920s cartoon influence",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Underwater World",
+    "prefix": "transform to underwater submerged environment, blue-green water tint throughout, caustic light patterns, floating particles and debris, coral growing on structures, schools of fish, seaweed and kelp, bubbles rising, filtered sunlight from above, underwater fog limiting visibility",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Using this style create [prompt]",
+    "prefix": "Using this style create [prompt]",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Valorant",
+    "prefix": "",
+    "suffix": "stylized tactical shooter key art, sleek cel shading, neon accent colors, dynamic composition, abstract backgrounds",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, nsfw, muddy, photo‑realistic"
+  },
+  {
+    "name": "Van_Gogh_Style",
+    "prefix": "Transform to Van Gogh painting style with swirling brushstrokes, vibrant colors, emotional intensity, textured paint, emphasizing expressive post-impressionist technique over smooth flat or emotionless digital styles, while maintaining the original subject",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Vaporwave",
+    "prefix": "Transform to vaporwave aesthetic with neon pink and blue colors, retro computer graphics, 80s nostalgia, emphasizing internet culture retro-futurism over modern realistic or muted current non-nostalgic representation, while maintaining the original layout",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Vaporwave Aesthetic",
+    "prefix": "convert to vaporwave aesthetic, pink and purple gradient background, Greek statue with glitch effects, palm trees silhouettes, VHS scan lines, Windows 95 interface elements, nostalgic digital collage, neon sunset colors, surreal corporate imagery",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Vaporwave Racer",
+    "prefix": "",
+    "suffix": "neon sunset gradient, chrome grids, outrun horizon, 80s retro‑futuristic cars, stylized reflections",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, nsfw, earthy tones, grainy film"
+  },
+  {
+    "name": "Vector Illustrations",
+    "prefix": "Vector art, Vivid colors, Clean lines, Sharp edges, Minimalist, Precise geometry, Simplistic, Smooth curves, Bold outlines, Crisp shapes, Flat colors, Illustration art piece, High contrast shadows, Technical illustration, Graphic design, Vector graphics, High contrast, Precision artwork, Linear compositions, Scalable artwork, Digital art",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Vehicle/Mech Concept Art",
+    "prefix": "transform existing elements into futuristic vehicle or mech concept art, convert subjects to mechanical forms with detailed hard surface design, add panel lines, hydraulics, thrusters, industrial color scheme with warning markings, weathered metal surfaces, maintain original composition while mechanizing all elements, production-ready technical illustration",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Vibrant Rim Light",
+    "prefix": "Vibrant Rim Light",
+    "suffix": "bright rim light, high contrast, bold edge light",
+    "negative": "ugly, deformed, noisy, blurry, low contrast"
+  },
+  {
+    "name": "Victorian Era",
+    "prefix": "convert to Victorian era 1890s with ornate decorative details, layered rich textures, dark jewel tones, and formal composition",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Vintage_Sepia",
+    "prefix": "Change to vintage sepia photography with aged paper texture, faded edges, brown tones, scratches, focusing on historical photographic aesthetics over modern colorful or digital pristine sharp representation, while preserving the same subject positioning",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Vintage_Victorian",
+    "prefix": "Transform to Victorian vintage style with ornate details, dark woods, rich fabrics, elaborate patterns, emphasizing 19th century decorative aesthetics over modern minimalist or simple clean contemporary design, while maintaining the original layout",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Visual Novel Portrait",
+    "prefix": "",
+    "suffix": "anime character portrait, soft cel shading, pastel background gradient, clean composition",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, nsfw, gritty, harsh shadows"
+  },
+  {
+    "name": "Volumetric Lighting",
+    "prefix": "Volumetric Lighting",
+    "suffix": "light depth, dramatic atmospheric lighting",
+    "negative": "ugly, deformed, noisy, blurry, low contrast"
+  },
+  {
+    "name": "Watercolor",
+    "prefix": "convert to watercolor artwork with translucent washes, soft color bleeds, and visible paper texture",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Watercolor 2",
+    "prefix": "Watercolor style painting",
+    "suffix": "visible paper texture, colorwash, watercolor",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, photo, realistic"
+  },
+  {
+    "name": "Watercolor Puzzle Adventure",
+    "prefix": "",
+    "suffix": "loose watercolor washes, soft bleeding edges, hand‑inked outlines, airy dreamlike ambience",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, nsfw, opaque fill, sharp 3D renders"
+  },
+  {
+    "name": "Watercolor_Soft",
+    "prefix": "Transform to soft watercolor painting with transparent washes, bleeding colors, paper texture, gentle edges, emphasizing fluid water-based media over thick opaque paint or digital techniques, while maintaining the original character features",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Watercolor_Vibrant",
+    "prefix": "Change to vibrant watercolor with bold color bleeds, wet-on-wet technique, color gradients, showcasing bright flowing pigments rather than monochrome or digital effects, while preserving facial features and expressions",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Wes Anderson Style",
+    "prefix": "convert to Wes Anderson style with perfect symmetrical composition, centered framing, distinct pastel color palette, planimetric camera angle, vintage props and details, dollhouse-like staging, whimsical storybook aesthetic",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Whimsical and Playful",
+    "prefix": "Whimsical and Playful",
+    "suffix": "imaginative, fantastical, bright colors, stylized, happy",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, drab, boring, moody"
+  },
+  {
+    "name": "Winter Transformation",
+    "prefix": "transform scene to deep winter, heavy snow coverage on all surfaces, icicles hanging from structures, frost on windows, bare deciduous trees, people in winter coats and scarves, frozen water features, grey overcast sky, cold blue lighting, visible breath in cold air",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Winx Club Style",
+    "prefix": "convert to Winx Club magical girl style with fairy wings, fashionable outfits, elongated proportions with long legs, bright saturated colors, sparkle and glitter effects everywhere, Italian animation with anime influence, transformation magic aesthetic",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Woodcut Print",
+    "prefix": "convert to woodcut print style with carved line textures, high contrast black and white, visible wood grain, and handmade printing aesthetic",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "World of Warcraft",
+    "prefix": "",
+    "suffix": "hand‑painted fantasy style, bold outlines, exaggerated proportions, rich saturated colors, atmospheric mist",
+    "negative": "ugly, deformed, noisy, blurry, low contrast, nsfw, realistic, washed out"
+  },
+  {
+    "name": "X_Ray_Vision",
+    "prefix": "Transform to x-ray imaging style with skeletal structures visible, transparent surfaces, medical imaging aesthetics, emphasizing radiographic see-through visualization over opaque normal vision or colorful surface detail representation, while maintaining subject positioning",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Zelda: Breath of the Wild",
+    "prefix": "convert to Zelda Breath of the Wild game cel-shaded style with painterly gouache textures, soft edges, distinct environmental color palettes, orange glowing shrines, atmospheric perspective, watercolor-inspired landscapes",
+    "suffix": "",
+    "negative": ""
+  },
+  {
+    "name": "Zelda_BOTW_Style",
+    "prefix": "Transform to Legend of Zelda Breath of the Wild art style with cel-shaded graphics, fantasy landscapes, adventure aesthetics, emphasizing Nintendo's adventure game style over realistic modern urban or photographic serious themes, while maintaining composition",
+    "suffix": "",
+    "negative": ""
+  }
+]

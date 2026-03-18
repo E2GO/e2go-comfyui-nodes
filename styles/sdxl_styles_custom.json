@@ -1,0 +1,206 @@
+[
+  {
+    "name": "Amateur Selfie",
+    "prefix": "",
+    "suffix": "as an ((amateur selfie)) photo shoot, taking a selfie shot",
+    "negative": "professional, studio, high-end camera, posed"
+  },
+  {
+    "name": "Aquarel Watercolor",
+    "prefix": "",
+    "suffix": "in shiny aquarel painting style on granular paper, with aquarel splatters",
+    "negative": "digital, sharp edges, photorealistic, 3d render"
+  },
+  {
+    "name": "Baroque Caravaggio",
+    "prefix": "",
+    "suffix": "in a golden-hour baroque oil painting, Caravaggio lighting, deep shadows, glowing highlights, cinematic atmosphere",
+    "negative": "flat lighting, low contrast, cartoon, anime, digital"
+  },
+  {
+    "name": "Chibi Cartoon",
+    "prefix": "",
+    "suffix": "in ((cute cartoon Chibi)) art style, Chibi art, ((tiny and thicc proportions)), curvy body",
+    "negative": "realistic proportions, serious, photorealistic"
+  },
+  {
+    "name": "Children's Book Gouache",
+    "prefix": "",
+    "suffix": "in a children's book illustration, cute chibi proportions, soft gouache textures, whimsical character, warm and inviting colors",
+    "negative": "dark, scary, realistic, adult themes"
+  },
+  {
+    "name": "Chinese Ink Wash",
+    "prefix": "",
+    "suffix": "in a intricate ink wash painting, traditional Chinese/Japanese sumi-e, minimal yet powerful strokes, misty atmosphere",
+    "negative": "colorful, digital, photorealistic, western style"
+  },
+  {
+    "name": "Cinematic Wes Anderson",
+    "prefix": "",
+    "suffix": "in a cinematic still from a Wes Anderson movie, symmetrical composition, muted pastel palette, centered subject",
+    "negative": "asymmetrical, dark, gritty, chaotic composition"
+  },
+  {
+    "name": "Cosplay Convention",
+    "prefix": "",
+    "suffix": "as an amateur cosplay photo shoot, posing like a pinup at a crowded convention center",
+    "negative": "professional studio, empty background, high-end"
+  },
+  {
+    "name": "Cute Manga",
+    "prefix": "",
+    "suffix": "in cute Manga art style, tiny proportions, soft body, anime background environment",
+    "negative": "realistic, western, dark, gritty"
+  },
+  {
+    "name": "Cyberpunk Airbrush",
+    "prefix": "",
+    "suffix": "in a sleek digital art, airbrush shading, high gloss, cyberpunk neon palette, 4k anime aesthetic",
+    "negative": "muted colors, traditional, vintage, low contrast"
+  },
+  {
+    "name": "Dark Fantasy Beksiński",
+    "prefix": "",
+    "suffix": "in a dark fantasy oil painting, Zdzisław Beksiński influence, surreal architecture, eerie atmosphere",
+    "negative": "bright, cheerful, cartoon, simple, minimalist"
+  },
+  {
+    "name": "DC Comic Ink",
+    "prefix": "",
+    "suffix": "in a detailed comic book ink art, bold outlines, halftone shading, Marvel/DC 1990s style",
+    "negative": "soft, painterly, no outlines, realistic"
+  },
+  {
+    "name": "Ethereal Dreamscape",
+    "prefix": "",
+    "suffix": "in a ethereal dreamscape, double exposure, surreal colors, floating particles, ethereal lighting",
+    "negative": "sharp, realistic, grounded, mundane"
+  },
+  {
+    "name": "Fashion Editorial Hasselblad",
+    "prefix": "",
+    "suffix": "in fashion editorial shot on Hasselblad medium format, razor-sharp details, soft studio lighting, high-end magazine aesthetic",
+    "negative": "amateur, low quality, harsh lighting, candid"
+  },
+  {
+    "name": "Glitch Vaporwave",
+    "prefix": "",
+    "suffix": "in a glitch art, heavy RGB shift, scanlines, datamosh effects, vaporwave aesthetic",
+    "negative": "clean, sharp, traditional, classic"
+  },
+  {
+    "name": "Gothic Digital",
+    "prefix": "",
+    "suffix": "as a dark gothic cartoon style, with high contrast, masterpiece digital illustration with an immersive deep background",
+    "negative": "bright, cheerful, pastel, minimalist"
+  },
+  {
+    "name": "Greyscale Pencil Sketch",
+    "prefix": "",
+    "suffix": "as a ((traditional greyscaled sketch)), on paper, ((((colorless)))), pencil drawing",
+    "negative": "color, digital, painted, 3d"
+  },
+  {
+    "name": "Gritty Fog",
+    "prefix": "",
+    "suffix": "as a professional gloomy and gritty photo, bathed in a spectral fog",
+    "negative": "bright, clean, cheerful, sharp"
+  },
+  {
+    "name": "High Fantasy Digital",
+    "prefix": "",
+    "suffix": "in a high-fantasy digital painting, glowing runes, intricate clothing details, Alphonse Mucha + Frank Frazetta fusion",
+    "negative": "modern, minimalist, simple, low detail"
+  },
+  {
+    "name": "Holographic Y2K",
+    "prefix": "",
+    "suffix": "in a holographic iridescent foil texture, prismatic reflections, y2k futuristic vibe",
+    "negative": "matte, flat colors, vintage, retro"
+  },
+  {
+    "name": "Hyper Academic Realism",
+    "prefix": "",
+    "suffix": "in hyper-detailed oil painting in the style of 19th-century academic realism, thick impasto brushwork, dramatic chiaroscuro lighting, rich color saturation",
+    "negative": "flat, digital, low detail, cartoon, anime, sketch"
+  },
+  {
+    "name": "iPhone Street",
+    "prefix": "",
+    "suffix": "in a iPhone street photography, natural daylight, candid moment, slight lens distortion",
+    "negative": "studio, posed, artificial lighting, professional camera"
+  },
+  {
+    "name": "Isometric Low-Poly",
+    "prefix": "",
+    "suffix": "in an isometric low-poly 3D render, soft ambient occlusion, pastel color scheme, blender aesthetic",
+    "negative": "realistic, high-poly, complex textures"
+  },
+  {
+    "name": "Isometric TopDown Chibi",
+    "prefix": "",
+    "suffix": "in an isometric cute top down 3D render, game art asset figurine, chibi proportions, soft ambient occlusion, pastel color scheme, blender aesthetic",
+    "negative": "realistic proportions, side view, high detail"
+  },
+  {
+    "name": "Manga Tarot",
+    "prefix": "",
+    "suffix": "in manga tarot card illustration, ornate golden borders, mystical symbolism, art nouveau flourishes",
+    "negative": "simple, minimalist, modern, plain borders"
+  },
+  {
+    "name": "Octane Unreal PBR",
+    "prefix": "",
+    "suffix": "in a octane render + unreal engine look, physically based rendering, cinematic lighting, ultra-realistic materials",
+    "negative": "flat, 2d, cartoon, low quality, unlit"
+  },
+  {
+    "name": "Pixel Art 16-bit",
+    "prefix": "",
+    "suffix": "in a retro pixel art 32×32 upscaled cleanly, sharp pixels, vibrant 16-bit color palette, 1990s game vibe",
+    "negative": "smooth, anti-aliased, high resolution, realistic"
+  },
+  {
+    "name": "Porcelain Doll",
+    "prefix": "",
+    "suffix": "in a porcelain doll aesthetic, flawless smooth skin, glassy eyes, delicate pastel clothing",
+    "negative": "rough skin, realistic, natural, imperfect"
+  },
+  {
+    "name": "PVC Figurine",
+    "prefix": "",
+    "suffix": "as a fullbody pvc figurine on a plastic stand on a desk, with its box",
+    "negative": "2d, flat, painting, illustration"
+  },
+  {
+    "name": "Retro Sci-Fi Paperback",
+    "prefix": "",
+    "suffix": "in a vintage sci-fi paperback cover, 1960s retro-futurism, bold typography integration, dramatic composition",
+    "negative": "modern, minimalist, flat design"
+  },
+  {
+    "name": "Studio Ghibli",
+    "prefix": "",
+    "suffix": "in a studio ghibli background painting, lush hand-painted scenery, soft cel-shading, magical atmosphere",
+    "negative": "realistic, photographic, dark, gritty, 3d render"
+  },
+  {
+    "name": "Studio Professional",
+    "prefix": "",
+    "suffix": "as a professional photo shoot in a studio with spotlights, cushions, velvet drapery",
+    "negative": "outdoor, natural light, candid, amateur"
+  },
+  {
+    "name": "Vector Flat Design",
+    "prefix": "",
+    "suffix": "in a ultra-clean vector illustration, flat design, perfect geometry, vibrant gradient backgrounds, minimalist yet striking",
+    "negative": "realistic, detailed, 3d, photographic, complex textures"
+  },
+  {
+    "name": "Vintage Polaroid 70s",
+    "prefix": "",
+    "suffix": "in a large-format 8×10 polaroid, soft focus edges, dreamy light leaks, vintage 1970s feel",
+    "negative": "sharp, digital, modern, high contrast"
+  }
+]

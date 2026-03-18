@@ -1,0 +1,351 @@
+{
+  "id": "powder-nodes-test-workflow",
+  "revision": 0,
+  "last_node_id": 6,
+  "last_link_id": 9,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "PowderPromptList",
+      "pos": [-900, 0],
+      "size": [400, 500],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "positive_prompts",
+          "type": "STRING",
+          "shape": 6,
+          "links": [1]
+        },
+        {
+          "name": "negative_prompts",
+          "type": "STRING",
+          "shape": 6,
+          "links": [2]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PowderPromptList"
+      },
+      "widgets_values": [
+        "[{\"on\":true},{\"on\":true}]",
+        "a beautiful landscape, mountains, river, sunset",
+        "ugly, deformed, blurry",
+        "portrait of a woman in vintage dress, film photography",
+        "ugly, deformed, blurry, low quality",
+        "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
+        "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
+        "", "", "", "", "", "", "", "", ""
+      ],
+      "promptSlotCount": 2,
+      "promptSlotsData": [
+        { "enabled": true },
+        { "enabled": true }
+      ],
+      "promptTexts": {
+        "1": "a beautiful landscape, mountains, river, sunset",
+        "2": "portrait of a woman in vintage dress, film photography"
+      },
+      "negativeTexts": {
+        "1": "ugly, deformed, blurry",
+        "2": "ugly, deformed, blurry, low quality"
+      }
+    },
+    {
+      "id": 2,
+      "type": "PowderLoraLoader",
+      "pos": [-350, -100],
+      "size": [420, 550],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": null
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": null
+        },
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "shape": 7,
+          "link": 1
+        },
+        {
+          "name": "negative_prompt",
+          "type": "STRING",
+          "shape": 7,
+          "link": 2
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "shape": 6,
+          "links": []
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "shape": 6,
+          "links": [3]
+        },
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "shape": 6,
+          "links": [4]
+        },
+        {
+          "name": "negative_prompt",
+          "type": "STRING",
+          "shape": 6,
+          "links": [5]
+        },
+        {
+          "name": "lora_info",
+          "type": "STRING",
+          "links": [6]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PowderLoraLoader"
+      },
+      "widgets_values": [
+        "Stack (all enabled)",
+        "Loras first",
+        "[{\"name\":\"None\",\"on\":false,\"strength_model\":1,\"strength_clip\":1,\"trigger\":\"\",\"use_trigger\":true}]",
+        true,
+        "After prompt"
+      ],
+      "loraSlotCount": 1,
+      "loraSlotsData": [
+        {
+          "lora": "None",
+          "enabled": false,
+          "modelStr": 1,
+          "clipStr": 1,
+          "trigger": "",
+          "useTrigger": true
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "type": "PowderStyler",
+      "pos": [-350, 550],
+      "size": [420, 400],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "style",
+          "type": "STRING",
+          "links": [7]
+        },
+        {
+          "name": "style_text",
+          "type": "STRING",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PowderStyler"
+      },
+      "widgets_values": [
+        "Wrap prompt",
+        true,
+        true,
+        "[{\"name\":\"None\",\"on\":true,\"use_positive\":true,\"use_negative\":true}]"
+      ],
+      "styleSlotCount": 1,
+      "styleSlotsData": [
+        {
+          "style": "None",
+          "enabled": true,
+          "usePositive": true,
+          "useNegative": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "type": "PowderConditioner",
+      "pos": [230, 0],
+      "size": [300, 250],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 3
+        },
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "link": 4
+        },
+        {
+          "name": "negative_prompt",
+          "type": "STRING",
+          "shape": 7,
+          "link": 5
+        },
+        {
+          "name": "lora_info",
+          "type": "STRING",
+          "shape": 7,
+          "link": 6
+        },
+        {
+          "name": "style",
+          "type": "STRING",
+          "shape": 7,
+          "link": 7
+        }
+      ],
+      "outputs": [
+        {
+          "name": "positive_conditioning",
+          "type": "CONDITIONING",
+          "shape": 6,
+          "links": []
+        },
+        {
+          "name": "negative_conditioning",
+          "type": "CONDITIONING",
+          "shape": 6,
+          "links": []
+        },
+        {
+          "name": "final_positive",
+          "type": "STRING",
+          "shape": 6,
+          "links": [8]
+        },
+        {
+          "name": "final_negative",
+          "type": "STRING",
+          "shape": 6,
+          "links": [9]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PowderConditioner"
+      },
+      "widgets_values": [
+        true
+      ]
+    },
+    {
+      "id": 5,
+      "type": "ShowText|pysssss",
+      "pos": [650, -50],
+      "size": [450, 250],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 8
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "shape": 6,
+          "links": []
+        }
+      ],
+      "title": "Final Positive Prompt",
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 6,
+      "type": "ShowText|pysssss",
+      "pos": [650, 250],
+      "size": [450, 250],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 9
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "shape": 6,
+          "links": []
+        }
+      ],
+      "title": "Final Negative Prompt",
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [],
+      "color": "#322",
+      "bgcolor": "#533"
+    }
+  ],
+  "links": [
+    [1, 1, 0, 2, 2, "STRING"],
+    [2, 1, 1, 2, 3, "STRING"],
+    [3, 2, 1, 4, 0, "CLIP"],
+    [4, 2, 2, 4, 1, "STRING"],
+    [5, 2, 3, 4, 2, "STRING"],
+    [6, 2, 4, 4, 3, "STRING"],
+    [7, 3, 0, 4, 4, "STRING"],
+    [8, 4, 2, 5, 0, "STRING"],
+    [9, 4, 3, 6, 0, "STRING"]
+  ],
+  "groups": [
+    {
+      "title": "Powder Nodes Test Workflow",
+      "bounding": [-950, -200, 1700, 1200],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "title": "Connect MODEL + CLIP here",
+      "bounding": [-400, -200, 200, 100],
+      "color": "#a1309b",
+      "font_size": 18,
+      "flags": {}
+    }
+  ],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.8,
+      "offset": [1000, 400]
+    }
+  },
+  "version": 0.4
+}

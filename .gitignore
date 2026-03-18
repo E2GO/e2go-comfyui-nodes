@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+*.pyo
+.claude/
+*.png
+*.jpg
+*.jpeg
+*.bmp
+!docs/images/*.png
+!docs/images/*.jpg
+*.sh
