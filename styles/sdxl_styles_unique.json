@@ -36,12 +36,6 @@
     "negative": ""
   },
   {
-    "name": "7W_Icons",
-    "prefix": "",
-    "suffix": "symbol, game icon, isolated object element, <lora:Casuality_2:0.35> plrx, isometric view, solid background",
-    "negative": "complex scene, hand"
-  },
-  {
     "name": "8bit",
     "prefix": "pixel art, 8bit, aliasing, contrast, complex stuff",
     "suffix": "",

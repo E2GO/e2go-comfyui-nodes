@@ -241,21 +241,23 @@ Assembles images into a grid with labels (model, LoRA, prompts). Saves to file.
 |-------|------|:---:|-------------|
 | **images** | IMAGE | yes | Images for the grid |
 | **layout** | combo | yes | `Horizontal (Loras as columns)` or `Vertical (Loras as rows)` |
-| **gap** | INT | yes | Gap between cells (px) |
 | **background** | combo | yes | `Dark` / `Light` |
+| **gap** | INT | yes | Gap between cells (px) |
+| **font_size** | INT | yes | Font size (12–100) |
 | **show_model_name** | boolean | yes | Show model name |
 | **show_lora_names** | boolean | yes | Show LoRA names |
 | **show_prompts** | boolean | yes | Show prompts |
 | **prompt_max_chars** | INT | yes | Max prompt length in label |
-| **font_size** | INT | yes | Font size |
+| **show_seed** | boolean | yes | Show seed per cell. With batch > 1 displays `Seed: N [i/batch]` |
 | **show_style_prompt** | boolean | yes | **OFF** — append style name to prompt label (e.g. `[Cinematic]`). **ON** — append full style text (prefix + prompt + suffix). Style is auto-detected from PowderStyler in the workflow, no extra wires needed |
-| **save_json** | boolean | yes | Save JSON with metadata |
-| **add_model_to_filename** | boolean | yes | Prepend model name to filename |
 | **filename_prefix** | STRING | yes | Filename prefix |
 | **subfolder** | STRING | yes | Subfolder in output |
+| **add_model_to_filename** | boolean | yes | Prepend model name to filename |
+| **save_json** | boolean | yes | Save JSON with metadata |
 | **lora_info** | STRING | no | JSON from Lora Loader |
 | **prompts** | STRING | no | Prompts for labels |
 | **negative_prompts** | STRING | no | Negative prompts |
+| **seed** | INT | no | Seed value (connected via wire). With batch > 1, individual seeds and batch indices are computed automatically |
 
 #### Outputs
 
@@ -276,6 +278,8 @@ Style metadata (`style_names`, `style_text`, `style_negative`, `style_position`)
 #### JSON Metadata
 
 Generation settings (sampler, scheduler, steps, cfg, seed) are automatically extracted from **any** sampler/scheduler node in the workflow — including Flux split nodes (`KSamplerSelect`, `Flux2Scheduler`, `RandomNoise`, `CFGGuider`, etc.). No configuration needed.
+
+When a `seed` input is connected, the JSON includes `batch_size`, per-image `seeds` array, and `batch_indices` — useful for reproducing specific images from a batch.
 
 #### Fonts
 
@@ -587,21 +591,23 @@ Conditioner собирает финальный промпт из частей:
 |------|-----|:---:|----------|
 | **images** | IMAGE | да | Изображения для grid |
 | **layout** | combo | да | `Horizontal (Loras as columns)` или `Vertical (Loras as rows)` |
-| **gap** | INT | да | Отступ между ячейками (px) |
 | **background** | combo | да | `Dark` / `Light` |
+| **gap** | INT | да | Отступ между ячейками (px) |
+| **font_size** | INT | да | Размер шрифта (12–100) |
 | **show_model_name** | boolean | да | Показывать имя модели |
 | **show_lora_names** | boolean | да | Показывать имена LoRA |
 | **show_prompts** | boolean | да | Показывать промпты |
 | **prompt_max_chars** | INT | да | Макс. длина промпта в подписи |
-| **font_size** | INT | да | Размер шрифта |
+| **show_seed** | boolean | да | Показывать seed под каждой ячейкой. При batch > 1 отображает `Seed: N [i/batch]` |
 | **show_style_prompt** | boolean | да | **OFF** — к промпту дописывается имя стиля (например `[Cinematic]`). **ON** — полный текст стиля (prefix + prompt + suffix). Стиль определяется автоматически из PowderStyler в воркфлоу, дополнительные провода не нужны |
-| **save_json** | boolean | да | Сохранить JSON с метаданными |
-| **add_model_to_filename** | boolean | да | Добавить имя модели в имя файла |
 | **filename_prefix** | STRING | да | Префикс имени файла |
 | **subfolder** | STRING | да | Подпапка в output |
+| **add_model_to_filename** | boolean | да | Добавить имя модели в имя файла |
+| **save_json** | boolean | да | Сохранить JSON с метаданными |
 | **lora_info** | STRING | нет | JSON от Lora Loader |
 | **prompts** | STRING | нет | Промпты для подписей |
 | **negative_prompts** | STRING | нет | Негативные промпты |
+| **seed** | INT | нет | Значение seed (подключается проводом). При batch > 1 индивидуальные seed и batch-индексы вычисляются автоматически |
 
 #### Выходы
 
@@ -622,6 +628,8 @@ Grid Saver автоматически находит ноду PowderStyler в в
 #### JSON-метаданные
 
 Настройки генерации (sampler, scheduler, steps, cfg, seed) автоматически извлекаются из **любых** нод сэмплера/шедулера в воркфлоу — включая split-ноды Flux (`KSamplerSelect`, `Flux2Scheduler`, `RandomNoise`, `CFGGuider` и т.д.). Настройка не требуется.
+
+При подключённом `seed` входе JSON включает `batch_size`, массив `seeds` для каждого изображения и `batch_indices` — полезно для воспроизведения конкретного изображения из батча.
 
 #### Шрифты
 

@@ -41,24 +41,29 @@ class PowderGridSaver:
         return {
             "required": {
                 "images": ("IMAGE",),
+                # --- Layout ---
                 "layout": (["Horizontal (Loras as columns)", "Vertical (Loras as rows)"],),
-                "gap": ("INT", {"default": 10, "min": 0, "max": 100, "step": 1}),
                 "background": (["Dark", "Light"],),
+                "gap": ("INT", {"default": 10, "min": 0, "max": 100, "step": 1}),
+                "font_size": ("INT", {"default": 36, "min": 12, "max": 100, "step": 2}),
+                # --- Display ---
                 "show_model_name": ("BOOLEAN", {"default": True}),
                 "show_lora_names": ("BOOLEAN", {"default": True}),
                 "show_prompts": ("BOOLEAN", {"default": True}),
                 "prompt_max_chars": ("INT", {"default": 100, "min": 10, "max": 500, "step": 10}),
-                "font_size": ("INT", {"default": 36, "min": 12, "max": 100, "step": 2}),
+                "show_seed": ("BOOLEAN", {"default": False}),
                 "show_style_prompt": ("BOOLEAN", {"default": False}),
-                "save_json": ("BOOLEAN", {"default": True}),
-                "add_model_to_filename": ("BOOLEAN", {"default": True}),
+                # --- Save ---
                 "filename_prefix": ("STRING", {"default": "grid"}),
                 "subfolder": ("STRING", {"default": "grids"}),
+                "add_model_to_filename": ("BOOLEAN", {"default": True}),
+                "save_json": ("BOOLEAN", {"default": True}),
             },
             "optional": {
                 "lora_info": ("STRING", {"forceInput": True}),
                 "prompts": ("STRING", {"forceInput": True}),
                 "negative_prompts": ("STRING", {"forceInput": True}),
+                "seed": ("INT", {"forceInput": True}),
             },
             "hidden": {
                 "prompt": "PROMPT",
@@ -82,11 +87,11 @@ class PowderGridSaver:
         """Accept boolean values from new ComfyUI frontend for 2-option combos."""
         return True
 
-    def create_grid(self, images, layout, gap, background, show_model_name,
-                    show_lora_names, show_prompts, prompt_max_chars, font_size,
-                    show_style_prompt, save_json, add_model_to_filename,
-                    filename_prefix, subfolder,
-                    lora_info=None, prompts=None, negative_prompts=None, prompt=None, extra_pnginfo=None):
+    def create_grid(self, images, layout, background, gap, font_size,
+                    show_model_name, show_lora_names, show_prompts, prompt_max_chars,
+                    show_seed, show_style_prompt,
+                    filename_prefix, subfolder, add_model_to_filename, save_json,
+                    lora_info=None, prompts=None, negative_prompts=None, seed=None, prompt=None, extra_pnginfo=None):
 
         # Unpack scalars
         layout = layout[0] if isinstance(layout, list) else layout
@@ -103,15 +108,24 @@ class PowderGridSaver:
         show_prompts = show_prompts[0] if isinstance(show_prompts, list) else show_prompts
         prompt_max_chars = prompt_max_chars[0] if isinstance(prompt_max_chars, list) else prompt_max_chars
         font_size = font_size[0] if isinstance(font_size, list) else font_size
+        show_seed = show_seed[0] if isinstance(show_seed, list) else show_seed
         show_style_prompt = show_style_prompt[0] if isinstance(show_style_prompt, list) else show_style_prompt
         save_json = save_json[0] if isinstance(save_json, list) else save_json
         add_model_to_filename = add_model_to_filename[0] if isinstance(add_model_to_filename, list) else add_model_to_filename
         filename_prefix = filename_prefix[0] if isinstance(filename_prefix, list) else filename_prefix
         subfolder = subfolder[0] if isinstance(subfolder, list) else subfolder
 
-        workflow_prompt = prompt[0] if isinstance(prompt, list) else prompt
+        prompt_list_raw = prompt if isinstance(prompt, list) else [prompt]
+        workflow_prompt = prompt_list_raw[0]
         model_display_name = self._extract_model_from_prompt(workflow_prompt)
         workflow_info = self._extract_workflow_info(workflow_prompt)
+
+        # Seeds: prefer explicit input, fall back to workflow extraction
+        if seed is not None:
+            seed_list = seed if isinstance(seed, list) else [seed]
+        else:
+            wf_seed = workflow_info.get("seed")
+            seed_list = [wf_seed] if wf_seed is not None else []
 
         # Parse lora_info
         lora_names = []
@@ -202,7 +216,27 @@ class PowderGridSaver:
         else:
             num_prompts = total_images if total_images else 1
 
-        display_prompts = prompt_list[:num_prompts] if prompt_list else []
+        # Extend prompts cyclically to fill all rows
+        if prompt_list and len(prompt_list) < num_prompts:
+            display_prompts = (prompt_list * ((num_prompts // len(prompt_list)) + 1))[:num_prompts]
+        else:
+            display_prompts = prompt_list[:num_prompts] if prompt_list else []
+
+        # Build per-image seed info with batch index
+        # When batch_size > 1, ComfyUI generates the full batch from one seed
+        # (torch.manual_seed(seed) → randn([batch, C, H, W])).
+        # Individual batch items don't have separate seeds — they are
+        # reproducible only as "seed + batch index within the run".
+        batch_size = max(1, num_prompts) if num_loras > 0 else 1
+        base_seed = seed_list[0] if seed_list else None
+
+        all_seeds = []          # one entry per image (the base seed used)
+        all_batch_indices = []  # which item in the batch (0-based)
+        if base_seed is not None:
+            for img_i in range(total_images):
+                all_seeds.append(base_seed)
+                all_batch_indices.append(img_i % batch_size)
+        
 
         # Extract style info from workflow
         style_info = self._extract_style_from_workflow(workflow_prompt)
@@ -231,7 +265,8 @@ class PowderGridSaver:
 
         log(f"[PowderGridSaver] === START ===")
         log(f"[PowderGridSaver] Model: {model_display_name or 'Not detected'}")
-        log(f"[PowderGridSaver] Images: {total_images}, Loras: {num_loras}, Prompts: {num_prompts}")
+        log(f"[PowderGridSaver] Images: {total_images}, Loras: {num_loras}, Prompts: {num_prompts}, Batch: {batch_size}")
+        log(f"[PowderGridSaver] Seed: {base_seed}")
         log(f"[PowderGridSaver] Layout: {layout}, Order: {combination_order}, Mode: {lora_mode}")
 
         if not pil_images:
@@ -248,7 +283,10 @@ class PowderGridSaver:
         is_loras_first = "Loras first" in combination_order
 
         lora_labels = self._prepare_lora_labels(lora_names, lora_strengths)
-        display_negatives = negative_list[:num_prompts] if negative_list else []
+        if negative_list and len(negative_list) < num_prompts:
+            display_negatives = (negative_list * ((num_prompts // len(negative_list)) + 1))[:num_prompts]
+        else:
+            display_negatives = negative_list[:num_prompts] if negative_list else []
 
         json_data = {
             "timestamp": timestamp,
@@ -257,7 +295,10 @@ class PowderGridSaver:
             "scheduler": workflow_info.get("scheduler"),
             "steps": workflow_info.get("steps"),
             "cfg": workflow_info.get("cfg"),
-            "seed": workflow_info.get("seed"),
+            "seed": base_seed,
+            "batch_size": batch_size,
+            "seeds": all_seeds,
+            "batch_indices": all_batch_indices,
             "layout": layout,
             "combination_order": combination_order,
             "mode": lora_mode,
@@ -274,6 +315,17 @@ class PowderGridSaver:
             "files": [],
         }
 
+        # Build seed labels for the grid renderer
+        seed_labels = None
+        if show_seed and base_seed is not None:
+            if batch_size > 1:
+                seed_labels = [
+                    f"Seed: {all_seeds[i]} [{all_batch_indices[i]+1}/{batch_size}]"
+                    for i in range(total_images)
+                ]
+            else:
+                seed_labels = [f"Seed: {base_seed}"] * total_images
+
         final_grid = self._create_grid(
             pil_images, lora_labels, display_prompts,
             is_horizontal, is_loras_first,
@@ -281,6 +333,7 @@ class PowderGridSaver:
             gap, background, show_lora_names, show_prompts,
             prompt_max_chars, font_size,
             model_display_name if show_model_name else None,
+            seed_labels,
         )
 
         final_path = os.path.join(output_dir, f"{file_base}.png")
@@ -324,7 +377,8 @@ class PowderGridSaver:
                      is_horizontal, is_loras_first,
                      num_loras, num_prompts,
                      gap, background, show_lora_names, show_prompts,
-                     prompt_max_chars, font_size, model_name=None):
+                     prompt_max_chars, font_size, model_name=None,
+                     seed_labels=None):
 
         if is_horizontal:
             num_cols = num_loras
@@ -345,6 +399,15 @@ class PowderGridSaver:
 
         temp_img = Image.new("RGB", (1, 1))
         temp_draw = ImageDraw.Draw(temp_img)
+
+        # Seed display: always per-cell when labels are provided
+        seed_font = self._load_font(max(12, font_size * 2 // 3))
+        seed_label_height = 0
+        if seed_labels:
+            # Measure the tallest possible seed label
+            sample_label = seed_labels[0] if seed_labels else "Seed: 0"
+            sb = temp_draw.textbbox((0, 0), sample_label, font=seed_font)
+            seed_label_height = sb[3] - sb[1] + 10
 
         title_height = 0
         if model_name:
@@ -382,8 +445,9 @@ class PowderGridSaver:
             bg_color = (240, 240, 240)
             text_color = (32, 32, 32)
 
+        cell_height = img_height + seed_label_height
         total_width = row_label_width + num_cols * img_width + (num_cols - 1) * gap + gap * 2
-        total_height = title_height + header_height + num_rows * img_height + (num_rows - 1) * gap + gap * 2
+        total_height = title_height + header_height + num_rows * cell_height + (num_rows - 1) * gap + gap * 2
 
         grid_img = Image.new("RGB", (total_width, total_height), bg_color)
         draw = ImageDraw.Draw(grid_img)
@@ -405,7 +469,7 @@ class PowderGridSaver:
 
         if row_labels_wrapped:
             for row_idx, lines in enumerate(row_labels_wrapped):
-                y_center = title_height + header_height + gap + row_idx * (img_height + gap) + img_height // 2
+                y_center = title_height + header_height + gap + row_idx * (cell_height + gap) + img_height // 2
                 total_text_height = len(lines) * line_height
                 y_start = y_center - total_text_height // 2
                 for line_idx, line in enumerate(lines):
@@ -432,9 +496,18 @@ class PowderGridSaver:
                 continue
 
             x = row_label_width + gap + col * (img_width + gap)
-            y = title_height + header_height + gap + row * (img_height + gap)
+            y = title_height + header_height + gap + row * (cell_height + gap)
 
             grid_img.paste(pil_img, (x, y))
+
+            # Per-cell seed label below image
+            if seed_labels and img_idx < len(seed_labels):
+                label = seed_labels[img_idx]
+                sb = draw.textbbox((0, 0), label, font=seed_font)
+                sw = sb[2] - sb[0]
+                seed_x = x + (img_width - sw) // 2
+                seed_y = y + img_height + 4
+                draw.text((seed_x, seed_y), label, fill=text_color, font=seed_font)
 
         return grid_img
 
