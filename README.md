@@ -248,7 +248,9 @@ Assembles images into a grid with labels (model, LoRA, prompts). Saves to file.
 | **show_prompts** | boolean | yes | Show prompts |
 | **prompt_max_chars** | INT | yes | Max prompt length in label |
 | **font_size** | INT | yes | Font size |
+| **show_style_prompt** | boolean | yes | **OFF** — append style name to prompt label (e.g. `[Cinematic]`). **ON** — append full style text (prefix + prompt + suffix). Style is auto-detected from PowderStyler in the workflow, no extra wires needed |
 | **save_json** | boolean | yes | Save JSON with metadata |
+| **add_model_to_filename** | boolean | yes | Prepend model name to filename |
 | **filename_prefix** | STRING | yes | Filename prefix |
 | **subfolder** | STRING | yes | Subfolder in output |
 | **lora_info** | STRING | no | JSON from Lora Loader |
@@ -261,6 +263,19 @@ Assembles images into a grid with labels (model, LoRA, prompts). Saves to file.
 |--------|------|-------------|
 | **grid_image** | IMAGE | Assembled grid as tensor |
 | **saved_paths** | STRING | Paths to saved files |
+
+#### Style in Grid
+
+Grid Saver automatically detects the PowderStyler node in the workflow (via ComfyUI's hidden prompt graph) — **no additional wires needed**. The `show_style_prompt` switch controls how the style appears in prompt labels:
+
+- **OFF** (default): style name is appended — `"a portrait of a warrior [Cinematic, Dark Fantasy]"`
+- **ON**: full style text is assembled — `"cinematic lighting, a portrait of a warrior, film grain"`
+
+Style metadata (`style_names`, `style_text`, `style_negative`, `style_position`) is **always** written to the JSON file regardless of the switch.
+
+#### JSON Metadata
+
+Generation settings (sampler, scheduler, steps, cfg, seed) are automatically extracted from **any** sampler/scheduler node in the workflow — including Flux split nodes (`KSamplerSelect`, `Flux2Scheduler`, `RandomNoise`, `CFGGuider`, etc.). No configuration needed.
 
 #### Fonts
 
@@ -579,7 +594,9 @@ Conditioner собирает финальный промпт из частей:
 | **show_prompts** | boolean | да | Показывать промпты |
 | **prompt_max_chars** | INT | да | Макс. длина промпта в подписи |
 | **font_size** | INT | да | Размер шрифта |
+| **show_style_prompt** | boolean | да | **OFF** — к промпту дописывается имя стиля (например `[Cinematic]`). **ON** — полный текст стиля (prefix + prompt + suffix). Стиль определяется автоматически из PowderStyler в воркфлоу, дополнительные провода не нужны |
 | **save_json** | boolean | да | Сохранить JSON с метаданными |
+| **add_model_to_filename** | boolean | да | Добавить имя модели в имя файла |
 | **filename_prefix** | STRING | да | Префикс имени файла |
 | **subfolder** | STRING | да | Подпапка в output |
 | **lora_info** | STRING | нет | JSON от Lora Loader |
@@ -592,6 +609,19 @@ Conditioner собирает финальный промпт из частей:
 |-------|-----|----------|
 | **grid_image** | IMAGE | Собранный grid как тензор |
 | **saved_paths** | STRING | Пути к сохранённым файлам |
+
+#### Стиль в Grid
+
+Grid Saver автоматически находит ноду PowderStyler в воркфлоу (через скрытый граф ComfyUI) — **дополнительные провода не нужны**. Переключатель `show_style_prompt` управляет отображением стиля в подписях:
+
+- **OFF** (по умолчанию): дописывается имя стиля — `"портрет воина [Cinematic, Dark Fantasy]"`
+- **ON**: собирается полный текст стиля — `"cinematic lighting, портрет воина, film grain"`
+
+Метаданные стиля (`style_names`, `style_text`, `style_negative`, `style_position`) **всегда** записываются в JSON-файл независимо от переключателя.
+
+#### JSON-метаданные
+
+Настройки генерации (sampler, scheduler, steps, cfg, seed) автоматически извлекаются из **любых** нод сэмплера/шедулера в воркфлоу — включая split-ноды Flux (`KSamplerSelect`, `Flux2Scheduler`, `RandomNoise`, `CFGGuider` и т.д.). Настройка не требуется.
 
 #### Шрифты
 

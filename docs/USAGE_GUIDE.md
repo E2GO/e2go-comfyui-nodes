@@ -91,8 +91,9 @@ The most powerful setup — compare multiple LoRAs across multiple prompts with 
 - 3 LoRAs × 2 prompts = 6 images
 - With **Loras first**: columns = LoRAs, rows = prompts
 - Grid shows LoRA names and prompt text as labels
+- Style is auto-detected from Styler — use `show_style_prompt` to control display (name only vs full text)
 - Style prefix/suffix and LoRA triggers are automatically inserted
-- Grid is saved with JSON metadata
+- Grid JSON includes style metadata, generation settings (sampler, scheduler, steps, cfg, seed) from any node type
 
 **Combination order matters:**
 - `Loras first` → LoRA1-Prompt1, LoRA1-Prompt2, LoRA2-Prompt1, LoRA2-Prompt2...
@@ -262,8 +263,9 @@ Speed up repeated runs by using the conditioning cache.
 - 3 LoRA × 2 промпта = 6 изображений
 - При **Loras first**: столбцы = LoRA, строки = промпты
 - Grid показывает имена LoRA и текст промптов в подписях
+- Стиль определяется автоматически из Styler — переключатель `show_style_prompt` управляет отображением (только имя или полный текст)
 - Стилевые prefix/suffix и триггеры LoRA автоматически вставляются
-- Grid сохраняется с JSON-метаданными
+- JSON грида включает метаданные стиля, настройки генерации (sampler, scheduler, steps, cfg, seed) из любых нод
 
 **Порядок комбинаций важен:**
 - `Loras first` → LoRA1-Промпт1, LoRA1-Промпт2, LoRA2-Промпт1, LoRA2-Промпт2...

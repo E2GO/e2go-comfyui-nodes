@@ -12,11 +12,25 @@ import folder_paths
 import torch
 
 from ._log import log, warn
+from ._styles import load_styles_from_directory, get_styles_dir, deduplicate_tags
 
 # ---------------------------------------------------------------------------
 # Font cache  (font_path, size) → ImageFont
 # ---------------------------------------------------------------------------
 _FONT_CACHE: dict = {}
+
+# ---------------------------------------------------------------------------
+# Style cache (shared with PowderStyler format)
+# ---------------------------------------------------------------------------
+_ALL_STYLES: list = []
+_STYLES_BY_NAME: dict = {}
+
+
+def _ensure_styles_loaded():
+    global _ALL_STYLES, _STYLES_BY_NAME
+    if not _ALL_STYLES:
+        _ALL_STYLES = load_styles_from_directory(get_styles_dir())
+        _STYLES_BY_NAME = {s["name"]: s for s in _ALL_STYLES}
 
 
 class PowderGridSaver:
@@ -35,6 +49,7 @@ class PowderGridSaver:
                 "show_prompts": ("BOOLEAN", {"default": True}),
                 "prompt_max_chars": ("INT", {"default": 100, "min": 10, "max": 500, "step": 10}),
                 "font_size": ("INT", {"default": 36, "min": 12, "max": 100, "step": 2}),
+                "show_style_prompt": ("BOOLEAN", {"default": False}),
                 "save_json": ("BOOLEAN", {"default": True}),
                 "add_model_to_filename": ("BOOLEAN", {"default": True}),
                 "filename_prefix": ("STRING", {"default": "grid"}),
@@ -69,7 +84,8 @@ class PowderGridSaver:
 
     def create_grid(self, images, layout, gap, background, show_model_name,
                     show_lora_names, show_prompts, prompt_max_chars, font_size,
-                    save_json, add_model_to_filename, filename_prefix, subfolder,
+                    show_style_prompt, save_json, add_model_to_filename,
+                    filename_prefix, subfolder,
                     lora_info=None, prompts=None, negative_prompts=None, prompt=None, extra_pnginfo=None):
 
         # Unpack scalars
@@ -87,6 +103,7 @@ class PowderGridSaver:
         show_prompts = show_prompts[0] if isinstance(show_prompts, list) else show_prompts
         prompt_max_chars = prompt_max_chars[0] if isinstance(prompt_max_chars, list) else prompt_max_chars
         font_size = font_size[0] if isinstance(font_size, list) else font_size
+        show_style_prompt = show_style_prompt[0] if isinstance(show_style_prompt, list) else show_style_prompt
         save_json = save_json[0] if isinstance(save_json, list) else save_json
         add_model_to_filename = add_model_to_filename[0] if isinstance(add_model_to_filename, list) else add_model_to_filename
         filename_prefix = filename_prefix[0] if isinstance(filename_prefix, list) else filename_prefix
@@ -187,6 +204,31 @@ class PowderGridSaver:
 
         display_prompts = prompt_list[:num_prompts] if prompt_list else []
 
+        # Extract style info from workflow
+        style_info = self._extract_style_from_workflow(workflow_prompt)
+
+        # Modify display prompts based on style switch
+        if style_info and style_info["names"] and display_prompts:
+            if show_style_prompt:
+                # Full style text: assemble prefix + prompt + suffix
+                styled = []
+                for p in display_prompts:
+                    pos = style_info["position"]
+                    pfx = style_info["prefix"]
+                    sfx = style_info["suffix"]
+                    if pos == "before":
+                        parts = [pfx, sfx, p]
+                    elif pos == "after":
+                        parts = [p, pfx, sfx]
+                    else:  # wrap
+                        parts = [pfx, p, sfx]
+                    styled.append(", ".join(part for part in parts if part and part.strip()))
+                display_prompts = styled
+            else:
+                # Style name only
+                names_str = ", ".join(style_info["names"])
+                display_prompts = [f"{p} [{names_str}]" for p in display_prompts]
+
         log(f"[PowderGridSaver] === START ===")
         log(f"[PowderGridSaver] Model: {model_display_name or 'Not detected'}")
         log(f"[PowderGridSaver] Images: {total_images}, Loras: {num_loras}, Prompts: {num_prompts}")
@@ -223,6 +265,10 @@ class PowderGridSaver:
             "strengths": lora_strengths,
             "prompts": display_prompts,
             "negative_prompts": display_negatives,
+            "style_names": style_info["names"] if style_info else [],
+            "style_text": ", ".join(p for p in [style_info.get("prefix", ""), style_info.get("suffix", "")] if p) if style_info else "",
+            "style_negative": style_info["negative"] if style_info else "",
+            "style_position": style_info["position"] if style_info else "",
             "num_images": len(pil_images),
             "image_size": [pil_images[0].width, pil_images[0].height] if pil_images else [0, 0],
             "files": [],
@@ -472,25 +518,193 @@ class PowderGridSaver:
         return None
 
     def _extract_workflow_info(self, prompt):
+        """Extract generation settings by scanning all nodes for known parameter names.
+
+        Works with any node type (KSampler, Flux split nodes, custom nodes, etc.).
+        Follows linked inputs (up to 4 hops) to resolve values from source nodes.
+        """
         info = {"sampler": None, "scheduler": None, "steps": None, "cfg": None, "seed": None}
         if not prompt:
             return info
+
+        # (param_name → (info_key, priority))  higher priority wins
+        param_map = {
+            "sampler_name": ("sampler", 1),
+            "scheduler":    ("scheduler", 1),
+            "steps":        ("steps", 1),
+            "cfg":          ("cfg", 1),
+            "guidance":     ("cfg", 0),
+            "seed":         ("seed", 1),
+            "noise_seed":   ("seed", 0),
+        }
+        best_priority = {k: -1 for k in info}
+
+        # Scheduler nodes that don't expose a "scheduler" param —
+        # the scheduler is implied by the node class itself.
+        # (class_type → human-readable scheduler name, priority)
+        scheduler_node_map = {
+            "Flux2Scheduler":     ("flux2", 0),
+            "BasicScheduler":     ("basic", 0),
+            "ExponentialScheduler": ("exponential", 0),
+            "PolyexponentialScheduler": ("polyexponential", 0),
+            "LaplaceScheduler":   ("laplace", 0),
+            "SDTurboScheduler":   ("sd_turbo", 0),
+        }
+
         try:
-            sampler_nodes = ["KSampler", "KSamplerAdvanced", "SamplerCustom"]
             for node_id, node_data in prompt.items():
-                if isinstance(node_data, dict):
-                    class_type = node_data.get("class_type", "")
-                    if class_type in sampler_nodes:
-                        inputs = node_data.get("inputs", {})
-                        info["sampler"] = inputs.get("sampler_name")
-                        info["scheduler"] = inputs.get("scheduler")
-                        info["steps"] = inputs.get("steps")
-                        info["cfg"] = inputs.get("cfg")
-                        info["seed"] = inputs.get("seed")
-                        break
+                if not isinstance(node_data, dict):
+                    continue
+                class_type = node_data.get("class_type", "")
+                inputs = node_data.get("inputs", {})
+
+                # Standard param-based extraction
+                for param_name, (info_key, priority) in param_map.items():
+                    if param_name not in inputs:
+                        continue
+                    value = inputs[param_name]
+                    if isinstance(value, list):
+                        resolved = self._resolve_linked_param(prompt, value, param_name)
+                        if resolved is not None:
+                            value = resolved
+                        else:
+                            continue
+                    if priority > best_priority[info_key]:
+                        info[info_key] = value
+                        best_priority[info_key] = priority
+
+                # Fallback: detect scheduler from node class_type
+                if class_type in scheduler_node_map:
+                    sched_name, sched_priority = scheduler_node_map[class_type]
+                    if sched_priority > best_priority["scheduler"]:
+                        # Use explicit "scheduler" input if present, otherwise node name
+                        sched_val = inputs.get("scheduler")
+                        if sched_val and not isinstance(sched_val, list):
+                            info["scheduler"] = sched_val
+                        else:
+                            info["scheduler"] = sched_name
+                        best_priority["scheduler"] = sched_priority
         except Exception as e:
             warn(f"Could not extract workflow info: {e}")
         return info
+
+    def _resolve_linked_param(self, prompt, link, param_name, depth=0):
+        """Follow a link ["node_id", slot] to find a literal value.
+
+        Looks for *param_name* in the source node's inputs.  If found as a
+        literal, returns it.  If found as another link, follows recursively
+        (up to 4 hops).  Also checks all inputs of the source node for any
+        literal matching the same param_name.
+        """
+        if depth > 4 or not isinstance(link, list) or len(link) < 2:
+            return None
+        source_id = str(link[0])
+        source_node = prompt.get(source_id)
+        if not isinstance(source_node, dict):
+            return None
+        source_inputs = source_node.get("inputs", {})
+
+        # Direct match: source node has the same param name
+        if param_name in source_inputs:
+            val = source_inputs[param_name]
+            if not isinstance(val, list):
+                return val
+            return self._resolve_linked_param(prompt, val, param_name, depth + 1)
+
+        # Scan all literal inputs of the source node for a plausible value
+        # (e.g. a KSamplerSelect node outputs sampler_name but stores it
+        #  in its own input also called sampler_name)
+        for key, val in source_inputs.items():
+            if isinstance(val, list):
+                continue
+            # Return the first literal from the source node — it likely
+            # holds the value that the node outputs.
+            # Only do this for single-output simple nodes.
+            if len(source_inputs) == 1:
+                return val
+
+        return None
+
+    def _extract_style_from_workflow(self, workflow_prompt):
+        """Extract style info from PowderStyler node in the workflow graph."""
+        if not workflow_prompt:
+            return None
+
+        for node_id, node_data in workflow_prompt.items():
+            if not isinstance(node_data, dict):
+                continue
+            if node_data.get("class_type") != "PowderStyler":
+                continue
+
+            inputs = node_data.get("inputs", {})
+            style_config_str = inputs.get("style_config", "[]")
+            style_position_str = inputs.get("style_position", "Wrap prompt")
+            use_positive = inputs.get("use_positive", True)
+            use_negative = inputs.get("use_negative", True)
+
+            # Skip linked values
+            if isinstance(style_config_str, list):
+                continue
+
+            try:
+                config = json.loads(style_config_str) if style_config_str else []
+                if not isinstance(config, list):
+                    config = []
+            except (json.JSONDecodeError, Exception):
+                config = []
+
+            _ensure_styles_loaded()
+
+            style_names = []
+            all_prefixes = []
+            all_suffixes = []
+            all_negatives = []
+
+            for item in config:
+                if not isinstance(item, dict):
+                    continue
+                name = item.get("name", "None")
+                enabled = item.get("on", True)
+                slot_use_positive = item.get("use_positive", True)
+                slot_use_negative = item.get("use_negative", True)
+
+                if not enabled or name == "None":
+                    continue
+
+                style_names.append(name)
+
+                style = _STYLES_BY_NAME.get(name)
+                if not style:
+                    continue
+
+                if use_positive and slot_use_positive:
+                    if style["prefix"]:
+                        all_prefixes.append(style["prefix"])
+                    if style["suffix"]:
+                        all_suffixes.append(style["suffix"])
+
+                if use_negative and slot_use_negative and style["negative"]:
+                    all_negatives.append(style["negative"])
+
+            if not style_names:
+                return None
+
+            prefix = deduplicate_tags(", ".join(all_prefixes))
+            suffix = deduplicate_tags(", ".join(all_suffixes))
+            negative = deduplicate_tags(", ".join(all_negatives))
+
+            pos_map = {"Before prompt": "before", "After prompt": "after"}
+            position = pos_map.get(style_position_str, "wrap")
+
+            return {
+                "names": style_names,
+                "prefix": prefix,
+                "suffix": suffix,
+                "negative": negative,
+                "position": position,
+            }
+
+        return None
 
     def _wrap_text(self, text, font, max_width, draw):
         if not text:
