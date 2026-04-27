@@ -7,10 +7,6 @@ Optimisations:
 3. Separate outputs for prompt and trigger (Conditioner combines them)
 """
 
-import comfy.sd
-import comfy.utils
-import comfy.model_management
-import folder_paths
 import json
 import os
 
@@ -54,6 +50,7 @@ LORA_INFO_SCHEMA_VERSION = 2
 
 def get_trigger_path(lora_name):
     """Path to the trigger .txt file next to the LoRA."""
+    import folder_paths  # lazy: not available outside ComfyUI
     lora_path = folder_paths.get_full_path("loras", lora_name)
     if lora_path:
         return os.path.splitext(lora_path)[0] + ".txt"
@@ -148,6 +145,7 @@ def _get_lora_cache_key(lora_path):
 
 def _load_lora_cached(lora_path):
     """Load LoRA with LRU caching."""
+    import comfy.utils  # lazy
     cache_key = _get_lora_cache_key(lora_path)
 
     cached = _lora_cache.get(cache_key)
@@ -285,6 +283,7 @@ class PowderLoraLoader:
 
     def _process_single_mode(self, model, clip, valid_loras, prompts_input, negatives_input, combination_order, disable_clip, trigger_position):
         """Single mode: each LoRA separate."""
+        import comfy.sd  # lazy
         unique_models = []
         base_clip = clip
 
@@ -393,6 +392,7 @@ class PowderLoraLoader:
 
     def _process_stack_mode(self, model, clip, valid_loras, prompts_input, negatives_input, combination_order, disable_clip, trigger_position):
         """Stack mode: all LoRAs into one model."""
+        import comfy.sd  # lazy
         triggers = []
         lora_names = []
         lora_strengths = []
@@ -460,6 +460,7 @@ class PowderLoraLoader:
                 prompts_out, negative_prompts_out, lora_info)
 
     def _find_lora_path(self, name):
+        import folder_paths  # lazy
         path = folder_paths.get_full_path("loras", name)
         if path:
             return path

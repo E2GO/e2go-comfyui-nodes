@@ -8,7 +8,6 @@ import platform
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont
 from datetime import datetime
-import folder_paths
 import torch
 
 from ._log import log, warn
@@ -102,6 +101,7 @@ class PowderGridSaver:
         filename_prefix = filename_prefix[0] if isinstance(filename_prefix, list) else filename_prefix
         subfolder = subfolder[0] if isinstance(subfolder, list) else subfolder
 
+        import folder_paths  # lazy
         prompt_list_raw = prompt if isinstance(prompt, list) else [prompt]
         workflow_prompt = prompt_list_raw[0]
         model_display_name = self._extract_model_from_prompt(workflow_prompt)
