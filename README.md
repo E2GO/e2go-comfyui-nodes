@@ -830,3 +830,27 @@ pytest --cov=. --cov-report=term-missing
 ```
 
 See [`docs/lora_info_schema.md`](docs/lora_info_schema.md) for the cross-node `lora_info` JSON contract.
+
+### Logging
+
+Powder Nodes log at three levels controlled by `E2GO_LOG_LEVEL`:
+
+- `quiet` — only warnings and errors
+- `info` (**default**) — one summary line per node invocation, warnings, errors
+- `debug` — verbose: per-step timings, cache HIT/MISS, slot details
+
+Set in PowerShell (Windows):
+
+```powershell
+$env:E2GO_LOG_LEVEL = "debug"
+```
+
+Or persistently (User scope):
+
+```powershell
+[Environment]::SetEnvironmentVariable("E2GO_LOG_LEVEL", "debug", "User")
+```
+
+Restart ComfyUI after changing the value (read once at module load).
+
+For cache-specific debugging, also set `E2GO_CACHE_DEBUG=1`. This adds clip_hash and HIT/MISS lines, but only takes effect when `E2GO_LOG_LEVEL=debug` (the messages route through the debug-level `log()` API).

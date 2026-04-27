@@ -10,7 +10,7 @@ from PIL import Image, ImageDraw, ImageFont
 from datetime import datetime
 import torch
 
-from ._log import log, warn
+from ._log import log, info, warn
 from ._styles import get_styles, deduplicate_tags
 
 # ---------------------------------------------------------------------------
@@ -337,6 +337,7 @@ class PowderGridSaver:
             log(f"[PowderGridSaver] Saved: {os.path.basename(json_path)}")
 
         log(f"[PowderGridSaver] Total saved: {len(saved_paths)} files")
+        info(f"[PowderGrid] {num_loras}×{num_prompts} grid, {total_images} image{'s' if total_images != 1 else ''}, saved as {os.path.basename(final_path)}")
 
         # Convert final_grid PIL → tensor directly (no re-read from disk)
         final_np = np.array(final_grid).astype(np.float32) / 255.0

@@ -7,7 +7,7 @@ Outputs style parts separately for flexible prompt assembly.
 
 import json
 
-from ._log import log, warn
+from ._log import log, info, warn
 from ._styles import get_styles, deduplicate_tags
 
 
@@ -86,6 +86,10 @@ class PowderStyler:
         })
 
         log(f"[PowderStyler] {len(config)} styles -> prefix={len(prefix)}ch, suffix={len(suffix)}ch, neg={len(negative)}ch")
+
+        active_count = sum(1 for item in config if item.get("on", True) and item.get("name", "None") != "None")
+        if active_count > 0:
+            info(f"[PowderStyler] {active_count} active style{'s' if active_count != 1 else ''}, position={position}")
 
         return (style_info, combined)
 

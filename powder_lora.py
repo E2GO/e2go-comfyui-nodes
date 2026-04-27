@@ -10,7 +10,7 @@ Optimisations:
 import json
 import os
 
-from ._log import log, warn, error
+from ._log import log, info, warn, error
 from ._cache import LRUCache
 
 
@@ -459,6 +459,7 @@ class PowderLoraLoader:
 
         log(f"[PowderLora] Returning {len(models)} combinations ({len(unique_models)} loras × {len(prompts_input)} prompts)")
         log(f"[PowderLora] === END ===")
+        info(f"[PowderLora] Single: {len(unique_models)} LoRA × {len(prompts_input)} prompt{'s' if len(prompts_input) != 1 else ''} = {len(models)} combinations")
 
         lora_info = json.dumps({
             "schema_version": LORA_INFO_SCHEMA_VERSION,
@@ -522,6 +523,7 @@ class PowderLoraLoader:
 
         log(f"[PowderLora] Stack: all {len(lora_names)} loras × {len(prompts_input)} prompts")
         log(f"[PowderLora] === END ===")
+        info(f"[PowderLora] Stack: {len(lora_names)} LoRA × {len(prompts_input)} prompt{'s' if len(prompts_input) != 1 else ''}")
 
         combined_lora_name = " + ".join(lora_names) if lora_names else "No LoRA"
 

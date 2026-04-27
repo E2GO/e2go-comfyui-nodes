@@ -4,7 +4,7 @@ PowderPromptList - Dynamic prompt list with configurable slots.
 
 import json
 
-from ._log import log, warn
+from ._log import log, info, warn
 
 
 class PowderPromptList:
@@ -29,7 +29,7 @@ class PowderPromptList:
     CATEGORY = "e2go_nodes"
 
     def get_prompts(self, prompt_config, **kwargs):
-        log("[PowderPrompt] === START ===")
+        log("[PowderPrompt] === START ===")  # debug-only
 
         config = []
         try:
@@ -95,6 +95,10 @@ class PowderPromptList:
 
         log(f"[PowderPrompt] Returning {len(positive_prompts)} positive, {len(negative_prompts)} negative prompts")
         log("[PowderPrompt] === END ===")
+
+        non_empty = sum(1 for p in positive_prompts if p)
+        if non_empty > 0:
+            info(f"[PowderPrompt] {len(positive_prompts)} prompt{'s' if len(positive_prompts) != 1 else ''}, {non_empty} non-empty")
 
         return (positive_prompts, negative_prompts)
 

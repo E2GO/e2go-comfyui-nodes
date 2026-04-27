@@ -12,7 +12,7 @@ import json
 import time
 import weakref
 
-from ._log import log, warn, error
+from ._log import log, info, warn, error
 from ._cache import LRUCache
 
 # ---------------------------------------------------------------------------
@@ -565,6 +565,16 @@ class PowderConditioner:
         log(f"[PowderConditioner] Encoded: {encoded_count}, Cache hits: {cache_hits}")
         log(f"[PowderConditioner] Done in {total_time:.1f}s")
 
+        total_uniques = len(unique_pos_texts) + len(unique_neg_texts)
+        if total_uniques > 0:
+            cache_pct = round(100.0 * cache_hits / total_uniques)
+            cache_label = {
+                "auto": "auto",
+                "aggressive": "force",
+                "disabled": "off",
+            }.get(effective_mode, effective_mode)
+            info(f"[PowderConditioner] {len(final_prompts)} prompts | {encoded_count} encoded, {cache_hits} cached ({cache_pct}%) | mode={cache_label} | {total_time:.1f}s")
+
         return (positive_results, negative_results, final_prompts, final_negatives)
 
 
@@ -596,6 +606,7 @@ class ClearConditioningCache:
         count = _conditioning_cache.clear()
         _clip_dim_cache.clear()
         log(f"[ClearConditioningCache] Cleared {count} entries + dim cache (trigger={trigger})")
+        info(f"[ClearConditioningCache] cleared {count} cached encoding{'s' if count != 1 else ''}")
         return {}
 
 
@@ -641,6 +652,12 @@ class PowderCacheStats:
         }
         report_str = json.dumps(stats, indent=2)
         log(f"[PowderCacheStats]\n{report_str}")
+        info(
+            f"[PowderCacheStats] cond={stats['conditioning_cache']['size']}/{stats['conditioning_cache']['maxsize']} | "
+            f"patcher={stats['lora_patcher_cache']['size']}/{stats['lora_patcher_cache']['maxsize']} | "
+            f"loras={stats['lora_raw_cache']['size']}/{stats['lora_raw_cache']['maxsize']} | "
+            f"styles={stats['styles_loaded']}"
+        )
         return (report_str,)
 
 
