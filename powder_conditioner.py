@@ -5,10 +5,12 @@ Encodes each (clip, prompt) pair honestly, using the per-index CLIP object
 that was passed in.  Results are cached via a thread-safe LRU cache.
 """
 
+import os
 import torch
 import hashlib
 import json
 import time
+import weakref
 
 from ._log import log, warn, error
 from ._cache import LRUCache
@@ -16,11 +18,37 @@ from ._cache import LRUCache
 # ---------------------------------------------------------------------------
 # Global caches
 # ---------------------------------------------------------------------------
-_conditioning_cache = LRUCache(maxsize=500)
+_conditioning_cache = LRUCache(maxsize=64)
 
-# id(clip) → (clip_hash, timestamp) – avoids repeated GPU→CPU transfer
-_clip_hash_cache: dict = {}
-_CLIP_HASH_TTL = 300  # 5 minutes
+_DEBUG_CACHE = os.environ.get("E2GO_CACHE_DEBUG", "").lower() in ("1", "true", "yes")
+
+# weakref.ref(clip) → str hash. Entries auto-removed when clip is GC'd.
+_clip_hash_refs: list = []  # list of (weakref, hash)
+
+
+def _clip_hash_lookup(clip):
+    """Return memoised hash for *clip* or None. Cleans dead refs along the way."""
+    alive = []
+    found = None
+    for ref, h in _clip_hash_refs:
+        target = ref()
+        if target is None:
+            continue  # dead, drop
+        alive.append((ref, h))
+        if target is clip:
+            found = h
+    _clip_hash_refs[:] = alive
+    return found
+
+
+def _clip_hash_remember(clip, hash_str):
+    """Store hash for *clip* via weakref."""
+    try:
+        ref = weakref.ref(clip)
+        _clip_hash_refs.append((ref, hash_str))
+    except TypeError:
+        # Some objects can't be weakref'd (e.g. proxies). Skip memoisation.
+        pass
 
 
 # ---------------------------------------------------------------------------
@@ -28,52 +56,65 @@ _CLIP_HASH_TTL = 300  # 5 minutes
 # ---------------------------------------------------------------------------
 def _get_clip_hash(clip):
     """
-    Unique identifier for a CLIP model.
+    Structural fingerprint of a CLIP model.
 
-    Uses class name + first parameter shapes + sampled values.
-    The result is memoised per ``id(clip)`` for up to 5 min.
+    Built from class name + (param_name, shape, dtype) tuples for ALL parameters.
+    Deterministic regardless of quantization state, weight materialization, or
+    AIMDO offloading.
+
+    Memoised per-CLIP via weakref; entries vanish when the CLIP is GC'd.
     """
-    clip_id = id(clip)
-    now = time.monotonic()
-    cached = _clip_hash_cache.get(clip_id)
+    cached = _clip_hash_lookup(clip)
     if cached is not None:
-        h, ts = cached
-        if now - ts < _CLIP_HASH_TTL:
-            return h
+        return cached
 
     try:
         cond_model = getattr(clip, "cond_stage_model", None)
         if cond_model is None:
-            result = f"no_cond_stage:{clip_id}"
-            _clip_hash_cache[clip_id] = (result, now)
+            result = f"no_cond_stage:{type(clip).__name__}"
+            if _DEBUG_CACHE:
+                log(f"[cache] clip_hash for {type(clip).__name__}: {result}")
+            _clip_hash_remember(clip, result)
             return result
 
         class_name = type(cond_model).__name__
-        params = list(cond_model.parameters())
-        if not params:
-            result = f"{class_name}:no_params:{clip_id}"
-            _clip_hash_cache[clip_id] = (result, now)
+
+        # Collect (name, shape, dtype) for every parameter — structural only.
+        sig_parts = [class_name]
+        try:
+            for name, p in cond_model.named_parameters():
+                sig_parts.append(f"{name}:{tuple(p.shape)}:{p.dtype}")
+        except Exception as e:
+            warn(f"clip hash: named_parameters failed ({e}), falling back to id")
+            result = f"fallback:{class_name}:{id(cond_model)}"
+            if _DEBUG_CACHE:
+                log(f"[cache] clip_hash for {type(clip).__name__}: {result}")
+            _clip_hash_remember(clip, result)
             return result
 
-        shapes = []
-        param_samples = []
-        for p in params[:5]:
-            shapes.append(str(p.shape))
-            flat = p.flatten()[:50].detach().cpu().float()
-            param_samples.append(flat.numpy().tobytes())
+        if len(sig_parts) == 1:  # no params
+            result = f"{class_name}:no_params"
+            if _DEBUG_CACHE:
+                log(f"[cache] clip_hash for {type(clip).__name__}: {result}")
+            _clip_hash_remember(clip, result)
+            return result
 
-        shapes_str = "|".join(shapes)
-        combined_bytes = b"".join(param_samples)
-        param_hash = hashlib.md5(combined_bytes).hexdigest()[:12]
+        # Compact: hash the joined signature.
+        sig_blob = "|".join(sig_parts).encode("utf-8")
+        digest = hashlib.md5(sig_blob).hexdigest()[:16]
+        result = f"{class_name}:{digest}"
 
-        result = f"{class_name}:{shapes_str}:{param_hash}"
-        _clip_hash_cache[clip_id] = (result, now)
+        if _DEBUG_CACHE:
+            log(f"[cache] clip_hash for {type(clip).__name__}: {result}")
+        _clip_hash_remember(clip, result)
         return result
 
     except Exception as e:
         warn(f"clip hash fallback due to: {e}")
-        result = f"fallback:{clip_id}"
-        _clip_hash_cache[clip_id] = (result, now)
+        result = f"fallback:{type(clip).__name__}:{id(clip)}"
+        if _DEBUG_CACHE:
+            log(f"[cache] clip_hash for {type(clip).__name__}: {result}")
+        _clip_hash_remember(clip, result)
         return result
 
 
@@ -129,19 +170,53 @@ def _get_cache_key(clip_hash: str, prompt: str) -> str:
     return f"{clip_hash}:{prompt_hash}"
 
 
+def _conditioning_to_cpu(conditioning):
+    """Move conditioning tensors to CPU for safe caching. Returns new list."""
+    out = []
+    for cond, extras in conditioning:
+        cond_cpu = cond.detach().to("cpu", copy=True) if hasattr(cond, "to") else cond
+        extras_cpu = {}
+        for k, v in extras.items():
+            if hasattr(v, "to"):
+                extras_cpu[k] = v.detach().to("cpu", copy=True)
+            else:
+                extras_cpu[k] = v
+        out.append([cond_cpu, extras_cpu])
+    return out
+
+
+def _conditioning_to_device(conditioning, device):
+    """Move conditioning tensors to *device* (typically GPU) for use."""
+    out = []
+    for cond, extras in conditioning:
+        cond_dev = cond.to(device) if hasattr(cond, "to") else cond
+        extras_dev = {}
+        for k, v in extras.items():
+            if hasattr(v, "to"):
+                extras_dev[k] = v.to(device)
+            else:
+                extras_dev[k] = v
+        out.append([cond_dev, extras_dev])
+    return out
+
+
 def _cache_conditioning(clip_hash, prompt, conditioning):
-    _conditioning_cache.put(_get_cache_key(clip_hash, prompt), conditioning)
+    cpu_cond = _conditioning_to_cpu(conditioning)
+    _conditioning_cache.put(_get_cache_key(clip_hash, prompt), cpu_cond)
 
 
-def _get_cached_conditioning(clip_hash, prompt):
+def _get_cached_conditioning(clip_hash, prompt, target_device):
     cache_key = _get_cache_key(clip_hash, prompt)
     cached = _conditioning_cache.get(cache_key)
-    if cached is not None:
-        if not _validate_conditioning_shape(cached, clip_hash=clip_hash):
-            log("Cache invalidated: dimension mismatch")
-            _conditioning_cache.remove(cache_key)
-            return None
-    return cached
+    if _DEBUG_CACHE:
+        log(f"[cache] {'HIT' if cached else 'MISS'} key={cache_key[:32]}...")
+    if cached is None:
+        return None
+    if not _validate_conditioning_shape(cached, clip_hash=clip_hash):
+        log("Cache invalidated: dimension mismatch")
+        _conditioning_cache.remove(cache_key)
+        return None
+    return _conditioning_to_device(cached, target_device)
 
 
 def _encode_prompt(clip_obj, prompt_text):
@@ -150,6 +225,36 @@ def _encode_prompt(clip_obj, prompt_text):
     output = clip_obj.encode_from_tokens(tokens, return_pooled=True, return_dict=True)
     cond = output.pop("cond")
     return [[cond, output]]
+
+
+# Class-name markers for CLIP/text encoder families that don't play well
+# with structural caching (quantization-driven instability, frequent reloads, etc.)
+_QUANTIZED_CLIP_MARKERS = ("Flux", "T5", "MixedPrecision", "Quantized")
+
+
+def _is_unstable_clip(clip):
+    """Detect CLIPs whose state can change in ways our cache can't track."""
+    try:
+        cond_model = getattr(clip, "cond_stage_model", None)
+        if cond_model is None:
+            return False
+        class_name = type(cond_model).__name__
+        return any(marker in class_name for marker in _QUANTIZED_CLIP_MARKERS)
+    except Exception:
+        return False
+
+
+def _resolve_clip_device(clip):
+    """Best-effort: where does this CLIP currently live? Default to CPU."""
+    try:
+        cond_model = getattr(clip, "cond_stage_model", None)
+        if cond_model is None:
+            return torch.device("cpu")
+        for p in cond_model.parameters():
+            return p.device
+    except Exception:
+        pass
+    return torch.device("cpu")
 
 
 # ---------------------------------------------------------------------------
@@ -214,6 +319,7 @@ class PowderConditioner:
                 "lora_info": ("STRING", {"default": "", "multiline": False, "forceInput": True}),
                 "style": ("STRING", {"default": "", "multiline": False, "forceInput": True}),
                 "use_cache": ("BOOLEAN", {"default": True}),
+                "cache_mode": (["auto", "aggressive", "disabled"], {"default": "auto"}),
             },
         }
 
@@ -225,8 +331,16 @@ class PowderConditioner:
     CATEGORY = "e2go_nodes"
 
     def encode(self, clip, prompt, negative_prompt=None,
-               style=None, lora_info=None, use_cache=None):
+               style=None, lora_info=None, use_cache=None, cache_mode=None):
         use_cache = use_cache[0] if isinstance(use_cache, list) else (use_cache if use_cache is not None else True)
+        cache_mode = cache_mode[0] if isinstance(cache_mode, list) else (cache_mode if cache_mode is not None else "auto")
+
+        # Resolve effective caching policy.
+        # Backward compat: use_cache=False overrides cache_mode to disabled.
+        if not use_cache:
+            effective_mode = "disabled"
+        else:
+            effective_mode = cache_mode  # auto / aggressive / disabled
 
         # Parse style JSON
         style_prefix = ""
@@ -333,8 +447,18 @@ class PowderConditioner:
         pos_results_unique = [None] * len(unique_pos_texts)
         for idx, (clip_obj, text) in enumerate(zip(unique_pos_clips, unique_pos_texts)):
             clip_hash = _get_clip_hash(clip_obj)
-            if use_cache:
-                cached = _get_cached_conditioning(clip_hash, text)
+
+            # Decide whether to use cache for THIS clip
+            if effective_mode == "disabled":
+                cache_active = False
+            elif effective_mode == "aggressive":
+                cache_active = True
+            else:  # auto
+                cache_active = not _is_unstable_clip(clip_obj)
+
+            if cache_active:
+                target_device = _resolve_clip_device(clip_obj)
+                cached = _get_cached_conditioning(clip_hash, text, target_device)
                 if cached is not None:
                     pos_results_unique[idx] = cached
                     cache_hits += 1
@@ -347,7 +471,7 @@ class PowderConditioner:
             encoded_count += 1
             _learn_cond_dim(clip_hash, conditioning)
 
-            if use_cache:
+            if cache_active:
                 _cache_conditioning(clip_hash, text, conditioning)
 
             log(f"[PowderConditioner] positive {idx+1}/{len(unique_pos_texts)}: encoded ({time.time()-enc_start:.2f}s)")
@@ -356,8 +480,18 @@ class PowderConditioner:
         neg_results_unique = [None] * len(unique_neg_texts)
         for idx, (clip_obj, text) in enumerate(zip(unique_neg_clips, unique_neg_texts)):
             clip_hash = _get_clip_hash(clip_obj)
-            if use_cache:
-                cached = _get_cached_conditioning(clip_hash, text)
+
+            # Decide whether to use cache for THIS clip
+            if effective_mode == "disabled":
+                cache_active = False
+            elif effective_mode == "aggressive":
+                cache_active = True
+            else:  # auto
+                cache_active = not _is_unstable_clip(clip_obj)
+
+            if cache_active:
+                target_device = _resolve_clip_device(clip_obj)
+                cached = _get_cached_conditioning(clip_hash, text, target_device)
                 if cached is not None:
                     neg_results_unique[idx] = cached
                     cache_hits += 1
@@ -370,7 +504,7 @@ class PowderConditioner:
             encoded_count += 1
             _learn_cond_dim(clip_hash, conditioning)
 
-            if use_cache:
+            if cache_active:
                 _cache_conditioning(clip_hash, text, conditioning)
 
             log(f"[PowderConditioner] negative {idx+1}/{len(unique_neg_texts)}: encoded ({time.time()-enc_start:.2f}s)")
