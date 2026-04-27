@@ -618,14 +618,22 @@ class PowderCacheStats:
 
     def report(self):
         # Local imports to avoid circular dependencies if module structure changes.
-        from .powder_lora import _lora_cache, _patcher_cache
+        from .powder_lora import _lora_cache, _patcher_entries, _PATCHER_CACHE_MAXSIZE
         from ._styles import _STYLES_CACHE
 
         live_clip_refs = sum(1 for ref, _ in _clip_hash_refs if ref() is not None)
+        live_patcher = sum(
+            1 for m_ref, c_ref, _, _, _ in _patcher_entries
+            if m_ref() is not None and (c_ref is None or c_ref() is not None)
+        )
 
         stats = {
             "lora_raw_cache": _lora_cache.stats(),
-            "lora_patcher_cache": _patcher_cache.stats(),
+            "lora_patcher_cache": {
+                "size": live_patcher,
+                "raw_entries": len(_patcher_entries),
+                "maxsize": _PATCHER_CACHE_MAXSIZE,
+            },
             "conditioning_cache": _conditioning_cache.stats(),
             "clip_dim_cache": _clip_dim_cache.stats(),
             "clip_hash_refs": live_clip_refs,

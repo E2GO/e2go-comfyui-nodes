@@ -117,21 +117,103 @@ except Exception:
 # ---------------------------------------------------------------------------
 _lora_cache = LRUCache(maxsize=16, ttl_seconds=1800)  # 30 min TTL on raw safetensors
 
-# Patcher cache: keyed on LoRA path/mtime + strengths + input model/clip identity.
-# Lets identical re-runs skip load_lora_for_models entirely.
-_patcher_cache = LRUCache(maxsize=32)
+# Patcher cache (weakref-keyed for lifetime safety).
+#
+# Each entry: (model_ref, clip_ref_or_None, static_key, value, last_used_mono)
+#   model_ref      : weakref.ref(model)
+#   clip_ref       : weakref.ref(clip) | None  — None when disable_clip=True
+#   static_key     : tuple (lora_path, mtime, str_model_r6, str_clip_r6, disable_clip)
+#   value          : (model_lora, clip_lora)
+#   last_used_mono : float — for LRU eviction
+#
+# Lookup is a linear scan that simultaneously prunes dead refs.
+import time
+import weakref
+
+_PATCHER_CACHE_MAXSIZE = 32
+_patcher_entries: list = []
 
 
-def _get_patcher_cache_key(lora_path, mtime, str_model, str_clip, disable_clip, model, clip):
+def _make_static_key(lora_path, mtime, str_model, str_clip, disable_clip):
+    """Return the hashable static portion of the patcher key."""
     return (
         lora_path,
         mtime,
         round(float(str_model), 6),
         round(float(str_clip), 6),
         bool(disable_clip),
-        id(model),
-        id(clip) if not disable_clip else None,
     )
+
+
+def _patcher_lookup(lora_path, mtime, str_model, str_clip, disable_clip, model, clip):
+    """
+    Find a patcher cache entry matching the given inputs.
+    Returns the cached value or None. Prunes dead weakref entries during scan.
+    """
+    static_key = _make_static_key(lora_path, mtime, str_model, str_clip, disable_clip)
+    now = time.monotonic()
+    found = None
+    alive = []
+
+    for entry in _patcher_entries:
+        m_ref, c_ref, e_static, e_value, _last = entry
+        m_obj = m_ref() if m_ref is not None else None
+        if m_obj is None:
+            continue
+        c_obj = c_ref() if c_ref is not None else None
+        if c_ref is not None and c_obj is None:
+            continue
+
+        alive.append(entry)
+
+        if found is not None:
+            continue
+
+        if e_static != static_key:
+            continue
+        if m_obj is not model:
+            continue
+        if not disable_clip and c_obj is not clip:
+            continue
+
+        found_idx = len(alive) - 1
+        alive[found_idx] = (m_ref, c_ref, e_static, e_value, now)
+        found = e_value
+
+    _patcher_entries[:] = alive
+    return found
+
+
+def _patcher_store(lora_path, mtime, str_model, str_clip, disable_clip, model, clip, value):
+    """
+    Store a patcher cache entry with weakref lifetime coupling.
+    Evicts oldest entry if maxsize exceeded.
+    """
+    static_key = _make_static_key(lora_path, mtime, str_model, str_clip, disable_clip)
+
+    try:
+        m_ref = weakref.ref(model)
+    except TypeError:
+        warn("Patcher cache: model object cannot be weakref'd, skipping cache")
+        return
+
+    if disable_clip:
+        c_ref = None
+    else:
+        try:
+            c_ref = weakref.ref(clip)
+        except TypeError:
+            warn("Patcher cache: clip object cannot be weakref'd, skipping cache")
+            return
+
+    now = time.monotonic()
+    new_entry = (m_ref, c_ref, static_key, value, now)
+
+    if len(_patcher_entries) >= _PATCHER_CACHE_MAXSIZE:
+        oldest_idx = min(range(len(_patcher_entries)), key=lambda i: _patcher_entries[i][4])
+        _patcher_entries.pop(oldest_idx)
+
+    _patcher_entries.append(new_entry)
 
 
 def _get_lora_cache_key(lora_path):
@@ -305,8 +387,7 @@ class PowderLoraLoader:
                     mtime = os.path.getmtime(lora_path)
                 except Exception:
                     mtime = 0.0
-                patcher_key = _get_patcher_cache_key(lora_path, mtime, str_model, str_clip, disable_clip, model, clip)
-                cached_patcher = _patcher_cache.get(patcher_key)
+                cached_patcher = _patcher_lookup(lora_path, mtime, str_model, str_clip, disable_clip, model, clip)
                 if cached_patcher is not None:
                     model_lora, clip_lora = cached_patcher
                     log(f"[PowderLora] Patcher cache hit: {os.path.basename(name)}")
@@ -324,7 +405,7 @@ class PowderLoraLoader:
                             model, clip,
                             lora_data, str_model, str_clip
                         )
-                    _patcher_cache.put(patcher_key, (model_lora, clip_lora))
+                    _patcher_store(lora_path, mtime, str_model, str_clip, disable_clip, model, clip, (model_lora, clip_lora))
 
                 if trigger:
                     save_trigger(name, trigger)
