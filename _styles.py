@@ -11,8 +11,20 @@ Old format (from sdxl_prompt_styler):
 import json
 import os
 import re
+import time
 
 from ._log import log, warn
+
+
+# ---------------------------------------------------------------------------
+# Unified styles cache (used by both PowderStyler and PowderGridSaver).
+# Auto-reloads when any .json in styles/ is modified.
+# ---------------------------------------------------------------------------
+_STYLES_CACHE: list = []
+_STYLES_BY_NAME_CACHE: dict = {}
+_STYLES_LAST_MTIME: float = 0.0
+_STYLES_LAST_CHECK: float = 0.0
+_STYLES_CHECK_INTERVAL: float = 2.0  # throttle stat() to one per N seconds
 
 
 def _clean_tags(text: str) -> str:
@@ -144,3 +156,39 @@ def load_styles_from_directory(styles_dir: str) -> list:
 def get_styles_dir() -> str:
     """Return path to the styles directory bundled with e2go_nodes."""
     return os.path.join(os.path.dirname(os.path.abspath(__file__)), "styles")
+
+
+def _scan_styles_mtime(styles_dir: str) -> float:
+    """Latest mtime of any .json in styles_dir, or 0.0 if dir empty/missing."""
+    try:
+        latest = 0.0
+        for entry in os.scandir(styles_dir):
+            if entry.is_file() and entry.name.lower().endswith(".json"):
+                m = entry.stat().st_mtime
+                if m > latest:
+                    latest = m
+        return latest
+    except FileNotFoundError:
+        return 0.0
+    except Exception:
+        return 0.0
+
+
+def get_styles() -> tuple[list, dict]:
+    """
+    Return (all_styles, styles_by_name). Auto-reloads when files change,
+    throttled to one stat() per _STYLES_CHECK_INTERVAL seconds.
+    """
+    global _STYLES_CACHE, _STYLES_BY_NAME_CACHE, _STYLES_LAST_MTIME, _STYLES_LAST_CHECK
+
+    now = time.monotonic()
+    if now - _STYLES_LAST_CHECK >= _STYLES_CHECK_INTERVAL or not _STYLES_CACHE:
+        _STYLES_LAST_CHECK = now
+        styles_dir = get_styles_dir()
+        current_mtime = _scan_styles_mtime(styles_dir)
+        if current_mtime != _STYLES_LAST_MTIME or not _STYLES_CACHE:
+            _STYLES_LAST_MTIME = current_mtime
+            _STYLES_CACHE = load_styles_from_directory(styles_dir)
+            _STYLES_BY_NAME_CACHE = {s["name"]: s for s in _STYLES_CACHE}
+
+    return _STYLES_CACHE, _STYLES_BY_NAME_CACHE

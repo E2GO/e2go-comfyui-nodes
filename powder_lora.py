@@ -18,6 +18,40 @@ from ._log import log, warn, error
 from ._cache import LRUCache
 
 
+# ---------------------------------------------------------------------------
+# lora_info schema (shared contract between Lora Loader and Conditioner)
+# ---------------------------------------------------------------------------
+LORA_INFO_SCHEMA_VERSION = 2
+
+# Stack mode example:
+# {
+#   "schema_version": 2,
+#   "loras": ["lora_a + lora_b"],
+#   "strengths": [1.0],
+#   "triggers": ["trigA, trigB", "trigA, trigB", ...],   # length == N_prompts
+#   "combination_order": "Loras first" | "Prompts first",
+#   "mode": "stack",
+#   "original_loras": ["lora_a", "lora_b"],
+#   "original_strengths": [0.8, 1.0],
+#   "trigger_position": "before" | "after",
+# }
+#
+# Single mode example:
+# {
+#   "schema_version": 2,
+#   "loras": ["lora_a", "lora_b"],
+#   "strengths": [0.8, 1.0],
+#   "triggers": [<one per output combination>],   # length == N_loras × N_prompts
+#   "combination_order": "Loras first" | "Prompts first",
+#   "mode": "single",
+#   "trigger_position": "before" | "after",
+# }
+#
+# In both modes, triggers[i] must align with the i-th output prompt of the
+# Conditioner. Conditioner does not need to know about Stack vs Single — it
+# just zips triggers and prompts.
+
+
 def get_trigger_path(lora_name):
     """Path to the trigger .txt file next to the LoRA."""
     lora_path = folder_paths.get_full_path("loras", lora_name)
@@ -84,7 +118,23 @@ except Exception:
 # ---------------------------------------------------------------------------
 # LoRA cache
 # ---------------------------------------------------------------------------
-_lora_cache = LRUCache(maxsize=16)
+_lora_cache = LRUCache(maxsize=16, ttl_seconds=1800)  # 30 min TTL on raw safetensors
+
+# Patcher cache: keyed on LoRA path/mtime + strengths + input model/clip identity.
+# Lets identical re-runs skip load_lora_for_models entirely.
+_patcher_cache = LRUCache(maxsize=32)
+
+
+def _get_patcher_cache_key(lora_path, mtime, str_model, str_clip, disable_clip, model, clip):
+    return (
+        lora_path,
+        mtime,
+        round(float(str_model), 6),
+        round(float(str_clip), 6),
+        bool(disable_clip),
+        id(model),
+        id(clip) if not disable_clip else None,
+    )
 
 
 def _get_lora_cache_key(lora_path):
@@ -252,20 +302,30 @@ class PowderLoraLoader:
 
             log(f"[PowderLora] Loading: {name} (m={str_model}, c={str_clip}{'*' if disable_clip else ''})")
             try:
-                lora_data = _load_lora_cached(lora_path)
-
-                if disable_clip:
-                    # Pass clip=None to skip CLIP weights entirely
-                    model_lora, _ = comfy.sd.load_lora_for_models(
-                        model, None,
-                        lora_data, str_model, 0.0
-                    )
-                    clip_lora = base_clip
+                try:
+                    mtime = os.path.getmtime(lora_path)
+                except Exception:
+                    mtime = 0.0
+                patcher_key = _get_patcher_cache_key(lora_path, mtime, str_model, str_clip, disable_clip, model, clip)
+                cached_patcher = _patcher_cache.get(patcher_key)
+                if cached_patcher is not None:
+                    model_lora, clip_lora = cached_patcher
+                    log(f"[PowderLora] Patcher cache hit: {os.path.basename(name)}")
                 else:
-                    model_lora, clip_lora = comfy.sd.load_lora_for_models(
-                        model, clip,
-                        lora_data, str_model, str_clip
-                    )
+                    lora_data = _load_lora_cached(lora_path)
+                    if disable_clip:
+                        # Pass clip=None to skip CLIP weights entirely
+                        model_lora, _ = comfy.sd.load_lora_for_models(
+                            model, None,
+                            lora_data, str_model, 0.0
+                        )
+                        clip_lora = base_clip
+                    else:
+                        model_lora, clip_lora = comfy.sd.load_lora_for_models(
+                            model, clip,
+                            lora_data, str_model, str_clip
+                        )
+                    _patcher_cache.put(patcher_key, (model_lora, clip_lora))
 
                 if trigger:
                     save_trigger(name, trigger)
@@ -279,7 +339,15 @@ class PowderLoraLoader:
 
         if not unique_models:
             log("[PowderLora] No loras loaded, returning original model")
-            lora_info = json.dumps({"loras": [], "strengths": [], "triggers": [""] * len(prompts_input), "combination_order": combination_order, "mode": "single", "trigger_position": "before" if "Before" in trigger_position else "after"})
+            lora_info = json.dumps({
+                "schema_version": LORA_INFO_SCHEMA_VERSION,
+                "loras": [],
+                "strengths": [],
+                "triggers": [""] * len(prompts_input),
+                "combination_order": combination_order,
+                "mode": "single",
+                "trigger_position": "before" if "Before" in trigger_position else "after",
+            })
             return ([model], [clip], prompts_input, negatives_input, lora_info)
 
         # Build combinations
@@ -313,6 +381,7 @@ class PowderLoraLoader:
         log(f"[PowderLora] === END ===")
 
         lora_info = json.dumps({
+            "schema_version": LORA_INFO_SCHEMA_VERSION,
             "loras": lora_names,
             "strengths": lora_strengths,
             "triggers": triggers,
@@ -376,6 +445,7 @@ class PowderLoraLoader:
         combined_lora_name = " + ".join(lora_names) if lora_names else "No LoRA"
 
         lora_info = json.dumps({
+            "schema_version": LORA_INFO_SCHEMA_VERSION,
             "loras": [combined_lora_name],
             "strengths": [1.0],
             "triggers": triggers_out,

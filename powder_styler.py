@@ -8,18 +8,7 @@ Outputs style parts separately for flexible prompt assembly.
 import json
 
 from ._log import log, warn
-from ._styles import load_styles_from_directory, get_styles_dir, deduplicate_tags
-
-
-_ALL_STYLES: list = []
-_STYLES_BY_NAME: dict = {}
-
-
-def _ensure_styles_loaded():
-    global _ALL_STYLES, _STYLES_BY_NAME
-    if not _ALL_STYLES:
-        _ALL_STYLES = load_styles_from_directory(get_styles_dir())
-        _STYLES_BY_NAME = {s["name"]: s for s in _ALL_STYLES}
+from ._styles import get_styles, deduplicate_tags
 
 
 def _join_non_empty(*parts: str) -> str:
@@ -44,7 +33,7 @@ class PowderStyler:
     CATEGORY = "e2go_nodes"
 
     def apply_styles(self, style_position, use_positive, use_negative, style_config):
-        _ensure_styles_loaded()
+        _all_styles, styles_by_name = get_styles()
 
         config = []
         try:
@@ -67,7 +56,7 @@ class PowderStyler:
             if not enabled or name == "None":
                 continue
 
-            style = _STYLES_BY_NAME.get(name)
+            style = styles_by_name.get(name)
             if not style:
                 warn(f"Style not found: {name}")
                 continue
@@ -107,8 +96,8 @@ try:
 
     @PromptServer.instance.routes.get("/powder_styler/get_styles")
     async def get_styles_api(request):
-        _ensure_styles_loaded()
-        names = [s["name"] for s in _ALL_STYLES]
+        all_styles, _ = get_styles()
+        names = [s["name"] for s in all_styles]
         return web.json_response({"styles": names})
 except Exception:
     pass

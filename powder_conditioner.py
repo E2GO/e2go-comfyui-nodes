@@ -119,7 +119,7 @@ def _get_clip_hash(clip):
 
 
 # clip_hash → known conditioning dimension (learned from first encode)
-_clip_dim_cache: dict = {}
+_clip_dim_cache = LRUCache(maxsize=64)
 
 
 def _get_expected_cond_dim(clip, clip_hash=None):
@@ -129,8 +129,10 @@ def _get_expected_cond_dim(clip, clip_hash=None):
     dimension from the first encoding result and cache it per clip_hash.
     This works with any model architecture without maintenance.
     """
-    if clip_hash and clip_hash in _clip_dim_cache:
-        return _clip_dim_cache[clip_hash]
+    if clip_hash:
+        cached = _clip_dim_cache.get(clip_hash)
+        if cached is not None:
+            return cached
     return None
 
 
@@ -139,7 +141,7 @@ def _learn_cond_dim(clip_hash, conditioning):
     try:
         if conditioning and len(conditioning) > 0:
             dim = conditioning[0][0].shape[-1]
-            _clip_dim_cache[clip_hash] = dim
+            _clip_dim_cache.put(clip_hash, dim)
     except Exception:
         pass
 
@@ -257,6 +259,48 @@ def _resolve_clip_device(clip):
     return torch.device("cpu")
 
 
+# Latest lora_info schema_version this consumer knows how to parse.
+LORA_INFO_SCHEMA_VERSION_KNOWN = 2
+
+
+def _validate_lora_info(li: dict, n_prompts: int) -> dict:
+    """
+    Validate and normalise lora_info from Lora Loader.
+
+    Returns a dict with `triggers` aligned to n_prompts and `trigger_position`
+    set. Logs warnings on inconsistencies; does not raise.
+    """
+    if not isinstance(li, dict):
+        warn(f"lora_info: expected dict, got {type(li).__name__}; ignoring")
+        return {"triggers": [""] * n_prompts, "trigger_position": "after"}
+
+    schema_version = li.get("schema_version", 1)
+    if schema_version > LORA_INFO_SCHEMA_VERSION_KNOWN:
+        warn(f"lora_info: unknown schema_version={schema_version}, attempting best-effort parse")
+
+    triggers = li.get("triggers", [])
+    if not isinstance(triggers, list):
+        warn(f"lora_info: triggers not a list ({type(triggers).__name__}), using empty")
+        triggers = []
+
+    if len(triggers) < n_prompts:
+        if triggers:
+            warn(f"lora_info: triggers length {len(triggers)} < prompts {n_prompts}, padding with empty strings")
+        triggers = list(triggers) + [""] * (n_prompts - len(triggers))
+    elif len(triggers) > n_prompts:
+        warn(f"lora_info: triggers length {len(triggers)} > prompts {n_prompts}, truncating")
+        triggers = triggers[:n_prompts]
+
+    triggers = [t if isinstance(t, str) else "" for t in triggers]
+
+    trigger_position = li.get("trigger_position", "after")
+    if trigger_position not in ("before", "after"):
+        warn(f"lora_info: unknown trigger_position={trigger_position!r}, defaulting to 'after'")
+        trigger_position = "after"
+
+    return {"triggers": triggers, "trigger_position": trigger_position}
+
+
 # ---------------------------------------------------------------------------
 # Assembly helpers
 # ---------------------------------------------------------------------------
@@ -358,22 +402,26 @@ class PowderConditioner:
             except (json.JSONDecodeError, Exception):
                 pass
 
-        # Parse lora_info: trigger_position + triggers array
-        trigger_position = "after"
-        triggers = []
+        # Parse lora_info: trigger_position + triggers array (validated below
+        # once we know the prompt list length).
+        raw_li: dict = {}
         if lora_info is not None:
             li_str = lora_info[0] if isinstance(lora_info, list) else lora_info
             try:
-                li = json.loads(li_str) if li_str else {}
-                trigger_position = li.get("trigger_position", "after")
-                triggers = li.get("triggers", [])
-            except (json.JSONDecodeError, Exception):
-                pass
+                parsed = json.loads(li_str) if li_str else {}
+                raw_li = parsed if isinstance(parsed, dict) else {}
+            except (json.JSONDecodeError, Exception) as e:
+                warn(f"lora_info: JSON parse failed ({e})")
+                raw_li = {}
 
         if not isinstance(clip, list):
             clip = [clip]
         if not isinstance(prompt, list):
             prompt = [prompt]
+
+        li_validated = _validate_lora_info(raw_li, len(prompt))
+        triggers = li_validated["triggers"]
+        trigger_position = li_validated["trigger_position"]
 
         has_negatives = negative_prompt is not None and len(negative_prompt) > 0
         if has_negatives and not isinstance(negative_prompt, list):
@@ -521,11 +569,19 @@ class PowderConditioner:
 
 
 class ClearConditioningCache:
-    """Clears the conditioning cache."""
+    """Clears the conditioning cache and dim cache.
+
+    Triggered by changing the `trigger` value (any change). Set to a different
+    int to fire on next queue. Auto-incremented by the JS frontend button.
+    """
 
     @classmethod
     def INPUT_TYPES(cls):
-        return {"required": {}}
+        return {
+            "required": {
+                "trigger": ("INT", {"default": 0, "min": 0, "max": 999999, "step": 1}),
+            },
+        }
 
     RETURN_TYPES = ()
     FUNCTION = "clear"
@@ -533,22 +589,61 @@ class ClearConditioningCache:
     OUTPUT_NODE = True
 
     @classmethod
+    def IS_CHANGED(cls, trigger, **_kwargs):
+        return trigger  # only re-runs when trigger changes
+
+    def clear(self, trigger):
+        count = _conditioning_cache.clear()
+        _clip_dim_cache.clear()
+        log(f"[ClearConditioningCache] Cleared {count} entries + dim cache (trigger={trigger})")
+        return {}
+
+
+class PowderCacheStats:
+    """Logs current cache sizes. Useful for debugging cache behavior."""
+
+    @classmethod
+    def INPUT_TYPES(cls):
+        return {"required": {}}
+
+    RETURN_TYPES = ("STRING",)
+    RETURN_NAMES = ("stats",)
+    FUNCTION = "report"
+    CATEGORY = "e2go_nodes"
+    OUTPUT_NODE = True
+
+    @classmethod
     def IS_CHANGED(cls, *_args, **_kwargs):
         return float("NaN")
 
-    def clear(self):
-        count = _conditioning_cache.clear()
-        _clip_dim_cache.clear()
-        log(f"[ClearConditioningCache] Cleared {count} entries + dimension cache")
-        return {}
+    def report(self):
+        # Local imports to avoid circular dependencies if module structure changes.
+        from .powder_lora import _lora_cache, _patcher_cache
+        from ._styles import _STYLES_CACHE
+
+        live_clip_refs = sum(1 for ref, _ in _clip_hash_refs if ref() is not None)
+
+        stats = {
+            "lora_raw_cache": _lora_cache.stats(),
+            "lora_patcher_cache": _patcher_cache.stats(),
+            "conditioning_cache": _conditioning_cache.stats(),
+            "clip_dim_cache": _clip_dim_cache.stats(),
+            "clip_hash_refs": live_clip_refs,
+            "styles_loaded": len(_STYLES_CACHE),
+        }
+        report_str = json.dumps(stats, indent=2)
+        log(f"[PowderCacheStats]\n{report_str}")
+        return (report_str,)
 
 
 NODE_CLASS_MAPPINGS = {
     "PowderConditioner": PowderConditioner,
     "ClearConditioningCache": ClearConditioningCache,
+    "PowderCacheStats": PowderCacheStats,
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
     "PowderConditioner": "Powder Conditioner",
     "ClearConditioningCache": "Powder Clear Conditioning Cache",
+    "PowderCacheStats": "Powder Cache Stats",
 }

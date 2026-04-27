@@ -12,25 +12,12 @@ import folder_paths
 import torch
 
 from ._log import log, warn
-from ._styles import load_styles_from_directory, get_styles_dir, deduplicate_tags
+from ._styles import get_styles, deduplicate_tags
 
 # ---------------------------------------------------------------------------
 # Font cache  (font_path, size) → ImageFont
 # ---------------------------------------------------------------------------
 _FONT_CACHE: dict = {}
-
-# ---------------------------------------------------------------------------
-# Style cache (shared with PowderStyler format)
-# ---------------------------------------------------------------------------
-_ALL_STYLES: list = []
-_STYLES_BY_NAME: dict = {}
-
-
-def _ensure_styles_loaded():
-    global _ALL_STYLES, _STYLES_BY_NAME
-    if not _ALL_STYLES:
-        _ALL_STYLES = load_styles_from_directory(get_styles_dir())
-        _STYLES_BY_NAME = {s["name"]: s for s in _ALL_STYLES}
 
 
 class PowderGridSaver:
@@ -726,7 +713,7 @@ class PowderGridSaver:
             except (json.JSONDecodeError, Exception):
                 config = []
 
-            _ensure_styles_loaded()
+            _all_styles, styles_by_name = get_styles()
 
             style_names = []
             all_prefixes = []
@@ -746,7 +733,7 @@ class PowderGridSaver:
 
                 style_names.append(name)
 
-                style = _STYLES_BY_NAME.get(name)
+                style = styles_by_name.get(name)
                 if not style:
                     continue
 
