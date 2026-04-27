@@ -45,6 +45,7 @@ Download the [latest release](https://github.com/E2GO/e2go-comfyui-nodes/archive
 - [Powder Conditioner](#powder-conditioner) — assembling and encoding the final prompt
 - [Powder Grid Save](#powder-grid-save) — assembling images into a labeled grid
 - [Powder Clear Conditioning Cache](#powder-clear-conditioning-cache) — clearing the encoding cache
+- [Powder Cache Stats](#powder-cache-stats) — diagnostic snapshot of all internal caches
 
 ---
 
@@ -155,7 +156,7 @@ The old SDXL Prompt Styler format is also supported:
 ]
 ```
 
-The file is automatically picked up on ComfyUI restart. The filename doesn't matter — any `.json` in the `styles/` folder works.
+The file is automatically picked up within ~2 seconds of saving — no ComfyUI restart needed. The filename doesn't matter — any `.json` in the `styles/` folder works. Both Powder Styler and Powder Grid Save share a single styles cache, so updates are visible to both nodes simultaneously.
 
 ---
 
@@ -202,7 +203,16 @@ Central node: assembles the prompt, LoRA triggers, and styles into the final tex
 | **negative_prompt** | STRING | no | Negative prompt(s) — connected via wire |
 | **lora_info** | STRING | no | JSON from Lora Loader — contains triggers and their position |
 | **style** | STRING | no | JSON from Styler — contains prefix, suffix, negative |
-| **use_cache** | boolean | no | Cache encoding results (default: yes) |
+| **use_cache** | boolean | no | Master switch (default: yes). When `false`, bypasses cache regardless of `cache_mode`. Kept for backward compatibility. |
+| **cache_mode** | combo | no | Cache policy when `use_cache=true`. See modes below. Default: `auto`. |
+
+#### Cache modes
+
+- **`auto`** (default, recommended) — caches conditioning for stable text encoders (SDXL, SD 1.5). Automatically **disables** cache for FLUX, T5, and mixed-precision quantised CLIPs, where cache identity tracking is not reliable. Safe choice for mixed workloads.
+- **`aggressive`** — caches everything, including FLUX. Use only when you've verified your workflow doesn't trigger CLIP state changes (no AIMDO offloading pressure, no model reloads). Risk: stale conditioning across reload boundaries.
+- **`disabled`** — equivalent to `use_cache=false`. Never caches.
+
+The UI greys out `cache_mode` when `use_cache=false`, since cache is fully disabled by the master switch.
 
 #### Outputs
 
@@ -295,11 +305,53 @@ Utility node for clearing the Powder Conditioner encoding cache. Useful when swi
 
 #### Inputs
 
-None.
+| Input | Type | Required | Description |
+|-------|------|:---:|-------------|
+| **trigger** | INT | yes | Increment this value to fire the clear. Cache clears only when the value changes. Default: 0. |
+
+The node executes only when `trigger` changes. This prevents the cache from being wiped on every queue when the node is left in the graph. To clear, edit the value or click the **Clear now** button on the node (auto-increments).
 
 #### Outputs
 
 None (output node).
+
+---
+
+### Powder Cache Stats
+
+Diagnostic node that reports the current state of all internal caches. Useful for debugging cache behaviour, tuning sizes, or verifying that fixes have taken effect.
+
+#### Inputs
+
+None.
+
+#### Outputs
+
+| Output | Type | Description |
+|--------|------|-------------|
+| **stats** | STRING | JSON snapshot of cache sizes (also written to log). |
+
+#### Output shape
+
+```json
+{
+  "lora_raw_cache":     {"size": int, "maxsize": 16, "ttl": 1800},
+  "lora_patcher_cache": {"size": int, "raw_entries": int, "maxsize": 32},
+  "conditioning_cache": {"size": int, "maxsize": 64, "ttl": null},
+  "clip_dim_cache":     {"size": int, "maxsize": 64, "ttl": null},
+  "clip_hash_refs":     int,
+  "styles_loaded":      int
+}
+```
+
+- `lora_raw_cache` — raw safetensors data, TTL=30 min. `size` is current entries.
+- `lora_patcher_cache` — model patcher results. `size` = live entries, `raw_entries` = total before pruning dead weakrefs (gap = pending cleanup).
+- `conditioning_cache` — encoded conditioning (CPU-stored).
+- `clip_dim_cache` — learned conditioning dimensions per CLIP hash.
+- `clip_hash_refs` — number of live weakrefs to CLIP objects.
+- `styles_loaded` — total styles in memory after last directory scan.
+
+The node always runs when queued (`IS_CHANGED` returns NaN). Drop it into any graph during debugging; remove for production.
 
 ---
 
@@ -395,6 +447,7 @@ git clone https://github.com/E2GO/e2go-comfyui-nodes.git e2go_nodes
 - [Powder Conditioner](#powder-conditioner-1) — сборка и кодирование финального промпта
 - [Powder Grid Save](#powder-grid-save-1) — сборка изображений в grid с подписями
 - [Powder Clear Conditioning Cache](#powder-clear-conditioning-cache-1) — очистка кэша кодирования
+- [Powder Cache Stats](#powder-cache-stats-1) — диагностический снимок всех внутренних кэшей
 
 ---
 
@@ -505,7 +558,7 @@ git clone https://github.com/E2GO/e2go-comfyui-nodes.git e2go_nodes
 ]
 ```
 
-Файл автоматически подхватывается при перезапуске ComfyUI. Имя файла не важно, главное — `.json` в папке `styles/`.
+Файл автоматически подхватывается в течение ~2 секунд после сохранения — перезапуск ComfyUI не требуется. Имя файла не важно, главное — `.json` в папке `styles/`. Powder Styler и Powder Grid Save используют общий кэш стилей, поэтому изменения видны обоим нодам одновременно.
 
 ---
 
@@ -552,7 +605,16 @@ git clone https://github.com/E2GO/e2go-comfyui-nodes.git e2go_nodes
 | **negative_prompt** | STRING | нет | Негативный промпт(ы) — подключается проводом |
 | **lora_info** | STRING | нет | JSON от Lora Loader — содержит триггеры и их позицию |
 | **style** | STRING | нет | JSON от Styler — содержит prefix, suffix, negative |
-| **use_cache** | boolean | нет | Кэшировать результаты кодирования (по умолчанию: да) |
+| **use_cache** | boolean | нет | Главный выключатель (по умолчанию: да). При `false` обход кэша независимо от `cache_mode`. Оставлен для обратной совместимости. |
+| **cache_mode** | combo | нет | Политика кэша при `use_cache=true`. См. режимы ниже. По умолчанию: `auto`. |
+
+#### Режимы кэша
+
+- **`auto`** (по умолчанию, рекомендуется) — кэширует conditioning для стабильных текстовых энкодеров (SDXL, SD 1.5). Автоматически **отключает** кэш для FLUX, T5 и mixed-precision-квантизованных CLIP, где идентичность кэша ненадёжна. Безопасный выбор для смешанных воркфлоу.
+- **`aggressive`** — кэширует всё, включая FLUX. Использовать только если воркфлоу не вызывает изменений состояния CLIP (нет AIMDO offloading, нет перезагрузок модели). Риск: устаревший conditioning на границах перезагрузки.
+- **`disabled`** — эквивалент `use_cache=false`. Никогда не кэширует.
+
+UI делает `cache_mode` неактивным при `use_cache=false` — кэш всё равно полностью отключён главным выключателем.
 
 #### Выходы
 
@@ -645,11 +707,53 @@ Grid Saver автоматически находит ноду PowderStyler в в
 
 #### Входы
 
+| Вход | Тип | Обязательный | Описание |
+|------|-----|:---:|----------|
+| **trigger** | INT | да | Инкрементируйте значение, чтобы запустить очистку. Кэш очищается только при изменении значения. По умолчанию: 0. |
+
+Нода выполняется, только когда `trigger` изменился. Это предотвращает очистку кэша на каждой постановке в очередь, когда нода оставлена в графе. Чтобы очистить — измените значение или нажмите кнопку **Clear now** на ноде (авто-инкремент).
+
+#### Выходы
+
+Нет (output-нода).
+
+---
+
+### Powder Cache Stats
+
+Диагностическая нода, выводящая текущее состояние всех внутренних кэшей. Полезна для отладки поведения кэша, тюнинга размеров или проверки, что фиксы сработали.
+
+#### Входы
+
 Нет.
 
 #### Выходы
 
-Нет (output node).
+| Выход | Тип | Описание |
+|-------|-----|----------|
+| **stats** | STRING | JSON-снимок размеров кэша (также пишется в лог). |
+
+#### Формат вывода
+
+```json
+{
+  "lora_raw_cache":     {"size": int, "maxsize": 16, "ttl": 1800},
+  "lora_patcher_cache": {"size": int, "raw_entries": int, "maxsize": 32},
+  "conditioning_cache": {"size": int, "maxsize": 64, "ttl": null},
+  "clip_dim_cache":     {"size": int, "maxsize": 64, "ttl": null},
+  "clip_hash_refs":     int,
+  "styles_loaded":      int
+}
+```
+
+- `lora_raw_cache` — сырые данные safetensors, TTL=30 минут.
+- `lora_patcher_cache` — патчеры моделей. `size` = живые записи, `raw_entries` = всего до удаления мёртвых weakref'ов (разница = ожидающая очистка).
+- `conditioning_cache` — закодированный conditioning (хранится на CPU).
+- `clip_dim_cache` — выученные размерности conditioning по hash'у CLIP.
+- `clip_hash_refs` — количество живых weakref'ов на CLIP-объекты.
+- `styles_loaded` — стилей в памяти после последнего сканирования директории.
+
+Нода всегда срабатывает при постановке в очередь (`IS_CHANGED` возвращает NaN). Подключите при отладке, уберите для продакшена.
 
 ---
 
@@ -699,3 +803,30 @@ Grid Saver автоматически находит ноду PowderStyler в в
 ## Пример workflow
 
 В папке `examples/` есть `powder_nodes_test_workflow.json` — импортируйте его в ComfyUI через меню Load.
+
+---
+
+## Development
+
+### Running tests
+
+```bash
+pip install -r requirements-dev.txt
+pytest
+```
+
+Tests cover pure-Python helpers (cache, styles, validators, prompt assembly, cache keys, weakref-aware patcher cache) and run **without** ComfyUI installed. Tests that require live model loading or `comfy.*` runtime are out of scope; they're validated manually in a live ComfyUI instance.
+
+To run a specific test file:
+
+```bash
+pytest tests/test_cache.py -v
+```
+
+To get coverage:
+
+```bash
+pytest --cov=. --cov-report=term-missing
+```
+
+See [`docs/lora_info_schema.md`](docs/lora_info_schema.md) for the cross-node `lora_info` JSON contract.
