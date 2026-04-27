@@ -9,3 +9,5 @@ __pycache__/
 !docs/images/*.png
 !docs/images/*.jpg
 *.sh
+WORK_LOG*.md
+NOTES*.md
