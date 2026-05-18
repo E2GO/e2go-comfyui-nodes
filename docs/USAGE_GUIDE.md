@@ -138,7 +138,42 @@ Auto-load and save trigger text for LoRAs.
 
 ---
 
-## Scenario 7: Cache Optimization
+## Scenario 7: Batch Prompts from Wildcard File
+
+**Nodes:** Powder Prompt Wildcard + Powder Conditioner (optionally + Powder Styler + Powder Lora Loader)
+
+Generate N images from N prompt lines pasted or loaded from a `.txt` file, with optional common base text.
+
+**Setup:**
+1. Add `Powder Prompt Wildcard`
+2. Fill `positive_text` — one prompt per line. Lines starting with `#` and empty lines are skipped. Example:
+   ```
+   a cat sitting on a fence
+   a dog running in a park
+   # ignored — comment
+   a bird flying over mountains
+   ```
+3. (Optional) Click **+ Load file...** to import a `.txt` library file. Pre-existing files appear in the **Wildcard file** combo (scanned from `e2go_nodes/wildcards/` and `<ComfyUI>/wildcards/`).
+4. (Optional) Set `prefix_text` for a common base added before each line — e.g. `masterpiece, highly detailed`.
+5. (Optional) Set `suffix_text` for a common base added after each line — e.g. `cinematic lighting, 8k`.
+6. Set `negative_text` once — applied to every output (replicated automatically).
+7. Connect `positive_prompts` / `negative_prompts` to `Powder Lora Loader` or directly to `Powder Conditioner`.
+
+**What happens:**
+- Each non-empty line produces `<prefix>, <line>, <suffix>` (empty parts dropped).
+- Downstream nodes iterate over the list — N prompts → N images.
+- If you set `batch_size > 1` in sampler/latent, you get N × batch_size images.
+- `× Clear positive` / `× Clear negative` / `× Clear prefix` / `× Clear suffix` buttons wipe respective fields with confirmation.
+
+**Tips:**
+- Save curated prompt lists as `.txt` in `e2go_nodes/wildcards/` for reuse across workflows. Files there show up in the combo automatically.
+- Combine with `Powder Grid Save` to assemble all N images into a labeled grid for comparison.
+- Selecting a file from the combo replaces `positive_text` (with a confirm dialog if non-empty).
+- The combo refreshes when the node is recreated or the page is reloaded.
+
+---
+
+## Scenario 8: Cache Optimization
 
 **Nodes:** Powder Conditioner + Powder Clear Conditioning Cache
 
@@ -164,6 +199,7 @@ Speed up repeated runs by using the conditioning cache.
 | Lora Loader alone (no Conditioner) | yes | Outputs raw prompts without style/trigger assembly |
 | Styler alone (no Lora Loader) | yes | Connect style directly to Conditioner |
 | Prompt List alone (no Lora Loader) | yes | Connect prompts directly to Conditioner |
+| Prompt Wildcard alone (no Lora Loader) | yes | Same output shape as Prompt List — drop-in compatible |
 | Conditioner without Lora/Styler | yes | Acts as a simple CLIP encoder with caching |
 | Grid Save without Lora Loader | yes | Just assembles images into a grid without LoRA labels |
 | All nodes together | yes | Full pipeline with maximum flexibility |
@@ -310,7 +346,42 @@ Speed up repeated runs by using the conditioning cache.
 
 ---
 
-## Сценарий 7: Оптимизация кэширования
+## Сценарий 7: Batch-промпты из wildcard-файла
+
+**Ноды:** Powder Prompt Wildcard + Powder Conditioner (опционально + Powder Styler + Powder Lora Loader)
+
+Генерация N изображений из N строк, вставленных вручную или загруженных из `.txt`-файла, с опциональной общей основой.
+
+**Настройка:**
+1. Добавьте `Powder Prompt Wildcard`
+2. Заполните `positive_text` — один промпт на строку. Строки, начинающиеся с `#`, и пустые пропускаются. Пример:
+   ```
+   a cat sitting on a fence
+   a dog running in a park
+   # игнорируется — комментарий
+   a bird flying over mountains
+   ```
+3. (Опционально) Нажмите **+ Load file...** чтобы загрузить `.txt` из библиотеки. Существующие файлы появляются в combo **Wildcard file** (сканируются из `e2go_nodes/wildcards/` и `<ComfyUI>/wildcards/`).
+4. (Опционально) `prefix_text` — общая основа **перед** каждой строкой, например `masterpiece, highly detailed`.
+5. (Опционально) `suffix_text` — общая основа **после** каждой строки, например `cinematic lighting, 8k`.
+6. `negative_text` задаётся один раз — применяется ко всем (повторяется автоматически).
+7. Подключите `positive_prompts` / `negative_prompts` к `Powder Lora Loader` или напрямую в `Powder Conditioner`.
+
+**Что происходит:**
+- Каждая непустая строка превращается в `<prefix>, <line>, <suffix>` (пустые части пропускаются).
+- Downstream-ноды итерируются по списку — N промптов → N изображений.
+- При `batch_size > 1` в сэмплере/латенте получите N × batch_size изображений.
+- Кнопки `× Clear positive` / `× Clear negative` / `× Clear prefix` / `× Clear suffix` очищают соответствующие поля с подтверждением.
+
+**Советы:**
+- Сохраняйте подборки промптов как `.txt` в `e2go_nodes/wildcards/` для переиспользования. Файлы оттуда автоматически появляются в combo.
+- Комбинируйте с `Powder Grid Save` чтобы собрать все N изображений в подписанный grid для сравнения.
+- Выбор файла из combo заменяет `positive_text` (с диалогом подтверждения если поле непусто).
+- Combo обновляется при пересоздании ноды или перезагрузке страницы.
+
+---
+
+## Сценарий 8: Оптимизация кэширования
 
 **Ноды:** Powder Conditioner + Powder Clear Conditioning Cache
 
@@ -336,6 +407,7 @@ Speed up repeated runs by using the conditioning cache.
 | Lora Loader без Conditioner | да | Выдаёт сырые промпты без сборки стилей/триггеров |
 | Styler без Lora Loader | да | Подключите style напрямую к Conditioner |
 | Prompt List без Lora Loader | да | Подключите промпты напрямую к Conditioner |
+| Prompt Wildcard без Lora Loader | да | Тот же формат выхода что у Prompt List — drop-in совместимость |
 | Conditioner без Lora/Styler | да | Работает как простой CLIP-энкодер с кэшированием |
 | Grid Save без Lora Loader | да | Просто собирает изображения в grid без подписей LoRA |
 | Все ноды вместе | да | Полный пайплайн с максимальной гибкостью |

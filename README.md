@@ -191,6 +191,8 @@ Use `+ Add Prompt` / `- Remove Prompt` buttons to add slots (up to 20). Each slo
 
 ### Powder Prompt Wildcard
 
+![Powder Prompt Wildcard](docs/images/node_prompt_wildcard.png)
+
 Treats each non-empty line of the input as a separate prompt. Useful for pasting a long list, or for loading a `.txt` wildcard file from a library.
 
 #### Inputs
@@ -199,11 +201,16 @@ Treats each non-empty line of the input as a separate prompt. Useful for pasting
 |-------|------|:---:|-------------|
 | **positive_text** | STRING (multiline) | yes | One prompt per line. Empty lines and lines starting with `#` are skipped. |
 | **negative_text** | STRING (multiline) | yes | Single global negative prompt — applied to every positive line. |
+| **prefix_text** | STRING (multiline) | no | Common base text prepended to every positive line. Joined with `, `. Empty/whitespace = skipped. |
+| **suffix_text** | STRING (multiline) | no | Common base text appended to every positive line. Joined with `, `. Empty/whitespace = skipped. |
+
+For each non-empty wildcard line the output is `<prefix>, <line>, <suffix>` (missing parts dropped). If `positive_text` is empty but a prefix or suffix is set, one prompt with just the base is emitted.
 
 #### UI extras (on the node)
 
 - **Wildcard file** combo — lists `.txt` files from `e2go_nodes/wildcards/` and `<ComfyUI>/wildcards/`. Selecting a file populates `positive_text` (confirms before overwriting non-empty content).
 - **+ Load file...** button — opens a local file picker. Selected `.txt` is uploaded to `e2go_nodes/wildcards/` and its content placed into `positive_text`.
+- **× Clear positive** / **× Clear negative** / **× Clear prefix** / **× Clear suffix** buttons — wipe the respective text field. Each confirms before clearing non-empty content. `Clear positive` also resets the combo to `(none)`.
 
 #### Outputs
 
@@ -431,11 +438,11 @@ The node always runs when queued (`IS_CHANGED` returns NaN). Drop it into any gr
 
 ## Usage Scenarios
 
-See **[Usage Guide](docs/USAGE_GUIDE.md)** for detailed scenarios: simple generation with styles, LoRA comparison grids, batch prompts, cache optimization, and more.
+See **[Usage Guide](docs/USAGE_GUIDE.md)** for detailed scenarios: simple generation with styles, LoRA comparison grids, batch prompts, wildcard-file batch generation, cache optimization, and more.
 
 ## Example Workflow
 
-The `examples/` folder contains `powder_nodes_test_workflow.json` — import it into ComfyUI via the Load menu.
+The `examples/` folder contains `powder_nodes_test_workflow.json` — import it into ComfyUI via the Load menu. It demonstrates the standard pipeline (Prompt List → Lora Loader → Conditioner ← Styler) and includes a muted `Powder Prompt Wildcard` node showing an alternative prompt source — unmute it and rewire to the Lora Loader to use the wildcard path.
 
 ---
 
@@ -628,6 +635,8 @@ git clone https://github.com/E2GO/e2go-comfyui-nodes.git e2go_nodes
 
 ### Powder Prompt Wildcard
 
+![Powder Prompt Wildcard](docs/images/node_prompt_wildcard.png)
+
 Каждая непустая строка ввода — отдельный промпт. Удобно для вставки длинного списка или загрузки `.txt`-файла из библиотеки wildcards.
 
 #### Входы
@@ -636,11 +645,16 @@ git clone https://github.com/E2GO/e2go-comfyui-nodes.git e2go_nodes
 |------|-----|:---:|----------|
 | **positive_text** | STRING (multiline) | да | Один промпт на строку. Пустые строки и строки, начинающиеся с `#`, пропускаются. |
 | **negative_text** | STRING (multiline) | да | Один глобальный негативный промпт — применяется ко всем позитивным строкам. |
+| **prefix_text** | STRING (multiline) | нет | Общая основа, добавляется **перед** каждой позитивной строкой. Объединяется через `, `. Пустые/пробельные значения игнорируются. |
+| **suffix_text** | STRING (multiline) | нет | Общая основа, добавляется **после** каждой позитивной строки. Объединяется через `, `. Пустые/пробельные значения игнорируются. |
+
+Для каждой непустой строки wildcard на выход идёт `<prefix>, <line>, <suffix>` (отсутствующие части пропускаются). Если `positive_text` пуст, но задан prefix или suffix — выдаётся один промпт с одной только базой.
 
 #### Доп. UI (на ноде)
 
 - **Wildcard file** combo — список `.txt` файлов из `e2go_nodes/wildcards/` и `<ComfyUI>/wildcards/`. При выборе файл заполняет `positive_text` (запрашивает подтверждение, если поле непусто).
 - **+ Load file...** кнопка — открывает локальный file picker. Выбранный `.txt` загружается в `e2go_nodes/wildcards/`, содержимое вставляется в `positive_text`.
+- **× Clear positive** / **× Clear negative** / **× Clear prefix** / **× Clear suffix** кнопки — очищают соответствующее поле. Каждая запрашивает подтверждение, если поле непусто. `Clear positive` дополнительно сбрасывает combo в `(none)`.
 
 #### Выходы
 
@@ -868,11 +882,11 @@ Grid Saver автоматически находит ноду PowderStyler в в
 
 ## Сценарии использования
 
-Подробные сценарии — в **[Гайде по использованию](docs/USAGE_GUIDE.md)**: простая генерация со стилями, сравнительные grid LoRA, batch-промпты, оптимизация кэша и другое.
+Подробные сценарии — в **[Гайде по использованию](docs/USAGE_GUIDE.md)**: простая генерация со стилями, сравнительные grid LoRA, batch-промпты, batch-генерация из wildcard-файлов, оптимизация кэша и другое.
 
 ## Пример workflow
 
-В папке `examples/` есть `powder_nodes_test_workflow.json` — импортируйте его в ComfyUI через меню Load.
+В папке `examples/` есть `powder_nodes_test_workflow.json` — импортируйте его в ComfyUI через меню Load. Демонстрирует стандартный пайплайн (Prompt List → Lora Loader → Conditioner ← Styler), а также содержит muted-ноду `Powder Prompt Wildcard` как альтернативный источник промптов — снимите mute и перекиньте провода на Lora Loader чтобы использовать wildcard-путь.
 
 ---
 

@@ -103,6 +103,23 @@ async function loadFromCombo(node, display) {
     }
 }
 
+function clearField(node, widgetName, options) {
+    const w = findWidget(node, widgetName);
+    if (!w) return;
+    const cur = typeof w.value === "string" ? w.value.trim() : "";
+    if (cur && !window.confirm(`Clear ${widgetName}? Current content will be lost.`)) {
+        return;
+    }
+    w.value = "";
+    if (typeof w.callback === "function") {
+        try { w.callback(""); } catch {}
+    }
+    if (options?.resetCombo && node._wildcardCombo) {
+        node._wildcardCombo.value = SENTINEL;
+    }
+    app.graph?.setDirtyCanvas(true, true);
+}
+
 function pickAndUpload(node) {
     const input = document.createElement("input");
     input.type = "file";
@@ -142,12 +159,11 @@ function pickAndUpload(node) {
 app.registerExtension({
     name: "e2go_nodes.PowderPromptWildcard",
 
-    async nodeCreated(node) {
+    nodeCreated(node) {
         if (node.comfyClass !== NODE_TYPE) return;
 
         requestAnimationFrame(() => {
-            const separator = node.addWidget("text", "", "", noop);
-            separator.name = "e2go.wildcard.separator";
+            const separator = node.addWidget("text", "═══════ Wildcard ═══════", "", noop);
             separator.serialize = false;
             markSeparator(separator, "═══════ Wildcard ═══════", node);
 
@@ -158,7 +174,6 @@ app.registerExtension({
                 (value) => loadFromCombo(node, value),
                 { values: [SENTINEL] },
             );
-            combo.name = "e2go.wildcard.combo";
             combo.serialize = false;
             node._wildcardCombo = combo;
 
@@ -168,8 +183,39 @@ app.registerExtension({
                 null,
                 () => pickAndUpload(node),
             );
-            upload.name = "e2go.wildcard.upload";
             upload.serialize = false;
+
+            const clearPositiveBtn = node.addWidget(
+                "button",
+                "× Clear positive",
+                null,
+                () => clearField(node, "positive_text", { resetCombo: true }),
+            );
+            clearPositiveBtn.serialize = false;
+
+            const clearNegativeBtn = node.addWidget(
+                "button",
+                "× Clear negative",
+                null,
+                () => clearField(node, "negative_text"),
+            );
+            clearNegativeBtn.serialize = false;
+
+            const clearPrefixBtn = node.addWidget(
+                "button",
+                "× Clear prefix",
+                null,
+                () => clearField(node, "prefix_text"),
+            );
+            clearPrefixBtn.serialize = false;
+
+            const clearSuffixBtn = node.addWidget(
+                "button",
+                "× Clear suffix",
+                null,
+                () => clearField(node, "suffix_text"),
+            );
+            clearSuffixBtn.serialize = false;
 
             fetchList(node);
             requestResize(node);

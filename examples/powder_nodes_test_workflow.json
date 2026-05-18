@@ -1,7 +1,7 @@
 {
   "id": "powder-nodes-test-workflow",
   "revision": 0,
-  "last_node_id": 6,
+  "last_node_id": 7,
   "last_link_id": 9,
   "nodes": [
     {
@@ -311,6 +311,42 @@
       "widgets_values": [],
       "color": "#322",
       "bgcolor": "#533"
+    },
+    {
+      "id": 7,
+      "type": "PowderPromptWildcard",
+      "pos": [-900, 600],
+      "size": [400, 600],
+      "flags": {},
+      "order": 6,
+      "mode": 2,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "positive_prompts",
+          "type": "STRING",
+          "shape": 6,
+          "links": []
+        },
+        {
+          "name": "negative_prompts",
+          "type": "STRING",
+          "shape": 6,
+          "links": []
+        }
+      ],
+      "title": "Alternative: Powder Prompt Wildcard (muted)",
+      "properties": {
+        "Node name for S&R": "PowderPromptWildcard"
+      },
+      "widgets_values": [
+        "a beautiful landscape, mountains, river, sunset\na portrait of a woman in vintage dress, film photography\n# add more prompts here, one per line — '#' lines and blanks are skipped",
+        "ugly, deformed, blurry, low quality",
+        "",
+        "cinematic lighting, highly detailed"
+      ],
+      "color": "#2a3a2a",
+      "bgcolor": "#1a2a1a"
     }
   ],
   "links": [
@@ -327,7 +363,7 @@
   "groups": [
     {
       "title": "Powder Nodes Test Workflow",
-      "bounding": [-950, -200, 1700, 1200],
+      "bounding": [-950, -200, 1700, 1500],
       "color": "#3f789e",
       "font_size": 24,
       "flags": {}
@@ -337,6 +373,13 @@
       "bounding": [-400, -200, 200, 100],
       "color": "#a1309b",
       "font_size": 18,
+      "flags": {}
+    },
+    {
+      "title": "Alternative input — unmute and rewire to LoraLoader to use",
+      "bounding": [-950, 540, 420, 680],
+      "color": "#5b8a5b",
+      "font_size": 14,
       "flags": {}
     }
   ],

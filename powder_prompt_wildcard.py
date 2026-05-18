@@ -136,6 +136,18 @@ class WildcardLibrary:
         return {"source": "e2go", "name": name}
 
 
+def _compose_with_base(prefix, line, suffix):
+    """Join non-empty parts with ', '. Pure helper, easy to test in isolation."""
+    parts = []
+    if prefix:
+        parts.append(prefix)
+    if line:
+        parts.append(line)
+    if suffix:
+        parts.append(suffix)
+    return ", ".join(parts)
+
+
 class PowderPromptWildcard:
     """Batch prompts from multi-line text. One line = one prompt."""
 
@@ -146,6 +158,10 @@ class PowderPromptWildcard:
                 "positive_text": ("STRING", {"default": "", "multiline": True}),
                 "negative_text": ("STRING", {"default": "", "multiline": True}),
             },
+            "optional": {
+                "prefix_text": ("STRING", {"default": "", "multiline": True}),
+                "suffix_text": ("STRING", {"default": "", "multiline": True}),
+            },
         }
 
     RETURN_TYPES = ("STRING", "STRING")
@@ -154,14 +170,31 @@ class PowderPromptWildcard:
     FUNCTION = "get_prompts"
     CATEGORY = "e2go_nodes"
 
-    def get_prompts(self, positive_text, negative_text):
+    def get_prompts(self, positive_text, negative_text, prefix_text="", suffix_text=""):
         lines = _parse_wildcard_lines(positive_text)
         neg = (negative_text or "").strip() if isinstance(negative_text, str) else ""
+        prefix = (prefix_text or "").strip() if isinstance(prefix_text, str) else ""
+        suffix = (suffix_text or "").strip() if isinstance(suffix_text, str) else ""
+
         if not lines:
+            # No wildcard lines. If a base exists, emit one entry with just the base.
+            if prefix or suffix:
+                composed = _compose_with_base(prefix, "", suffix)
+                info(f"[PowderPromptWildcard] 0 wildcard lines, 1 base-only prompt")
+                return ([composed], [neg])
             info("[PowderPromptWildcard] 0 prompts (empty input)")
             return ([""], [""])
-        info(f"[PowderPromptWildcard] {len(lines)} prompts, negative {'set' if neg else 'empty'}")
-        return (lines, [neg] * len(lines))
+
+        composed = [_compose_with_base(prefix, line, suffix) for line in lines]
+        base_note = ""
+        if prefix and suffix:
+            base_note = ", prefix+suffix"
+        elif prefix:
+            base_note = ", prefix"
+        elif suffix:
+            base_note = ", suffix"
+        info(f"[PowderPromptWildcard] {len(composed)} prompts, negative {'set' if neg else 'empty'}{base_note}")
+        return (composed, [neg] * len(composed))
 
 
 NODE_CLASS_MAPPINGS = {

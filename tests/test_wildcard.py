@@ -100,6 +100,90 @@ class TestGetPrompts:
         assert PowderPromptWildcard.CATEGORY == "e2go_nodes"
 
 
+class TestPrefixSuffix:
+    def setup_method(self):
+        self.node = PowderPromptWildcard()
+
+    def _call(self, pos, neg="", prefix="", suffix=""):
+        return self.node.get_prompts(pos, neg, prefix, suffix)
+
+    def test_no_prefix_no_suffix_unchanged(self):
+        pos, _ = self._call("cat\ndog")
+        assert pos == ["cat", "dog"]
+
+    def test_prefix_only(self):
+        pos, _ = self._call("cat\ndog", prefix="masterpiece")
+        assert pos == ["masterpiece, cat", "masterpiece, dog"]
+
+    def test_suffix_only(self):
+        pos, _ = self._call("cat\ndog", suffix="cinematic lighting")
+        assert pos == ["cat, cinematic lighting", "dog, cinematic lighting"]
+
+    def test_prefix_and_suffix(self):
+        pos, _ = self._call("cat", prefix="masterpiece", suffix="8k")
+        assert pos == ["masterpiece, cat, 8k"]
+
+    def test_prefix_stripped(self):
+        pos, _ = self._call("cat", prefix="  masterpiece  ")
+        assert pos == ["masterpiece, cat"]
+
+    def test_suffix_stripped(self):
+        pos, _ = self._call("cat", suffix="\t8k\n")
+        assert pos == ["cat, 8k"]
+
+    def test_whitespace_only_prefix_ignored(self):
+        pos, _ = self._call("cat", prefix="   \n\t  ")
+        assert pos == ["cat"]
+
+    def test_whitespace_only_suffix_ignored(self):
+        pos, _ = self._call("cat", suffix="   ")
+        assert pos == ["cat"]
+
+    def test_empty_positive_with_prefix_returns_prefix_only(self):
+        """If wildcard has no lines but base parts exist, yield one entry with the base."""
+        pos, neg = self._call("", prefix="masterpiece", suffix="8k")
+        assert pos == ["masterpiece, 8k"]
+        assert neg == [""]
+
+    def test_empty_positive_empty_base_returns_single_empty(self):
+        pos, neg = self._call("")
+        assert pos == [""]
+        assert neg == [""]
+
+    def test_negative_unchanged_by_prefix_suffix(self):
+        """prefix/suffix only affect positive output."""
+        pos, neg = self._call("a\nb", neg="blurry", prefix="P", suffix="S")
+        assert pos == ["P, a, S", "P, b, S"]
+        assert neg == ["blurry", "blurry"]
+
+    def test_multiline_prefix_preserved_internally(self):
+        """Newlines INSIDE prefix are preserved (user choice); only outer strip applied."""
+        pos, _ = self._call("cat", prefix="line1\nline2")
+        assert pos == ["line1\nline2, cat"]
+
+    def test_comments_in_positive_not_in_prefix(self):
+        """Wildcard parsing applies only to positive_text. prefix is literal."""
+        pos, _ = self._call("# skip\ncat", prefix="# kept")
+        assert pos == ["# kept, cat"]
+
+    def test_get_prompts_accepts_only_two_args_for_back_compat(self):
+        """Calling with just (positive_text, negative_text) still works — prefix/suffix optional."""
+        pos, neg = self.node.get_prompts("cat\ndog", "blurry")
+        assert pos == ["cat", "dog"]
+        assert neg == ["blurry", "blurry"]
+
+    def test_input_types_has_prefix_suffix(self):
+        spec = PowderPromptWildcard.INPUT_TYPES()
+        # New optional fields appear in either 'required' or 'optional' bucket.
+        all_fields = {}
+        all_fields.update(spec.get("required", {}))
+        all_fields.update(spec.get("optional", {}))
+        assert "prefix_text" in all_fields
+        assert "suffix_text" in all_fields
+        assert all_fields["prefix_text"][1].get("multiline") is True
+        assert all_fields["suffix_text"][1].get("multiline") is True
+
+
 from unittest.mock import patch
 from pathlib import Path
 from e2go_nodes.powder_prompt_wildcard import WildcardLibrary
