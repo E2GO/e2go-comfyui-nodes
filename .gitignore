@@ -11,3 +11,4 @@ __pycache__/
 *.sh
 WORK_LOG*.md
 NOTES*.md
+wildcards/

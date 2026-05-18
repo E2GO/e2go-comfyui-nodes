@@ -42,6 +42,7 @@ Download the [latest release](https://github.com/E2GO/e2go-comfyui-nodes/archive
 - [Powder Lora Loader](#powder-lora-loader) — loading and combining LoRA
 - [Powder Styler](#powder-styler) — applying styles from a library
 - [Powder Prompt List](#powder-prompt-list) — managing a list of prompts
+- [Powder Prompt Wildcard](#powder-prompt-wildcard) — batch prompts from text or .txt file (one line = one prompt)
 - [Powder Conditioner](#powder-conditioner) — assembling and encoding the final prompt
 - [Powder Grid Save](#powder-grid-save) — assembling images into a labeled grid
 - [Powder Clear Conditioning Cache](#powder-clear-conditioning-cache) — clearing the encoding cache
@@ -185,6 +186,40 @@ Use `+ Add Prompt` / `- Remove Prompt` buttons to add slots (up to 20). Each slo
 |--------|------|:---:|-------------|
 | **positive_prompts** | STRING | yes | List of enabled prompts |
 | **negative_prompts** | STRING | yes | List of negative prompts |
+
+---
+
+### Powder Prompt Wildcard
+
+Treats each non-empty line of the input as a separate prompt. Useful for pasting a long list, or for loading a `.txt` wildcard file from a library.
+
+#### Inputs
+
+| Input | Type | Required | Description |
+|-------|------|:---:|-------------|
+| **positive_text** | STRING (multiline) | yes | One prompt per line. Empty lines and lines starting with `#` are skipped. |
+| **negative_text** | STRING (multiline) | yes | Single global negative prompt — applied to every positive line. |
+
+#### UI extras (on the node)
+
+- **Wildcard file** combo — lists `.txt` files from `e2go_nodes/wildcards/` and `<ComfyUI>/wildcards/`. Selecting a file populates `positive_text` (confirms before overwriting non-empty content).
+- **+ Load file...** button — opens a local file picker. Selected `.txt` is uploaded to `e2go_nodes/wildcards/` and its content placed into `positive_text`.
+
+#### Outputs
+
+| Output | Type | List | Description |
+|--------|------|:---:|-------------|
+| **positive_prompts** | STRING | yes | One element per non-empty/non-comment line. |
+| **negative_prompts** | STRING | yes | `negative_text` replicated to match positive count. |
+
+#### Wildcard files
+
+A wildcard file is a `.txt` with one prompt per line. Lines starting with `#` are comments. Drop files into either:
+
+- `e2go_nodes/wildcards/` — package-local (created on first upload, ignored by git).
+- `<ComfyUI>/wildcards/` — shared with other custom node packs.
+
+The combo dropdown shows files from both, prefixed with `[e2go]` or `[comfy]`. Newly added files appear after the node is recreated (or page reload).
 
 ---
 
@@ -444,6 +479,7 @@ git clone https://github.com/E2GO/e2go-comfyui-nodes.git e2go_nodes
 - [Powder Lora Loader](#powder-lora-loader-1) — загрузка и комбинирование LoRA
 - [Powder Styler](#powder-styler-1) — применение стилей из библиотеки
 - [Powder Prompt List](#powder-prompt-list-1) — управление списком промптов
+- [Powder Prompt Wildcard](#powder-prompt-wildcard-1) — batch-промпты из текста или .txt файла (одна строка = один промпт)
 - [Powder Conditioner](#powder-conditioner-1) — сборка и кодирование финального промпта
 - [Powder Grid Save](#powder-grid-save-1) — сборка изображений в grid с подписями
 - [Powder Clear Conditioning Cache](#powder-clear-conditioning-cache-1) — очистка кэша кодирования
@@ -587,6 +623,40 @@ git clone https://github.com/E2GO/e2go-comfyui-nodes.git e2go_nodes
 |-------|-----|:---:|----------|
 | **positive_prompts** | STRING | да | Список включённых промптов |
 | **negative_prompts** | STRING | да | Список негативных промптов |
+
+---
+
+### Powder Prompt Wildcard
+
+Каждая непустая строка ввода — отдельный промпт. Удобно для вставки длинного списка или загрузки `.txt`-файла из библиотеки wildcards.
+
+#### Входы
+
+| Вход | Тип | Обязательный | Описание |
+|------|-----|:---:|----------|
+| **positive_text** | STRING (multiline) | да | Один промпт на строку. Пустые строки и строки, начинающиеся с `#`, пропускаются. |
+| **negative_text** | STRING (multiline) | да | Один глобальный негативный промпт — применяется ко всем позитивным строкам. |
+
+#### Доп. UI (на ноде)
+
+- **Wildcard file** combo — список `.txt` файлов из `e2go_nodes/wildcards/` и `<ComfyUI>/wildcards/`. При выборе файл заполняет `positive_text` (запрашивает подтверждение, если поле непусто).
+- **+ Load file...** кнопка — открывает локальный file picker. Выбранный `.txt` загружается в `e2go_nodes/wildcards/`, содержимое вставляется в `positive_text`.
+
+#### Выходы
+
+| Выход | Тип | Список | Описание |
+|-------|-----|:---:|----------|
+| **positive_prompts** | STRING | да | По одному элементу на непустую/некомментарийную строку. |
+| **negative_prompts** | STRING | да | `negative_text`, повторённый по числу позитивных. |
+
+#### Файлы wildcards
+
+Wildcard-файл — это `.txt` с одним промптом на строку. Строки, начинающиеся с `#`, считаются комментариями. Кладите файлы в одну из двух папок:
+
+- `e2go_nodes/wildcards/` — внутри пакета (создаётся при первой загрузке, не tracked в git).
+- `<ComfyUI>/wildcards/` — общая папка для всех custom node паков.
+
+Combo показывает файлы из обеих, с префиксом `[e2go]` или `[comfy]`. Новые файлы появляются после пересоздания ноды (или перезагрузки страницы).
 
 ---
 
