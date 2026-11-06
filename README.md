@@ -1,7 +1,5 @@
 # Powder Nodes for ComfyUI
 
-**English** | [Русский](README.ru.md)
-
 16 ComfyUI nodes for exploring image ideas, comparing variations and editing the results. Keep prompts, styles and LoRAs separate while you experiment; choose sizes and sampling settings; then repair an image on Canvas or collect variants in a comparison grid.
 
 **Start with one useful node or use a complete workflow.** Many Powder nodes work with standard ComfyUI nodes. The visual editing tools also work together: prepare an edit, generate variants, review them and accept one as your next source.
@@ -315,3 +313,5 @@ With `stitch_blend > 0`, fully painted pixels keep the full generated change, an
 ## License
 
 [GNU Affero General Public License v3.0](LICENSE).
+
+**English** | [Русский](README.ru.md)
