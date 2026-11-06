@@ -275,6 +275,8 @@ Enable **Save mask in workflow** if the mask should return when you reopen the g
 
 The [workflow folder](example_workflows) contains 43 templates for SDXL, FLUX.2 Klein, FLUX.3 Klein, BOOGU, Z-Image, MOSS SFT, Krea 2, Qwen 2.1 and Ideogram 4. The notes inside each graph explain its intended mode and model setup. Model names in templates are examples: select the corresponding files installed on your machine. Some families need recent model-specific ComfyUI core nodes; use the supported versions listed above.
 
+**FLUX.2 Klein:** Install both checkpoints before using these switchable templates: ComfyUI validates both loaders even though only one branch runs. Each template offers **Standard / KV**: `flux-2-klein-9b-fp8.safetensors` or `flux-2-klein-9b-kv-fp8.safetensors`. Only the selected model runs; the KV branch includes FluxKVCache. Both use Qwen3 8B (`flux2`), Flux2 VAE and the Flux 2 Klein Distilled sampler profile: 4 steps, CFG 1, Euler/simple. For reference-image editing, use FULL Img2Img and select **Edit (native)**. Repaint is ordinary img2img; KV caching benefits reference-image editing. These templates do not use the separate Base checkpoint.
+
 | Start with | Workflow |
 | --- | --- |
 | SDXL text to image | [Generate](example_workflows/E2GO_SDXL_Generate.json) / [Full](example_workflows/E2GO_SDXL_Generate_full.json) |

@@ -1,8 +1,8 @@
 {
   "id": "7ca1753b-1504-586b-8a4a-c0e0a5ecb35b",
   "revision": 0,
-  "last_node_id": 20,
-  "last_link_id": 55,
+  "last_node_id": 23,
+  "last_link_id": 58,
   "nodes": [
     {
       "id": 1,
@@ -71,11 +71,11 @@
           "pos": null,
           "slot_index": null,
           "links": [
-            48
+            56
           ]
         }
       ],
-      "title": "Flux2 Klein Distilled · Model",
+      "title": "Standard model",
       "properties": {
         "Node name for S&R": "UNETLoader"
       },
@@ -93,7 +93,7 @@
       "type": "CLIPLoader",
       "pos": [
         30,
-        250
+        810
       ],
       "size": [
         330,
@@ -195,7 +195,7 @@
       "type": "VAELoader",
       "pos": [
         30,
-        430
+        1000
       ],
       "size": [
         330,
@@ -1374,7 +1374,7 @@
         0,
         "randomize",
         4,
-        1,
+        1.0,
         "euler",
         "simple",
         1,
@@ -1388,7 +1388,7 @@
         "seed": 0,
         "control_after_generate": "randomize",
         "steps": 4,
-        "cfg": 1,
+        "cfg": 1.0,
         "sampler_name": "euler",
         "scheduler": "simple",
         "denoise": 1,
@@ -1403,7 +1403,7 @@
         "seed": 0,
         "control_after_generate": "randomize",
         "steps": 4,
-        "cfg": 1,
+        "cfg": 1.0,
         "sampler_name": "euler",
         "scheduler": "simple",
         "denoise": 1,
@@ -1433,7 +1433,7 @@
           "seed": 0,
           "control_after_generate": "randomize",
           "steps": 4,
-          "cfg": 1,
+          "cfg": 1.0,
           "sampler_name": "euler",
           "scheduler": "simple",
           "denoise": 1,
@@ -1630,10 +1630,10 @@
         "Node name for S&R": "MarkdownNote"
       },
       "widgets_values": [
-        "# Flux2 Klein Distilled · LITE · Generate\n\n4 steps / CFG 1 / euler. Models selected from the local installation.\n\nEnter a prompt, set size and batch in Resolution, then Queue. Save Image writes the result.\n\nNegative prompts do not affect sampling at CFG 1.\n\nUses Powder Sampler with Euler/simple and automatic Flux 2 shift from the actual latent size. Auto steps scales the sampling budget with denoise. Base and distilled weights need different step/CFG recipes.\n\nRecipe reference: installed comfyui_workflow_templates_json/templates/image_flux2_klein_image_edit_9b_distilled.json\n\n### Checked recipe\nFlux 2 Klein Distilled: 4 steps, CFG 1, euler / simple. Sampler profile checks model and latent compatibility. Profiles do not select weights: Base, Turbo, Distilled and Edit checkpoints are not interchangeable. Use a fixed seed when comparing changes; increase size only after the prompt and composition work. Negative text has no sampling effect at CFG 1."
+        "# FLUX.2 Klein KV · LITE · Generate\n\nChoose Standard or KV in Model: Standard / KV. Only the selected model is loaded. KV uses FluxKVCache for reference-image editing. Both use Qwen3 8B (flux2), Flux2 VAE and 128-channel latents.\n\nStart with 4 steps, CFG 1, Euler / simple and automatic Flux 2 shift. The Flux 2 Klein Distilled sampler profile applies to both models.\n\nEnter a prompt, set Resolution and run. For reference-image editing, use a FULL Img2Img workflow and select Edit (native)."
       ],
       "widgets_values_named": {
-        "text": "# Flux2 Klein Distilled · LITE · Generate\n\n4 steps / CFG 1 / euler. Models selected from the local installation.\n\nEnter a prompt, set size and batch in Resolution, then Queue. Save Image writes the result.\n\nNegative prompts do not affect sampling at CFG 1.\n\nUses Powder Sampler with Euler/simple and automatic Flux 2 shift from the actual latent size. Auto steps scales the sampling budget with denoise. Base and distilled weights need different step/CFG recipes.\n\nRecipe reference: installed comfyui_workflow_templates_json/templates/image_flux2_klein_image_edit_9b_distilled.json\n\n### Checked recipe\nFlux 2 Klein Distilled: 4 steps, CFG 1, euler / simple. Sampler profile checks model and latent compatibility. Profiles do not select weights: Base, Turbo, Distilled and Edit checkpoints are not interchangeable. Use a fixed seed when comparing changes; increase size only after the prompt and composition work. Negative text has no sampling effect at CFG 1."
+        "text": "# FLUX.2 Klein KV · LITE · Generate\n\nChoose Standard or KV in Model: Standard / KV. Only the selected model is loaded. KV uses FluxKVCache for reference-image editing. Both use Qwen3 8B (flux2), Flux2 VAE and 128-channel latents.\n\nStart with 4 steps, CFG 1, Euler / simple and automatic Flux 2 shift. The Flux 2 Klein Distilled sampler profile applies to both models.\n\nEnter a prompt, set Resolution and run. For reference-image editing, use a FULL Img2Img workflow and select Edit (native)."
       },
       "color": "#432",
       "bgcolor": "#653"
@@ -1702,6 +1702,221 @@
       "widgets_values_named": {
         "value": ""
       }
+    },
+    {
+      "id": 21,
+      "type": "UNETLoader",
+      "pos": [
+        30,
+        230
+      ],
+      "size": [
+        330,
+        100
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "showAdvanced": null,
+      "inputs": [
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "unet_name",
+          "locked": null,
+          "name": "unet_name",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "COMBO",
+          "widget": {
+            "name": "unet_name"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "weight_dtype",
+          "locked": null,
+          "name": "weight_dtype",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "COMBO",
+          "widget": {
+            "name": "weight_dtype"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "MODEL",
+          "locked": null,
+          "name": "MODEL",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "MODEL",
+          "pos": null,
+          "slot_index": null,
+          "links": [
+            57
+          ]
+        }
+      ],
+      "title": "KV model",
+      "properties": {
+        "Node name for S&R": "UNETLoader"
+      },
+      "widgets_values": [
+        "flux-2-klein-9b-kv-fp8.safetensors",
+        "default"
+      ],
+      "widgets_values_named": {
+        "unet_name": "flux-2-klein-9b-kv-fp8.safetensors",
+        "weight_dtype": "default"
+      }
+    },
+    {
+      "id": 22,
+      "type": "FluxKVCache",
+      "pos": [
+        30,
+        380
+      ],
+      "size": [
+        330,
+        60
+      ],
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "model",
+          "name": "model",
+          "type": "MODEL",
+          "link": 57
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "MODEL",
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            58
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.30.1",
+        "Node name for S&R": "FluxKVCache",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [],
+      "title": "KV reference cache"
+    },
+    {
+      "id": 23,
+      "type": "PowderSwitcher",
+      "pos": [
+        30,
+        490
+      ],
+      "size": [
+        330,
+        260
+      ],
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "g0_c0",
+          "type": "MODEL",
+          "link": 56
+        },
+        {
+          "name": "g0_add",
+          "type": "*",
+          "link": null
+        },
+        {
+          "name": "g1_c0",
+          "type": "MODEL",
+          "link": 58
+        },
+        {
+          "name": "g1_add",
+          "type": "*",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "out_0",
+          "label": "model",
+          "type": "MODEL",
+          "links": [
+            48
+          ]
+        }
+      ],
+      "title": "Model: Standard / KV",
+      "properties": {
+        "cnr_id": "powder-nodes",
+        "ver": "6c4964ee8b3ae39796d7d0589f5a3ac12e046168",
+        "Node name for S&R": "PowderSwitcher",
+        "e2goSwitcher": {
+          "groups": [
+            {
+              "name": "Standard",
+              "on": false,
+              "fills": [
+                0
+              ]
+            },
+            {
+              "name": "KV",
+              "on": true,
+              "fills": [
+                0
+              ]
+            }
+          ],
+          "channels": [
+            {
+              "col": 0,
+              "type": "MODEL",
+              "name": "model"
+            }
+          ]
+        },
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        2
+      ]
     }
   ],
   "links": [
@@ -1723,7 +1938,7 @@
     ],
     [
       48,
-      1,
+      23,
       0,
       15,
       0,
@@ -1784,6 +1999,30 @@
       9,
       2,
       "STRING"
+    ],
+    [
+      56,
+      1,
+      0,
+      23,
+      0,
+      "MODEL"
+    ],
+    [
+      57,
+      21,
+      0,
+      22,
+      0,
+      "MODEL"
+    ],
+    [
+      58,
+      22,
+      0,
+      23,
+      2,
+      "MODEL"
     ]
   ],
   "floatingLinks": null,
@@ -1795,7 +2034,7 @@
         0,
         0,
         380,
-        540
+        1140
       ],
       "color": "#34495e",
       "flags": {}

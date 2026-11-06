@@ -273,6 +273,8 @@ Cache Stats и Clear Conditioning Cache не требуют подключённ
 
 В папке [workflows](example_workflows) — 43 шаблона для SDXL, FLUX.2 Klein, FLUX.3 Klein, BOOGU, Z-Image, MOSS SFT, Krea 2, Qwen 2.1 и Ideogram 4. Заметки внутри графов объясняют режим и настройку модели. Имена файлов — примеры: выберите соответствующие файлы на своём компьютере. Для некоторых семейств нужны свежие ноды ядра ComfyUI; используйте указанные выше поддерживаемые версии.
 
+**FLUX.2 Klein:** в каждом шаблоне есть выбор **Standard / KV**: `flux-2-klein-9b-fp8.safetensors` или `flux-2-klein-9b-kv-fp8.safetensors`. Установите оба чекпойнта: ComfyUI проверяет оба загрузчика, хотя выполняется только выбранная ветка. KV подключён через FluxKVCache. Обе модели используют Qwen3 8B (`flux2`), Flux2 VAE и профиль сэмплера Flux 2 Klein Distilled: 4 шага, CFG 1, Euler/simple. Для редактирования по референсу откройте FULL Img2Img и выберите **Edit (native)**. Repaint — обычный img2img; KV-кэш ускоряет обработку референсов. Отдельный чекпойнт Base в этих шаблонах не используется.
+
 | Задача | Воркфлоу |
 | --- | --- |
 | SDXL из текста | [Generate](example_workflows/E2GO_SDXL_Generate.json) / [Full](example_workflows/E2GO_SDXL_Generate_full.json) |

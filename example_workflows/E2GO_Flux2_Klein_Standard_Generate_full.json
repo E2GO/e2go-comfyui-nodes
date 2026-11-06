@@ -1,8 +1,8 @@
 {
-  "id": "7ee465ad-d0e9-57a7-8694-8d54720f7450",
+  "id": "9c8ec56f-d4ea-5bb5-b31e-9514060e1c72",
   "revision": 0,
-  "last_node_id": 106,
-  "last_link_id": 104,
+  "last_node_id": 109,
+  "last_link_id": 107,
   "nodes": [
     {
       "id": 1,
@@ -71,11 +71,11 @@
           "pos": null,
           "slot_index": null,
           "links": [
-            64
+            105
           ]
         }
       ],
-      "title": "Flux2 Klein Distilled · Model",
+      "title": "Standard model",
       "properties": {
         "Node name for S&R": "UNETLoader"
       },
@@ -93,7 +93,7 @@
       "type": "CLIPLoader",
       "pos": [
         30,
-        250
+        810
       ],
       "size": [
         330,
@@ -195,7 +195,7 @@
       "type": "VAELoader",
       "pos": [
         30,
-        430
+        1000
       ],
       "size": [
         330,
@@ -1379,7 +1379,7 @@
         0,
         "randomize",
         4,
-        1,
+        1.0,
         "euler",
         "simple",
         1,
@@ -1393,7 +1393,7 @@
         "seed": 0,
         "control_after_generate": "randomize",
         "steps": 4,
-        "cfg": 1,
+        "cfg": 1.0,
         "sampler_name": "euler",
         "scheduler": "simple",
         "denoise": 1,
@@ -1408,7 +1408,7 @@
         "seed": 0,
         "control_after_generate": "randomize",
         "steps": 4,
-        "cfg": 1,
+        "cfg": 1.0,
         "sampler_name": "euler",
         "scheduler": "simple",
         "denoise": 1,
@@ -1438,7 +1438,7 @@
           "seed": 0,
           "control_after_generate": "randomize",
           "steps": 4,
-          "cfg": 1,
+          "cfg": 1.0,
           "sampler_name": "euler",
           "scheduler": "simple",
           "denoise": 1,
@@ -1608,10 +1608,10 @@
         "Node name for S&R": "SaveImage"
       },
       "widgets_values": [
-        "E2GO/Flux2_Klein_Distilled/E2GO_Flux2_Klein_Distilled_Generate_full"
+        "E2GO/Flux2_Klein_Base/E2GO_Flux2_Klein_Base_Generate_full"
       ],
       "widgets_values_named": {
-        "filename_prefix": "E2GO/Flux2_Klein_Distilled/E2GO_Flux2_Klein_Distilled_Generate_full"
+        "filename_prefix": "E2GO/Flux2_Klein_Base/E2GO_Flux2_Klein_Base_Generate_full"
       }
     },
     {
@@ -1636,10 +1636,10 @@
         "Node name for S&R": "MarkdownNote"
       },
       "widgets_values": [
-        "# Flux2 Klein Distilled · FULL · Generate\n\n4 steps / CFG 1 / euler. Models selected from the local installation.\n\nEnter a prompt, set size and batch in Resolution, then Queue. Save Image writes the result.\n\nFULL: Manual / Wildcard selects the prompt source. LoRA starts empty; use weights made for this exact model family. Styler is connected. Grid is bypassed by default; Ctrl+B enables it.\n\nNegative prompts do not affect sampling at CFG 1.\n\nUses Powder Sampler with Euler/simple and automatic Flux 2 shift from the actual latent size. Auto steps scales the sampling budget with denoise. Base and distilled weights need different step/CFG recipes.\n\nRecipe reference: installed comfyui_workflow_templates_json/templates/image_flux2_klein_image_edit_9b_distilled.json\n\n### Checked recipe\nFlux 2 Klein Distilled: 4 steps, CFG 1, euler / simple. Sampler profile checks model and latent compatibility. Profiles do not select weights: Base, Turbo, Distilled and Edit checkpoints are not interchangeable. Use a fixed seed when comparing changes; increase size only after the prompt and composition work. Negative text has no sampling effect at CFG 1.\n\n## Two-level enhancer\nOriginal skips the language model; Enhanced uses Balanced or High detail instructions. Both instructions are editable. Manual and Wildcard share the same path. Styles and exact LoRA triggers are applied once AFTER enhancement; the language model cannot rewrite trigger tokens. Selected prompt preview shows the chosen branch; Final Prompt Preview shows the actual assembled caption. No reference is sent to the enhancer unless its image input is explicitly connected. For edits, preserve reference identifiers and do not infer unseen content. Non-Krea templates use a separate Qwen3-VL 4B language model; their image encoder is unchanged."
+        "# FLUX.2 Klein Standard · FULL · Generate\n\nChoose Standard or KV in Model: Standard / KV. Only the selected model is loaded. KV uses FluxKVCache for reference-image editing. Both use Qwen3 8B (flux2), Flux2 VAE and 128-channel latents.\n\nStart with 4 steps, CFG 1, Euler / simple and automatic Flux 2 shift. The Flux 2 Klein Distilled sampler profile applies to both models.\n\nEnter a prompt, set Resolution and run. For reference-image editing, use a FULL Img2Img workflow and select Edit (native)."
       ],
       "widgets_values_named": {
-        "text": "# Flux2 Klein Distilled · FULL · Generate\n\n4 steps / CFG 1 / euler. Models selected from the local installation.\n\nEnter a prompt, set size and batch in Resolution, then Queue. Save Image writes the result.\n\nFULL: Manual / Wildcard selects the prompt source. LoRA starts empty; use weights made for this exact model family. Styler is connected. Grid is bypassed by default; Ctrl+B enables it.\n\nNegative prompts do not affect sampling at CFG 1.\n\nUses Powder Sampler with Euler/simple and automatic Flux 2 shift from the actual latent size. Auto steps scales the sampling budget with denoise. Base and distilled weights need different step/CFG recipes.\n\nRecipe reference: installed comfyui_workflow_templates_json/templates/image_flux2_klein_image_edit_9b_distilled.json\n\n### Checked recipe\nFlux 2 Klein Distilled: 4 steps, CFG 1, euler / simple. Sampler profile checks model and latent compatibility. Profiles do not select weights: Base, Turbo, Distilled and Edit checkpoints are not interchangeable. Use a fixed seed when comparing changes; increase size only after the prompt and composition work. Negative text has no sampling effect at CFG 1.\n\n## Two-level enhancer\nOriginal skips the language model; Enhanced uses Balanced or High detail instructions. Both instructions are editable. Manual and Wildcard share the same path. Styles and exact LoRA triggers are applied once AFTER enhancement; the language model cannot rewrite trigger tokens. Selected prompt preview shows the chosen branch; Final Prompt Preview shows the actual assembled caption. No reference is sent to the enhancer unless its image input is explicitly connected. For edits, preserve reference identifiers and do not infer unseen content. Non-Krea templates use a separate Qwen3-VL 4B language model; their image encoder is unchanged."
+        "text": "# FLUX.2 Klein Standard · FULL · Generate\n\nChoose Standard or KV in Model: Standard / KV. Only the selected model is loaded. KV uses FluxKVCache for reference-image editing. Both use Qwen3 8B (flux2), Flux2 VAE and 128-channel latents.\n\nStart with 4 steps, CFG 1, Euler / simple and automatic Flux 2 shift. The Flux 2 Klein Distilled sampler profile applies to both models.\n\nEnter a prompt, set Resolution and run. For reference-image editing, use a FULL Img2Img workflow and select Edit (native)."
       },
       "color": "#432",
       "bgcolor": "#653"
@@ -4056,7 +4056,7 @@
         100,
         false,
         false,
-        "E2GO_Flux2_Klein_Distilled_Generate_full",
+        "E2GO_Flux2_Klein_Base_Generate_full",
         "grids",
         true,
         true
@@ -4072,7 +4072,7 @@
         "prompt_max_chars": 100,
         "show_seed": false,
         "show_style_prompt": false,
-        "filename_prefix": "E2GO_Flux2_Klein_Distilled_Generate_full",
+        "filename_prefix": "E2GO_Flux2_Klein_Base_Generate_full",
         "subfolder": "grids",
         "add_model_to_filename": true,
         "save_json": true
@@ -5057,6 +5057,221 @@
         "e2goWidgetNames": [],
         "e2goWidgetSchemaVersion": 1
       }
+    },
+    {
+      "id": 107,
+      "type": "UNETLoader",
+      "pos": [
+        30,
+        230
+      ],
+      "size": [
+        330,
+        100
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "showAdvanced": null,
+      "inputs": [
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "unet_name",
+          "locked": null,
+          "name": "unet_name",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "COMBO",
+          "widget": {
+            "name": "unet_name"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "weight_dtype",
+          "locked": null,
+          "name": "weight_dtype",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "COMBO",
+          "widget": {
+            "name": "weight_dtype"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "MODEL",
+          "locked": null,
+          "name": "MODEL",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "MODEL",
+          "pos": null,
+          "slot_index": null,
+          "links": [
+            106
+          ]
+        }
+      ],
+      "title": "KV model",
+      "properties": {
+        "Node name for S&R": "UNETLoader"
+      },
+      "widgets_values": [
+        "flux-2-klein-9b-kv-fp8.safetensors",
+        "default"
+      ],
+      "widgets_values_named": {
+        "unet_name": "flux-2-klein-9b-kv-fp8.safetensors",
+        "weight_dtype": "default"
+      }
+    },
+    {
+      "id": 108,
+      "type": "FluxKVCache",
+      "pos": [
+        30,
+        380
+      ],
+      "size": [
+        330,
+        60
+      ],
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "model",
+          "name": "model",
+          "type": "MODEL",
+          "link": 106
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "MODEL",
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            107
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.30.1",
+        "Node name for S&R": "FluxKVCache",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [],
+      "title": "KV reference cache"
+    },
+    {
+      "id": 109,
+      "type": "PowderSwitcher",
+      "pos": [
+        30,
+        490
+      ],
+      "size": [
+        330,
+        260
+      ],
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "g0_c0",
+          "type": "MODEL",
+          "link": 105
+        },
+        {
+          "name": "g0_add",
+          "type": "*",
+          "link": null
+        },
+        {
+          "name": "g1_c0",
+          "type": "MODEL",
+          "link": 107
+        },
+        {
+          "name": "g1_add",
+          "type": "*",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "out_0",
+          "label": "model",
+          "type": "MODEL",
+          "links": [
+            64
+          ]
+        }
+      ],
+      "title": "Model: Standard / KV",
+      "properties": {
+        "cnr_id": "powder-nodes",
+        "ver": "6c4964ee8b3ae39796d7d0589f5a3ac12e046168",
+        "Node name for S&R": "PowderSwitcher",
+        "e2goSwitcher": {
+          "groups": [
+            {
+              "name": "Standard",
+              "on": true,
+              "fills": [
+                0
+              ]
+            },
+            {
+              "name": "KV",
+              "on": false,
+              "fills": [
+                0
+              ]
+            }
+          ],
+          "channels": [
+            {
+              "col": 0,
+              "type": "MODEL",
+              "name": "model"
+            }
+          ]
+        },
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        1
+      ]
     }
   ],
   "links": [
@@ -5118,7 +5333,7 @@
     ],
     [
       64,
-      1,
+      109,
       0,
       8,
       0,
@@ -5339,6 +5554,30 @@
       105,
       3,
       "STRING"
+    ],
+    [
+      105,
+      1,
+      0,
+      109,
+      0,
+      "MODEL"
+    ],
+    [
+      106,
+      107,
+      0,
+      108,
+      0,
+      "MODEL"
+    ],
+    [
+      107,
+      108,
+      0,
+      109,
+      2,
+      "MODEL"
     ]
   ],
   "floatingLinks": null,
@@ -5350,7 +5589,7 @@
         0,
         0,
         380,
-        540
+        1140
       ],
       "color": "#34495e",
       "flags": {}
