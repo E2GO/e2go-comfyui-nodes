@@ -295,7 +295,8 @@ export function mountCanvasEditor(node, state, container) {
     commands.append(navigation, actions);
     root.prepend(commands);
     const help = el("div", "e2go-cv-help",
-        "Choose Mask or a paint layer, then Brush / Eraser / Fill / Transform. "
+        "None keeps drawing off. Choose Mask or Paint to start with the brush; click the active mode again or press Esc to stop. "
+        + "Use Eraser / Fill / Transform for other edits. "
         + "Drag the hand, magnifier or rotate button to navigate. [ / ] changes brush size. "
         + "Enter applies a transform; Esc cancels. Undo / Redo buttons affect the canvas; Ctrl+Z affects the workflow. "
         + "In the node, wheel and middle-drag navigate the workflow. Results are previews: Queue uses the editor canvas until you adopt a result. "
@@ -495,8 +496,8 @@ export function mountCanvasEditor(node, state, container) {
     // ---- editor session state (not persisted) ----
     const ui = {
         tool: "mask",            // derived: "mask" | "paint" | "erase"
-        mode: "mask",            // what is being edited: "mask" | "paint"
-        instrument: null,        // drawing requires an explicit tool selection
+        mode: "none",            // editing is off until Mask or Paint is selected
+        instrument: null,
         eraseTarget: "mask",     // erase applies to the current mode's layer
 
         tools: {
@@ -522,15 +523,20 @@ export function mountCanvasEditor(node, state, container) {
     // ui.tool stays the derived legacy value ("mask"|"paint"|"erase") so the
     // stroke/undo paths keep working unchanged.
     function applyModeInstrument() {
-        ui.eraseTarget = ui.mode;
-        ui.tool = ui.instrument === "erase" ? "erase" : ui.mode;
+        ui.eraseTarget = ui.mode === "paint" ? "paint" : "mask";
+        ui.tool = ui.instrument === "erase" ? "erase" : ui.eraseTarget;
         view.style.cursor = ui.instrument ? "crosshair" : "default";
+        btns.none.classList.toggle("on", ui.mode === "none");
         btns.mask.classList.toggle("on", ui.mode === "mask");
         btns.paint.classList.toggle("on", ui.mode === "paint");
         btns.brush.classList.toggle("on", ui.instrument === "brush");
         btns.erase.classList.toggle("on", ui.instrument === "erase");
         btns.fill.classList.toggle("on", ui.instrument === "fill");
         btns.move.classList.toggle("on", ui.instrument === "move");
+        for (const name of ["none", "mask", "paint", "brush", "erase", "fill", "move"]) {
+            btns[name].setAttribute("aria-pressed", String(btns[name].classList.contains("on")));
+        }
+        for (const name of ["brush", "erase", "fill", "move"]) btns[name].disabled = ui.mode === "none";
         syncBrushControls();
         rebuildLayersPanel();
     }
@@ -579,10 +585,13 @@ export function mountCanvasEditor(node, state, container) {
         cancelExpand();
         commitXform();                       // leaving the old target bakes it
         ui.mode = mode;
+        ui.instrument = mode === "none" ? null : "brush";
         applyModeInstrument();
-        if (ui.instrument === "move") startXform();
+        scheduleRedraw();
     }
     function setInstrument(instrument) {
+        if (instrument === null) { setMode("none"); return; }
+        if (ui.mode === "none") return;
         if (ui.previewResult) {
             setStatus("Viewing a result — choose Edit canvas or Use as background before drawing.", { warn: false });
             return;
@@ -616,7 +625,7 @@ export function mountCanvasEditor(node, state, container) {
         // The same slider drives paint opacity or mask-overlay density —
         // let the label say which one is being edited.
         sOpacity.lbl.textContent = (ui.tool === "erase" ? ui.eraseTarget : ui.tool) === "mask" ? "Overlay" : "Opacity";
-        colorSummary.textContent = ui.mode === "mask" ? "Mask overlay color" : "Paint color";
+        colorSummary.textContent = ui.mode === "none" ? "Brush settings" : ui.mode === "mask" ? "Mask overlay color" : "Paint color";
         colorDetails.open = ui.mode === "paint";
     }
 
@@ -689,8 +698,9 @@ export function mountCanvasEditor(node, state, container) {
 
     gRefresh.append(bRefresh, bLoadBase, bBgMode);
 
-    stripBtn("mask", "Mask", "Mode: edit the inpaint mask", () => setMode("mask"));
-    stripBtn("paint", "Paint", "Mode: color strokes on the active layer", () => setMode("paint"));
+    stripBtn("none", "None", "Editing off. Choose Mask or Paint to start drawing.", () => setMode("none"));
+    stripBtn("mask", "Mask", "Edit the inpaint mask with the brush. Click again to stop editing.", () => setMode(ui.mode === "mask" ? "none" : "mask"));
+    stripBtn("paint", "Paint", "Paint on the active layer with the brush. Click again to stop editing.", () => setMode(ui.mode === "paint" ? "none" : "paint"));
     stripBtn("brush", "Brush", "Tool: brush (click again or press Esc to stop drawing)", () => setInstrument(ui.instrument === "brush" ? null : "brush"));
     stripBtn("erase", "Eraser", "Tool: eraser (erases in the current mode)", () => setInstrument("erase"));
     stripBtn("fill", "Fill", "Tool: fill — click flood-fills with the current color (mask mode fills the mask)", () => setInstrument("fill"));
@@ -896,9 +906,11 @@ export function mountCanvasEditor(node, state, container) {
 
     const gHist = el("span", "grp");
     const bUndo = el("button", "", "Undo");
+    canvasIcon(bUndo, "undo");
     bUndo.title = "Undo canvas edit, layer operation or resize";
     bUndo.addEventListener("click", () => runHistory(model.undo));
     const bRedo = el("button", "", "Redo");
+    canvasIcon(bRedo, "redo");
     bRedo.title = "Redo canvas edit";
     bRedo.addEventListener("click", () => runHistory(model.redo));
     gHist.append(bUndo, bRedo);
@@ -1006,7 +1018,7 @@ export function mountCanvasEditor(node, state, container) {
     const stripLbl = (t) => el("div", "striplbl", t);
 
     toolStrip.append(
-        stripLbl("Mode"), btns.mask, btns.paint,
+        stripLbl("Mode"), btns.none, btns.mask, btns.paint,
         stripLbl("Tool"), btns.brush, btns.erase, btns.fill, btns.move,
     );
     // Right side: Color panel + Layers panel.
@@ -1187,7 +1199,7 @@ export function mountCanvasEditor(node, state, container) {
         layersList.textContent = "";
         maskList.textContent = "";
         ui._thumbs = [];
-        const maskActive = ui.tool === "mask" || (ui.tool === "erase" && ui.eraseTarget === "mask");
+        const maskActive = ui.mode === "mask";
         // Pinned pseudo-layer: the mask (eye = overlay visibility, display only).
         const mrow = el("div", "e2go-cv-lrow" + (maskActive ? " active" : ""));
         const meye = el("button", "eye", ui.maskOverlay ? "Overlay on" : "Overlay off");
@@ -1518,7 +1530,7 @@ export function mountCanvasEditor(node, state, container) {
         if (s.tools) ui.tools = s.tools;
         if (s.mode) ui.mode = s.mode;
 
-        ui.instrument = ["brush", "erase", "fill"].includes(s.instrument) ? s.instrument : null;
+        ui.instrument = ui.mode === "none" ? null : (["brush", "erase", "fill"].includes(s.instrument) ? s.instrument : "brush");
         if (typeof s.maskOverlay === "boolean") ui.maskOverlay = s.maskOverlay;
         // Restore the exact zoom/pan/rotation the user was working at, applied
         // once the display has a real size (see redraw's pendingRelView). No
@@ -1720,8 +1732,8 @@ export function mountCanvasEditor(node, state, container) {
         resultTab.disabled = !ui.review;
         stateLabel.textContent = layoutActive ? "Layout · regions are not masks" : viewingResult
             ? `Result ${ui.review.idx + 1} / ${ui.review.imgs.length} · viewing only`
-            : hasCanvas ? `${ui.mode === "mask" ? "Mask" : activePaintName()} · ${ui.instrument || "choose a tool"}` : "Empty canvas";
-        for (const name of ["brush", "erase", "fill", "move"]) btns[name].disabled = viewingResult || !hasCanvas;
+            : hasCanvas ? (ui.mode === "none" ? "Editing off · choose Mask or Paint" : `${ui.mode === "mask" ? "Mask" : activePaintName()} · ${ui.instrument}`) : "Empty canvas";
+        for (const name of ["brush", "erase", "fill", "move"]) btns[name].disabled = viewingResult || !hasCanvas || ui.mode === "none";
         for (const button of gMask.querySelectorAll("button")) button.disabled = viewingResult || !hasCanvas;
         bClearP.disabled = viewingResult || !hasCanvas;
         bClearP.textContent = `Clear ${activePaintName()}`;
@@ -1948,7 +1960,7 @@ export function mountCanvasEditor(node, state, container) {
                         return `result ${ui.review.idx + 1}/${ui.review.imgs.length} (preview)`
                             + (mismatch ? ` · result ${rimg.naturalWidth}×${rimg.naturalHeight}` : "");
                     })()
-                    : (ui.mode === "mask"
+                    : (ui.mode === "none" ? "Editing off" : ui.mode === "mask"
                         ? "Mask"
                         : (state.layers[state.activeLayer]?.name || `Paint ${state.activeLayer}`)));
             persistentInfo.textContent =
