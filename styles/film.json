@@ -1,0 +1,416 @@
+[
+  {
+    "name": "Action Movie Poster",
+    "prefix": "",
+    "suffix": "Action-movie poster key-art illustration of the subject of the request only; no lettering, no extra figures. Full color, intensely saturated grade. Dramatic low-angle framing with sharp directional light and diagonal energy; lighting direction and time of day follow the request, dramatic. Photoreal rendering with graphic poster boldness, crisp edges. For places and environments of any kind the same treatment; the setting comes only from the request. Not a candid photo, not flat graphic.",
+    "negative": ""
+  },
+  {
+    "name": "Action Poster (Speed Strokes)",
+    "prefix": "",
+    "suffix": "Movie-poster composite in the Drew Struzan and Marvel key-art manner, applied to the subject of the request only; no lettering, no film characters. Full color, high-contrast palette with backlit burst. Razor-sharp subject with cinematic rim light against aggressive diagonal dry-brush motion streaks dissolving into kinetic abstraction; lighting direction and time of day follow the request. Hyper-detailed focus versus chaotic streaked ground. For places and environments of any kind the same treatment; the setting comes only from the request. Not a candid photo, not painterly loose.",
+    "negative": ""
+  },
+  {
+    "name": "Blade Runner Style",
+    "prefix": "",
+    "suffix": "Dystopian neon-noir film still applied to the subject of the request only; no city scenery or film characters added. Full color, dark blue atmosphere with magenta and cyan light accents. Dense fog glow with wet reflective surfaces; light from colored practical sources in the haze. Rain-slick highlights, deep shadow. For places and environments of any kind the same treatment; the setting comes only from the request. Not clean sci-fi, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Bleach Bypass Photography",
+    "prefix": "",
+    "suffix": "Bleach-bypass film still in the manner of Roger Deakins and Janusz Kamiński, applied to the subject of the request only. Limited palette of desaturated tones with metallic surface response. Elevated contrast, dense shadows with retained highlight detail; lighting direction and time of day follow the request. Gritty controlled grain, silvery skin and metal. For places and environments of any kind the same treatment; the setting comes only from the request. Not a render, not an illustration.",
+    "negative": ""
+  },
+  {
+    "name": "Blue Hour Cinema",
+    "prefix": "",
+    "suffix": "Blue-hour film still in the manner of Deakins and Greig Fraser, applied to the subject of the request only; no film locations added. Full color, cool twilight blues with warm practical accents. Soft transitional ambient light with subtle atmospheric depth. Refined gradients, naturalistic mood. For places and environments of any kind the same treatment; the setting comes only from the request. Not a render, not an illustration.",
+    "negative": ""
+  },
+  {
+    "name": "Cinematic",
+    "prefix": "",
+    "suffix": "Cinematic film still of the subject of the request only. Full color, moody cinematic grade. Shallow depth of field with bokeh, vignette and cinemascope framing; lighting direction and time of day follow the request. Fine film grain, high-budget polish, epic mood. For places and environments of any kind the same treatment; the setting comes only from the request. Not anime, not a painting.",
+    "negative": ""
+  },
+  {
+    "name": "Cinematic (Horror)",
+    "prefix": "",
+    "suffix": "Horror film still of the subject of the request only; no monsters or victims added. Limited palette of dimmed muted slate tones. Dark low-key shot with spooky atmosphere; lighting direction and time of day follow the request, dim. Film grain, LUT-graded shadows. For places and environments of any kind the same treatment; the setting comes only from the request. Not bright, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Cinematic (Soft)",
+    "prefix": "",
+    "suffix": "Soft cinematic film still of the subject of the request only. Full color, soothing muted tones with a faded slate-gray atmosphere. Soft cinematic light with controlled detail and subtle HDR; lighting direction and time of day follow the request, soft. Gentle grain, calm grade. For places and environments of any kind the same treatment; the setting comes only from the request. Not black and white, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Cinematic Diva",
+    "prefix": "",
+    "suffix": "Cinematic photograph of the subject of the request only. Full color, rich grade. Beautiful motivated lighting with great composition; lighting direction and time of day follow the request. Crisp detail, polished finish. For places and environments of any kind the same treatment; the setting comes only from the request. Not a render, not an illustration.",
+    "negative": ""
+  },
+  {
+    "name": "Cinematic Dynamic",
+    "prefix": "",
+    "suffix": "Epic cinematic action-movie still of the subject of the request only in motion. Full color, high-budget grade. Raw photo feel with motion blur on moving parts and a sharp subject; lighting direction and time of day follow the request. Film grain, dynamic framing. For places and environments of any kind the same treatment; the setting comes only from the request. Not static, not a drawing.",
+    "negative": ""
+  },
+  {
+    "name": "Cinematic Photography",
+    "prefix": "",
+    "suffix": "Cinematic photograph of the subject of the request only in the Deakins tradition. Full color, unified color grade. Wide-aspect film-like framing with purposeful negative space, soft motivated light; lighting direction and time of day follow the request. Anamorphic character, patient stillness, implied story. For places and environments of any kind the same treatment; the setting comes only from the request. Not a render, not an illustration.",
+    "negative": ""
+  },
+  {
+    "name": "Cinematic Sharp",
+    "prefix": "",
+    "suffix": "Sharp cinematic still of the subject of the request only shot on Kodak 35mm. Full color, moody harmonious grade. Sharp focus throughout with cinemascope framing and vignette; lighting direction and time of day follow the request. Film grain, epic emotional mood, no blur. For places and environments of any kind the same treatment; the setting comes only from the request. Not anime, not a painting.",
+    "negative": ""
+  },
+  {
+    "name": "Cinematic Tron",
+    "prefix": "",
+    "suffix": "Sleek light-circuit sci-fi film still applied to the subject of the request only; no Tron characters or light-cycles. Limited palette of deep matte black with glowing cyan and amber circuit lines. Hard geometric paneling with vector-precise silhouette, light coming from the glowing seams. Volumetric haze, lens bloom. For places and environments of any kind the same treatment; the setting comes only from the request. Not neon cityscape, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Film Noir",
+    "prefix": "",
+    "suffix": "Film-noir still of the subject of the request only. Black and white, stark high contrast. A single low hard-angled light carving deep darkness, slatted venetian-blind shadows across the frame. Withheld detail, suspense in stillness, fine grain. For places and environments of any kind the same treatment; the setting comes only from the request. Not color, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Film Noir (Alt)",
+    "prefix": "",
+    "suffix": "Shadow-drenched film-noir still of the subject of the request only in the German-Expressionist manner. Black and white, extreme light and darkness. Hard-edged pools of light in haze, dutch angles, wet reflective surfaces and sharp silhouettes. 1940s monochrome stock, claustrophobic mood. For places and environments of any kind the same treatment; the setting comes only from the request. Not color, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Film Noir (Analog)",
+    "prefix": "",
+    "suffix": "Black-and-white analog film-noir still of the subject of the request only. Black and white, deep shadows with strong value contrast. Monochrome analog film lighting, sharp focus; lighting direction and time of day follow the request, low-key. Subtle film grain. For places and environments of any kind the same treatment; the setting comes only from the request. Not colorful, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Giallo Poster Art",
+    "prefix": "",
+    "suffix": "Italian giallo film-poster illustration of the subject of the request only; no lettering, no killers or extra figures. Full color, lurid high-contrast palette. Dramatic central subject isolated against bold negative space, sharp angular shadow shapes; lighting direction and time of day follow the request, theatrical. Airbrushed glamorous rendering with pulp menace. For places and environments of any kind the same treatment; the setting comes only from the request. Not a film still, not flat graphic.",
+    "negative": ""
+  },
+  {
+    "name": "Grindhouse Poster Illustration",
+    "prefix": "",
+    "suffix": "1970s grindhouse exploitation film-poster illustration of the subject of the request only; no lettering, no extra figures. Full color, garish high-saturation palette. Dramatic central subject with sharp angular shadow shapes; lighting direction and time of day follow the request, theatrical. Painterly airbrushed rendering, sensational pulp energy. For places and environments of any kind the same treatment; the setting comes only from the request. Not a film still, not clean.",
+    "negative": ""
+  },
+  {
+    "name": "Hitchcockian Suspense",
+    "prefix": "",
+    "suffix": "Suspense film still in the Hitchcock manner, applied to the subject of the request only; no film scenes added. Full color, controlled restrained grade. High-contrast light isolating the subject in shadow-heavy surroundings, voyeuristic slightly elevated or through-window vantage; lighting direction and time of day follow the request. Deliberate stillness, mounting tension. For places and environments of any kind the same treatment; the setting comes only from the request. Not a render, not an illustration.",
+    "negative": ""
+  },
+  {
+    "name": "John Wick-Inspired Neon Photography",
+    "prefix": "",
+    "suffix": "Stylish action-thriller film still applied to the subject of the request only; no film characters. Full color, saturated neon gel colors in deep shadow. Colored gel lights crossing the frame in sharp bands, glossy reflective surfaces bouncing color, light from the gels. Silhouette-driven framing, cool tension. For places and environments of any kind the same treatment; the setting comes only from the request. Not a render, not an illustration.",
+    "negative": ""
+  },
+  {
+    "name": "Matrix Style",
+    "prefix": "",
+    "suffix": "Green tech-noir film still applied to the subject of the request only; no falling code, sunglasses, trenchcoats or extra figures unless the request names them. Limited palette of black and green. Frozen-motion feel with cold hard light; lighting direction and time of day follow the request, cold. Crushed shadows, digital coldness. For places and environments of any kind the same treatment; the setting comes only from the request. Not a render, not an illustration.",
+    "negative": ""
+  },
+  {
+    "name": "Matrix-Grading Photography",
+    "prefix": "",
+    "suffix": "Film still of the subject of the request only in a Matrix-style green grade. Limited palette of monochromatic green cast over the whole tonal range. Stark hard-edged directional light against deep darkness, crushed-shadow contrast; lighting direction and time of day follow the request, hard. Clinical desaturated coldness. For places and environments of any kind the same treatment; the setting comes only from the request. Not a render, not an illustration.",
+    "negative": ""
+  },
+  {
+    "name": "Mexico Color Grading",
+    "prefix": "",
+    "suffix": "Film still of the subject of the request only pushed through a Soderbergh-style Mexico grade. Limited palette of crushed yellows, desaturated ochres and dusty amber. Midtones shifted to sepia-bronze, shadows sinking into muddy brown-black, heavy tungsten white balance; lighting direction and time of day follow the request. Dusty warm haze. For places and environments of any kind the same treatment; the setting comes only from the request. Not a render, not an illustration.",
+    "negative": ""
+  },
+  {
+    "name": "Red Dead Redemption Poster",
+    "prefix": "",
+    "suffix": "Vintage 1970s western movie-poster illustration in the Drew Struzan painted manner, applied to the subject of the request only; no cowboys or lettering added. Limited palette of sepia and dusty amber on weathered yellowed parchment. Painted volumetric rendering; lighting direction and time of day follow the request, warm. Aged paper texture, dusty grade. For places and environments of any kind the same treatment; the setting comes only from the request. Not a film still, not clean digital.",
+    "negative": ""
+  },
+  {
+    "name": "Sin City Photography",
+    "prefix": "",
+    "suffix": "Sin City-style film still of the subject of the request only. Black and white with one isolated element in bold selective color. Razor-sharp shadow-to-highlight extremes, deep inky blacks pooling around a single dramatically lit subject. Pulp-noir tension, crisp edges. For places and environments of any kind the same treatment; the setting comes only from the request. Not full color, not a comic drawing.",
+    "negative": ""
+  },
+  {
+    "name": "Star Wars Style",
+    "prefix": "",
+    "suffix": "Space-opera film still in the used, lived-in practical-effects manner, applied to the subject of the request only; no lightsabers, droids, ships or film characters added. Full color, warm binary-sunset grade. Worn weathered surfaces with model-shop realism; lighting direction and time of day follow the request, low warm sun. Epic wide framing, film grain. For places and environments of any kind the same treatment; the setting comes only from the request. Not clean sci-fi, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Stranger Things-Inspired Art",
+    "prefix": "",
+    "suffix": "1980s retro-horror illustration applied to the subject of the request only; no monsters or kids on bikes added. Full color, nostalgic grade with one saturated piercing source. Thick engulfing haze with a single dramatic light cutting through, low-angle framing; lighting direction and time of day follow the request. VHS-era grain, soft glow versus harsh flare. For places and environments of any kind the same treatment; the setting comes only from the request. Not clean, not a photograph.",
+    "negative": ""
+  },
+  {
+    "name": "Stranger Things-Inspired Art (Alt)",
+    "prefix": "",
+    "suffix": "Painted 1980s movie-poster illustration in the Drew Struzan and Kyle Lambert manner, applied to the subject of the request only; no lettering, no series characters. Full color, deep blue night with glowing red rim light. Airbrushed and colored-pencil rendering with hazy halos and lens glow; lighting direction and time of day follow the request. Rich painterly skin and fabric. For places and environments of any kind the same treatment; the setting comes only from the request. Not a film still, not flat graphic.",
+    "negative": ""
+  },
+  {
+    "name": "Wes Anderson",
+    "prefix": "",
+    "suffix": "Film still in the Wes Anderson manner, applied to the subject of the request only; no film sets or characters added. Full color, distinct pastel palette. Perfectly symmetrical centered planimetric framing with dollhouse-like staging, flat evenly diffused light. Vintage props and details only where the request has them, storybook precision. For places and environments of any kind the same treatment; the setting comes only from the request. Not a render, not an illustration.",
+    "negative": ""
+  },
+  {
+    "name": "Wes Anderson Photography",
+    "prefix": "",
+    "suffix": "Symmetrical photograph in the Wes Anderson manner, applied to the subject of the request only. Full color, curated pastel palette. Precise centered geometric composition with flat evenly diffused light minimizing shadow. Deadpan static stillness, meticulous order. For places and environments of any kind the same treatment; the setting comes only from the request. Not a render, not an illustration.",
+    "negative": ""
+  },
+  {
+    "name": "Analog Horror Video Still",
+    "prefix": "",
+    "suffix": "Degraded VHS video still of the subject of the request only; no creatures or broadcast text added. Limited palette of washed-out colors. Heavy noise with tracking errors, interlaced scanlines and warped tape distortion; lighting direction and time of day follow the request, dim. Muddy shadows, lo-fi eeriness. For places and environments of any kind the same treatment; the setting comes only from the request. Not clean video, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Archival Film Footage",
+    "prefix": "",
+    "suffix": "Archival 16mm film frame of the subject of the request only. Limited palette of faded contrast, color or monochrome as the request asks. Heavy grain with scratches and dust, slightly unstable exposure; lighting direction and time of day follow the request. Newsreel wear. For places and environments of any kind the same treatment; the setting comes only from the request. Not clean film, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Body Cam Footage",
+    "prefix": "",
+    "suffix": "Body-worn camera frame of the subject of the request only. Full color, harsh auto-exposed video color. Shaky chest-level first-person angle with extreme wide-angle distortion; lighting direction and time of day follow the request. Motion-smeared compressed video. For places and environments of any kind the same treatment; the setting comes only from the request. Not cinematic, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Crash Zoom Blur Film Still",
+    "prefix": "",
+    "suffix": "Film still of the subject of the request only captured during a fast crash zoom. Full color, punchy saturated 35mm color. Radial zoom streaks bursting from a sharp center point, motion-smeared edges; lighting direction and time of day follow the request. 1970s kung-fu-cinema energy. For places and environments of any kind the same treatment; the setting comes only from the request. Not a render, not an illustration.",
+    "negative": ""
+  },
+  {
+    "name": "Dashcam Footage",
+    "prefix": "",
+    "suffix": "Car dashboard-camera frame of the subject of the request only through a windshield. Full color, harsh contrast video color. Wide forward-facing angle with slight fisheye, compressed artifacts and lens glare; lighting direction and time of day follow the request. Low-quality video. For places and environments of any kind the same treatment; the setting comes only from the request. Not cinematic, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Datamosh Video Still",
+    "prefix": "",
+    "suffix": "Datamoshed glitch video still of the subject of the request only. Full color, bleeding glitched colors. Smeared pixel blocks flowing between frames, blocky low-bitrate compression squares, melted pixel smears; lighting direction and time of day follow the request. Digital distortion. For places and environments of any kind the same treatment; the setting comes only from the request. Not clean video, not analog VHS.",
+    "negative": ""
+  },
+  {
+    "name": "Day-for-Night Film Still",
+    "prefix": "",
+    "suffix": "Cinematic film still of the subject of the request only shot day-for-night. Limited palette of deep blue desaturated grade. Daylight footage darkened so hard sunlit shadows read as moonlight; light from a low sun graded as moon. Cool cinematic tone. For places and environments of any kind the same treatment; the setting comes only from the request. Not a render, not an illustration.",
+    "negative": ""
+  },
+  {
+    "name": "Doorbell Camera Footage",
+    "prefix": "",
+    "suffix": "Smart-doorbell camera frame of the subject of the request only. Full color, auto-exposed video with blown highlights. Extreme fisheye from a low chest-height angle, bulging curved edges, compressed low-resolution video; lighting direction and time of day follow the request. Security-clip look. For places and environments of any kind the same treatment; the setting comes only from the request. Not cinematic, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Drone Aerial Footage",
+    "prefix": "",
+    "suffix": "Drone aerial photograph of the subject of the request only from a high bird's-eye angle, straight down or steeply tilted. Full color, clean digital color. Crisp wide-angle detail with sweeping scale; lighting direction and time of day follow the request. Sharp small-sensor clarity. For places and environments of any kind the same treatment; the setting comes only from the request. Not ground level, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Fincher Style Film Still",
+    "prefix": "",
+    "suffix": "Cinematic film still of the subject of the request only in the David Fincher manner, shot on a RED cinema camera. Limited palette of cold desaturated green-yellow grade. Dim low-key light with locked-off controlled framing; lighting direction and time of day follow the request, low. Crisp clinical precision. For places and environments of any kind the same treatment; the setting comes only from the request. Not a render, not an illustration.",
+    "negative": ""
+  },
+  {
+    "name": "French New Wave Film Still",
+    "prefix": "",
+    "suffix": "Cinematic film still of the subject of the request only in the Godard and Truffaut manner, on black-and-white 35mm. Black and white, grainy. Handheld natural framing in available light; lighting direction and time of day follow the request. Spontaneous candid realism, 1960s stock. For places and environments of any kind the same treatment; the setting comes only from the request. Not a render, not an illustration.",
+    "negative": ""
+  },
+  {
+    "name": "Giallo Film Still",
+    "prefix": "",
+    "suffix": "Cinematic film still of the subject of the request only in the Argento and Bava manner; no killers added. Full color, saturated red, blue and green gel lighting with glossy lurid color. Colored gels sculpting deep inky shadows, light from the gels. 1970s film grain. For places and environments of any kind the same treatment; the setting comes only from the request. Not a render, not an illustration.",
+    "negative": ""
+  },
+  {
+    "name": "Grindhouse Film Still",
+    "prefix": "",
+    "suffix": "Cinematic film still of the subject of the request only on scratched damaged 35mm film. Full color, faded warm color. Heavy grain with dust, splices and burned frame edges; lighting direction and time of day follow the request. 1970s exploitation wear. For places and environments of any kind the same treatment; the setting comes only from the request. Not clean film, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Guillermo del Toro Style Film Still",
+    "prefix": "",
+    "suffix": "Cinematic film still of the subject of the request only in the Guillermo del Toro manner, on 35mm; no fauns or film creatures added. Full color, rich amber and teal palette. Warm-cool contrast with richly decaying textures; lighting direction and time of day follow the request. Gothic fairy-tale mood. For places and environments of any kind the same treatment; the setting comes only from the request. Not a render, not an illustration.",
+    "negative": ""
+  },
+  {
+    "name": "Italian Neorealism Film Still",
+    "prefix": "",
+    "suffix": "Cinematic film still of the subject of the request only in the De Sica and Rossellini manner. Black and white, soft muted grays. Raw natural daylight with grainy documentary texture; lighting direction and time of day follow the request, natural. Unpolished 1940s realism. For places and environments of any kind the same treatment; the setting comes only from the request. Not a render, not an illustration.",
+    "negative": ""
+  },
+  {
+    "name": "Jean-Pierre Jeunet Style Film Still",
+    "prefix": "",
+    "suffix": "Cinematic film still of the subject of the request only in the Jeunet and Delbonnel manner, on Super 35 with wide-angle lenses; no Amélie scenes added. Full color, saturated green and golden-yellow grade. Wide-angle close framing with warm textured light; lighting direction and time of day follow the request, warm. Whimsical precision. For places and environments of any kind the same treatment; the setting comes only from the request. Not a render, not an illustration.",
+    "negative": ""
+  },
+  {
+    "name": "Kubrick Style Film Still",
+    "prefix": "",
+    "suffix": "Cinematic film still of the subject of the request only in the Stanley Kubrick manner, on 35mm with a wide-angle lens; no film sets added. Full color, cold precise color. Rigid one-point-perspective symmetry with clean wide-angle depth and flawless controlled light; lighting direction and time of day follow the request. Clinical stillness. For places and environments of any kind the same treatment; the setting comes only from the request. Not a render, not an illustration.",
+    "negative": ""
+  },
+  {
+    "name": "Kurosawa Style Film Still",
+    "prefix": "",
+    "suffix": "Cinematic film still of the subject of the request only in the Akira Kurosawa manner, on black-and-white 35mm with telephoto lenses; no samurai added. Black and white, dramatic contrast. Deep-focus telephoto compression with bold dynamic staging; lighting direction and time of day follow the request. Wet weathered textures. For places and environments of any kind the same treatment; the setting comes only from the request. Not a render, not an illustration.",
+    "negative": ""
+  },
+  {
+    "name": "Lynch Style Film Still",
+    "prefix": "",
+    "suffix": "Cinematic film still of the subject of the request only in the David Lynch manner, on 35mm color film; no Twin Peaks scenes added. Full color, saturated red against deep shadow. Flat harsh lighting with surreal stillness; lighting direction and time of day follow the request, flat. Grainy film, uncanny calm. For places and environments of any kind the same treatment; the setting comes only from the request. Not a render, not an illustration.",
+    "negative": ""
+  },
+  {
+    "name": "Military Night Vision Goggles Footage",
+    "prefix": "",
+    "suffix": "Night-vision-goggle footage frame of the subject of the request only, first-person view. Monochrome, bright phosphor green. Glowing highlights with heavy speckled grain inside a circular dark vignette; light is the image intensifier's. NVG texture. For places and environments of any kind the same treatment; the setting comes only from the request. Not daylight, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "News Broadcast Footage",
+    "prefix": "",
+    "suffix": "TV news camera frame of the subject of the request only. Full color, neutral broadcast daylight color. Shoulder-mounted eye-level angle with slightly soft broadcast video; lighting direction and time of day follow the request. Documentary coverage look, no on-screen graphics. For places and environments of any kind the same treatment; the setting comes only from the request. Not cinematic, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Night Vision Surveillance Footage",
+    "prefix": "",
+    "suffix": "Infrared CCTV night frame of the subject of the request only. Monochrome, grayscale with glowing pale surfaces. Flat infrared illumination from the camera itself, heavy sensor noise, soft low-resolution detail. Security-camera flatness. For places and environments of any kind the same treatment; the setting comes only from the request. Not daylight, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Nolan IMAX Style Film Still",
+    "prefix": "",
+    "suffix": "Cinematic film still of the subject of the request only in the Christopher Nolan manner, on IMAX 70mm. Full color, cool steel-blue with warm skin tones. Large-format crisp detail with natural practical lighting and epic wide scale; lighting direction and time of day follow the request. Film grain, grounded realism. For places and environments of any kind the same treatment; the setting comes only from the request. Not a render, not an illustration.",
+    "negative": ""
+  },
+  {
+    "name": "Ridley Scott Style Film Still",
+    "prefix": "",
+    "suffix": "Cinematic film still of the subject of the request only in the Ridley Scott manner, on 35mm anamorphic. Full color, rich teal and amber grade. Smoky backlit haze with beams of light through dust; lighting direction and time of day follow the request, backlit. Dense atmospheric texture. For places and environments of any kind the same treatment; the setting comes only from the request. Not a render, not an illustration.",
+    "negative": ""
+  },
+  {
+    "name": "Signalwave Video Still",
+    "prefix": "",
+    "suffix": "Warped analog-TV video still of the subject of the request only. Full color, faded broadcast color with VHS color bleed. Rolling scanlines with ghosted doubled edges; lighting direction and time of day follow the request. Analog signal distortion. For places and environments of any kind the same treatment; the setting comes only from the request. Not clean video, not digital glitch.",
+    "negative": ""
+  },
+  {
+    "name": "Silent Film Still",
+    "prefix": "",
+    "suffix": "Silent-film still of the subject of the request only from the 1920s. Black and white, soft overexposed glow. Flickering tonal softness with heavy vignette; lighting direction and time of day follow the request, flat stage-like. Scratched film grain, slightly sped-up softness. For places and environments of any kind the same treatment; the setting comes only from the request. Not modern film, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Smartphone Vertical Video Still",
+    "prefix": "",
+    "suffix": "Smartphone vertical-video frame of the subject of the request only. Full color, auto-HDR phone color. Handheld eye-level angle with slightly oversharpened detail; lighting direction and time of day follow the request. Compressed social-media quality. For places and environments of any kind the same treatment; the setting comes only from the request. Not cinematic, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Sofia Coppola Style Film Still",
+    "prefix": "",
+    "suffix": "Cinematic film still of the subject of the request only in the Sofia Coppola manner, on 35mm Kodak in natural daylight. Full color, washed dreamy pastel palette. Soft natural light with intimate close framing; lighting direction and time of day follow the request, soft. Gentle grain. For places and environments of any kind the same treatment; the setting comes only from the request. Not a render, not an illustration.",
+    "negative": ""
+  },
+  {
+    "name": "Spielberg Style Film Still",
+    "prefix": "",
+    "suffix": "Cinematic film still of the subject of the request only in the Spielberg and Kamiński manner, on 35mm Panavision anamorphic. Full color, rich saturated warm color. Warm glowing backlight with lens flares and soft haze; light from behind. 1980s film grain. For places and environments of any kind the same treatment; the setting comes only from the request. Not a render, not an illustration.",
+    "negative": ""
+  },
+  {
+    "name": "Staticcore Video Still",
+    "prefix": "",
+    "suffix": "Staticcore video still of the subject of the request only. Limited palette of dim washed colors under gray TV static. Grainy static noise over everything with flickering interference lines and soft blur; lighting direction and time of day follow the request. Uneasy lo-fi atmosphere. For places and environments of any kind the same treatment; the setting comes only from the request. Not clean, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Super 8 Home Movie Film Still",
+    "prefix": "",
+    "suffix": "Super 8 home-movie film frame of the subject of the request only. Full color, warm faded 1970s color. Heavy grain with soft focus, light leaks and rounded frame corners; lighting direction and time of day follow the request. Home-movie softness. For places and environments of any kind the same treatment; the setting comes only from the request. Not clean film, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Tarkovsky Style Film Still",
+    "prefix": "",
+    "suffix": "Cinematic film still of the subject of the request only in the Andrei Tarkovsky manner, on Soviet 35mm color stock. Limited palette of muted desaturated greens and sepias. Long still framing with soft natural light; lighting direction and time of day follow the request, soft. Wet weathered textures. For places and environments of any kind the same treatment; the setting comes only from the request. Not a render, not an illustration.",
+    "negative": ""
+  },
+  {
+    "name": "Tim Burton Style Film Still",
+    "prefix": "",
+    "suffix": "Cinematic film still of the subject of the request only in the Tim Burton live-action manner, on 35mm; no film characters added. Limited palette of pale desaturated tones with gothic black-and-white stripes as pattern. Spindly exaggerated production design with theatrical lighting; lighting direction and time of day follow the request, theatrical. Stylized stillness. For places and environments of any kind the same treatment; the setting comes only from the request. Not a render, not an illustration.",
+    "negative": ""
+  },
+  {
+    "name": "Villeneuve Style Film Still",
+    "prefix": "",
+    "suffix": "Cinematic film still of the subject of the request only in the Denis Villeneuve manner, on an ARRI Alexa 65; no Dune locations added. Limited palette of monochrome tonal grade. Vast minimalist composition with strong graphic negative space, soft overcast or hazy light; lighting direction and time of day follow the request, diffused. Atmospheric scale. For places and environments of any kind the same treatment; the setting comes only from the request. Not a render, not an illustration.",
+    "negative": ""
+  },
+  {
+    "name": "Wong Kar-wai Style Film Still",
+    "prefix": "",
+    "suffix": "Cinematic film still of the subject of the request only in the Wong Kar-wai and Christopher Doyle manner, handheld on Kodak 500T. Full color, saturated step-printed color with heavy green and red neon cast. Smeared dreamy motion with grainy intimate close framing; light from neon practicals. Film grain. For places and environments of any kind the same treatment; the setting comes only from the request. Not a render, not an illustration.",
+    "negative": ""
+  },
+  {
+    "name": "Zack Snyder Style Film Still",
+    "prefix": "",
+    "suffix": "Cinematic film still of the subject of the request only in the Zack Snyder manner, on 35mm; no 300 warriors added. Limited palette of high-contrast desaturated grade with crushed blacks. Gritty stylized light; lighting direction and time of day follow the request, dramatic. Speed-ramped stillness. For places and environments of any kind the same treatment; the setting comes only from the request. Not a render, not an illustration.",
+    "negative": ""
+  },
+  {
+    "name": "Split Diopter Shot",
+    "prefix": "",
+    "suffix": "Cinematic film still of the subject of the request only shot with a split-diopter lens. Full color, natural 35mm color. Crisp focus on both a near and a far plane at once with a soft blurred seam between; lighting direction and time of day follow the request. Deep layered framing. For places and environments of any kind the same treatment; the setting comes only from the request. Not a render, not an illustration.",
+    "negative": ""
+  },
+  {
+    "name": "Technicolor",
+    "prefix": "",
+    "suffix": "Cinematic film still of the subject of the request only on three-strip Technicolor film; no Oz scenes added. Full color, hyper-saturated jewel colors with deep reds and emerald greens. Rich three-strip color separation; lighting direction and time of day follow the request. Glowing dreamlike 1950s vividness. For places and environments of any kind the same treatment; the setting comes only from the request. Not a render, not an illustration.",
+    "negative": ""
+  },
+  {
+    "name": "Wide Establishing Shot",
+    "prefix": "",
+    "suffix": "Cinematic wide-angle establishing photograph of the subject of the request only small within vast space. Full color, natural grade. Deep focus with strong sense of scale; lighting direction and time of day follow the request. Crisp detail from foreground to horizon. For places and environments of any kind the same vast wide framing; the setting comes only from the request. Not a close-up, not a render.",
+    "negative": ""
+  }
+]

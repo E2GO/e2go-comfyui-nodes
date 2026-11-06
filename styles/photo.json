@@ -1,0 +1,1292 @@
+[
+  {
+    "name": "35mm Photography",
+    "prefix": "",
+    "suffix": "35mm film photograph of the subject of the request only. Full color, honest unmanipulated film tones. Natural grain structure, intimate moderate depth of field, true tonal rendering; lighting direction and time of day follow the request. Fine grain, slight softness at the edges, real lens character. For places and environments of any kind the same treatment; the setting comes only from the request. Not a render, not an illustration.",
+    "negative": ""
+  },
+  {
+    "name": "Adobe Lightroom Masterpiece",
+    "prefix": "",
+    "suffix": "Meticulously graded photograph of the subject of the request only. Full color, editorially balanced palette. Precise tonal curve with controlled highlight roll-off and deep clean shadows, subtle clarity and texture enhancement; lighting direction and time of day follow the request. Crisp fine detail, polished editorial finish, no halos. For places and environments of any kind the same treatment; the setting comes only from the request. Not a render, not an illustration.",
+    "negative": ""
+  },
+  {
+    "name": "Albumen Print",
+    "prefix": "",
+    "suffix": "19th-century albumen print of the subject of the request only. Monochrome, warm sepia tones on glossy thin paper. Fine detail with subtle tonal gradations and delicate highlights; lighting direction and time of day follow the request, soft. Slight vignette, yellowed edges, period softness. For places and environments of any kind the same treatment; the setting comes only from the request. Not a modern print, not an illustration.",
+    "negative": ""
+  },
+  {
+    "name": "Amateur Selfie",
+    "prefix": "",
+    "suffix": "Amateur phone selfie of the subject of the request only taken at arm's length. Full color, phone-processed colors. Slight wide-angle distortion, front-camera softness, uneven casual framing; lighting direction and time of day follow the request, often front-facing. Mild noise, slight blur, candid imperfection. For places and environments of any kind the same treatment; the setting comes only from the request. Not a studio portrait, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Analog Film (Vintage)",
+    "prefix": "",
+    "suffix": "Vintage analog film photograph of the subject of the request only. Full color, faded desaturated Kodachrome-and-Lomography tones. Grainy 35mm texture with heavy vignette; lighting direction and time of day follow the request. Stains, light leaks, found-footage wear. For places and environments of any kind the same treatment; the setting comes only from the request. Not digital-clean, not an illustration.",
+    "negative": ""
+  },
+  {
+    "name": "Analog Photography",
+    "prefix": "",
+    "suffix": "Analog film photograph of the subject of the request only. Full color, organic film palette. Natural grain giving every surface subtle texture, gentle tonal imperfections, mild halation around bright areas; lighting direction and time of day follow the request. Unpolished tactile finish, slight softness. For places and environments of any kind the same treatment; the setting comes only from the request. Not digital-clean, not an illustration.",
+    "negative": ""
+  },
+  {
+    "name": "Annie Leibovitz Portraiture",
+    "prefix": "",
+    "suffix": "Cinematic editorial portrait photograph in the manner of Annie Leibovitz, applied to the subject of the request only; no celebrities added. Full color, rich tonal depth with refined grading. Meticulously crafted dramatic lighting that tells a story; lighting direction and time of day follow the request, sculpted. Editorial elegance, staged composition, crisp detail. For places and environments of any kind the same treatment; the setting comes only from the request. Not snapshot, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Anthotype Print",
+    "prefix": "",
+    "suffix": "Anthotype print of the subject of the request only made with plant dye on paper. Monochrome, one soft muted plant tone on textured paper. Low-detail silhouette-like form with low contrast and overexposed lights; lighting is the flat printed kind. Organic uneven dye texture, watercolor-paper surface. For places and environments of any kind the same treatment; the setting comes only from the request. Not cyanotype, not an illustration.",
+    "negative": ""
+  },
+  {
+    "name": "Art Photography",
+    "prefix": "",
+    "suffix": "Fine-art photograph of the subject of the request only. Full color or restrained tones as the subject asks, chosen with intent. Carefully considered light and composition as ends in themselves, contemplative unhurried framing; lighting direction and time of day follow the request. Conceptual clarity, refined printing quality. For places and environments of any kind the same treatment; the setting comes only from the request. Not commercial, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "B&W Film Photo",
+    "prefix": "",
+    "suffix": "Black-and-white analog film photograph of the subject of the request only. Black and white, matte tones with rich blacks. Film-noir-leaning soft studio light with realistic surface texture, sharp focus; lighting direction and time of day follow the request. Subtle film grain, matte finish. For places and environments of any kind the same treatment; the setting comes only from the request. Not a render, not an illustration.",
+    "negative": ""
+  },
+  {
+    "name": "B&W High Contrast",
+    "prefix": "",
+    "suffix": "High-contrast black-and-white photograph of the subject of the request only. Black and white, deep shadows and bright highlights with few midtones. Dramatic lighting carving graphic form; lighting direction and time of day follow the request, dramatic. Crisp edges, monochrome photographic drama. For places and environments of any kind the same treatment; the setting comes only from the request. Not soft gray, not an illustration.",
+    "negative": ""
+  },
+  {
+    "name": "Backlit Portraiture",
+    "prefix": "",
+    "suffix": "Backlit photograph of the subject of the request only. Full color, warm luminous palette. Strong light from behind the subject with radiant edge illumination and subtle translucency, atmospheric depth. Graceful tonal transitions, glowing rim separation, soft flare. For places and environments of any kind the same treatment; the setting comes only from the request. Not front-lit, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Black and White Documentary",
+    "prefix": "",
+    "suffix": "Black-and-white documentary photograph of the subject of the request only. Black and white, rich grayscale with strong tonal separation. Observational realism with natural light behavior; lighting direction and time of day follow the request. Subtle film grain, authentic unposed feel, emotional immediacy. For places and environments of any kind the same treatment; the setting comes only from the request. Not staged studio, not an illustration.",
+    "negative": ""
+  },
+  {
+    "name": "Brassaï Night Photography",
+    "prefix": "",
+    "suffix": "Night photograph in the manner of Brassaï, applied to the subject of the request only; no Paris streets added. Black and white, deep tonal richness. Atmospheric nocturnal illumination from lamps and windows, reflective wet surfaces, cinematic shadow play. Film grain, evocative documentary realism. For places and environments of any kind the same treatment; the setting comes only from the request. Not daylight, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Brett Weston Photography",
+    "prefix": "",
+    "suffix": "Black-and-white photograph in the manner of Brett Weston, applied to the subject of the request only. Black and white, sharp exacting tonal contrast. Abstract tightly cropped framing isolating form and pattern, crystalline texture; lighting direction and time of day follow the request. Large-format clarity, deep blacks, crisp edges. For places and environments of any kind the same treatment; the setting comes only from the request. Not soft pictorialism, not an illustration.",
+    "negative": ""
+  },
+  {
+    "name": "Bromoil Print",
+    "prefix": "",
+    "suffix": "Bromoil print of the subject of the request only. Monochrome, warm sepia pigment on textured paper. Painterly brushed-on ink with soft tonal variations and rich contrasts; lighting direction and time of day follow the request. Visible brush texture, handmade darkroom softness, vignetting. For places and environments of any kind the same treatment; the setting comes only from the request. Not a sharp print, not a painting.",
+    "negative": ""
+  },
+  {
+    "name": "Butterfly Lighting",
+    "prefix": "",
+    "suffix": "Studio portrait photograph of the subject of the request only in butterfly lighting. Full color, refined natural palette. Key light high and centered in front, symmetrical illumination with a small butterfly shadow under the nose, sculptural volume. Elegant tonal transitions, polished studio finish. For places and environments of any kind the same treatment; the setting comes only from the request. Not side-lit, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Calotype Print",
+    "prefix": "",
+    "suffix": "1840s calotype print of the subject of the request only from a paper negative. Monochrome, warm brown tones on fibrous paper. Soft focus with subtle tonal range; lighting direction and time of day follow the request, soft. Paper-fiber texture, vignetting, early photographic softness. For places and environments of any kind the same treatment; the setting comes only from the request. Not a daguerreotype, not an illustration.",
+    "negative": ""
+  },
+  {
+    "name": "Candid Photography",
+    "prefix": "",
+    "suffix": "Candid unposed photograph of the subject of the request only. Full color, natural palette. Available ambient light as it falls, spontaneous in-motion framing favoring authentic gesture; lighting direction and time of day follow the request. Slight imperfection, real texture, no staging. For places and environments of any kind the same treatment; the setting comes only from the request. Not a studio portrait, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Commercial Beauty Photography",
+    "prefix": "",
+    "suffix": "Luxury commercial beauty photograph of the subject of the request only. Full color, refined flawless palette. Sophisticated studio lighting with immaculate detail reproduction; lighting direction and time of day follow the request, polished. Premium surface rendering, refined tonal transitions, high-end editorial polish. For places and environments of any kind the same treatment; the setting comes only from the request. Not candid, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Cosplay Convention",
+    "prefix": "",
+    "suffix": "Amateur convention-floor photograph of the subject of the request only; any figures in the picture pose like a pin-up, and a crowd appears only when the request names one. Full color, mixed convention-hall light. Phone-camera look with slight blur; lighting direction and time of day follow the request, flat hall lighting. Casual framing, busy-floor realism only where the request puts it. For places and environments of any kind the same treatment; the setting comes only from the request. Not studio, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Cosplay Photography",
+    "prefix": "",
+    "suffix": "Polished cosplay photograph applied to the subject of the request only; any figures in the picture pose dynamically in character. Full color, clean saturated palette. Flattering studio or location light rendering costume detail crisply; lighting direction and time of day follow the request. Believable fabric and prop texture, clean focus. For places and environments of any kind the same treatment; the setting comes only from the request. Not a render, not an illustration.",
+    "negative": ""
+  },
+  {
+    "name": "Cross Process Photography",
+    "prefix": "",
+    "suffix": "Cross-processed film photograph of the subject of the request only. Full color, unnatural shifted tones with cyan shadows and yellow-green highlights. Punchy contrast pushing highlights and shadows, chemically mismatched development; lighting direction and time of day follow the request. Film grain, saturated surreal casts. For places and environments of any kind the same treatment; the setting comes only from the request. Not digital filter, not an illustration.",
+    "negative": ""
+  },
+  {
+    "name": "Cross Process Photography (Alt)",
+    "prefix": "",
+    "suffix": "Cross-processed slide film photograph of the subject of the request only. Full color, heightened contrast with film-derived color shifts toward magenta and green. Unconventional tonal relationships, graphic impact; lighting direction and time of day follow the request. Analog grain, unpredictable casts. For places and environments of any kind the same treatment; the setting comes only from the request. Not clean digital, not an illustration.",
+    "negative": ""
+  },
+  {
+    "name": "Cross Processing Print",
+    "prefix": "",
+    "suffix": "Cross-processed print of the subject of the request only. Full color, vibrant surreal hues with heightened contrast. Experimental color shifts and unconventional tonalities; lighting direction and time of day follow the request. Retro print texture, dynamic color interplay. For places and environments of any kind the same treatment; the setting comes only from the request. Not natural color, not an illustration.",
+    "negative": ""
+  },
+  {
+    "name": "Cyanotype Print",
+    "prefix": "",
+    "suffix": "Cyanotype print of the subject of the request only. Monochrome, Prussian blue on white paper. High-contrast blueprint-like tones with silhouette effects and delicate details; lighting is the flat printed kind. Sun-exposed paper texture, brushed emulsion edges. For places and environments of any kind the same treatment; the setting comes only from the request. Not a blueprint drawing, not an illustration.",
+    "negative": ""
+  },
+  {
+    "name": "Cyberpunk Photography",
+    "prefix": "",
+    "suffix": "Neon-drenched photograph of the subject of the request only; no cities or figures added. Full color, saturated cyan and magenta gel light on dark. Intense directional colored gels crossing the frame, wet-look reflective surfaces in humid haze. High contrast, sharp reflections, glowing bloom. For places and environments of any kind the same treatment; the setting comes only from the request. Not a render, not an illustration.",
+    "negative": ""
+  },
+  {
+    "name": "Dark Moody Atmosphere",
+    "prefix": "",
+    "suffix": "Dark moody photograph of the subject of the request only. Limited palette of deep muted tones. Low-key lighting with dramatic shadow and mysterious atmosphere; lighting direction and time of day follow the request, low-key. Soft haze, rich blacks, restrained highlights. For places and environments of any kind the same treatment; the setting comes only from the request. Not bright, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Direct-Flash Photography",
+    "prefix": "",
+    "suffix": "Direct on-camera flash photograph of the subject of the request only. Full color, raw unretouched tones. A single harsh on-axis burst flattening form, stark hard shadow falling abruptly behind the subject. High contrast, specular skin and surfaces, unflinching snapshot finish. For places and environments of any kind the same treatment; the setting comes only from the request. Not soft studio, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Double Exposure",
+    "prefix": "",
+    "suffix": "Double-exposure photomontage: the silhouette of the subject of the request only works as a window seamlessly blended with a second inner scene drawn from the request. Full color, soft muted palette. Translucent overlapping layers, inner scene visible through the outline; lighting direction and time of day follow the request. Soft blended edges, clean outer silhouette on a plain ground. For places and environments of any kind the same treatment; the setting comes only from the request. Not a collage cutout, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Dufaycolor Photograph",
+    "prefix": "",
+    "suffix": "1930s Dufaycolor photograph of the subject of the request only. Full color, vintage muted palette with distinctive screen-process rendering. Soft dreamy atmosphere with fine mosaic color grain; lighting direction and time of day follow the request. Hand-tinted appearance, nostalgic softness. For places and environments of any kind the same treatment; the setting comes only from the request. Not Kodachrome, not an illustration.",
+    "negative": ""
+  },
+  {
+    "name": "Dutch Angle Photography",
+    "prefix": "",
+    "suffix": "Dutch-angle photograph of the subject of the request only with the camera tilted on its axis. Full color, cinematic palette. Intentional tilt creating visual tension and dramatic perspective; lighting direction and time of day follow the request. Crisp detail, cinematic composition. For places and environments of any kind the same treatment; the setting comes only from the request. Not level framing, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Dutch Angle Photography (Alt)",
+    "prefix": "",
+    "suffix": "Cinematic photograph of the subject of the request only with the whole image rotated about 30 degrees clockwise, as if the camera were tilted sideways: every horizontal and vertical line in the picture leans the same way. Full color, cinematic palette. Crisp detail; lighting direction and time of day follow the request. Consistent tilt throughout, no straightening. For places and environments of any kind the same treatment; the setting comes only from the request. Not level framing, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Editorial Photography",
+    "prefix": "",
+    "suffix": "Editorial magazine photograph of the subject of the request only. Full color, considered palette. Deliberate purposeful lighting supporting a story, composed publication-ready framing; lighting direction and time of day follow the request. Crisp detail, clear narrative intent. For places and environments of any kind the same treatment; the setting comes only from the request. Not snapshot, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Ethereal Memorial Portrait Photography",
+    "prefix": "",
+    "suffix": "Ethereal luminous photograph of the subject of the request only. Full color, pale muted palette with soft white glow. Soft diffused illumination emanating around the subject rather than falling on it, otherworldly glow separating it from the surroundings. Gentle haze, soft edges, hushed stillness. For places and environments of any kind the same treatment; the setting comes only from the request. Not high contrast, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Faded Polaroid Photo",
+    "prefix": "",
+    "suffix": "Faded old Polaroid instant photograph of the subject of the request only. Full color, washed-out colors with yellowed whites. Soft focus with a soft vignette; lighting direction and time of day follow the request. Instant-film texture, slight color shift, white frame feel. For places and environments of any kind the same treatment; the setting comes only from the request. Not sharp digital, not an illustration.",
+    "negative": ""
+  },
+  {
+    "name": "Fashion Editorial",
+    "prefix": "",
+    "suffix": "High-fashion editorial photograph applied to the subject of the request only; any figures in the picture are styled and posed as in a magazine spread. Full color, trendy refined palette. Professional editorial lighting; lighting direction and time of day follow the request. Crisp detail, stylish composition, magazine polish. For places and environments of any kind the same treatment; the setting comes only from the request. Not candid, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Fashion Editorial (Hasselblad)",
+    "prefix": "",
+    "suffix": "Fashion editorial photograph of the subject of the request only shot on a Hasselblad medium-format camera. Full color, high-end magazine palette. Razor-sharp detail with soft studio lighting; lighting direction and time of day follow the request, soft. Medium-format clarity, smooth tonal roll-off. For places and environments of any kind the same treatment; the setting comes only from the request. Not 35mm grain, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Fish-Eye Photography",
+    "prefix": "",
+    "suffix": "Fisheye-lens photograph of the subject of the request only. Full color, natural palette. Ultra-wide spherical field of view bowing straight lines into convex curves, center pushed forward, edges compressed; lighting direction and time of day follow the request. Crisp detail, strong barrel distortion. For places and environments of any kind the same treatment; the setting comes only from the request. Not rectilinear wide-angle, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Fish-Eye Photography (Alt)",
+    "prefix": "",
+    "suffix": "Real photograph of the subject of the request only shot with an 8mm circular fisheye lens: the whole frame bends into a round convex bubble, straight lines curve outward, the center pushes toward the lens, with a dark circular edge. Full color, natural palette. Crisp detail; lighting direction and time of day follow the request. Extreme curvature everywhere. For places and environments of any kind the same treatment; the setting comes only from the request. Not full-frame fisheye, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Food Photography",
+    "prefix": "",
+    "suffix": "Professional food photograph applied to the subject of the request only; no dishes added unless the request names them. Full color, appetizing fresh palette. Soft directional light with glistening highlights; lighting direction and time of day follow the request. Crisp textures, styled plating, shallow depth of field. For places and environments of any kind the same treatment; the setting comes only from the request. Not a render, not an illustration.",
+    "negative": ""
+  },
+  {
+    "name": "Full Body Photo",
+    "prefix": "",
+    "suffix": "Full-body photograph of the subject of the request only, the entire subject framed head to foot without cropping. Full color, natural palette. Balanced even lighting rendering the whole form with consistent clarity; lighting direction and time of day follow the request. Crisp detail, clear posture. For places and environments of any kind the same treatment; the setting comes only from the request. Not a close-up, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Glamour",
+    "prefix": "",
+    "suffix": "Glamour photograph applied to the subject of the request only; any figures in the picture are styled luxuriously and posed elegantly. Full color, opulent high-contrast palette. Flattering professional light; lighting direction and time of day follow the request. Polished skin and fabric detail, high-fashion luxury. For places and environments of any kind the same treatment; the setting comes only from the request. Not candid, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Golden Hour Photography",
+    "prefix": "",
+    "suffix": "Golden-hour photograph of the subject of the request only. Full color, warm amber and gold tones. Low raking sunlight stretching long gentle shadows, diffused glow from atmospheric scattering. Soft warm highlights, luminous edges, natural haze. For places and environments of any kind the same treatment; the setting comes only from the request. Not midday, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Gourmet Food Photography",
+    "prefix": "",
+    "suffix": "Gourmet food photograph of the subject of the request only as the plated hero; no extra dishes added. Full color, vibrant fresh palette. Soft natural light with macro detail and glistening textures; lighting direction and time of day follow the request. Bokeh background, styled plating, editorial quality. For places and environments of any kind the same treatment; the setting comes only from the request. Not a render, not an illustration.",
+    "negative": ""
+  },
+  {
+    "name": "GQ Photoshoot",
+    "prefix": "",
+    "suffix": "GQ-style editorial photograph applied to the subject of the request only; any figures in the picture are styled in tailored clothing with assured poses. Full color, crisp controlled palette. Controlled lighting rendering texture with sharp clarity; lighting direction and time of day follow the request. Bold assured framing, magazine-cover authority. For places and environments of any kind the same treatment; the setting comes only from the request. Not candid, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Gritty Fog",
+    "prefix": "",
+    "suffix": "Gloomy gritty photograph of the subject of the request only bathed in spectral fog. Limited palette of desaturated gray-green tones. Thick fog diffusing all light; lighting direction and time of day follow the request, dim. Heavy grain, damp textures, forms fading into haze. For places and environments of any kind the same treatment; the setting comes only from the request. Not clear daylight, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Halation Style",
+    "prefix": "",
+    "suffix": "Photograph of the subject of the request only with strong film halation. Full color, warm filmic palette. Gentle glow spreading outward from bright highlights, bleeding warmth into surrounding tone; lighting direction and time of day follow the request. Hazy diffused luminosity, red-orange halos around light sources. For places and environments of any kind the same treatment; the setting comes only from the request. Not clean digital, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "HDR Photography",
+    "prefix": "",
+    "suffix": "HDR photograph of the subject of the request only. Full color, expanded tonal palette. Multiple exposures merged for detail in both highlights and shadows, balanced across the range; lighting direction and time of day follow the request. Crisp micro-detail, rich tonality, no crushed areas. For places and environments of any kind the same treatment; the setting comes only from the request. Not tone-mapped grunge, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "High Fashion",
+    "prefix": "",
+    "suffix": "Haute-couture fashion photograph applied to the subject of the request only; any figures in the picture wear dramatic ornate styling. Full color, elegant palette. Dynamic dramatic lighting; lighting direction and time of day follow the request. Crisp fabric detail, editorial composition. For places and environments of any kind the same treatment; the setting comes only from the request. Not street style, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "High-Angle Shot Photography",
+    "prefix": "",
+    "suffix": "High-angle photograph of the subject of the request only from a steep downward vantage. Full color, natural palette. Foreshortened compressed view from above, subject rendered small within its surroundings; lighting direction and time of day follow the request. Crisp detail, strong top-down perspective. For places and environments of any kind the same treatment; the setting comes only from the request. Not eye-level, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "High-Contrast Photography",
+    "prefix": "",
+    "suffix": "High-contrast photograph of the subject of the request only against a blown-out white backdrop. Full color, stark palette with near-white surround. Strong rim light tracing the subject's edge while the front stays comparatively underexposed. Graphic separation, crisp edges, pure white ground. For places and environments of any kind the same treatment; the setting comes only from the request. Not low-key, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "High-Key Lighting Photography",
+    "prefix": "",
+    "suffix": "High-key photograph of the subject of the request only. Full color, bright airy palette concentrated in the upper tones. Soft diffused illumination from multiple balanced sources minimizing shadow almost entirely. Clean bright background, gentle contrast, crisp detail. For places and environments of any kind the same treatment; the setting comes only from the request. Not low-key, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Imperfections-Driven Photography",
+    "prefix": "",
+    "suffix": "Imperfect candid photograph of the subject of the request only. Full color, slightly off-balance tones. Visible flaws: grain, soft focus, uneven exposure, slight motion blur, asymmetric composition; lighting direction and time of day follow the request. VHS-like noise, natural artifacts, honest texture. For places and environments of any kind the same treatment; the setting comes only from the request. Not polished, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Infrared Photography",
+    "prefix": "",
+    "suffix": "Infrared photograph of the subject of the request only; no landscape added. Full color in false-color infrared: foliage white, skies dark, skin glowing pale. Ethereal glow and strong tonal inversion of the visible spectrum; lighting direction and time of day follow the request. Soft halation, crisp detail. For places and environments of any kind the same treatment; the setting comes only from the request. Not visible-light color, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Instagram Model Glamour Photography",
+    "prefix": "",
+    "suffix": "Aspirational glamour photograph applied to the subject of the request only; any figures in the picture pose confidently from a slightly low flattering angle. Full color, warm polished palette. Soft evenly diffused light flattering every surface; lighting direction and time of day follow the request. Flawless smooth skin and surfaces, social-media finish. For places and environments of any kind the same treatment; the setting comes only from the request. Not candid, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "iPhone Photographic",
+    "prefix": "",
+    "suffix": "iPhone photograph of the subject of the request only. Full color, phone-processed natural colors. Deep depth of field with everything sharp, computational HDR; lighting direction and time of day follow the request. Crisp phone detail, slight over-sharpening. For places and environments of any kind the same treatment; the setting comes only from the request. Not DSLR bokeh, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "iPhone Street",
+    "prefix": "",
+    "suffix": "iPhone street photograph of the subject of the request only. Full color, natural daylight tones. Candid moment with slight wide-lens distortion; lighting direction and time of day follow the request, natural daylight. Phone sharpening, deep focus, casual framing. For places and environments of any kind the same treatment; the setting comes only from the request. Not studio, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Knolling Photography",
+    "prefix": "",
+    "suffix": "Flat-lay knolling photograph: the subject of the request only and its parts arranged at neat right angles on a plain surface, shot straight down. Full color, clean palette on a neutral ground. Even shadowless top-down light. Crisp edges, orderly spacing. For places and environments of any kind the scene is laid out as component objects; the setting comes only from the request. Not a perspective shot, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Kodachrome",
+    "prefix": "",
+    "suffix": "Kodachrome film photograph of the subject of the request only. Full color, deep warm saturated density with distinctive reds. Fine grain with crisp archival clarity, slightly compressed dynamic range; lighting direction and time of day follow the request. Rich tones, mid-century slide-film character. For places and environments of any kind the same treatment; the setting comes only from the request. Not faded film, not an illustration.",
+    "negative": ""
+  },
+  {
+    "name": "LinkedIn Pro Portrait",
+    "prefix": "",
+    "suffix": "Corporate headshot-style photograph applied to the subject of the request only; any figures in the picture are composed professionally and warmly. Full color, clean neutral palette. Soft evenly diffused light without dramatic contrast; lighting direction and time of day follow the request, soft. Clean plain background, crisp focus, polished finish. For places and environments of any kind the same treatment; the setting comes only from the request. Not editorial drama, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Long Exposure",
+    "prefix": "",
+    "suffix": "Long-exposure photograph of the subject of the request only. Full color, natural palette. Moving elements smeared into streaks and ghosting while still elements stay sharp, light sources drawn into trails; lighting direction and time of day follow the request. Dreamy surreal motion, crisp static detail. For places and environments of any kind the same treatment; the setting comes only from the request. Not frozen action, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Low-Key Photography",
+    "prefix": "",
+    "suffix": "Low-key photograph of the subject of the request only. Limited palette of deep shadow with selective highlights. A single dominant light source carving the subject out of near-total darkness, narrow tonal range weighted to shadow. Rich blacks, crisp lit edges, moody restraint. For places and environments of any kind the same treatment; the setting comes only from the request. Not high-key, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Luminogram",
+    "prefix": "",
+    "suffix": "Luminogram photogram of the subject of the request only made by direct light on photographic paper. Monochrome, luminous whites and grays on black. Abstract ethereal light-and-shadow forms without a lens, glowing soft gradients; lighting is the exposure itself. Soft edges, experimental darkroom quality. For places and environments of any kind the same treatment; the setting comes only from the request. Not a camera photo, not an illustration.",
+    "negative": ""
+  },
+  {
+    "name": "Macro Photography",
+    "prefix": "",
+    "suffix": "Macro photograph of the subject of the request only. Full color, natural palette. Extreme close-up with shallow depth of field emphasizing texture and magnified detail; lighting direction and time of day follow the request. Crisp focal plane, soft falloff. For places and environments of any kind the same treatment; the setting comes only from the request. Not wide view, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Monochrome",
+    "prefix": "",
+    "suffix": "Monochrome photograph of the subject of the request only. Black and white, full tonal range. Contrast, tone and texture carrying the image; lighting direction and time of day follow the request. Crisp detail, rich grays. For places and environments of any kind the same treatment; the setting comes only from the request. Not color, not an illustration.",
+    "negative": ""
+  },
+  {
+    "name": "Motion Blur Photography",
+    "prefix": "",
+    "suffix": "Motion-blur photograph of the subject of the request only. Full color, natural palette. Deliberate exposure letting movement smear and streak, sharp frozen focal elements against blurred trails; lighting direction and time of day follow the request. Kinetic energy, crisp anchor detail. For places and environments of any kind the same treatment; the setting comes only from the request. Not frozen, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "National Geographic Photography",
+    "prefix": "",
+    "suffix": "Documentary photograph in the National Geographic manner, applied to the subject of the request only. Full color, honest natural palette. Patient observational framing in natural available light; lighting direction and time of day follow the request. Rich detail, authentic unposed moment, narrative depth. For places and environments of any kind the same treatment; the setting comes only from the request. Not staged, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Natural Lighting Photography",
+    "prefix": "",
+    "suffix": "Natural-light photograph of the subject of the request only. Full color, soft organic palette. Ambient unmanipulated illumination shaped by available light alone; lighting direction and time of day follow the request. Gentle tonal balance, honest texture, no artificial sources. For places and environments of any kind the same treatment; the setting comes only from the request. Not studio flash, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Neon Photography",
+    "prefix": "",
+    "suffix": "Neon-lit photograph of the subject of the request only. Full color, saturated neon brilliance against deep shadow. Intense directional glow from concentrated luminous sources, light coming from the neon itself. Sharp reflective bounce, high contrast, glowing haze. For places and environments of any kind the same treatment; the setting comes only from the request. Not daylight, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Night Photography",
+    "prefix": "",
+    "suffix": "Night photograph of the subject of the request only. Full color, dark palette with isolated warm and cool light pockets. Deep engulfing darkness broken only by available illumination, long exposure gathering scarce light into glowing pools. Rich blacks, soft glow, quiet stillness. For places and environments of any kind the same treatment; the setting comes only from the request. Not daylight, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Peter Lindbergh Photography",
+    "prefix": "",
+    "suffix": "Portrait photograph in the manner of Peter Lindbergh, applied to the subject of the request only; no supermodels added. Black and white, high-contrast yet soft tonal range. Natural available light emphasizing texture over polish; lighting direction and time of day follow the request. Minimal retouching, luminous skin highlights, deep blacks, honest grain. For places and environments of any kind the same treatment; the setting comes only from the request. Not glossy, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Photograph",
+    "prefix": "",
+    "suffix": "Cinematic 50mm photograph of the subject of the request only shot on Kodak film. Full color, dark moody grade. Detailed epic rendering with grain and vignette; lighting direction and time of day follow the request. 35mm film character, slight vintage stain. For places and environments of any kind the same treatment; the setting comes only from the request. Not a render, not an illustration.",
+    "negative": ""
+  },
+  {
+    "name": "Photographic",
+    "prefix": "",
+    "suffix": "Cinematic 35mm film photograph of the subject of the request only. Full color, filmic palette. Professional depth with soft bokeh; lighting direction and time of day follow the request. Fine grain, crisp focal detail. For places and environments of any kind the same treatment; the setting comes only from the request. Not a render, not an illustration.",
+    "negative": ""
+  },
+  {
+    "name": "Photography",
+    "prefix": "",
+    "suffix": "Naturalistic photograph of the subject of the request only. Full color, true-to-life palette. Realistic light behavior and tonal rendering as a camera records it, balanced exposure; lighting direction and time of day follow the request. Honest framing, accurate detail. For places and environments of any kind the same treatment; the setting comes only from the request. Not a render, not an illustration.",
+    "negative": ""
+  },
+  {
+    "name": "Photography (Professional)",
+    "prefix": "",
+    "suffix": "Professional photograph of the subject of the request only. Full color, natural palette. Realistic lighting with natural surface texture and sharp focus; lighting direction and time of day follow the request. Subtle film grain, high detail. For places and environments of any kind the same treatment; the setting comes only from the request. Not a render, not an illustration.",
+    "negative": ""
+  },
+  {
+    "name": "Photorealism v2",
+    "prefix": "",
+    "suffix": "RAW candid cinema-style photograph of the subject of the request only shot on 16mm, color-graded like Portra 400. Full color, remarkable filmic color. Ultra-realistic textured skin and surfaces with visible fine detail, dull realistic noise; lighting direction and time of day follow the request. Shallow depth, film grain. For places and environments of any kind the same treatment; the setting comes only from the request. Not a render, not an illustration.",
+    "negative": ""
+  },
+  {
+    "name": "Photorealistic Studio",
+    "prefix": "",
+    "suffix": "Photorealistic studio photograph of the subject of the request only. Full color, clean palette. Professional lighting with sharp focus and high detail; lighting direction and time of day follow the request, studio. Perfect surfaces, camera-quality precision. For places and environments of any kind the same treatment; the setting comes only from the request. Not stylized, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Photoshoot",
+    "prefix": "",
+    "suffix": "Professional photoshoot image of the subject of the request only. Full color, polished palette. Deliberate controlled lighting defining form with clarity, considered purposeful posing and framing; lighting direction and time of day follow the request. Crisp detail, intentional composition. For places and environments of any kind the same treatment; the setting comes only from the request. Not candid, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Pictorialism",
+    "prefix": "",
+    "suffix": "Pictorialist photograph of the subject of the request only. Limited palette of muted warm tones. Soft focus with atmospheric effects and artistic tonality; lighting direction and time of day follow the request, soft. Painterly softness, evocative mood, textured print. For places and environments of any kind the same treatment; the setting comes only from the request. Not sharp modern, not a painting.",
+    "negative": ""
+  },
+  {
+    "name": "Playboy / Maxim Photoshoot",
+    "prefix": "",
+    "suffix": "Glossy glamour photograph applied to the subject of the request only; any figures in the picture hold playful flirtatious curve-forward poses with direct eye contact. Full color, warm sun-kissed palette. Flattering studio or golden-hour light sculpting form; lighting direction and time of day follow the request. Glossy retouched finish, crisp detail. For places and environments of any kind the same treatment; the setting comes only from the request. Not candid, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Professional Photo",
+    "prefix": "",
+    "suffix": "Professional photograph of the subject of the request only. Full color, muted cinematic tones. Controlled studio lighting with sharp focus and high contrast, soft light with subtle HDR; lighting direction and time of day follow the request. Clean composition, polished finish. For places and environments of any kind the same treatment; the setting comes only from the request. Not a render, not an illustration.",
+    "negative": ""
+  },
+  {
+    "name": "Real Estate",
+    "prefix": "",
+    "suffix": "Real-estate photograph applied to the subject of the request only; no houses added unless the request names them. Full color, inviting bright palette. Well-lit wide-angle view with straight verticals; lighting direction and time of day follow the request, bright. Crisp detail, commercial polish. For places and environments of any kind the same treatment; the setting comes only from the request. Not a render, not an illustration.",
+    "negative": ""
+  },
+  {
+    "name": "Refined Social-Media Photography",
+    "prefix": "",
+    "suffix": "Natural-light editorial photograph of the subject of the request only. Full color, clean restrained palette. Soft yet high-contrast light enhancing texture without heavy styling, minimalist centered composition; lighting direction and time of day follow the request. Authentic presence, crisp detail. For places and environments of any kind the same treatment; the setting comes only from the request. Not overprocessed, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Rembrandt-Inspired Photography",
+    "prefix": "",
+    "suffix": "Classical portrait photograph of the subject of the request only in Rembrandt lighting. Full color, deep warm chiaroscuro tones. Single source from high to one side carving a small triangular highlight on the shadow side of any face. Deep shadows, warm highlights, dignified stillness. For places and environments of any kind the same treatment; the setting comes only from the request. Not flat light, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Selfie Photo",
+    "prefix": "",
+    "suffix": "Casual selfie photograph of the subject of the request only at arm's length. Full color, phone-processed palette. Slight wide-angle distortion of close framing, soft front-facing diffused light flattening shadow. Intimate informal angle, phone softness. For places and environments of any kind the same treatment; the setting comes only from the request. Not a studio portrait, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Sitcom Still",
+    "prefix": "",
+    "suffix": "Multi-camera sitcom still of the subject of the request only; no set or actors added. Full color, bright even palette. Flat shadow-minimizing illumination keeping every plane visible, clean high-key exposure. Television sharpness, legible staging. For places and environments of any kind the same treatment; the setting comes only from the request. Not cinematic, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Soft Beauty-Dish Portrait",
+    "prefix": "",
+    "suffix": "Beauty-dish portrait photograph of the subject of the request only. Full color, flattering natural palette. Softly diffused light from a beauty dish in front wrapping the subject in even illumination, smooth falloff with subtle modeling. Clean catchlights, gentle shadow under the chin, crisp detail. For places and environments of any kind the same treatment; the setting comes only from the request. Not hard light, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Streamer Glam Selfie Realism",
+    "prefix": "",
+    "suffix": "Premium beauty-focused social-media photograph applied to the subject of the request only; any figures in the picture have immaculately rendered skin and flattering facial illumination. Full color, polished warm palette. Sophisticated lens behavior with aspirational finishing; lighting direction and time of day follow the request, flattering. Crisp detail, clean processing. For places and environments of any kind the same treatment; the setting comes only from the request. Not candid, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Studio Photography",
+    "prefix": "",
+    "suffix": "Controlled studio photograph of the subject of the request only. Full color, clean palette. Precise repeatable lighting sculpting form, clean separation from a seamless backdrop; lighting direction and time of day follow the request, studio. Immaculate detail, no stray shadows. For places and environments of any kind the same treatment; the setting comes only from the request. Not location, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Studio Portrait",
+    "prefix": "",
+    "suffix": "Professional studio portrait photograph of the subject of the request only with three-point lighting. Full color, natural skin and surface tones. Key, fill and rim light on a seamless backdrop, sharp focus. Clean shadows, crisp separation. For places and environments of any kind the same treatment; the setting comes only from the request. Not natural light, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Supermodel Photoshoot",
+    "prefix": "",
+    "suffix": "High-fashion editorial photograph applied to the subject of the request only; any figures in the picture hold statuesque confident poses. Full color, flawless refined palette. Immaculately controlled studio light with sculptural precision; lighting direction and time of day follow the request. Magazine-grade framing, crisp detail. For places and environments of any kind the same treatment; the setting comes only from the request. Not candid, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Surveillance Camera Photo",
+    "prefix": "",
+    "suffix": "Fixed surveillance-camera frame of the subject of the request only. Limited palette of washed low-saturation tones or infrared grayscale. Flat unflattering fixed-camera illumination, grainy low-resolution compression, wide high-mounted angle. Timestamp-free, slight fisheye, utilitarian detachment. For places and environments of any kind the same treatment; the setting comes only from the request. Not cinematic, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Tilt-Shift",
+    "prefix": "",
+    "suffix": "Tilt-shift photograph of the subject of the request only. Full color, vibrant palette. Selective focus band creating a miniature-model effect, blurred top and bottom; lighting direction and time of day follow the request, high-angle. Crisp focal strip, controlled perspective. For places and environments of any kind the same treatment; the setting comes only from the request. Not full-focus, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Translucency-Focused Photography",
+    "prefix": "",
+    "suffix": "Translucent-light photograph of the subject of the request only. Full color, soft pale palette. Diffused illumination passing through rather than bouncing off, gentle internal glow beneath the surface. Hazy ethereal softness, luminous thin edges. For places and environments of any kind the same treatment; the setting comes only from the request. Not hard light, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Underwater Photography",
+    "prefix": "",
+    "suffix": "Underwater photograph of the subject of the request only; no fish or coral added. Full color, cool blue-green cast deepening with distance. Light scattering through water, hazy loss of sharpness with depth, rippling caustics; lighting direction and time of day follow the request, filtered from above. Suspended particles, soft edges. For places and environments of any kind the same treatment; the setting comes only from the request. Not aquarium glass, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Vibrant Rim Light",
+    "prefix": "",
+    "suffix": "Photograph of the subject of the request only with bright vibrant rim light. Full color, high-contrast palette with colored edge light. Bold rim light tracing the silhouette from behind or the side against darker ground. Crisp glowing edges, deep shadows. For places and environments of any kind the same treatment; the setting comes only from the request. Not flat light, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Vintage Polaroid 70s",
+    "prefix": "",
+    "suffix": "Large-format 8x10 Polaroid photograph of the subject of the request only with a 1970s feel. Full color, warm faded instant-film tones. Soft focus edges with dreamy light leaks; lighting direction and time of day follow the request. Instant-film chemistry marks, soft vintage contrast. For places and environments of any kind the same treatment; the setting comes only from the request. Not sharp digital, not an illustration.",
+    "negative": ""
+  },
+  {
+    "name": "Vintage Sepia",
+    "prefix": "",
+    "suffix": "Vintage sepia photograph of the subject of the request only. Monochrome, brown sepia tones on aged paper. Faded edges with soft period contrast; lighting direction and time of day follow the request, soft. Scratches, aged paper texture, historical softness. For places and environments of any kind the same treatment; the setting comes only from the request. Not modern color, not an illustration.",
+    "negative": ""
+  },
+  {
+    "name": "Vogue Magazine",
+    "prefix": "",
+    "suffix": "Vogue-style high-fashion editorial photograph applied to the subject of the request only; any figures in the picture are styled and posed for a cover. Full color, immaculate palette. Crisp controlled studio light rendering every plane flawlessly; lighting direction and time of day follow the request. Bold close framing, cover-ready precision. For places and environments of any kind the same treatment; the setting comes only from the request. Not candid, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Volumetric Lighting",
+    "prefix": "",
+    "suffix": "Photograph of the subject of the request only in dramatic volumetric light. Full color, atmospheric palette. God rays and light shafts through haze giving the light visible depth; lighting direction and time of day follow the request. Dusty beams, soft bloom, deep shadow between rays. For places and environments of any kind the same treatment; the setting comes only from the request. Not flat light, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "1970s Disco Fashion Photography",
+    "prefix": "",
+    "suffix": "Real 1970s fashion photograph on film, applied to the subject of the request only; any figures in the picture wear glittering flared disco styling. Full color, warm saturated tones with soft glow filter. Studio flash with diffusion; lighting direction and time of day follow the request. Film grain, glossy fabrics. For places and environments of any kind the same treatment; the setting comes only from the request. Not digital, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "90s Hip-Hop Editorial Photograph",
+    "prefix": "",
+    "suffix": "Real 1990s magazine photograph on 35mm film, applied to the subject of the request only; any figures in the picture carry raw street attitude; no lettering. Full color, warm grainy color. Fisheye or wide lens; lighting direction and time of day follow the request. Film grain, bold low framing. For places and environments of any kind the same treatment; the setting comes only from the request. Not digital, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "90s Skate Fisheye Photograph",
+    "prefix": "",
+    "suffix": "Real 1990s video still shot on a Sony VX1000 with fisheye lens, applied to the subject of the request only; no skaters added; no lettering. Full color, saturated VX1000 color. Heavy fisheye distortion with grainy video texture, low-angle candid framing; lighting direction and time of day follow the request. Interlaced softness. For places and environments of any kind the same treatment; the setting comes only from the request. Not crisp digital, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Acrylic Charm Stand Photograph",
+    "prefix": "",
+    "suffix": "Photograph of a real acrylic stand: the subject of the request only printed as anime-style art on a clear laser-cut acrylic standee with a small clear base. Full color, crisp printed colors with white underlayer. Thin glossy edge refraction, soft studio reflection; soft studio light unless the request sets another. Plain desk or shelf surface. For places and environments of any kind the scene is printed on the standee; the setting comes only from the request. Not a figure, not an illustration.",
+    "negative": ""
+  },
+  {
+    "name": "Action Poster Photography",
+    "prefix": "",
+    "suffix": "Cinematic action-poster photograph of the subject of the request only; no lettering, no extra figures. Full color, high-contrast grade. Aggressive diagonal composition with compressed telephoto depth, sharply frozen action and controlled motion streaks; lighting direction and time of day follow the request, dramatic. Polished theatrical key-art finish. For places and environments of any kind the same treatment; the setting comes only from the request. Not a render, not an illustration.",
+    "negative": ""
+  },
+  {
+    "name": "Airbrushed Magazine Photograph",
+    "prefix": "",
+    "suffix": "Real retouched magazine photograph of the subject of the request only shot on medium-format digital; no lettering. Full color, luxury palette. Silky flawless retouching with seamless highlight roll-off; lighting direction and time of day follow the request. Idealized polish, crisp detail. For places and environments of any kind the same treatment; the setting comes only from the request. Not raw, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Ansel Adams Zone Photograph",
+    "prefix": "",
+    "suffix": "Black-and-white large-format photograph in the manner of Ansel Adams, applied to the subject of the request only; no Yosemite added. Black and white, full zone-system tonal range with deep skies. Dramatic natural light and crisp large-format clarity; lighting direction and time of day follow the request. Rich detail from highlights to shadows. For places and environments of any kind the same treatment; the setting comes only from the request. Not soft, not an illustration.",
+    "negative": ""
+  },
+  {
+    "name": "Autochrome Photograph",
+    "prefix": "",
+    "suffix": "Real Autochrome Lumière glass plate of the subject of the request only. Full color, muted pastel hues with soft speckled starch-grain texture. Low dreamy contrast with pointillist color grain; lighting direction and time of day follow the request. Early color-plate softness. For places and environments of any kind the same treatment; the setting comes only from the request. Not Kodachrome, not an illustration.",
+    "negative": ""
+  },
+  {
+    "name": "Backlit Silhouette Glow Photograph",
+    "prefix": "",
+    "suffix": "Backlit photograph of the subject of the request only. Full color, warm hazy palette. Strong light source behind the subject with translucent glowing edges, lens flare and soft bloom, deep foreground shadow. Contre-jour glow, soft haze. For places and environments of any kind the same treatment; the setting comes only from the request. Not front-lit, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Barbiecore Photograph",
+    "prefix": "",
+    "suffix": "Barbiecore photograph of the subject of the request only; no dolls or film sets added. Full color, hot-pink dominant with candy-pink gradients and pearly highlights. Bright high-key exposure; lighting direction and time of day follow the request, bright. Glossy plastic finish, sparkles and glitter, doll-like cleanliness. For places and environments of any kind the same treatment; the setting comes only from the request. Not pastel soft, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Bioluminescent Glow Photograph",
+    "prefix": "",
+    "suffix": "Bioluminescent night photograph of the subject of the request only; no alien creatures or forests added. Full color, soft cyan and violet self-emitted light in darkness. Glowing points with gentle diffuse halos, light coming from the glowing parts themselves. Unusual saturated color, deep black surround. For places and environments of any kind the same treatment; the setting comes only from the request. Not neon, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Black and White High Contrast Photograph",
+    "prefix": "",
+    "suffix": "High-contrast black-and-white photograph of the subject of the request only; no lettering. Black and white, pure blacks and whites with few midtones. Crushed shadow masses and clean blown highlights; lighting direction and time of day follow the request, hard. Coarse grain in transitions, poster-like value design, crisp edges. For places and environments of any kind the same treatment; the setting comes only from the request. Not soft gray, not an illustration.",
+    "negative": ""
+  },
+  {
+    "name": "Blue Hour Photograph",
+    "prefix": "",
+    "suffix": "Blue-hour photograph of the subject of the request only. Full color, deep cobalt ambient light with warm artificial accents. Soft even twilight illumination with a gentle sky gradient. Cool tones, glowing warm windows or lamps where the request has them. For places and environments of any kind the same treatment; the setting comes only from the request. Not night black, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Bokeh Depth of Field Photograph",
+    "prefix": "",
+    "suffix": "Shallow-depth-of-field photograph of the subject of the request only at f/1.4 on an 85mm lens. Full color, natural palette. Crisp focal plane with creamy blurred background and large soft circular light orbs; lighting direction and time of day follow the request. Strong subject separation. For places and environments of any kind the same treatment; the setting comes only from the request. Not deep focus, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Caustic Light Photograph",
+    "prefix": "",
+    "suffix": "Photograph of the subject of the request only under rippling water caustics. Full color, aqua and white highlights. Shimmering refracted light network projected across every surface, light from sun through water. Crisp caustic lines, soft aqua ambient. For places and environments of any kind the same treatment; the setting comes only from the request. Not plain daylight, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Chiaroscuro Light Photograph",
+    "prefix": "",
+    "suffix": "Chiaroscuro photograph of the subject of the request only. Full color, warm tones against deep darkness. Single strong light source sculpting forms with dramatic tonal falloff, rich shadow masses. Dark background, crisp lit edges. For places and environments of any kind the same treatment; the setting comes only from the request. Not flat light, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Chromatic Aberration Photograph",
+    "prefix": "",
+    "suffix": "Real photograph of the subject of the request only shot through a vintage uncorrected lens. Full color, natural palette with strong RGB fringing. Prismatic halos along every edge, slight channel offsets, lens glow; lighting direction and time of day follow the request. Soft imperfect optics. For places and environments of any kind the same treatment; the setting comes only from the request. Not glitch art, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Chromatic Glow Fringe Photograph",
+    "prefix": "",
+    "suffix": "Vintage-lens photograph of the subject of the request only. Full color, natural palette with subtle red-cyan edge separation. Faint prismatic halos on bright edges, gentle bloom around highlights; lighting direction and time of day follow the request. Vintage optic softness. For places and environments of any kind the same treatment; the setting comes only from the request. Not heavy aberration, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Cinestill Night Film Photograph",
+    "prefix": "",
+    "suffix": "Night photograph of the subject of the request only shot on CineStill 800T film. Full color, tungsten-balanced cool tones with red halation around bright points. Available night light, deep rich shadows. Visible grain, glowing red-haloed lamps. For places and environments of any kind the same treatment; the setting comes only from the request. Not daylight, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Clamshell Lighting Photograph",
+    "prefix": "",
+    "suffix": "Clamshell-lit beauty photograph of the subject of the request only. Full color, luminous clean palette. Soft key light above and fill below giving shadowless even beauty light, bright catchlights top and bottom of any eyes. Smooth luminous surfaces, crisp detail. For places and environments of any kind the same treatment; the setting comes only from the request. Not dramatic light, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Concert Photography",
+    "prefix": "",
+    "suffix": "Live concert photograph applied to the subject of the request only; no performers or crowd added unless the request names them. Full color, dramatic colored stage light. Haze with spotlight beams, frozen moment; lighting direction and time of day follow the request, stage. High-ISO grain, deep blacks. For places and environments of any kind the same treatment; the setting comes only from the request. Not studio, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Cosmetics Product Photography",
+    "prefix": "",
+    "suffix": "Beauty product photograph of the subject of the request only. Full color, soft pastel gradient background. Glossy textures with crisp controlled reflections; lighting direction and time of day follow the request, soft studio. Clean premium finish. For places and environments of any kind the same treatment; the setting comes only from the request. Not a render, not an illustration.",
+    "negative": ""
+  },
+  {
+    "name": "Daguerreotype",
+    "prefix": "",
+    "suffix": "Real 1840s daguerreotype of the subject of the request only on a silvered copper plate. Monochrome, silvery mirror-like tones. Soft-focus edges with long-exposure stillness; lighting direction and time of day follow the request, soft. Tarnished oxidation halos, scratches, dust, darkened edges. For places and environments of any kind the same treatment; the setting comes only from the request. Not a paper print, not an illustration.",
+    "negative": ""
+  },
+  {
+    "name": "Dark Abandoned Film Photograph",
+    "prefix": "",
+    "suffix": "Real 35mm film photograph of the subject of the request only in a dark abandoned mood. Limited palette of desaturated cold green-gray. Deep crushed shadows with faded underexposed tones; lighting direction and time of day follow the request, dim. Heavy organic grain, dusty soft haze. For places and environments of any kind the same treatment; the setting comes only from the request. Not clean, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Deadpan Photograph",
+    "prefix": "",
+    "suffix": "Deadpan documentary photograph in the manner of Martin Parr and Rineke Dijkstra, applied to the subject of the request only. Full color, muted natural color. Flat even daylight with frontal centered framing and neutral expressionless staging. Straight unposed clarity. For places and environments of any kind the same treatment; the setting comes only from the request. Not dramatic, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Deliberately Bad Photograph",
+    "prefix": "",
+    "suffix": "Deliberately bad snapshot of the subject of the request only. Full color, flash-blown palette. Thumb partially over the lens, crooked horizon, motion blur, harsh red-eye flash, blown highlights. Smeared focus, party-snapshot mess. For places and environments of any kind the same treatment; the setting comes only from the request. Not polished, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Disposable Flash Photograph",
+    "prefix": "",
+    "suffix": "Disposable-camera snapshot of the subject of the request only with built-in flash. Full color, warm cheap film color. Harsh direct flash with dark falloff behind; slightly blurred edges. Candid 90s party finish, film grain. For places and environments of any kind the same treatment; the setting comes only from the request. Not studio, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Edgy Fashion Photography",
+    "prefix": "",
+    "suffix": "Fashion photograph in the manner of Juergen Teller, applied to the subject of the request only; any figures in the picture carry raw unretouched attitude. Full color, high-contrast grainy film. 35mm point-and-shoot with harsh direct flash. Bold styling, no retouching. For places and environments of any kind the same treatment; the setting comes only from the request. Not glossy, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Electron Microscope Image",
+    "prefix": "",
+    "suffix": "Scanning-electron-microscope image of the subject of the request only at extreme magnification. Monochrome, grayscale. Densely detailed surface relief with strong directional shadowing from the electron beam. Crisp micro-texture, black background. For places and environments of any kind the same treatment; the setting comes only from the request. Not optical macro, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Ethereal Photography",
+    "prefix": "",
+    "suffix": "Fine-art photograph of the subject of the request only on medium-format film with an 85mm f/1.4 lens. Full color, pastel muted tones. Soft dreamy haze with glowing backlight and gentle bloom. Creamy shallow depth of field, background melted to softness. For places and environments of any kind the same treatment; the setting comes only from the request. Not sharp, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Extreme Close-Up Photograph",
+    "prefix": "",
+    "suffix": "Extreme close-up photograph of a single detail of the subject of the request only filling the frame. Full color, natural palette. Very shallow depth of field with crisp texture at the focal point; lighting direction and time of day follow the request. Macro intimacy, soft falloff. For places and environments of any kind the same treatment; the setting comes only from the request. Not full view, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Fashion Doll Product Photograph",
+    "prefix": "",
+    "suffix": "Studio photograph of a real fashion doll: the subject of the request only made as a molded vinyl doll with an articulated plastic body. Full color, pristine collectible palette. Precisely painted facial details, glossy synthetic hair; soft studio light unless the request sets another. Smooth plastic sheen, visible joints. For places and environments of any kind the whole scene is a doll playset; the setting comes only from the request. Not a person, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Felt Craft Photograph",
+    "prefix": "",
+    "suffix": "Photograph of a real needle-felted wool craft: the subject of the request only made of fuzzy felted wool. Full color, muted cozy palette. Rounded handmade forms with tiny stitch details, warm diffuse light unless the request sets another. Soft fibers on every surface. For places and environments of any kind the whole scene is built as a felt diorama; the setting comes only from the request. Not plush fabric, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Film Grain Texture Photograph",
+    "prefix": "",
+    "suffix": "Analog film photograph of the subject of the request only with pronounced grain. Full color, filmic palette with slightly lifted blacks. Visible organic grain over the whole image, subtle halation on highlights; lighting direction and time of day follow the request. Gentle color noise in shadows, print softness. For places and environments of any kind the same treatment; the setting comes only from the request. Not clean digital, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "First-Person POV Photograph",
+    "prefix": "",
+    "suffix": "First-person point-of-view photograph of the subject of the request only from eye level. Full color, natural palette. Wide natural field of view with immersive perspective; lighting direction and time of day follow the request. Crisp detail, hands at frame edge only when the request has them. For places and environments of any kind the same treatment; the setting comes only from the request. Not third-person, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Fisheye Low Angle Photograph",
+    "prefix": "",
+    "suffix": "Low-angle 8mm fisheye photograph of the subject of the request only from very close. Full color, natural palette. Bulging center with dramatically curved edges and exaggerated foreshortening; lighting direction and time of day follow the request. Crisp detail, extreme distortion. For places and environments of any kind the same treatment; the setting comes only from the request. Not rectilinear, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Forensic Evidence Photography",
+    "prefix": "",
+    "suffix": "Forensic documentation photograph of the subject of the request only; no crime scenes or evidence markers added unless the request names them. Full color, clinical neutral color. Harsh on-camera flash with flat documentary framing. Sharp unflattering detail. For places and environments of any kind the same treatment; the setting comes only from the request. Not cinematic, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Gold and Ivory Palette Photograph",
+    "prefix": "",
+    "suffix": "Photograph of the subject of the request only in a gold-and-ivory palette. Limited palette of warm ivory, champagne, soft gold and pale sand. Gentle luminous highlights with low-contrast refined elegance; lighting direction and time of day follow the request, soft. Bridal-luxury softness. For places and environments of any kind the same treatment; the setting comes only from the request. Not cool-toned, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "GoPro Action Camera",
+    "prefix": "",
+    "suffix": "Action-camera frame of the subject of the request only. Full color, crisp saturated digital color. Ultra-wide fisheye distortion with immersive close first-person angle; lighting direction and time of day follow the request. Sharp small-sensor detail. For places and environments of any kind the same treatment; the setting comes only from the request. Not cinematic, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Gothic Fashion Photography",
+    "prefix": "",
+    "suffix": "Gothic fashion photograph applied to the subject of the request only; any figures in the picture wear black lace, velvet and corsetry with pale skin and dark lips. Limited palette of black, deep red and pale tones. Moody low-key lighting; lighting direction and time of day follow the request, low. Crisp fabric detail. For places and environments of any kind the same treatment; the setting comes only from the request. Not bright, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Gummy Candy Material Photograph",
+    "prefix": "",
+    "suffix": "Macro photograph of the subject of the request only made entirely of translucent gummy candy. Full color, soft bright fruit colors. Glossy jelly surfaces with light glowing through, soft studio light unless the request sets another. Sugar-dusted texture, squishy rounded forms. For places and environments of any kind the whole scene is gummy candy; the setting comes only from the request. Not glass, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Hand-Tinted Photograph",
+    "prefix": "",
+    "suffix": "Hand-colored black-and-white photograph of the subject of the request only. Limited palette of soft pastel oil and watercolor tints over monochrome. Gentle uneven brush tinting; lighting direction and time of day follow the request. Vintage matte print, period softness. For places and environments of any kind the same treatment; the setting comes only from the request. Not full-color film, not an illustration.",
+    "negative": ""
+  },
+  {
+    "name": "Harajuku Street Fashion Photograph",
+    "prefix": "",
+    "suffix": "Street fashion photograph in the FRUiTS magazine manner, applied to the subject of the request only; any figures in the picture wear layered colorful kawaii outfits; no lettering. Full color, saturated bright color. 35mm lens in bright daylight. Crisp detail, candid pose. For places and environments of any kind the same treatment; the setting comes only from the request. Not studio, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "HDR Grunge Photograph",
+    "prefix": "",
+    "suffix": "HDR grunge photograph of the subject of the request only with the Dragan effect. Limited palette of desaturated earthy color. Crunchy over-sharpened micro-contrast with gritty tone-mapped textures; lighting direction and time of day follow the request. Glowing halos along edges, harsh detailed surfaces. For places and environments of any kind the same treatment; the setting comes only from the request. Not clean HDR, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Hip-Hop Fashion Photography",
+    "prefix": "",
+    "suffix": "Street fashion photograph applied to the subject of the request only; any figures in the picture wear oversized streetwear and layered jewelry. Full color, saturated urban color. 35mm lens with direct flash, confident low-angle framing. Crisp detail. For places and environments of any kind the same treatment; the setting comes only from the request. Not studio, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Holga Toy Camera Photograph",
+    "prefix": "",
+    "suffix": "Holga toy-camera photograph of the subject of the request only. Full color, saturated shifted colors. Heavy dark vignette with soft blurry edges and light leaks; lighting direction and time of day follow the request. Square medium-format frame feel, lo-fi plastic-lens softness. For places and environments of any kind the same treatment; the setting comes only from the request. Not sharp, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Horror Photography",
+    "prefix": "",
+    "suffix": "Horror photograph of the subject of the request only on grainy 35mm film with on-camera flash; no monsters or victims added. Limited palette of sickly green and red casts. Harsh flash in darkness, grainy underexposed film. Unsettling blur, found-footage feel. For places and environments of any kind the same treatment; the setting comes only from the request. Not clean, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Horrorcore Aesthetic Photograph",
+    "prefix": "",
+    "suffix": "Grainy low-light analog-horror photograph of the subject of the request only; no Backrooms or creatures added. Limited palette of sickly color casts. Warped distorted forms with VHS noise; lighting direction and time of day follow the request, dim. Unsettling liminal stillness. For places and environments of any kind the same treatment; the setting comes only from the request. Not clean, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Infrared Aerochrome Photograph",
+    "prefix": "",
+    "suffix": "Photograph of the subject of the request only on Kodak Aerochrome infrared film. Full color in false color: greens turned hot pink and red, skies deep blue. Surreal saturated palette; lighting direction and time of day follow the request. Fine film grain. For places and environments of any kind the same treatment; the setting comes only from the request. Not visible-light color, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Instagram Lifestyle Photograph",
+    "prefix": "",
+    "suffix": "Smartphone lifestyle photograph of the subject of the request only. Full color, clean color processing. Polished natural-light capture with casual vertical framing; lighting direction and time of day follow the request, natural. Crisp mobile detail, curated social-media finish. For places and environments of any kind the same treatment; the setting comes only from the request. Not studio, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Intentional Camera Movement Photograph",
+    "prefix": "",
+    "suffix": "Intentional-camera-movement photograph of the subject of the request only. Full color, gently blended tones. Vertical or sweeping motion smears of color abstracting the form into soft painterly streaks; lighting direction and time of day follow the request. Blurred edges, abstracted shapes. For places and environments of any kind the same treatment; the setting comes only from the request. Not sharp, not a painting.",
+    "negative": ""
+  },
+  {
+    "name": "Interior Design Photography",
+    "prefix": "",
+    "suffix": "Interior photograph applied to the subject of the request only with a wide 16mm lens; no rooms added unless the request names them. Full color, natural palette. Bright balanced window light with straight verticals and soft natural shadows. Styled clean clarity. For places and environments of any kind the same treatment; the setting comes only from the request. Not a render, not an illustration.",
+    "negative": ""
+  },
+  {
+    "name": "Inverted Negative Photograph",
+    "prefix": "",
+    "suffix": "Fully inverted color-negative photograph of the subject of the request only. Full color in complementary reversal: dark highlights, glowing shadows, eerie unnatural tones. Negative tonal logic throughout; lighting direction and time of day follow the request, inverted. Film-negative orange mask feel. For places and environments of any kind the same treatment; the setting comes only from the request. Not solarization, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Jewelry Macro Photography",
+    "prefix": "",
+    "suffix": "Macro jewelry photograph applied to the subject of the request only. Full color, sparkling faceted highlights against a deep background. Focus-stacked crisp detail with controlled reflections; lighting direction and time of day follow the request, studio. Polished metal and stone sparkle. For places and environments of any kind the same treatment; the setting comes only from the request. Not a render, not an illustration.",
+    "negative": ""
+  },
+  {
+    "name": "Landscape Photography",
+    "prefix": "",
+    "suffix": "Landscape photograph applied to the subject of the request only with a wide-angle lens at f/11; no landscapes added unless the request names them. Full color, rich natural tonal range. Deep focus from foreground to horizon with dramatic natural light; lighting direction and time of day follow the request. Crisp detail. For places and environments of any kind the same treatment; the setting comes only from the request. Not a render, not an illustration.",
+    "negative": ""
+  },
+  {
+    "name": "Lens Flare and Bloom Photograph",
+    "prefix": "",
+    "suffix": "Cinematic photograph of the subject of the request only with heavy lens flare. Full color, lifted glowing highlights. Anamorphic streak flares, soft halo bloom and rainbow ghost artifacts from bright sources; lighting direction and time of day follow the request. Glowing bleed into the image. For places and environments of any kind the same treatment; the setting comes only from the request. Not clean, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Little Planet Panorama Photograph",
+    "prefix": "",
+    "suffix": "360-degree stereographic little-planet panorama of the subject of the request only. Full color, natural palette. Horizon wrapped into a tight sphere with extreme curved perspective; lighting direction and time of day follow the request. Crisp wide-angle detail, sky around the edges. For places and environments of any kind the whole scene wraps into the planet; the setting comes only from the request. Not fisheye, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Long Telephoto Compression Photograph",
+    "prefix": "",
+    "suffix": "400mm telephoto photograph of the subject of the request only from far away. Full color, natural palette. Flattened compressed perspective with stacked layers and creamy background blur; lighting direction and time of day follow the request. Crisp subject detail. For places and environments of any kind the same treatment; the setting comes only from the request. Not wide-angle, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Marionette Wood Puppet Photograph",
+    "prefix": "",
+    "suffix": "Studio photograph of a real wooden marionette: the subject of the request only carved and painted as a string puppet. Full color, painted wood with slightly worn lacquer. Visible joint seams and strings; soft studio light unless the request sets another. Handcrafted puppet texture. For places and environments of any kind the whole scene is a puppet-theater set; the setting comes only from the request. Not a person, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Military Action Figure Photograph",
+    "prefix": "",
+    "suffix": "Macro product photograph of a real articulated military action figure: the subject of the request only as a molded plastic collectible. Full color, crisp painted details. Visible joint seams and compact accessories; soft studio light unless the request sets another. Plastic sheen, toy scale. For places and environments of any kind the whole scene is a toy diorama; the setting comes only from the request. Not a person, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Minimal Lifestyle Photograph",
+    "prefix": "",
+    "suffix": "Editorial lifestyle photograph of the subject of the request only in the Kinfolk manner. Limited palette of muted natural tones. Soft window daylight with uncluttered minimal composition and generous negative space. Linen, ceramic and wood textures where the request has them. For places and environments of any kind the same treatment; the setting comes only from the request. Not busy, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Neon Gel Lighting Photograph",
+    "prefix": "",
+    "suffix": "Photograph of the subject of the request only in dual colored gel lighting. Full color, magenta and cyan split lighting with saturated colored shadows. Two opposing gelled sources, light coming from the gels. Glossy reflections, deep contrast. For places and environments of any kind the same treatment; the setting comes only from the request. Not natural light, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Overcast Softbox Light Photograph",
+    "prefix": "",
+    "suffix": "Photograph of the subject of the request only in perfectly even diffuse light. Full color, true accurate colors with neutral white balance. Soft wraparound shadows with low contrast and open shadow detail, light like an overcast sky. Gentle gradation. For places and environments of any kind the same treatment; the setting comes only from the request. Not hard light, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Paparazzi Telephoto Photograph",
+    "prefix": "",
+    "suffix": "Paparazzi photograph of the subject of the request only from a distance. Full color, harsh flash or available light. Long telephoto compression with slightly soft focus and partial foreground blur; lighting direction and time of day follow the request. Candid caught-off-guard framing. For places and environments of any kind the same treatment; the setting comes only from the request. Not posed, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Periscope and Scope View",
+    "prefix": "",
+    "suffix": "View of the subject of the request only through a rifle scope or periscope. Full color, natural palette inside a circular dark vignette. Telephoto magnification with slight chromatic fringe at the edges; lighting direction and time of day follow the request. Crosshair only when the request asks. For places and environments of any kind the same treatment; the setting comes only from the request. Not binocular double-circle, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Photo Booth Mirror Selfie",
+    "prefix": "",
+    "suffix": "Smartphone mirror selfie of the subject of the request only. Full color, social-media color processing. Bright flash flare on the mirror, casual tilted handheld angle, slightly overexposed foreground. Phone sharpening and noise. For places and environments of any kind the same treatment; the setting comes only from the request. Not studio, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Photobooth photo",
+    "prefix": "",
+    "suffix": "Analog photobooth photograph of the subject of the request only. Full color, vivid colors with slight chemical shifts. Harsh direct frontal flash with close framing. Glossy chemical print, plain curtain background. For places and environments of any kind the same treatment; the setting comes only from the request. Not studio, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Polaroid Flash Snapshot",
+    "prefix": "",
+    "suffix": "Polaroid instant photograph of the subject of the request only with harsh on-camera flash. Full color, soft shifted instant-film colors. Blown foreground with dark falloff behind. Instant-film texture, white frame feel. For places and environments of any kind the same treatment; the setting comes only from the request. Not clean digital, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Prestige Product Photography",
+    "prefix": "",
+    "suffix": "Studio product photograph of the subject of the request only shot on a Phase One with a 120mm macro lens. Full color, luxury palette. Sculpted studio light with gradient falloff on glossy materials, crisp specular edges; lighting direction and time of day follow the request, studio. Flawless retouching. For places and environments of any kind the same treatment; the setting comes only from the request. Not a render, not an illustration.",
+    "negative": ""
+  },
+  {
+    "name": "Product Photography",
+    "prefix": "",
+    "suffix": "Studio product photograph of the subject of the request only. Full color, clean palette. Gradient light with crisp edges and controlled reflections; lighting direction and time of day follow the request, studio. Flawless retouching, seamless ground. For places and environments of any kind the same treatment; the setting comes only from the request. Not a render, not an illustration.",
+    "negative": ""
+  },
+  {
+    "name": "Rear-Curtain Flash Photograph",
+    "prefix": "",
+    "suffix": "Slow-sync rear-curtain flash photograph of the subject of the request only. Full color, punchy night color. Crisp flash-frozen subject with colored ambient light trails streaking behind, mixed sharp and blurred exposure. Night energy. For places and environments of any kind the same treatment; the setting comes only from the request. Not frozen only, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Retro Aesthetic Photograph",
+    "prefix": "",
+    "suffix": "Vintage retro photograph of the subject of the request only. Full color, faded warm colors with lifted blacks and yellowed highlights. Soft film grain with rounded soft contrast; lighting direction and time of day follow the request. Worn offset-print texture, subtle halftone. For places and environments of any kind the same treatment; the setting comes only from the request. Not crisp modern, not an illustration.",
+    "negative": ""
+  },
+  {
+    "name": "Salgado Masterpiece Photograph",
+    "prefix": "",
+    "suffix": "Black-and-white photograph in the manner of Sebastião Salgado on Tri-X film, applied to the subject of the request only. Black and white, deep silver tones with luminous highlights. Dramatic natural light; lighting direction and time of day follow the request. Silver-gelatin richness, fine grain, textured midtones. For places and environments of any kind the same treatment; the setting comes only from the request. Not soft, not an illustration.",
+    "negative": ""
+  },
+  {
+    "name": "Satellite Imagery",
+    "prefix": "",
+    "suffix": "Satellite photograph of the subject of the request only from orbit, perfectly vertical top-down. Full color, muted natural colors. Flat even daylight, slightly soft resolution; lighting direction and time of day follow the request, overhead. Map-like flatness. For places and environments of any kind the same orbital top-down view; the setting comes only from the request. Not aerial oblique, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Scientific Specimen Photography",
+    "prefix": "",
+    "suffix": "Museum specimen photograph of the subject of the request only on a plain background. Full color, precise accurate color. Even diffused light with focus stacking. Catalog clarity, no shadows of note. For places and environments of any kind the same treatment; the setting comes only from the request. Not a render, not an illustration.",
+    "negative": ""
+  },
+  {
+    "name": "Selective Color Accent Photograph",
+    "prefix": "",
+    "suffix": "Selective-color photograph of the subject of the request only. Black and white except one saturated accent color on the subject's key feature. Rich monochrome tonal range with a vivid isolated hue; lighting direction and time of day follow the request. Clean color-mask edges, cinematic grade. For places and environments of any kind the same treatment; the setting comes only from the request. Not full color, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Soap-Bubble Bokeh Photograph",
+    "prefix": "",
+    "suffix": "Photograph of the subject of the request only with a Meyer Trioplan lens. Full color, vintage glowing palette. Sharp central subject with crisp bright-ringed circular bokeh bubbles behind; lighting direction and time of day follow the request. Vintage glowing highlights. For places and environments of any kind the same treatment; the setting comes only from the request. Not creamy bokeh, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Soft Backlit Glamour Photography",
+    "prefix": "",
+    "suffix": "Backlit glamour photograph in the manner of Herb Ritts and Bruce Weber, applied to the subject of the request only. Full color, warm airy palette. Strong backlight with luminous rim glow, lifted shadows, silky highlight bloom. Dreamy diffusion, breezy natural energy. For places and environments of any kind the same treatment; the setting comes only from the request. Not studio flash, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Soft Glow Portrait Photograph",
+    "prefix": "",
+    "suffix": "Photograph of the subject of the request only with a dreamy diffusion filter. Full color, low-contrast pastel grade. Gentle halation around highlights with luminous soft surfaces; lighting direction and time of day follow the request, soft. Creamy shallow depth, airy glow. For places and environments of any kind the same treatment; the setting comes only from the request. Not sharp, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Soft-Focus Lens Photograph",
+    "prefix": "",
+    "suffix": "Photograph of the subject of the request only through a soft-focus portrait lens. Full color, muted palette. Glowing diffused highlights with gentle haze over a sharp core; lighting direction and time of day follow the request, soft. Dreamy pictorialist softness. For places and environments of any kind the same treatment; the setting comes only from the request. Not sharp, not an illustration.",
+    "negative": ""
+  },
+  {
+    "name": "Solarized Darkroom Photograph",
+    "prefix": "",
+    "suffix": "Solarized darkroom photograph of the subject of the request only with the Sabattier effect. Monochrome, silvery metallic midtones with partially reversed tones. Glowing dark outlines along edges, surreal inverted highlights; lighting direction and time of day follow the request. Darkroom print texture. For places and environments of any kind the same treatment; the setting comes only from the request. Not full negative, not an illustration.",
+    "negative": ""
+  },
+  {
+    "name": "Split Lighting Photograph",
+    "prefix": "",
+    "suffix": "Split-lit photograph of the subject of the request only. Full color, dramatic contrast. Hard key light from exactly one side, half the subject lit and half in deep shadow with a sharp dividing line. Film-noir drama, crisp edges. For places and environments of any kind the same treatment; the setting comes only from the request. Not even light, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Split-Toned Palette Photograph",
+    "prefix": "",
+    "suffix": "Split-toned photograph of the subject of the request only. Limited palette of warm golden highlights and cool blue-teal shadows with neutral midtones. Elegant temperature contrast; lighting direction and time of day follow the request. Darkroom-toning feel, clean gradation. For places and environments of any kind the same treatment; the setting comes only from the request. Not full color, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Sports Photography",
+    "prefix": "",
+    "suffix": "Sports photograph applied to the subject of the request only with a 400mm f/2.8 lens at high shutter speed; no athletes or crowds added unless the request names them. Full color, natural palette. Frozen peak action with blurred background; lighting direction and time of day follow the request. Crisp detail. For places and environments of any kind the same treatment; the setting comes only from the request. Not a render, not an illustration.",
+    "negative": ""
+  },
+  {
+    "name": "Spotlight Photograph",
+    "prefix": "",
+    "suffix": "Stage photograph of the subject of the request only in a single spotlight. Limited palette of warm light against black. Single hard circular beam in darkness with a crisp light-pool edge, dust in the beam. High theatrical contrast. For places and environments of any kind the same treatment; the setting comes only from the request. Not even light, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Stock Photo",
+    "prefix": "",
+    "suffix": "Commercial stock photograph of the subject of the request only. Full color, neutral white balance. Bright clean even lighting with friendly polished staging; lighting direction and time of day follow the request, bright. Crisp focus, generic tidy setting, high-key optimism. For places and environments of any kind the same treatment; the setting comes only from the request. Not editorial, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Street Photography",
+    "prefix": "",
+    "suffix": "Candid street photograph of the subject of the request only on a 28mm lens in the Cartier-Bresson manner. Full color or black and white as the request asks; natural available light. Decisive-moment composition; lighting direction and time of day follow the request. Film-like grain, unposed. For places and environments of any kind the same treatment; the setting comes only from the request. Not studio, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Studio Three-Point Lighting Photograph",
+    "prefix": "",
+    "suffix": "Studio photograph of the subject of the request only with three-point lighting. Full color, professional neutral color. Key, fill and rim light balanced with clean controlled shadows and crisp separation. Polished commercial finish. For places and environments of any kind the same treatment; the setting comes only from the request. Not natural light, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Sultry Low-Key Glamour Photography",
+    "prefix": "",
+    "suffix": "Low-key glamour photograph applied to the subject of the request only. Limited palette of warm tones in deep shadow. Single soft directional source with deep falloff, contours emerging from darkness, hazy diffusion. Delicate grain, slow sensual mood. For places and environments of any kind the same treatment; the setting comes only from the request. Not high-key, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Swirly Bokeh Petzval Photograph",
+    "prefix": "",
+    "suffix": "Photograph of the subject of the request only with a Petzval or Helios 44 vintage lens. Full color, vintage palette. Sharp central sweet spot with swirling circular blur toward the edges; lighting direction and time of day follow the request. Glowing soft highlights. For places and environments of any kind the same treatment; the setting comes only from the request. Not smooth bokeh, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Teal and Orange Palette Photograph",
+    "prefix": "",
+    "suffix": "Cinematic photograph of the subject of the request only in a teal-and-orange grade. Limited palette of teal shadows and warm orange highlights with saturated warm midtones. Punchy cinematic contrast; lighting direction and time of day follow the request. Clean color separation, blockbuster grade. For places and environments of any kind the same treatment; the setting comes only from the request. Not natural color, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Telescope Astrophotography Photograph",
+    "prefix": "",
+    "suffix": "Long-exposure telescope astrophotograph of the subject of the request only; no planets or nebulae added unless the request names them. Full color, glowing nebula colors on deep black. Pinpoint stars and fine detail, light from the objects themselves. Deep-space clarity. For places and environments of any kind the same treatment; the setting comes only from the request. Not a render, not an illustration.",
+    "negative": ""
+  },
+  {
+    "name": "Tenebrism Photo",
+    "prefix": "",
+    "suffix": "Low-key tenebrist studio photograph of the subject of the request only. Limited palette of warm light against vast deep shadow. Concentrated beams interrupting darkness, extreme contrast, sculpted light with crisp shadow edges. Caravaggio-like drama. For places and environments of any kind the same treatment; the setting comes only from the request. Not soft, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Trail Camera Capture",
+    "prefix": "",
+    "suffix": "Wildlife trail-camera frame of the subject of the request only. Limited palette of infrared-flash night grayscale or washed daytime color. Fixed low ground-level angle with motion-triggered soft detail; lighting direction and time of day follow the request, flat. Raw unedited frame look. For places and environments of any kind the same treatment; the setting comes only from the request. Not cinematic, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Travel Photography",
+    "prefix": "",
+    "suffix": "Travel photograph of the subject of the request only on a 24-70mm lens in the Steve McCurry manner. Full color, vivid natural color with golden light; lighting direction and time of day follow the request. Crisp detail, authentic local atmosphere where the request places it. For places and environments of any kind the same treatment; the setting comes only from the request. Not a render, not an illustration.",
+    "negative": ""
+  },
+  {
+    "name": "Tungsten Light Photograph",
+    "prefix": "",
+    "suffix": "Photograph of the subject of the request only under tungsten light. Limited palette of warm orange incandescent tones. Soft yellow glow with cozy amber cast and gentle falloff into warm shadows, light from practical bulbs. Vintage interior warmth. For places and environments of any kind the same treatment; the setting comes only from the request. Not daylight, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Ultradetailed Photography",
+    "prefix": "",
+    "suffix": "Medium-format photograph of the subject of the request only on a Phase One with an 80mm lens. Full color, rich tonal range. Crisp micro-detail with pore and fiber texture, perfect exposure; lighting direction and time of day follow the request. Medium-format clarity. For places and environments of any kind the same treatment; the setting comes only from the request. Not a render, not an illustration.",
+    "negative": ""
+  },
+  {
+    "name": "Ultraviolet Photography",
+    "prefix": "",
+    "suffix": "UV-reflected photograph of the subject of the request only. Monochrome, strange gray-violet tones. Glowing pale areas against deep dark absorbing patches, soft otherworldly contrast; lighting direction and time of day follow the request. Scientific-imaging flatness. For places and environments of any kind the same treatment; the setting comes only from the request. Not infrared, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Underlighting Photograph",
+    "prefix": "",
+    "suffix": "Photograph of the subject of the request only lit harshly from directly below. Full color, high-contrast palette in deep black surroundings. Upward-cast inverted shadows, bright undersides and dark upper planes. Stark theatrical look. For places and environments of any kind the same treatment; the setting comes only from the request. Not top light, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Underwater Fashion Photography",
+    "prefix": "",
+    "suffix": "Underwater fashion photograph applied to the subject of the request only; any figures in the picture float weightlessly. Full color, aqua color cast. Soft caustic light rays from above with suspended bubbles. Flowing fabric, soft edges. For places and environments of any kind the same treatment; the setting comes only from the request. Not aquarium, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Venetian Blind Light Photograph",
+    "prefix": "",
+    "suffix": "Film-noir photograph of the subject of the request only with venetian-blind light. Black and white, or desaturated as the request asks; high-contrast noir tones. Hard parallel stripes of light and shadow slicing across every form, smoky haze. Crisp stripe edges. For places and environments of any kind the same treatment; the setting comes only from the request. Not even light, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Vintage 1950s Fashion Photography",
+    "prefix": "",
+    "suffix": "1950s fashion photograph on medium-format film in the manner of Avedon and Penn, applied to the subject of the request only; any figures in the picture wear elegant tailored silhouettes. Black and white or muted color as the request asks. Soft studio light; lighting direction and time of day follow the request. Gentle grain, editorial poise. For places and environments of any kind the same treatment; the setting comes only from the request. Not digital, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Vintage Pin-Up Glamour Photography",
+    "prefix": "",
+    "suffix": "Mid-century pin-up glamour photograph applied to the subject of the request only; any figures in the picture hold coy teasing poses. Full color, warm nostalgic palette. Soft diffused key light with gentle shadow roll-off and light halation. Fine grain, cheerful mood. For places and environments of any kind the same treatment; the setting comes only from the request. Not modern glossy, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Volumetric Fog Photograph",
+    "prefix": "",
+    "suffix": "Photograph of the subject of the request only in thick low-lying fog. Limited palette of desaturated gray-blue haze. Diffuse light glowing inside the fog, distant forms fading to flat silhouettes; lighting direction and time of day follow the request, diffused. Damp muted atmosphere. For places and environments of any kind the same treatment; the setting comes only from the request. Not clear air, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Wedding Photography",
+    "prefix": "",
+    "suffix": "Fine-art wedding photograph applied to the subject of the request only with an 85mm f/1.2 lens; no couple added unless the request names them. Full color, warm airy tones. Soft romantic natural light with creamy bokeh; lighting direction and time of day follow the request. Crisp detail. For places and environments of any kind the same treatment; the setting comes only from the request. Not a render, not an illustration.",
+    "negative": ""
+  },
+  {
+    "name": "Wet Look Rain Reflections Photograph",
+    "prefix": "",
+    "suffix": "Night photograph of the subject of the request only on rain-soaked ground. Full color, saturated reflected color. Glossy wet surfaces mirroring lights, water droplets catching highlights, light from the reflected sources. Deep wet blacks. For places and environments of any kind the same treatment; the setting comes only from the request. Not dry daylight, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Wet Plate Tintype",
+    "prefix": "",
+    "suffix": "Wet-plate collodion tintype of the subject of the request only from a large-format camera. Monochrome, deep brown-black with silvery highlights. Shallow focus with long-exposure stillness; lighting direction and time of day follow the request, soft. Chemical pour marks at the edges, metal-plate texture. For places and environments of any kind the same treatment; the setting comes only from the request. Not a paper print, not an illustration.",
+    "negative": ""
+  },
+  {
+    "name": "Wildlife Photography",
+    "prefix": "",
+    "suffix": "Wildlife photograph applied to the subject of the request only with a 600mm telephoto lens; no animals added unless the request names them. Full color, natural palette. Sharp eye detail with creamy blurred background in natural light; lighting direction and time of day follow the request. Fine fur and feather texture. For places and environments of any kind the same treatment; the setting comes only from the request. Not a render, not an illustration.",
+    "negative": ""
+  },
+  {
+    "name": "Window Light Photograph",
+    "prefix": "",
+    "suffix": "Photograph of the subject of the request only in window light. Full color, natural quiet palette. Soft directional daylight from one side with gentle gradient falloff and luminous open shadows. Vermeer-like clarity. For places and environments of any kind the same treatment; the setting comes only from the request. Not flash, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Worm's-Eye View",
+    "prefix": "",
+    "suffix": "Worm's-eye photograph of the subject of the request only from ground level looking straight up. Full color, natural palette. Towering perspective with strong converging verticals on a wide-angle lens; lighting direction and time of day follow the request. Crisp detail, dramatic scale. For places and environments of any kind the same treatment; the setting comes only from the request. Not eye-level, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Y2K Fashion Photography",
+    "prefix": "",
+    "suffix": "Early-2000s fashion photograph applied to the subject of the request only; any figures in the picture wear glossy lips and low-rise metallic styling. Full color, metallic and pastel tones. Harsh flash with a digital point-and-shoot look. Crisp cheap-digital sharpness. For places and environments of any kind the same treatment; the setting comes only from the request. Not film, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Gum Bichromate Print",
+    "prefix": "",
+    "suffix": "Gum bichromate print of the subject of the request only. Limited palette of painterly muted pigment tones. Layered pigment emulsion with soft brushed edges and hazy pictorialist softness; lighting direction and time of day follow the request, soft. Mottled textured watercolor paper. For places and environments of any kind the same treatment; the setting comes only from the request. Not a sharp print, not a painting.",
+    "negative": ""
+  },
+  {
+    "name": "Photochrom Print",
+    "prefix": "",
+    "suffix": "Photochrom print of the subject of the request only. Full color, pastel blue, ochre and green lithographic tones over a photograph. Slightly flat color areas with gentle grain; lighting direction and time of day follow the request. Vintage postcard finish. For places and environments of any kind the same treatment; the setting comes only from the request. Not hand-tinted, not an illustration.",
+    "negative": ""
+  },
+  {
+    "name": "Photogravure Print",
+    "prefix": "",
+    "suffix": "Photogravure print of the subject of the request only. Monochrome, velvety warm-black ink on cotton paper. Fine aquatint grain with soft pictorialist tonal gradation; lighting direction and time of day follow the request. Subtle plate-mark texture, rich shadows. For places and environments of any kind the same treatment; the setting comes only from the request. Not a silver print, not an illustration.",
+    "negative": ""
+  }
+]

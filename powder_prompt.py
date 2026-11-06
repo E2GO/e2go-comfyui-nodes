@@ -26,7 +26,7 @@ class PowderPromptList:
     RETURN_NAMES = ("positive_prompts", "negative_prompts")
     OUTPUT_IS_LIST = (True, True)
     FUNCTION = "get_prompts"
-    CATEGORY = "e2go_nodes"
+    CATEGORY = "e2go"
 
     def get_prompts(self, prompt_config, **kwargs):
         log("[PowderPrompt] === START ===")  # debug-only
@@ -35,7 +35,10 @@ class PowderPromptList:
         try:
             parsed = json.loads(prompt_config) if prompt_config else []
             if isinstance(parsed, list):
-                config = [item for item in parsed if isinstance(item, dict)]
+                # Slot positions address prompt_N_text / negative_N_text.
+                # Removing a malformed entry would enable the wrong prompt
+                # (including one whose own slot is disabled).
+                config = parsed
             else:
                 warn(f"Invalid config type: {type(parsed)}, expected list")
                 config = []
@@ -48,10 +51,15 @@ class PowderPromptList:
 
         positive_prompts = []
         negative_prompts = []
-        num_slots = len(config)
+        # Clamp to the 20 slots actually declared in INPUT_TYPES
+        # (prompt_1_text..prompt_20_text / negative_1_text..negative_20_text).
+        num_slots = min(len(config), 20)
 
         for i in range(num_slots):
             item = config[i]
+            if not isinstance(item, dict):
+                warn(f"Invalid prompt slot #{i + 1}: expected object; skipped")
+                continue
             enabled = item.get("on", True)
 
             if not enabled:
@@ -62,13 +70,12 @@ class PowderPromptList:
             text_key = f"prompt_{i+1}_text"
             text = kwargs.get(text_key, "")
 
-            # Defense-in-depth: filter stray "true"/"false" values that can
-            # leak from ComfyUI toggle widgets sharing the same slot names.
+            # Defense-in-depth: filter stray bool values that can leak from
+            # ComfyUI toggle widgets sharing the same slot names (the actual
+            # leak vector is a non-str widget value, not literal text).
             # The root cause is in the JS side, but we guard here as well.
             if text and isinstance(text, str):
                 text = text.strip()
-                if text.lower() in ("true", "false"):
-                    text = ""
             else:
                 text = ""
 
@@ -78,8 +85,6 @@ class PowderPromptList:
 
             if neg_text and isinstance(neg_text, str):
                 neg_text = neg_text.strip()
-                if neg_text.lower() in ("true", "false"):
-                    neg_text = ""
             else:
                 neg_text = ""
 

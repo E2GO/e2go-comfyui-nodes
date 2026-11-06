@@ -1,0 +1,56 @@
+[
+  {
+    "name": "Edit: Character Side View",
+    "prefix": "",
+    "suffix": "The same character as in the source image, now seen in a strict side profile, facing exactly left or right, with the same identity, face, hairstyle, clothing, proportions and pose character. Medium, colors and rendering stay exactly as in the source image. The background and lighting stay as they were. Nothing else in the picture changes. Not a three-quarter view, not a front view.",
+    "negative": ""
+  },
+  {
+    "name": "Edit: Remove Furniture",
+    "prefix": "",
+    "suffix": "The same room as in the source image with all furniture gone: the floor and walls continue coherently through the cleared areas with matching material, lighting and shadows. Medium, colors and rendering stay exactly as in the source image. Architecture, doors, windows, fixtures, lighting and camera viewpoint stay exactly as they were. Not a redecorated room, not a new camera angle.",
+    "negative": ""
+  },
+  {
+    "name": "Edit: Remove Main Character",
+    "prefix": "",
+    "suffix": "The same scene as in the source image with the main character gone, including their cast shadow and reflection; the background continues coherently through the vacated area. Medium, colors and rendering stay exactly as in the source image. Every other element, the lighting and the camera viewpoint stay exactly as they were. Not a replaced character, not a recomposed scene.",
+    "negative": ""
+  },
+  {
+    "name": "Edit: Remove People",
+    "prefix": "",
+    "suffix": "The same scene as in the source image with every person gone, including their cast shadows and reflections; the surroundings continue coherently through the vacated areas. Medium, colors and rendering stay exactly as in the source image. All other scene elements, lighting and camera viewpoint stay exactly as they were. Not an empty new scene, not a recomposed view.",
+    "negative": ""
+  },
+  {
+    "name": "Edit: Set at Night",
+    "prefix": "",
+    "suffix": "The same scene as in the source image at night: dark sky, night illumination from the scene's own lamps, windows or moon, with coherent night shadows and reflections. Medium, colors and rendering stay exactly as in the source image. Subjects, composition, scene layout and camera viewpoint stay exactly as they were. Not a day-for-night blue tint, not a different place.",
+    "negative": ""
+  },
+  {
+    "name": "Edit: Set in Winter",
+    "prefix": "",
+    "suffix": "The same scene as in the source image in deep winter: snow on upward surfaces, frost, bare or dormant vegetation, cold overcast light, where each applies. Medium, colors and rendering stay exactly as in the source image. Subjects, architecture, scene layout and camera viewpoint stay exactly as they were. Not a Christmas scene, not a different place.",
+    "negative": ""
+  },
+  {
+    "name": "Edit: T-Shirt Print Mockup",
+    "prefix": "",
+    "suffix": "Product photograph of a black T-shirt on a plain white background, with the artwork from the source image printed on the chest: the print keeps the artwork fully recognizable and follows the fabric folds, perspective and shading. Soft even studio light. The artwork's own colors and style stay as they were. Not a flat overlay, not a different garment.",
+    "negative": ""
+  },
+  {
+    "name": "Edit: View From Above",
+    "prefix": "",
+    "suffix": "The same scene as in the source image seen from a high overhead camera angle looking down: the same subjects with the same identities, materials and spatial relationships, now in top-down perspective. Medium, colors and rendering stay exactly as in the source image. Lighting direction stays consistent with the source. Not a tilted eye-level view, not a different scene.",
+    "negative": ""
+  },
+  {
+    "name": "Edit: White Background",
+    "prefix": "",
+    "suffix": "The same foreground subjects as in the source image, with every detail and their placement unchanged, on a plain seamless white background with soft contact shadows only. Medium, colors and rendering stay exactly as in the source image. Lighting on the subjects stays as it was. Not a gray studio background, not a cutout without shadow.",
+    "negative": ""
+  }
+]

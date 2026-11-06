@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Expression: Anger",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names, keeping every figure's own identity, clothing and pose: any figures in the picture wear an angry expression, brows lowered and drawn together, eyelids tense, a focused glare, lips pressed tightly, jaw set. Full color unless the request says otherwise; lighting direction and time of day follow the request. Non-figure subjects and the setting are unchanged and come only from the request. Not contempt, not fear.",
+    "negative": ""
+  },
+  {
+    "name": "Expression: Contempt",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names, keeping every figure's own identity, clothing and pose: any figures in the picture wear a contemptuous expression, one mouth corner tightened and slightly raised into an asymmetric smirk, eyelids a little lowered, a restrained dismissive gaze, head slightly tilted back. Full color unless the request says otherwise; lighting direction and time of day follow the request. Non-figure subjects and the setting are unchanged and come only from the request. Not a smile, not anger.",
+    "negative": ""
+  },
+  {
+    "name": "Expression: Disgust",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names, keeping every figure's own identity, clothing and pose: any figures in the picture wear a disgusted expression, nose wrinkled, upper lip raised, cheeks lifted, brows lowered, eyes narrowed. Full color unless the request says otherwise; lighting direction and time of day follow the request. Non-figure subjects and the setting are unchanged and come only from the request. Not anger, not contempt.",
+    "negative": ""
+  },
+  {
+    "name": "Expression: Fear",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names, keeping every figure's own identity, clothing and pose: any figures in the picture wear a frightened expression, eyebrows raised and drawn together, eyes wide showing the whites, lips stretched horizontally with visible tension, slight recoil in the posture of the head. Full color unless the request says otherwise; lighting direction and time of day follow the request. Non-figure subjects and the setting are unchanged and come only from the request. Not surprise, not sadness.",
+    "negative": ""
+  },
+  {
+    "name": "Expression: Happiness",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names, keeping every figure's own identity, clothing and pose: any figures in the picture wear a joyful expression, a natural smile with raised mouth corners, cheeks lifted, eyes gently crinkled at the outer corners. Full color unless the request says otherwise; lighting direction and time of day follow the request. Non-figure subjects and the setting are unchanged and come only from the request. Not a smirk, not surprise.",
+    "negative": ""
+  },
+  {
+    "name": "Expression: Sadness",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names, keeping every figure's own identity, clothing and pose: any figures in the picture wear a sad expression, inner eyebrows raised and drawn together, upper eyelids lowered, mouth corners turned down, gaze dropped. Full color unless the request says otherwise; lighting direction and time of day follow the request. Non-figure subjects and the setting are unchanged and come only from the request. Not fear, not anger.",
+    "negative": ""
+  },
+  {
+    "name": "Expression: Surprise",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names, keeping every figure's own identity, clothing and pose: any figures in the picture wear a surprised expression, eyebrows raised and curved, eyes wide open, jaw naturally dropped with the mouth open and relaxed. Full color unless the request says otherwise; lighting direction and time of day follow the request. Non-figure subjects and the setting are unchanged and come only from the request. Not fear, not happiness.",
+    "negative": ""
+  }
+]

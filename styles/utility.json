@@ -1,0 +1,98 @@
+[
+  {
+    "name": "Anime Negative",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names: clean anime illustration of the subject of the request only, one subject on a simple uncluttered background; no text, logos or watermarks. Full color. Faces drawn in the anime convention with no visible lips, nose detail or makeup; no extra boys, muscles or ribs. Crisp focus everywhere with no depth of field, bokeh, film grain, chromatic aberration or lens flare; no motion lines or motion blur. Not a photograph, not grayscale.",
+    "negative": ""
+  },
+  {
+    "name": "Anime Negative (3D)",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names: clean 3D-styled anime render of the subject of the request only, one subject on a simple background; no text, watermarks or artist names. Full color, balanced saturation. Correct anatomy: each hand with five separate fingers, limbs attached and proportioned, neck and torso natural, both eyes symmetrical and clear, relaxed natural face and body. Sharp focus, no grain, no blur, full subject in frame. Not a painting, not low-resolution.",
+    "negative": ""
+  },
+  {
+    "name": "Character Sheet",
+    "prefix": "",
+    "suffix": "Professional character-sheet concept-art presentation of the subject of the request only, a single clear view unless the request asks for more, keeping the character's own identity; no extra characters, no lettering. Full color unless the request says otherwise. Clean silhouette with detailed costume and material indication; consistent neutral studio light. Plain uncluttered background, crisp edges. Not a scene illustration, not a photograph.",
+    "negative": ""
+  },
+  {
+    "name": "Enhance",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names: the subject of the request only rendered at full quality: sharp focus, fine detail, balanced exposure and saturation, clean lighting with natural shadows. Full color unless the request says otherwise. Correct anatomy on any figures, hands with five fingers, symmetrical features, full subject in frame; no text, watermarks or logos. One subject on an uncluttered background, no grain, no artifacts. Not cartoon, not a 3D render unless the request names one.",
+    "negative": ""
+  },
+  {
+    "name": "Enhance (Breathtaking)",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names: the subject of the request only at award-winning professional quality. Full color unless the request says otherwise. Densely detailed, crisp focus, clean undistorted form; lighting direction and time of day follow the request. No noise, no blur, no grain. For places and environments of any kind the same polish; the setting comes only from the request. Not sloppy, not low-resolution.",
+    "negative": ""
+  },
+  {
+    "name": "Masterpiece",
+    "prefix": "",
+    "suffix": "Clean top-quality illustration of the subject of the request only; no extra characters, no text. Full color unless the request says otherwise. Balanced composition with intricate detail where the subject calls for it and detailed eyes on any figures; lighting direction and time of day follow the request. Correct anatomy, hands with five fingers, full subject in frame, uncluttered background. Not low-resolution, not cropped.",
+    "negative": ""
+  },
+  {
+    "name": "Natural Skin",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names: hyperrealistic rendering of the subject of the request only with natural skin texture on any figures, pores, fine lines and subtle blemishes kept. Full color, true-to-life tones. Soft light with sharp focus; lighting direction and time of day follow the request. No extra figures, no text, uncluttered background. Not CGI, not cartoon, not doll-smooth.",
+    "negative": ""
+  },
+  {
+    "name": "Negative",
+    "prefix": "",
+    "suffix": "Photographic realism applied to the subject of the request only; no extra figures, no text, no watermarks. Full color unless the request says otherwise. Correct anatomy: limbs connected and proportioned, hands with five fingers, feet and legs complete, head attached, natural neck and eye proportion. Sharp focus, no blur, no glitch, full subject in frame, uncluttered background. Not a drawing, not anime, not abstract.",
+    "negative": ""
+  },
+  {
+    "name": "Ornate and Intricate",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names: the subject of the request only rendered with decorative, elaborate, intricate ornament on its own surfaces, every area richly detailed. Full color unless the request says otherwise. Fine filigree, pattern and embellishment following the form; lighting direction and time of day follow the request. Crisp detailed edges, no extra objects, no text. For places and environments of any kind the same ornamental density; the setting comes only from the request. Not minimalist, not plain.",
+    "negative": ""
+  },
+  {
+    "name": "Perfect Portrait",
+    "prefix": "",
+    "suffix": "DSLR portrait of the subject of the request only, any figures looking straight into the camera with a flawless natural face; no extra figures, no text. Full color, natural tones. Soft natural cinematic light with shallow depth of field; lighting direction and time of day follow the request. Intricate detail in sharp focus, clean background. Not stylized, not cropped.",
+    "negative": ""
+  },
+  {
+    "name": "Perfect Portrait (Negative Only)",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names: the subject of the request only with natural modest proportions on any figures; no text, no watermarks. Full color, never grayscale. Correct anatomy: every limb, hand, finger, foot and digit complete, attached and unfused, nothing mangled or duplicated. Sharp focus, no blur, full subject in frame, uncluttered background. Not deformed, not cropped.",
+    "negative": ""
+  },
+  {
+    "name": "Realistic Negative",
+    "prefix": "",
+    "suffix": "Photographic realism applied to the subject of the request only; no extra figures, no text, watermarks or artist names. Full color, balanced saturation. Correct anatomy: hands with five separate fingers, natural neck and body, symmetrical clear eyes, natural face. Sharp focus, no blur, no grain, full subject in frame, uncluttered background. Not an illustration, not 3D, not sepia.",
+    "negative": ""
+  },
+  {
+    "name": "Simple Body Negative",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names: the subject of the request only with correct body proportions on any figures: natural torso length, hands with exactly five fingers, nothing extra or missing. Full color unless the request says otherwise. Sharp focus, no blur, full subject in frame; no extra figures, no text, uncluttered background. Not low-resolution, not cropped.",
+    "negative": ""
+  },
+  {
+    "name": "Simple Negative",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names: the subject of the request only cleanly rendered: correct anatomy on any figures with well-drawn hands, feet and face, no extra limbs, whole body in frame. Full color unless the request says otherwise. Sharp focus, no grain, no tiling, no watermarks or text, uncluttered background. Not a rough draft, not cropped.",
+    "negative": ""
+  },
+  {
+    "name": "Skin Enhancer",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names: the subject of the request only with detailed skin texture on any figures: fine pores, light blush, goosebumps, subsurface scattering glow at thin edges. Full color, natural skin tones. Lighting direction and time of day follow the request. No extra figures, no text, uncluttered background. Not doll-smooth, not airbrushed.",
+    "negative": ""
+  },
+  {
+    "name": "Texture",
+    "prefix": "",
+    "suffix": "Top-down close-up texture image of the material of the subject of the request only, filling the frame as a seamless surface. Full color unless the request says otherwise. Flat even light revealing surface relief, no perspective, no horizon. Crisp fine detail, no objects in frame, no text. Not a scene, not a product shot.",
+    "negative": ""
+  }
+]

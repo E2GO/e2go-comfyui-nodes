@@ -1,0 +1,15 @@
+[project]
+name = "powder-nodes"
+description = "ComfyUI nodes for prompts, styles, LoRAs, sampling, visual canvas editing and image grids."
+version = "2.0.0"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+dependencies = []
+
+[project.urls]
+Repository = "https://github.com/E2GO/e2go-comfyui-nodes"
+
+[tool.comfy]
+PublisherId = "e2go"
+DisplayName = "Powder Nodes"
+Icon = ""

@@ -1,0 +1,5893 @@
+{
+  "id": "679b69b8-789d-5c81-9fd2-981863bff43c",
+  "revision": 0,
+  "last_node_id": 106,
+  "last_link_id": 138,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "UNETLoader",
+      "pos": [
+        30,
+        70
+      ],
+      "size": [
+        330,
+        100
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "showAdvanced": null,
+      "inputs": [
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "unet_name",
+          "locked": null,
+          "name": "unet_name",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "COMBO",
+          "widget": {
+            "name": "unet_name"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "weight_dtype",
+          "locked": null,
+          "name": "weight_dtype",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "COMBO",
+          "widget": {
+            "name": "weight_dtype"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "MODEL",
+          "locked": null,
+          "name": "MODEL",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "MODEL",
+          "pos": null,
+          "slot_index": null,
+          "links": [
+            72
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "UNETLoader"
+      },
+      "widgets_values": [
+        "flux3_image_klein_int8_convrot.safetensors",
+        "default"
+      ],
+      "widgets_values_named": {
+        "unet_name": "flux3_image_klein_int8_convrot.safetensors",
+        "weight_dtype": "default"
+      }
+    },
+    {
+      "id": 3,
+      "type": "CLIPLoader",
+      "pos": [
+        30,
+        250
+      ],
+      "size": [
+        330,
+        110
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "showAdvanced": null,
+      "inputs": [
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "clip_name",
+          "locked": null,
+          "name": "clip_name",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "COMBO",
+          "widget": {
+            "name": "clip_name"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "type",
+          "locked": null,
+          "name": "type",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "COMBO",
+          "widget": {
+            "name": "type"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "device",
+          "locked": null,
+          "name": "device",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "COMBO",
+          "widget": {
+            "name": "device"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "CLIP",
+          "locked": null,
+          "name": "CLIP",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "CLIP",
+          "pos": null,
+          "slot_index": null,
+          "links": [
+            73
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPLoader"
+      },
+      "widgets_values": [
+        "qwen3vl_4b_int8_convrot.safetensors",
+        "flux3",
+        "default"
+      ],
+      "widgets_values_named": {
+        "clip_name": "qwen3vl_4b_int8_convrot.safetensors",
+        "type": "flux3",
+        "device": "default"
+      }
+    },
+    {
+      "id": 4,
+      "type": "VAELoader",
+      "pos": [
+        30,
+        430
+      ],
+      "size": [
+        330,
+        80
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "showAdvanced": null,
+      "inputs": [
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "vae_name",
+          "locked": null,
+          "name": "vae_name",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "COMBO",
+          "widget": {
+            "name": "vae_name"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "VAE",
+          "locked": null,
+          "name": "VAE",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "VAE",
+          "pos": null,
+          "slot_index": null,
+          "links": [
+            23
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAELoader"
+      },
+      "widgets_values": [
+        "flux2-vae.safetensors"
+      ],
+      "widgets_values_named": {
+        "vae_name": "flux2-vae.safetensors"
+      }
+    },
+    {
+      "id": 5,
+      "type": "PrimitiveStringMultiline",
+      "pos": [
+        470,
+        70
+      ],
+      "size": [
+        460,
+        220
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "showAdvanced": null,
+      "inputs": [
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "value",
+          "locked": null,
+          "name": "value",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "STRING",
+          "widget": {
+            "name": "value"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "STRING",
+          "locked": null,
+          "name": "STRING",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "STRING",
+          "pos": null,
+          "slot_index": null,
+          "links": [
+            63
+          ]
+        }
+      ],
+      "title": "Main_Prompt",
+      "properties": {
+        "Node name for S&R": "PrimitiveStringMultiline"
+      },
+      "widgets_values": [
+        "A red ceramic teapot on a pale wooden table, soft window light, product photograph."
+      ],
+      "widgets_values_named": {
+        "value": "A red ceramic teapot on a pale wooden table, soft window light, product photograph."
+      }
+    },
+    {
+      "id": 9,
+      "type": "PowderConditioner",
+      "pos": [
+        2640,
+        70
+      ],
+      "size": [
+        340,
+        250
+      ],
+      "flags": {},
+      "order": 21,
+      "mode": 0,
+      "showAdvanced": null,
+      "inputs": [
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "clip",
+          "locked": null,
+          "name": "clip",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "CLIP",
+          "pos": null,
+          "link": 75
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "prompt",
+          "locked": null,
+          "name": "prompt",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "STRING",
+          "pos": null,
+          "link": 125
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "negative_prompt",
+          "locked": null,
+          "name": "negative_prompt",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "pos": null,
+          "link": 76
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "lora_info",
+          "locked": null,
+          "name": "lora_info",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "pos": null,
+          "link": 80
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "style",
+          "locked": null,
+          "name": "style",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "pos": null,
+          "link": 81
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "references",
+          "locked": null,
+          "name": "references",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "POWDER_REFS",
+          "pos": null,
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "layout",
+          "locked": null,
+          "name": "layout",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "pos": null,
+          "link": 136
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "layout_width",
+          "locked": null,
+          "name": "layout_width",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "INT",
+          "pos": null,
+          "link": 137
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "layout_height",
+          "locked": null,
+          "name": "layout_height",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "INT",
+          "pos": null,
+          "link": 138
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "use_cache",
+          "locked": null,
+          "name": "use_cache",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "use_cache"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "cache_mode",
+          "locked": null,
+          "name": "cache_mode",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "COMBO",
+          "widget": {
+            "name": "cache_mode"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "consumer_mode",
+          "locked": null,
+          "name": "consumer_mode",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "consumer_mode"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "prompt_format",
+          "locked": null,
+          "name": "prompt_format",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "COMBO",
+          "widget": {
+            "name": "prompt_format"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "positive_conditioning",
+          "locked": null,
+          "name": "positive_conditioning",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 6,
+          "type": "CONDITIONING",
+          "pos": null,
+          "slot_index": null,
+          "links": [
+            52
+          ]
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "negative_conditioning",
+          "locked": null,
+          "name": "negative_conditioning",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 6,
+          "type": "CONDITIONING",
+          "pos": null,
+          "slot_index": null,
+          "links": [
+            53
+          ]
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "final_positive",
+          "locked": null,
+          "name": "final_positive",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 6,
+          "type": "STRING",
+          "pos": null,
+          "slot_index": null,
+          "links": [
+            82,
+            83
+          ]
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "final_negative",
+          "locked": null,
+          "name": "final_negative",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 6,
+          "type": "STRING",
+          "pos": null,
+          "slot_index": null,
+          "links": [
+            84
+          ]
+        }
+      ],
+      "title": "Conditioner",
+      "properties": {
+        "Node name for S&R": "PowderConditioner"
+      },
+      "widgets_values": [
+        true,
+        "auto",
+        "",
+        "text"
+      ],
+      "widgets_values_named": {
+        "use_cache": true,
+        "cache_mode": "auto",
+        "consumer_mode": "",
+        "prompt_format": "text"
+      },
+      "color": "#344F73",
+      "e2goWidgetNames": [
+        "use_cache",
+        "cache_mode",
+        "consumer_mode",
+        "prompt_format"
+      ],
+      "e2goWidgetSchemaVersion": 1,
+      "e2goInputs": {
+        "use_cache": true,
+        "cache_mode": "auto",
+        "consumer_mode": "",
+        "prompt_format": "text"
+      },
+      "extensions": {
+        "e2goWidgetNames": [
+          "use_cache",
+          "cache_mode",
+          "consumer_mode",
+          "prompt_format"
+        ],
+        "e2goWidgetSchemaVersion": 1,
+        "e2goInputs": {
+          "use_cache": true,
+          "cache_mode": "auto",
+          "consumer_mode": "",
+          "prompt_format": "text"
+        }
+      }
+    },
+    {
+      "id": 11,
+      "type": "PowderResolution",
+      "pos": [
+        3090,
+        70
+      ],
+      "size": [
+        280,
+        342
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "showAdvanced": null,
+      "inputs": [
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "model",
+          "locked": null,
+          "name": "model",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "MODEL",
+          "pos": null,
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "aspect_ratio",
+          "locked": null,
+          "name": "aspect_ratio",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "COMBO",
+          "widget": {
+            "name": "aspect_ratio"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "megapixel",
+          "locked": null,
+          "name": "megapixel",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "COMBO",
+          "widget": {
+            "name": "megapixel"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "custom_ratio",
+          "locked": null,
+          "name": "custom_ratio",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "custom_ratio"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "ratio_x",
+          "locked": null,
+          "name": "ratio_x",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "FLOAT",
+          "widget": {
+            "name": "ratio_x"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "ratio_y",
+          "locked": null,
+          "name": "ratio_y",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "FLOAT",
+          "widget": {
+            "name": "ratio_y"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "custom_mode",
+          "locked": null,
+          "name": "custom_mode",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "custom_mode"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "width",
+          "locked": null,
+          "name": "width",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "INT",
+          "widget": {
+            "name": "width"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "height",
+          "locked": null,
+          "name": "height",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "INT",
+          "widget": {
+            "name": "height"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "round_custom",
+          "locked": null,
+          "name": "round_custom",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "round_custom"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "batch_size",
+          "locked": null,
+          "name": "batch_size",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "INT",
+          "widget": {
+            "name": "batch_size"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "latent_type",
+          "locked": null,
+          "name": "latent_type",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "COMBO",
+          "widget": {
+            "name": "latent_type"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "divisible_by",
+          "locked": null,
+          "name": "divisible_by",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "COMBO",
+          "widget": {
+            "name": "divisible_by"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "LATENT",
+          "locked": null,
+          "name": "LATENT",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "LATENT",
+          "pos": null,
+          "slot_index": null,
+          "links": []
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "width",
+          "locked": null,
+          "name": "width",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "INT",
+          "pos": null,
+          "slot_index": null,
+          "links": [
+            60,
+            137
+          ]
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "height",
+          "locked": null,
+          "name": "height",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "INT",
+          "pos": null,
+          "slot_index": null,
+          "links": [
+            61,
+            138
+          ]
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "resolution",
+          "locked": null,
+          "name": "resolution",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "STRING",
+          "pos": null,
+          "slot_index": null,
+          "links": []
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "preview",
+          "locked": null,
+          "name": "preview",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "IMAGE",
+          "pos": null,
+          "slot_index": null,
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PowderResolution"
+      },
+      "widgets_values": [
+        "1:1 (Perfect Square)",
+        "1.0",
+        false,
+        1,
+        1,
+        false,
+        960,
+        1656,
+        false,
+        1,
+        "SD3/Flux (16ch)",
+        "64"
+      ],
+      "widgets_values_named": {
+        "aspect_ratio": "1:1 (Perfect Square)",
+        "megapixel": "1.0",
+        "custom_ratio": false,
+        "ratio_x": 1,
+        "ratio_y": 1,
+        "custom_mode": false,
+        "width": 960,
+        "height": 1656,
+        "round_custom": false,
+        "batch_size": 1,
+        "latent_type": "SD3/Flux (16ch)",
+        "divisible_by": "64"
+      },
+      "color": "#28565C",
+      "e2goInputs": {
+        "aspect_ratio": "1:1 (Perfect Square)",
+        "megapixel": "1.0",
+        "custom_ratio": false,
+        "ratio_x": 1,
+        "ratio_y": 1,
+        "custom_mode": false,
+        "width": 960,
+        "height": 1656,
+        "round_custom": false,
+        "batch_size": 1,
+        "latent_type": "SD3/Flux (16ch)",
+        "divisible_by": "64"
+      },
+      "extensions": {
+        "e2goInputs": {
+          "aspect_ratio": "1:1 (Perfect Square)",
+          "megapixel": "1.0",
+          "custom_ratio": false,
+          "ratio_x": 1,
+          "ratio_y": 1,
+          "custom_mode": false,
+          "width": 960,
+          "height": 1656,
+          "round_custom": false,
+          "batch_size": 1,
+          "latent_type": "SD3/Flux (16ch)",
+          "divisible_by": "64"
+        }
+      }
+    },
+    {
+      "id": 15,
+      "type": "PowderSampler",
+      "pos": [
+        3460,
+        270
+      ],
+      "size": [
+        300,
+        530
+      ],
+      "flags": {},
+      "order": 22,
+      "mode": 0,
+      "showAdvanced": null,
+      "inputs": [
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "model",
+          "locked": null,
+          "name": "model",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "MODEL",
+          "pos": null,
+          "link": 74
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "positive",
+          "locked": null,
+          "name": "positive",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "CONDITIONING",
+          "pos": null,
+          "link": 52
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "negative",
+          "locked": null,
+          "name": "negative",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "CONDITIONING",
+          "pos": null,
+          "link": 53
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "latent",
+          "locked": null,
+          "name": "latent",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "LATENT",
+          "pos": null,
+          "link": 62
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "model_negative",
+          "locked": null,
+          "name": "model_negative",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "MODEL",
+          "pos": null,
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "seed",
+          "locked": null,
+          "name": "seed",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "steps",
+          "locked": null,
+          "name": "steps",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "INT",
+          "widget": {
+            "name": "steps"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "cfg",
+          "locked": null,
+          "name": "cfg",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "FLOAT",
+          "widget": {
+            "name": "cfg"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "sampler_name",
+          "locked": null,
+          "name": "sampler_name",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "COMBO",
+          "widget": {
+            "name": "sampler_name"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "scheduler",
+          "locked": null,
+          "name": "scheduler",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "COMBO",
+          "widget": {
+            "name": "scheduler"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "denoise",
+          "locked": null,
+          "name": "denoise",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "FLOAT",
+          "widget": {
+            "name": "denoise"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "auto_steps",
+          "locked": null,
+          "name": "auto_steps",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "auto_steps"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "inpaint_boost",
+          "locked": null,
+          "name": "inpaint_boost",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "COMBO",
+          "widget": {
+            "name": "inpaint_boost"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "similarity",
+          "locked": null,
+          "name": "similarity",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "FLOAT",
+          "widget": {
+            "name": "similarity"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "flux2_shift",
+          "locked": null,
+          "name": "flux2_shift",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "COMBO",
+          "widget": {
+            "name": "flux2_shift"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "model_profile",
+          "locked": null,
+          "name": "model_profile",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "COMBO",
+          "widget": {
+            "name": "model_profile"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "latent",
+          "locked": null,
+          "name": "latent",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "LATENT",
+          "pos": null,
+          "slot_index": null,
+          "links": [
+            31
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PowderSampler"
+      },
+      "widgets_values": [
+        0,
+        "randomize",
+        50,
+        3.5,
+        "euler",
+        "simple",
+        1,
+        true,
+        "off",
+        -0.0,
+        "model",
+        "Flux 3 Klein Base"
+      ],
+      "widgets_values_named": {
+        "seed": 0,
+        "control_after_generate": "randomize",
+        "steps": 50,
+        "cfg": 3.5,
+        "sampler_name": "euler",
+        "scheduler": "simple",
+        "denoise": 1,
+        "auto_steps": true,
+        "inpaint_boost": "off",
+        "similarity": -0.0,
+        "flux2_shift": "model",
+        "model_profile": "Flux 3 Klein Base"
+      },
+      "color": "#344F73",
+      "e2goInputs": {
+        "seed": 0,
+        "control_after_generate": "randomize",
+        "steps": 50,
+        "cfg": 3.5,
+        "sampler_name": "euler",
+        "scheduler": "simple",
+        "denoise": 1,
+        "auto_steps": true,
+        "inpaint_boost": "off",
+        "similarity": -0.0,
+        "flux2_shift": "model",
+        "model_profile": "Flux 3 Klein Base"
+      },
+      "e2goWidgetNames": [
+        "seed",
+        "control_after_generate",
+        "steps",
+        "cfg",
+        "sampler_name",
+        "scheduler",
+        "denoise",
+        "auto_steps",
+        "inpaint_boost",
+        "similarity",
+        "flux2_shift",
+        "model_profile"
+      ],
+      "e2goWidgetSchemaVersion": 1,
+      "extensions": {
+        "e2goInputs": {
+          "seed": 0,
+          "control_after_generate": "randomize",
+          "steps": 50,
+          "cfg": 3.5,
+          "sampler_name": "euler",
+          "scheduler": "simple",
+          "denoise": 1,
+          "auto_steps": true,
+          "inpaint_boost": "off",
+          "similarity": -0.0,
+          "flux2_shift": "model",
+          "model_profile": "Flux 3 Klein Base"
+        },
+        "e2goWidgetNames": [
+          "seed",
+          "control_after_generate",
+          "steps",
+          "cfg",
+          "sampler_name",
+          "scheduler",
+          "denoise",
+          "auto_steps",
+          "inpaint_boost",
+          "similarity",
+          "flux2_shift",
+          "model_profile"
+        ],
+        "e2goWidgetSchemaVersion": 1
+      }
+    },
+    {
+      "id": 16,
+      "type": "VAEDecode",
+      "pos": [
+        3890,
+        70
+      ],
+      "size": [
+        160,
+        60
+      ],
+      "flags": {},
+      "order": 24,
+      "mode": 0,
+      "showAdvanced": null,
+      "inputs": [
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "samples",
+          "locked": null,
+          "name": "samples",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "LATENT",
+          "pos": null,
+          "link": 31
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "vae",
+          "locked": null,
+          "name": "vae",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "VAE",
+          "pos": null,
+          "link": 23
+        }
+      ],
+      "outputs": [
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "IMAGE",
+          "locked": null,
+          "name": "IMAGE",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "IMAGE",
+          "pos": null,
+          "slot_index": null,
+          "links": [
+            119
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode"
+      }
+    },
+    {
+      "id": 18,
+      "type": "SaveImage",
+      "pos": [
+        3890,
+        460
+      ],
+      "size": [
+        620,
+        640
+      ],
+      "flags": {},
+      "order": 26,
+      "mode": 0,
+      "showAdvanced": null,
+      "inputs": [
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "images",
+          "locked": null,
+          "name": "images",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "IMAGE",
+          "pos": null,
+          "link": 120
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "filename_prefix",
+          "locked": null,
+          "name": "filename_prefix",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "STRING",
+          "widget": {
+            "name": "filename_prefix"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "images",
+          "locked": null,
+          "name": "images",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "IMAGE",
+          "pos": null,
+          "slot_index": null,
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaveImage"
+      },
+      "widgets_values": [
+        "%date:yyyy-MM-dd%/E2GO_Flux3_Klein_Base_Generate_full"
+      ],
+      "widgets_values_named": {
+        "filename_prefix": "%date:yyyy-MM-dd%/E2GO_Flux3_Klein_Base_Generate_full"
+      }
+    },
+    {
+      "id": 19,
+      "type": "MarkdownNote",
+      "pos": [
+        1610,
+        1870
+      ],
+      "size": [
+        900,
+        760
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "showAdvanced": null,
+      "inputs": [],
+      "outputs": [],
+      "title": "How to use",
+      "properties": {
+        "Node name for S&R": "MarkdownNote"
+      },
+      "widgets_values": [
+        "# FLUX.3 Klein Base + prompt upsampler\n\nEnter an idea, choose the image size and Queue. Preview shows the full caption sent to the image model.\n\nInstalled filename without _sd_ is BASE: 50 steps / CFG 3.5 / Euler / simple. The Flux.2-only sigma patch is disabled. Distilled _sd_ weights require a different recipe (16 steps / CFG 1). The upsampler is enabled and uses its own Qwen3.5 model. Start near 1 MP; the first load is slower.\n\nhttps://huggingface.co/black-forest-labs/flux-3-image-klein-comfy\n\n## Full E2GO workflow\n\nSelect Manual or Wildcard in Powder Switcher. Main Prompt feeds Prompt List; each enabled slot creates a separate result. Wildcard count limits the lines per run. The LoRA loader is connected to model, encoder and prompt; add compatible LoRAs to its empty list. Duplicate LoRA rows are supported. Grid is connected but bypassed; enable it with Ctrl+B.\n\nPowder Styler and Grid labels are connected. Use Final Prompt Preview to inspect the assembled caption and applied LoRA triggers.\n\n### Checked recipe\nFlux 3 Klein Base: 50 steps, CFG 3.5, euler / simple. Sampler profile checks model and latent compatibility. Profiles do not select weights: Base, Turbo, Distilled and Edit checkpoints are not interchangeable. Use a fixed seed when comparing changes; increase size only after the prompt and composition work.\n\n## Two-level enhancer\nOriginal skips the language model; Enhanced uses Balanced or High detail instructions. Both instructions are editable. Manual and Wildcard share the same path. Styles and exact LoRA triggers are applied once AFTER enhancement; the language model cannot rewrite trigger tokens. Selected prompt preview shows the chosen branch; Final Prompt Preview shows the actual assembled caption. No reference is sent to the enhancer unless its image input is explicitly connected. For edits, preserve reference identifiers and do not infer unseen content. The existing Flux3 upsampler and reference image connection are retained.\n\n## Canvas Layout\nOpen the Layout tab in Powder Canvas. Match generation size, describe the scene and regions, then enable Use layout. The layout connection is already wired. Layout is off by default. Object boxes are composition annotations, not visible frames. AI descriptions preserve every box and literal text; AI layout proposes a new composition for review. For cropped inpainting the layout must match the crop; disable layout when reusing an unrelated composition. MOSS exports actual-size centered pixel coordinates; Ideogram and FLUX.3 export normalized 0-1000 coordinates. FLUX.3 boxes describe target placement; source-to-target reference mapping is not exposed here. For FLUX.3 use Enhanced for the scene caption; leave Layout Scene blank to inherit it, or write a detailed scene in Layout. Your editor document is saved inside the workflow."
+      ],
+      "widgets_values_named": {
+        "text": "# FLUX.3 Klein Base + prompt upsampler\n\nEnter an idea, choose the image size and Queue. Preview shows the full caption sent to the image model.\n\nInstalled filename without _sd_ is BASE: 50 steps / CFG 3.5 / Euler / simple. The Flux.2-only sigma patch is disabled. Distilled _sd_ weights require a different recipe (16 steps / CFG 1). The upsampler is enabled and uses its own Qwen3.5 model. Start near 1 MP; the first load is slower.\n\nhttps://huggingface.co/black-forest-labs/flux-3-image-klein-comfy\n\n## Full E2GO workflow\n\nSelect Manual or Wildcard in Powder Switcher. Main Prompt feeds Prompt List; each enabled slot creates a separate result. Wildcard count limits the lines per run. The LoRA loader is connected to model, encoder and prompt; add compatible LoRAs to its empty list. Duplicate LoRA rows are supported. Grid is connected but bypassed; enable it with Ctrl+B.\n\nPowder Styler and Grid labels are connected. Use Final Prompt Preview to inspect the assembled caption and applied LoRA triggers.\n\n### Checked recipe\nFlux 3 Klein Base: 50 steps, CFG 3.5, euler / simple. Sampler profile checks model and latent compatibility. Profiles do not select weights: Base, Turbo, Distilled and Edit checkpoints are not interchangeable. Use a fixed seed when comparing changes; increase size only after the prompt and composition work.\n\n## Two-level enhancer\nOriginal skips the language model; Enhanced uses Balanced or High detail instructions. Both instructions are editable. Manual and Wildcard share the same path. Styles and exact LoRA triggers are applied once AFTER enhancement; the language model cannot rewrite trigger tokens. Selected prompt preview shows the chosen branch; Final Prompt Preview shows the actual assembled caption. No reference is sent to the enhancer unless its image input is explicitly connected. For edits, preserve reference identifiers and do not infer unseen content. The existing Flux3 upsampler and reference image connection are retained.\n\n## Canvas Layout\nOpen the Layout tab in Powder Canvas. Match generation size, describe the scene and regions, then enable Use layout. The layout connection is already wired. Layout is off by default. Object boxes are composition annotations, not visible frames. AI descriptions preserve every box and literal text; AI layout proposes a new composition for review. For cropped inpainting the layout must match the crop; disable layout when reusing an unrelated composition. MOSS exports actual-size centered pixel coordinates; Ideogram and FLUX.3 export normalized 0-1000 coordinates. FLUX.3 boxes describe target placement; source-to-target reference mapping is not exposed here. For FLUX.3 use Enhanced for the scene caption; leave Layout Scene blank to inherit it, or write a detailed scene in Layout. Your editor document is saved inside the workflow."
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 30,
+      "type": "TextGenerate",
+      "pos": [
+        1040,
+        1870
+      ],
+      "size": [
+        400,
+        460
+      ],
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "showAdvanced": null,
+      "inputs": [
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "clip",
+          "locked": null,
+          "name": "clip",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "CLIP",
+          "pos": null,
+          "link": 126
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "image",
+          "locked": null,
+          "name": "image",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "IMAGE",
+          "pos": null,
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "video",
+          "locked": null,
+          "name": "video",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "IMAGE",
+          "pos": null,
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "audio",
+          "locked": null,
+          "name": "audio",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "AUDIO",
+          "pos": null,
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "system_prompt",
+          "locked": null,
+          "name": "system_prompt",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "pos": null,
+          "link": 129
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "prompt",
+          "locked": null,
+          "name": "prompt",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          },
+          "link": 130
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "max_length",
+          "locked": null,
+          "name": "max_length",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "INT",
+          "widget": {
+            "name": "max_length"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "Sampling Mode",
+          "locked": null,
+          "name": "sampling_mode",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "COMFY_DYNAMICCOMBO_V3",
+          "widget": {
+            "name": "sampling_mode"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "thinking",
+          "locked": null,
+          "name": "thinking",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "thinking"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "use_default_template",
+          "locked": null,
+          "name": "use_default_template",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "use_default_template"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "mtp",
+          "locked": null,
+          "name": "mtp",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "COMBO",
+          "widget": {
+            "name": "mtp"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "generated_text",
+          "locked": null,
+          "name": "generated_text",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "STRING",
+          "pos": null,
+          "slot_index": null,
+          "links": [
+            132
+          ]
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "thinking",
+          "locked": null,
+          "name": "thinking",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "STRING",
+          "pos": null,
+          "slot_index": null,
+          "links": []
+        }
+      ],
+      "title": "Prompt Enhancer · Flux 3 Klein Base",
+      "properties": {
+        "Node name for S&R": "TextGenerate"
+      },
+      "widgets_values": [
+        "",
+        2048,
+        "off",
+        false,
+        true,
+        "off"
+      ],
+      "widgets_values_named": {
+        "prompt": "",
+        "max_length": 2048,
+        "sampling_mode": "off",
+        "thinking": false,
+        "use_default_template": true,
+        "mtp": "off"
+      },
+      "e2goWidgetNames": [
+        "prompt",
+        "max_length",
+        "sampling_mode",
+        "thinking",
+        "use_default_template",
+        "mtp"
+      ],
+      "e2goWidgetSchemaVersion": 1,
+      "extensions": {
+        "e2goWidgetNames": [
+          "prompt",
+          "max_length",
+          "sampling_mode",
+          "thinking",
+          "use_default_template",
+          "mtp"
+        ],
+        "e2goWidgetSchemaVersion": 1
+      }
+    },
+    {
+      "id": 31,
+      "type": "CLIPLoader",
+      "pos": [
+        1040,
+        2400
+      ],
+      "size": [
+        340,
+        140
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "showAdvanced": null,
+      "inputs": [
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "clip_name",
+          "locked": null,
+          "name": "clip_name",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "COMBO",
+          "widget": {
+            "name": "clip_name"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "type",
+          "locked": null,
+          "name": "type",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "COMBO",
+          "widget": {
+            "name": "type"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "device",
+          "locked": null,
+          "name": "device",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "COMBO",
+          "widget": {
+            "name": "device"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "CLIP",
+          "locked": null,
+          "name": "CLIP",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "CLIP",
+          "pos": null,
+          "slot_index": null,
+          "links": [
+            126
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPLoader"
+      },
+      "widgets_values": [
+        "qwen3.5_9b_flux3_prompt_upsampler_int8_convrot.safetensors",
+        "flux3",
+        "default"
+      ],
+      "widgets_values_named": {
+        "clip_name": "qwen3.5_9b_flux3_prompt_upsampler_int8_convrot.safetensors",
+        "type": "flux3",
+        "device": "default"
+      }
+    },
+    {
+      "id": 33,
+      "type": "PreviewAny",
+      "pos": [
+        30,
+        2420
+      ],
+      "size": [
+        380,
+        300
+      ],
+      "flags": {},
+      "order": 20,
+      "mode": 0,
+      "showAdvanced": null,
+      "inputs": [
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "source",
+          "locked": null,
+          "name": "source",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "*",
+          "pos": null,
+          "link": 135
+        }
+      ],
+      "outputs": [
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "STRING",
+          "locked": null,
+          "name": "STRING",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "STRING",
+          "pos": null,
+          "slot_index": null,
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewAny"
+      },
+      "widgets_values": [],
+      "widgets_values_named": {}
+    },
+    {
+      "id": 34,
+      "type": "EmptyFlux2LatentImage",
+      "pos": [
+        3460,
+        70
+      ],
+      "size": [
+        320,
+        120
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "showAdvanced": null,
+      "inputs": [
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "width",
+          "locked": null,
+          "name": "width",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "INT",
+          "widget": {
+            "name": "width"
+          },
+          "link": 60
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "height",
+          "locked": null,
+          "name": "height",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "INT",
+          "widget": {
+            "name": "height"
+          },
+          "link": 61
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "batch_size",
+          "locked": null,
+          "name": "batch_size",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "INT",
+          "widget": {
+            "name": "batch_size"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "LATENT",
+          "locked": null,
+          "name": "LATENT",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "LATENT",
+          "pos": null,
+          "slot_index": null,
+          "links": [
+            62
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "EmptyFlux2LatentImage"
+      },
+      "widgets_values": [
+        1024,
+        1024,
+        1
+      ],
+      "widgets_values_named": {
+        "width": 1024,
+        "height": 1024,
+        "batch_size": 1
+      }
+    },
+    {
+      "id": 20,
+      "type": "PowderPromptWildcard",
+      "pos": [
+        470,
+        740
+      ],
+      "size": [
+        460,
+        558
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "showAdvanced": null,
+      "inputs": [
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "positive_prompt_list",
+          "locked": null,
+          "name": "positive_prompt_list",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "STRING",
+          "widget": {
+            "name": "positive_prompt_list"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "negative_prompt_list",
+          "locked": null,
+          "name": "negative_prompt_list",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "STRING",
+          "widget": {
+            "name": "negative_prompt_list"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "wildcard_file",
+          "locked": null,
+          "name": "wildcard_file",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "COMBO",
+          "widget": {
+            "name": "wildcard_file"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "start_index",
+          "locked": null,
+          "name": "start_index",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "INT",
+          "widget": {
+            "name": "start_index"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "count",
+          "locked": null,
+          "name": "count",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "INT",
+          "widget": {
+            "name": "count"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "loop",
+          "locked": null,
+          "name": "loop",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "loop"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "prefix_text",
+          "locked": null,
+          "name": "prefix_text",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "prefix_text"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "suffix_text",
+          "locked": null,
+          "name": "suffix_text",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "suffix_text"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "cursor_scope",
+          "locked": null,
+          "name": "cursor_scope",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "cursor_scope"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "on_exhausted",
+          "locked": null,
+          "name": "on_exhausted",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "COMBO",
+          "widget": {
+            "name": "on_exhausted"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "repeat_last",
+          "locked": null,
+          "name": "repeat_last",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "repeat_last"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "positive_prompts",
+          "locked": null,
+          "name": "positive_prompts",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 6,
+          "type": "STRING",
+          "pos": null,
+          "slot_index": null,
+          "links": [
+            66
+          ]
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "negative_prompts",
+          "locked": null,
+          "name": "negative_prompts",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 6,
+          "type": "STRING",
+          "pos": null,
+          "slot_index": null,
+          "links": [
+            67
+          ]
+        }
+      ],
+      "title": "Prompt Wildcard (one line = one prompt)",
+      "properties": {
+        "Node name for S&R": "PowderPromptWildcard"
+      },
+      "widgets_values": [
+        "# One line = one prompt; blank lines and lines starting with # are skipped\na lighthouse on a basalt cliff at dawn, long exposure sea mist\na night market alley in the rain, paper lanterns, wet cobblestones\nan alpine meadow with a wooden cabin, late afternoon light\n",
+        "",
+        "(none)",
+        0,
+        1,
+        false,
+        "",
+        "",
+        "",
+        "stop",
+        false
+      ],
+      "widgets_values_named": {
+        "positive_prompt_list": "# One line = one prompt; blank lines and lines starting with # are skipped\na lighthouse on a basalt cliff at dawn, long exposure sea mist\na night market alley in the rain, paper lanterns, wet cobblestones\nan alpine meadow with a wooden cabin, late afternoon light\n",
+        "negative_prompt_list": "",
+        "wildcard_file": "(none)",
+        "start_index": 0,
+        "count": 1,
+        "loop": false,
+        "prefix_text": "",
+        "suffix_text": "",
+        "cursor_scope": "",
+        "on_exhausted": "stop",
+        "repeat_last": false
+      },
+      "color": "#305548",
+      "e2goInputs": {
+        "positive_prompt_list": "# One line = one prompt; blank lines and lines starting with # are skipped\na lighthouse on a basalt cliff at dawn, long exposure sea mist\na night market alley in the rain, paper lanterns, wet cobblestones\nan alpine meadow with a wooden cabin, late afternoon light\n",
+        "negative_prompt_list": "",
+        "wildcard_file": "(none)",
+        "start_index": 0,
+        "count": 1,
+        "loop": false,
+        "prefix_text": "",
+        "suffix_text": "",
+        "on_exhausted": "stop",
+        "repeat_last": false
+      },
+      "e2goWidgetNames": [
+        "positive_prompt_list",
+        "negative_prompt_list",
+        "wildcard_file",
+        "start_index",
+        "count",
+        "loop",
+        "prefix_text",
+        "suffix_text",
+        "cursor_scope",
+        "on_exhausted",
+        "repeat_last"
+      ],
+      "e2goWidgetSchemaVersion": 1,
+      "e2goTextHeights": {},
+      "extensions": {
+        "e2goInputs": {
+          "positive_prompt_list": "# One line = one prompt; blank lines and lines starting with # are skipped\na lighthouse on a basalt cliff at dawn, long exposure sea mist\na night market alley in the rain, paper lanterns, wet cobblestones\nan alpine meadow with a wooden cabin, late afternoon light\n",
+          "negative_prompt_list": "",
+          "wildcard_file": "(none)",
+          "start_index": 0,
+          "count": 1,
+          "loop": false,
+          "prefix_text": "",
+          "suffix_text": "",
+          "on_exhausted": "stop",
+          "repeat_last": false
+        },
+        "e2goWidgetNames": [
+          "positive_prompt_list",
+          "negative_prompt_list",
+          "wildcard_file",
+          "start_index",
+          "count",
+          "loop",
+          "prefix_text",
+          "suffix_text",
+          "cursor_scope",
+          "on_exhausted",
+          "repeat_last"
+        ],
+        "e2goWidgetSchemaVersion": 1,
+        "e2goTextHeights": {}
+      }
+    },
+    {
+      "id": 21,
+      "type": "PowderSwitcher",
+      "pos": [
+        470,
+        1440
+      ],
+      "size": [
+        310,
+        340
+      ],
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "showAdvanced": null,
+      "inputs": [
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": "G1 · +",
+          "localized_name": null,
+          "locked": null,
+          "name": "g0_add",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "*",
+          "widget": {
+            "name": "sw_row_g0_add"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": "G2 · +",
+          "localized_name": null,
+          "locked": null,
+          "name": "g1_add",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "*",
+          "widget": {
+            "name": "sw_row_g1_add"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": "#9aa0aa",
+          "dir": null,
+          "label": "G1 · positive",
+          "localized_name": null,
+          "locked": null,
+          "name": "g0_c0",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "STRING",
+          "widget": {
+            "name": "sw_row_g0_c0"
+          },
+          "link": 64
+        },
+        {
+          "color_off": null,
+          "color_on": "#9aa0aa",
+          "dir": null,
+          "label": "G1 · negative",
+          "localized_name": null,
+          "locked": null,
+          "name": "g0_c1",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "STRING",
+          "widget": {
+            "name": "sw_row_g0_c1"
+          },
+          "link": 65
+        },
+        {
+          "color_off": null,
+          "color_on": "#9aa0aa",
+          "dir": null,
+          "label": "G2 · positive",
+          "localized_name": null,
+          "locked": null,
+          "name": "g1_c0",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "STRING",
+          "widget": {
+            "name": "sw_row_g1_c0"
+          },
+          "link": 66
+        },
+        {
+          "color_off": null,
+          "color_on": "#9aa0aa",
+          "dir": null,
+          "label": "G2 · negative",
+          "localized_name": null,
+          "locked": null,
+          "name": "g1_c1",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "STRING",
+          "widget": {
+            "name": "sw_row_g1_c1"
+          },
+          "link": 67
+        }
+      ],
+      "outputs": [
+        {
+          "color_off": null,
+          "color_on": "#9aa0aa",
+          "dir": null,
+          "label": "positive",
+          "localized_name": null,
+          "locked": null,
+          "name": "out_0",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "STRING",
+          "pos": null,
+          "slot_index": null,
+          "links": [
+            130,
+            131
+          ]
+        },
+        {
+          "color_off": null,
+          "color_on": "#9aa0aa",
+          "dir": null,
+          "label": "negative",
+          "localized_name": null,
+          "locked": null,
+          "name": "out_1",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "STRING",
+          "pos": null,
+          "slot_index": null,
+          "links": [
+            69
+          ]
+        }
+      ],
+      "title": "Prompt source: Manual / Wildcard",
+      "properties": {
+        "Node name for S&R": "PowderSwitcher",
+        "e2goSwitcher": {
+          "groups": [
+            {
+              "name": "Manual",
+              "on": true,
+              "fills": [
+                0,
+                1
+              ]
+            },
+            {
+              "name": "Wildcard",
+              "on": false,
+              "fills": [
+                0,
+                1
+              ]
+            }
+          ],
+          "channels": [
+            {
+              "col": 0,
+              "type": "STRING",
+              "name": "positive"
+            },
+            {
+              "col": 1,
+              "type": "STRING",
+              "name": "negative"
+            }
+          ]
+        }
+      },
+      "widgets_values": [
+        1
+      ],
+      "widgets_values_named": {
+        "active_group": 1
+      },
+      "color": "#675032"
+    },
+    {
+      "id": 6,
+      "type": "PowderPromptList",
+      "pos": [
+        470,
+        370
+      ],
+      "size": [
+        460,
+        302
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "showAdvanced": null,
+      "inputs": [
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "prompt_config",
+          "locked": null,
+          "name": "prompt_config",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "STRING",
+          "widget": {
+            "name": "prompt_config"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "prompt_1_text",
+          "locked": null,
+          "name": "prompt_1_text",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "prompt_1_text"
+          },
+          "link": 63
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "prompt_2_text",
+          "locked": null,
+          "name": "prompt_2_text",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "prompt_2_text"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "prompt_3_text",
+          "locked": null,
+          "name": "prompt_3_text",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "prompt_3_text"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "prompt_4_text",
+          "locked": null,
+          "name": "prompt_4_text",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "prompt_4_text"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "prompt_5_text",
+          "locked": null,
+          "name": "prompt_5_text",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "prompt_5_text"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "prompt_6_text",
+          "locked": null,
+          "name": "prompt_6_text",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "prompt_6_text"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "prompt_7_text",
+          "locked": null,
+          "name": "prompt_7_text",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "prompt_7_text"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "prompt_8_text",
+          "locked": null,
+          "name": "prompt_8_text",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "prompt_8_text"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "prompt_9_text",
+          "locked": null,
+          "name": "prompt_9_text",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "prompt_9_text"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "prompt_10_text",
+          "locked": null,
+          "name": "prompt_10_text",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "prompt_10_text"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "prompt_11_text",
+          "locked": null,
+          "name": "prompt_11_text",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "prompt_11_text"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "prompt_12_text",
+          "locked": null,
+          "name": "prompt_12_text",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "prompt_12_text"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "prompt_13_text",
+          "locked": null,
+          "name": "prompt_13_text",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "prompt_13_text"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "prompt_14_text",
+          "locked": null,
+          "name": "prompt_14_text",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "prompt_14_text"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "prompt_15_text",
+          "locked": null,
+          "name": "prompt_15_text",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "prompt_15_text"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "prompt_16_text",
+          "locked": null,
+          "name": "prompt_16_text",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "prompt_16_text"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "prompt_17_text",
+          "locked": null,
+          "name": "prompt_17_text",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "prompt_17_text"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "prompt_18_text",
+          "locked": null,
+          "name": "prompt_18_text",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "prompt_18_text"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "prompt_19_text",
+          "locked": null,
+          "name": "prompt_19_text",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "prompt_19_text"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "prompt_20_text",
+          "locked": null,
+          "name": "prompt_20_text",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "prompt_20_text"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "negative_1_text",
+          "locked": null,
+          "name": "negative_1_text",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "negative_1_text"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "negative_2_text",
+          "locked": null,
+          "name": "negative_2_text",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "negative_2_text"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "negative_3_text",
+          "locked": null,
+          "name": "negative_3_text",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "negative_3_text"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "negative_4_text",
+          "locked": null,
+          "name": "negative_4_text",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "negative_4_text"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "negative_5_text",
+          "locked": null,
+          "name": "negative_5_text",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "negative_5_text"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "negative_6_text",
+          "locked": null,
+          "name": "negative_6_text",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "negative_6_text"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "negative_7_text",
+          "locked": null,
+          "name": "negative_7_text",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "negative_7_text"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "negative_8_text",
+          "locked": null,
+          "name": "negative_8_text",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "negative_8_text"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "negative_9_text",
+          "locked": null,
+          "name": "negative_9_text",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "negative_9_text"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "negative_10_text",
+          "locked": null,
+          "name": "negative_10_text",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "negative_10_text"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "negative_11_text",
+          "locked": null,
+          "name": "negative_11_text",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "negative_11_text"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "negative_12_text",
+          "locked": null,
+          "name": "negative_12_text",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "negative_12_text"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "negative_13_text",
+          "locked": null,
+          "name": "negative_13_text",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "negative_13_text"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "negative_14_text",
+          "locked": null,
+          "name": "negative_14_text",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "negative_14_text"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "negative_15_text",
+          "locked": null,
+          "name": "negative_15_text",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "negative_15_text"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "negative_16_text",
+          "locked": null,
+          "name": "negative_16_text",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "negative_16_text"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "negative_17_text",
+          "locked": null,
+          "name": "negative_17_text",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "negative_17_text"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "negative_18_text",
+          "locked": null,
+          "name": "negative_18_text",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "negative_18_text"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "negative_19_text",
+          "locked": null,
+          "name": "negative_19_text",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "negative_19_text"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "negative_20_text",
+          "locked": null,
+          "name": "negative_20_text",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "negative_20_text"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "positive_prompts",
+          "locked": null,
+          "name": "positive_prompts",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 6,
+          "type": "STRING",
+          "pos": null,
+          "slot_index": null,
+          "links": [
+            64
+          ]
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "negative_prompts",
+          "locked": null,
+          "name": "negative_prompts",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 6,
+          "type": "STRING",
+          "pos": null,
+          "slot_index": null,
+          "links": [
+            65
+          ]
+        }
+      ],
+      "title": "Prompt List",
+      "properties": {
+        "Node name for S&R": "PowderPromptList"
+      },
+      "widgets_values": [
+        "[{\"on\":true}]",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "widgets_values_named": {
+        "prompt_config": "[{\"on\":true}]",
+        "prompt_1_enabled": true,
+        "prompt_1_text": "",
+        "negative_1_text": "",
+        "prompt_2_text": "",
+        "prompt_3_text": "",
+        "prompt_4_text": "",
+        "prompt_5_text": "",
+        "prompt_6_text": "",
+        "prompt_7_text": "",
+        "prompt_8_text": "",
+        "prompt_9_text": "",
+        "prompt_10_text": "",
+        "prompt_11_text": "",
+        "prompt_12_text": "",
+        "prompt_13_text": "",
+        "prompt_14_text": "",
+        "prompt_15_text": "",
+        "prompt_16_text": "",
+        "prompt_17_text": "",
+        "prompt_18_text": "",
+        "prompt_19_text": "",
+        "prompt_20_text": "",
+        "negative_2_text": "",
+        "negative_3_text": "",
+        "negative_4_text": "",
+        "negative_5_text": "",
+        "negative_6_text": "",
+        "negative_7_text": "",
+        "negative_8_text": "",
+        "negative_9_text": "",
+        "negative_10_text": "",
+        "negative_11_text": "",
+        "negative_12_text": "",
+        "negative_13_text": "",
+        "negative_14_text": "",
+        "negative_15_text": "",
+        "negative_16_text": "",
+        "negative_17_text": "",
+        "negative_18_text": "",
+        "negative_19_text": "",
+        "negative_20_text": ""
+      },
+      "color": "#305548",
+      "promptSlotCount": 1,
+      "promptSlotsData": [
+        {
+          "enabled": true
+        }
+      ],
+      "promptTexts": {},
+      "negativeTexts": {},
+      "e2goTextHeights": {},
+      "extensions": {
+        "promptSlotCount": 1,
+        "promptSlotsData": [
+          {
+            "enabled": true
+          }
+        ],
+        "promptTexts": {},
+        "negativeTexts": {},
+        "e2goTextHeights": {}
+      }
+    },
+    {
+      "id": 7,
+      "type": "PowderStyler",
+      "pos": [
+        1050,
+        560
+      ],
+      "size": [
+        280,
+        322
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "showAdvanced": null,
+      "inputs": [
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "style_position",
+          "locked": null,
+          "name": "style_position",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "COMBO",
+          "widget": {
+            "name": "style_position"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "use_positive",
+          "locked": null,
+          "name": "use_positive",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "use_positive"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "use_negative",
+          "locked": null,
+          "name": "use_negative",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "use_negative"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "style_config",
+          "locked": null,
+          "name": "style_config",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "STRING",
+          "widget": {
+            "name": "style_config"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "strength_mode",
+          "locked": null,
+          "name": "strength_mode",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "COMBO",
+          "widget": {
+            "name": "strength_mode"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "style_mix",
+          "locked": null,
+          "name": "style_mix",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "FLOAT",
+          "widget": {
+            "name": "style_mix"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "style_sweep",
+          "locked": null,
+          "name": "style_sweep",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "style_sweep"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "sweep_from",
+          "locked": null,
+          "name": "sweep_from",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "COMBO",
+          "widget": {
+            "name": "sweep_from"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "sweep_to",
+          "locked": null,
+          "name": "sweep_to",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "COMBO",
+          "widget": {
+            "name": "sweep_to"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "cursor_scope",
+          "locked": null,
+          "name": "cursor_scope",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "cursor_scope"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "on_exhausted",
+          "locked": null,
+          "name": "on_exhausted",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "COMBO",
+          "widget": {
+            "name": "on_exhausted"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "style_category",
+          "locked": null,
+          "name": "style_category",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "COMBO",
+          "widget": {
+            "name": "style_category"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "repeat_last",
+          "locked": null,
+          "name": "repeat_last",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "repeat_last"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "style",
+          "locked": null,
+          "name": "style",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "STRING",
+          "pos": null,
+          "slot_index": null,
+          "links": [
+            81,
+            85
+          ]
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "style_text",
+          "locked": null,
+          "name": "style_text",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "STRING",
+          "pos": null,
+          "slot_index": null,
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PowderStyler"
+      },
+      "widgets_values": [
+        "Wrap prompt",
+        true,
+        true,
+        "[]",
+        "cond mix — node",
+        1,
+        false,
+        "16-bit Fantasy RPG",
+        "16-bit Fantasy RPG",
+        "",
+        "stop",
+        "All styles",
+        false
+      ],
+      "widgets_values_named": {
+        "style_position": "Wrap prompt",
+        "use_positive": true,
+        "use_negative": true,
+        "style_config": "[]",
+        "style_category": "All styles",
+        "strength_mode": "cond mix — node",
+        "style_mix": 1,
+        "style_sweep": false,
+        "sweep_from": "16-bit Fantasy RPG",
+        "sweep_to": "16-bit Fantasy RPG",
+        "cursor_scope": "",
+        "on_exhausted": "stop",
+        "repeat_last": false
+      },
+      "color": "#51436B",
+      "e2goSelection": [],
+      "e2goInputs": {
+        "style_position": "Wrap prompt",
+        "use_positive": true,
+        "use_negative": true,
+        "style_config": "[]",
+        "strength_mode": "cond mix — node",
+        "style_mix": 1,
+        "style_sweep": false,
+        "sweep_from": "16-bit Fantasy RPG",
+        "sweep_to": "16-bit Fantasy RPG",
+        "cursor_scope": "",
+        "on_exhausted": "stop",
+        "style_category": "All styles",
+        "repeat_last": false
+      },
+      "extensions": {
+        "e2goSelection": [],
+        "e2goInputs": {
+          "style_position": "Wrap prompt",
+          "use_positive": true,
+          "use_negative": true,
+          "style_config": "[]",
+          "strength_mode": "cond mix — node",
+          "style_mix": 1,
+          "style_sweep": false,
+          "sweep_from": "16-bit Fantasy RPG",
+          "sweep_to": "16-bit Fantasy RPG",
+          "cursor_scope": "",
+          "on_exhausted": "stop",
+          "style_category": "All styles",
+          "repeat_last": false
+        }
+      }
+    },
+    {
+      "id": 8,
+      "type": "PowderLoraLoader",
+      "pos": [
+        1050,
+        70
+      ],
+      "size": [
+        460,
+        210
+      ],
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "showAdvanced": null,
+      "inputs": [
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "model",
+          "locked": null,
+          "name": "model",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "MODEL",
+          "pos": null,
+          "link": 72
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "clip",
+          "locked": null,
+          "name": "clip",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "CLIP",
+          "pos": null,
+          "link": 73
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "prompt",
+          "locked": null,
+          "name": "prompt",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "pos": null,
+          "link": 133
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "negative_prompt",
+          "locked": null,
+          "name": "negative_prompt",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "pos": null,
+          "link": 69
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "mode",
+          "locked": null,
+          "name": "mode",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "COMBO",
+          "widget": {
+            "name": "mode"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "combination_order",
+          "locked": null,
+          "name": "combination_order",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "COMBO",
+          "widget": {
+            "name": "combination_order"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "lora_config",
+          "locked": null,
+          "name": "lora_config",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "STRING",
+          "widget": {
+            "name": "lora_config"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "disable_clip",
+          "locked": null,
+          "name": "disable_clip",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "disable_clip"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "trigger_position",
+          "locked": null,
+          "name": "trigger_position",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "COMBO",
+          "widget": {
+            "name": "trigger_position"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "MODEL",
+          "locked": null,
+          "name": "MODEL",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 6,
+          "type": "MODEL",
+          "pos": null,
+          "slot_index": null,
+          "links": [
+            74
+          ]
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "CLIP",
+          "locked": null,
+          "name": "CLIP",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 6,
+          "type": "CLIP",
+          "pos": null,
+          "slot_index": null,
+          "links": [
+            75
+          ]
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "prompt",
+          "locked": null,
+          "name": "prompt",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 6,
+          "type": "STRING",
+          "pos": null,
+          "slot_index": null,
+          "links": [
+            125
+          ]
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "negative_prompt",
+          "locked": null,
+          "name": "negative_prompt",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 6,
+          "type": "STRING",
+          "pos": null,
+          "slot_index": null,
+          "links": [
+            76
+          ]
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "lora_info",
+          "locked": null,
+          "name": "lora_info",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "STRING",
+          "pos": null,
+          "slot_index": null,
+          "links": [
+            77,
+            80
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PowderLoraLoader"
+      },
+      "widgets_values": [
+        "Stack (all enabled)",
+        "Loras first",
+        "[]",
+        true,
+        "After prompt"
+      ],
+      "widgets_values_named": {
+        "mode": "Stack (all enabled)",
+        "combination_order": "Loras first",
+        "lora_config": "[]",
+        "disable_clip": true,
+        "trigger_position": "After prompt"
+      },
+      "color": "#51436B",
+      "e2goLoraSelection": [],
+      "extensions": {
+        "e2goLoraSelection": []
+      }
+    },
+    {
+      "id": 24,
+      "type": "PowderGridSaver",
+      "pos": [
+        4630,
+        70
+      ],
+      "size": [
+        400,
+        620
+      ],
+      "flags": {},
+      "order": 27,
+      "mode": 4,
+      "showAdvanced": null,
+      "inputs": [
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "images",
+          "locked": null,
+          "name": "images",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "IMAGE",
+          "pos": null,
+          "link": 121
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "lora_info",
+          "locked": null,
+          "name": "lora_info",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "pos": null,
+          "link": 77
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "prompts",
+          "locked": null,
+          "name": "prompts",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "pos": null,
+          "link": 83
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "negative_prompts",
+          "locked": null,
+          "name": "negative_prompts",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "pos": null,
+          "link": 84
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "seed",
+          "locked": null,
+          "name": "seed",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "INT",
+          "pos": null,
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "style_metadata",
+          "locked": null,
+          "name": "style_metadata",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "pos": null,
+          "link": 85
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "layout",
+          "locked": null,
+          "name": "layout",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "COMBO",
+          "widget": {
+            "name": "layout"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "background",
+          "locked": null,
+          "name": "background",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "COMBO",
+          "widget": {
+            "name": "background"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "gap",
+          "locked": null,
+          "name": "gap",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "INT",
+          "widget": {
+            "name": "gap"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "font_size",
+          "locked": null,
+          "name": "font_size",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "INT",
+          "widget": {
+            "name": "font_size"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "show_model_name",
+          "locked": null,
+          "name": "show_model_name",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "show_model_name"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "show_lora_names",
+          "locked": null,
+          "name": "show_lora_names",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "show_lora_names"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "show_prompts",
+          "locked": null,
+          "name": "show_prompts",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "show_prompts"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "prompt_max_chars",
+          "locked": null,
+          "name": "prompt_max_chars",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "INT",
+          "widget": {
+            "name": "prompt_max_chars"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "show_seed",
+          "locked": null,
+          "name": "show_seed",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "show_seed"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "show_style_prompt",
+          "locked": null,
+          "name": "show_style_prompt",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "show_style_prompt"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "filename_prefix",
+          "locked": null,
+          "name": "filename_prefix",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "STRING",
+          "widget": {
+            "name": "filename_prefix"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "subfolder",
+          "locked": null,
+          "name": "subfolder",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "STRING",
+          "widget": {
+            "name": "subfolder"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "add_model_to_filename",
+          "locked": null,
+          "name": "add_model_to_filename",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "add_model_to_filename"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "save_json",
+          "locked": null,
+          "name": "save_json",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "save_json"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "grid_image",
+          "locked": null,
+          "name": "grid_image",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "IMAGE",
+          "pos": null,
+          "slot_index": null,
+          "links": []
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "saved_paths",
+          "locked": null,
+          "name": "saved_paths",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "STRING",
+          "pos": null,
+          "slot_index": null,
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PowderGridSaver"
+      },
+      "widgets_values": [
+        "Horizontal (Loras as columns)",
+        "Dark",
+        10,
+        36,
+        true,
+        true,
+        true,
+        100,
+        false,
+        false,
+        "E2GO_Flux3_Klein_Base_Generate_full",
+        "grids",
+        true,
+        true
+      ],
+      "widgets_values_named": {
+        "layout": "Horizontal (Loras as columns)",
+        "background": "Dark",
+        "gap": 10,
+        "font_size": 36,
+        "show_model_name": true,
+        "show_lora_names": true,
+        "show_prompts": true,
+        "prompt_max_chars": 100,
+        "show_seed": false,
+        "show_style_prompt": false,
+        "filename_prefix": "E2GO_Flux3_Klein_Base_Generate_full",
+        "subfolder": "grids",
+        "add_model_to_filename": true,
+        "save_json": true
+      },
+      "color": "#634553"
+    },
+    {
+      "id": 10,
+      "type": "PreviewAny",
+      "pos": [
+        2640,
+        350
+      ],
+      "size": [
+        340,
+        200
+      ],
+      "flags": {},
+      "order": 23,
+      "mode": 0,
+      "showAdvanced": null,
+      "inputs": [
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "source",
+          "locked": null,
+          "name": "source",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "*",
+          "pos": null,
+          "link": 82
+        }
+      ],
+      "outputs": [
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "STRING",
+          "locked": null,
+          "name": "STRING",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "STRING",
+          "pos": null,
+          "slot_index": null,
+          "links": null
+        }
+      ],
+      "title": "Final Prompt Preview",
+      "properties": {
+        "Node name for S&R": "PreviewAny"
+      },
+      "widgets_values": [],
+      "widgets_values_named": {}
+    },
+    {
+      "id": 13,
+      "type": "PowderCanvas",
+      "pos": [
+        1620,
+        70
+      ],
+      "size": [
+        900,
+        800
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "showAdvanced": null,
+      "inputs": [
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "image",
+          "locked": null,
+          "name": "image",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "IMAGE",
+          "pos": null,
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "canvas_config",
+          "locked": null,
+          "name": "canvas_config",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "STRING",
+          "widget": {
+            "name": "canvas_config"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "batch_size",
+          "locked": null,
+          "name": "batch_size",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "INT",
+          "widget": {
+            "name": "batch_size"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "layout_config",
+          "locked": null,
+          "name": "layout_config",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "layout_config"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "image",
+          "locked": null,
+          "name": "image",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "IMAGE",
+          "pos": null,
+          "slot_index": null,
+          "links": []
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "mask",
+          "locked": null,
+          "name": "mask",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "MASK",
+          "pos": null,
+          "slot_index": null,
+          "links": []
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "batch_size",
+          "locked": null,
+          "name": "batch_size",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "INT",
+          "pos": null,
+          "slot_index": null,
+          "links": []
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "layout",
+          "locked": null,
+          "name": "layout",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "STRING",
+          "pos": null,
+          "slot_index": null,
+          "links": [
+            136
+          ]
+        }
+      ],
+      "title": "Canvas · Layout / Results",
+      "properties": {
+        "Node name for S&R": "PowderCanvas"
+      },
+      "widgets_values": [
+        "{}",
+        1,
+        "{\"version\": 1, \"enabled\": false, \"target\": \"flux3\"}",
+        ""
+      ],
+      "widgets_values_named": {
+        "canvas_config": "{}",
+        "batch_size": 1,
+        "layout_config": "{\"version\": 1, \"enabled\": false, \"target\": \"flux3\"}",
+        "e2go_canvas_ui": ""
+      },
+      "color": "#28565C",
+      "e2goWidgetNames": [
+        "canvas_config",
+        "batch_size",
+        "layout_config"
+      ],
+      "e2goWidgetSchemaVersion": 1,
+      "e2goInputs": {
+        "canvas_config": "{}",
+        "batch_size": 1,
+        "layout_config": "{}"
+      },
+      "e2goCanvasEditor": null,
+      "extensions": {
+        "e2goWidgetNames": [
+          "canvas_config",
+          "batch_size",
+          "layout_config"
+        ],
+        "e2goWidgetSchemaVersion": 1,
+        "e2goInputs": {
+          "canvas_config": "{}",
+          "batch_size": 1,
+          "layout_config": "{}"
+        },
+        "e2goCanvasEditor": null
+      }
+    },
+    {
+      "id": 17,
+      "type": "PowderCanvasReview",
+      "pos": [
+        3890,
+        210
+      ],
+      "size": [
+        300,
+        180
+      ],
+      "flags": {},
+      "order": 25,
+      "mode": 0,
+      "showAdvanced": null,
+      "inputs": [
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "images",
+          "locked": null,
+          "name": "images",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "IMAGE",
+          "pos": null,
+          "link": 119
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "stitch",
+          "locked": null,
+          "name": "stitch",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "POWDER_STITCH",
+          "pos": null,
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "images",
+          "locked": null,
+          "name": "images",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "IMAGE",
+          "pos": null,
+          "slot_index": null,
+          "links": [
+            120,
+            121
+          ]
+        }
+      ],
+      "title": "Review results in Canvas",
+      "properties": {
+        "Node name for S&R": "PowderCanvasReview"
+      },
+      "color": "#634553",
+      "e2goWidgetNames": [],
+      "e2goWidgetSchemaVersion": 1,
+      "e2goInputs": {},
+      "extensions": {
+        "e2goWidgetNames": [],
+        "e2goWidgetSchemaVersion": 1,
+        "e2goInputs": {}
+      }
+    },
+    {
+      "id": 102,
+      "type": "PrimitiveStringMultiline",
+      "pos": [
+        30,
+        1870
+      ],
+      "size": [
+        460,
+        480
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "showAdvanced": null,
+      "inputs": [
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "value",
+          "locked": null,
+          "name": "value",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "STRING",
+          "widget": {
+            "name": "value"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "STRING",
+          "locked": null,
+          "name": "STRING",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "STRING",
+          "pos": null,
+          "slot_index": null,
+          "links": [
+            127
+          ]
+        }
+      ],
+      "title": "Enhancer instructions · Balanced",
+      "properties": {
+        "Node name for S&R": "PrimitiveStringMultiline"
+      },
+      "widgets_values": [
+        "You are a faithful visual prompt editor. Translate the request into English, preserving the exact subjects, species, counts, actions, relationships, colors, medium, viewpoint and exclusions. Translate nouns by meaning, never by sound. Preserve proper names and reference identifiers. Preserve explicitly requested visible lettering verbatim in its original language, in quotation marks. A subject name is not a request to print that name in the image.\nDo not add unrequested people, animals, props, buildings, narrative events or text. Enrich the appearance of existing subjects, not the number of subjects. Style describes rendering, not new scene content. Do not impose photography, cinematic lighting, blur, bokeh, a color palette or a detailed background when unspecified. A plain background remains plain. Respect minimalist and simple styles. No empty quality boosters or prompt weighting syntax.\nDescribe visible facts only, never sounds, smells or imagined history. Do not add mist, fog or atmospheric haze unless requested. Do not introduce new exclusions such as \"no sky visible\". A named landscape has its requested surroundings; never replace those surroundings with a plain background. Plain backgrounds apply only when requested.\nFor an edit, preserve the exact requested change and invariants. Do not invent the contents of an unseen reference. Reference identifiers must remain unchanged. Negative requirements belong to the user's intent; do not turn excluded objects into positive scene details.\nReturn only the image prompt, without explanations, reasoning, Markdown or chat markers.\n\nBALANCED: clarify ambiguous phrasing conservatively and add only useful visual detail. Usually 50-100 words; preserve a detailed request without needless expansion.\n\nTarget image model: Flux 3 Klein Base. Use one coherent final-image caption with explicit spatial layout. If a reference is supplied, incorporate the requested change and preserve its other visible attributes.\n\nDescribe the intended finished image."
+      ],
+      "widgets_values_named": {
+        "value": "You are a faithful visual prompt editor. Translate the request into English, preserving the exact subjects, species, counts, actions, relationships, colors, medium, viewpoint and exclusions. Translate nouns by meaning, never by sound. Preserve proper names and reference identifiers. Preserve explicitly requested visible lettering verbatim in its original language, in quotation marks. A subject name is not a request to print that name in the image.\nDo not add unrequested people, animals, props, buildings, narrative events or text. Enrich the appearance of existing subjects, not the number of subjects. Style describes rendering, not new scene content. Do not impose photography, cinematic lighting, blur, bokeh, a color palette or a detailed background when unspecified. A plain background remains plain. Respect minimalist and simple styles. No empty quality boosters or prompt weighting syntax.\nDescribe visible facts only, never sounds, smells or imagined history. Do not add mist, fog or atmospheric haze unless requested. Do not introduce new exclusions such as \"no sky visible\". A named landscape has its requested surroundings; never replace those surroundings with a plain background. Plain backgrounds apply only when requested.\nFor an edit, preserve the exact requested change and invariants. Do not invent the contents of an unseen reference. Reference identifiers must remain unchanged. Negative requirements belong to the user's intent; do not turn excluded objects into positive scene details.\nReturn only the image prompt, without explanations, reasoning, Markdown or chat markers.\n\nBALANCED: clarify ambiguous phrasing conservatively and add only useful visual detail. Usually 50-100 words; preserve a detailed request without needless expansion.\n\nTarget image model: Flux 3 Klein Base. Use one coherent final-image caption with explicit spatial layout. If a reference is supplied, incorporate the requested change and preserve its other visible attributes.\n\nDescribe the intended finished image."
+      },
+      "e2goWidgetNames": [
+        "value"
+      ],
+      "e2goWidgetSchemaVersion": 1,
+      "extensions": {
+        "e2goWidgetNames": [
+          "value"
+        ],
+        "e2goWidgetSchemaVersion": 1
+      }
+    },
+    {
+      "id": 103,
+      "type": "PrimitiveStringMultiline",
+      "pos": [
+        530,
+        1870
+      ],
+      "size": [
+        460,
+        480
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "showAdvanced": null,
+      "inputs": [
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "value",
+          "locked": null,
+          "name": "value",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "STRING",
+          "widget": {
+            "name": "value"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "STRING",
+          "locked": null,
+          "name": "STRING",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "STRING",
+          "pos": null,
+          "slot_index": null,
+          "links": [
+            128
+          ]
+        }
+      ],
+      "title": "Enhancer instructions · High detail",
+      "properties": {
+        "Node name for S&R": "PrimitiveStringMultiline"
+      },
+      "widgets_values": [
+        "You are a faithful visual prompt editor. Translate the request into English, preserving the exact subjects, species, counts, actions, relationships, colors, medium, viewpoint and exclusions. Translate nouns by meaning, never by sound. Preserve proper names and reference identifiers. Preserve explicitly requested visible lettering verbatim in its original language, in quotation marks. A subject name is not a request to print that name in the image.\nDo not add unrequested people, animals, props, buildings, narrative events or text. Enrich the appearance of existing subjects, not the number of subjects. Style describes rendering, not new scene content. Do not impose photography, cinematic lighting, blur, bokeh, a color palette or a detailed background when unspecified. A plain background remains plain. Respect minimalist and simple styles. No empty quality boosters or prompt weighting syntax.\nDescribe visible facts only, never sounds, smells or imagined history. Do not add mist, fog or atmospheric haze unless requested. Do not introduce new exclusions such as \"no sky visible\". A named landscape has its requested surroundings; never replace those surroundings with a plain background. Plain backgrounds apply only when requested.\nFor an edit, preserve the exact requested change and invariants. Do not invent the contents of an unseen reference. Reference identifiers must remain unchanged. Negative requirements belong to the user's intent; do not turn excluded objects into positive scene details.\nReturn only the image prompt, without explanations, reasoning, Markdown or chat markers.\n\nHIGH DETAIL: develop shape, materials, texture and spatial relationships of the requested subjects. Usually 100-180 words, up to 260 for complex scenes; do not pad or invent subjects to reach a count.\n\nTarget image model: Flux 3 Klein Base. Use one coherent final-image caption with explicit spatial layout. If a reference is supplied, incorporate the requested change and preserve its other visible attributes.\n\nDescribe the intended finished image."
+      ],
+      "widgets_values_named": {
+        "value": "You are a faithful visual prompt editor. Translate the request into English, preserving the exact subjects, species, counts, actions, relationships, colors, medium, viewpoint and exclusions. Translate nouns by meaning, never by sound. Preserve proper names and reference identifiers. Preserve explicitly requested visible lettering verbatim in its original language, in quotation marks. A subject name is not a request to print that name in the image.\nDo not add unrequested people, animals, props, buildings, narrative events or text. Enrich the appearance of existing subjects, not the number of subjects. Style describes rendering, not new scene content. Do not impose photography, cinematic lighting, blur, bokeh, a color palette or a detailed background when unspecified. A plain background remains plain. Respect minimalist and simple styles. No empty quality boosters or prompt weighting syntax.\nDescribe visible facts only, never sounds, smells or imagined history. Do not add mist, fog or atmospheric haze unless requested. Do not introduce new exclusions such as \"no sky visible\". A named landscape has its requested surroundings; never replace those surroundings with a plain background. Plain backgrounds apply only when requested.\nFor an edit, preserve the exact requested change and invariants. Do not invent the contents of an unseen reference. Reference identifiers must remain unchanged. Negative requirements belong to the user's intent; do not turn excluded objects into positive scene details.\nReturn only the image prompt, without explanations, reasoning, Markdown or chat markers.\n\nHIGH DETAIL: develop shape, materials, texture and spatial relationships of the requested subjects. Usually 100-180 words, up to 260 for complex scenes; do not pad or invent subjects to reach a count.\n\nTarget image model: Flux 3 Klein Base. Use one coherent final-image caption with explicit spatial layout. If a reference is supplied, incorporate the requested change and preserve its other visible attributes.\n\nDescribe the intended finished image."
+      },
+      "e2goWidgetNames": [
+        "value"
+      ],
+      "e2goWidgetSchemaVersion": 1,
+      "extensions": {
+        "e2goWidgetNames": [
+          "value"
+        ],
+        "e2goWidgetSchemaVersion": 1
+      }
+    },
+    {
+      "id": 104,
+      "type": "PowderSwitcher",
+      "pos": [
+        1040,
+        2620
+      ],
+      "size": [
+        460,
+        260
+      ],
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "showAdvanced": null,
+      "inputs": [
+        {
+          "color_off": "#3a3f4a",
+          "color_on": "#5a7a9a",
+          "dir": null,
+          "label": "G1 · +",
+          "localized_name": null,
+          "locked": null,
+          "name": "g0_add",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "*",
+          "widget": {
+            "name": "sw_row_g0_add"
+          },
+          "link": null
+        },
+        {
+          "color_off": "#3a3f4a",
+          "color_on": "#5a7a9a",
+          "dir": null,
+          "label": "G2 · +",
+          "localized_name": null,
+          "locked": null,
+          "name": "g1_add",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "*",
+          "widget": {
+            "name": "sw_row_g1_add"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": "#9aa0aa",
+          "dir": null,
+          "label": "G1 · prompt",
+          "localized_name": null,
+          "locked": null,
+          "name": "g0_c0",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "STRING",
+          "widget": {
+            "name": "sw_row_g0_c0"
+          },
+          "link": 127
+        },
+        {
+          "color_off": null,
+          "color_on": "#9aa0aa",
+          "dir": null,
+          "label": "G2 · prompt",
+          "localized_name": null,
+          "locked": null,
+          "name": "g1_c0",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "STRING",
+          "widget": {
+            "name": "sw_row_g1_c0"
+          },
+          "link": 128
+        }
+      ],
+      "outputs": [
+        {
+          "color_off": null,
+          "color_on": "#9aa0aa",
+          "dir": null,
+          "label": "prompt",
+          "localized_name": null,
+          "locked": null,
+          "name": "out_0",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "STRING",
+          "pos": null,
+          "slot_index": null,
+          "links": [
+            129
+          ]
+        }
+      ],
+      "title": "Enhancer detail: Balanced / High detail",
+      "properties": {
+        "Node name for S&R": "PowderSwitcher",
+        "e2goSwitcher": {
+          "groups": [
+            {
+              "name": "Balanced",
+              "on": true,
+              "fills": [
+                0
+              ]
+            },
+            {
+              "name": "High detail",
+              "on": false,
+              "fills": [
+                0
+              ]
+            }
+          ],
+          "channels": [
+            {
+              "col": 0,
+              "type": "STRING",
+              "name": "prompt"
+            }
+          ]
+        }
+      },
+      "widgets_values": [
+        1
+      ],
+      "widgets_values_named": {
+        "active_group": 1
+      },
+      "color": "#675032"
+    },
+    {
+      "id": 105,
+      "type": "PowderSwitcher",
+      "pos": [
+        30,
+        2800
+      ],
+      "size": [
+        460,
+        260
+      ],
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "showAdvanced": null,
+      "inputs": [
+        {
+          "color_off": "#3a3f4a",
+          "color_on": "#5a7a9a",
+          "dir": null,
+          "label": "G1 · +",
+          "localized_name": null,
+          "locked": null,
+          "name": "g0_add",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "*",
+          "widget": {
+            "name": "sw_row_g0_add"
+          },
+          "link": null
+        },
+        {
+          "color_off": "#3a3f4a",
+          "color_on": "#5a7a9a",
+          "dir": null,
+          "label": "G2 · +",
+          "localized_name": null,
+          "locked": null,
+          "name": "g1_add",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "*",
+          "widget": {
+            "name": "sw_row_g1_add"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": "#9aa0aa",
+          "dir": null,
+          "label": "G1 · prompt",
+          "localized_name": null,
+          "locked": null,
+          "name": "g0_c0",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "STRING",
+          "widget": {
+            "name": "sw_row_g0_c0"
+          },
+          "link": 131
+        },
+        {
+          "color_off": null,
+          "color_on": "#9aa0aa",
+          "dir": null,
+          "label": "G2 · prompt",
+          "localized_name": null,
+          "locked": null,
+          "name": "g1_c0",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "STRING",
+          "widget": {
+            "name": "sw_row_g1_c0"
+          },
+          "link": 132
+        }
+      ],
+      "outputs": [
+        {
+          "color_off": null,
+          "color_on": "#9aa0aa",
+          "dir": null,
+          "label": "prompt",
+          "localized_name": null,
+          "locked": null,
+          "name": "out_0",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "STRING",
+          "pos": null,
+          "slot_index": null,
+          "links": [
+            133,
+            134,
+            135
+          ]
+        }
+      ],
+      "title": "Prompt enhancer: Original / Enhanced",
+      "properties": {
+        "Node name for S&R": "PowderSwitcher",
+        "e2goSwitcher": {
+          "groups": [
+            {
+              "name": "Original",
+              "on": false,
+              "fills": [
+                0
+              ]
+            },
+            {
+              "name": "Enhanced",
+              "on": true,
+              "fills": [
+                0
+              ]
+            }
+          ],
+          "channels": [
+            {
+              "col": 0,
+              "type": "STRING",
+              "name": "prompt"
+            }
+          ]
+        }
+      },
+      "widgets_values": [
+        2
+      ],
+      "widgets_values_named": {
+        "active_group": 2
+      },
+      "color": "#675032"
+    },
+    {
+      "id": 106,
+      "type": "PreviewAny",
+      "pos": [
+        530,
+        2420
+      ],
+      "size": [
+        460,
+        330
+      ],
+      "flags": {},
+      "order": 19,
+      "mode": 0,
+      "showAdvanced": null,
+      "inputs": [
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "source",
+          "locked": null,
+          "name": "source",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "*",
+          "pos": null,
+          "link": 134
+        }
+      ],
+      "outputs": [
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "STRING",
+          "locked": null,
+          "name": "STRING",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "STRING",
+          "pos": null,
+          "slot_index": null,
+          "links": []
+        }
+      ],
+      "title": "Selected prompt · before Style / LoRA",
+      "properties": {
+        "Node name for S&R": "PreviewAny"
+      },
+      "widgets_values": [],
+      "widgets_values_named": {},
+      "e2goWidgetNames": [],
+      "e2goWidgetSchemaVersion": 1,
+      "extensions": {
+        "e2goWidgetNames": [],
+        "e2goWidgetSchemaVersion": 1
+      }
+    }
+  ],
+  "links": [
+    [
+      23,
+      4,
+      0,
+      16,
+      1,
+      "VAE"
+    ],
+    [
+      31,
+      15,
+      0,
+      16,
+      0,
+      "LATENT"
+    ],
+    [
+      52,
+      9,
+      0,
+      15,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      53,
+      9,
+      1,
+      15,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      60,
+      11,
+      1,
+      34,
+      0,
+      "INT"
+    ],
+    [
+      61,
+      11,
+      2,
+      34,
+      1,
+      "INT"
+    ],
+    [
+      62,
+      34,
+      0,
+      15,
+      3,
+      "LATENT"
+    ],
+    [
+      63,
+      5,
+      0,
+      6,
+      1,
+      "STRING"
+    ],
+    [
+      72,
+      1,
+      0,
+      8,
+      0,
+      "MODEL"
+    ],
+    [
+      73,
+      3,
+      0,
+      8,
+      1,
+      "CLIP"
+    ],
+    [
+      74,
+      8,
+      0,
+      15,
+      0,
+      "MODEL"
+    ],
+    [
+      75,
+      8,
+      1,
+      9,
+      0,
+      "CLIP"
+    ],
+    [
+      76,
+      8,
+      3,
+      9,
+      2,
+      "STRING"
+    ],
+    [
+      80,
+      8,
+      4,
+      9,
+      3,
+      "STRING"
+    ],
+    [
+      81,
+      7,
+      0,
+      9,
+      4,
+      "STRING"
+    ],
+    [
+      82,
+      9,
+      2,
+      10,
+      0,
+      "STRING"
+    ],
+    [
+      119,
+      16,
+      0,
+      17,
+      0,
+      "IMAGE"
+    ],
+    [
+      120,
+      17,
+      0,
+      18,
+      0,
+      "IMAGE"
+    ],
+    [
+      121,
+      17,
+      0,
+      24,
+      0,
+      "IMAGE"
+    ],
+    [
+      125,
+      8,
+      2,
+      9,
+      1,
+      "STRING"
+    ],
+    [
+      134,
+      105,
+      0,
+      106,
+      0,
+      "STRING"
+    ],
+    [
+      135,
+      105,
+      0,
+      33,
+      0,
+      "STRING"
+    ],
+    [
+      126,
+      31,
+      0,
+      30,
+      0,
+      "CLIP"
+    ],
+    [
+      129,
+      104,
+      0,
+      30,
+      4,
+      "STRING"
+    ],
+    [
+      130,
+      21,
+      0,
+      30,
+      5,
+      "STRING"
+    ],
+    [
+      136,
+      13,
+      3,
+      9,
+      6,
+      "STRING"
+    ],
+    [
+      137,
+      11,
+      1,
+      9,
+      7,
+      "INT"
+    ],
+    [
+      138,
+      11,
+      2,
+      9,
+      8,
+      "INT"
+    ],
+    [
+      64,
+      6,
+      0,
+      21,
+      2,
+      "STRING"
+    ],
+    [
+      65,
+      6,
+      1,
+      21,
+      3,
+      "STRING"
+    ],
+    [
+      66,
+      20,
+      0,
+      21,
+      4,
+      "STRING"
+    ],
+    [
+      67,
+      20,
+      1,
+      21,
+      5,
+      "STRING"
+    ],
+    [
+      133,
+      105,
+      0,
+      8,
+      2,
+      "STRING"
+    ],
+    [
+      69,
+      21,
+      1,
+      8,
+      3,
+      "STRING"
+    ],
+    [
+      77,
+      8,
+      4,
+      24,
+      1,
+      "STRING"
+    ],
+    [
+      83,
+      9,
+      2,
+      24,
+      2,
+      "STRING"
+    ],
+    [
+      84,
+      9,
+      3,
+      24,
+      3,
+      "STRING"
+    ],
+    [
+      85,
+      7,
+      0,
+      24,
+      5,
+      "STRING"
+    ],
+    [
+      127,
+      102,
+      0,
+      104,
+      2,
+      "STRING"
+    ],
+    [
+      128,
+      103,
+      0,
+      104,
+      3,
+      "STRING"
+    ],
+    [
+      131,
+      21,
+      0,
+      105,
+      2,
+      "STRING"
+    ],
+    [
+      132,
+      30,
+      0,
+      105,
+      3,
+      "STRING"
+    ]
+  ],
+  "floatingLinks": null,
+  "groups": [
+    {
+      "id": 1,
+      "title": "1 · Models & Loaders",
+      "bounding": [
+        0,
+        0,
+        380,
+        540
+      ],
+      "color": "#34495e",
+      "flags": {}
+    },
+    {
+      "id": 2,
+      "title": "2 · Prompt · Manual / Wildcard",
+      "bounding": [
+        450,
+        0,
+        510,
+        1685
+      ],
+      "color": "#3f755b",
+      "flags": {}
+    },
+    {
+      "id": 3,
+      "title": "4 · Style & LoRA",
+      "bounding": [
+        1020,
+        0,
+        510,
+        935
+      ],
+      "color": "#65527d",
+      "flags": {}
+    },
+    {
+      "id": 4,
+      "title": "5 · Canvas & References",
+      "bounding": [
+        1600,
+        0,
+        950,
+        900
+      ],
+      "color": "#387a85",
+      "flags": {}
+    },
+    {
+      "id": 5,
+      "title": "6 · Conditioning & Final Prompt",
+      "bounding": [
+        2610,
+        0,
+        390,
+        575
+      ],
+      "color": "#596482",
+      "flags": {}
+    },
+    {
+      "id": 6,
+      "title": "7 · Resolution & Sampling",
+      "bounding": [
+        3070,
+        0,
+        735,
+        895
+      ],
+      "color": "#786149",
+      "flags": {}
+    },
+    {
+      "id": 7,
+      "title": "8 · Review & Save",
+      "bounding": [
+        3870,
+        0,
+        670,
+        1130
+      ],
+      "color": "#487266",
+      "flags": {}
+    },
+    {
+      "id": 8,
+      "title": "9 · Grid · Ctrl+B to enable",
+      "bounding": [
+        4600,
+        0,
+        450,
+        720
+      ],
+      "color": "#704e63",
+      "flags": {}
+    },
+    {
+      "id": 9,
+      "title": "3 · Prompt Enhancer · Instructions / Preview",
+      "bounding": [
+        0,
+        1800,
+        1520,
+        1260
+      ],
+      "color": "#355f7d",
+      "flags": {}
+    },
+    {
+      "id": 10,
+      "title": "Guide · How to use",
+      "bounding": [
+        1590,
+        1800,
+        950,
+        860
+      ],
+      "color": "#34495e",
+      "flags": {}
+    }
+  ],
+  "definitions": null,
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.5,
+      "offset": [
+        200,
+        300
+      ]
+    },
+    "reroutes": null
+  },
+  "version": 0.4
+}

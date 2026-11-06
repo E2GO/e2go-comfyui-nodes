@@ -1,14 +1,5 @@
 __pycache__/
-*.pyc
-*.pyo
-.claude/
-*.png
-*.jpg
-*.jpeg
-*.bmp
-!docs/images/*.png
-!docs/images/*.jpg
-*.sh
-WORK_LOG*.md
-NOTES*.md
+*.py[cod]
+styles/sdxl_styles_user.json
 wildcards/
+.local-artifacts/

@@ -7,6 +7,7 @@ Optimisations:
 3. Separate outputs for prompt and trigger (Conditioner combines them)
 """
 
+import hashlib
 import json
 import os
 
@@ -96,6 +97,27 @@ def save_trigger(lora_name, trigger):
         warn(f"Error saving trigger: {e}")
 
 
+def _lora_entries(names):
+    """
+    Pure helper: map a flat list of lora filenames (as returned by
+    folder_paths.get_filename_list) to [{"name", "category"}] entries.
+
+    Category = first path segment when the name contains a separator
+    ("/" or "\\"), else "Root". Input order is preserved (the caller,
+    folder_paths, already sorts).
+    """
+    entries = []
+    for name in names:
+        split_idx = None
+        for sep in ("/", "\\"):
+            idx = name.find(sep)
+            if idx != -1 and (split_idx is None or idx < split_idx):
+                split_idx = idx
+        category = name[:split_idx] if split_idx is not None else "Root"
+        entries.append({"name": name, "category": category})
+    return entries
+
+
 # Register API route (wrapped in try/except for environments without PromptServer)
 try:
     from server import PromptServer
@@ -106,8 +128,17 @@ try:
         lora_name = request.query.get("lora", "")
         if not lora_name:
             return web.json_response({"trigger": ""})
-        trigger = load_trigger(lora_name)
+        try:
+            trigger = load_trigger(lora_name)
+        except ValueError:  # relpath across drives for an absolute name
+            trigger = ""
         return web.json_response({"trigger": trigger})
+
+    @PromptServer.instance.routes.get("/powder_lora/get_loras")
+    async def get_loras_api(request):
+        import folder_paths
+        names = folder_paths.get_filename_list("loras")
+        return web.json_response({"loras": _lora_entries(names)})
 except Exception:
     pass
 
@@ -115,105 +146,29 @@ except Exception:
 # ---------------------------------------------------------------------------
 # LoRA cache
 # ---------------------------------------------------------------------------
-_lora_cache = LRUCache(maxsize=16, ttl_seconds=1800)  # 30 min TTL on raw safetensors
-
-# Patcher cache (weakref-keyed for lifetime safety).
-#
-# Each entry: (model_ref, clip_ref_or_None, static_key, value, last_used_mono)
-#   model_ref      : weakref.ref(model)
-#   clip_ref       : weakref.ref(clip) | None  — None when disable_clip=True
-#   static_key     : tuple (lora_path, mtime, str_model_r6, str_clip_r6, disable_clip)
-#   value          : (model_lora, clip_lora)
-#   last_used_mono : float — for LRU eviction
-#
-# Lookup is a linear scan that simultaneously prunes dead refs.
-import time
-import weakref
-
-_PATCHER_CACHE_MAXSIZE = 32
-_patcher_entries: list = []
+_lora_cache = LRUCache(maxsize=16, ttl_seconds=1800, max_bytes=2 * 1024**3)  # 30 min TTL on raw safetensors
 
 
-def _make_static_key(lora_path, mtime, str_model, str_clip, disable_clip):
-    """Return the hashable static portion of the patcher key."""
-    return (
-        lora_path,
-        mtime,
-        round(float(str_model), 6),
-        round(float(str_clip), 6),
-        bool(disable_clip),
-    )
+def _lora_fp(entries, combination_order, disable_clip):
+    """Deterministic fingerprint of the CLIP-side LoRA patches applied to a
+    CLIP object: (lora names + clip strengths + order + disable_clip).
 
-
-def _patcher_lookup(lora_path, mtime, str_model, str_clip, disable_clip, model, clip):
+    *entries* is a list of (basename_without_ext, clip_strength) tuples in
+    application order. Stamped on the CLIP as `_e2go_lora_fp` so the
+    Conditioner's cache key can tell a LoRA-patched CLIP apart from the base
+    CLIP (and from a differently-configured LoRA patch on the same base).
     """
-    Find a patcher cache entry matching the given inputs.
-    Returns the cached value or None. Prunes dead weakref entries during scan.
-    """
-    static_key = _make_static_key(lora_path, mtime, str_model, str_clip, disable_clip)
-    now = time.monotonic()
-    found = None
-    alive = []
-
-    for entry in _patcher_entries:
-        m_ref, c_ref, e_static, e_value, _last = entry
-        m_obj = m_ref() if m_ref is not None else None
-        if m_obj is None:
-            continue
-        c_obj = c_ref() if c_ref is not None else None
-        if c_ref is not None and c_obj is None:
-            continue
-
-        alive.append(entry)
-
-        if found is not None:
-            continue
-
-        if e_static != static_key:
-            continue
-        if m_obj is not model:
-            continue
-        if not disable_clip and c_obj is not clip:
-            continue
-
-        found_idx = len(alive) - 1
-        alive[found_idx] = (m_ref, c_ref, e_static, e_value, now)
-        found = e_value
-
-    _patcher_entries[:] = alive
-    return found
+    parts = [f"{name}@{strength:.4g}" for name, strength in entries]
+    blob = "|".join(parts) + f"|order={combination_order}|disable_clip={bool(disable_clip)}"
+    digest = hashlib.md5(blob.encode("utf-8")).hexdigest()[:12]
+    return f"{','.join(parts)}#{digest}"
 
 
-def _patcher_store(lora_path, mtime, str_model, str_clip, disable_clip, model, clip, value):
-    """
-    Store a patcher cache entry with weakref lifetime coupling.
-    Evicts oldest entry if maxsize exceeded.
-    """
-    static_key = _make_static_key(lora_path, mtime, str_model, str_clip, disable_clip)
-
-    try:
-        m_ref = weakref.ref(model)
-    except TypeError:
-        warn("Patcher cache: model object cannot be weakref'd, skipping cache")
-        return
-
-    if disable_clip:
-        c_ref = None
-    else:
-        try:
-            c_ref = weakref.ref(clip)
-        except TypeError:
-            warn("Patcher cache: clip object cannot be weakref'd, skipping cache")
-            return
-
-    now = time.monotonic()
-    new_entry = (m_ref, c_ref, static_key, value, now)
-
-    if len(_patcher_entries) >= _PATCHER_CACHE_MAXSIZE:
-        oldest_idx = min(range(len(_patcher_entries)), key=lambda i: _patcher_entries[i][4])
-        _patcher_entries.pop(oldest_idx)
-
-    _patcher_entries.append(new_entry)
+def _coerce_bool_combo(value, true_label, false_label):
+    """ComfyUI new frontend converts 2-option combos to boolean toggles; map back to labels."""
+    if isinstance(value, bool) or value in ("True", "False", "true", "false"):
+        return true_label if str(value).lower() == "true" else false_label
+    return value
 
 
 def _get_lora_cache_key(lora_path):
@@ -275,7 +230,7 @@ class PowderLoraLoader:
     RETURN_NAMES = ("MODEL", "CLIP", "prompt", "negative_prompt", "lora_info")
     OUTPUT_IS_LIST = (True, True, True, True, False)
     FUNCTION = "load_loras"
-    CATEGORY = "e2go_nodes"
+    CATEGORY = "e2go"
 
     @classmethod
     def VALIDATE_INPUTS(cls, mode, combination_order, trigger_position, **kwargs):
@@ -290,17 +245,14 @@ class PowderLoraLoader:
         combination_order = combination_order[0] if isinstance(combination_order, list) else combination_order
 
         # ComfyUI new frontend converts 2-option combos to boolean toggles
-        if isinstance(mode, bool) or mode in ("True", "False", "true", "false"):
-            mode = "Stack (all enabled)" if str(mode).lower() == "true" else "Single"
-        if isinstance(combination_order, bool) or combination_order in ("True", "False", "true", "false"):
-            combination_order = "Loras first" if str(combination_order).lower() == "true" else "Prompts first"
+        mode = _coerce_bool_combo(mode, "Stack (all enabled)", "Single")
+        combination_order = _coerce_bool_combo(combination_order, "Loras first", "Prompts first")
         lora_config = lora_config[0] if isinstance(lora_config, list) else lora_config
         disable_clip = disable_clip[0] if isinstance(disable_clip, list) else disable_clip
         trigger_position = trigger_position[0] if isinstance(trigger_position, list) else trigger_position
 
         # ComfyUI new frontend converts 2-option combos to boolean toggles
-        if isinstance(trigger_position, bool) or trigger_position in ("True", "False", "true", "false"):
-            trigger_position = "Before prompt" if str(trigger_position).lower() == "true" else "After prompt"
+        trigger_position = _coerce_bool_combo(trigger_position, "Before prompt", "After prompt")
 
         if prompt is None:
             prompts_input = [""]
@@ -312,12 +264,12 @@ class PowderLoraLoader:
         if negative_prompt is None:
             negatives_input = [""] * len(prompts_input)
         elif isinstance(negative_prompt, list):
-            negatives_input = negative_prompt if negative_prompt else [""] * len(prompts_input)
+            negatives_input = list(negative_prompt) if negative_prompt else [""] * len(prompts_input)
         else:
             negatives_input = [negative_prompt]
 
         while len(negatives_input) < len(prompts_input):
-            negatives_input.append("")
+            negatives_input.append(negatives_input[-1] if negatives_input else "")
 
         log(f"[PowderLora] === START ===")
         log(f"[PowderLora] Mode: {mode}, Order: {combination_order}")
@@ -363,59 +315,64 @@ class PowderLoraLoader:
                 model, clip, valid_loras, prompts_input, negatives_input, combination_order, disable_clip, trigger_position
             )
 
+    def _load_lora_step(self, item, current_model, current_clip, disable_clip):
+        """Load one enabled LoRA and return patched model/CLIP, strengths and trigger metadata. Missing or unreadable enabled files raise an error."""
+        import comfy.sd  # lazy
+
+        name = item.get("name")
+        str_model = float(item.get("strength_model", 1.0))
+        str_clip = float(item.get("strength_clip", 1.0))
+        trigger = item.get("trigger", "").strip()
+        use_trigger = item.get("use_trigger", True)
+
+        lora_path = self._find_lora_path(name)
+        if not lora_path:
+            raise FileNotFoundError(f"Enabled LoRA not found: {name}")
+
+        log(f"[PowderLora] Loading: {name} (m={str_model}, c={str_clip}{'*' if disable_clip else ''})")
+
+        lora_data = _load_lora_cached(lora_path)
+        if disable_clip:
+            # Pass clip=None to skip CLIP weights entirely
+            model_lora, _ = comfy.sd.load_lora_for_models(
+                current_model, None,
+                lora_data, str_model, 0.0
+            )
+            clip_lora = current_clip
+        else:
+            model_lora, clip_lora = comfy.sd.load_lora_for_models(
+                current_model, current_clip,
+                lora_data, str_model, str_clip
+            )
+
+        return (model_lora, clip_lora, name, str_model, str_clip, trigger, use_trigger)
+
     def _process_single_mode(self, model, clip, valid_loras, prompts_input, negatives_input, combination_order, disable_clip, trigger_position):
         """Single mode: each LoRA separate."""
-        import comfy.sd  # lazy
         unique_models = []
-        base_clip = clip
 
         for idx, (orig_idx, item) in enumerate(valid_loras):
             name = item.get("name")
-            str_model = float(item.get("strength_model", 1.0))
-            str_clip = float(item.get("strength_clip", 1.0))
-            trigger = item.get("trigger", "").strip()
-            use_trigger = item.get("use_trigger", True)
-
-            lora_path = self._find_lora_path(name)
-            if not lora_path:
-                warn(f"NOT FOUND: {name}")
-                continue
-
-            log(f"[PowderLora] Loading: {name} (m={str_model}, c={str_clip}{'*' if disable_clip else ''})")
             try:
-                try:
-                    mtime = os.path.getmtime(lora_path)
-                except Exception:
-                    mtime = 0.0
-                cached_patcher = _patcher_lookup(lora_path, mtime, str_model, str_clip, disable_clip, model, clip)
-                if cached_patcher is not None:
-                    model_lora, clip_lora = cached_patcher
-                    log(f"[PowderLora] Patcher cache hit: {os.path.basename(name)}")
-                else:
-                    lora_data = _load_lora_cached(lora_path)
-                    if disable_clip:
-                        # Pass clip=None to skip CLIP weights entirely
-                        model_lora, _ = comfy.sd.load_lora_for_models(
-                            model, None,
-                            lora_data, str_model, 0.0
-                        )
-                        clip_lora = base_clip
-                    else:
-                        model_lora, clip_lora = comfy.sd.load_lora_for_models(
-                            model, clip,
-                            lora_data, str_model, str_clip
-                        )
-                    _patcher_store(lora_path, mtime, str_model, str_clip, disable_clip, model, clip, (model_lora, clip_lora))
+                step = self._load_lora_step(item, model, clip, disable_clip)
+                model_lora, clip_lora, name, str_model, str_clip, trigger, use_trigger = step
 
-                if trigger:
-                    save_trigger(name, trigger)
+                if not disable_clip:
+                    base_name = os.path.basename(name).replace(".safetensors", "")
+                    try:
+                        clip_lora._e2go_lora_fp = _lora_fp(
+                            [(base_name, str_clip)], combination_order, disable_clip
+                        )
+                    except Exception:
+                        pass
 
                 actual_trigger = trigger if use_trigger else ""
                 unique_models.append((model_lora, clip_lora, actual_trigger, name, str_model))
                 log(f"[PowderLora] OK: {name}")
             except Exception as e:
-                error(f"Loading {name}: {e}")
-                continue
+                raise RuntimeError(
+                    f"Powder LoRA: could not load enabled LoRA '{name}'. "
+                    f"Generation stopped instead of continuing without it. {e}") from e
 
         if not unique_models:
             log("[PowderLora] No loras loaded, returning original model")
@@ -474,45 +431,39 @@ class PowderLoraLoader:
 
     def _process_stack_mode(self, model, clip, valid_loras, prompts_input, negatives_input, combination_order, disable_clip, trigger_position):
         """Stack mode: all LoRAs into one model."""
-        import comfy.sd  # lazy
         triggers = []
         lora_names = []
         lora_strengths = []
         current_model = model
         current_clip = clip
+        clip_fp_entries = []  # (basename, clip_strength) applied so far, in order
 
         for orig_idx, item in valid_loras:
             name = item.get("name")
-            str_model = float(item.get("strength_model", 1.0))
-            str_clip = float(item.get("strength_clip", 1.0))
-            trigger = item.get("trigger", "").strip()
-            use_trigger = item.get("use_trigger", True)
-
-            lora_path = self._find_lora_path(name)
-            if not lora_path:
-                warn(f"NOT FOUND: {name}")
-                continue
-
-            log(f"[PowderLora] Loading: {name} (m={str_model}, c={str_clip}{'*' if disable_clip else ''})")
             try:
-                lora_data = _load_lora_cached(lora_path)
-                if disable_clip:
-                    current_model, _ = comfy.sd.load_lora_for_models(
-                        current_model, None, lora_data, str_model, 0.0
-                    )
-                else:
-                    current_model, current_clip = comfy.sd.load_lora_for_models(
-                        current_model, current_clip, lora_data, str_model, str_clip
-                    )
-                lora_names.append(os.path.basename(name).replace(".safetensors", ""))
+                step = self._load_lora_step(item, current_model, current_clip, disable_clip)
+                model_lora, clip_lora, name, str_model, str_clip, trigger, use_trigger = step
+                current_model, current_clip = model_lora, clip_lora
+                base_name = os.path.basename(name).replace(".safetensors", "")
+                lora_names.append(base_name)
                 lora_strengths.append(str_model)
+
+                if not disable_clip:
+                    clip_fp_entries.append((base_name, str_clip))
+                    try:
+                        current_clip._e2go_lora_fp = _lora_fp(
+                            clip_fp_entries, combination_order, disable_clip
+                        )
+                    except Exception:
+                        pass
+
                 log(f"[PowderLora] OK: {name}")
             except Exception as e:
-                error(f"Loading {name}: {e}")
-                continue
+                raise RuntimeError(
+                    f"Powder LoRA: could not load enabled LoRA '{name}'. "
+                    f"Generation stopped instead of continuing without it. {e}") from e
 
             if trigger:
-                save_trigger(name, trigger)
                 if use_trigger:
                     triggers.append(trigger)
 
@@ -558,6 +509,12 @@ class PowderLoraLoader:
         basename = os.path.basename(name)
         for lora in all_loras:
             if os.path.basename(lora) == basename:
+                # Two same-named files in different subfolders would both
+                # match — say which one won so a wrong substitution is
+                # diagnosable instead of silent.
+                warn(f"[PowderLoraLoader] {name!r} not found; substituting "
+                     f"first basename match {lora!r} — rename to "
+                     f"disambiguate if wrong")
                 return folder_paths.get_full_path("loras", lora)
 
         return None

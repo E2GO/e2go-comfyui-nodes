@@ -1,15 +1,18 @@
-// Powder Conditioner — UI: disable cache_mode when use_cache=false.
-//
-// The Python side already treats use_cache=false as overriding cache_mode,
-// so this purely cosmetic change keeps the UI honest.
+// One cache selector; normalize the legacy boolean when restoring a workflow.
 
-import { app } from "../../scripts/app.js";
+import { app } from "../../../scripts/app.js";
+import { hideNamedWidget, scheduleReHide } from "./e2go_hide_utils.js";
 
 app.registerExtension({
     name: "e2go.powder_conditioner.cache_ui",
 
     nodeCreated(node) {
         if (node.comfyClass !== "PowderConditioner") return;
+
+        // consumer_mode is written by the server when the prompt is queued
+        // (powder_conditioner.stamp_consumer_modes) — nothing to show or edit.
+        hideNamedWidget(node, "consumer_mode");
+        scheduleReHide(node, "consumer_mode");
 
         const useCacheWidget = node.widgets?.find(w => w.name === "use_cache");
         const cacheModeWidget = node.widgets?.find(w => w.name === "cache_mode");
@@ -18,14 +21,10 @@ app.registerExtension({
 
         // Sync cache_mode visual state with use_cache value.
         const syncCacheModeState = () => {
-            const enabled = useCacheWidget.value === true;
-            cacheModeWidget.disabled = !enabled;
-
-            // Fallback dimming for themes where `disabled` alone isn't visible.
-            if (cacheModeWidget.element) {
-                cacheModeWidget.element.style.opacity = enabled ? "1.0" : "0.4";
-            }
-
+            if (useCacheWidget.value === false) cacheModeWidget.value = "disabled";
+            useCacheWidget.value = true;
+            cacheModeWidget.disabled = false;
+            hideNamedWidget(node, "use_cache");
             node.setDirtyCanvas(true, true);
         };
 
@@ -38,5 +37,14 @@ app.registerExtension({
 
         // Initial sync (in case the node loads with use_cache=false).
         syncCacheModeState();
+
+
+        const prevOnConfigure = node.onConfigure;
+        node.onConfigure = function () {
+            const r = prevOnConfigure?.apply(this, arguments);
+            syncCacheModeState();
+            requestAnimationFrame(syncCacheModeState); // belt-and-braces post-restore
+            return r;
+        };
     },
 });

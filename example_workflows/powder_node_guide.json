@@ -1,0 +1,5798 @@
+{
+  "id": "4a78197f-96eb-5268-9e2b-3edd5e4ce2ac",
+  "revision": 0,
+  "last_node_id": 115,
+  "last_link_id": 0,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "PowderPromptList",
+      "pos": [
+        20,
+        70
+      ],
+      "size": [
+        520,
+        318
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 2,
+      "showAdvanced": null,
+      "inputs": [
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "prompt_config",
+          "locked": null,
+          "name": "prompt_config",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "STRING",
+          "widget": {
+            "name": "prompt_config"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "prompt_1_text",
+          "locked": null,
+          "name": "prompt_1_text",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "prompt_1_text"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "prompt_2_text",
+          "locked": null,
+          "name": "prompt_2_text",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "prompt_2_text"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "prompt_3_text",
+          "locked": null,
+          "name": "prompt_3_text",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "prompt_3_text"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "prompt_4_text",
+          "locked": null,
+          "name": "prompt_4_text",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "prompt_4_text"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "prompt_5_text",
+          "locked": null,
+          "name": "prompt_5_text",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "prompt_5_text"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "prompt_6_text",
+          "locked": null,
+          "name": "prompt_6_text",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "prompt_6_text"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "prompt_7_text",
+          "locked": null,
+          "name": "prompt_7_text",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "prompt_7_text"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "prompt_8_text",
+          "locked": null,
+          "name": "prompt_8_text",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "prompt_8_text"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "prompt_9_text",
+          "locked": null,
+          "name": "prompt_9_text",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "prompt_9_text"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "prompt_10_text",
+          "locked": null,
+          "name": "prompt_10_text",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "prompt_10_text"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "prompt_11_text",
+          "locked": null,
+          "name": "prompt_11_text",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "prompt_11_text"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "prompt_12_text",
+          "locked": null,
+          "name": "prompt_12_text",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "prompt_12_text"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "prompt_13_text",
+          "locked": null,
+          "name": "prompt_13_text",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "prompt_13_text"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "prompt_14_text",
+          "locked": null,
+          "name": "prompt_14_text",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "prompt_14_text"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "prompt_15_text",
+          "locked": null,
+          "name": "prompt_15_text",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "prompt_15_text"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "prompt_16_text",
+          "locked": null,
+          "name": "prompt_16_text",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "prompt_16_text"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "prompt_17_text",
+          "locked": null,
+          "name": "prompt_17_text",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "prompt_17_text"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "prompt_18_text",
+          "locked": null,
+          "name": "prompt_18_text",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "prompt_18_text"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "prompt_19_text",
+          "locked": null,
+          "name": "prompt_19_text",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "prompt_19_text"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "prompt_20_text",
+          "locked": null,
+          "name": "prompt_20_text",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "prompt_20_text"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "negative_1_text",
+          "locked": null,
+          "name": "negative_1_text",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "negative_1_text"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "negative_2_text",
+          "locked": null,
+          "name": "negative_2_text",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "negative_2_text"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "negative_3_text",
+          "locked": null,
+          "name": "negative_3_text",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "negative_3_text"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "negative_4_text",
+          "locked": null,
+          "name": "negative_4_text",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "negative_4_text"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "negative_5_text",
+          "locked": null,
+          "name": "negative_5_text",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "negative_5_text"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "negative_6_text",
+          "locked": null,
+          "name": "negative_6_text",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "negative_6_text"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "negative_7_text",
+          "locked": null,
+          "name": "negative_7_text",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "negative_7_text"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "negative_8_text",
+          "locked": null,
+          "name": "negative_8_text",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "negative_8_text"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "negative_9_text",
+          "locked": null,
+          "name": "negative_9_text",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "negative_9_text"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "negative_10_text",
+          "locked": null,
+          "name": "negative_10_text",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "negative_10_text"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "negative_11_text",
+          "locked": null,
+          "name": "negative_11_text",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "negative_11_text"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "negative_12_text",
+          "locked": null,
+          "name": "negative_12_text",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "negative_12_text"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "negative_13_text",
+          "locked": null,
+          "name": "negative_13_text",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "negative_13_text"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "negative_14_text",
+          "locked": null,
+          "name": "negative_14_text",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "negative_14_text"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "negative_15_text",
+          "locked": null,
+          "name": "negative_15_text",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "negative_15_text"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "negative_16_text",
+          "locked": null,
+          "name": "negative_16_text",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "negative_16_text"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "negative_17_text",
+          "locked": null,
+          "name": "negative_17_text",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "negative_17_text"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "negative_18_text",
+          "locked": null,
+          "name": "negative_18_text",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "negative_18_text"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "negative_19_text",
+          "locked": null,
+          "name": "negative_19_text",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "negative_19_text"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "negative_20_text",
+          "locked": null,
+          "name": "negative_20_text",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "negative_20_text"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "positive_prompts",
+          "locked": null,
+          "name": "positive_prompts",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 6,
+          "type": "STRING",
+          "pos": null,
+          "slot_index": null,
+          "links": []
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "negative_prompts",
+          "locked": null,
+          "name": "negative_prompts",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 6,
+          "type": "STRING",
+          "pos": null,
+          "slot_index": null,
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PowderPromptList"
+      },
+      "widgets_values": [
+        "[{\"on\":true}]",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "widgets_values_named": {
+        "prompt_config": "[{\"on\":true}]",
+        "prompt_1_enabled": true,
+        "prompt_1_text": "",
+        "negative_1_text": "",
+        "prompt_2_text": "",
+        "prompt_3_text": "",
+        "prompt_4_text": "",
+        "prompt_5_text": "",
+        "prompt_6_text": "",
+        "prompt_7_text": "",
+        "prompt_8_text": "",
+        "prompt_9_text": "",
+        "prompt_10_text": "",
+        "prompt_11_text": "",
+        "prompt_12_text": "",
+        "prompt_13_text": "",
+        "prompt_14_text": "",
+        "prompt_15_text": "",
+        "prompt_16_text": "",
+        "prompt_17_text": "",
+        "prompt_18_text": "",
+        "prompt_19_text": "",
+        "prompt_20_text": "",
+        "negative_2_text": "",
+        "negative_3_text": "",
+        "negative_4_text": "",
+        "negative_5_text": "",
+        "negative_6_text": "",
+        "negative_7_text": "",
+        "negative_8_text": "",
+        "negative_9_text": "",
+        "negative_10_text": "",
+        "negative_11_text": "",
+        "negative_12_text": "",
+        "negative_13_text": "",
+        "negative_14_text": "",
+        "negative_15_text": "",
+        "negative_16_text": "",
+        "negative_17_text": "",
+        "negative_18_text": "",
+        "negative_19_text": "",
+        "negative_20_text": ""
+      },
+      "color": "#305548",
+      "e2goWidgetNames": [
+        "prompt_config",
+        "prompt_1_text",
+        "prompt_2_text",
+        "prompt_3_text",
+        "prompt_4_text",
+        "prompt_5_text",
+        "prompt_6_text",
+        "prompt_7_text",
+        "prompt_8_text",
+        "prompt_9_text",
+        "prompt_10_text",
+        "prompt_11_text",
+        "prompt_12_text",
+        "prompt_13_text",
+        "prompt_14_text",
+        "prompt_15_text",
+        "prompt_16_text",
+        "prompt_17_text",
+        "prompt_18_text",
+        "prompt_19_text",
+        "prompt_20_text",
+        "negative_1_text",
+        "negative_2_text",
+        "negative_3_text",
+        "negative_4_text",
+        "negative_5_text",
+        "negative_6_text",
+        "negative_7_text",
+        "negative_8_text",
+        "negative_9_text",
+        "negative_10_text",
+        "negative_11_text",
+        "negative_12_text",
+        "negative_13_text",
+        "negative_14_text",
+        "negative_15_text",
+        "negative_16_text",
+        "negative_17_text",
+        "negative_18_text",
+        "negative_19_text",
+        "negative_20_text"
+      ],
+      "e2goWidgetSchemaVersion": 1,
+      "promptSlotCount": 1,
+      "promptSlotsData": [
+        {
+          "enabled": true
+        }
+      ],
+      "promptTexts": {},
+      "negativeTexts": {},
+      "e2goTextHeights": {},
+      "extensions": {
+        "e2goWidgetNames": [
+          "prompt_config",
+          "prompt_1_text",
+          "prompt_2_text",
+          "prompt_3_text",
+          "prompt_4_text",
+          "prompt_5_text",
+          "prompt_6_text",
+          "prompt_7_text",
+          "prompt_8_text",
+          "prompt_9_text",
+          "prompt_10_text",
+          "prompt_11_text",
+          "prompt_12_text",
+          "prompt_13_text",
+          "prompt_14_text",
+          "prompt_15_text",
+          "prompt_16_text",
+          "prompt_17_text",
+          "prompt_18_text",
+          "prompt_19_text",
+          "prompt_20_text",
+          "negative_1_text",
+          "negative_2_text",
+          "negative_3_text",
+          "negative_4_text",
+          "negative_5_text",
+          "negative_6_text",
+          "negative_7_text",
+          "negative_8_text",
+          "negative_9_text",
+          "negative_10_text",
+          "negative_11_text",
+          "negative_12_text",
+          "negative_13_text",
+          "negative_14_text",
+          "negative_15_text",
+          "negative_16_text",
+          "negative_17_text",
+          "negative_18_text",
+          "negative_19_text",
+          "negative_20_text"
+        ],
+        "e2goWidgetSchemaVersion": 1,
+        "promptSlotCount": 1,
+        "promptSlotsData": [
+          {
+            "enabled": true
+          }
+        ],
+        "promptTexts": {},
+        "negativeTexts": {},
+        "e2goTextHeights": {}
+      }
+    },
+    {
+      "id": 2,
+      "type": "MarkdownNote",
+      "pos": [
+        580,
+        70
+      ],
+      "size": [
+        620,
+        820
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "showAdvanced": null,
+      "inputs": [],
+      "outputs": [],
+      "title": "Powder Prompt List · Guide",
+      "properties": {
+        "Node name for S&R": "MarkdownNote"
+      },
+      "widgets_values": [
+        "## 01 / Powder Prompt List\n\n### Why use it\nPrepare several descriptions to compare subjects or wording with the same model.\n\n### How it works\nEach enabled slot produces one prompt variant. Positive text describes what you want; negative text describes what to avoid. This node prepares text, not images.\n\n### Inputs\nText entered in each slot or supplied through its input.\n\n### Outputs\nAligned positive_prompts and negative_prompts lists.\n\n### Example\nCreate red teapot and blue teapot slots. Connect positive_prompts to CLIP Text Encode, then to KSampler. Use a second encoder for the negative list.\n\n### Other Powder nodes required?\nWorks without other Powder nodes. A prompt list causes downstream processing for each item; it is different from a latent batch.\n\n### Practical tip\nDisable unused slots. An enabled empty slot is still a prompt variant."
+      ],
+      "widgets_values_named": {
+        "text": "## 01 / Powder Prompt List\n\n### Why use it\nPrepare several descriptions to compare subjects or wording with the same model.\n\n### How it works\nEach enabled slot produces one prompt variant. Positive text describes what you want; negative text describes what to avoid. This node prepares text, not images.\n\n### Inputs\nText entered in each slot or supplied through its input.\n\n### Outputs\nAligned positive_prompts and negative_prompts lists.\n\n### Example\nCreate red teapot and blue teapot slots. Connect positive_prompts to CLIP Text Encode, then to KSampler. Use a second encoder for the negative list.\n\n### Other Powder nodes required?\nWorks without other Powder nodes. A prompt list causes downstream processing for each item; it is different from a latent batch.\n\n### Practical tip\nDisable unused slots. An enabled empty slot is still a prompt variant."
+      },
+      "color": "#305548",
+      "bgcolor": "#20252B"
+    },
+    {
+      "id": 3,
+      "type": "PowderPromptWildcard",
+      "pos": [
+        1280,
+        70
+      ],
+      "size": [
+        520,
+        558
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 2,
+      "showAdvanced": null,
+      "inputs": [
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "positive_prompt_list",
+          "locked": null,
+          "name": "positive_prompt_list",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "STRING",
+          "widget": {
+            "name": "positive_prompt_list"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "negative_prompt_list",
+          "locked": null,
+          "name": "negative_prompt_list",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "STRING",
+          "widget": {
+            "name": "negative_prompt_list"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "wildcard_file",
+          "locked": null,
+          "name": "wildcard_file",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "COMBO",
+          "widget": {
+            "name": "wildcard_file"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "start_index",
+          "locked": null,
+          "name": "start_index",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "INT",
+          "widget": {
+            "name": "start_index"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "count",
+          "locked": null,
+          "name": "count",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "INT",
+          "widget": {
+            "name": "count"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "loop",
+          "locked": null,
+          "name": "loop",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "loop"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "prefix_text",
+          "locked": null,
+          "name": "prefix_text",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "prefix_text"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "suffix_text",
+          "locked": null,
+          "name": "suffix_text",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "suffix_text"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "cursor_scope",
+          "locked": null,
+          "name": "cursor_scope",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "cursor_scope"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "on_exhausted",
+          "locked": null,
+          "name": "on_exhausted",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "COMBO",
+          "widget": {
+            "name": "on_exhausted"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "repeat_last",
+          "locked": null,
+          "name": "repeat_last",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "repeat_last"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "positive_prompts",
+          "locked": null,
+          "name": "positive_prompts",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 6,
+          "type": "STRING",
+          "pos": null,
+          "slot_index": null,
+          "links": []
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "negative_prompts",
+          "locked": null,
+          "name": "negative_prompts",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 6,
+          "type": "STRING",
+          "pos": null,
+          "slot_index": null,
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PowderPromptWildcard"
+      },
+      "widgets_values": [
+        "",
+        "",
+        "(none)",
+        0,
+        0,
+        false,
+        "",
+        "",
+        "",
+        "stop",
+        false
+      ],
+      "widgets_values_named": {
+        "positive_prompt_list": "",
+        "negative_prompt_list": "",
+        "wildcard_file": "(none)",
+        "start_index": 0,
+        "count": 0,
+        "loop": false,
+        "prefix_text": "",
+        "suffix_text": "",
+        "cursor_scope": "",
+        "on_exhausted": "stop",
+        "repeat_last": false
+      },
+      "color": "#305548",
+      "e2goWidgetNames": [
+        "positive_prompt_list",
+        "negative_prompt_list",
+        "wildcard_file",
+        "start_index",
+        "count",
+        "loop",
+        "prefix_text",
+        "suffix_text",
+        "cursor_scope",
+        "on_exhausted",
+        "repeat_last"
+      ],
+      "e2goWidgetSchemaVersion": 1,
+      "e2goInputs": {
+        "positive_prompt_list": "",
+        "negative_prompt_list": "",
+        "wildcard_file": "(none)",
+        "start_index": 0,
+        "count": 0,
+        "loop": false,
+        "prefix_text": "",
+        "suffix_text": "",
+        "on_exhausted": "stop",
+        "repeat_last": false
+      },
+      "e2goTextHeights": {},
+      "extensions": {
+        "e2goWidgetNames": [
+          "positive_prompt_list",
+          "negative_prompt_list",
+          "wildcard_file",
+          "start_index",
+          "count",
+          "loop",
+          "prefix_text",
+          "suffix_text",
+          "cursor_scope",
+          "on_exhausted",
+          "repeat_last"
+        ],
+        "e2goWidgetSchemaVersion": 1,
+        "e2goInputs": {
+          "positive_prompt_list": "",
+          "negative_prompt_list": "",
+          "wildcard_file": "(none)",
+          "start_index": 0,
+          "count": 0,
+          "loop": false,
+          "prefix_text": "",
+          "suffix_text": "",
+          "on_exhausted": "stop",
+          "repeat_last": false
+        },
+        "e2goTextHeights": {}
+      }
+    },
+    {
+      "id": 4,
+      "type": "MarkdownNote",
+      "pos": [
+        1840,
+        70
+      ],
+      "size": [
+        620,
+        820
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "showAdvanced": null,
+      "inputs": [],
+      "outputs": [],
+      "title": "Powder Prompt Wildcard · Guide",
+      "properties": {
+        "Node name for S&R": "MarkdownNote"
+      },
+      "widgets_values": [
+        "## 02 / Powder Prompt Wildcard\n\n### Why use it\nRun a sequence of descriptions without replacing the text before every Queue.\n\n### How it works\nReads one prompt per line from the text field or a local file. count selects how many lines run together. Prefix and suffix add shared wording. Blank lines and # comments are skipped.\n\n### Inputs\nPrompt lines, optional file, start position and end-of-list policy.\n\n### Outputs\nPositive and negative prompt lists for this run.\n\n### Example\nEnter forest, city and coast on separate lines. With count=1, three Queue actions process them in order. Connect the outputs to standard CLIP Text Encode nodes.\n\n### Other Powder nodes required?\nWorks without other Powder nodes.\n\n### Practical tip\nStop blocks this branch at the end; Loop restarts it. Reset returns to the start. Repeat last holds the text selection, not the sampler seed.\n\nCursor progress is session-local. Browser reload/server restart starts a fresh cursor; Reset sets start_index to zero where available."
+      ],
+      "widgets_values_named": {
+        "text": "## 02 / Powder Prompt Wildcard\n\n### Why use it\nRun a sequence of descriptions without replacing the text before every Queue.\n\n### How it works\nReads one prompt per line from the text field or a local file. count selects how many lines run together. Prefix and suffix add shared wording. Blank lines and # comments are skipped.\n\n### Inputs\nPrompt lines, optional file, start position and end-of-list policy.\n\n### Outputs\nPositive and negative prompt lists for this run.\n\n### Example\nEnter forest, city and coast on separate lines. With count=1, three Queue actions process them in order. Connect the outputs to standard CLIP Text Encode nodes.\n\n### Other Powder nodes required?\nWorks without other Powder nodes.\n\n### Practical tip\nStop blocks this branch at the end; Loop restarts it. Reset returns to the start. Repeat last holds the text selection, not the sampler seed.\n\nCursor progress is session-local. Browser reload/server restart starts a fresh cursor; Reset sets start_index to zero where available."
+      },
+      "color": "#305548",
+      "bgcolor": "#20252B"
+    },
+    {
+      "id": 5,
+      "type": "PowderLoraLoader",
+      "pos": [
+        2540,
+        70
+      ],
+      "size": [
+        520,
+        210
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 2,
+      "showAdvanced": null,
+      "inputs": [
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "model",
+          "locked": null,
+          "name": "model",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "MODEL",
+          "pos": null,
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "clip",
+          "locked": null,
+          "name": "clip",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "CLIP",
+          "pos": null,
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "prompt",
+          "locked": null,
+          "name": "prompt",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "pos": null,
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "negative_prompt",
+          "locked": null,
+          "name": "negative_prompt",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "pos": null,
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "mode",
+          "locked": null,
+          "name": "mode",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "COMBO",
+          "widget": {
+            "name": "mode"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "combination_order",
+          "locked": null,
+          "name": "combination_order",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "COMBO",
+          "widget": {
+            "name": "combination_order"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "lora_config",
+          "locked": null,
+          "name": "lora_config",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "STRING",
+          "widget": {
+            "name": "lora_config"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "disable_clip",
+          "locked": null,
+          "name": "disable_clip",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "disable_clip"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "trigger_position",
+          "locked": null,
+          "name": "trigger_position",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "COMBO",
+          "widget": {
+            "name": "trigger_position"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "MODEL",
+          "locked": null,
+          "name": "MODEL",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 6,
+          "type": "MODEL",
+          "pos": null,
+          "slot_index": null,
+          "links": []
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "CLIP",
+          "locked": null,
+          "name": "CLIP",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 6,
+          "type": "CLIP",
+          "pos": null,
+          "slot_index": null,
+          "links": []
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "prompt",
+          "locked": null,
+          "name": "prompt",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 6,
+          "type": "STRING",
+          "pos": null,
+          "slot_index": null,
+          "links": []
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "negative_prompt",
+          "locked": null,
+          "name": "negative_prompt",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 6,
+          "type": "STRING",
+          "pos": null,
+          "slot_index": null,
+          "links": []
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "lora_info",
+          "locked": null,
+          "name": "lora_info",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "STRING",
+          "pos": null,
+          "slot_index": null,
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PowderLoraLoader"
+      },
+      "widgets_values": [
+        "Stack (all enabled)",
+        "Loras first",
+        "[]",
+        true,
+        "After prompt"
+      ],
+      "widgets_values_named": {
+        "mode": "Stack (all enabled)",
+        "combination_order": "Loras first",
+        "lora_config": "[]",
+        "disable_clip": true,
+        "trigger_position": "After prompt"
+      },
+      "color": "#51436B",
+      "e2goWidgetNames": [
+        "mode",
+        "combination_order",
+        "lora_config",
+        "disable_clip",
+        "trigger_position"
+      ],
+      "e2goWidgetSchemaVersion": 1,
+      "e2goLoraSelection": [],
+      "extensions": {
+        "e2goWidgetNames": [
+          "mode",
+          "combination_order",
+          "lora_config",
+          "disable_clip",
+          "trigger_position"
+        ],
+        "e2goWidgetSchemaVersion": 1,
+        "e2goLoraSelection": []
+      }
+    },
+    {
+      "id": 6,
+      "type": "MarkdownNote",
+      "pos": [
+        3100,
+        70
+      ],
+      "size": [
+        620,
+        820
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "showAdvanced": null,
+      "inputs": [],
+      "outputs": [],
+      "title": "Powder Lora Loader · Guide",
+      "properties": {
+        "Node name for S&R": "MarkdownNote"
+      },
+      "widgets_values": [
+        "## 03 / Powder Lora Loader\n\n### Why use it\nApply LoRAs that change a model’s style, subject or details.\n\n### How it works\nStack combines enabled LoRAs. Single tries them separately. The iteration order controls combinations with prompt variants. Duplicate LoRA rows keep independent strengths and triggers.\n\n### Inputs\nMODEL, CLIP, selected LoRAs and optional positive/negative prompt lists.\n\n### Outputs\nPatched MODEL/CLIP, prompt lists and lora_info metadata.\n\n### Example\nCheckpoint Loader → LoRA Loader. Connect MODEL to KSampler and CLIP to CLIP Text Encode. Connect lora_info to Powder Conditioner for automatic trigger assembly.\n\n### Other Powder nodes required?\nWeight loading works with standard nodes. Triggers travel separately in lora_info; standard CLIP Text Encode does not read it. Add trigger words manually when using that path.\n\n### Practical tip\nUse LoRAs made for your model family. Bypass LoRA CLIP skips only CLIP weights. Enabling a LoRA and enabling its trigger are separate controls.\n\nTrigger edits are stored in the workflow; generation does not overwrite LoRA sidecar files."
+      ],
+      "widgets_values_named": {
+        "text": "## 03 / Powder Lora Loader\n\n### Why use it\nApply LoRAs that change a model’s style, subject or details.\n\n### How it works\nStack combines enabled LoRAs. Single tries them separately. The iteration order controls combinations with prompt variants. Duplicate LoRA rows keep independent strengths and triggers.\n\n### Inputs\nMODEL, CLIP, selected LoRAs and optional positive/negative prompt lists.\n\n### Outputs\nPatched MODEL/CLIP, prompt lists and lora_info metadata.\n\n### Example\nCheckpoint Loader → LoRA Loader. Connect MODEL to KSampler and CLIP to CLIP Text Encode. Connect lora_info to Powder Conditioner for automatic trigger assembly.\n\n### Other Powder nodes required?\nWeight loading works with standard nodes. Triggers travel separately in lora_info; standard CLIP Text Encode does not read it. Add trigger words manually when using that path.\n\n### Practical tip\nUse LoRAs made for your model family. Bypass LoRA CLIP skips only CLIP weights. Enabling a LoRA and enabling its trigger are separate controls.\n\nTrigger edits are stored in the workflow; generation does not overwrite LoRA sidecar files."
+      },
+      "color": "#51436B",
+      "bgcolor": "#20252B"
+    },
+    {
+      "id": 7,
+      "type": "PowderStyler",
+      "pos": [
+        3800,
+        70
+      ],
+      "size": [
+        520,
+        322
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 2,
+      "showAdvanced": null,
+      "inputs": [
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "style_position",
+          "locked": null,
+          "name": "style_position",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "COMBO",
+          "widget": {
+            "name": "style_position"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "use_positive",
+          "locked": null,
+          "name": "use_positive",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "use_positive"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "use_negative",
+          "locked": null,
+          "name": "use_negative",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "use_negative"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "style_config",
+          "locked": null,
+          "name": "style_config",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "STRING",
+          "widget": {
+            "name": "style_config"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "strength_mode",
+          "locked": null,
+          "name": "strength_mode",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "COMBO",
+          "widget": {
+            "name": "strength_mode"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "style_mix",
+          "locked": null,
+          "name": "style_mix",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "FLOAT",
+          "widget": {
+            "name": "style_mix"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "style_sweep",
+          "locked": null,
+          "name": "style_sweep",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "style_sweep"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "sweep_from",
+          "locked": null,
+          "name": "sweep_from",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "COMBO",
+          "widget": {
+            "name": "sweep_from"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "sweep_to",
+          "locked": null,
+          "name": "sweep_to",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "COMBO",
+          "widget": {
+            "name": "sweep_to"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "cursor_scope",
+          "locked": null,
+          "name": "cursor_scope",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "cursor_scope"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "on_exhausted",
+          "locked": null,
+          "name": "on_exhausted",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "COMBO",
+          "widget": {
+            "name": "on_exhausted"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "style_category",
+          "locked": null,
+          "name": "style_category",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "COMBO",
+          "widget": {
+            "name": "style_category"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "repeat_last",
+          "locked": null,
+          "name": "repeat_last",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "repeat_last"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "style",
+          "locked": null,
+          "name": "style",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "STRING",
+          "pos": null,
+          "slot_index": null,
+          "links": []
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "style_text",
+          "locked": null,
+          "name": "style_text",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "STRING",
+          "pos": null,
+          "slot_index": null,
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PowderStyler"
+      },
+      "widgets_values": [
+        "Wrap prompt",
+        true,
+        true,
+        "[]",
+        "cond mix — node",
+        1,
+        false,
+        "16-bit Fantasy RPG",
+        "16-bit Fantasy RPG",
+        "",
+        "stop",
+        "All styles",
+        false
+      ],
+      "widgets_values_named": {
+        "style_position": "Wrap prompt",
+        "use_positive": true,
+        "use_negative": true,
+        "style_config": "[]",
+        "style_category": "All styles",
+        "strength_mode": "cond mix — node",
+        "style_mix": 1,
+        "style_sweep": false,
+        "sweep_from": "16-bit Fantasy RPG",
+        "sweep_to": "16-bit Fantasy RPG",
+        "cursor_scope": "",
+        "on_exhausted": "stop",
+        "repeat_last": false
+      },
+      "color": "#51436B",
+      "e2goWidgetNames": [
+        "style_position",
+        "use_positive",
+        "use_negative",
+        "style_config",
+        "strength_mode",
+        "style_mix",
+        "style_sweep",
+        "sweep_from",
+        "sweep_to",
+        "cursor_scope",
+        "on_exhausted",
+        "style_category",
+        "repeat_last"
+      ],
+      "e2goWidgetSchemaVersion": 1,
+      "e2goInputs": {
+        "style_position": "Wrap prompt",
+        "use_positive": true,
+        "use_negative": true,
+        "style_config": "[]",
+        "strength_mode": "cond mix — node",
+        "style_mix": 1,
+        "style_sweep": false,
+        "sweep_from": "16-bit Fantasy RPG",
+        "sweep_to": "16-bit Fantasy RPG",
+        "cursor_scope": "",
+        "on_exhausted": "stop",
+        "style_category": "All styles",
+        "repeat_last": false
+      },
+      "e2goSelection": [],
+      "extensions": {
+        "e2goWidgetNames": [
+          "style_position",
+          "use_positive",
+          "use_negative",
+          "style_config",
+          "strength_mode",
+          "style_mix",
+          "style_sweep",
+          "sweep_from",
+          "sweep_to",
+          "cursor_scope",
+          "on_exhausted",
+          "style_category",
+          "repeat_last"
+        ],
+        "e2goWidgetSchemaVersion": 1,
+        "e2goInputs": {
+          "style_position": "Wrap prompt",
+          "use_positive": true,
+          "use_negative": true,
+          "style_config": "[]",
+          "strength_mode": "cond mix — node",
+          "style_mix": 1,
+          "style_sweep": false,
+          "sweep_from": "16-bit Fantasy RPG",
+          "sweep_to": "16-bit Fantasy RPG",
+          "cursor_scope": "",
+          "on_exhausted": "stop",
+          "style_category": "All styles",
+          "repeat_last": false
+        },
+        "e2goSelection": []
+      }
+    },
+    {
+      "id": 8,
+      "type": "MarkdownNote",
+      "pos": [
+        4360,
+        70
+      ],
+      "size": [
+        620,
+        820
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "showAdvanced": null,
+      "inputs": [],
+      "outputs": [],
+      "title": "Powder Styler · Guide",
+      "properties": {
+        "Node name for S&R": "MarkdownNote"
+      },
+      "widgets_values": [
+        "## 04 / Powder Styler\n\n### Why use it\nReuse visual style descriptions while keeping your main subject unchanged.\n\n### How it works\nStyles contain text before/after the subject and negative text. P/N controls each side. Sweep tries styles across runs; Repeat last holds the current selection.\n\n### Inputs\nSelected styles, enabled states, mixing strengths and optional sweep settings.\n\n### Outputs\nstyle: complete style settings; style_text: ordinary positive style text.\n\n### Example\nSend house by a lake to Conditioner.prompt and Styler.style to Conditioner.style. Change the style while keeping the house and lake.\n\n### Other Powder nodes required?\nPartly independent. Combine style_text with your subject for standard CLIP Text Encode. Full conditioning weights, placement and negative text require Powder Conditioner.\n\n### Practical tip\nstyle_text does not carry the entire style configuration. Text-only encoding does not reproduce cond mix weights.\n\nBundled styles currently contain positive suffix text only; negative/prefix controls apply when those fields are present in a style.\n\nCursor progress is session-local. Browser reload/server restart starts a fresh cursor; Reset sets start_index to zero where available."
+      ],
+      "widgets_values_named": {
+        "text": "## 04 / Powder Styler\n\n### Why use it\nReuse visual style descriptions while keeping your main subject unchanged.\n\n### How it works\nStyles contain text before/after the subject and negative text. P/N controls each side. Sweep tries styles across runs; Repeat last holds the current selection.\n\n### Inputs\nSelected styles, enabled states, mixing strengths and optional sweep settings.\n\n### Outputs\nstyle: complete style settings; style_text: ordinary positive style text.\n\n### Example\nSend house by a lake to Conditioner.prompt and Styler.style to Conditioner.style. Change the style while keeping the house and lake.\n\n### Other Powder nodes required?\nPartly independent. Combine style_text with your subject for standard CLIP Text Encode. Full conditioning weights, placement and negative text require Powder Conditioner.\n\n### Practical tip\nstyle_text does not carry the entire style configuration. Text-only encoding does not reproduce cond mix weights.\n\nBundled styles currently contain positive suffix text only; negative/prefix controls apply when those fields are present in a style.\n\nCursor progress is session-local. Browser reload/server restart starts a fresh cursor; Reset sets start_index to zero where available."
+      },
+      "color": "#51436B",
+      "bgcolor": "#20252B"
+    },
+    {
+      "id": 9,
+      "type": "PowderCanvas",
+      "pos": [
+        20,
+        1070
+      ],
+      "size": [
+        520,
+        760
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 2,
+      "showAdvanced": null,
+      "inputs": [
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "image",
+          "locked": null,
+          "name": "image",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "IMAGE",
+          "pos": null,
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "canvas_config",
+          "locked": null,
+          "name": "canvas_config",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "STRING",
+          "widget": {
+            "name": "canvas_config"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "batch_size",
+          "locked": null,
+          "name": "batch_size",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "INT",
+          "widget": {
+            "name": "batch_size"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "layout_config",
+          "locked": null,
+          "name": "layout_config",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "layout_config"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "image",
+          "locked": null,
+          "name": "image",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "IMAGE",
+          "pos": null,
+          "slot_index": null,
+          "links": []
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "mask",
+          "locked": null,
+          "name": "mask",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "MASK",
+          "pos": null,
+          "slot_index": null,
+          "links": []
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "batch_size",
+          "locked": null,
+          "name": "batch_size",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "INT",
+          "pos": null,
+          "slot_index": null,
+          "links": []
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "layout",
+          "locked": null,
+          "name": "layout",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "STRING",
+          "pos": null,
+          "slot_index": null,
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PowderCanvas"
+      },
+      "widgets_values": [
+        "{}",
+        1,
+        "{}",
+        ""
+      ],
+      "widgets_values_named": {
+        "canvas_config": "{}",
+        "batch_size": 1,
+        "layout_config": "{}",
+        "e2go_canvas_ui": ""
+      },
+      "color": "#28565C",
+      "e2goWidgetNames": [
+        "canvas_config",
+        "batch_size",
+        "layout_config"
+      ],
+      "e2goWidgetSchemaVersion": 1,
+      "e2goInputs": {
+        "canvas_config": "{}",
+        "batch_size": 1,
+        "layout_config": "{}"
+      },
+      "e2goCanvasEditor": null,
+      "extensions": {
+        "e2goWidgetNames": [
+          "canvas_config",
+          "batch_size",
+          "layout_config"
+        ],
+        "e2goWidgetSchemaVersion": 1,
+        "e2goInputs": {
+          "canvas_config": "{}",
+          "batch_size": 1,
+          "layout_config": "{}"
+        },
+        "e2goCanvasEditor": null
+      }
+    },
+    {
+      "id": 10,
+      "type": "MarkdownNote",
+      "pos": [
+        580,
+        1070
+      ],
+      "size": [
+        620,
+        820
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "showAdvanced": null,
+      "inputs": [],
+      "outputs": [],
+      "title": "Powder Canvas · Guide",
+      "properties": {
+        "Node name for S&R": "MarkdownNote"
+      },
+      "widgets_values": [
+        "## 05 / Powder Canvas\n\n### Why use it\nLoad a source image, work with layers and paint a mask. Layout separately describes object placement for supported models.\n\n### How it works\nEdit canvas changes the source. View results previews generated variants; accept one before it becomes the next source. Layout regions describe composition, not pixel-editing masks.\n\n### Inputs\nAn image from a file or the image input, or a new blank canvas.\n\n### Outputs\nimage, mask, batch_size and a layout description.\n\n### Example\nCanvas.image → VAE Encode; Canvas.mask → Set Latent Noise Mask; then KSampler → VAE Decode. Use Image Conditioning + Canvas Review for stitched edits with outside-area preservation (set stitch_blend=0 for the exact effective-mask boundary).\n\n### Other Powder nodes required?\nImage and mask outputs work with standard nodes. In-canvas result review uses Canvas Review. Layout is read by Conditioner; use Powder Sampler for model/size validation.\n\n### Practical tip\nOpening Layout does not enable its use: turn on Use layout. Reset All clears content and keeps the current tab. Enable Save mask in workflow and wait for saving before saving the workflow.\n\nAI assistance and scene synchronization require qwen3vl_4b_int8_convrot.safetensors. Manual Layout editing does not."
+      ],
+      "widgets_values_named": {
+        "text": "## 05 / Powder Canvas\n\n### Why use it\nLoad a source image, work with layers and paint a mask. Layout separately describes object placement for supported models.\n\n### How it works\nEdit canvas changes the source. View results previews generated variants; accept one before it becomes the next source. Layout regions describe composition, not pixel-editing masks.\n\n### Inputs\nAn image from a file or the image input, or a new blank canvas.\n\n### Outputs\nimage, mask, batch_size and a layout description.\n\n### Example\nCanvas.image → VAE Encode; Canvas.mask → Set Latent Noise Mask; then KSampler → VAE Decode. Use Image Conditioning + Canvas Review for stitched edits with outside-area preservation (set stitch_blend=0 for the exact effective-mask boundary).\n\n### Other Powder nodes required?\nImage and mask outputs work with standard nodes. In-canvas result review uses Canvas Review. Layout is read by Conditioner; use Powder Sampler for model/size validation.\n\n### Practical tip\nOpening Layout does not enable its use: turn on Use layout. Reset All clears content and keeps the current tab. Enable Save mask in workflow and wait for saving before saving the workflow.\n\nAI assistance and scene synchronization require qwen3vl_4b_int8_convrot.safetensors. Manual Layout editing does not."
+      },
+      "color": "#28565C",
+      "bgcolor": "#20252B"
+    },
+    {
+      "id": 11,
+      "type": "PowderReferences",
+      "pos": [
+        1280,
+        1070
+      ],
+      "size": [
+        520,
+        760
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 2,
+      "showAdvanced": null,
+      "inputs": [
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "edited_image",
+          "locked": null,
+          "name": "edited_image",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "IMAGE",
+          "pos": null,
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "image_1",
+          "locked": null,
+          "name": "image_1",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "IMAGE",
+          "pos": null,
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "image_2",
+          "locked": null,
+          "name": "image_2",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "IMAGE",
+          "pos": null,
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "image_3",
+          "locked": null,
+          "name": "image_3",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "IMAGE",
+          "pos": null,
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "image_4",
+          "locked": null,
+          "name": "image_4",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "IMAGE",
+          "pos": null,
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "references",
+          "locked": null,
+          "name": "references",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "POWDER_REFS",
+          "pos": null,
+          "slot_index": null,
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PowderReferences"
+      },
+      "color": "#28565C",
+      "e2goWidgetNames": [],
+      "e2goWidgetSchemaVersion": 1,
+      "e2goInputs": {},
+      "extensions": {
+        "e2goWidgetNames": [],
+        "e2goWidgetSchemaVersion": 1,
+        "e2goInputs": {}
+      }
+    },
+    {
+      "id": 12,
+      "type": "MarkdownNote",
+      "pos": [
+        1840,
+        1070
+      ],
+      "size": [
+        620,
+        820
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "showAdvanced": null,
+      "inputs": [],
+      "outputs": [],
+      "title": "Powder References · Guide",
+      "properties": {
+        "Node name for S&R": "MarkdownNote"
+      },
+      "widgets_values": [
+        "## 06 / Powder References\n\n### Why use it\nKeep the source and extra reference pictures together so both sides of an edit refer to the same images.\n\n### How it works\nThe bundle is shared by text and image conditioning. It does not edit an image or transfer a style on its own. Empty reference slots are skipped.\n\n### Inputs\nedited_image: the source being edited; image_1…image_4: additional references.\n\n### Outputs\nA POWDER_REFS bundle, not an ordinary IMAGE or LATENT.\n\n### Example\nSource → Image Conditioning.pixels and References.edited_image. Clothing reference → References.image_1. Connect the same bundle to Conditioner.references and Image Conditioning.references; use Edit.\n\n### Other Powder nodes required?\nRequires Powder consumers: Conditioner and Image Conditioning read this bundle. Standard KSampler and CLIP Text Encode do not accept it.\n\n### Practical tip\nThe model must support reference editing. The edited_image field establishes text-side numbering; still connect the actual source to pixels."
+      ],
+      "widgets_values_named": {
+        "text": "## 06 / Powder References\n\n### Why use it\nKeep the source and extra reference pictures together so both sides of an edit refer to the same images.\n\n### How it works\nThe bundle is shared by text and image conditioning. It does not edit an image or transfer a style on its own. Empty reference slots are skipped.\n\n### Inputs\nedited_image: the source being edited; image_1…image_4: additional references.\n\n### Outputs\nA POWDER_REFS bundle, not an ordinary IMAGE or LATENT.\n\n### Example\nSource → Image Conditioning.pixels and References.edited_image. Clothing reference → References.image_1. Connect the same bundle to Conditioner.references and Image Conditioning.references; use Edit.\n\n### Other Powder nodes required?\nRequires Powder consumers: Conditioner and Image Conditioning read this bundle. Standard KSampler and CLIP Text Encode do not accept it.\n\n### Practical tip\nThe model must support reference editing. The edited_image field establishes text-side numbering; still connect the actual source to pixels."
+      },
+      "color": "#28565C",
+      "bgcolor": "#20252B"
+    },
+    {
+      "id": 13,
+      "type": "PowderImageConditioning",
+      "pos": [
+        2540,
+        1070
+      ],
+      "size": [
+        520,
+        470
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 2,
+      "showAdvanced": null,
+      "inputs": [
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "positive",
+          "locked": null,
+          "name": "positive",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "CONDITIONING",
+          "pos": null,
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "negative",
+          "locked": null,
+          "name": "negative",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "CONDITIONING",
+          "pos": null,
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "vae",
+          "locked": null,
+          "name": "vae",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "VAE",
+          "pos": null,
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "pixels",
+          "locked": null,
+          "name": "pixels",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "IMAGE",
+          "pos": null,
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "mask",
+          "locked": null,
+          "name": "mask",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "MASK",
+          "pos": null,
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "references",
+          "locked": null,
+          "name": "references",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "POWDER_REFS",
+          "pos": null,
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "model",
+          "locked": null,
+          "name": "model",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "MODEL",
+          "pos": null,
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "t2i_latent",
+          "locked": null,
+          "name": "t2i_latent",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "LATENT",
+          "pos": null,
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "mode",
+          "locked": null,
+          "name": "mode",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "COMBO",
+          "widget": {
+            "name": "mode"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "batch_size",
+          "locked": null,
+          "name": "batch_size",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "INT",
+          "widget": {
+            "name": "batch_size"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "denoise",
+          "locked": null,
+          "name": "denoise",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "FLOAT",
+          "widget": {
+            "name": "denoise"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "seamless_mask_blend",
+          "locked": null,
+          "name": "seamless_mask_blend",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "seamless_mask_blend"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "concat",
+          "locked": null,
+          "name": "concat",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "COMBO",
+          "widget": {
+            "name": "concat"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "hard_concat_mask",
+          "locked": null,
+          "name": "hard_concat_mask",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "hard_concat_mask"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "ignore_mask",
+          "locked": null,
+          "name": "ignore_mask",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "ignore_mask"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "crop_to_mask",
+          "locked": null,
+          "name": "crop_to_mask",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "COMBO",
+          "widget": {
+            "name": "crop_to_mask"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "crop_megapixels",
+          "locked": null,
+          "name": "crop_megapixels",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "FLOAT",
+          "widget": {
+            "name": "crop_megapixels"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "crop_width",
+          "locked": null,
+          "name": "crop_width",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "INT",
+          "widget": {
+            "name": "crop_width"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "crop_height",
+          "locked": null,
+          "name": "crop_height",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "INT",
+          "widget": {
+            "name": "crop_height"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "context_percent",
+          "locked": null,
+          "name": "context_percent",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "FLOAT",
+          "widget": {
+            "name": "context_percent"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "stitch_blend",
+          "locked": null,
+          "name": "stitch_blend",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "INT",
+          "widget": {
+            "name": "stitch_blend"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "mask_grow",
+          "locked": null,
+          "name": "mask_grow",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "INT",
+          "widget": {
+            "name": "mask_grow"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "reference_megapixels",
+          "locked": null,
+          "name": "reference_megapixels",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "FLOAT",
+          "widget": {
+            "name": "reference_megapixels"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "blank_reference",
+          "locked": null,
+          "name": "blank_reference",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "blank_reference"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "positive",
+          "locked": null,
+          "name": "positive",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "CONDITIONING",
+          "pos": null,
+          "slot_index": null,
+          "links": []
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "negative",
+          "locked": null,
+          "name": "negative",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "CONDITIONING",
+          "pos": null,
+          "slot_index": null,
+          "links": []
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "latent",
+          "locked": null,
+          "name": "latent",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "LATENT",
+          "pos": null,
+          "slot_index": null,
+          "links": []
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "model",
+          "locked": null,
+          "name": "model",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "MODEL",
+          "pos": null,
+          "slot_index": null,
+          "links": []
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "denoise",
+          "locked": null,
+          "name": "denoise",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "FLOAT",
+          "pos": null,
+          "slot_index": null,
+          "links": []
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "stitch",
+          "locked": null,
+          "name": "stitch",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "POWDER_STITCH",
+          "pos": null,
+          "slot_index": null,
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PowderImageConditioning"
+      },
+      "widgets_values": [
+        "Repaint",
+        1,
+        1,
+        true,
+        "auto",
+        false,
+        false,
+        "off",
+        1,
+        1024,
+        1024,
+        20,
+        16,
+        0,
+        1,
+        false
+      ],
+      "widgets_values_named": {
+        "mode": "Repaint",
+        "batch_size": 1,
+        "denoise": 1,
+        "concat": "auto",
+        "hard_concat_mask": false,
+        "ignore_mask": false,
+        "crop_to_mask": "off",
+        "crop_megapixels": 1,
+        "crop_width": 1024,
+        "crop_height": 1024,
+        "context_percent": 20,
+        "seamless_mask_blend": true,
+        "stitch_blend": 16,
+        "mask_grow": 0,
+        "reference_megapixels": 1,
+        "blank_reference": false
+      },
+      "color": "#28565C",
+      "e2goWidgetNames": [
+        "mode",
+        "batch_size",
+        "denoise",
+        "seamless_mask_blend",
+        "concat",
+        "hard_concat_mask",
+        "ignore_mask",
+        "crop_to_mask",
+        "crop_megapixels",
+        "crop_width",
+        "crop_height",
+        "context_percent",
+        "stitch_blend",
+        "mask_grow",
+        "reference_megapixels",
+        "blank_reference"
+      ],
+      "e2goWidgetSchemaVersion": 1,
+      "e2goInputs": {
+        "mode": "Repaint",
+        "batch_size": 1,
+        "denoise": 1,
+        "seamless_mask_blend": true,
+        "concat": "auto",
+        "hard_concat_mask": false,
+        "ignore_mask": false,
+        "crop_to_mask": "off",
+        "crop_megapixels": 1,
+        "crop_width": 1024,
+        "crop_height": 1024,
+        "context_percent": 20,
+        "stitch_blend": 16,
+        "mask_grow": 0,
+        "reference_megapixels": 1,
+        "blank_reference": false
+      },
+      "extensions": {
+        "e2goWidgetNames": [
+          "mode",
+          "batch_size",
+          "denoise",
+          "seamless_mask_blend",
+          "concat",
+          "hard_concat_mask",
+          "ignore_mask",
+          "crop_to_mask",
+          "crop_megapixels",
+          "crop_width",
+          "crop_height",
+          "context_percent",
+          "stitch_blend",
+          "mask_grow",
+          "reference_megapixels",
+          "blank_reference"
+        ],
+        "e2goWidgetSchemaVersion": 1,
+        "e2goInputs": {
+          "mode": "Repaint",
+          "batch_size": 1,
+          "denoise": 1,
+          "seamless_mask_blend": true,
+          "concat": "auto",
+          "hard_concat_mask": false,
+          "ignore_mask": false,
+          "crop_to_mask": "off",
+          "crop_megapixels": 1,
+          "crop_width": 1024,
+          "crop_height": 1024,
+          "context_percent": 20,
+          "stitch_blend": 16,
+          "mask_grow": 0,
+          "reference_megapixels": 1,
+          "blank_reference": false
+        }
+      }
+    },
+    {
+      "id": 14,
+      "type": "MarkdownNote",
+      "pos": [
+        3100,
+        1070
+      ],
+      "size": [
+        620,
+        820
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "showAdvanced": null,
+      "inputs": [],
+      "outputs": [],
+      "title": "Powder Image Conditioning · Guide",
+      "properties": {
+        "Node name for S&R": "MarkdownNote"
+      },
+      "widgets_values": [
+        "## 07 / Powder Image Conditioning\n\n### Why use it\nPrepare an image, mask and model for generation or editing in one place.\n\n### How it works\nGenerate starts from an empty latent. Repaint redraws the source. Repair works on a local crop around the mask. Edit uses model-specific reference conditioning. Denoise controls how freely the source can change.\n\n### Inputs\nPositive/negative conditioning, MODEL and VAE. Editing also uses pixels and mask. Generate can accept an existing empty latent.\n\n### Outputs\nPrepared positive, negative, latent, model, denoise and stitch context.\n\n### Example\nLoad Image + CLIP Text Encode → Image Conditioning → standard KSampler. Wire model, positive, negative, latent and denoise. After VAE Decode, connect images and stitch to Canvas Review.\n\n### Other Powder nodes required?\nGenerate and ordinary full-image img2img can use standard surrounding nodes. Returning a crop and preserving the outside image requires Powder Canvas Review. References are optional.\n\n### Practical tip\nAn empty mask means the whole image. Low denoise preserves the source but may resist major changes; high denoise allows more change without guaranteeing the requested result.\n\nPainted pixels retain the edit. stitch_blend adds an outside transition within the crop; use 0 for strict preservation outside the effective mask. mask_grow enlarges that mask.\n\nEdit (native) keeps conditioning supplied by the model-specific encoder without adding Powder reference latents."
+      ],
+      "widgets_values_named": {
+        "text": "## 07 / Powder Image Conditioning\n\n### Why use it\nPrepare an image, mask and model for generation or editing in one place.\n\n### How it works\nGenerate starts from an empty latent. Repaint redraws the source. Repair works on a local crop around the mask. Edit uses model-specific reference conditioning. Denoise controls how freely the source can change.\n\n### Inputs\nPositive/negative conditioning, MODEL and VAE. Editing also uses pixels and mask. Generate can accept an existing empty latent.\n\n### Outputs\nPrepared positive, negative, latent, model, denoise and stitch context.\n\n### Example\nLoad Image + CLIP Text Encode → Image Conditioning → standard KSampler. Wire model, positive, negative, latent and denoise. After VAE Decode, connect images and stitch to Canvas Review.\n\n### Other Powder nodes required?\nGenerate and ordinary full-image img2img can use standard surrounding nodes. Returning a crop and preserving the outside image requires Powder Canvas Review. References are optional.\n\n### Practical tip\nAn empty mask means the whole image. Low denoise preserves the source but may resist major changes; high denoise allows more change without guaranteeing the requested result.\n\nPainted pixels retain the edit. stitch_blend adds an outside transition within the crop; use 0 for strict preservation outside the effective mask. mask_grow enlarges that mask.\n\nEdit (native) keeps conditioning supplied by the model-specific encoder without adding Powder reference latents."
+      },
+      "color": "#28565C",
+      "bgcolor": "#20252B"
+    },
+    {
+      "id": 15,
+      "type": "PowderResolution",
+      "pos": [
+        3800,
+        1070
+      ],
+      "size": [
+        520,
+        342
+      ],
+      "flags": {},
+      "order": 14,
+      "mode": 2,
+      "showAdvanced": null,
+      "inputs": [
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "model",
+          "locked": null,
+          "name": "model",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "MODEL",
+          "pos": null,
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "aspect_ratio",
+          "locked": null,
+          "name": "aspect_ratio",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "COMBO",
+          "widget": {
+            "name": "aspect_ratio"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "megapixel",
+          "locked": null,
+          "name": "megapixel",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "COMBO",
+          "widget": {
+            "name": "megapixel"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "custom_ratio",
+          "locked": null,
+          "name": "custom_ratio",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "custom_ratio"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "ratio_x",
+          "locked": null,
+          "name": "ratio_x",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "FLOAT",
+          "widget": {
+            "name": "ratio_x"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "ratio_y",
+          "locked": null,
+          "name": "ratio_y",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "FLOAT",
+          "widget": {
+            "name": "ratio_y"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "custom_mode",
+          "locked": null,
+          "name": "custom_mode",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "custom_mode"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "width",
+          "locked": null,
+          "name": "width",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "INT",
+          "widget": {
+            "name": "width"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "height",
+          "locked": null,
+          "name": "height",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "INT",
+          "widget": {
+            "name": "height"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "round_custom",
+          "locked": null,
+          "name": "round_custom",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "round_custom"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "batch_size",
+          "locked": null,
+          "name": "batch_size",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "INT",
+          "widget": {
+            "name": "batch_size"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "latent_type",
+          "locked": null,
+          "name": "latent_type",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "COMBO",
+          "widget": {
+            "name": "latent_type"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "divisible_by",
+          "locked": null,
+          "name": "divisible_by",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "COMBO",
+          "widget": {
+            "name": "divisible_by"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "LATENT",
+          "locked": null,
+          "name": "LATENT",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "LATENT",
+          "pos": null,
+          "slot_index": null,
+          "links": []
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "width",
+          "locked": null,
+          "name": "width",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "INT",
+          "pos": null,
+          "slot_index": null,
+          "links": []
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "height",
+          "locked": null,
+          "name": "height",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "INT",
+          "pos": null,
+          "slot_index": null,
+          "links": []
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "resolution",
+          "locked": null,
+          "name": "resolution",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "STRING",
+          "pos": null,
+          "slot_index": null,
+          "links": []
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "preview",
+          "locked": null,
+          "name": "preview",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "IMAGE",
+          "pos": null,
+          "slot_index": null,
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PowderResolution"
+      },
+      "widgets_values": [
+        "2:3 (Classic Portrait)",
+        "2.0",
+        false,
+        1,
+        1,
+        false,
+        960,
+        1656,
+        false,
+        1,
+        "SD3/Flux (16ch)",
+        "64"
+      ],
+      "widgets_values_named": {
+        "aspect_ratio": "2:3 (Classic Portrait)",
+        "megapixel": "2.0",
+        "custom_ratio": false,
+        "ratio_x": 1,
+        "ratio_y": 1,
+        "custom_mode": false,
+        "width": 960,
+        "height": 1656,
+        "round_custom": false,
+        "batch_size": 1,
+        "latent_type": "SD3/Flux (16ch)",
+        "divisible_by": "64"
+      },
+      "color": "#28565C",
+      "e2goWidgetNames": [
+        "aspect_ratio",
+        "megapixel",
+        "custom_ratio",
+        "ratio_x",
+        "ratio_y",
+        "custom_mode",
+        "width",
+        "height",
+        "round_custom",
+        "batch_size",
+        "latent_type",
+        "divisible_by"
+      ],
+      "e2goWidgetSchemaVersion": 1,
+      "e2goInputs": {
+        "aspect_ratio": "2:3 (Classic Portrait)",
+        "megapixel": "2.0",
+        "custom_ratio": false,
+        "ratio_x": 1,
+        "ratio_y": 1,
+        "custom_mode": false,
+        "width": 960,
+        "height": 1656,
+        "round_custom": false,
+        "batch_size": 1,
+        "latent_type": "SD3/Flux (16ch)",
+        "divisible_by": "64"
+      },
+      "extensions": {
+        "e2goWidgetNames": [
+          "aspect_ratio",
+          "megapixel",
+          "custom_ratio",
+          "ratio_x",
+          "ratio_y",
+          "custom_mode",
+          "width",
+          "height",
+          "round_custom",
+          "batch_size",
+          "latent_type",
+          "divisible_by"
+        ],
+        "e2goWidgetSchemaVersion": 1,
+        "e2goInputs": {
+          "aspect_ratio": "2:3 (Classic Portrait)",
+          "megapixel": "2.0",
+          "custom_ratio": false,
+          "ratio_x": 1,
+          "ratio_y": 1,
+          "custom_mode": false,
+          "width": 960,
+          "height": 1656,
+          "round_custom": false,
+          "batch_size": 1,
+          "latent_type": "SD3/Flux (16ch)",
+          "divisible_by": "64"
+        }
+      }
+    },
+    {
+      "id": 16,
+      "type": "MarkdownNote",
+      "pos": [
+        4360,
+        1070
+      ],
+      "size": [
+        620,
+        820
+      ],
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "showAdvanced": null,
+      "inputs": [],
+      "outputs": [],
+      "title": "Powder Resolution · Guide",
+      "properties": {
+        "Node name for S&R": "MarkdownNote"
+      },
+      "widgets_values": [
+        "## 08 / Powder Resolution\n\n### Why use it\nChoose output dimensions and the number of image variants.\n\n### How it works\nPreset selects a shape, Ratio uses your aspect ratio and target area, and Pixels uses explicit dimensions. The output is an empty latent for sampling, not a generated picture.\n\n### Inputs\nSize, batch count and latent format. Auto requires a connected MODEL; 3D image latents use one frame.\n\n### Outputs\nLATENT, width, height, a size string and a proportions preview.\n\n### Example\nResolution.LATENT → KSampler.latent_image. For standard SDXL, choose SDXL/SD1 (4ch). All other nodes may be standard ComfyUI nodes.\n\n### Other Powder nodes required?\nWorks without other Powder nodes. The preview shows proportions only.\n\n### Practical tip\nMatch the latent format to the model. Dimensions may be snapped to the model grid; not every pixel size is representable."
+      ],
+      "widgets_values_named": {
+        "text": "## 08 / Powder Resolution\n\n### Why use it\nChoose output dimensions and the number of image variants.\n\n### How it works\nPreset selects a shape, Ratio uses your aspect ratio and target area, and Pixels uses explicit dimensions. The output is an empty latent for sampling, not a generated picture.\n\n### Inputs\nSize, batch count and latent format. Auto requires a connected MODEL; 3D image latents use one frame.\n\n### Outputs\nLATENT, width, height, a size string and a proportions preview.\n\n### Example\nResolution.LATENT → KSampler.latent_image. For standard SDXL, choose SDXL/SD1 (4ch). All other nodes may be standard ComfyUI nodes.\n\n### Other Powder nodes required?\nWorks without other Powder nodes. The preview shows proportions only.\n\n### Practical tip\nMatch the latent format to the model. Dimensions may be snapped to the model grid; not every pixel size is representable."
+      },
+      "color": "#28565C",
+      "bgcolor": "#20252B"
+    },
+    {
+      "id": 17,
+      "type": "PowderConditioner",
+      "pos": [
+        20,
+        2070
+      ],
+      "size": [
+        520,
+        760
+      ],
+      "flags": {},
+      "order": 16,
+      "mode": 2,
+      "showAdvanced": null,
+      "inputs": [
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "clip",
+          "locked": null,
+          "name": "clip",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "CLIP",
+          "pos": null,
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "prompt",
+          "locked": null,
+          "name": "prompt",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "STRING",
+          "pos": null,
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "negative_prompt",
+          "locked": null,
+          "name": "negative_prompt",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "pos": null,
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "lora_info",
+          "locked": null,
+          "name": "lora_info",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "pos": null,
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "style",
+          "locked": null,
+          "name": "style",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "pos": null,
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "references",
+          "locked": null,
+          "name": "references",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "POWDER_REFS",
+          "pos": null,
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "layout",
+          "locked": null,
+          "name": "layout",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "pos": null,
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "layout_width",
+          "locked": null,
+          "name": "layout_width",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "INT",
+          "pos": null,
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "layout_height",
+          "locked": null,
+          "name": "layout_height",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "INT",
+          "pos": null,
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "use_cache",
+          "locked": null,
+          "name": "use_cache",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "use_cache"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "cache_mode",
+          "locked": null,
+          "name": "cache_mode",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "COMBO",
+          "widget": {
+            "name": "cache_mode"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "consumer_mode",
+          "locked": null,
+          "name": "consumer_mode",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "consumer_mode"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "prompt_format",
+          "locked": null,
+          "name": "prompt_format",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "COMBO",
+          "widget": {
+            "name": "prompt_format"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "positive_conditioning",
+          "locked": null,
+          "name": "positive_conditioning",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 6,
+          "type": "CONDITIONING",
+          "pos": null,
+          "slot_index": null,
+          "links": []
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "negative_conditioning",
+          "locked": null,
+          "name": "negative_conditioning",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 6,
+          "type": "CONDITIONING",
+          "pos": null,
+          "slot_index": null,
+          "links": []
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "final_positive",
+          "locked": null,
+          "name": "final_positive",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 6,
+          "type": "STRING",
+          "pos": null,
+          "slot_index": null,
+          "links": []
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "final_negative",
+          "locked": null,
+          "name": "final_negative",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 6,
+          "type": "STRING",
+          "pos": null,
+          "slot_index": null,
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PowderConditioner"
+      },
+      "widgets_values": [
+        true,
+        "auto",
+        "",
+        "text"
+      ],
+      "widgets_values_named": {
+        "use_cache": true,
+        "cache_mode": "auto",
+        "consumer_mode": "",
+        "prompt_format": "text"
+      },
+      "color": "#344F73",
+      "e2goWidgetNames": [
+        "use_cache",
+        "cache_mode",
+        "consumer_mode",
+        "prompt_format"
+      ],
+      "e2goWidgetSchemaVersion": 1,
+      "e2goInputs": {
+        "use_cache": true,
+        "cache_mode": "auto",
+        "consumer_mode": "",
+        "prompt_format": "text"
+      },
+      "extensions": {
+        "e2goWidgetNames": [
+          "use_cache",
+          "cache_mode",
+          "consumer_mode",
+          "prompt_format"
+        ],
+        "e2goWidgetSchemaVersion": 1,
+        "e2goInputs": {
+          "use_cache": true,
+          "cache_mode": "auto",
+          "consumer_mode": "",
+          "prompt_format": "text"
+        }
+      }
+    },
+    {
+      "id": 18,
+      "type": "MarkdownNote",
+      "pos": [
+        580,
+        2070
+      ],
+      "size": [
+        620,
+        820
+      ],
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "showAdvanced": null,
+      "inputs": [],
+      "outputs": [],
+      "title": "Powder Conditioner · Guide",
+      "properties": {
+        "Node name for S&R": "MarkdownNote"
+      },
+      "widgets_values": [
+        "## 09 / Powder Conditioner\n\n### Why use it\nTurn your description into conditioning understood by the image model, optionally combining styles and LoRA triggers.\n\n### How it works\nCLIP encodes the assembled text. Unchanged encodings can be cached. final_positive/final_negative show the actual descriptions used.\n\n### Inputs\nCLIP and prompt; optional negative_prompt, style, lora_info, references and layout.\n\n### Outputs\nPositive/negative CONDITIONING and the two final text strings.\n\n### Example\nCheckpoint Loader.CLIP → Conditioner.clip; your text → prompt. Connect positive_conditioning and negative_conditioning to standard KSampler.\n\n### Other Powder nodes required?\nBasic encoding works independently. Powder styles, trigger metadata, references and Layout are optional extensions. Layout requires a supported model and matching dimensions.\n\n### Practical tip\nUse the encoder that belongs to your image model. Inspect final_positive when a style or trigger seems to change the result unexpectedly.\n\nAuto bypasses Flux/T5 and quantized encoders. CLIP hooks/schedules always encode fresh, including in Aggressive mode.\n\n### Ideogram captions\nUse a complete caption containing scene, style, background and objects. The Ideogram FULL template builds it from text using its local enhancer; LITE contains an editable JSON example. Conditioner keeps the structure and inserts styles and LoRA triggers inside it. Wrapping plain text alone does not fill missing object descriptions."
+      ],
+      "widgets_values_named": {
+        "text": "## 09 / Powder Conditioner\n\n### Why use it\nTurn your description into conditioning understood by the image model, optionally combining styles and LoRA triggers.\n\n### How it works\nCLIP encodes the assembled text. Unchanged encodings can be cached. final_positive/final_negative show the actual descriptions used.\n\n### Inputs\nCLIP and prompt; optional negative_prompt, style, lora_info, references and layout.\n\n### Outputs\nPositive/negative CONDITIONING and the two final text strings.\n\n### Example\nCheckpoint Loader.CLIP → Conditioner.clip; your text → prompt. Connect positive_conditioning and negative_conditioning to standard KSampler.\n\n### Other Powder nodes required?\nBasic encoding works independently. Powder styles, trigger metadata, references and Layout are optional extensions. Layout requires a supported model and matching dimensions.\n\n### Practical tip\nUse the encoder that belongs to your image model. Inspect final_positive when a style or trigger seems to change the result unexpectedly.\n\nAuto bypasses Flux/T5 and quantized encoders. CLIP hooks/schedules always encode fresh, including in Aggressive mode.\n\n### Ideogram captions\nUse a complete caption containing scene, style, background and objects. The Ideogram FULL template builds it from text using its local enhancer; LITE contains an editable JSON example. Conditioner keeps the structure and inserts styles and LoRA triggers inside it. Wrapping plain text alone does not fill missing object descriptions."
+      },
+      "color": "#344F73",
+      "bgcolor": "#20252B"
+    },
+    {
+      "id": 19,
+      "type": "PowderSampler",
+      "pos": [
+        1280,
+        2070
+      ],
+      "size": [
+        520,
+        402
+      ],
+      "flags": {},
+      "order": 18,
+      "mode": 2,
+      "showAdvanced": null,
+      "inputs": [
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "model",
+          "locked": null,
+          "name": "model",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "MODEL",
+          "pos": null,
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "positive",
+          "locked": null,
+          "name": "positive",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "CONDITIONING",
+          "pos": null,
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "negative",
+          "locked": null,
+          "name": "negative",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "CONDITIONING",
+          "pos": null,
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "latent",
+          "locked": null,
+          "name": "latent",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "LATENT",
+          "pos": null,
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "model_negative",
+          "locked": null,
+          "name": "model_negative",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "MODEL",
+          "pos": null,
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "seed",
+          "locked": null,
+          "name": "seed",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "steps",
+          "locked": null,
+          "name": "steps",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "INT",
+          "widget": {
+            "name": "steps"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "cfg",
+          "locked": null,
+          "name": "cfg",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "FLOAT",
+          "widget": {
+            "name": "cfg"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "sampler_name",
+          "locked": null,
+          "name": "sampler_name",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "COMBO",
+          "widget": {
+            "name": "sampler_name"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "scheduler",
+          "locked": null,
+          "name": "scheduler",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "COMBO",
+          "widget": {
+            "name": "scheduler"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "denoise",
+          "locked": null,
+          "name": "denoise",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "FLOAT",
+          "widget": {
+            "name": "denoise"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "auto_steps",
+          "locked": null,
+          "name": "auto_steps",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "auto_steps"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "inpaint_boost",
+          "locked": null,
+          "name": "inpaint_boost",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "COMBO",
+          "widget": {
+            "name": "inpaint_boost"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "similarity",
+          "locked": null,
+          "name": "similarity",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "FLOAT",
+          "widget": {
+            "name": "similarity"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "flux2_shift",
+          "locked": null,
+          "name": "flux2_shift",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "COMBO",
+          "widget": {
+            "name": "flux2_shift"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "model_profile",
+          "locked": null,
+          "name": "model_profile",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "COMBO",
+          "widget": {
+            "name": "model_profile"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "latent",
+          "locked": null,
+          "name": "latent",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "LATENT",
+          "pos": null,
+          "slot_index": null,
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PowderSampler"
+      },
+      "widgets_values": [
+        0,
+        "randomize",
+        8,
+        1,
+        "euler",
+        "simple",
+        1,
+        true,
+        "soft",
+        -0.0,
+        "auto",
+        "Manual"
+      ],
+      "widgets_values_named": {
+        "seed": 0,
+        "control_after_generate": "randomize",
+        "steps": 8,
+        "cfg": 1,
+        "sampler_name": "euler",
+        "scheduler": "simple",
+        "denoise": 1,
+        "auto_steps": true,
+        "inpaint_boost": "soft",
+        "similarity": -0.0,
+        "flux2_shift": "auto",
+        "model_profile": "Manual"
+      },
+      "color": "#344F73",
+      "e2goWidgetNames": [
+        "seed",
+        "control_after_generate",
+        "steps",
+        "cfg",
+        "sampler_name",
+        "scheduler",
+        "denoise",
+        "auto_steps",
+        "inpaint_boost",
+        "similarity",
+        "flux2_shift",
+        "model_profile"
+      ],
+      "e2goWidgetSchemaVersion": 1,
+      "e2goInputs": {
+        "seed": 0,
+        "control_after_generate": "randomize",
+        "steps": 8,
+        "cfg": 1,
+        "sampler_name": "euler",
+        "scheduler": "simple",
+        "denoise": 1,
+        "auto_steps": true,
+        "inpaint_boost": "soft",
+        "similarity": -0.0,
+        "flux2_shift": "auto",
+        "model_profile": "Manual"
+      },
+      "extensions": {
+        "e2goWidgetNames": [
+          "seed",
+          "control_after_generate",
+          "steps",
+          "cfg",
+          "sampler_name",
+          "scheduler",
+          "denoise",
+          "auto_steps",
+          "inpaint_boost",
+          "similarity",
+          "flux2_shift",
+          "model_profile"
+        ],
+        "e2goWidgetSchemaVersion": 1,
+        "e2goInputs": {
+          "seed": 0,
+          "control_after_generate": "randomize",
+          "steps": 8,
+          "cfg": 1,
+          "sampler_name": "euler",
+          "scheduler": "simple",
+          "denoise": 1,
+          "auto_steps": true,
+          "inpaint_boost": "soft",
+          "similarity": -0.0,
+          "flux2_shift": "auto",
+          "model_profile": "Manual"
+        }
+      }
+    },
+    {
+      "id": 20,
+      "type": "MarkdownNote",
+      "pos": [
+        1840,
+        2070
+      ],
+      "size": [
+        620,
+        820
+      ],
+      "flags": {},
+      "order": 19,
+      "mode": 0,
+      "showAdvanced": null,
+      "inputs": [],
+      "outputs": [],
+      "title": "Powder Sampler · Guide",
+      "properties": {
+        "Node name for S&R": "MarkdownNote"
+      },
+      "widgets_values": [
+        "## 10 / Powder Sampler\n\n### Why use it\nGenerate an image latent from noise or a prepared source, guided by conditioning.\n\n### How it works\nSteps controls sampling work; CFG controls guidance; seed sets initial randomness; denoise controls redraw strength. Similarity blends noise across frames in the same batch.\n\n### Inputs\nMODEL, positive/negative conditioning, LATENT and sampling settings. Ideogram 4 also requires a compatible unconditional model.\n\n### Outputs\nA sampled latent. VAE Decode turns it into an image.\n\n### Example\nCheckpoint Loader + two CLIP Text Encode nodes + Empty Latent Image → Powder Sampler → VAE Decode → Save Image.\n\n### Other Powder nodes required?\nWorks without other Powder nodes. Inpaint boost needs a noise mask already attached to the latent.\n\n### Practical tip\nUse a recipe appropriate to the model family. Scale steps by denoise changes the effective count. Fix seed and other settings when comparing results.\n\n### Ideogram sampling\nStandard keeps the existing schedule. First sigma +0.005 (experimental) changes only the first sampled sigma, keeping the step count and model weights. It can help with gray placeholders but may introduce artifacts. It is independent of Original / Enhanced in the prompt template. Compare using the same seed; other model families ignore this option."
+      ],
+      "widgets_values_named": {
+        "text": "## 10 / Powder Sampler\n\n### Why use it\nGenerate an image latent from noise or a prepared source, guided by conditioning.\n\n### How it works\nSteps controls sampling work; CFG controls guidance; seed sets initial randomness; denoise controls redraw strength. Similarity blends noise across frames in the same batch.\n\n### Inputs\nMODEL, positive/negative conditioning, LATENT and sampling settings. Ideogram 4 also requires a compatible unconditional model.\n\n### Outputs\nA sampled latent. VAE Decode turns it into an image.\n\n### Example\nCheckpoint Loader + two CLIP Text Encode nodes + Empty Latent Image → Powder Sampler → VAE Decode → Save Image.\n\n### Other Powder nodes required?\nWorks without other Powder nodes. Inpaint boost needs a noise mask already attached to the latent.\n\n### Practical tip\nUse a recipe appropriate to the model family. Scale steps by denoise changes the effective count. Fix seed and other settings when comparing results.\n\n### Ideogram sampling\nStandard keeps the existing schedule. First sigma +0.005 (experimental) changes only the first sampled sigma, keeping the step count and model weights. It can help with gray placeholders but may introduce artifacts. It is independent of Original / Enhanced in the prompt template. Compare using the same seed; other model families ignore this option."
+      },
+      "color": "#344F73",
+      "bgcolor": "#20252B"
+    },
+    {
+      "id": 21,
+      "type": "PowderInpaintSamplerSelect",
+      "pos": [
+        2540,
+        2070
+      ],
+      "size": [
+        520,
+        760
+      ],
+      "flags": {},
+      "order": 20,
+      "mode": 2,
+      "showAdvanced": null,
+      "inputs": [
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "sampler_name",
+          "locked": null,
+          "name": "sampler_name",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "COMBO",
+          "widget": {
+            "name": "sampler_name"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "inpaint_boost",
+          "locked": null,
+          "name": "inpaint_boost",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "COMBO",
+          "widget": {
+            "name": "inpaint_boost"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "SAMPLER",
+          "locked": null,
+          "name": "SAMPLER",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "SAMPLER",
+          "pos": null,
+          "slot_index": null,
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PowderInpaintSamplerSelect"
+      },
+      "widgets_values": [
+        "er_sde",
+        "soft"
+      ],
+      "widgets_values_named": {
+        "sampler_name": "er_sde",
+        "inpaint_boost": "soft"
+      },
+      "color": "#344F73",
+      "e2goWidgetNames": [
+        "sampler_name",
+        "inpaint_boost"
+      ],
+      "e2goWidgetSchemaVersion": 1,
+      "e2goInputs": {
+        "sampler_name": "er_sde",
+        "inpaint_boost": "soft"
+      },
+      "extensions": {
+        "e2goWidgetNames": [
+          "sampler_name",
+          "inpaint_boost"
+        ],
+        "e2goWidgetSchemaVersion": 1,
+        "e2goInputs": {
+          "sampler_name": "er_sde",
+          "inpaint_boost": "soft"
+        }
+      }
+    },
+    {
+      "id": 22,
+      "type": "MarkdownNote",
+      "pos": [
+        3100,
+        2070
+      ],
+      "size": [
+        620,
+        820
+      ],
+      "flags": {},
+      "order": 21,
+      "mode": 0,
+      "showAdvanced": null,
+      "inputs": [],
+      "outputs": [],
+      "title": "Powder Inpaint Sampler · Guide",
+      "properties": {
+        "Node name for S&R": "MarkdownNote"
+      },
+      "widgets_values": [
+        "## 11 / Powder Inpaint Sampler\n\n### Why use it\nUse mask refinement in a custom sampling chain with your own scheduler or guider.\n\n### How it works\nSelects an algorithm and boost profile but does not generate images itself. It supplies a SAMPLER component to SamplerCustom or SamplerCustomAdvanced.\n\n### Inputs\nAlgorithm and inpaint boost level: off, soft, seams or max.\n\n### Outputs\nA SAMPLER object.\n\n### Example\nPowder Inpaint Sampler.SAMPLER → SamplerCustomAdvanced.sampler. Supply noise, guider, sigmas and latent through standard nodes.\n\n### Other Powder nodes required?\nWorks without other Powder nodes. Its output does not connect directly to an ordinary KSampler.\n\n### Practical tip\nThe latent must contain noise_mask for mask refinement. Stronger boost is not always better; compare boundaries and detail against off/soft at the same seed."
+      ],
+      "widgets_values_named": {
+        "text": "## 11 / Powder Inpaint Sampler\n\n### Why use it\nUse mask refinement in a custom sampling chain with your own scheduler or guider.\n\n### How it works\nSelects an algorithm and boost profile but does not generate images itself. It supplies a SAMPLER component to SamplerCustom or SamplerCustomAdvanced.\n\n### Inputs\nAlgorithm and inpaint boost level: off, soft, seams or max.\n\n### Outputs\nA SAMPLER object.\n\n### Example\nPowder Inpaint Sampler.SAMPLER → SamplerCustomAdvanced.sampler. Supply noise, guider, sigmas and latent through standard nodes.\n\n### Other Powder nodes required?\nWorks without other Powder nodes. Its output does not connect directly to an ordinary KSampler.\n\n### Practical tip\nThe latent must contain noise_mask for mask refinement. Stronger boost is not always better; compare boundaries and detail against off/soft at the same seed."
+      },
+      "color": "#344F73",
+      "bgcolor": "#20252B"
+    },
+    {
+      "id": 23,
+      "type": "PowderSwitcher",
+      "pos": [
+        3800,
+        2070
+      ],
+      "size": [
+        520,
+        200
+      ],
+      "flags": {},
+      "order": 22,
+      "mode": 2,
+      "showAdvanced": null,
+      "inputs": [
+        {
+          "color_off": "#3a3f4a",
+          "color_on": "#5a7a9a",
+          "dir": null,
+          "label": "G1 · +",
+          "localized_name": null,
+          "locked": null,
+          "name": "g0_add",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "*",
+          "widget": {
+            "name": "sw_row_g0_add"
+          },
+          "link": null
+        },
+        {
+          "color_off": "#3a3f4a",
+          "color_on": "#5a7a9a",
+          "dir": null,
+          "label": "G2 · +",
+          "localized_name": null,
+          "locked": null,
+          "name": "g1_add",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "*",
+          "widget": {
+            "name": "sw_row_g1_add"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PowderSwitcher",
+        "e2goSwitcher": {
+          "groups": [
+            {
+              "name": "Branch A",
+              "on": true,
+              "fills": []
+            },
+            {
+              "name": "Branch B",
+              "on": false,
+              "fills": []
+            }
+          ],
+          "channels": []
+        }
+      },
+      "widgets_values": [
+        1
+      ],
+      "widgets_values_named": {
+        "active_group": 1
+      },
+      "color": "#675032"
+    },
+    {
+      "id": 24,
+      "type": "MarkdownNote",
+      "pos": [
+        4360,
+        2070
+      ],
+      "size": [
+        620,
+        820
+      ],
+      "flags": {},
+      "order": 23,
+      "mode": 0,
+      "showAdvanced": null,
+      "inputs": [],
+      "outputs": [],
+      "title": "Powder Switcher · Guide",
+      "properties": {
+        "Node name for S&R": "MarkdownNote"
+      },
+      "widgets_values": [
+        "## 12 / Powder Switcher\n\n### Why use it\nChoose an entire workflow branch with one selection, such as a matching MODEL, CLIP and VAE set.\n\n### How it works\nGroups are alternatives; channels are corresponding outputs. Exactly one group is active. Only the selected branch is requested for this switcher.\n\n### Inputs\nAlternative models, images, text, latents or other compatible values.\n\n### Outputs\nThe channels of the active group.\n\n### Example\nTwo Checkpoint Loaders → groups A/B with MODEL, CLIP and VAE channels. Switcher outputs feed standard encoding, sampling and decoding nodes.\n\n### Other Powder nodes required?\nWorks without other Powder nodes. Selects values; it does not blend them.\n\n### Practical tip\nKeep corresponding channel types compatible. An empty selected channel blocks its consumers. A separate Save/Preview on another branch can still execute that branch independently."
+      ],
+      "widgets_values_named": {
+        "text": "## 12 / Powder Switcher\n\n### Why use it\nChoose an entire workflow branch with one selection, such as a matching MODEL, CLIP and VAE set.\n\n### How it works\nGroups are alternatives; channels are corresponding outputs. Exactly one group is active. Only the selected branch is requested for this switcher.\n\n### Inputs\nAlternative models, images, text, latents or other compatible values.\n\n### Outputs\nThe channels of the active group.\n\n### Example\nTwo Checkpoint Loaders → groups A/B with MODEL, CLIP and VAE channels. Switcher outputs feed standard encoding, sampling and decoding nodes.\n\n### Other Powder nodes required?\nWorks without other Powder nodes. Selects values; it does not blend them.\n\n### Practical tip\nKeep corresponding channel types compatible. An empty selected channel blocks its consumers. A separate Save/Preview on another branch can still execute that branch independently."
+      },
+      "color": "#675032",
+      "bgcolor": "#20252B"
+    },
+    {
+      "id": 25,
+      "type": "PowderCanvasReview",
+      "pos": [
+        20,
+        3070
+      ],
+      "size": [
+        520,
+        760
+      ],
+      "flags": {},
+      "order": 24,
+      "mode": 2,
+      "showAdvanced": null,
+      "inputs": [
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "images",
+          "locked": null,
+          "name": "images",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "IMAGE",
+          "pos": null,
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "stitch",
+          "locked": null,
+          "name": "stitch",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "POWDER_STITCH",
+          "pos": null,
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "images",
+          "locked": null,
+          "name": "images",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "IMAGE",
+          "pos": null,
+          "slot_index": null,
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PowderCanvasReview"
+      },
+      "color": "#634553",
+      "e2goWidgetNames": [],
+      "e2goWidgetSchemaVersion": 1,
+      "e2goInputs": {},
+      "extensions": {
+        "e2goWidgetNames": [],
+        "e2goWidgetSchemaVersion": 1,
+        "e2goInputs": {}
+      }
+    },
+    {
+      "id": 26,
+      "type": "MarkdownNote",
+      "pos": [
+        580,
+        3070
+      ],
+      "size": [
+        620,
+        820
+      ],
+      "flags": {},
+      "order": 25,
+      "mode": 0,
+      "showAdvanced": null,
+      "inputs": [],
+      "outputs": [],
+      "title": "Powder Canvas Review · Guide",
+      "properties": {
+        "Node name for S&R": "MarkdownNote"
+      },
+      "widgets_values": [
+        "## 13 / Powder Canvas Review\n\n### Why use it\nReview generated images and, when needed, place an edited crop back into the original image.\n\n### How it works\nWith stitch context, restores the crop using the saved source, mask and blending settings. Without stitch, passes images through and exposes previews. A connected Canvas can display them for acceptance.\n\n### Inputs\nDecoded images and optional stitch from Image Conditioning.\n\n### Outputs\nFinal images for saving or comparison.\n\n### Example\nVAE Decode → Canvas Review.images; Image Conditioning.stitch → Canvas Review.stitch; Review.images → Save Image.\n\n### Other Powder nodes required?\nPlain review works independently. Stitching requires Image Conditioning; showing results inside the editor requires Canvas.\n\n### Practical tip\nSaving directly from VAE Decode bypasses stitching. Previewing a result does not automatically replace the Canvas source.\n\nPainted pixels retain the edit. stitch_blend adds an outside transition within the crop; use 0 for strict preservation outside the effective mask. mask_grow enlarges that mask."
+      ],
+      "widgets_values_named": {
+        "text": "## 13 / Powder Canvas Review\n\n### Why use it\nReview generated images and, when needed, place an edited crop back into the original image.\n\n### How it works\nWith stitch context, restores the crop using the saved source, mask and blending settings. Without stitch, passes images through and exposes previews. A connected Canvas can display them for acceptance.\n\n### Inputs\nDecoded images and optional stitch from Image Conditioning.\n\n### Outputs\nFinal images for saving or comparison.\n\n### Example\nVAE Decode → Canvas Review.images; Image Conditioning.stitch → Canvas Review.stitch; Review.images → Save Image.\n\n### Other Powder nodes required?\nPlain review works independently. Stitching requires Image Conditioning; showing results inside the editor requires Canvas.\n\n### Practical tip\nSaving directly from VAE Decode bypasses stitching. Previewing a result does not automatically replace the Canvas source.\n\nPainted pixels retain the edit. stitch_blend adds an outside transition within the crop; use 0 for strict preservation outside the effective mask. mask_grow enlarges that mask."
+      },
+      "color": "#634553",
+      "bgcolor": "#20252B"
+    },
+    {
+      "id": 27,
+      "type": "PowderGridSaver",
+      "pos": [
+        1280,
+        3070
+      ],
+      "size": [
+        520,
+        760
+      ],
+      "flags": {},
+      "order": 26,
+      "mode": 2,
+      "showAdvanced": null,
+      "inputs": [
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "images",
+          "locked": null,
+          "name": "images",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "IMAGE",
+          "pos": null,
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "lora_info",
+          "locked": null,
+          "name": "lora_info",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "pos": null,
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "prompts",
+          "locked": null,
+          "name": "prompts",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "pos": null,
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "negative_prompts",
+          "locked": null,
+          "name": "negative_prompts",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "pos": null,
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "seed",
+          "locked": null,
+          "name": "seed",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "INT",
+          "pos": null,
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "style_metadata",
+          "locked": null,
+          "name": "style_metadata",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "STRING",
+          "pos": null,
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "layout",
+          "locked": null,
+          "name": "layout",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "COMBO",
+          "widget": {
+            "name": "layout"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "background",
+          "locked": null,
+          "name": "background",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "COMBO",
+          "widget": {
+            "name": "background"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "gap",
+          "locked": null,
+          "name": "gap",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "INT",
+          "widget": {
+            "name": "gap"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "font_size",
+          "locked": null,
+          "name": "font_size",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "INT",
+          "widget": {
+            "name": "font_size"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "show_model_name",
+          "locked": null,
+          "name": "show_model_name",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "show_model_name"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "show_lora_names",
+          "locked": null,
+          "name": "show_lora_names",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "show_lora_names"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "show_prompts",
+          "locked": null,
+          "name": "show_prompts",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "show_prompts"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "prompt_max_chars",
+          "locked": null,
+          "name": "prompt_max_chars",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "INT",
+          "widget": {
+            "name": "prompt_max_chars"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "show_seed",
+          "locked": null,
+          "name": "show_seed",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "show_seed"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "show_style_prompt",
+          "locked": null,
+          "name": "show_style_prompt",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "show_style_prompt"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "filename_prefix",
+          "locked": null,
+          "name": "filename_prefix",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "STRING",
+          "widget": {
+            "name": "filename_prefix"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "subfolder",
+          "locked": null,
+          "name": "subfolder",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "STRING",
+          "widget": {
+            "name": "subfolder"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "add_model_to_filename",
+          "locked": null,
+          "name": "add_model_to_filename",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "add_model_to_filename"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "save_json",
+          "locked": null,
+          "name": "save_json",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "save_json"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "grid_image",
+          "locked": null,
+          "name": "grid_image",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "IMAGE",
+          "pos": null,
+          "slot_index": null,
+          "links": []
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "saved_paths",
+          "locked": null,
+          "name": "saved_paths",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "STRING",
+          "pos": null,
+          "slot_index": null,
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PowderGridSaver"
+      },
+      "widgets_values": [
+        "Horizontal (Loras as columns)",
+        "Dark",
+        10,
+        36,
+        true,
+        true,
+        true,
+        100,
+        false,
+        false,
+        "grid",
+        "grids",
+        true,
+        true
+      ],
+      "widgets_values_named": {
+        "layout": "Horizontal (Loras as columns)",
+        "background": "Dark",
+        "gap": 10,
+        "font_size": 36,
+        "show_model_name": true,
+        "show_lora_names": true,
+        "show_prompts": true,
+        "prompt_max_chars": 100,
+        "show_seed": false,
+        "show_style_prompt": false,
+        "filename_prefix": "grid",
+        "subfolder": "grids",
+        "add_model_to_filename": true,
+        "save_json": true
+      },
+      "color": "#634553",
+      "e2goWidgetNames": [
+        "layout",
+        "background",
+        "gap",
+        "font_size",
+        "show_model_name",
+        "show_lora_names",
+        "show_prompts",
+        "prompt_max_chars",
+        "show_seed",
+        "show_style_prompt",
+        "filename_prefix",
+        "subfolder",
+        "add_model_to_filename",
+        "save_json"
+      ],
+      "e2goWidgetSchemaVersion": 1,
+      "e2goInputs": {
+        "layout": "Horizontal (Loras as columns)",
+        "background": "Dark",
+        "gap": 10,
+        "font_size": 36,
+        "show_model_name": true,
+        "show_lora_names": true,
+        "show_prompts": true,
+        "prompt_max_chars": 100,
+        "show_seed": false,
+        "show_style_prompt": false,
+        "filename_prefix": "grid",
+        "subfolder": "grids",
+        "add_model_to_filename": true,
+        "save_json": true
+      },
+      "extensions": {
+        "e2goWidgetNames": [
+          "layout",
+          "background",
+          "gap",
+          "font_size",
+          "show_model_name",
+          "show_lora_names",
+          "show_prompts",
+          "prompt_max_chars",
+          "show_seed",
+          "show_style_prompt",
+          "filename_prefix",
+          "subfolder",
+          "add_model_to_filename",
+          "save_json"
+        ],
+        "e2goWidgetSchemaVersion": 1,
+        "e2goInputs": {
+          "layout": "Horizontal (Loras as columns)",
+          "background": "Dark",
+          "gap": 10,
+          "font_size": 36,
+          "show_model_name": true,
+          "show_lora_names": true,
+          "show_prompts": true,
+          "prompt_max_chars": 100,
+          "show_seed": false,
+          "show_style_prompt": false,
+          "filename_prefix": "grid",
+          "subfolder": "grids",
+          "add_model_to_filename": true,
+          "save_json": true
+        }
+      }
+    },
+    {
+      "id": 28,
+      "type": "MarkdownNote",
+      "pos": [
+        1840,
+        3070
+      ],
+      "size": [
+        620,
+        820
+      ],
+      "flags": {},
+      "order": 27,
+      "mode": 0,
+      "showAdvanced": null,
+      "inputs": [],
+      "outputs": [],
+      "title": "Powder Grid Saver · Guide",
+      "properties": {
+        "Node name for S&R": "MarkdownNote"
+      },
+      "widgets_values": [
+        "## 14 / Powder Grid Saver\n\n### Why use it\nSave image variants together in a labeled comparison grid.\n\n### How it works\nArranges images into rows/columns and optionally saves JSON parameters. It can also make a simple grid without Powder metadata.\n\n### Inputs\nImages; optional prompts, seed, lora_info and style_metadata.\n\n### Outputs\ngrid_image and saved_paths. This node writes files.\n\n### Example\nStandard KSampler → VAE Decode → Grid Saver. Add lora_info from LoRA Loader for LoRA comparisons.\n\n### Other Powder nodes required?\nWorks without other Powder nodes. Metadata improves labels but is not required to save a grid.\n\n### Practical tip\nFrames in one batch share a seed and have different batch indices. FULL templates initially bypass Grid; enable it when you want comparisons."
+      ],
+      "widgets_values_named": {
+        "text": "## 14 / Powder Grid Saver\n\n### Why use it\nSave image variants together in a labeled comparison grid.\n\n### How it works\nArranges images into rows/columns and optionally saves JSON parameters. It can also make a simple grid without Powder metadata.\n\n### Inputs\nImages; optional prompts, seed, lora_info and style_metadata.\n\n### Outputs\ngrid_image and saved_paths. This node writes files.\n\n### Example\nStandard KSampler → VAE Decode → Grid Saver. Add lora_info from LoRA Loader for LoRA comparisons.\n\n### Other Powder nodes required?\nWorks without other Powder nodes. Metadata improves labels but is not required to save a grid.\n\n### Practical tip\nFrames in one batch share a seed and have different batch indices. FULL templates initially bypass Grid; enable it when you want comparisons."
+      },
+      "color": "#634553",
+      "bgcolor": "#20252B"
+    },
+    {
+      "id": 29,
+      "type": "PowderCacheStats",
+      "pos": [
+        2540,
+        3070
+      ],
+      "size": [
+        520,
+        70
+      ],
+      "flags": {},
+      "order": 28,
+      "mode": 2,
+      "showAdvanced": null,
+      "inputs": [],
+      "outputs": [
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "stats",
+          "locked": null,
+          "name": "stats",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "STRING",
+          "pos": null,
+          "slot_index": null,
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PowderCacheStats"
+      },
+      "widgets_values": [],
+      "widgets_values_named": {},
+      "color": "#46515E",
+      "e2goWidgetNames": [],
+      "e2goWidgetSchemaVersion": 1,
+      "e2goInputs": {},
+      "extensions": {
+        "e2goWidgetNames": [],
+        "e2goWidgetSchemaVersion": 1,
+        "e2goInputs": {}
+      }
+    },
+    {
+      "id": 30,
+      "type": "MarkdownNote",
+      "pos": [
+        3100,
+        3070
+      ],
+      "size": [
+        620,
+        820
+      ],
+      "flags": {},
+      "order": 29,
+      "mode": 0,
+      "showAdvanced": null,
+      "inputs": [],
+      "outputs": [],
+      "title": "Powder Cache Stats · Guide",
+      "properties": {
+        "Node name for S&R": "MarkdownNote"
+      },
+      "widgets_values": [
+        "## 15 / Powder Cache Stats\n\n### Why use it\nInspect cached text encodings, raw LoRA files and loaded styles.\n\n### How it works\nProduces a diagnostic report without clearing data or generating images. Useful for checking reuse across repeated runs.\n\n### Inputs\nNo inputs; execute the node.\n\n### Outputs\nA stats string and a short log summary.\n\n### Example\nRun a Powder workflow twice, then connect Cache Stats.stats to Preview Any and inspect cache sizes and hits.\n\n### Other Powder nodes required?\nNeeds no connected Powder node, but reports this package’s caches rather than all ComfyUI memory.\n\n### Practical tip\nEntry counts are not GPU memory usage. Standard CLIP Text Encode does not use the Powder Conditioner cache.\n\nAuto bypasses Flux/T5 and quantized encoders. CLIP hooks/schedules always encode fresh, including in Aggressive mode."
+      ],
+      "widgets_values_named": {
+        "text": "## 15 / Powder Cache Stats\n\n### Why use it\nInspect cached text encodings, raw LoRA files and loaded styles.\n\n### How it works\nProduces a diagnostic report without clearing data or generating images. Useful for checking reuse across repeated runs.\n\n### Inputs\nNo inputs; execute the node.\n\n### Outputs\nA stats string and a short log summary.\n\n### Example\nRun a Powder workflow twice, then connect Cache Stats.stats to Preview Any and inspect cache sizes and hits.\n\n### Other Powder nodes required?\nNeeds no connected Powder node, but reports this package’s caches rather than all ComfyUI memory.\n\n### Practical tip\nEntry counts are not GPU memory usage. Standard CLIP Text Encode does not use the Powder Conditioner cache.\n\nAuto bypasses Flux/T5 and quantized encoders. CLIP hooks/schedules always encode fresh, including in Aggressive mode."
+      },
+      "color": "#46515E",
+      "bgcolor": "#20252B"
+    },
+    {
+      "id": 31,
+      "type": "ClearConditioningCache",
+      "pos": [
+        3800,
+        3070
+      ],
+      "size": [
+        520,
+        760
+      ],
+      "flags": {},
+      "order": 30,
+      "mode": 2,
+      "showAdvanced": null,
+      "inputs": [
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "trigger",
+          "locked": null,
+          "name": "trigger",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "INT",
+          "widget": {
+            "name": "trigger"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "ClearConditioningCache"
+      },
+      "widgets_values": [
+        0,
+        null
+      ],
+      "widgets_values_named": {
+        "trigger": 0,
+        "Clear now": null
+      },
+      "color": "#46515E",
+      "e2goWidgetNames": [
+        "trigger"
+      ],
+      "e2goWidgetSchemaVersion": 1,
+      "extensions": {
+        "e2goWidgetNames": [
+          "trigger"
+        ],
+        "e2goWidgetSchemaVersion": 1
+      }
+    },
+    {
+      "id": 32,
+      "type": "MarkdownNote",
+      "pos": [
+        4360,
+        3070
+      ],
+      "size": [
+        620,
+        820
+      ],
+      "flags": {},
+      "order": 31,
+      "mode": 0,
+      "showAdvanced": null,
+      "inputs": [],
+      "outputs": [],
+      "title": "Powder Clear Conditioning Cache · Guide",
+      "properties": {
+        "Node name for S&R": "MarkdownNote"
+      },
+      "widgets_values": [
+        "## 16 / Powder Clear Conditioning Cache\n\n### Why use it\nRemove cached Powder Conditioner text encodings so they are computed again.\n\n### How it works\nA manual maintenance action. Does not delete images or unload every model from GPU memory.\n\n### Inputs\ntrigger: change its value to request another execution.\n\n### Outputs\nNo output ports. The log reports the number of cleared entries.\n\n### Example\nChange trigger, execute the cleanup separately, then run your generation workflow again.\n\n### Other Powder nodes required?\nNeeds no connected node, but only affects Powder Conditioner’s cache. It does not clear standard encoders’ caches.\n\n### Practical tip\nDo not run it before every generation: that removes the benefit of caching. Repeating Queue with the same trigger may reuse the prior execution."
+      ],
+      "widgets_values_named": {
+        "text": "## 16 / Powder Clear Conditioning Cache\n\n### Why use it\nRemove cached Powder Conditioner text encodings so they are computed again.\n\n### How it works\nA manual maintenance action. Does not delete images or unload every model from GPU memory.\n\n### Inputs\ntrigger: change its value to request another execution.\n\n### Outputs\nNo output ports. The log reports the number of cleared entries.\n\n### Example\nChange trigger, execute the cleanup separately, then run your generation workflow again.\n\n### Other Powder nodes required?\nNeeds no connected node, but only affects Powder Conditioner’s cache. It does not clear standard encoders’ caches.\n\n### Practical tip\nDo not run it before every generation: that removes the benefit of caching. Repeating Queue with the same trigger may reuse the prior execution."
+      },
+      "color": "#46515E",
+      "bgcolor": "#20252B"
+    },
+    {
+      "id": 100,
+      "type": "MarkdownNote",
+      "pos": [
+        20,
+        -560
+      ],
+      "size": [
+        2640,
+        450
+      ],
+      "flags": {},
+      "order": 32,
+      "mode": 0,
+      "showAdvanced": null,
+      "inputs": [],
+      "outputs": [],
+      "title": "Start here · How to read this map",
+      "properties": {
+        "Node name for S&R": "MarkdownNote"
+      },
+      "widgets_values": [
+        "# E2GO / Guide — Node map\n\nAll 16 nodes: purpose, behavior, inputs, outputs, examples and compatibility. Read left to right, top to bottom; zoom in to read a card.\n\n**This is a reference map. Its nodes are unwired and set to Never.** Open a model workflow to generate images. When copying a node from this map, set its mode back to Always and connect its required inputs.\n\n**Below the cards: an independent-nodes / required-companions section and three connection examples.**\n\nPrompt: your text instruction. Conditioning: the encoded description used by the model. Latent: the working image representation. VAE Encode converts pixels to a latent; VAE Decode converts it back. Batch: several variants in one run. Mask: the editable area. Seed: initial randomness."
+      ],
+      "widgets_values_named": {
+        "text": "# E2GO / Guide — Node map\n\nAll 16 nodes: purpose, behavior, inputs, outputs, examples and compatibility. Read left to right, top to bottom; zoom in to read a card.\n\n**This is a reference map. Its nodes are unwired and set to Never.** Open a model workflow to generate images. When copying a node from this map, set its mode back to Always and connect its required inputs.\n\n**Below the cards: an independent-nodes / required-companions section and three connection examples.**\n\nPrompt: your text instruction. Conditioning: the encoded description used by the model. Latent: the working image representation. VAE Encode converts pixels to a latent; VAE Decode converts it back. Batch: several variants in one run. Mask: the editable area. Seed: initial randomness."
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 101,
+      "type": "MarkdownNote",
+      "pos": [
+        20,
+        4100
+      ],
+      "size": [
+        2640,
+        260
+      ],
+      "flags": {},
+      "order": 33,
+      "mode": 0,
+      "showAdvanced": null,
+      "inputs": [],
+      "outputs": [],
+      "title": "Compatibility · Independent nodes and companions",
+      "properties": {
+        "Node name for S&R": "MarkdownNote"
+      },
+      "widgets_values": [
+        "# Independent nodes / required companions\n\nMix Powder and standard ComfyUI nodes freely where their port types match. The cards below explain independent tools, feature-specific dependencies and practical examples. Each arrow represents a connection between the named ports."
+      ],
+      "widgets_values_named": {
+        "text": "# Independent nodes / required companions\n\nMix Powder and standard ComfyUI nodes freely where their port types match. The cards below explain independent tools, feature-specific dependencies and practical examples. Each arrow represents a connection between the named ports."
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 110,
+      "type": "MarkdownNote",
+      "pos": [
+        20,
+        4450
+      ],
+      "size": [
+        820,
+        850
+      ],
+      "flags": {},
+      "order": 34,
+      "mode": 0,
+      "showAdvanced": null,
+      "inputs": [],
+      "outputs": [],
+      "title": "01 · Independent nodes",
+      "properties": {
+        "Node name for S&R": "MarkdownNote"
+      },
+      "widgets_values": [
+        "## Use Powder inside a standard workflow\n\nIndependent means surrounded by normal ComfyUI nodes, not without required models and inputs.\n\n- **Prompt List / Wildcard:** text → CLIP Text Encode.\n- **LoRA Loader:** patched MODEL/CLIP → standard nodes; add triggers manually if not using Conditioner.\n- **Canvas:** IMAGE/MASK → standard image-processing nodes.\n- **Resolution:** LATENT → KSampler.\n- **Conditioner:** CONDITIONING → KSampler.\n- **Sampler:** LATENT → VAE Decode.\n- **Inpaint Sampler:** SAMPLER → SamplerCustomAdvanced.\n- **Switcher:** choose compatible branches.\n- **Grid Saver:** IMAGE → saved grid.\n\nUse only the tool you need. There is no requirement to replace your whole workflow."
+      ],
+      "widgets_values_named": {
+        "text": "## Use Powder inside a standard workflow\n\nIndependent means surrounded by normal ComfyUI nodes, not without required models and inputs.\n\n- **Prompt List / Wildcard:** text → CLIP Text Encode.\n- **LoRA Loader:** patched MODEL/CLIP → standard nodes; add triggers manually if not using Conditioner.\n- **Canvas:** IMAGE/MASK → standard image-processing nodes.\n- **Resolution:** LATENT → KSampler.\n- **Conditioner:** CONDITIONING → KSampler.\n- **Sampler:** LATENT → VAE Decode.\n- **Inpaint Sampler:** SAMPLER → SamplerCustomAdvanced.\n- **Switcher:** choose compatible branches.\n- **Grid Saver:** IMAGE → saved grid.\n\nUse only the tool you need. There is no requirement to replace your whole workflow."
+      },
+      "color": "#345765",
+      "bgcolor": "#20252B"
+    },
+    {
+      "id": 111,
+      "type": "MarkdownNote",
+      "pos": [
+        920,
+        4450
+      ],
+      "size": [
+        820,
+        850
+      ],
+      "flags": {},
+      "order": 35,
+      "mode": 0,
+      "showAdvanced": null,
+      "inputs": [],
+      "outputs": [],
+      "title": "02 · Features that need a companion",
+      "properties": {
+        "Node name for S&R": "MarkdownNote"
+      },
+      "widgets_values": [
+        "## Independent basics, connected advanced features\n\n**Styler:** style_text works as ordinary text. Full style settings, conditioning weights and negative descriptions require Conditioner.\n\n**Image Conditioning:** Generate and full-frame img2img work with standard sampling. Crop restoration and outside-area preservation (set stitch_blend=0 for the exact effective-mask boundary) use stitch → Canvas Review.\n\n**Canvas Review:** reviews images alone. Stitching needs Image Conditioning; in-editor review needs Canvas.\n\n**Canvas Layout:** layout is composition data, not a mask. Conditioner reads it; Powder Sampler checks model and dimensions.\n\n**LoRA Loader:** weights work with standard nodes. Automatic trigger assembly uses lora_info → Conditioner."
+      ],
+      "widgets_values_named": {
+        "text": "## Independent basics, connected advanced features\n\n**Styler:** style_text works as ordinary text. Full style settings, conditioning weights and negative descriptions require Conditioner.\n\n**Image Conditioning:** Generate and full-frame img2img work with standard sampling. Crop restoration and outside-area preservation (set stitch_blend=0 for the exact effective-mask boundary) use stitch → Canvas Review.\n\n**Canvas Review:** reviews images alone. Stitching needs Image Conditioning; in-editor review needs Canvas.\n\n**Canvas Layout:** layout is composition data, not a mask. Conditioner reads it; Powder Sampler checks model and dimensions.\n\n**LoRA Loader:** weights work with standard nodes. Automatic trigger assembly uses lora_info → Conditioner."
+      },
+      "color": "#345765",
+      "bgcolor": "#20252B"
+    },
+    {
+      "id": 112,
+      "type": "MarkdownNote",
+      "pos": [
+        1820,
+        4450
+      ],
+      "size": [
+        820,
+        850
+      ],
+      "flags": {},
+      "order": 36,
+      "mode": 0,
+      "showAdvanced": null,
+      "inputs": [],
+      "outputs": [],
+      "title": "03 · Powder-specific bundles and utilities",
+      "properties": {
+        "Node name for S&R": "MarkdownNote"
+      },
+      "widgets_values": [
+        "## What is tied to Powder\n\n**References** outputs POWDER_REFS, consumed by Conditioner and Image Conditioning. Standard KSampler and CLIP Text Encode do not accept it.\n\n**Cache Stats** reports Powder caches. **Clear Conditioning Cache** clears Powder Conditioner’s cache. Neither needs connecting wires, but neither controls every ComfyUI cache.\n\n**Special connections:**\n- References → references: shared reference set.\n- Styler.style → Conditioner.style: full style settings.\n- LoRA Loader.lora_info → Conditioner.lora_info: triggers; → Grid Saver.lora_info: labels.\n- Image Conditioning.stitch → Canvas Review.stitch: restore the edited area.\n\nOrdinary IMAGE, MASK, MODEL, CLIP, LATENT and CONDITIONING ports do not have this Powder-only restriction."
+      ],
+      "widgets_values_named": {
+        "text": "## What is tied to Powder\n\n**References** outputs POWDER_REFS, consumed by Conditioner and Image Conditioning. Standard KSampler and CLIP Text Encode do not accept it.\n\n**Cache Stats** reports Powder caches. **Clear Conditioning Cache** clears Powder Conditioner’s cache. Neither needs connecting wires, but neither controls every ComfyUI cache.\n\n**Special connections:**\n- References → references: shared reference set.\n- Styler.style → Conditioner.style: full style settings.\n- LoRA Loader.lora_info → Conditioner.lora_info: triggers; → Grid Saver.lora_info: labels.\n- Image Conditioning.stitch → Canvas Review.stitch: restore the edited area.\n\nOrdinary IMAGE, MASK, MODEL, CLIP, LATENT and CONDITIONING ports do not have this Powder-only restriction."
+      },
+      "color": "#345765",
+      "bgcolor": "#20252B"
+    },
+    {
+      "id": 113,
+      "type": "MarkdownNote",
+      "pos": [
+        20,
+        5400
+      ],
+      "size": [
+        820,
+        850
+      ],
+      "flags": {},
+      "order": 37,
+      "mode": 0,
+      "showAdvanced": null,
+      "inputs": [],
+      "outputs": [],
+      "title": "04 · Example: one Powder node",
+      "properties": {
+        "Node name for S&R": "MarkdownNote"
+      },
+      "widgets_values": [
+        "## Replace only the size control\n\nCheckpoint Loader.MODEL → KSampler.model\n\nCheckpoint Loader.CLIP → two CLIP Text Encode nodes → KSampler.positive / negative\n\n**Powder Resolution.LATENT → KSampler.latent_image**\n\nKSampler → VAE Decode → Save Image\n\nCheckpoint Loader.VAE → VAE Decode.vae\n\nFor standard SDXL, choose SDXL/SD1 (4ch), start around 1024 pixels, and set batch_size=2 for two variants.\n\nResolution is the only Powder node in this example. You can similarly replace just the sampler or add a switcher."
+      ],
+      "widgets_values_named": {
+        "text": "## Replace only the size control\n\nCheckpoint Loader.MODEL → KSampler.model\n\nCheckpoint Loader.CLIP → two CLIP Text Encode nodes → KSampler.positive / negative\n\n**Powder Resolution.LATENT → KSampler.latent_image**\n\nKSampler → VAE Decode → Save Image\n\nCheckpoint Loader.VAE → VAE Decode.vae\n\nFor standard SDXL, choose SDXL/SD1 (4ch), start around 1024 pixels, and set batch_size=2 for two variants.\n\nResolution is the only Powder node in this example. You can similarly replace just the sampler or add a switcher."
+      },
+      "color": "#345765",
+      "bgcolor": "#20252B"
+    },
+    {
+      "id": 114,
+      "type": "MarkdownNote",
+      "pos": [
+        920,
+        5400
+      ],
+      "size": [
+        820,
+        850
+      ],
+      "flags": {},
+      "order": 38,
+      "mode": 0,
+      "showAdvanced": null,
+      "inputs": [],
+      "outputs": [],
+      "title": "05 · Example: a local edit",
+      "properties": {
+        "Node name for S&R": "MarkdownNote"
+      },
+      "widgets_values": [
+        "## Change an area and preserve the rest\n\nCanvas.image → Image Conditioning.pixels\nCanvas.mask → Image Conditioning.mask\n\nSupply compatible MODEL, VAE and positive/negative conditioning. Choose Repaint or Repair.\n\nImage Conditioning.model / positive / negative / latent / denoise → matching KSampler inputs\n\nKSampler → VAE Decode → Canvas Review.images\n**Image Conditioning.stitch → Canvas Review.stitch**\nCanvas Review.images → Save Image\n\nMask the entire area you want to change. A teapot body-only mask keeps the original handle color.\n\nA standard image/mask source can replace Canvas. Keep Image Conditioning + Canvas Review when you need stitching."
+      ],
+      "widgets_values_named": {
+        "text": "## Change an area and preserve the rest\n\nCanvas.image → Image Conditioning.pixels\nCanvas.mask → Image Conditioning.mask\n\nSupply compatible MODEL, VAE and positive/negative conditioning. Choose Repaint or Repair.\n\nImage Conditioning.model / positive / negative / latent / denoise → matching KSampler inputs\n\nKSampler → VAE Decode → Canvas Review.images\n**Image Conditioning.stitch → Canvas Review.stitch**\nCanvas Review.images → Save Image\n\nMask the entire area you want to change. A teapot body-only mask keeps the original handle color.\n\nA standard image/mask source can replace Canvas. Keep Image Conditioning + Canvas Review when you need stitching."
+      },
+      "color": "#345765",
+      "bgcolor": "#20252B"
+    },
+    {
+      "id": 115,
+      "type": "MarkdownNote",
+      "pos": [
+        1820,
+        5400
+      ],
+      "size": [
+        820,
+        850
+      ],
+      "flags": {},
+      "order": 39,
+      "mode": 0,
+      "showAdvanced": null,
+      "inputs": [],
+      "outputs": [],
+      "title": "06 · Example: styles and references",
+      "properties": {
+        "Node name for S&R": "MarkdownNote"
+      },
+      "widgets_values": [
+        "## Two different kinds of guidance\n\n**Text style:**\nSubject → Conditioner.prompt\nStyler.style → Conditioner.style\nConditioner → sampler → VAE Decode\n\nExample: house by a lake + watercolor. This does not require References or an edit model.\n\n**Image references:**\nSource → Image Conditioning.pixels and References.edited_image\nExtra image → References.image_1\nReferences → Conditioner.references AND Image Conditioning.references\nConditioner → Image Conditioning (Edit) → sampler → VAE Decode → Canvas Review\n\nUse a model that supports reference editing. The reference bundle cannot add that capability to an ordinary SDXL model. Text encoder requirements depend on the selected model."
+      ],
+      "widgets_values_named": {
+        "text": "## Two different kinds of guidance\n\n**Text style:**\nSubject → Conditioner.prompt\nStyler.style → Conditioner.style\nConditioner → sampler → VAE Decode\n\nExample: house by a lake + watercolor. This does not require References or an edit model.\n\n**Image references:**\nSource → Image Conditioning.pixels and References.edited_image\nExtra image → References.image_1\nReferences → Conditioner.references AND Image Conditioning.references\nConditioner → Image Conditioning (Edit) → sampler → VAE Decode → Canvas Review\n\nUse a model that supports reference editing. The reference bundle cannot add that capability to an ordinary SDXL model. Text encoder requirements depend on the selected model."
+      },
+      "color": "#345765",
+      "bgcolor": "#20252B"
+    }
+  ],
+  "links": [],
+  "floatingLinks": null,
+  "groups": [
+    {
+      "id": 1,
+      "title": "01 · Powder Prompt List",
+      "bounding": [
+        0,
+        0,
+        1230,
+        950
+      ],
+      "color": "#305548",
+      "flags": {}
+    },
+    {
+      "id": 2,
+      "title": "02 · Powder Prompt Wildcard",
+      "bounding": [
+        1260,
+        0,
+        1230,
+        950
+      ],
+      "color": "#305548",
+      "flags": {}
+    },
+    {
+      "id": 3,
+      "title": "03 · Powder Lora Loader",
+      "bounding": [
+        2520,
+        0,
+        1230,
+        950
+      ],
+      "color": "#51436B",
+      "flags": {}
+    },
+    {
+      "id": 4,
+      "title": "04 · Powder Styler",
+      "bounding": [
+        3780,
+        0,
+        1230,
+        950
+      ],
+      "color": "#51436B",
+      "flags": {}
+    },
+    {
+      "id": 5,
+      "title": "05 · Powder Canvas",
+      "bounding": [
+        0,
+        1000,
+        1230,
+        950
+      ],
+      "color": "#28565C",
+      "flags": {}
+    },
+    {
+      "id": 6,
+      "title": "06 · Powder References",
+      "bounding": [
+        1260,
+        1000,
+        1230,
+        950
+      ],
+      "color": "#28565C",
+      "flags": {}
+    },
+    {
+      "id": 7,
+      "title": "07 · Powder Image Conditioning",
+      "bounding": [
+        2520,
+        1000,
+        1230,
+        950
+      ],
+      "color": "#28565C",
+      "flags": {}
+    },
+    {
+      "id": 8,
+      "title": "08 · Powder Resolution",
+      "bounding": [
+        3780,
+        1000,
+        1230,
+        950
+      ],
+      "color": "#28565C",
+      "flags": {}
+    },
+    {
+      "id": 9,
+      "title": "09 · Powder Conditioner",
+      "bounding": [
+        0,
+        2000,
+        1230,
+        950
+      ],
+      "color": "#344F73",
+      "flags": {}
+    },
+    {
+      "id": 10,
+      "title": "10 · Powder Sampler",
+      "bounding": [
+        1260,
+        2000,
+        1230,
+        950
+      ],
+      "color": "#344F73",
+      "flags": {}
+    },
+    {
+      "id": 11,
+      "title": "11 · Powder Inpaint Sampler",
+      "bounding": [
+        2520,
+        2000,
+        1230,
+        950
+      ],
+      "color": "#344F73",
+      "flags": {}
+    },
+    {
+      "id": 12,
+      "title": "12 · Powder Switcher",
+      "bounding": [
+        3780,
+        2000,
+        1230,
+        950
+      ],
+      "color": "#675032",
+      "flags": {}
+    },
+    {
+      "id": 13,
+      "title": "13 · Powder Canvas Review",
+      "bounding": [
+        0,
+        3000,
+        1230,
+        950
+      ],
+      "color": "#634553",
+      "flags": {}
+    },
+    {
+      "id": 14,
+      "title": "14 · Powder Grid Saver",
+      "bounding": [
+        1260,
+        3000,
+        1230,
+        950
+      ],
+      "color": "#634553",
+      "flags": {}
+    },
+    {
+      "id": 15,
+      "title": "15 · Powder Cache Stats",
+      "bounding": [
+        2520,
+        3000,
+        1230,
+        950
+      ],
+      "color": "#46515E",
+      "flags": {}
+    },
+    {
+      "id": 16,
+      "title": "16 · Powder Clear Conditioning Cache",
+      "bounding": [
+        3780,
+        3000,
+        1230,
+        950
+      ],
+      "color": "#46515E",
+      "flags": {}
+    },
+    {
+      "id": 20,
+      "title": "Independent nodes / required companions / examples",
+      "bounding": [
+        0,
+        4040,
+        2690,
+        2250
+      ],
+      "color": "#345765",
+      "flags": {}
+    }
+  ],
+  "definitions": null,
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.24,
+      "offset": [
+        100,
+        650
+      ]
+    },
+    "reroutes": null
+  },
+  "version": 0.4
+}

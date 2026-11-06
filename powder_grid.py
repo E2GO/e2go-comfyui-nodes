@@ -3,6 +3,7 @@ PowderGridSaver - Grid assembly with progressive saving and JSON metadata.
 """
 
 import os
+import re
 import json
 import platform
 import numpy as np
@@ -12,11 +13,104 @@ import torch
 
 from ._log import log, info, warn
 from ._styles import get_styles, deduplicate_tags
+from .powder_inpaint import compute_steps
 
 # ---------------------------------------------------------------------------
 # Font cache  (font_path, size) → ImageFont
 # ---------------------------------------------------------------------------
 _FONT_CACHE: dict = {}
+
+# Paths that have already failed to load (missing/corrupt file), keyed by
+# path only — not (path, size). Font load failures are file-level (the file
+# doesn't exist or isn't a valid font), not size-dependent, so a path that
+# fails at one size is assumed to fail at every size. Avoids re-attempting
+# the same bad path 3-4x per render (once per distinct font_size used).
+_FONT_FAILED_PATHS: set = set()
+
+
+_MAX_COMPONENT = 64
+
+
+def _sanitize_component(text):
+    """Filename-safe subset of *text*: alnum, _-. ; spaces become _.
+    Leading dots are stripped so '..' can't survive as a component.
+    Truncated to _MAX_COMPONENT characters."""
+    out = "".join(c if (c.isalnum() or c in "_-.") else "_" if c == " " else ""
+                  for c in str(text))
+    return out.lstrip(".")[:_MAX_COMPONENT]
+
+
+def _resolve_output_dir(base, subfolder):
+    """Join *subfolder* under *base*; any escape (.. or absolute) falls back
+    to *base* with a warning — mirrors core SaveImage's containment rule."""
+    if not subfolder:
+        return base
+    base_abs = os.path.abspath(base)
+    raw = str(subfolder)
+    # An absolute / drive-qualified subfolder is an escape by definition, and it
+    # must be rejected BEFORE the per-segment cap below: splitting r"C:\Windows\
+    # Temp" into segments strips its absoluteness, so os.path.join would quietly
+    # produce base\Windows\Temp — contained, hence invisible to the check, but
+    # not what the user asked for (caught by test_resolve_output_dir_stays_inside_base).
+    drive_qualified = os.path.isabs(raw) or bool(os.path.splitdrive(raw)[0])
+    # Cap every segment: one 300-char folder name blows the path limit just as
+    # well as a long filename. ".." survives the cap unchanged, so the
+    # containment check below still catches that escape.
+    parts = [] if drive_qualified else [
+        p[:_MAX_COMPONENT] for p in raw.replace("\\", "/").split("/") if p]
+
+
+    _MAX_SEGMENTS = 8
+    _MAX_SUBFOLDER_LEN = 160
+    if len(parts) > _MAX_SEGMENTS:
+        warn(f"[PowderGridSaver] subfolder has {len(parts)} segments — "
+             f"keeping the first {_MAX_SEGMENTS}")
+        parts = parts[:_MAX_SEGMENTS]
+    while parts and len("/".join(parts)) > _MAX_SUBFOLDER_LEN:
+        warn(f"[PowderGridSaver] subfolder path too long — dropping "
+             f"deepest segment {parts[-1]!r}")
+        parts = parts[:-1]
+    candidate = os.path.abspath(os.path.join(base_abs, *parts)) if parts else base_abs
+    try:
+        inside = os.path.commonpath([base_abs, candidate]) == base_abs
+    except ValueError:  # different drives on Windows
+        inside = False
+    if drive_qualified or not inside:
+        warn(f"[PowderGridSaver] subfolder {subfolder!r} escapes the output "
+             f"directory — saving to the output root instead")
+        return base_abs
+    for part in parts:
+        if part in (".", ".."):
+            continue
+        if (re.search(r'[<>:"|?*\x00-\x1f]', part)
+                or part.rstrip(" .") != part
+                or re.fullmatch(r"(?i)(CON|PRN|AUX|NUL|COM[1-9¹²³]|LPT[1-9¹²³])(?:\..*)?", part)):
+            raise ValueError("Grid subfolder contains an invalid or reserved filename component.")
+    return candidate
+
+
+def _grid_dims(total_images, num_loras):
+    """Prompt-row count: ceil so an indivisible image count grows the grid
+    instead of silently dropping the tail frames."""
+    if num_loras > 0 and total_images > 0:
+        num_prompts = -(-total_images // num_loras)  # ceil div
+        if total_images % num_loras:
+            warn(f"[PowderGridSaver] {total_images} images with {num_loras} "
+                 f"LoRA rows — grid padded to {num_prompts} prompt rows, "
+                 f"last cells left empty")
+        return num_prompts
+    return total_images if total_images else 1
+
+
+def _unwrap(value):
+    """INPUT_IS_LIST=True wraps every scalar input in a 1-element list.
+
+    Returns the first element for a non-empty list, ``value`` unchanged for
+    a non-list, and ``None`` for an empty list.
+    """
+    if isinstance(value, list):
+        return value[0] if value else None
+    return value
 
 
 class PowderGridSaver:
@@ -50,10 +144,12 @@ class PowderGridSaver:
                 "prompts": ("STRING", {"forceInput": True}),
                 "negative_prompts": ("STRING", {"forceInput": True}),
                 "seed": ("INT", {"forceInput": True}),
+                "style_metadata": ("STRING", {"forceInput": True}),
             },
             "hidden": {
                 "prompt": "PROMPT",
                 "extra_pnginfo": "EXTRA_PNGINFO",
+                "unique_id": "UNIQUE_ID",
             },
         }
 
@@ -62,7 +158,7 @@ class PowderGridSaver:
     RETURN_NAMES = ("grid_image", "saved_paths")
     OUTPUT_NODE = True
     FUNCTION = "create_grid"
-    CATEGORY = "e2go_nodes"
+    CATEGORY = "e2go"
 
     @classmethod
     def IS_CHANGED(cls, *_args, **_kwargs):
@@ -77,35 +173,38 @@ class PowderGridSaver:
                     show_model_name, show_lora_names, show_prompts, prompt_max_chars,
                     show_seed, show_style_prompt,
                     filename_prefix, subfolder, add_model_to_filename, save_json,
-                    lora_info=None, prompts=None, negative_prompts=None, seed=None, prompt=None, extra_pnginfo=None):
+                    lora_info=None, prompts=None, negative_prompts=None, seed=None, prompt=None, extra_pnginfo=None,
+                    unique_id=None, style_metadata=None):
 
-        # Unpack scalars
-        layout = layout[0] if isinstance(layout, list) else layout
-        gap = gap[0] if isinstance(gap, list) else gap
-        background = background[0] if isinstance(background, list) else background
+        # Unpack scalars (INPUT_IS_LIST wraps every scalar param in a list)
+        layout = _unwrap(layout)
+        gap = _unwrap(gap)
+        background = _unwrap(background)
 
         # ComfyUI new frontend converts 2-option combos to boolean toggles
         if isinstance(layout, bool) or layout in ("True", "False", "true", "false"):
             layout = "Horizontal (Loras as columns)" if str(layout).lower() == "true" else "Vertical (Loras as rows)"
         if isinstance(background, bool) or background in ("True", "False", "true", "false"):
             background = "Dark" if str(background).lower() == "true" else "Light"
-        show_model_name = show_model_name[0] if isinstance(show_model_name, list) else show_model_name
-        show_lora_names = show_lora_names[0] if isinstance(show_lora_names, list) else show_lora_names
-        show_prompts = show_prompts[0] if isinstance(show_prompts, list) else show_prompts
-        prompt_max_chars = prompt_max_chars[0] if isinstance(prompt_max_chars, list) else prompt_max_chars
-        font_size = font_size[0] if isinstance(font_size, list) else font_size
-        show_seed = show_seed[0] if isinstance(show_seed, list) else show_seed
-        show_style_prompt = show_style_prompt[0] if isinstance(show_style_prompt, list) else show_style_prompt
-        save_json = save_json[0] if isinstance(save_json, list) else save_json
-        add_model_to_filename = add_model_to_filename[0] if isinstance(add_model_to_filename, list) else add_model_to_filename
-        filename_prefix = filename_prefix[0] if isinstance(filename_prefix, list) else filename_prefix
-        subfolder = subfolder[0] if isinstance(subfolder, list) else subfolder
+        show_model_name = _unwrap(show_model_name)
+        show_lora_names = _unwrap(show_lora_names)
+        show_prompts = _unwrap(show_prompts)
+        prompt_max_chars = _unwrap(prompt_max_chars)
+        font_size = _unwrap(font_size)
+        show_seed = _unwrap(show_seed)
+        show_style_prompt = _unwrap(show_style_prompt)
+        save_json = _unwrap(save_json)
+        add_model_to_filename = _unwrap(add_model_to_filename)
+        filename_prefix = _unwrap(filename_prefix)
+        subfolder = _unwrap(subfolder)
 
         import folder_paths  # lazy
         prompt_list_raw = prompt if isinstance(prompt, list) else [prompt]
         workflow_prompt = prompt_list_raw[0]
-        model_display_name = self._extract_model_from_prompt(workflow_prompt)
-        workflow_info = self._extract_workflow_info(workflow_prompt)
+        uid = unique_id[0] if isinstance(unique_id, list) and unique_id else unique_id
+        branch = self._image_branch(workflow_prompt, uid)
+        model_display_name = self._extract_model_from_prompt(branch)
+        workflow_info = self._extract_workflow_info(workflow_prompt, uid)
 
         # Seeds: prefer explicit input, fall back to workflow extraction
         if seed is not None:
@@ -120,23 +219,25 @@ class PowderGridSaver:
         combination_order = "Loras first"
         lora_mode = "single"
         original_loras = []
+        original_strengths = []
 
         if lora_info:
             lora_info_str = lora_info[0] if isinstance(lora_info, list) else lora_info
             try:
-                info = json.loads(lora_info_str) if lora_info_str else {}
-                if isinstance(info, dict):
-                    lora_names = info.get("loras", [])
-                    lora_strengths = info.get("strengths", [])
-                    combination_order = info.get("combination_order", "Loras first")
-                    lora_mode = info.get("mode", "single")
-                    original_loras = info.get("original_loras", lora_names)
+                lora_info_data = json.loads(lora_info_str) if lora_info_str else {}
+                if isinstance(lora_info_data, dict):
+                    lora_names = lora_info_data.get("loras", [])
+                    lora_strengths = lora_info_data.get("strengths", [])
+                    combination_order = lora_info_data.get("combination_order", "Loras first")
+                    lora_mode = lora_info_data.get("mode", "single")
+                    original_loras = lora_info_data.get("original_loras", lora_names)
+                    original_strengths = lora_info_data.get("original_strengths", lora_strengths)
                     if not isinstance(lora_names, list):
                         lora_names = []
                     if not isinstance(lora_strengths, list):
                         lora_strengths = []
                 else:
-                    warn(f"Invalid lora_info type: {type(info)}")
+                    warn(f"Invalid lora_info type: {type(lora_info_data)}")
             except json.JSONDecodeError as e:
                 warn(f"lora_info JSON error: {e}")
             except Exception as e:
@@ -157,35 +258,43 @@ class PowderGridSaver:
 
         num_loras = len(lora_names) if lora_names else 1
 
-        output_dir = folder_paths.get_output_directory()
-        if subfolder:
-            output_dir = os.path.join(output_dir, subfolder)
+        base_output_dir = folder_paths.get_output_directory()
+        output_dir = _resolve_output_dir(base_output_dir, subfolder)
+        if output_dir != os.path.abspath(base_output_dir):
             os.makedirs(output_dir, exist_ok=True)
 
         timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
 
+        safe_prefix = _sanitize_component(filename_prefix) or "grid"
         # Build filename base: optionally prepend sanitized model name
         if add_model_to_filename and model_display_name:
-            safe_model = model_display_name.replace(" ", "_")
-            safe_model = "".join(c for c in safe_model if c.isalnum() or c in "_-.")
-            file_base = f"{safe_model}_{filename_prefix}_{timestamp}"
+            safe_model = _sanitize_component(model_display_name)
+            file_base = f"{safe_model}_{safe_prefix}_{timestamp}"
         else:
-            file_base = f"{filename_prefix}_{timestamp}"
+            file_base = f"{safe_prefix}_{timestamp}"
 
         saved_paths = []
 
         # Convert tensors to PIL — unpack batches, .detach() and size validation
         pil_images = []
         target_size = None
-        for img_tensor in images:
+        # Track which source tensor (and which batch item within it) each
+        # frame came from, so seeds can be attributed per-tensor rather than
+        # collapsed to seed_list[0] for every image.
+        frame_tensor_idx = []
+        frame_batch_idx = []
+        for t_idx, img_tensor in enumerate(images):
             # Unpack batch dimension: [B, H, W, C] → B individual [H, W, C] frames
             if len(img_tensor.shape) == 4:
                 frames = [img_tensor[i] for i in range(img_tensor.shape[0])]
             else:
                 frames = [img_tensor]
 
-            for frame in frames:
-                img_np = (frame.detach().cpu().numpy() * 255).astype(np.uint8)
+            for b_idx, frame in enumerate(frames):
+                # Clamp to [0, 1] before scaling to uint8 range — otherwise
+                # out-of-range float values (>1.0 or <0.0) wrap mod-256
+                # instead of clamping, corrupting saved pixels.
+                img_np = (frame.detach().cpu().numpy().clip(0, 1) * 255).astype(np.uint8)
                 pil_img = Image.fromarray(img_np)
 
                 if target_size is None:
@@ -195,38 +304,61 @@ class PowderGridSaver:
                     pil_img = pil_img.resize(target_size, Image.LANCZOS)
 
                 pil_images.append(pil_img)
+                frame_tensor_idx.append(t_idx)
+                frame_batch_idx.append(b_idx)
 
         # Calculate grid dimensions AFTER unpacking batches
         total_images = len(pil_images)
-        if num_loras > 0 and total_images > 0:
-            num_prompts = total_images // num_loras
-        else:
-            num_prompts = total_images if total_images else 1
+        num_prompts = _grid_dims(total_images, num_loras)
 
-        # Extend prompts cyclically to fill all rows
-        if prompt_list and len(prompt_list) < num_prompts:
-            display_prompts = (prompt_list * ((num_prompts // len(prompt_list)) + 1))[:num_prompts]
-        else:
-            display_prompts = prompt_list[:num_prompts] if prompt_list else []
+        def axis_labels(values):
+            if not values:
+                return []
+            batch = max(frame_batch_idx, default=0) + 1
+            expanded = len(values) == len(images) and num_loras > 1
+            labels = []
+            for index in range(num_prompts):
+                prompt_index = index // batch
+                source_index = prompt_index * num_loras if expanded and "Prompts first" in combination_order else prompt_index
+                labels.append(values[source_index % len(values)])
+            return labels
+        display_prompts = axis_labels(prompt_list)
 
         # Build per-image seed info with batch index
         # When batch_size > 1, ComfyUI generates the full batch from one seed
         # (torch.manual_seed(seed) → randn([batch, C, H, W])).
         # Individual batch items don't have separate seeds — they are
         # reproducible only as "seed + batch index within the run".
-        batch_size = max(1, num_prompts) if num_loras > 0 else 1
+        # The REAL batch size comes from the unpacked tensors (frame_batch_idx
+        # tracked at unpack time) — not from the prompt count, which is a grid
+        # dimension and previously produced fabricated [i/N] labels.
+        batch_size = (max(frame_batch_idx) + 1) if frame_batch_idx else 1
         base_seed = seed_list[0] if seed_list else None
 
-        all_seeds = []          # one entry per image (the base seed used)
+        all_seeds = []          # one entry per image (its source tensor's seed)
         all_batch_indices = []  # which item in the batch (0-based)
         if base_seed is not None:
             for img_i in range(total_images):
-                all_seeds.append(base_seed)
-                all_batch_indices.append(img_i % batch_size)
-        
+                t_idx = frame_tensor_idx[img_i] if img_i < len(frame_tensor_idx) else 0
+                if seed_list:
+                    img_seed = seed_list[t_idx] if t_idx < len(seed_list) else seed_list[-1]
+                else:
+                    img_seed = base_seed
+                all_seeds.append(img_seed)
+                all_batch_indices.append(
+                    frame_batch_idx[img_i] if img_i < len(frame_batch_idx) else 0)
 
         # Extract style info from workflow
-        style_info = self._extract_style_from_workflow(workflow_prompt)
+        style_info = self._extract_style_from_workflow(branch)
+        if style_metadata:
+            encoded = _unwrap(style_metadata)
+            try:
+                actual_style = json.loads(encoded)
+                if isinstance(actual_style, dict):
+                    style_info = {"names": [], "prefix": "", "suffix": "", "negative": "", "position": "wrap", **actual_style}
+            except (TypeError, json.JSONDecodeError):
+                warn("Grid: invalid style_metadata; style labels omitted")
+                style_info = None
 
         # Modify display prompts based on style switch
         if style_info and style_info["names"] and display_prompts:
@@ -258,7 +390,8 @@ class PowderGridSaver:
 
         if not pil_images:
             warn("No images!")
-            return (images[0:1] if images else [], "")
+            empty_tensor = torch.zeros((1, 1, 1, 3), dtype=torch.float32)
+            return {"ui": {"images": []}, "result": (empty_tensor, "")}
 
         if not lora_names and not display_prompts:
             num_cols = int(np.ceil(np.sqrt(len(pil_images))))
@@ -270,10 +403,7 @@ class PowderGridSaver:
         is_loras_first = "Loras first" in combination_order
 
         lora_labels = self._prepare_lora_labels(lora_names, lora_strengths)
-        if negative_list and len(negative_list) < num_prompts:
-            display_negatives = (negative_list * ((num_prompts // len(negative_list)) + 1))[:num_prompts]
-        else:
-            display_negatives = negative_list[:num_prompts] if negative_list else []
+        display_negatives = axis_labels(negative_list)
 
         json_data = {
             "timestamp": timestamp,
@@ -290,7 +420,7 @@ class PowderGridSaver:
             "combination_order": combination_order,
             "mode": lora_mode,
             "loras": original_loras if original_loras else lora_names,
-            "strengths": lora_strengths,
+            "strengths": original_strengths if lora_mode == "stack" else lora_strengths,
             "prompts": display_prompts,
             "negative_prompts": display_negatives,
             "style_names": style_info["names"] if style_info else [],
@@ -311,10 +441,16 @@ class PowderGridSaver:
                     for i in range(total_images)
                 ]
             else:
-                seed_labels = [f"Seed: {base_seed}"] * total_images
+                seed_labels = [f"Seed: {value}" for value in all_seeds]
 
+        grid_images = pil_images
+        if not is_loras_first and batch_size > 1 and num_loras > 1:
+            indices = sorted(range(total_images), key=lambda i: (frame_tensor_idx[i] // num_loras, frame_batch_idx[i], frame_tensor_idx[i] % num_loras))
+            grid_images = [pil_images[i] for i in indices]
+            if seed_labels:
+                seed_labels = [seed_labels[i] for i in indices]
         final_grid = self._create_grid(
-            pil_images, lora_labels, display_prompts,
+            grid_images, lora_labels, display_prompts,
             is_horizontal, is_loras_first,
             num_loras, num_prompts,
             gap, background, show_lora_names, show_prompts,
@@ -322,6 +458,14 @@ class PowderGridSaver:
             model_display_name if show_model_name else None,
             seed_labels,
         )
+
+
+        base_candidate = file_base
+        collision_counter = 1
+        while (os.path.exists(os.path.join(output_dir, f"{file_base}.png"))
+               or os.path.exists(os.path.join(output_dir, f"{file_base}.json"))):
+            file_base = f"{base_candidate}_{collision_counter}"
+            collision_counter += 1
 
         final_path = os.path.join(output_dir, f"{file_base}.png")
         final_grid.save(final_path, "PNG")
@@ -342,7 +486,11 @@ class PowderGridSaver:
         # Convert final_grid PIL → tensor directly (no re-read from disk)
         final_np = np.array(final_grid).astype(np.float32) / 255.0
         final_tensor = torch.from_numpy(final_np).unsqueeze(0)
-        return (final_tensor, "\n".join(saved_paths))
+        relative_dir = os.path.relpath(output_dir, base_output_dir)
+        preview = {"filename": os.path.basename(final_path),
+                   "subfolder": "" if relative_dir == "." else relative_dir.replace(os.sep, "/"),
+                   "type": "output"}
+        return {"ui": {"images": [preview]}, "result": (final_tensor, "\n".join(saved_paths))}
 
     def _prepare_lora_labels(self, lora_names, lora_strengths):
         labels = []
@@ -481,6 +629,11 @@ class PowderGridSaver:
                     row = img_idx % num_loras if num_loras > 0 else 0
 
             if col >= num_cols or row >= num_rows:
+                # _grid_dims ceils, so this is unreachable unless the layout
+                # math regresses — if it ever fires, say so instead of
+                # silently losing the user's image.
+                warn(f"[PowderGridSaver] frame {img_idx} fell outside the "
+                     f"{num_rows}x{num_cols} grid — layout bug, frame skipped")
                 continue
 
             x = row_label_width + gap + col * (img_width + gap)
@@ -532,6 +685,8 @@ class PowderGridSaver:
             ])
 
         for font_path in font_paths:
+            if font_path in _FONT_FAILED_PATHS:
+                continue
             cache_key = (font_path, font_size)
             if cache_key in _FONT_CACHE:
                 return _FONT_CACHE[cache_key]
@@ -540,6 +695,7 @@ class PowderGridSaver:
                 _FONT_CACHE[cache_key] = font
                 return font
             except Exception:
+                _FONT_FAILED_PATHS.add(font_path)
                 continue
 
         warn("No suitable font found, using default (may be small)")
@@ -556,9 +712,49 @@ class PowderGridSaver:
             return text
         return text[:max_chars - 3] + "..."
 
+    def _image_branch(self, prompt, unique_id):
+        if not prompt or unique_id is None:
+            return prompt
+        root = prompt.get(str(unique_id), {}).get("inputs", {}).get("images")
+        queue = [str(root[0])] if isinstance(root, list) and len(root) == 2 else []
+        branch = {}
+        while queue:
+            nid = queue.pop(0)
+            if nid in branch or nid not in prompt:
+                continue
+            node = prompt[nid]
+            branch[nid] = node
+            inputs = node.get("inputs", {})
+            if node.get("class_type") == "PowderSwitcher":
+                group = inputs.get("active_group", 1)
+                if isinstance(group, list):
+                    continue  # dynamic selection cannot be inferred from the saved graph
+                inputs = {k: v for k, v in inputs.items() if k.startswith(f"g{int(group)-1}_c")}
+            queue.extend(str(v[0]) for v in inputs.values() if isinstance(v, list) and len(v) == 2)
+        return branch
+
     def _extract_model_from_prompt(self, prompt):
         if not prompt:
             return None
+        sampler = next((n for n in prompt.values() if n.get("class_type") in self._SAMPLER_CLASSES), None)
+        if sampler:
+            link = sampler.get("inputs", {}).get("model")
+            chain = {}
+            while isinstance(link, list) and len(link) == 2:
+                nid, output = str(link[0]), link[1]
+                if nid in chain or nid not in prompt:
+                    break
+                node = prompt[nid]
+                chain[nid] = node
+                inputs = node.get("inputs", {})
+                if node.get("class_type") == "PowderSwitcher":
+                    group = inputs.get("active_group", 1)
+                    if isinstance(group, list):
+                        break
+                    link = inputs.get(f"g{int(group)-1}_c{output}")
+                else:
+                    link = inputs.get("model")
+            prompt = chain
         try:
             checkpoint_loaders = [
                 "CheckpointLoaderSimple",
@@ -578,11 +774,38 @@ class PowderGridSaver:
             warn(f"Could not extract model name: {e}")
         return None
 
-    def _extract_workflow_info(self, prompt):
+
+    _SAMPLER_CLASSES = {"PowderSampler", "KSampler", "KSamplerAdvanced",
+                        "SamplerCustom", "SamplerCustomAdvanced"}
+
+    def _find_upstream_sampler(self, prompt, start_id):
+        """Find the nearest upstream sampler by breadth-first traversal."""
+        if not prompt or start_id is None:
+            return None
+        start = str(start_id)
+        seen = set()
+        queue = [start]
+        while queue:
+            nid = queue.pop(0)
+            if nid in seen:
+                continue
+            seen.add(nid)
+            node = prompt.get(nid)
+            if not isinstance(node, dict):
+                continue
+            if nid != start and node.get("class_type") in self._SAMPLER_CLASSES:
+                return nid
+            for v in (node.get("inputs") or {}).values():
+                if isinstance(v, list) and len(v) == 2:
+                    queue.append(str(v[0]))
+        return None
+
+    def _extract_workflow_info(self, prompt, unique_id=None):
         """Extract generation settings by scanning all nodes for known parameter names.
 
         Works with any node type (KSampler, Flux split nodes, custom nodes, etc.).
         Follows linked inputs (up to 4 hops) to resolve values from source nodes.
+        With unique_id, the sampler found upstream of OUR node outranks the rest.
         """
         info = {"sampler": None, "scheduler": None, "steps": None, "cfg": None, "seed": None}
         if not prompt:
@@ -612,12 +835,15 @@ class PowderGridSaver:
             "SDTurboScheduler":   ("sd_turbo", 0),
         }
 
+
+        upstream_sampler = self._find_upstream_sampler(prompt, unique_id)
         try:
             for node_id, node_data in prompt.items():
                 if not isinstance(node_data, dict):
                     continue
                 class_type = node_data.get("class_type", "")
                 inputs = node_data.get("inputs", {})
+                boost = 2 if str(node_id) == upstream_sampler else 0
 
                 # Standard param-based extraction
                 for param_name, (info_key, priority) in param_map.items():
@@ -630,9 +856,9 @@ class PowderGridSaver:
                             value = resolved
                         else:
                             continue
-                    if priority > best_priority[info_key]:
+                    if priority + boost > best_priority[info_key]:
                         info[info_key] = value
-                        best_priority[info_key] = priority
+                        best_priority[info_key] = priority + boost
 
                 # Fallback: detect scheduler from node class_type
                 if class_type in scheduler_node_map:
@@ -645,6 +871,21 @@ class PowderGridSaver:
                         else:
                             info["scheduler"] = sched_name
                         best_priority["scheduler"] = sched_priority
+
+
+                if class_type == "PowderSampler" and 2 + boost > best_priority["steps"]:
+                    raw_steps = inputs.get("steps")
+                    if isinstance(raw_steps, (int, float)) and not isinstance(raw_steps, bool):
+                        den = inputs.get("denoise", 1.0)
+                        if isinstance(den, list):
+                            den = self._resolve_linked_param(prompt, den, "denoise")
+                        auto = inputs.get("auto_steps", True)
+                        if isinstance(den, (int, float)) and not isinstance(den, bool) \
+                                and isinstance(auto, bool):
+                            info["steps"] = compute_steps(int(raw_steps), float(den), auto)
+                        else:
+                            info["steps"] = int(raw_steps)
+                        best_priority["steps"] = 2 + boost
         except Exception as e:
             warn(f"Could not extract workflow info: {e}")
         return info
@@ -672,17 +913,12 @@ class PowderGridSaver:
                 return val
             return self._resolve_linked_param(prompt, val, param_name, depth + 1)
 
-        # Scan all literal inputs of the source node for a plausible value
-        # (e.g. a KSamplerSelect node outputs sampler_name but stores it
-        #  in its own input also called sampler_name)
-        for key, val in source_inputs.items():
-            if isinstance(val, list):
-                continue
-            # Return the first literal from the source node — it likely
-            # holds the value that the node outputs.
-            # Only do this for single-output simple nodes.
-            if len(source_inputs) == 1:
-                return val
+
+        if len(source_inputs) == 1:
+            for val in source_inputs.values():
+                if not isinstance(val, list):
+                    return val
+                return self._resolve_linked_param(prompt, val, param_name, depth + 1)
 
         return None
 
@@ -698,6 +934,10 @@ class PowderGridSaver:
                 continue
 
             inputs = node_data.get("inputs", {})
+            if inputs.get("style_sweep"):
+                # Cursor position is execution state, not recoverable from the graph.
+                warn("Grid: connect Styler style_info to style_metadata for sweep labels")
+                return None
             style_config_str = inputs.get("style_config", "[]")
             style_position_str = inputs.get("style_position", "Wrap prompt")
             use_positive = inputs.get("use_positive", True)
@@ -711,7 +951,7 @@ class PowderGridSaver:
                 config = json.loads(style_config_str) if style_config_str else []
                 if not isinstance(config, list):
                     config = []
-            except (json.JSONDecodeError, Exception):
+            except Exception:
                 config = []
 
             _all_styles, styles_by_name = get_styles()

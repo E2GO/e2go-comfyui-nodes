@@ -1,0 +1,608 @@
+[
+{
+"name": "Adi Granov Style",
+"prefix": "",
+"suffix": "Painted comic-cover illustration in the look of Adi Granov, applied to the subject of the request only; no Iron Man, no Marvel characters. Full color, restrained realistic palette with metallic accents. Volumetric realistic forms under dramatic directional light with crisp confident highlights on every contour. No visible ink outlines; edges defined by rendering. Immaculately smooth glassy gradients, no brushwork, controlled reflective sheen on every surface. For places and environments of any kind the same glossy smooth rendering on every surface; the setting comes only from the request. Not inked comic art, not photoreal.",
+"negative": ""
+},
+{
+"name": "Alex Ross Style",
+"prefix": "",
+"suffix": "Painted superhero realism in the look of Alex Ross and Norman Rockwell, applied to the subject of the request only; no Superman, no Justice League, no DC or Marvel characters. Full color, warm dignified palette bathed in golden light. Photoreal volumetric forms modelled by classical gouache-and-oil light logic; lighting direction and time of day follow the request. No ink outlines; painted edges. Smooth gouache surfaces with photoreal texture, reverent icon-like framing. For places and environments of any kind the same painted classical realism on every surface; the setting comes only from the request. Not inked comic, not CGI.",
+"negative": ""
+},
+{
+"name": "Alternative Comics Style",
+"prefix": "",
+"suffix": "Underground alternative comic drawing in the look of Robert Crumb, applied to the subject of the request only. Black and white with loose ink wash. Imperfect idiosyncratic volumes with minimal improvised hatching; lighting follows the request. Loose personal pen lines with visible wobble. Sketchbook-raw surfaces, crosshatch, smudges, handmade imperfection. For places and environments of any kind the same loose pen treatment on every surface; the setting comes only from the request. Not polished mainstream comic, not colored.",
+"negative": ""
+},
+{
+"name": "Amanda Conner Illustration",
+"prefix": "",
+"suffix": "Expressive comic illustration in the look of Amanda Conner and Bruce Timm, applied to the subject of the request only; no Harley Quinn, no Power Girl, no DC characters. Full color, bright clean palette. Appealing stylized volumes with polished cel-to-soft shading; lighting direction and time of day follow the request. Fluid lively ink outlines with varied weight. Clean fills with readable highlight shapes. For places and environments of any kind the same lively inked treatment on every surface; the setting comes only from the request. Not gritty realism, not anime.",
+"negative": ""
+},
+{
+"name": "American Comic Realism",
+"prefix": "",
+"suffix": "Polished comic-book realism in the look of Bryan Hitch and Alex Ross, applied to the subject of the request only; no Ultimates, no Marvel or DC characters. Full color, cinematic naturalistic palette. Convincing anatomical volumes with strong volumetric lighting; lighting direction and time of day follow the request. Fine realistic ink outlines merged into rendering. Realistic material textures, detailed integrated surroundings. For places and environments of any kind the same realistic rendered treatment on every surface; the setting comes only from the request. Not cartoon, not full photoreal.",
+"negative": ""
+},
+{
+"name": "American Pulp Illustration",
+"prefix": "",
+"suffix": "Painted pulp-magazine cover illustration in the look of N.C. Wyeth and Doc Savage covers, applied to the subject of the request only; no Doc Savage, no The Shadow. Full color, vibrant saturated oil palette. Confident volumetric forms with rich painterly shading; lighting direction and time of day follow the request. No ink outlines; painted edges. Visible oil brushwork, dramatic painterly surfaces. For places and environments of any kind the same painted pulp treatment on every surface; the setting comes only from the request. Not inked comic, not photoreal.",
+"negative": ""
+},
+{
+"name": "Archie Comics Style",
+"prefix": "",
+"suffix": "Mid-century comic rendering in the look of Archie Comics by Dan DeCarlo, applied to the subject of the request only; no Archie, no Betty, no Veronica. Full color, flat bright four-color palette. Simplified appealing volumes with minimal shadow; lighting direction and time of day follow the request. Confident evenly weighted ink outlines. Flat fills with faint print texture. For places and environments of any kind the same clean flat mid-century treatment on every surface; the setting comes only from the request. Not superhero rendering, not anime.",
+"negative": ""
+},
+{
+"name": "Ashley Wood",
+"prefix": "",
+"suffix": "Mixed-media painterly comic illustration in the look of Ashley Wood and Bill Sienkiewicz, applied to the subject of the request only; no World War Robot, no Metal Gear characters. Full color, muted palette with rust and bone accents. Loosely modelled volumes with painterly abstraction and sketch-like gesture; lighting direction and time of day follow the request. Energetic broken brush lines. Layered textures, splatter, scraped paint, controlled chaos on every surface. For places and environments of any kind the same raw mixed-media treatment on every surface; the setting comes only from the request. Not clean inked comic, not photoreal.",
+"negative": ""
+},
+{
+"name": "Asterix Style",
+"prefix": "",
+"suffix": "Franco-Belgian comedic adventure comic in the look of Asterix by Uderzo, applied to the subject of the request only; no Asterix, no Obelix, no Gauls. Full color, warm village palette with flat printed color. Exaggerated cartoon volumes with flat shading; lighting direction and time of day follow the request. Lively ink outlines. Flat fills with faint print grain. For places and environments of any kind the same lively flat-color treatment on every surface; the setting comes only from the request. Not American superhero comic, not anime.",
+"negative": ""
+},
+{
+"name": "Bande Dessinée (Hergé Tradition)",
+"prefix": "",
+"suffix": "Ligne-claire bande dessinée in the look of Hergé, applied to the subject of the request only; no Tintin, no Snowy, no Captain Haddock. Full color, bold evenly flat colors. Clearly bounded volumes with minimal internal shading; lighting direction and time of day follow the request. Uniform unmodulated contour lines of equal weight. Flat fills, no hatching, no texture, meticulous architectural detail drawn with the same clarity as everything else. For places and environments of any kind the same precise ligne-claire treatment on every surface; the setting comes only from the request. Not American comic, not painterly.",
+"negative": ""
+},
+{
+"name": "Bengal Illustration",
+"prefix": "",
+"suffix": "Contemporary comic illustration in the look of Bengal and Olivier Vatine, applied to the subject of the request only; no Naja or Meka characters. Full color, vibrant sophisticated palette. Expressive stylized volumes with highly polished rendering; lighting direction and time of day follow the request. Fluid clean linework. Polished smooth surfaces, elegant shape design. For places and environments of any kind the same polished fluid treatment on every surface; the setting comes only from the request. Not gritty realism, not anime.",
+"negative": ""
+},
+{
+"name": "Bernie Wrightson Gothic",
+"prefix": "",
+"suffix": "Gothic horror ink illustration in the look of Bernie Wrightson and Gustave Doré, applied to the subject of the request only; no Swamp Thing, no Frankenstein's monster. Black and white, deep chiaroscuro. Organic complex volumes carved by intricate crosshatching; lighting follows the request. Meticulous fine ink lines. Masterful texture on every material, dense hatching, atmospheric darkness. For places and environments of any kind the same intricate hatched ink treatment on every surface; the setting comes only from the request. Not colored, not clean modern comic.",
+"negative": ""
+},
+{
+"name": "Bill Sienkiewicz Expressionism",
+"prefix": "",
+"suffix": "Experimental mixed-media comic illustration in the look of Bill Sienkiewicz and Ralph Steadman, applied to the subject of the request only; no Elektra, no Marvel characters. Full color, fragmented palette with ink black and violent accents. Distorted volumes built from abstract painterly fragmentation; lighting direction and time of day follow the request. Bold splattered ink lines. Layered mixed-media textures, collage fragments, smeared paint on every surface. For places and environments of any kind the same fragmented expressionist treatment on every surface; the setting comes only from the request. Not clean inked comic, not photoreal.",
+"negative": ""
+},
+{
+"name": "Blacksad Character Design",
+"prefix": "",
+"suffix": "Watercolor bande dessinée in the look of Blacksad by Juanjo Guarnido, applied to the subject of the request only; no John Blacksad. Full color, warm ochre and tobacco brown against cool blue-grey shadows. Believably proportioned volumes with sculpted cinematic noir lighting and carefully observed gesture; any animal in the picture keeps its real species anatomy with humanlike posture. Supple hand-drawn ink contours with varied weight. Transparent layered watercolor washes, pigment blooms, visible paper grain, tactile fabric folds. For places and environments of any kind the same ink-and-watercolor noir treatment on every surface; the setting comes only from the request. Not Disney cartoon, not photoreal.",
+"negative": ""
+},
+{
+"name": "Blacksad Environment Illustration",
+"prefix": "",
+"suffix": "Watercolor graphic-novel environment illustration in the look of Blacksad by Juanjo Guarnido, applied to the subject of the request only; no John Blacksad. Full color, warm amber and tobacco against cool slate-blue shadows. Convincing architectural volumes with cinematic noir light, deep shadow masses and selective pools of light. Supple fine ink contours woven into wash. Transparent layered watercolor, paper grain, dry-brush texture, worn surfaces with traces of everyday life; no lettering. For places and environments of any kind the same staged foreground-midground-distance watercolor treatment; the setting comes only from the request. Not digital cel, not photoreal.",
+"negative": ""
+},
+{
+"name": "Bold Contour Style",
+"prefix": "",
+"suffix": "Graphic comic illustration in the look of Mike Mignola and Frank Miller, applied to the subject of the request only; no Hellboy, no Sin City characters. Full color, limited palette with heavy black and one or two muted accents. Simplified volumes built from strong silhouette and bold shadow shapes; lighting direction and time of day follow the request. Strong heavy outlines. Flat fills, large spot blacks, minimal texture. For places and environments of any kind the same bold silhouette treatment on every surface; the setting comes only from the request. Not painterly, not photoreal.",
+"negative": ""
+},
+{
+"name": "Boulet Graphic Illustration",
+"prefix": "",
+"suffix": "Contemporary French comic illustration in the look of Boulet and Lewis Trondheim, applied to the subject of the request only. Full color, bright clean palette. Simplified expressive volumes with light shading; lighting direction and time of day follow the request. Fluid expressive ink lines with sketchbook spontaneity. Clean fills with observational detail. For places and environments of any kind the same lively simplified treatment on every surface; the setting comes only from the request. Not American superhero comic, not photoreal.",
+"negative": ""
+},
+{
+"name": "Bruce Timm Noir",
+"prefix": "",
+"suffix": "Noir-inspired animation illustration in the look of Bruce Timm and Darwyn Cooke, applied to the subject of the request only; no Batman, no DC characters, no Gotham. Full color, limited muted palette with deep blacks. Clean geometric simplified volumes with dramatic shadow shapes under hard directional light. Disciplined clean outlines. Flat fills, large graphic shadows, no texture. For places and environments of any kind the same geometric noir treatment on every surface; the setting comes only from the request. Not painterly, not anime.",
+"negative": ""
+},
+{
+"name": "Butcher Billy",
+"prefix": "",
+"suffix": "Retro-pop graphic illustration in the look of Butcher Billy, applied to the subject of the request only. Full color, punchy flat color blocks of mid-century advertising hues. Geometrically simplified volumes with flat shading; lighting direction and time of day follow the request. Crisp confident outlines. Flat fills with halftone and print texture accents. For places and environments of any kind the same flat retro-pop treatment on every surface; the setting comes only from the request. Not painterly, not photoreal.",
+"negative": ""
+},
+{
+"name": "Clean Line Art",
+"prefix": "",
+"suffix": "Ligne-claire comic illustration in the look of Hergé and Yves Chaland, applied to the subject of the request only; no Tintin, no Freddy Lombard. Full color, flat controlled palette. Clearly constructed volumes with minimal shading; lighting direction and time of day follow the request. Crisp contours of controlled uniform weight. Flat fills, no texture, no hatching. For places and environments of any kind the same precise clean-line treatment on every surface; the setting comes only from the request. Not American comic, not painterly.",
+"negative": ""
+},
+{
+"name": "Clean Line Art (Alt)",
+"prefix": "",
+"suffix": "Contemporary editorial line illustration, applied to the subject of the request only. Full color, restrained modern palette. Flat volumes with no shading at all; lighting direction and time of day follow the request. Steady black ink contours of uniform unmodulated weight, every shape fully closed. Flat unshaded fills, no hatching, no texture, no gradients, generous negative space. For places and environments of any kind the same closed-contour flat treatment on every surface; the setting comes only from the request. Not sketchy, not painterly.",
+"negative": ""
+},
+{
+"name": "Comic Book",
+"prefix": "",
+"suffix": "Mainstream American comic-book rendering, applied to the subject of the request only. Full color, bold saturated palette. Dynamic volumes with flat-to-lightly-shaded color; lighting direction and time of day follow the request. Confident inked outlines. Flat fills with crisp highlight shapes and faint print texture. For places and environments of any kind the same inked-and-colored panel treatment on every surface; the setting comes only from the request. Not painterly, not anime.",
+"negative": ""
+},
+{
+"name": "Comic Book (Halftone)",
+"prefix": "",
+"suffix": "Printed comic-book rendering with halftone shading, applied to the subject of the request only. Full color, flat four-color palette. Dynamic volumes shaded with halftone dot patterns; lighting direction and time of day follow the request. Bold black outlines. Halftone dots in midtones and shadows, flat fills, coarse print texture; no lettering, no speech bubbles. For places and environments of any kind the same halftone print treatment on every surface; the setting comes only from the request. Not painterly, not photoreal.",
+"negative": ""
+},
+{
+"name": "Comic Noir Style",
+"prefix": "",
+"suffix": "Noir comic rendering, applied to the subject of the request only. Limited palette: near-monochrome darks with one or two selective color highlights. Volumes carved by heavy shadow under hard low-key light. Bold ink outlines dissolving into black masses. Heavy shadow work, wet reflective surfaces, rain streaks and grain. For places and environments of any kind the same shadow-heavy noir treatment on every surface; the setting comes only from the request. Not bright superhero comic, not photoreal.",
+"negative": ""
+},
+{
+"name": "Crosshatched Graphic Novel",
+"prefix": "",
+"suffix": "Crosshatched ink graphic novel illustration in the look of Bernie Wrightson and Franklin Booth, applied to the subject of the request only; no Sandman, no From Hell characters. Black and white with rich tonal range. Atmospherically realistic volumes built entirely from layered crosshatching; lighting follows the request. Disciplined fine ink lines. Dense hatched texture on every surface, strong value structure. For places and environments of any kind the same crosshatched treatment on every surface; the setting comes only from the request. Not colored, not clean flat comic.",
+"negative": ""
+},
+{
+"name": "Dark Horse Comics",
+"prefix": "",
+"suffix": "Independent comic rendering in the look of Dark Horse Comics titles, applied to the subject of the request only; no Hellboy, no Dark Horse characters. Full color, sophisticated restrained palette. Grounded stylized volumes with moody shading; lighting direction and time of day follow the request. Confident varied-weight inks. Textured fills, genre-blending surface detail. For places and environments of any kind the same moody inked treatment on every surface; the setting comes only from the request. Not bright mainstream superhero, not anime.",
+"negative": ""
+},
+{
+"name": "DC Comic Ink",
+"prefix": "",
+"suffix": "1990s Marvel/DC comic ink rendering, applied to the subject of the request only; no DC or Marvel characters. Full color, saturated print palette. Dynamic volumes with halftone shading; lighting direction and time of day follow the request. Bold detailed ink outlines. Halftone dots, flat fills, print grain. For places and environments of any kind the same inked halftone treatment on every surface; the setting comes only from the request. Not painterly, not photoreal.",
+"negative": ""
+},
+{
+"name": "DC Comics",
+"prefix": "",
+"suffix": "Darker superhero comic rendering in the look of DC Comics, applied to the subject of the request only; no Batman, no Superman, no DC characters, no Gotham. Full color, muted palette with deep shadows. Heroic volumes carved by dramatic noir-inspired shadow under hard directional light. Bold confident inks. Flat fills with heavy spot blacks and gothic graphic accents. For places and environments of any kind the same dark dramatic inked treatment on every surface; the setting comes only from the request. Not bright cartoon, not photoreal.",
+"negative": ""
+},
+{
+"name": "DC Comics Style",
+"prefix": "",
+"suffix": "Mainstream superhero comic illustration in the look of Jim Lee and Neal Adams for DC, applied to the subject of the request only; no Batman, no Superman, no DC characters. Full color, punchy saturated color blocks with sharp contrast. Powerful heroic volumes with crisp cel-style shadow; lighting direction and time of day follow the request. Confident heavy inking with crisp detail. Flat-to-gradient fills, dynamic foreshortening on every form. For places and environments of any kind the same heavy-inked heroic treatment on every surface; the setting comes only from the request. Not painterly, not anime.",
+"negative": ""
+},
+{
+"name": "Digital Comic Art",
+"prefix": "",
+"suffix": "Modern digital comic rendering, applied to the subject of the request only. Full color, vibrant saturated palette. Clean volumes with smooth digital gradient shading; lighting direction and time of day follow the request. Clean vector-like outlines. Smooth gradient fills with polished digital glow effects. For places and environments of any kind the same clean digital treatment on every surface; the setting comes only from the request. Not hand-inked retro comic, not photoreal.",
+"negative": ""
+},
+{
+"name": "Enki Bilal Comic and Digital Painting",
+"prefix": "",
+"suffix": "Painterly bande dessinée in the look of Enki Bilal, applied to the subject of the request only; no Nikopol. Full color, desaturated cold palette of blue-grey, dusty ochre and faded red. Weathered volumes under muted directional light casting a cold cinematic pall. Confident linework under layered painterly glazing. Richly worn textures, grimy surfaces, melancholic atmospheric grading. For places and environments of any kind the same weathered glazed treatment on every surface; the setting comes only from the request. Not clean ligne claire, not photoreal.",
+"negative": ""
+},
+{
+"name": "European Comics (Prestige)",
+"prefix": "",
+"suffix": "Prestige European graphic novel illustration in the look of François Schuiten and Enki Bilal, applied to the subject of the request only; no Nikopol, no Cités Obscures characters. Full color, atmospheric refined palette. Realistically grounded volumes with nuanced tonal rendering; lighting direction and time of day follow the request. Meticulous refined linework. Rich textural detail on every surface, album-quality finish. For places and environments of any kind the same meticulous atmospheric treatment on every surface; the setting comes only from the request. Not American superhero comic, not anime.",
+"negative": ""
+},
+{
+"name": "Franco-Belgian Comics (Detailed)",
+"prefix": "",
+"suffix": "Detailed bande dessinée illustration in the look of Moebius and François Schuiten, applied to the subject of the request only. Full color, subtle refined palette with fine tonal gradation. Patiently constructed volumes modelled by layered crosshatching; lighting direction and time of day follow the request. Obsessively fine ink lines. Dense hatched texture on fabric, stone and machinery, architectural patience in every surface. For places and environments of any kind the same fine-hatched treatment on every surface; the setting comes only from the request. Not bold American inking, not painterly.",
+"negative": ""
+},
+{
+"name": "Franco-Belgian Comics (Ligne Claire)",
+"prefix": "",
+"suffix": "Ligne-claire bande dessinée rendering in the look of Tintin, applied to the subject of the request only; no Tintin, no Snowy. Full color, flat vibrant color blocks. Clearly defined volumes with no cross-hatching; lighting direction and time of day follow the request. Uniform line weights throughout. Flat fills, exceptional clarity, no texture. For places and environments of any kind the same precise flat ligne-claire treatment on every surface; the setting comes only from the request. Not American comic, not painterly.",
+"negative": ""
+},
+{
+"name": "Frank Cho Style",
+"prefix": "",
+"suffix": "Mainstream comic illustration in the look of Frank Cho, applied to the subject of the request only; no Liberty Meadows characters. Full color, bright clean palette. Athletic idealized volumes with clean cel-based shading; lighting direction and time of day follow the request. Smooth fluid confident ink lines. Clean fills with bold uncomplicated highlight shapes. For places and environments of any kind the same clean fluid inked treatment on every surface; the setting comes only from the request. Not gritty, not anime.",
+"negative": ""
+},
+{
+"name": "Frank Miller Sin City",
+"prefix": "",
+"suffix": "High-contrast graphic novel rendering in the look of Frank Miller's Sin City, applied to the subject of the request only; no Marv, no Sin City characters. Black and white with no grey tones, plus one selective spot color in red or yellow. Volumes reduced to pure black and white shapes under harsh noir light. Angular sharp ink lines. Solid blacks, stark white, negative-space composition, rain streaks as white lines. For places and environments of any kind the same stark black-and-white treatment on every surface; the setting comes only from the request. Not grey-toned, not colored.",
+"negative": ""
+},
+{
+"name": "Frank Miller Style",
+"prefix": "",
+"suffix": "Stark graphic-novel ink in the look of Frank Miller, applied to the subject of the request only; no Sin City or Daredevil characters. Black and white, aggressive light-and-dark extremes. Volumes reduced to sheer silhouette with oversized spotted blacks; lighting follows the request. Sharp angular brutal ink lines. Minimal internal detail, solid black masses, white paper. For places and environments of any kind the same stripped-down spotted-black treatment on every surface; the setting comes only from the request. Not colored, not painterly.",
+"negative": ""
+},
+{
+"name": "Graphic Novel",
+"prefix": "",
+"suffix": "Literary graphic novel illustration, applied to the subject of the request only. Full color, restrained muted palette. Grounded atmospheric volumes with tonal shading through cross-hatching and wash; lighting direction and time of day follow the request. Confident deliberate linework. Hatched and washed textures, composed thoughtful framing. For places and environments of any kind the same considered tonal treatment on every surface; the setting comes only from the request. Not flat superhero comic, not photoreal.",
+"negative": ""
+},
+{
+"name": "Hellboy Style",
+"prefix": "",
+"suffix": "Comic illustration in the look of Mike Mignola, applied to the subject of the request only; no Hellboy, no BPRD characters. Full color, muted moody palette of ochre, slate and rust under heavy black. Blunt sculptural volumes carved by heavy spotted blacks; lighting direction and time of day follow the request. Chunky weighty ink outlines. Loose muted washes under stark ink, weathered folk-horror surfaces. For places and environments of any kind the same spotted-black inked treatment on every surface; the setting comes only from the request. Not detailed realism, not anime.",
+"negative": ""
+},
+{
+"name": "Hergé Tintin Style",
+"prefix": "",
+"suffix": "Clear-line comic rendering in the look of Hergé's Tintin, applied to the subject of the request only; no Tintin, no Snowy, no Captain Haddock. Full color, flat printed colors. Simplified volumes with no shading; lighting direction and time of day follow the request. Uniform black outlines. Flat fills with detailed backgrounds drawn in the same clean line. For places and environments of any kind the same detailed clear-line treatment on every surface; the setting comes only from the request. Not American comic, not painterly.",
+"negative": ""
+},
+{
+"name": "Image Comics",
+"prefix": "",
+"suffix": "Modern creator-owned comic rendering in the look of Image Comics titles, applied to the subject of the request only; no Spawn, no Image characters. Full color, sophisticated digital palette. Detailed grounded volumes with cinematic shading; lighting direction and time of day follow the request. Detailed modern inks. Sophisticated digital coloring with textured surfaces. For places and environments of any kind the same detailed cinematic treatment on every surface; the setting comes only from the request. Not retro four-color, not anime.",
+"negative": ""
+},
+{
+"name": "Jim Lee",
+"prefix": "",
+"suffix": "Comic art in the look of Jim Lee, applied to the subject of the request only; no Batman, no X-Men, no DC or Marvel characters. Full color, modern gradient coloring with metallic effects. Idealized heroic volumes modelled with intricate crosshatching; lighting direction and time of day follow the request. Dense detailed inks with flowing dynamic line. Densely detailed surfaces, crosshatched shadow, gradient highlights. For places and environments of any kind the same crosshatched detailed treatment on every surface; the setting comes only from the request. Not painterly, not anime.",
+"negative": ""
+},
+{
+"name": "Jim Lee (Alt)",
+"prefix": "",
+"suffix": "Blockbuster comic-cover illustration in the look of Jim Lee, applied to the subject of the request only; no Batman, no X-Men, no DC or Marvel characters. Full color, bold saturated palette. Powerful sculptural volumes with dramatic foreshortening and cross-hatched shadow; lighting direction and time of day follow the request. Meticulous dense inking. Richly detailed textures rewarding close inspection. For places and environments of any kind the same dense-inked treatment on every surface; the setting comes only from the request. Not painterly, not anime.",
+"negative": ""
+},
+{
+"name": "Joe Quesada Style",
+"prefix": "",
+"suffix": "Painted comic-cover illustration in the look of Joe Quesada, applied to the subject of the request only; no Daredevil, no Marvel characters. Full color, high-production saturated palette. Muscular stylized volumes under dramatic directional light with sharp highlights. Minimal inking replaced by glassy airbrushed edges. Immaculately smooth gradients, controlled reflective sheen on every surface. For places and environments of any kind the same glossy airbrushed treatment on every surface; the setting comes only from the request. Not hand-inked, not photoreal.",
+"negative": ""
+},
+{
+"name": "Mad Magazine Cover Art",
+"prefix": "",
+"suffix": "Satirical caricature illustration in the look of Mad magazine covers by Mort Drucker and Jack Davis, applied to the subject of the request only; no Alfred E. Neuman. Full color, printed magazine palette. Grotesquely exaggerated volumes with meticulous crosshatched and stippled shading; lighting direction and time of day follow the request. Loose masterfully controlled pen lines of varying weight. Dense crosshatch and stipple texture, rubbery distortion in every shape; no lettering. For places and environments of any kind the same caricatured crosshatched treatment on every surface; the setting comes only from the request. Not realistic, not anime.",
+"negative": ""
+},
+{
+"name": "Mark Brooks / Manapul Style",
+"prefix": "",
+"suffix": "Modern comic illustration in the look of Mark Brooks and Francis Manapul, applied to the subject of the request only; no Flash, no DC or Marvel characters. Full color, atmospheric palette with watercolor softness. Anatomically precise volumes with delicate cross-hatched shading; lighting direction and time of day follow the request. Crisp glossy semi-realistic linework. Loose watercolor washes bleeding through surroundings and fabric, tactile hand-finished surfaces. For places and environments of any kind the same line-over-wash treatment on every surface; the setting comes only from the request. Not flat digital, not photoreal.",
+"negative": ""
+},
+{
+"name": "Marvel Comics Style",
+"prefix": "",
+"suffix": "Classic Marvel superhero comic illustration in the look of Jack Kirby and John Romita Jr., applied to the subject of the request only; no Spider-Man, no Avengers, no Marvel characters. Full color, punchy primary palette. Energetic muscular volumes with flat-to-cel shading and sharp contrast; lighting direction and time of day follow the request. Confident heavy inks. Halftone-inspired texture, bold speed lines, flat fills. For places and environments of any kind the same heavy-inked halftone treatment on every surface; the setting comes only from the request. Not painterly, not anime.",
+"negative": ""
+},
+{
+"name": "Marvel Cover Art",
+"prefix": "",
+"suffix": "Superhero comic-cover illustration in the look of Alex Ross and J. Scott Campbell, applied to the subject of the request only; no Spider-Man, no Avengers, no Marvel characters. Full color, saturated high-contrast palette anchored by one focal color. Richly rendered volumes with dramatic rim light and glow effects. Ink-and-color hybrid or painted edges. Polished rendered surfaces against a moody or explosive backdrop treatment; no lettering. For places and environments of any kind the same polished dramatic treatment on every surface; the setting comes only from the request. Not interior panel flatness, not photoreal.",
+"negative": ""
+},
+{
+"name": "Milo Manara Style",
+"prefix": "",
+"suffix": "Italian fumetti illustration in the look of Milo Manara, applied to the subject of the request only. Full color, warm sun-bleached Mediterranean palette in soft watercolor washes. Gracefully precise volumes with sparse delicate crosshatching; lighting direction and time of day follow the request. Fluid confident ink lines. Soft watercolor fills, light hatching, airy surfaces. For places and environments of any kind the same ink-and-wash Mediterranean treatment on every surface; the setting comes only from the request. Not American superhero inking, not photoreal.",
+"negative": ""
+},
+{
+"name": "Modern Webcomic Style",
+"prefix": "",
+"suffix": "Modern webcomic rendering, applied to the subject of the request only. Full color, bright digital palette. Simplified expressive volumes with light flat shading; lighting direction and time of day follow the request. Simple clean lines. Flat digital fills, minimal texture. For places and environments of any kind the same clean simple treatment on every surface; the setting comes only from the request. Not detailed print comic, not photoreal.",
+"negative": ""
+},
+{
+"name": "Moebius",
+"prefix": "",
+"suffix": "Bande dessinée illustration in the look of Moebius (Jean Giraud), applied to the subject of the request only; no Arzach, no Blueberry. Full color, clear luminous palette of desert ochre, sky blue and pale violet. Fluidly precise volumes suggested by line rather than heavy shading; lighting direction and time of day follow the request. Impossibly clean confident ink lines. Delicate stippling and sparse fine hatching, flat clear color, vast open space with intricate surface detail. For places and environments of any kind the same clean-line contemplative treatment on every surface; the setting comes only from the request. Not heavy American inking, not painterly.",
+"negative": ""
+},
+{
+"name": "Moebius (Concept Art)",
+"prefix": "",
+"suffix": "Ligne-claire concept art in the look of Moebius, applied to the subject of the request only; no Arzach. Full color, desert palette with psychedelic accents of magenta and turquoise. Clean precise volumes with flat clear color; lighting direction and time of day follow the request. Fine clean ink lines. Flat fills, sparse stipple, dreamlike clarity on every surface. For places and environments of any kind the same clean-line desert treatment on every surface; the setting comes only from the request. Not painterly, not American comic.",
+"negative": ""
+},
+{
+"name": "Neo-Noir Detective Panel",
+"prefix": "",
+"suffix": "Cinematic noir comic panel rendering, applied to the subject of the request only. Limited palette: near-monochrome darks with selective red accents. Volumes carved by moody chiaroscuro under hard low-key light. Bold inks dissolving into shadow. Grainy texture, wet reflective surfaces, rain streaks. For places and environments of any kind the same grainy chiaroscuro treatment on every surface; the setting comes only from the request. Not bright cel comic, not photoreal.",
+"negative": ""
+},
+{
+"name": "Painted Comic Style",
+"prefix": "",
+"suffix": "Painted comic illustration, applied to the subject of the request only. Full color, atmospheric rich palette. Volumetric forms with soft painterly shading and atmospheric depth; lighting direction and time of day follow the request. Soft painted edges, no ink outlines. Rich painterly textures, fine-art brushwork on every surface. For places and environments of any kind the same painterly treatment on every surface; the setting comes only from the request. Not inked flat comic, not photoreal.",
+"negative": ""
+},
+{
+"name": "Peanuts Cartoon",
+"prefix": "",
+"suffix": "Newspaper comic-strip rendering in the look of Peanuts by Charles Schulz, applied to the subject of the request only; no Snoopy, no Charlie Brown. Full color, flat gentle palette. Rounded simplified volumes with no shading; any figures in the picture have dot eyes and economical features; lighting direction and time of day follow the request. Confident minimal pen outlines. Flat fills, no texture. For places and environments of any kind the same minimal flat treatment on every surface; the setting comes only from the request. Not detailed comic, not anime.",
+"negative": ""
+},
+{
+"name": "Photorealistic Comic Ink-and-Paint Hybrid",
+"prefix": "",
+"suffix": "Ink-and-paint hybrid comic illustration, applied to the subject of the request only. Full color, naturalistic palette. Photoreal volumetric depth under dramatic directional light reinforced by both line and rendered shadow. Crisp confident ink structure. Layered painterly rendering filling the inks with photoreal texture and tonal nuance. For places and environments of any kind the same ink-over-photoreal-paint treatment on every surface; the setting comes only from the request. Not flat comic, not pure photograph.",
+"negative": ""
+},
+{
+"name": "Ryan Benjamin Style",
+"prefix": "",
+"suffix": "Digital comic painting in the look of Ryan Benjamin, applied to the subject of the request only; no DC or Marvel characters. Full color, moody desaturated palette with bold accent light. Powerful foreshortened volumes under sharp directional light with deep contrast shadow. Heavy inking blended into painted color. Gritty painterly textures, weighty tactile finish. For places and environments of any kind the same gritty painted treatment on every surface; the setting comes only from the request. Not flat inked comic, not photoreal.",
+"negative": ""
+},
+{
+"name": "Todd McFarlane Style",
+"prefix": "",
+"suffix": "Comic art in the look of Todd McFarlane, applied to the subject of the request only; no Spawn, no Venom, no Marvel or Image characters. Full color, dark atmospheric palette with crimson and sickly green. Horror-influenced volumes with intricate organic detail; lighting direction and time of day follow the request. Dense flowing inks with excessive linework. Flowing fabric and chain-like detail as surface texture, dark gritty surfaces. For places and environments of any kind the same intricate dark-inked treatment on every surface; the setting comes only from the request. Not clean flat comic, not anime.",
+"negative": ""
+},
+{
+"name": "Travis Charest Style",
+"prefix": "",
+"suffix": "Hyper-clean comic illustration in the look of Travis Charest, applied to the subject of the request only; no WildC.A.T.s characters. Full color, polished restrained palette. Athletic refined volumes under confident directional light with sharp polished highlights. Immaculate clean linework merged into rendering. Glassy smooth gradients, slick controlled sheen, no brushwork. For places and environments of any kind the same glassy polished treatment on every surface; the setting comes only from the request. Not gritty inking, not photoreal.",
+"negative": ""
+},
+{
+"name": "Underground Comix Style",
+"prefix": "",
+"suffix": "Underground comix drawing in the look of 1960s–70s counterculture comics and Robert Crumb, applied to the subject of the request only. Black and white with heavy crosshatch. Exaggerated 1920s-influenced cartoon volumes with rough hatched shading; lighting follows the request. Rough heavily crosshatched pen lines. Raw DIY print texture, dense hatching on every surface; no lettering. For places and environments of any kind the same rough crosshatched treatment on every surface; the setting comes only from the request. Not polished mainstream comic, not colored.",
+"negative": ""
+},
+{
+"name": "Variable-Size Ben-Day Dots",
+"prefix": "",
+"suffix": "Pop-art print illustration in the look of Roy Lichtenstein, applied to the subject of the request only. Full color, flat primary print colors. Flat volumes whose gradation is built entirely from Ben-Day dots varying in size, larger where tone deepens; lighting direction and time of day follow the request. Crisp confident black outlines. Variable-size dot patterning, flat fills, slight registration offset. For places and environments of any kind the same variable-dot print treatment on every surface; the setting comes only from the request. Not painterly, not photoreal.",
+"negative": ""
+},
+{
+"name": "Vintage Comics",
+"prefix": "",
+"suffix": "Golden-age newsstand comic rendering, applied to the subject of the request only. Full color, flat four-color palette, slightly faded. Dynamic simplified volumes shaded by coarse halftone dots; lighting direction and time of day follow the request. Confident inked outlines. Coarse halftone, offset-print misregistration, worn newsprint texture. For places and environments of any kind the same worn halftone print treatment on every surface; the setting comes only from the request. Not modern digital comic, not painterly.",
+"negative": ""
+},
+{
+"name": "Zenescope Illustration",
+"prefix": "",
+"suffix": "Polished fantasy-comic illustration in the look of J. Scott Campbell and Grimm Fairy Tales covers, applied to the subject of the request only; no Grimm Fairy Tales characters. Full color, vibrant glamorous palette. Elegant stylized volumes with sophisticated volumetric rendering; lighting direction and time of day follow the request. Clean refined linework merged into rendering. Luxurious material textures, intricate ornamental detail, glossy finish. For places and environments of any kind the same polished ornamental treatment on every surface; the setting comes only from the request. Not gritty realism, not anime.",
+"negative": ""
+},
+{
+"name": "90s Extreme Comic",
+"prefix": "",
+"suffix": "1990s extreme comic art in the look of Rob Liefeld, Todd McFarlane and Marc Silvestri, applied to the subject of the request only; no Image or Marvel characters. Full color, saturated gradient digital coloring. Exaggerated muscular volumes with hyper-detailed crosshatching; lighting direction and time of day follow the request. Dense inks with excessive line. Crosshatched texture everywhere, airbrush gradient fills. For places and environments of any kind the same over-detailed crosshatched treatment on every surface; the setting comes only from the request. Not clean ligne claire, not photoreal.",
+"negative": ""
+},
+{
+"name": "Alternative Comic Clean",
+"prefix": "",
+"suffix": "Alternative comic illustration in the look of Chris Ware, Adrian Tomine and Daniel Clowes, applied to the subject of the request only. Full color, flat muted palette. Simple geometric volumes with no shading; lighting direction and time of day follow the request. Precise thin even lines. Flat fills, diagrammatic clarity, no texture. For places and environments of any kind the same precise flat treatment on every surface; the setting comes only from the request. Not superhero comic, not painterly.",
+"negative": ""
+},
+{
+"name": "Brian Bolland Precision Comic Art",
+"prefix": "",
+"suffix": "British comic art in the look of Brian Bolland and Dave Gibbons for 2000 AD, applied to the subject of the request only; no Judge Dredd. Full color, clean print palette. Precisely constructed volumes with polished detailed rendering; lighting direction and time of day follow the request. Crisp meticulous ink lines. Clean detailed surfaces, fine hatching where needed. For places and environments of any kind the same precise inked treatment on every surface; the setting comes only from the request. Not loose sketchy comic, not painterly.",
+"negative": ""
+},
+{
+"name": "Carl Barks Comics",
+"prefix": "",
+"suffix": "Disney comic art in the look of Carl Barks and Don Rosa, applied to the subject of the request only; no Donald Duck, no Scrooge McDuck, no Disney characters. Full color, flat bright four-color print palette. Rubbery expressive rounded volumes with flat shading; lighting direction and time of day follow the request. Clean round precise ink contours. Flat fills with detailed environmental drawing and clean print finish. For places and environments of any kind the same clean detailed cartoon treatment on every surface; the setting comes only from the request. Not superhero comic, not anime.",
+"negative": ""
+},
+{
+"name": "Comics Pin-Up",
+"prefix": "",
+"suffix": "Comic cover pin-up illustration in the look of Adam Hughes and J. Scott Campbell, applied to the subject of the request only. Full color, saturated punchy palette. Idealized elegant volumes with glossy airbrushed shading and luminous highlights; lighting direction and time of day follow the request. Crisp confident inking with fine tapered lines. Glossy smooth surfaces; no lettering. For places and environments of any kind the same glossy airbrushed treatment on every surface; the setting comes only from the request. Not gritty inking, not photoreal.",
+"negative": ""
+},
+{
+"name": "Dave Gibbons Watchmen Comic",
+"prefix": "",
+"suffix": "1980s comic art in the look of Dave Gibbons and John Higgins' Watchmen, applied to the subject of the request only; no Rorschach, no Watchmen characters. Full color, flat secondary palette of mustard, purple and teal. Grounded realistic volumes with flat shading; lighting direction and time of day follow the request. Precise even inks. Flat fills, dense background detail, clean print finish. For places and environments of any kind the same precise flat-colored treatment on every surface; the setting comes only from the request. Not painterly, not anime.",
+"negative": ""
+},
+{
+"name": "Edgy Dark Comic",
+"prefix": "",
+"suffix": "Gritty dark comic art in the look of Ben Templesmith, Ashley Wood and Jock, applied to the subject of the request only. Full color, warm muted palette with harsh contrast. Raw distorted volumes with heavy scratchy shadow; lighting direction and time of day follow the request. Aggressive scratchy inks. Splattered textures, grunge, raw mark-making on every surface. For places and environments of any kind the same scratchy splattered treatment on every surface; the setting comes only from the request. Not clean mainstream comic, not photoreal.",
+"negative": ""
+},
+{
+"name": "Elegant Italian Fumetti Illustration",
+"prefix": "",
+"suffix": "Italian fumetti illustration in the look of Guido Crepax, Hugo Pratt and Vittorio Giardino, applied to the subject of the request only; no Corto Maltese, no Valentina. Full color, warm transparent watercolor palette. Gracefully proportioned volumes with sparse delicate hatching; lighting direction and time of day follow the request. Fluid confident ink contours. Transparent watercolor washes, polished printed finish. For places and environments of any kind the same ink-and-watercolor treatment on every surface; the setting comes only from the request. Not American superhero comic, not photoreal.",
+"negative": ""
+},
+{
+"name": "European Painted Comic Art",
+"prefix": "",
+"suffix": "Painted bande dessinée illustration in the look of Enki Bilal, Régis Loisel and Juanjo Guarnido, applied to the subject of the request only. Full color, layered watercolor-and-gouache palette. Detailed volumes with textured tonal passages; lighting direction and time of day follow the request. Refined expressive linework under paint. Detailed material rendering, album-page finish. For places and environments of any kind the same painted watercolor-gouache treatment on every surface; the setting comes only from the request. Not flat ligne claire, not photoreal.",
+"negative": ""
+},
+{
+"name": "Garfield Comic Strip",
+"prefix": "",
+"suffix": "Newspaper comic-strip rendering in the look of Garfield by Jim Davis, applied to the subject of the request only; no Garfield, no Odie. Full color, flat bright palette. Rounded organic volumes with minimal shading; lighting direction and time of day follow the request. Clean expressive outlines. Flat fills, relaxed simple shapes. For places and environments of any kind the same flat rounded treatment on every surface; the setting comes only from the request. Not detailed comic, not anime.",
+"negative": ""
+},
+{
+"name": "Gotham Noir Comic",
+"prefix": "",
+"suffix": "Noir comic art in the look of Lee Bermejo, Sean Murphy and Jock, applied to the subject of the request only; no Batman, no Joker, no Gotham. Full color, dark sophisticated palette with luminous highlights. Gritty realistic volumes carved by heavy dramatic shadow under low-key light. Dense realistic inks. Gritty textures, dense black areas, wet reflective highlights. For places and environments of any kind the same gritty noir treatment on every surface; the setting comes only from the request. Not bright superhero comic, not photoreal.",
+"negative": ""
+},
+{
+"name": "J.H. Williams III Style Comic Art",
+"prefix": "",
+"suffix": "Virtuoso comic art in the look of J.H. Williams III, applied to the subject of the request only; no Promethea, no Batwoman. Full color, rich shifting palette. Elegant flowing volumes rendered in alternating painted, inked and decorative modes; lighting direction and time of day follow the request. Linework shifting from fine ink to painted edge. Intricate decorative patterning, painterly passages, experimental surface treatment. For places and environments of any kind the same shifting painted-inked-decorative treatment; the setting comes only from the request. Not uniform house-style comic, not photoreal.",
+"negative": ""
+},
+{
+"name": "Jenny Frison Style Comic Art",
+"prefix": "",
+"suffix": "Painted comic-cover illustration in the look of Jenny Frison and Joshua Middleton, applied to the subject of the request only; no DC or Marvel characters. Full color, muted elegant palette. Softly modelled volumes with refined tonal transitions; lighting direction and time of day follow the request. Fine decorative linework under soft paint. Soft blended digital paint, gentle gradients; no lettering. For places and environments of any kind the same soft painted treatment on every surface; the setting comes only from the request. Not hard inked comic, not photoreal.",
+"negative": ""
+},
+{
+"name": "Kirby Krackle Comic",
+"prefix": "",
+"suffix": "Silver-age comic art in the look of Jack Kirby and Joe Sinnott, applied to the subject of the request only; no Fantastic Four, no Marvel characters. Full color, bright primary four-color palette. Blocky powerful volumes with square-fingered geometric simplification; lighting direction and time of day follow the request. Heavy dynamic inks. Kirby krackle — crackling clusters of black energy dots — as texture on energy and cosmic surfaces, flat fills. For places and environments of any kind the same blocky krackle-inked treatment on every surface; the setting comes only from the request. Not painterly, not anime.",
+"negative": ""
+},
+{
+"name": "Neal Adams Style Comic Art",
+"prefix": "",
+"suffix": "Bronze-age comic art in the look of Neal Adams and José Luis García-López, applied to the subject of the request only; no Batman, no DC or Marvel characters. Full color, rich print palette. Dynamic realistic volumes with cinematic foreshortening under dramatic lighting. Detailed feathered inking. Feathered hatching texture, flat print fills. For places and environments of any kind the same feathered realistic-inked treatment on every surface; the setting comes only from the request. Not cartoon, not photoreal.",
+"negative": ""
+},
+{
+"name": "Painterly Modern Horror Comic",
+"prefix": "",
+"suffix": "Painted horror comic art in the look of Bill Sienkiewicz, Dave McKean and Ben Templesmith, applied to the subject of the request only. Full color, dense dark tonal palette with restrained accents. Loosely modelled volumes with crisp focal rendering against rough brush; lighting direction and time of day follow the request. Rough digital brush edges, no clean outlines. Rough brush texture, distressed printed finish, mixed-media grit. For places and environments of any kind the same rough painted treatment on every surface; the setting comes only from the request. Not clean inked comic, not photoreal.",
+"negative": ""
+},
+{
+"name": "Prince Valiant Comic Strip",
+"prefix": "",
+"suffix": "Adventure comic-strip ink art in the look of Hal Foster's Prince Valiant, applied to the subject of the request only; no Prince Valiant. Full color, warm newspaper-print palette. Realistically drafted volumes with textured ink shading; lighting direction and time of day follow the request. Meticulous elegant ink lines. Elaborate period detail, textured hatching, flat print color. For places and environments of any kind the same meticulous inked treatment on every surface; the setting comes only from the request. Not cartoon, not painterly.",
+"negative": ""
+},
+{
+"name": "Silver Age Comic Art",
+"prefix": "",
+"suffix": "1960s silver-age comic art in the look of Jack Kirby, Steve Ditko and Gil Kane, applied to the subject of the request only; no Spider-Man, no Fantastic Four, no Marvel or DC characters. Full color, bold flat four-color print palette. Heroic simplified volumes shaded with Ben-Day dots; lighting direction and time of day follow the request. Clean confident inks. Ben-Day dot shading, flat fills, retro print registration. For places and environments of any kind the same four-color print treatment on every surface; the setting comes only from the request. Not modern digital comic, not painterly.",
+"negative": ""
+},
+{
+"name": "Steranko Style Comic Art",
+"prefix": "",
+"suffix": "1960s op-art comic design in the look of Jim Steranko, applied to the subject of the request only; no Nick Fury, no Marvel characters. Full color, flat vivid pop palette. Sleek volumes built from dramatic black shapes and psychedelic graphic layouts; lighting direction and time of day follow the request. Bold graphic inks. Flat fills, op-art patterns, pop-art shapes. For places and environments of any kind the same bold op-art treatment on every surface; the setting comes only from the request. Not painterly, not photoreal.",
+"negative": ""
+},
+{
+"name": "Vintage Romance Comic Art",
+"prefix": "",
+"suffix": "1960s romance comic art in the look of John Romita Sr. and Tony Abruzzo, applied to the subject of the request only. Full color, flat printed pastel palette. Glossy idealized volumes shaded with Ben-Day dots; any figures in the picture have large glossy eyes with bright highlights; lighting direction and time of day follow the request. Clean brush inks. Ben-Day dots, flat pastel fills, retro print finish. For places and environments of any kind the same pastel Ben-Day print treatment on every surface; the setting comes only from the request. Not modern digital comic, not photoreal.",
+"negative": ""
+},
+{
+"name": "Wally Wood Style Comic Art",
+"prefix": "",
+"suffix": "EC Comics art in the look of Wally Wood and Al Williamson, applied to the subject of the request only. Full color, rich retro print palette. Glossy rendered volumes with rich black areas; lighting direction and time of day follow the request. Lush detailed brush inking. Glossy rendered textures, polished retro finish. For places and environments of any kind the same lush brush-inked treatment on every surface; the setting comes only from the request. Not loose sketchy comic, not photoreal.",
+"negative": ""
+},
+{
+"name": "Will Eisner Style Comic Art",
+"prefix": "",
+"suffix": "Comic art in the look of Will Eisner, Milton Caniff and Alex Toth, applied to the subject of the request only; no The Spirit. Black and white with wet glossy blacks. Theatrically staged volumes carved by dramatic shadow under cinematic noir light. Expressive brush inks. Wet glossy black masses, brush texture, cinematic framing. For places and environments of any kind the same expressive brush-ink treatment on every surface; the setting comes only from the request. Not colored, not clean digital.",
+"negative": ""
+},
+{
+"name": "Zip-a-Tone Comic Art",
+"prefix": "",
+"suffix": "1970s zip-a-tone comic art in the look of Wally Wood and underground cartoonists, applied to the subject of the request only. Black and white with grey dot-tone sheets. Clearly outlined volumes shaded with mechanical dot and line tone sheets; lighting follows the request. Clean black outlines. Crisp cut tone edges, mechanical screentone patterns, flat white paper. For places and environments of any kind the same zip-a-tone treatment on every surface; the setting comes only from the request. Not colored, not painterly.",
+"negative": ""
+},
+{
+"name": "Adam Hughes Character Design",
+"prefix": "",
+"suffix": "Painted comic-cover illustration in the look of Adam Hughes, Alberto Vargas and Gil Elvgren, applied to the subject of the request only; no DC or Marvel characters. Full color, warm retro Hollywood palette. Elegant classic volumes with soft warm painterly rendering; lighting direction and time of day follow the request. Soft painted edges with fine line accents. Smooth glamour-painting surfaces; no lettering. For places and environments of any kind the same warm painted treatment on every surface; the setting comes only from the request. Not hard inked comic, not photoreal.",
+"negative": ""
+},
+{
+"name": "Bill Waterson Ink",
+"prefix": "",
+"suffix": "Newspaper comic-strip ink in the look of Bill Watterson and Walt Kelly, applied to the subject of the request only; no Calvin, no Hobbes. Black and white with watercolor Sunday-strip accents. Expressive exaggerated volumes with selective detail; lighting follows the request. Fluid expressive brush ink. Clean brush craftsmanship, light watercolor wash. For places and environments of any kind the same fluid brush-ink treatment on every surface; the setting comes only from the request. Not detailed realism, not full-color digital.",
+"negative": ""
+},
+{
+"name": "Hugo Pratt Ink",
+"prefix": "",
+"suffix": "Fumetti ink illustration in the look of Hugo Pratt, applied to the subject of the request only; no Corto Maltese. Black and white with soft watercolor washes. Volumes reduced to bold black shapes and sparse line; lighting follows the request. Loose economical brush ink, sparse confident lines. Soft watercolor wash, bare paper, breezy minimal surfaces. For places and environments of any kind the same economical brush-and-wash treatment on every surface; the setting comes only from the request. Not detailed hatching, not full color digital.",
+"negative": ""
+},
+{
+"name": "Tim Sale Character Design",
+"prefix": "",
+"suffix": "Watercolor comic illustration in the look of Tim Sale and Darwyn Cooke, applied to the subject of the request only; no Batman, no DC characters, no Gotham. Full color, washy watercolor palette. Bold graphic volumes with large flowing shadow shapes; any figures in the picture have exaggerated jaws; lighting direction and time of day follow the request. Heavy expressive black ink. Washy watercolor fills, large spot blacks. For places and environments of any kind the same ink-and-wash graphic treatment on every surface; the setting comes only from the request. Not photoreal, not anime.",
+"negative": ""
+},
+{
+"name": "Darwyn Cooke Character Design",
+"prefix": "",
+"suffix": "Retro 1960s comic rendering in the look of Darwyn Cooke and Bruce Timm, applied to the subject of the request only; no Justice League, no DC characters. Limited warm palette of flat midcentury colors. Rounded simplified volumes with crisp graphic shadows; any figures in the picture have square heroic jaws; lighting direction and time of day follow the request. Bold brush inks. Minimal flat color, no texture. For places and environments of any kind the same flat midcentury treatment on every surface; the setting comes only from the request. Not detailed realism, not anime.",
+"negative": ""
+},
+{
+"name": "Newspaper Strip",
+"prefix": "",
+"suffix": "Newspaper comic-strip rendering in the look of Bill Watterson, Charles Schulz and George Herriman, applied to the subject of the request only. Full color, flat newsprint palette, slightly off-register. Simple brush-inked volumes with halftone shading; lighting direction and time of day follow the request. Lively loose brush lines. Halftone dots, coarse newsprint texture, clean white gutters. For places and environments of any kind the same newsprint strip treatment on every surface; the setting comes only from the request. Not glossy digital, not photoreal.",
+"negative": ""
+},
+{
+"name": "Noir Ink",
+"prefix": "",
+"suffix": "Noir ink comic art in the look of Frank Miller, Mike Mignola and Eduardo Risso, applied to the subject of the request only. Black and white with one graphic spot color. Volumes reduced to solid black masses and high-contrast white shapes with minimal midtones; lighting follows the request. Thick brush-ink edges. Stark spot blacks, bare white, one accent color. For places and environments of any kind the same stark black-mass treatment on every surface; the setting comes only from the request. Not grey-toned, not painterly.",
+"negative": ""
+},
+{
+"name": "Schuiten Architectural BD Illustration",
+"prefix": "",
+"suffix": "Bande dessinée pen-and-ink illustration in the look of François Schuiten and Moebius, applied to the subject of the request only. Limited palette of sepia tones over ink. Architecturally precise volumes modelled by layered crosshatching; lighting direction and time of day follow the request. Dense obsessive fine ink lines. Layered hatching on every surface, muted earthy tonal wash. For places and environments of any kind the same architectural crosshatched treatment on every surface; the setting comes only from the request. Not bold American inking, not photoreal.",
+"negative": ""
+},
+{
+"name": "Bronze Age Comic Art",
+"prefix": "",
+"suffix": "1970s bronze-age comic art in the look of Neal Adams, John Buscema and Jim Starlin, applied to the subject of the request only; no Marvel or DC characters. Full color, richer muted print palette. Realistic detailed volumes with dramatic shadow rendering; lighting direction and time of day follow the request. Moodier realistic inks. Flat print fills with hatched shadow, cinematic composition. For places and environments of any kind the same realistic-inked print treatment on every surface; the setting comes only from the request. Not cartoon, not painterly.",
+"negative": ""
+},
+{
+"name": "J. Scott Campbell Character Design",
+"prefix": "",
+"suffix": "Comic pin-up illustration in the look of J. Scott Campbell, applied to the subject of the request only; no Danger Girl, no Gen13 characters. Full color, glossy vibrant palette. Exaggerated pin-up volumes with glossy rendering; any figures in the picture have big expressive eyes, tiny pointed noses and voluminous flowing hair; lighting direction and time of day follow the request. Crisp confident inks. Glossy smooth surfaces. For places and environments of any kind the same glossy inked treatment on every surface; the setting comes only from the request. Not gritty realism, not photoreal.",
+"negative": ""
+},
+{
+"name": "Crepax Gothic Horror Figure Illustration",
+"prefix": "",
+"suffix": "Gothic horror pen illustration in the look of Guido Crepax, Dino Battaglia and Bernie Wrightson, applied to the subject of the request only. Black and white, razor-edged contrast. Angular slender elongated volumes swallowed into heavy shadow masses under harsh single-source light. Obsessively fine nervous pen lines. Dense crosshatching and stipple, fractured dreamlike composition. For places and environments of any kind the same dense hatched claustrophobic treatment on every surface; the setting comes only from the request. Not colored, not clean mainstream comic.",
+"negative": ""
+},
+{
+"name": "Crepax Slender Modernist Figure Illustration",
+"prefix": "",
+"suffix": "Modernist pen illustration in the look of Guido Crepax and Georges Pichard, applied to the subject of the request only. Black and white, stark high contrast with sharp shadow cuts. Angular slender elongated volumes with poised geometry; lighting follows the request. Ultra-fine nervous pen lines. Intricate hatching and stipple, fragmented geometric composition. For places and environments of any kind the same fine-hatched geometric treatment on every surface; the setting comes only from the request. Not colored, not painterly.",
+"negative": ""
+},
+{
+"name": "Jamie Hewlett Character Design",
+"prefix": "",
+"suffix": "Ink comic illustration in the look of Jamie Hewlett, applied to the subject of the request only; no Gorillaz, no Tank Girl. Full color, grungy muted palette. Lanky exaggerated punk volumes with scratchy shading; any figures in the picture have hollow or blacked-out eyes; lighting direction and time of day follow the request. Scratchy expressive ink. Grunge texture, rough fills. For places and environments of any kind the same scratchy punk-inked treatment on every surface; the setting comes only from the request. Not clean polished comic, not anime.",
+"negative": ""
+},
+{
+"name": "Joe Madureira Character Design",
+"prefix": "",
+"suffix": "Comic illustration in the look of Joe Madureira, applied to the subject of the request only; no Battle Chasers, no Darksiders characters. Full color, bold vibrant palette. Chunky exaggerated volumes with oversized hands and feet and bold cel-style shading; any figures in the picture have big anime-influenced eyes; lighting direction and time of day follow the request. Confident stylized inks. Bold fills with crisp highlights. For places and environments of any kind the same chunky stylized treatment on every surface; the setting comes only from the request. Not realistic, not pure anime.",
+"negative": ""
+},
+{
+"name": "Western Superhero Character Design",
+"prefix": "",
+"suffix": "Superhero comic illustration in the look of Bruce Timm, Alex Toth and Jim Lee, applied to the subject of the request only; no DC or Marvel characters. Full color, bold primary color blocking. Heroic idealized volumes with broad shoulders and narrow waist on any figures, crisp graphic shadow; lighting direction and time of day follow the request. Bold clean inks. Flat fills, strong emblem-like graphic shapes. For places and environments of any kind the same bold primary-blocked treatment on every surface; the setting comes only from the request. Not gritty realism, not anime.",
+"negative": ""
+}
+]

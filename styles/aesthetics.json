@@ -1,0 +1,620 @@
+[
+  {
+    "name": "Academia",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names, otherwise painterly digital illustration: dark-academia treatment; no students, libraries or buildings added. Limited palette of charcoal, oxblood, forest green and aged cream. Soft volumetric form with a cool window-light feel and gentle falloff; lighting direction and time of day follow the request. Crisp tailored edges, matte wool, worn leather and old paper surfaces. For places and environments of any kind the same muted, orderly, slightly austere treatment; the setting comes only from the request. Not grunge, not cottagecore.",
+    "negative": ""
+  },
+  {
+    "name": "Afrofuturism",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names, otherwise painterly digital illustration: Afrofuturist treatment; no figures, cities or spacecraft added. Full color, saturated jewel tones with gold, cobalt and violet, metallic accents. Smooth volumetric form with bright rim light and glowing geometric pattern accents, kente-like and cosmic motifs woven into textile, metal and surface; lighting direction and time of day follow the request. Clean confident edges, polished chrome and beadwork textures. For places and environments of any kind the same pattern-and-gold treatment; the setting comes only from the request. Not generic sci-fi, not tribal.",
+    "negative": ""
+  },
+  {
+    "name": "Alien",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names, otherwise painterly digital illustration: extraterrestrial treatment: the subject's materials, anatomy or construction look non-earthly, iridescent chitin, bioluminescent veins, unfamiliar geometry, without adding creatures or spacecraft. Full color, cool teal, violet and acid-green palette with glowing accents. Smooth volumetric form, soft inner glow in translucent parts; lighting direction and time of day follow the request. Clean edges, wet or pearlescent surfaces. For places and environments of any kind the same otherworldly materials; the setting comes only from the request. Not horror, not cartoon.",
+    "negative": ""
+  },
+  {
+    "name": "Ancient Egyptian",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names, otherwise painterly digital illustration: ancient-Egyptian motifs on the subject only; no pharaohs, pyramids or temples added. Full color, limited to sandstone, gold, lapis blue, turquoise and black. Flat-to-shallow form with warm even light; lighting direction and time of day follow the request. Crisp outlined edges, polished gold and carved stone surfaces, hieroglyph-like ornament bands that read as pattern, never as text. For places and environments of any kind the same sandstone-and-gold materials; the setting comes only from the request. Not Greek, not Aztec.",
+    "negative": ""
+  },
+  {
+    "name": "Ancient Slavic Culture",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names, otherwise painterly digital illustration: ancient-Slavic folk motifs on the subject only; no villagers, huts or churches added. Full color, warm palette of red, ochre, birch white and natural wood browns. Soft volumetric form with warm diffuse light; lighting direction and time of day follow the request. Carved-wood edges, embroidered red-and-gold geometric borders, linen and bark textures, sun and bird ornaments used as pattern. For places and environments of any kind the same carved-timber and embroidery treatment; the setting comes only from the request. Not Norse, not Russian lacquer painting.",
+    "negative": ""
+  },
+  {
+    "name": "Arabian Nights Fantasy",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names, otherwise painterly digital illustration: Arabian-Nights motifs on the subject only; no palaces, genies or figures added. Full color, jewel tones of sapphire, emerald, ruby and brass gold. Smooth volumetric form with warm glowing light; lighting direction and time of day follow the request. Arabesque and geometric tile patterns on surfaces, brass, silk and lantern-glass textures, silky curved edges. For places and environments of any kind the same tilework and brass treatment; the setting comes only from the request. Not Egyptian, not Indian miniature.",
+    "negative": ""
+  },
+  {
+    "name": "Artistic Vision",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names, otherwise painterly digital illustration: expressive fine-art treatment. Full color, rich considered palette with one dominant hue. Confident painterly form built from bold brush marks, strong value contrast and loose edges that tighten at the focal point; lighting direction and time of day follow the request. Visible brush texture, impasto highlights, thin glazed shadows. For places and environments of any kind the same gestural brushwork; the setting comes only from the request. Not photographic, not cartoon.",
+    "negative": ""
+  },
+  {
+    "name": "Astral Aura",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names, otherwise painterly digital illustration: astral-aura treatment: the subject is wrapped in a glowing multicolored energy field radiating from its outline. Full color, violet, magenta, cyan and gold light on a deeper surround. Volumetric form lit mostly by its own aura, soft rim glow, floating light motes near the silhouette; lighting direction and time of day follow the request. Soft luminous edges, smooth gradients. For places and environments of any kind the aura glow tints nearby surfaces; the setting comes only from the request. Not neon, not glitch.",
+    "negative": ""
+  },
+  {
+    "name": "Atompunk",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names, otherwise painterly digital illustration: atompunk treatment; no rockets, robots or cities added. Full color, optimistic 1950s palette of turquoise, coral, cream and chrome. Smooth rounded form with bright clean light; lighting direction and time of day follow the request. Polished chrome, brass trim, tailfin curves, starburst and atomic-orbit ornaments, Googie boomerang angles on built parts. For places and environments of any kind the same chrome-and-pastel treatment; the setting comes only from the request. Not dieselpunk, not steampunk.",
+    "negative": ""
+  },
+  {
+    "name": "Aztec Art",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names, otherwise painterly digital illustration: Aztec and Maya motifs on the subject only; no temples, warriors or plazas added. Full color, limited to jade green, turquoise, terracotta, gold and black. Shallow carved-relief form with warm even light; lighting direction and time of day follow the request. Stepped geometric borders, feather and serpent ornament as pattern, carved stone and gold-inlay surfaces, bold outlined edges. For places and environments of any kind the same carved-stone treatment; the setting comes only from the request. Not Egyptian, not tribal.",
+    "negative": ""
+  },
+  {
+    "name": "Bad Dream",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names, otherwise painterly digital illustration: nightmare treatment: the subject keeps its identity but its proportions, textures and surroundings feel wrong and threatening. Limited palette of near-black, sickly green and bruised red. Harsh form with deep swallowed shadows and a single cold light; lighting direction and time of day follow the request. Smeared edges, grimy wet surfaces, subtle distortion. For places and environments of any kind the same oppressive distortion; the setting comes only from the request. Not gore, not cartoon.",
+    "negative": ""
+  },
+  {
+    "name": "Biomechanical",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names, otherwise painterly digital illustration: biomechanical treatment: the subject's structure fuses organic anatomy with machinery, ribs becoming pipes, tendons becoming cables, without adding creatures. Limited palette of steel gray, bone and oily black with one cold accent. Hard volumetric form with specular highlights and deep crevice shadows; lighting direction and time of day follow the request. Intricate interlocking surfaces, wet chrome and bone textures. For places and environments of any kind the same fused organic-mechanical surfaces; the setting comes only from the request. Not clean robotics, not gore.",
+    "negative": ""
+  },
+  {
+    "name": "Biomechanical Cyberpunk",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names, otherwise painterly digital illustration: biomechanical-cyberpunk treatment: flesh and machine merged on the subject, exposed cables and implants, without adding figures. Full color, dark palette with cold cyan and magenta accents on black steel. Hard volumetric form with harsh specular highlights and deep shadows; lighting direction and time of day follow the request. Dense intricate surfaces, oily wet metal, tubing, synthetic skin. For places and environments of any kind the same grimy high-tech treatment; the setting comes only from the request. Not clean sci-fi, not watercolor.",
+    "negative": ""
+  },
+  {
+    "name": "Blacklight",
+    "prefix": "",
+    "suffix": "Blacklight poster illustration in fluorescent UV-reactive pigments, applied to the subject of the request only. Full color: inert near-black base with intensely glowing accents of hot pink, acid green, electric orange and violet. Flat-to-shallow form where glowing areas appear to emit light; sharp separation between glowing and dark regions with little gradation. Bold edges, velvet-black matte surface against radiant fluorescent fills. For places and environments of any kind the same glow-on-black treatment; the setting comes only from the request. Not neon tubes, not synthwave.",
+    "negative": ""
+  },
+  {
+    "name": "Brave Art",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names, otherwise painterly digital illustration: raw expressionist treatment. Full color, bold clashing palette with heavy black. Distorted but readable form, aggressive brush and knife marks, drips and scratches; lighting direction and time of day follow the request. Broken edges, thick impasto, scraped surfaces, nothing polished. For places and environments of any kind the same violent mark-making; the setting comes only from the request. Not photographic, not decorative.",
+    "negative": ""
+  },
+  {
+    "name": "Celtic Druid Culture",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names, otherwise painterly digital illustration: Celtic motifs on the subject only; no druids, stone circles or forests added. Full color, misty palette of moss green, slate, bronze and oak brown. Soft volumetric form with cool diffuse light; lighting direction and time of day follow the request. Interlaced knotwork borders, carved stone and wood surfaces, bronze torc accents, oak-leaf ornament as pattern. For places and environments of any kind the same knotwork-and-stone treatment; the setting comes only from the request. Not Norse, not high fantasy.",
+    "negative": ""
+  },
+  {
+    "name": "Chinese Imperial Dynasty",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names, otherwise painterly digital illustration: Chinese imperial motifs on the subject only; no palaces, dragons or courtiers added. Full color, limited to vermilion lacquer, imperial gold, jade green and porcelain white. Smooth volumetric form with warm even light; lighting direction and time of day follow the request. Cloud-scroll and lattice patterns as ornament, glossy lacquer, carved jade and silk-brocade surfaces, clean edges. For places and environments of any kind the same lacquer-and-gold treatment; the setting comes only from the request. Not Japanese, not ink-wash painting.",
+    "negative": ""
+  },
+  {
+    "name": "Classical Greek",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names, otherwise painterly digital illustration: every built structure in the picture is Classical Greek architecture: marble columns, pediments, friezes, symmetrical proportions. Full color, white and cream marble with soft natural tones. Clear volumetric form under bright Mediterranean light; lighting direction and time of day follow the request. Crisp carved edges, polished and weathered marble surfaces. For places and environments of any kind the same marble construction; the setting comes only from the request. Not Roman baroque, not neoclassical.",
+    "negative": ""
+  },
+  {
+    "name": "Contemporary Gothic Art",
+    "prefix": "",
+    "suffix": "Dark gothic-romantic illustration applied to the subject of the request only. Limited palette of near-black, deep burgundy and porcelain-pale tones with cold highlights. Tenebrist volumetric form: shadow swallows the edges, a single restrained directional glow carves the subject out; any figures in the picture have luminous pale skin. Meticulous ornamental detail, lace, velvet and dark metal surfaces, soft lost edges in shadow. For places and environments of any kind the same engulfing darkness and ornament; the setting comes only from the request. Not horror gore, not Victorian engraving.",
+    "negative": ""
+  },
+  {
+    "name": "Cosmic Horror Illustration",
+    "prefix": "",
+    "suffix": "Cosmic-horror illustration in the manner of Beksiński and Giger, applied to the subject of the request only; no creatures or tentacled gods added. Limited palette of bone, rust, ash and deep sea-green. Painterly volumetric form with dramatic low illumination and vast implied scale; lighting direction and time of day follow the request. Intricate organic textures, eroded surfaces, soft dissolving edges into atmospheric dark. For places and environments of any kind the same incomprehensible scale and dread; the setting comes only from the request. Not gore, not comic.",
+    "negative": ""
+  },
+  {
+    "name": "Cybernetic",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names, otherwise painterly digital illustration: cybernetic treatment: the subject carries integrated cybernetic enhancements, implants, seams, glowing circuitry, without adding robots or figures. Full color, cool steel and white with one glowing accent hue. Smooth hard-surface form with clean specular highlights; lighting direction and time of day follow the request. Panel lines, brushed metal and matte polymer surfaces, crisp edges. For places and environments of any kind the same high-tech surfaces; the setting comes only from the request. Not grungy cyberpunk, not retro.",
+    "negative": ""
+  },
+  {
+    "name": "Cybernetic Robot",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names, otherwise painterly digital illustration: robotic treatment: the subject is built as an android or machine, metal plating, joints, wires, sensor lenses, keeping its own identity. Full color, gunmetal, white polymer and glowing status-light accents. Hard volumetric form with crisp specular highlights; lighting direction and time of day follow the request. Panel seams, exposed cabling, brushed and polished metal surfaces. For places and environments of any kind the same machined treatment; the setting comes only from the request. Not organic, not cartoon.",
+    "negative": ""
+  },
+  {
+    "name": "Cyberpunk Cityscape",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names, otherwise painterly digital illustration: cyberpunk treatment; no cities or figures added. Full color, high-contrast neon cyan, magenta and amber on dark surfaces. Volumetric form with wet reflective highlights and glowing signage light spill; lighting direction and time of day follow the request. Dense layered surfaces, rain-slick asphalt, holographic shimmer, cables and vents. For places and environments of any kind the same neon-soaked density; the setting comes only from the request. Not clean sci-fi, not watercolor.",
+    "negative": ""
+  },
+  {
+    "name": "Cyberpunk Industrial",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names, otherwise painterly digital illustration: industrial-cyberpunk treatment: exposed cables, mechanical parts, steam vents, metal grating and LED strips on the subject's built surfaces; no figures added. Full color, dark steel and rust with cold LED accents. Hard volumetric form with harsh practical light; lighting direction and time of day follow the request. Greasy metal, grating, pipes, wire bundles, worn edges. For places and environments of any kind the same high-tech industrial treatment; the setting comes only from the request. Not clean minimalist, not neon glamour.",
+    "negative": ""
+  },
+  {
+    "name": "Cyberpunk Neon",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names, otherwise painterly digital illustration: neon-cyberpunk treatment: bright neon light, holographic displays, chrome surfaces and rain-slick reflections on whatever the request names; no figures or cities added. Full color, saturated magenta, cyan and violet neon on dark. Volumetric form with colored rim light and wet highlights; lighting direction and time of day follow the request. Glossy chrome, glass, hologram shimmer, crisp edges. For places and environments of any kind the same neon-and-chrome treatment; the setting comes only from the request. Not organic, not vintage.",
+    "negative": ""
+  },
+  {
+    "name": "Dark Cyberpunk",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names, otherwise painterly digital illustration: dark-cyberpunk treatment: brutal, hopeless corporate-dystopia atmosphere; no figures or cities added. Full color, near-black palette with dirty amber and cold blue accents, little neon. Heavy volumetric form with low harsh light and deep shadow; lighting direction and time of day follow the request. Scarred metal, concrete, wet grime, worn edges. For places and environments of any kind the same oppressive, surveilled treatment; the setting comes only from the request. Not bright neon, not clean.",
+    "negative": ""
+  },
+  {
+    "name": "Dark Dream",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names, otherwise painterly digital illustration: dark surreal dream treatment: the subject keeps its identity in an unsettling, grimly beautiful version. Limited palette of ink black, cold gray-blue and one muted accent. Soft volumetric form emerging from darkness, dim diffuse light; lighting direction and time of day follow the request. Smoky lost edges, velvet shadow, fine detail only in the lit focal area. For places and environments of any kind the same melancholic haze; the setting comes only from the request. Not horror gore, not cheerful.",
+    "negative": ""
+  },
+  {
+    "name": "Dark Fantasy",
+    "prefix": "",
+    "suffix": "Dark-fantasy oil painting in the manner of tenebrist concept art, applied to the subject of the request only; no monsters or castles added. Limited palette of near-black, iron gray, dried-blood red and cold bone light. Richly textured volumetric form carved by a single dramatic light from near-total darkness; lighting direction and time of day follow the request. Weathered painterly surfaces, heavy impasto highlights, lost edges in shadow. For places and environments of any kind the same looming darkness; the setting comes only from the request. Not bright high fantasy, not gore.",
+    "negative": ""
+  },
+  {
+    "name": "Disco",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names, otherwise painterly digital illustration: disco treatment; no dance floors, mirror balls or dancers added. Full color, saturated 1970s magenta, gold, orange and electric blue. Glossy volumetric form with sparkling multicolored light spots and lens flare on the subject; lighting direction and time of day follow the request. Sequin, satin, mirror and chrome surfaces, soft glowing edges. For places and environments of any kind the same spangled light treatment; the setting comes only from the request. Not minimalist, not monochrome.",
+    "negative": ""
+  },
+  {
+    "name": "Dreamscape",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names, otherwise painterly digital illustration: dreamscape treatment: the subject appears in a surreal, floating, softly impossible version of itself. Full color, luminous pastel and twilight palette. Soft volumetric form with glowing diffuse light and gentle haze; lighting direction and time of day follow the request. Smooth gradients, soft edges, faint floating particles. For places and environments of any kind the same weightless surreal haze; the setting comes only from the request. Not horror, not photographic.",
+    "negative": ""
+  },
+  {
+    "name": "Dystopian",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names, otherwise painterly digital illustration: dystopian treatment; no ruins, crowds or cities added. Limited palette of ash gray, concrete, rust and sickly yellow. Heavy volumetric form under flat overcast light with deep grime in crevices; lighting direction and time of day follow the request. Cracked, stained, worn surfaces, hard edges. For places and environments of any kind the same bleak decayed treatment; the setting comes only from the request. Not cheerful, not neon cyberpunk.",
+    "negative": ""
+  },
+  {
+    "name": "Elemental Art",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names, otherwise painterly digital illustration: elemental treatment: the subject is partly made of raging elemental energy, fire, water, wind, lightning or stone, surging from its form. Full color, saturated elemental hues against a darker surround. Volumetric form lit by its own energy, glowing cores and flying sparks or droplets; lighting direction and time of day follow the request. Swirling painterly edges, smooth glowing surfaces. For places and environments of any kind the energy scorches, soaks or cracks nearby surfaces; the setting comes only from the request. Not photographic, not cartoon.",
+    "negative": ""
+  },
+  {
+    "name": "Elven Fantasy Realm",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names, otherwise painterly digital illustration: elven high-fantasy treatment; no elves, forests or towers added. Full color, silver, moonlit blue, pale green and soft gold. Smooth elegant form with ethereal glowing light; lighting direction and time of day follow the request. Flowing curves, delicate silver filigree, leaf-and-vine ornament, glowing crystal accents, fine clean edges. For places and environments of any kind the same graceful filigree treatment; the setting comes only from the request. Not dwarven, not dark fantasy.",
+    "negative": ""
+  },
+  {
+    "name": "Ethereal Dreamscape",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names, otherwise painterly digital illustration: ethereal double-exposure treatment: the subject blends softly with a second translucent layer of itself. Full color, surreal pastel violets, teals and rose. Soft volumetric form in glowing diffuse light with floating particles; lighting direction and time of day follow the request. Translucent overlapping edges, smooth gradients, misty surfaces. For places and environments of any kind the same layered translucence; the setting comes only from the request. Not sharp, not realistic.",
+    "negative": ""
+  },
+  {
+    "name": "Fairy Tale",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names, otherwise painterly digital illustration: storybook fairy-tale treatment; no princesses, castles or creatures added. Full color, warm enchanted palette of gold, rose, forest green and twilight blue. Soft volumetric form with magical glowing light; lighting direction and time of day follow the request. Gentle rounded edges, sparkles, painterly storybook surfaces. For places and environments of any kind the same enchanted storybook treatment; the setting comes only from the request. Not modern, not horror.",
+    "negative": ""
+  },
+  {
+    "name": "Frutiger Aero",
+    "prefix": "",
+    "suffix": "Glossy mid-2000s digital render in the Frutiger Aero look, applied to the subject of the request only. Full color, bright sky blue, fresh green and white with glassy highlights. Smooth rounded form under bright even diffused light, soft lens bloom; lighting direction and time of day follow the request. Dewy translucent surfaces, glass and water-drop sheen, crisp clean edges. For places and environments of any kind the same clean glossy optimism; the setting comes only from the request. Not vaporwave, not flat design.",
+    "negative": ""
+  },
+  {
+    "name": "Futuristic",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names, otherwise painterly digital illustration: futuristic treatment: sleek ultramodern design language on the subject, seamless surfaces, minimal seams, soft glowing accents, without adding vehicles or cities. Full color, white, graphite and one cool accent light. Smooth volumetric form with clean studio-like highlights; lighting direction and time of day follow the request. Matte polymer, brushed metal and glass surfaces, crisp edges. For places and environments of any kind the same seamless high-tech surfaces; the setting comes only from the request. Not retro, not grungy.",
+    "negative": ""
+  },
+  {
+    "name": "Glitch Vaporwave",
+    "prefix": "",
+    "suffix": "Digital glitch image applied to the subject of the request only. Full color, vaporwave pink, cyan and violet. Flat-to-shallow form broken by heavy RGB channel shift, horizontal scanlines, datamosh smears and block displacement; lighting direction and time of day follow the request. Jagged torn edges, pixel-stretched surfaces, soft glow bleeding through tears. For places and environments of any kind the same corrupted-video treatment; the setting comes only from the request. Not clean, not film grain.",
+    "negative": ""
+  },
+  {
+    "name": "Glitchcore",
+    "prefix": "",
+    "suffix": "Digital glitch image applied to the subject of the request only. Full color, vivid saturated hues with chromatic aberration. Dynamic form fractured by displacement blocks, pixel sorting, color-channel offsets and partial duplication; lighting direction and time of day follow the request. Hard digital edges, compression artifacts, scattered noise. For places and environments of any kind the same distortion; the setting comes only from the request. Not vaporwave pastel, not analog VHS.",
+    "negative": ""
+  },
+  {
+    "name": "Glo-fi",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names, otherwise painterly digital illustration: glo-fi treatment. Full color, vibrant glowing magenta, orange and teal in a dreamy haze. Soft volumetric form with strong colored bloom and light leaks; lighting direction and time of day follow the request. Soft diffused edges, hazy glowing surfaces, gentle grain. For places and environments of any kind the same luminous haze; the setting comes only from the request. Not sharp, not glitch.",
+    "negative": ""
+  },
+  {
+    "name": "Gloomy",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names, otherwise painterly digital illustration: gloomy treatment. Limited palette of slate gray, dim olive and dirty brown with no pink. Heavy volumetric form under dim overcast light with deep vignette; lighting direction and time of day follow the request. Grimy matte surfaces, sharp detail throughout with no depth-of-field blur, dense background detail where the request allows. For places and environments of any kind the same dark grimy density; the setting comes only from the request. Not cheerful, not neon.",
+    "negative": ""
+  },
+  {
+    "name": "Gloomy Art",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names, otherwise painterly digital illustration: chiaroscuro treatment: the subject is formed mainly from shadow and a few touches of light. Limited palette of near-black with sparse warm highlights. Dramatic volumetric form with one strong directional light and vast shadow; lighting direction and time of day follow the request. Lost edges, velvety darkness, detail only where light falls. For places and environments of any kind the same shadow-built treatment; the setting comes only from the request. Not high key, not cartoon.",
+    "negative": ""
+  },
+  {
+    "name": "Googie Art Style",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names, otherwise painterly digital illustration: 1950s Googie treatment; no diners, signs or cars added. Full color, turquoise, cherry red, cream and chrome. Smooth rounded form with bright clean light; lighting direction and time of day follow the request. Bold boomerang angles, starburst and atomic-orbit ornaments, upswept curves, chrome and enamel surfaces. For places and environments of any kind the same space-age sweep; the setting comes only from the request. Not streamline moderne, not vaporwave.",
+    "negative": ""
+  },
+  {
+    "name": "Gothic",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names, otherwise painterly digital illustration: gothic treatment; no cathedrals, vampires or graveyards added. Limited palette of black, deep purple, blood red and bone white. Dramatic volumetric form with low mysterious light and deep shadow; lighting direction and time of day follow the request. Ornate pointed-arch ornament, wrought iron, velvet and aged stone surfaces, crisp dark edges. For places and environments of any kind the same ornate haunting treatment; the setting comes only from the request. Not cheerful, not photographic.",
+    "negative": ""
+  },
+  {
+    "name": "Gothic Architecture",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names, otherwise painterly digital illustration: every built structure in the picture is Gothic architecture: pointed arches, flying buttresses, stone tracery, stained glass, gargoyle ornament. Full color, gray stone with jewel-toned glass. Clear volumetric form with raking light on carved stone; lighting direction and time of day follow the request. Crisp carved edges, weathered masonry surfaces. For places and environments of any kind the same medieval cathedral construction; the setting comes only from the request. Not modern glass, not fantasy castle.",
+    "negative": ""
+  },
+  {
+    "name": "Graffiti",
+    "prefix": "",
+    "suffix": "Spray-paint graffiti mural on a wall, applied to the subject of the request only; no streets or crowds added. Full color, vibrant saturated fills with bold black outlines. Flat-to-shallow form with hard-edged highlights and spray-fade gradients; lighting is the painted kind. Drips, overspray, wildstyle shape energy without readable letters, brick or concrete wall texture showing through. For places and environments of any kind the same painted-mural flatness; the setting comes only from the request. Not street photography, not clean vector.",
+    "negative": ""
+  },
+  {
+    "name": "Grunge",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names, otherwise painterly digital illustration: grunge treatment. Limited palette of dirty olive, rust, faded black and nicotine yellow. Rough volumetric form under flat harsh light; lighting direction and time of day follow the request. Distressed, scratched, stained surfaces, torn edges, heavy grain and noise, photocopy roughness. For places and environments of any kind the same decayed texture; the setting comes only from the request. Not clean, not sleek.",
+    "negative": ""
+  },
+  {
+    "name": "Heroic Fantasy",
+    "prefix": "",
+    "suffix": "Heroic-fantasy painting, airbrush over oil on canvas in the 1980s paperback-cover tradition, applied to the subject of the request only; no warriors, monsters or castles added. Full color, rich saturated palette with golden light. Muscular volumetric form with dramatic directional light and glowing rim; lighting direction and time of day follow the request. Smooth airbrushed gradients over visible brushwork, polished metal and leather surfaces. For places and environments of any kind the same epic painted grandeur; the setting comes only from the request. Not dark fantasy, not anime.",
+    "negative": ""
+  },
+  {
+    "name": "Holographic Y2K",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names, otherwise painterly digital illustration: holographic Y2K treatment: iridescent foil surfaces on the subject. Full color, prismatic rainbow shifts over silver and pale blue. Smooth glossy form with sharp prismatic reflections and lens glints; lighting direction and time of day follow the request. Crisp chrome edges, foil texture, bubble-like translucence. For places and environments of any kind the same iridescent sheen; the setting comes only from the request. Not matte, not retro 80s.",
+    "negative": ""
+  },
+  {
+    "name": "Horror",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names, otherwise painterly digital illustration: horror treatment; no monsters or victims added. Limited palette of near-black, sickly green and dried red. Harsh volumetric form with a single cold light and deep suspenseful shadow; lighting direction and time of day follow the request. Grimy, damp, decaying surfaces, unsettling detail in dark corners, hard edges. For places and environments of any kind the same eerie dread; the setting comes only from the request. Not gore, not cute.",
+    "negative": ""
+  },
+  {
+    "name": "Idyllic",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names, otherwise painterly digital illustration: idyllic treatment. Full color, warm harmonious palette of soft greens, golds and sky blue. Soft volumetric form in gentle warm sunlight; lighting direction and time of day follow the request. Clean pleasant edges, smooth picturesque surfaces, light haze in the distance. For places and environments of any kind the same peaceful charm; the setting comes only from the request. Not gloomy, not saturated cartoon.",
+    "negative": ""
+  },
+  {
+    "name": "Industrial Warehouse",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names, otherwise painterly digital illustration: every built structure in the picture is industrial warehouse construction: exposed steel beams, brick walls, metal fixtures, concrete floors, utilitarian design. Full color, brick red, raw concrete gray and black steel. Clear volumetric form with high skylight or practical light; lighting direction and time of day follow the request. Hard edges, rough brick, riveted steel surfaces. For places and environments of any kind the same functional industrial construction; the setting comes only from the request. Not residential, not polished loft.",
+    "negative": ""
+  },
+  {
+    "name": "Japanese Edo Period",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names, otherwise painterly digital illustration: Japanese Edo-period motifs on the subject only; no temples, geisha or samurai added. Full color, limited to indigo, vermilion, gold and cream. Flat-to-shallow woodblock-like form with even light; lighting direction and time of day follow the request. Kimono textile patterns, waves, hemp leaf, chrysanthemum, as ornament, lacquer and paper surfaces, clean inked edges. For places and environments of any kind the same woodblock flatness; the setting comes only from the request. Not Chinese, not anime.",
+    "negative": ""
+  },
+  {
+    "name": "Japanese Traditional",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names, otherwise painterly digital illustration: every built structure in the picture is traditional Japanese architecture: wooden post-and-beam, curved tiled roofs, paper shoji screens, tatami, zen restraint. Full color, natural wood, white paper and dark tile. Clear volumetric form with soft filtered light; lighting direction and time of day follow the request. Clean joinery edges, cedar and rice-paper surfaces. For places and environments of any kind the same wooden-temple construction; the setting comes only from the request. Not Chinese palace, not modern concrete.",
+    "negative": ""
+  },
+  {
+    "name": "Light Cheery Atmosphere",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names, otherwise painterly digital illustration: cheerful treatment. Full color, bright warm palette of sunny yellow, sky blue, coral and fresh green. Soft volumetric form in bright warm light; lighting direction and time of day follow the request. Clean light edges, smooth pleasant surfaces, no heavy shadow. For places and environments of any kind the same bright pleasant airiness; the setting comes only from the request. Not moody, not monochromatic.",
+    "negative": ""
+  },
+  {
+    "name": "Lo-Fi Art",
+    "prefix": "",
+    "suffix": "Relaxed lo-fi illustration applied to the subject of the request only. Full color, soft muted palette with slightly washed tones. Simple gently shaded form with warm low light; lighting direction and time of day follow the request. Loose casual linework, slightly grainy textured surfaces, soft imperfect edges, cozy handmade feel. For places and environments of any kind the same mellow unpolished treatment; the setting comes only from the request. Not crisp vector, not photographic.",
+    "negative": ""
+  },
+  {
+    "name": "Lovecraftian",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names, otherwise painterly digital illustration: Lovecraftian treatment; no tentacled gods or cultists added. Limited palette of sea-green, slate, bone and deep violet. Painterly volumetric form with dim low light and vast dark negative space; lighting direction and time of day follow the request. Slimy eroded surfaces, impossible non-Euclidean angles on built parts, dissolving edges into fog. For places and environments of any kind the same eldritch dread; the setting comes only from the request. Not gore, not cartoon.",
+    "negative": ""
+  },
+  {
+    "name": "Luxurious Elegance",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names, otherwise painterly digital illustration: luxurious treatment; no mansions or figures added. Full color, rich palette of gold, ivory, deep emerald and burgundy. Smooth volumetric form with soft glamorous light and warm highlights; lighting direction and time of day follow the request. Ornate gilded detail, polished marble, velvet, silk and crystal surfaces, refined clean edges. For places and environments of any kind the same opulent finish; the setting comes only from the request. Not minimalist, not grunge.",
+    "negative": ""
+  },
+  {
+    "name": "Macabre",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names, otherwise painterly digital illustration: macabre treatment; no corpses or skulls added. Limited palette of black, bone, faded purple and old blood. Dramatic volumetric form with low cold light and deep shadow; lighting direction and time of day follow the request. Ornate decayed detail, cracked and tarnished surfaces, hard dark edges. For places and environments of any kind the same grim gothic treatment; the setting comes only from the request. Not cute, not bright.",
+    "negative": ""
+  },
+  {
+    "name": "Medieval European",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names, otherwise painterly digital illustration: medieval-European motifs on the subject only; no castles, knights or markets added. Full color, muted palette of parchment, iron gray, oxblood, forest green and gilt. Soft volumetric form with a warm candle-or-daylight feel; lighting direction and time of day follow the request. Heraldic pattern accents, carved stone, hammered iron, oak and leather surfaces, worn edges. For places and environments of any kind the same stone-and-timber treatment; the setting comes only from the request. Not fantasy, not Renaissance.",
+    "negative": ""
+  },
+  {
+    "name": "Metropolis",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names, otherwise painterly digital illustration: metropolitan treatment; no skylines or crowds added. Full color, cool glass blue, steel gray and warm window amber. Clean volumetric form with crisp reflective highlights; lighting direction and time of day follow the request. Polished glass, steel and concrete surfaces, sharp geometric edges. For places and environments of any kind the same sleek urban-modern treatment; the setting comes only from the request. Not rural, not retro.",
+    "negative": ""
+  },
+  {
+    "name": "Modern Glass",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names, otherwise painterly digital illustration: every built structure in the picture is modern glass architecture: reflective curtain walls, steel frames, minimalist transparent volumes. Full color, glass blue-green, white steel and reflected sky. Clear volumetric form with bright reflections; lighting direction and time of day follow the request. Razor-clean edges, mirror glass and brushed steel surfaces. For places and environments of any kind the same transparent contemporary construction; the setting comes only from the request. Not ornate, not brutalist.",
+    "negative": ""
+  },
+  {
+    "name": "Nautical",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names, otherwise painterly digital illustration: nautical treatment; no ships, beaches or sea creatures added. Full color, navy, sea-foam, sun-bleached white, rope tan and brass. Soft volumetric form in bright salty-haze light; lighting direction and time of day follow the request. Weathered teak, coiled rope, brass fittings, canvas and barnacle textures, rope-and-anchor ornament as pattern. For places and environments of any kind the same salt-worn maritime finish; the setting comes only from the request. Not pirate fantasy, not tropical.",
+    "negative": ""
+  },
+  {
+    "name": "Neon Noir",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names, otherwise painterly digital illustration: neon-noir treatment; no streets or figures added. Full color, dark with saturated neon pink, cyan and amber reflected in wet surfaces. Volumetric form with low-key light, colored rim light and deep shadow; lighting direction and time of day follow the request. Rain-slick glossy surfaces, haze, hard shadow edges. For places and environments of any kind the same rainy neon-lit darkness; the setting comes only from the request. Not daylight, not black and white.",
+    "negative": ""
+  },
+  {
+    "name": "Neonpunk",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names, otherwise painterly digital illustration: neonpunk treatment. Full color, magenta highlights and dark purple shadows with cyan accents, high contrast. Sleek volumetric form with crisp neon rim light and cinematic haze; lighting direction and time of day follow the request. Ultramodern glossy surfaces, chrome and glass, sharp clean edges. For places and environments of any kind the same magenta-and-purple glow; the setting comes only from the request. Not painting, not glitch.",
+    "negative": ""
+  },
+  {
+    "name": "Norse Viking Culture",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names, otherwise painterly digital illustration: Norse motifs on the subject only; no warriors, longships or halls added. Full color, cold palette of iron, weathered oak, fur brown, bone and dull gold. Rough volumetric form in cool northern light; lighting direction and time of day follow the request. Carved knotwork and dragon-head ornament as pattern, rune-like marks that read as texture not text, hammered iron and wood surfaces. For places and environments of any kind the same carved-timber-and-iron treatment; the setting comes only from the request. Not Celtic, not high fantasy.",
+    "negative": ""
+  },
+  {
+    "name": "Porcelain Doll",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names, otherwise painterly digital illustration: porcelain-doll treatment: any figures in the picture have flawless smooth porcelain skin, glassy eyes, delicate painted features and pastel doll clothing; objects and animals take the same glazed-porcelain finish. Full color, soft pastel pinks, creams and powder blue. Smooth volumetric form with soft even light; lighting direction and time of day follow the request. Glossy glazed surfaces, fine seam lines, lace and ribbon textures. For places and environments of any kind the same dollhouse delicacy; the setting comes only from the request. Not realistic skin, not horror.",
+    "negative": ""
+  },
+  {
+    "name": "Post-Apocalyptic World",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names, otherwise painterly digital illustration: post-apocalyptic treatment; no ruins, vehicles, camps or survivors added. Full color, toxic muted palette of rust, ash, dusty ochre and faded green. Heavy volumetric form under hazy dusty light; lighting direction and time of day follow the request. Rust, decay, cracked paint, dust particles in the air, worn torn edges. For places and environments of any kind the same decayed desolation; the setting comes only from the request. Not clean sci-fi, not fantasy.",
+    "negative": ""
+  },
+  {
+    "name": "Psychedelia",
+    "prefix": "",
+    "suffix": "Psychedelic poster illustration in the manner of Peter Max and 1960s concert art, applied to the subject of the request only. Full color, saturated clashing hues, rainbow gradients. Flat form with swirling undulating linework that warps shape into rhythm; lighting is the painted kind. Dense repeating patterns radiating from every surface, hard edges, figure and ornament merging into one continuous field. For places and environments of any kind the same pattern-saturated flatness; the setting comes only from the request. Not Art Nouveau proper, not vaporwave.",
+    "negative": ""
+  },
+  {
+    "name": "Retro 50s",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names, otherwise painterly digital illustration: 1950s mid-century treatment; no diners, cars or figures added. Full color, pastel mint, pink, butter yellow and turquoise with chrome. Smooth rounded form with bright clean light; lighting direction and time of day follow the request. Atomic-age starbursts and boomerang shapes as ornament, Formica, chrome and enamel surfaces, clean edges. For places and environments of any kind the same mid-century finish; the setting comes only from the request. Not 80s, not steampunk.",
+    "negative": ""
+  },
+  {
+    "name": "Retro 80s",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names, otherwise painterly digital illustration: 1980s treatment; no arcades or figures added. Full color, neon pink, electric blue, purple and chrome. Sleek volumetric form with glowing accents; lighting direction and time of day follow the request. Memphis-style geometric patterns, chrome details, grid lines and laser-light motifs as ornament, glossy surfaces, crisp edges. For places and environments of any kind the same synthwave-decade finish; the setting comes only from the request. Not 50s, not organic.",
+    "negative": ""
+  },
+  {
+    "name": "Retro Cyberpunk",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names, otherwise painterly digital illustration: retro-cyberpunk treatment; no cities or figures added. Full color, 80s synthwave neon pink, cyan and purple. Volumetric form with glowing rim light and chrome highlights; lighting direction and time of day follow the request. Chrome, glowing seams, retro-futurist angular detail, crisp edges. For places and environments of any kind the same neon-and-chrome finish; the setting comes only from the request. Not desaturated, not black and white.",
+    "negative": ""
+  },
+  {
+    "name": "Retro Futurism",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names, otherwise painterly digital illustration: retro-futurist treatment; no rockets, robots or cities added. Full color, vibrant 1950s-60s palette of orange, teal, cream and chrome. Smooth rounded form with bright clean light; lighting direction and time of day follow the request. Streamlined fins and domes, atomic-age ornament, chrome and enamel surfaces, bubble glass. For places and environments of any kind the same space-age finish; the setting comes only from the request. Not contemporary, not dieselpunk.",
+    "negative": ""
+  },
+  {
+    "name": "Sci-Fi",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names, otherwise painterly digital illustration: science-fiction treatment; no spacecraft, aliens or cities added. Full color, cool steel, white and one glowing accent hue. Hard-surface volumetric form with clean specular highlights and soft emissive lights; lighting direction and time of day follow the request. Panel lines, brushed metal, glass and matte polymer surfaces, crisp edges. For places and environments of any kind the same advanced-technology finish; the setting comes only from the request. Not medieval, not retro.",
+    "negative": ""
+  },
+  {
+    "name": "Sci-Fi (Restyle)",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names, otherwise painterly digital illustration: futuristic sci-fi treatment on the subject's built parts: holographic elements, sleek seamless surfaces, advanced technology; no figures added. Full color, white, graphite and glowing cyan. Smooth volumetric form with clean light and soft hologram glow; lighting direction and time of day follow the request. Seamless panels, glass, matte polymer, crisp edges. For places and environments of any kind the same speculative-future construction; the setting comes only from the request. Not primitive, not analog.",
+    "negative": ""
+  },
+  {
+    "name": "Space",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names, otherwise painterly digital illustration: cosmic treatment; no planets, spacecraft or galaxies added. Full color, deep space black and indigo with nebula violet, teal and starlight white. Volumetric form with cold starlight rim and soft nebula-colored glow; lighting direction and time of day follow the request. Smooth surfaces, faint star-glints and dust motes, crisp edges against dark. For places and environments of any kind the same cosmic tint; the setting comes only from the request. Not earthly, not cartoon.",
+    "negative": ""
+  },
+  {
+    "name": "Space Art",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names, otherwise painterly digital illustration: visionary space-art treatment: the subject is rendered as an alien artwork of unfamiliar logic, unexpected geometry, impossible color relationships, surfaces that seem to generate their own light; no planets or creatures added. Full color, luminous unexpected palette. Smooth volumetric form with internal glow; lighting direction and time of day follow the request. Crystalline and liquid surfaces, clean strange edges. For places and environments of any kind the same alien art logic; the setting comes only from the request. Not generic sci-fi, not photographic.",
+    "negative": ""
+  },
+  {
+    "name": "Splatterpunk Horror Illustration",
+    "prefix": "",
+    "suffix": "Splatterpunk horror illustration applied to the subject of the request only; no victims or monsters added. Limited palette of black, raw red and sickly white. Harsh volumetric form swallowed by darkness and struck by sudden brutal light; lighting direction and time of day follow the request. Dense chaotic mark-making, crude raw texture, fragmented aggressive edges, spatter. For places and environments of any kind the same confrontational rawness; the setting comes only from the request. Not polished, not gothic romance.",
+    "negative": ""
+  },
+  {
+    "name": "Steampunk",
+    "prefix": "",
+    "suffix": "Victorian-industrial steampunk illustration with engraving-influenced linework, applied to the subject of the request only; no airships, cities or figures added. Full color, brass, copper, dark wood and oxblood with sepia light. Volumetric form with dramatic directional light catching riveted contours and polished brass; lighting direction and time of day follow the request. Intricate gear-and-cog detail, confident vintage line over color, leather and brass surfaces. For places and environments of any kind the same ornamental machinery; the setting comes only from the request. Not dieselpunk, not fantasy.",
+    "negative": ""
+  },
+  {
+    "name": "Steampunk (Mechanical)",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names, otherwise painterly digital illustration: steampunk machinery on the subject's built parts: visible clockwork, bronze gears, leather straps, wood paneling, coal smoke; no figures or airships added. Full color, bronze, dark wood, leather brown and soot. Hard volumetric form with a warm gaslight feel; lighting direction and time of day follow the request. Riveted brass, worn leather, polished wood surfaces, crisp mechanical edges. For places and environments of any kind the same clockwork engineering; the setting comes only from the request. Not electric, not digital.",
+    "negative": ""
+  },
+  {
+    "name": "Steampunk (Subject Only)",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names, otherwise painterly digital illustration: steampunk motifs on the subject only; no people, buildings or airships added. Full color, brass, copper, warm sepia and leather brown. Volumetric form in warm sepia light; lighting direction and time of day follow the request. Gears, copper pipes, pressure gauges, rivets and clockwork detail fused into the subject's own form, polished metal and leather surfaces. For places and environments of any kind surfaces take only patina and brass trim; the setting comes only from the request. Not dieselpunk, not fantasy.",
+    "negative": ""
+  },
+  {
+    "name": "Steampunk (Victorian)",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names, otherwise painterly digital illustration: Victorian steampunk treatment: brass mechanisms, copper pipes, gauges and gear systems on built parts and costume; any figures keep their own faces and poses. Full color, brass, burgundy, dark wood and gaslight amber. Volumetric form with warm directional light; lighting direction and time of day follow the request. Ornate Victorian trim, riveted brass, velvet and leather surfaces. For places and environments of any kind the same Victorian-industrial construction; the setting comes only from the request. Not modern, not fantasy.",
+    "negative": ""
+  },
+  {
+    "name": "Synthwave",
+    "prefix": "",
+    "suffix": "Synthwave digital art applied to the subject of the request only; no cars, cities or figures added. Full color, intense neon pink, violet and cyan on deep night blue. Volumetric form with dramatic backlit silhouette contrast and glowing rim; lighting direction and time of day follow the request. Glowing bands, chrome highlights, dense atmospheric haze scattering color, clean edges. For places and environments of any kind the ground plane takes a glowing perspective grid and the sky a banded sunset gradient; the setting comes only from the request. Not vaporwave pastel, not glitch.",
+    "negative": ""
+  },
+  {
+    "name": "Synthwave (Neon Grid)",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names, otherwise painterly digital illustration: synthwave neon-grid treatment; no cars, cities or figures added. Full color, electric purple and cyan with magenta glow. Volumetric form with neon rim light, chrome highlights and lens flare; lighting direction and time of day follow the request. Chrome and glass surfaces, glowing wireframe lines on flat planes, crisp edges. For places and environments of any kind flat surfaces carry the glowing grid; the setting comes only from the request. Not earthy, not realistic texture.",
+    "negative": ""
+  },
+  {
+    "name": "Techwear Fashion",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names, otherwise painterly digital illustration: techwear treatment: any figures in the picture wear dark tactical techwear, layered matte fabrics, straps, buckles, utility pockets, and objects take the same matte-tactical finish. Full color, black, charcoal and one muted accent. Sleek volumetric form with cool low-key light; lighting direction and time of day follow the request. Matte ripstop, rubberized and reflective-trim surfaces, crisp edges. For places and environments of any kind the same dark urban-tech finish; the setting comes only from the request. Not colorful, not vintage.",
+    "negative": ""
+  },
+  {
+    "name": "Thermal Imaging",
+    "prefix": "",
+    "suffix": "False-color thermal-camera image of the subject of the request only. Full color in a heat palette: white and yellow for the hottest areas through orange, red and magenta to violet, blue and black for cold. Form read entirely by temperature gradients, no visible-light shading; warm bodies glow, cold surfaces fall into blue. Soft bloomed edges, smooth gradients, faint sensor noise. For places and environments of any kind the same heat mapping; the setting comes only from the request. Not night vision, not neon.",
+    "negative": ""
+  },
+  {
+    "name": "Tranquil Relaxing Atmosphere",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names, otherwise painterly digital illustration: tranquil treatment. Full color, soothing low-saturation palette of soft blue, sage, sand and lavender. Soft volumetric form in gentle diffuse light; lighting direction and time of day follow the request. Calm smooth surfaces, soft edges, light mist. For places and environments of any kind the same quiet serenity; the setting comes only from the request. Not oversaturated, not dramatic.",
+    "negative": ""
+  },
+  {
+    "name": "Transparency",
+    "prefix": "",
+    "suffix": "Concept-design render of the subject of the request with a fully transparent polycarbonate shell revealing its internal components, circuit boards, wires and mechanisms inside. Full color, clear tinted shell with colored electronics within. Hard volumetric form with clean studio-like reflections and refractions; lighting direction and time of day follow the request. Glossy clear surfaces, precise edges, dense readable internals. For places and environments of any kind built parts take the same see-through shell treatment; the setting comes only from the request. Not x-ray, not glass sculpture.",
+    "negative": ""
+  },
+  {
+    "name": "Tribal",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names, otherwise painterly digital illustration: tribal-pattern treatment; no figures, masks or villages added. Full color, earthy ochre, rust, black and bone white. Bold flat-to-shallow form with warm even light; lighting direction and time of day follow the request. Geometric repeating patterns, carved wood and woven textures, bold outlined edges. For places and environments of any kind the same bold pattern-and-earth finish; the setting comes only from the request. Not modern, not pastel.",
+    "negative": ""
+  },
+  {
+    "name": "Undead Art",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names, otherwise painterly digital illustration: undead decay treatment: the subject appears withered, cracked and long dead while keeping its identity. Limited palette of ash, bone, rot green and dried brown. Harsh volumetric form with cold dim light; lighting direction and time of day follow the request. Peeling, cracked, cobwebbed surfaces, ragged edges, dust. For places and environments of any kind the same forgotten decay; the setting comes only from the request. Not gore, not cartoon.",
+    "negative": ""
+  },
+  {
+    "name": "Underground Art",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names, otherwise painterly digital illustration: raw underground-art treatment. Limited palette of ink black, dirty white and one harsh accent. Rough volumetric form with crude harsh contrast; lighting direction and time of day follow the request. Careless aggressive marks, scratches, smears, photocopy grit, broken edges. For places and environments of any kind the same brutal rawness; the setting comes only from the request. Not photographic, not polished.",
+    "negative": ""
+  },
+  {
+    "name": "Underwater World",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names, otherwise painterly digital illustration: underwater treatment; no fish, coral or bubbles added. Full color, blue-green water tint deepening with distance. Soft volumetric form with rippling caustic light patterns on surfaces and floating particles; lighting direction and time of day follow the request. Soft diffused edges, wet glistening surfaces, hazy depth. For places and environments of any kind the same submerged tint and caustics; the setting comes only from the request. Not aquarium photo, not cartoon.",
+    "negative": ""
+  },
+  {
+    "name": "Vaporwave",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names, otherwise painterly digital illustration: vaporwave treatment; no statues, palm trees or interfaces added. Full color, pink-to-purple gradients, teal and neon sunset orange. Flat-to-shallow form with soft glow; lighting direction and time of day follow the request. VHS scanlines, light glitch accents, marble and chrome surfaces, soft edges. For places and environments of any kind the same gradient-and-scanline haze; the setting comes only from the request. Not synthwave grid, not glitchcore.",
+    "negative": ""
+  },
+  {
+    "name": "Vaporwave Racer",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names, otherwise painterly digital illustration: outrun treatment; no cars, roads or cities added. Full color, neon sunset gradient of magenta, orange and violet with chrome. Sleek volumetric form with stylized mirror reflections and glowing rim; lighting direction and time of day follow the request. Chrome and glossy surfaces, crisp edges. For places and environments of any kind the horizon takes a banded sunset and flat ground a chrome grid; the setting comes only from the request. Not earthy, not film grain.",
+    "negative": ""
+  },
+  {
+    "name": "Victorian Era",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names, otherwise painterly digital illustration: Victorian motifs on the subject only; no parlors, gentlemen or carriages added. Full color, muted burgundy, cream, dark wood and tarnished gold. Soft volumetric form in a warm gaslight feel; lighting direction and time of day follow the request. Ornate carved detail, brass, lace-like ornament, velvet and polished mahogany surfaces, refined edges. For places and environments of any kind the same ornate period finish; the setting comes only from the request. Not steampunk, not Regency.",
+    "negative": ""
+  },
+  {
+    "name": "Whimsical and Playful",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names, otherwise painterly digital illustration: whimsical treatment. Full color, bright playful palette of candy pink, sunny yellow, sky blue and lime. Soft rounded exaggerated form in bright cheerful light; lighting direction and time of day follow the request. Bouncy curved edges, smooth playful surfaces, sparkles. For places and environments of any kind the same imaginative bounce; the setting comes only from the request. Not drab, not realistic.",
+    "negative": ""
+  },
+  {
+    "name": "Winter Transformation",
+    "prefix": "",
+    "suffix": "Applied in whatever medium the request names, otherwise painterly digital illustration: deep-winter treatment; no figures or new scenery added. Full color, cold palette of snow white, ice blue, steel gray and bare brown. Soft volumetric form under cold gray overcast light; lighting direction and time of day follow the request. Snow settled on upward surfaces, frost crystals, icicles on edges, breath-fog haze. For places and environments of any kind the same snow and ice coverage; the setting comes only from the request. Not cozy Christmas, not autumn.",
+    "negative": ""
+  },
+  {
+    "name": "X-Ray",
+    "prefix": "",
+    "suffix": "Translucent x-ray rendering of the subject of the request only. Monochrome, luminous white-to-blue structures on black. Form read as layered internal visibility, bones, frames or mechanisms glowing inside a faint solid outline, with light radiating from within and no external shading. Precise clinical linework, high-contrast separation between dense and translucent areas, soft glow edges. For places and environments of any kind the same see-through radiograph treatment; the setting comes only from the request. Not thermal, not glass.",
+    "negative": ""
+  },
+  {
+    "name": "Dreamcore Digital Image",
+    "prefix": "",
+    "suffix": "Soft hazy dreamcore digital image applied to the subject of the request only. Full color, washed nostalgic pastels. Blurred form with bloom glow, low contrast and gentle grain; lighting direction and time of day follow the request. Soft smeared edges, subtle surreal floating shapes, old-camera softness. For places and environments of any kind the same hazy liminal softness; the setting comes only from the request. Not weirdcore distortion, not sharp.",
+    "negative": ""
+  },
+  {
+    "name": "Pastel Goth",
+    "prefix": "",
+    "suffix": "Flat kawaii pastel-goth illustration applied to the subject of the request only; no skulls or bats added. Full color, pastel pink, lilac and mint against deep black. Flat form with soft pastel gradients and glossy highlights; lighting is the painted kind. Crisp black outlines, smooth flat fills, glossy finish, cute-dark contrast. For places and environments of any kind the same pastel-on-black flatness; the setting comes only from the request. Not realistic, not grunge.",
+    "negative": ""
+  },
+  {
+    "name": "Raypunk Illustration",
+    "prefix": "",
+    "suffix": "Raypunk pulp-sci-fi illustration in the manner of Frank R. Paul, applied to the subject of the request only; no rockets, robots or cities added. Full color, chrome silver with pastel coral, mint and glowing tube-light amber. Glossy rounded streamlined form with bright clean light; lighting direction and time of day follow the request. Smooth 1930s streamline curves, fins and domes, chrome and enamel surfaces, glowing accents, crisp edges. For places and environments of any kind the same streamlined chrome finish; the setting comes only from the request. Not atompunk, not dieselpunk.",
+    "negative": ""
+  },
+  {
+    "name": "Darksynth Illustration",
+    "prefix": "",
+    "suffix": "Darksynth illustration applied to the subject of the request only; no figures or cities added. Full color, dark neon red and purple glow on grainy black. Hard volumetric form with harsh colored rim light and deep black shadow; lighting direction and time of day follow the request. Sharp chrome edges, heavy grain, aggressive 80s-horror sheen. For places and environments of any kind the same red-and-black menace; the setting comes only from the request. Not pink synthwave, not gore.",
+    "negative": ""
+  },
+  {
+    "name": "Weirdcore Image",
+    "prefix": "",
+    "suffix": "Low-quality weirdcore digital image applied to the subject of the request only. Full color, oversaturated clashing hues. Crude form with blocky JPEG compression squares, oddly placed flat overlays, MS-Paint roughness and posterized shading; lighting direction and time of day follow the request. Jagged aliased edges, pixelated surfaces, early-internet artifacts. For places and environments of any kind the same uncanny low-res treatment; the setting comes only from the request. Not dreamcore softness, not glitch art.",
+    "negative": ""
+  }
+]

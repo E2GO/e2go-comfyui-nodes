@@ -1,0 +1,470 @@
+[
+{
+"name": "Adventure Time Style",
+"prefix": "",
+"suffix": "Flat television cartoon rendering in the look of Adventure Time by Pendleton Ward, applied to the subject of the request only; no Finn, no Jake, no series characters. Full color, bright candy palette with pastel skies. Loose rubber-hose-adjacent volumes with even flat cel shading and almost no gradient; lighting direction and time of day follow the request. Bold simplified outlines with minimal internal detail; any figures in the picture have noodle limbs and dot eyes. Flat fills, no texture. For places and environments of any kind the same flat whimsical treatment on every surface; the setting comes only from the request. Not anime, not Pixar.",
+"negative": ""
+},
+{
+"name": "Arcane Animation Still",
+"prefix": "",
+"suffix": "Painterly animated-film still in the look of Arcane by Fortiche, applied to the subject of the request only; no Jinx, no Vi, no League of Legends characters, no Piltover. Full color, moody palette of brass gold, teal and toxic violet. Stylized angular volumes carved by dramatic chiaroscuro with bold graphic shadow. Clean animation-ready linework over visible confident brushstrokes. Hand-painted oil-like texture layered into every surface. For places and environments of any kind the same painterly brushstroke treatment on every surface; the setting comes only from the request. Not clean cel anime, not Pixar smoothness.",
+"negative": ""
+},
+{
+"name": "Arcane Style",
+"prefix": "",
+"suffix": "Hybrid 3D-with-painted-2D rendering in the look of Arcane by Fortiche, applied to the subject of the request only; no Jinx, no Vi, no League of Legends characters, no Piltover. Full color, golden brass against toxic green and purple, with hextech-blue neon accents. Volumetric 3D-modelled forms with dramatic chiaroscuro and cel-shaded planes. Painted brushstroke edges rather than clean outlines. Oil-painting textures and visible brushwork on every surface, 2D hand-drawn effects over 3D forms. For places and environments of any kind the same painted-over-3D treatment on every surface; the setting comes only from the request. Not clean CGI, not flat cartoon.",
+"negative": ""
+},
+{
+"name": "Cartoon Style",
+"prefix": "",
+"suffix": "Classic American cel cartoon rendering, applied to the subject of the request only. Full color, bright flat palette. Exaggerated elastic volumes with flat color fill and minimal shading; lighting direction and time of day follow the request. Confident evenly weighted outlines. Flat fills, no texture. For places and environments of any kind the same flat cartoon treatment on every surface; the setting comes only from the request. Not anime, not photoreal.",
+"negative": ""
+},
+{
+"name": "Cartoon Western",
+"prefix": "",
+"suffix": "Western animated cartoon rendering, applied to the subject of the request only. Full color, bright saturated palette. Simplified exaggerated volumes with flat shading; lighting direction and time of day follow the request. Bold outlines around simplified shapes. Flat even fills. For places and environments of any kind the same bold-outlined flat treatment on every surface; the setting comes only from the request. Not anime, not photoreal.",
+"negative": ""
+},
+{
+"name": "Classic Disney Feature Animation",
+"prefix": "",
+"suffix": "Golden-age hand-painted feature animation in the look of classic Walt Disney films, applied to the subject of the request only; no Mickey Mouse, no Disney princesses, no Disney characters. Full color, warm storybook palette with gentle naturalistic gradation. Rounded appealing volumes with smooth cel shading under soft inviting light. Fluid confident hand-inked outlines. Smooth cel fills over richly painted gouache surfaces. For places and environments of any kind the same hand-painted storybook treatment on every surface; the setting comes only from the request. Not modern CGI, not anime.",
+"negative": ""
+},
+{
+"name": "Clean Illustration",
+"prefix": "",
+"suffix": "Clean cartoon illustration, applied to the subject of the request only. Full color, soothing calm palette of muted tones. Simplified volumes with minimal soft shading; lighting direction and time of day follow the request. Clean even outlines. Smooth flat fills, no texture. For places and environments of any kind the same clean calm treatment on every surface; the setting comes only from the request. Not gritty realism, not anime.",
+"negative": ""
+},
+{
+"name": "Coraline Stop-Motion Style",
+"prefix": "",
+"suffix": "Photograph of a real stop-motion puppet scene in the look of Coraline by LAIKA, applied to the subject of the request only; no Coraline, no button-eyed Other Mother, no film characters. Full color, moody palette of deep blues and warm amber accents. Doll-like precise volumes with porcelain-smooth finish and subtle handcrafted asymmetry under controlled moody miniature-set light. No outlines; real physical edges. Fine fabric, painted resin and miniature-scale detail on every surface. For places and environments of any kind the same handcrafted miniature-set treatment; the setting comes only from the request. Not CGI, not 2D cartoon.",
+"negative": ""
+},
+{
+"name": "Dexter's Laboratory Style",
+"prefix": "",
+"suffix": "1990s Cartoon Network cel cartoon in the look of Dexter's Laboratory by Genndy Tartakovsky, applied to the subject of the request only; no Dexter, no Dee Dee. Full color, flat solid colors with no shading. Geometric UPA-inspired volumes; any figures in the picture have oversized heads, tiny bodies, noodle limbs and dot-and-oval eyes; lighting direction and time of day follow the request. Thick uniform black outlines. Flat fills, stylized angular 1950s-modern shapes. For places and environments of any kind the same flat angular retro treatment on every surface; the setting comes only from the request. Not anime, not Pixar.",
+"negative": ""
+},
+{
+"name": "Disney Renaissance (90s)",
+"prefix": "",
+"suffix": "1990s Disney 2D feature animation rendering, applied to the subject of the request only; no Disney princesses, no Disney characters. Full color, rich Technicolor-saturated palette. Rounded appealing volumes with smooth cel shading and gentle gradients; lighting direction and time of day follow the request. Flowing hand-drawn outlines. Smooth cel fills over watercolor-painted surfaces. For places and environments of any kind the same watercolor-painted treatment on every surface; the setting comes only from the request. Not CGI, not anime.",
+"negative": ""
+},
+{
+"name": "Disney Ultradetailed Illustration",
+"prefix": "",
+"suffix": "Premium feature-animation illustration in the look of Glen Keane and James Baxter, applied to the subject of the request only; no Disney characters. Full color, rich nuanced palette. Appealing stylized volumes with refined volumetric shading and advanced material rendering; lighting direction and time of day follow the request. Refined confident linework blended into rendering. Intricate textures on every surface, production-level polish balancing stylization with realism. For places and environments of any kind the same richly rendered treatment on every surface; the setting comes only from the request. Not flat television cartoon, not photoreal.",
+"negative": ""
+},
+{
+"name": "Disney Xerography Era (60s-70s)",
+"prefix": "",
+"suffix": "1960s–70s xerography-era cel animation in the look of One Hundred and One Dalmatians and The Aristocats, applied to the subject of the request only; no Disney characters. Full color, muted earthy storybook palette. Angular hand-drawn volumes with limited flat shading; lighting direction and time of day follow the request. Rough sketchy black outlines with visible pencil construction marks and slightly off-register color. Flat fills over loosely painted surfaces. For places and environments of any kind the same sketchy off-register treatment on every surface; the setting comes only from the request. Not polished 90s Disney, not CGI.",
+"negative": ""
+},
+{
+"name": "Ernest & Celestine",
+"prefix": "",
+"suffix": "Watercolor animation in the look of Ernest & Celestine, applied to the subject of the request only; no Ernest, no Celestine. Full color, muted pastel palette. Soft rounded volumes with dissolving watercolor edges and minimal shading; lighting direction and time of day follow the request. Loose soft pencil-and-brush lines fading into wash. Paper texture, impressionistic washes, minimalist surfaces. For places and environments of any kind the same soft watercolor treatment with impressionistic simplicity; the setting comes only from the request. Not digital cel, not CGI.",
+"negative": ""
+},
+{
+"name": "Family Guy Style",
+"prefix": "",
+"suffix": "Prime-time animated sitcom rendering in the look of Family Guy, applied to the subject of the request only; no Peter Griffin, no Stewie, no series characters. Full color, bright evenly applied flat palette. Blocky simplified volumes with minimal shading; any figures in the picture have oval heads and stiff limited-animation posing; lighting direction and time of day follow the request. Thick confident outlines. Flat even fills. For places and environments of any kind the same flat sitcom-cartoon treatment on every surface; the setting comes only from the request. Not anime, not Pixar.",
+"negative": ""
+},
+{
+"name": "Fleischer Studios",
+"prefix": "",
+"suffix": "1930s cel animation in the look of Fleischer Studios, applied to the subject of the request only; no Betty Boop, no Popeye. Limited palette of ink black, cream and faded greys with film grain. Rubber-hose volumes with surreal fluid distortion and German-Expressionist shadows; lighting direction and time of day follow the request. Thick uniform ink outlines. Film scratches and dust, hand-painted 1930s urban surfaces, objects given faces and limbs where the request allows. For places and environments of any kind the same inky 1930s treatment on every surface; the setting comes only from the request. Not modern digital cartoon, not anime.",
+"negative": ""
+},
+{
+"name": "Futurama Style",
+"prefix": "",
+"suffix": "Television animation in the look of Futurama, applied to the subject of the request only; no Fry, no Bender, no series characters, no New New York. Full color, saturated tertiary palette of olive, gold, taupe and aqua tech accents. Rounded slightly angular volumes with flat color and basic contact shadow; lighting direction and time of day follow the request. Confident even outlines. Flat fills with Googie atomic-age shapes and sleek mechanical detail. For places and environments of any kind the same retro-futurist flat treatment on every surface; the setting comes only from the request. Not anime, not Pixar.",
+"negative": ""
+},
+{
+"name": "Futurama Style (Alt)",
+"prefix": "",
+"suffix": "Adult animated sitcom rendering in the look of Futurama by Matt Groening, applied to the subject of the request only; no Fry, no Bender, no series characters. Full color, bright evenly applied palette with retro-futurist accents. Rounded slightly angular volumes with flat color and minimal contact shadow; lighting direction and time of day follow the request. Confident evenly weighted outlines. Flat fills, sleek simplified shapes. For places and environments of any kind the same flat retro-futurist treatment on every surface; the setting comes only from the request. Not anime, not Pixar.",
+"negative": ""
+},
+{
+"name": "Genndy Tartakovsky Style",
+"prefix": "",
+"suffix": "Flat graphic animation in the look of Samurai Jack and Primal by Genndy Tartakovsky, applied to the subject of the request only; no Samurai Jack, no Aku. Full color, bold flat color fields. Angular simplified volumes with sharp geometric planes and no shading beyond flat shape; lighting direction and time of day follow the request. No outlines; shapes meet edge to edge. Flat fills, dramatic negative space. For places and environments of any kind the same flat shape-on-shape treatment on every surface; the setting comes only from the request. Not outlined cartoon, not anime.",
+"negative": ""
+},
+{
+"name": "Glen Keane Style",
+"prefix": "",
+"suffix": "Expressive hand-drawn animation illustration in the look of Glen Keane, applied to the subject of the request only; no Disney characters. Full color, warm restrained palette suggested under drawing. Sculptural volumes modelled by soft graphite-like shading beneath confident contour; lighting direction and time of day follow the request. Sweeping gestural pencil outlines carrying weight and momentum. Visible graphite texture, loose construction, paper grain. For places and environments of any kind the same gestural drawn treatment on every surface; the setting comes only from the request. Not flat cel, not CGI.",
+"negative": ""
+},
+{
+"name": "Gothic Cartoon",
+"prefix": "",
+"suffix": "Dark gothic cartoon illustration, applied to the subject of the request only. Full color, high-contrast palette of black, deep violet, blood red and bone white. Stylized angular volumes with hard graphic shadow; lighting direction and time of day follow the request. Bold dark outlines. Flat fills with deep immersive surroundings rendered in the same style. For places and environments of any kind the same dark high-contrast cartoon treatment on every surface; the setting comes only from the request. Not bright cheerful cartoon, not photoreal.",
+"negative": ""
+},
+{
+"name": "Gravity Falls Style",
+"prefix": "",
+"suffix": "2D cartoon rendering in the look of Gravity Falls, applied to the subject of the request only; no Dipper, no Mabel, no Bill Cipher. Full color, warm brown and mystery-purple palette. Geometrically constructed volumes with flat color and minimal contact shadow; any figures in the picture have large expressive eyes; lighting direction and time of day follow the request. Clean vector outlines. Flat fills with triangle shape motifs as surface detail. For places and environments of any kind the same clean geometric treatment on every surface; the setting comes only from the request. Not anime, not Pixar.",
+"negative": ""
+},
+{
+"name": "Gravity Falls Style (Alt)",
+"prefix": "",
+"suffix": "Disney Television cartoon rendering in the look of Gravity Falls by Alex Hirsch, applied to the subject of the request only; no Dipper, no Mabel, no Bill Cipher. Full color, bright evenly applied palette with warm woodsy accents. Simplified slightly angular volumes with flat color and basic contact shadow; lighting direction and time of day follow the request. Confident evenly weighted outlines. Flat fills, quirky simplified shapes. For places and environments of any kind the same flat cartoon treatment on every surface; the setting comes only from the request. Not anime, not Pixar.",
+"negative": ""
+},
+{
+"name": "Hanna-Barbera Style",
+"prefix": "",
+"suffix": "Mid-century Saturday-morning cel cartoon in the look of Hanna-Barbera, applied to the subject of the request only; no Scooby-Doo, no Flintstones, no studio characters. Full color, bright flat cel palette. Economical simplified volumes with flat color and no shading; lighting direction and time of day follow the request. Confident simplified outlines. Flat fills over simple painted backgrounds with repeating cel-era simplicity. For places and environments of any kind the same economical flat treatment on every surface; the setting comes only from the request. Not anime, not modern CGI.",
+"negative": ""
+},
+{
+"name": "Invader Zim Style",
+"prefix": "",
+"suffix": "Angular gothic cartoon rendering in the look of Invader Zim by Jhonen Vasquez, applied to the subject of the request only; no Zim, no GIR. Full color, high-contrast palette of acid green, black, magenta and sickly purple. Jagged elongated spiky volumes with stark graphic shadow blocks; lighting direction and time of day follow the request. Thick confident outlines with sharp angular accents. Flat fills, twitchy asymmetrical shapes. For places and environments of any kind the same jagged high-contrast treatment on every surface; the setting comes only from the request. Not soft rounded cartoon, not anime.",
+"negative": ""
+},
+{
+"name": "Looney Tunes",
+"prefix": "",
+"suffix": "Golden-age theatrical cartoon in the look of Looney Tunes, applied to the subject of the request only; no Bugs Bunny, no Daffy Duck, no studio characters. Full color, bright Technicolor palette. Rubbery volumes with extreme squash and stretch and flat cel shading; lighting direction and time of day follow the request. Confident thick outlines with smear-frame exaggeration on motion. Flat cel fills over painted backgrounds. For places and environments of any kind the same painted theatrical-cartoon treatment on every surface; the setting comes only from the request. Not anime, not CGI.",
+"negative": ""
+},
+{
+"name": "Modern Cartoon",
+"prefix": "",
+"suffix": "Contemporary streaming-era cartoon rendering, applied to the subject of the request only. Full color, bright flat palette. Streamlined geometrically simplified volumes with flat color and basic contact shadow; lighting direction and time of day follow the request. Confident simplified outlines. Clean flat fills, vector-smooth edges. For places and environments of any kind the same clean flat treatment on every surface; the setting comes only from the request. Not anime, not photoreal.",
+"negative": ""
+},
+{
+"name": "Nickelodeon Animation Style",
+"prefix": "",
+"suffix": "1990s Nickelodeon cel cartoon rendering, applied to the subject of the request only; no SpongeBob, no Rugrats, no network characters. Full color, bright evenly saturated palette. Rubbery exaggerated volumes with squash-and-stretch and flat shading; any figures in the picture have oversized expressive features; lighting direction and time of day follow the request. Thick confident outlines. Flat fills, loud playful shapes. For places and environments of any kind the same loud flat treatment on every surface; the setting comes only from the request. Not anime, not Pixar.",
+"negative": ""
+},
+{
+"name": "Pastel Cute Illustration (Western-Korean)",
+"prefix": "",
+"suffix": "Pastel cute illustration blending Western cartoon roundness with Korean kawaii daintiness, applied to the subject of the request only. Full color, soft pastel palette with blush and glow accents. Softly rounded volumes with smooth evenly diffused shading; lighting direction and time of day follow the request. Minimal soft outlines. Smooth fills with delicate blush gradients and small glossy highlights. For places and environments of any kind the same soft rounded pastel treatment on every surface; the setting comes only from the request. Not gritty realism, not sharp anime.",
+"negative": ""
+},
+{
+"name": "Peppa Pig Style",
+"prefix": "",
+"suffix": "Preschool 2D cartoon rendering in the look of Peppa Pig, applied to the subject of the request only; no Peppa, no series characters. Full color, flat solid primary and pastel colors. Simple geometric volumes with no shading at all; lighting direction and time of day follow the request. Thin even outlines. Flat fills, crayon-simple shapes. For places and environments of any kind the same flat geometric preschool treatment on every surface; the setting comes only from the request. Not detailed cartoon, not photoreal.",
+"negative": ""
+},
+{
+"name": "Phineas and Ferb Style",
+"prefix": "",
+"suffix": "Geometric 2D cartoon rendering in the look of Phineas and Ferb, applied to the subject of the request only; no Phineas, no Ferb, no Perry. Full color, bright summer orange and blue palette. Angular triangle-and-rectangle volumes with flat color; lighting direction and time of day follow the request. Angular clean outlines. Flat fills, simplified geometric construction. For places and environments of any kind the same angular flat treatment on every surface; the setting comes only from the request. Not anime, not Pixar.",
+"negative": ""
+},
+{
+"name": "Powerpuff Girls Style",
+"prefix": "",
+"suffix": "1998 Cartoon Network cel cartoon in the look of The Powerpuff Girls by Craig McCracken, applied to the subject of the request only; no Blossom, Bubbles or Buttercup. Full color, flat bright solid colors with no shading. Super-deformed volumes: any figure in the picture has a huge round head directly on a small bell-shaped body, noodle arms with nub hands, stubby legs, no neck, no nose, and enormous round eyes ringed in thick black; objects and places are simplified to 1950s-modern geometry. Thick uniform black outlines. Flat fills. For places and environments of any kind the same simple geometric retro treatment on every surface; the setting comes only from the request. Not anime, not Pixar.",
+"negative": ""
+},
+{
+"name": "Rick and Morty Style",
+"prefix": "",
+"suffix": "Adult Swim cartoon rendering in the look of Rick and Morty, applied to the subject of the request only; no Rick, no Morty, no series characters. Full color, flat palette with sickly green and pastel accents. Elastic exaggerated volumes with flat simple fill; lighting direction and time of day follow the request. Wobbly slightly rubbery outlines with visible inconsistency. Flat fills, scrappy deliberately rough shapes. For places and environments of any kind the same loose wobbly treatment on every surface; the setting comes only from the request. Not polished anime, not Pixar.",
+"negative": ""
+},
+{
+"name": "Rubber Hose (1920s Film)",
+"prefix": "",
+"suffix": "1920s rubber-hose film animation frame, applied to the subject of the request only. Black and white with film grain, scratches and dust. Boneless noodle-limbed volumes with no shading; any figures in the picture have pie-cut eyes and white gloves; lighting follows the request. Thick uniform ink outlines. Flat ink fills, vintage film damage over everything. For places and environments of any kind the same inky 1920s treatment on every surface; the setting comes only from the request. Not colored, not modern cartoon.",
+"negative": ""
+},
+{
+"name": "Rubber Hose Cartoon",
+"prefix": "",
+"suffix": "Rubber-hose cel cartoon in the look of 1920s–30s Fleischer and early Disney animation, applied to the subject of the request only; no Mickey Mouse, no Betty Boop. Full color, limited vintage palette. Tubular jointless volumes with flat minimal shading and springy bouncing shapes; lighting direction and time of day follow the request. Thick uniform outlines. Flat fills with faint cel grain. For places and environments of any kind the same bouncy tubular treatment on every surface; the setting comes only from the request. Not modern cartoon, not anime.",
+"negative": ""
+},
+{
+"name": "Simpsons Style",
+"prefix": "",
+"suffix": "Animated sitcom rendering in the look of The Simpsons by Matt Groening, applied to the subject of the request only; no Homer, no Bart, no series characters, no Springfield. Full color, bright even flat palette with the characteristic yellow allowed. Simplified exaggerated volumes with no gradient; any figures in the picture have overbites and wide round eyes; lighting direction and time of day follow the request. Thick confident outlines. Flat fills. For places and environments of any kind the same flat sitcom-cartoon treatment on every surface; the setting comes only from the request. Not anime, not Pixar.",
+"negative": ""
+},
+{
+"name": "South Park Style",
+"prefix": "",
+"suffix": "Construction-paper cutout cartoon in the look of South Park, applied to the subject of the request only; no Cartman, no Kenny, no series characters. Full color, flat solid colors with no gradation. Rigid geometric cutout volumes with minimal flat shading blocks; lighting direction and time of day follow the request. Bold thick outlines separating each shape. Visible construction-paper texture and slightly jagged cut edges. For places and environments of any kind the same layered-paper cutout treatment on every surface; the setting comes only from the request. Not smooth vector cartoon, not anime.",
+"negative": ""
+},
+{
+"name": "South Park Style (Alt)",
+"prefix": "",
+"suffix": "Construction-paper cutout cartoon exactly like the South Park TV show, applied to the subject of the request only; no Cartman, no Kenny, no series characters. Full color, flat solid colors with no shading. Short stubby cutout volumes: any figure in the picture has an oversized round head wider than its body, two large white oval eyes touching in the middle with dot pupils, a flap mouth and mitten hands, facing straight front. Thick cut-paper edges, no drawn outlines. Visible paper texture and jagged scissor edges on every layer. For places and environments of any kind the same flat layered-paper treatment; the setting comes only from the request. Not vector cartoon, not anime.",
+"negative": ""
+},
+{
+"name": "Spider-Verse Style",
+"prefix": "",
+"suffix": "Stylized animated-film rendering in the look of Spider-Man: Into the Spider-Verse, applied to the subject of the request only; no Spider-Man, no superhero suits, no film characters. Full color, bold saturated palette with vivid complementary accents. Volumetric form with dramatic directional light, hard-edged cast shadows, colored shadows and colored light spill. Halftone dots only inside shadow and midtone areas, never a uniform screen. Slight color-fringe misregistration along contours like a misprinted comic. Clean varied-weight ink line following the form over painterly blocked-in color, visible mixed-media texture, occasional hatching in shadows. For places and environments of any kind the same ink-over-color treatment on every surface, loose sketch lines and halftone in the distance; the setting comes only from the request. Not grayscale, not pop art, not Lichtenstein.",
+"negative": ""
+},
+{
+"name": "SpongeBob SquarePants Style",
+"prefix": "",
+"suffix": "Bright nautical television cartoon in the look of SpongeBob SquarePants, applied to the subject of the request only; no SpongeBob, no Patrick, no Bikini Bottom. Full color, flat saturated palette of yellow, teal, pink and sand. Simplified bouncy volumes with flat shading; lighting direction and time of day follow the request. Bold black outlines. Flat fills with occasional porous organic texture, exaggerated squash on shapes. For places and environments of any kind the same bright flat treatment on every surface; the setting comes only from the request. Not anime, not Pixar.",
+"negative": ""
+},
+{
+"name": "Star Wars: The Clone Wars",
+"prefix": "",
+"suffix": "Stylized 3D animation in the look of Star Wars: The Clone Wars by Dave Filoni, applied to the subject of the request only; no Jedi, no clone troopers, no lightsabers, no Star Wars characters. Full color, cinematic palette with saturated accents. Angular faceted geometric volumes with cel-shaded high-contrast shadow blocking under dramatic cinematic light. Sharply defined faceted edges, no drawn outlines. Painted-looking stylized textures with carved wood-like simplification. For places and environments of any kind the same faceted stylized-3D treatment on every surface; the setting comes only from the request. Not 2D cartoon, not photoreal.",
+"negative": ""
+},
+{
+"name": "Steven Universe Style",
+"prefix": "",
+"suffix": "Cartoon Network flat animation in the look of Steven Universe by Rebecca Sugar, applied to the subject of the request only; no Steven, no Crystal Gems. Full color, pastel-leaning palette with restrained contrast. Soft rounded geometric volumes with flat color and soft contact shadow; any figures in the picture have oversized expressive eyes; lighting direction and time of day follow the request. Gentle even outlines. Flat fills, calm simple shapes. For places and environments of any kind the same soft rounded flat treatment on every surface; the setting comes only from the request. Not anime, not Pixar.",
+"negative": ""
+},
+{
+"name": "Tex Avery",
+"prefix": "",
+"suffix": "Golden-age MGM theatrical cartoon in the look of Tex Avery, applied to the subject of the request only; no Droopy, no studio characters. Full color, bright flat Technicolor palette. Rubbery elastic volumes stretched, squashed and popped to extremes with flat cel shading; lighting direction and time of day follow the request. Confident thick outlines. Flat cel fills over painted backgrounds, gag-level exaggeration on every shape. For places and environments of any kind the same painted theatrical-cartoon treatment on every surface; the setting comes only from the request. Not anime, not CGI.",
+"negative": ""
+},
+{
+"name": "The Amazing World of Gumball Style",
+"prefix": "",
+"suffix": "Mixed-media cartoon in the look of The Amazing World of Gumball, applied to the subject of the request only; no Gumball, no Darwin, no series characters. Full color, bright saturated palette. Simple flat 2D volumes set against photographic or textured surroundings; lighting direction and time of day follow the request. Clean simple outlines on the flat elements. Playful contrast between flat cartoon shapes and soft collage-like real textures. For places and environments of any kind the same photo-collage-with-cartoon treatment; the setting comes only from the request. Not uniform cel cartoon, not anime.",
+"negative": ""
+},
+{
+"name": "The Mitchells vs. The Machines",
+"prefix": "",
+"suffix": "Hybrid 2D-over-3D animation in the look of The Mitchells vs. The Machines by Sony Pictures Animation, applied to the subject of the request only; no Mitchell family, no film characters. Full color, vibrant saturated palette with graphic flat-color punch. Smooth 3D-rendered volumes with painterly gradient shading; lighting direction and time of day follow the request. Hand-drawn 2D line accents over 3D forms. Wet fluid brushstrokes and doodle-like paint overlays layered as texture on every surface. For places and environments of any kind the same paint-overlay hybrid treatment; the setting comes only from the request. Not clean Pixar CGI, not flat 2D cartoon.",
+"negative": ""
+},
+{
+"name": "The Nightmare Before Christmas",
+"prefix": "",
+"suffix": "Photograph of a real stop-motion puppet scene in the look of The Nightmare Before Christmas, applied to the subject of the request only; no Jack Skellington, no Sally, no Halloween Town. Limited palette of grayed-down tones with deep blacks, bone white and muted accents. Elongated gothic volumes with visible armature-posed puppet construction under dramatic three-point miniature-set lighting with expressionistic shadows. No drawn outlines; real physical edges. Hand-painted puppet textures with engraved details on every surface, miniature set with full depth. For places and environments of any kind the same gothic miniature-set treatment; the setting comes only from the request. Not CGI, not 2D cartoon.",
+"negative": ""
+},
+{
+"name": "Western Cel-Shaded Illustration",
+"prefix": "",
+"suffix": "Bright cel-shaded promotional illustration in the look of Nintendo Kirby art, applied to the subject of the request only; no Kirby, no Nintendo characters. Full color, cheerful saturated palette. Rounded super-deformed volumes with flat color and soft contact shadow; lighting direction and time of day follow the request. Thick confident discontinuous outlines. Flat fills with sparkling highlight accents. For places and environments of any kind the same rounded cheerful treatment on every surface; the setting comes only from the request. Not anime, not photoreal.",
+"negative": ""
+},
+{
+"name": "Winx Club",
+"prefix": "",
+"suffix": "Italian anime-influenced animation in the look of Winx Club, applied to the subject of the request only; no Bloom, no Winx fairies. Full color, bright saturated palette with glitter and sparkle. Elongated long-legged volumes with smooth cel shading; lighting direction and time of day follow the request. Clean fashion-illustration outlines. Glossy fills with sparkle and glitter effects across surfaces, fashion-forward detail. For places and environments of any kind the same sparkling glossy treatment on every surface; the setting comes only from the request. Not Western flat cartoon, not photoreal.",
+"negative": ""
+},
+{
+"name": "X-Men: The Animated Series Style",
+"prefix": "",
+"suffix": "1990s Saturday-morning cel animation in the look of X-Men: The Animated Series, applied to the subject of the request only; no Wolverine, no X-Men characters. Full color, saturated primary palette. Heroic Jim Lee-derived volumes with flat two-tone cel shading; any figures in the picture have strong jaws and big hair; lighting direction and time of day follow the request. Bold black outlines. Flat cel fills over painted airbrushed backgrounds. For places and environments of any kind the same airbrushed-background cel treatment on every surface; the setting comes only from the request. Not anime, not modern CGI.",
+"negative": ""
+},
+{
+"name": "2000s Flash Animation",
+"prefix": "",
+"suffix": "2000s Flash vector animation frame in the look of Newgrounds and Homestar Runner, applied to the subject of the request only; no Homestar, no site characters. Full color, flat colors with simple linear gradients. Smooth tweened vector volumes with symmetrical puppet-like rig construction; lighting direction and time of day follow the request. Uniform thin outlines. Crisp digital vector fills, no texture. For places and environments of any kind the same flat vector treatment on every surface; the setting comes only from the request. Not hand-drawn cel, not anime.",
+"negative": ""
+},
+{
+"name": "80s Saturday Morning Cartoon",
+"prefix": "",
+"suffix": "1980s Saturday-morning cartoon cel in the look of Filmation, DIC and Sunbow, applied to the subject of the request only; no He-Man, no studio characters. Full color, saturated primary cel palette. Simplified volumes with simple two-tone shading; lighting direction and time of day follow the request. Thick even outlines. Flat cel fills over painted gouache surfaces with slight cel dust and grain. For places and environments of any kind the same gouache-painted cel treatment on every surface; the setting comes only from the request. Not anime, not modern vector cartoon.",
+"negative": ""
+},
+{
+"name": "Avatar Animation Character Design",
+"prefix": "",
+"suffix": "Anime-influenced Western animation in the look of Avatar: The Last Airbender and The Legend of Korra, applied to the subject of the request only; no Aang, no Korra, no series characters. Full color, grounded natural palette with element-colored accents. Believably proportioned volumes with clean two-tone cel shading; any figures in the picture have expressive almond eyes; lighting direction and time of day follow the request. Clean appealing outlines. Flat cel fills over painted surfaces. For places and environments of any kind the same clean cel-over-painting treatment on every surface; the setting comes only from the request. Not pure anime, not Western flat cartoon.",
+"negative": ""
+},
+{
+"name": "Bob's Burgers Cartoon Still",
+"prefix": "",
+"suffix": "Animated sitcom still in the look of Bob's Burgers by Loren Bouchard, applied to the subject of the request only; no Belcher family. Full color, flat muted palette. Simple rounded slightly wobbly volumes with minimal rendering; lighting direction and time of day follow the request. Clean thin outlines. Flat fills, quirky handcrafted simplified shapes. For places and environments of any kind the same flat wobbly treatment on every surface; the setting comes only from the request. Not anime, not Pixar.",
+"negative": ""
+},
+{
+"name": "Calarts Cartoon Character Design",
+"prefix": "",
+"suffix": "Modern flat cartoon rendering in the look of Steven Universe, Gravity Falls and We Bare Bears, applied to the subject of the request only; no series characters. Full color, flat bright palette. Simple bean-shaped volumes with flat color; any figures in the picture have noodle limbs, dot or round eyes and small simple mouths; lighting direction and time of day follow the request. Thick even outlines. Flat fills, no texture. For places and environments of any kind the same simple flat treatment on every surface; the setting comes only from the request. Not anime, not Pixar.",
+"negative": ""
+},
+{
+"name": "Cartoon Saloon",
+"prefix": "",
+"suffix": "2D animation still in the look of Cartoon Saloon's Song of the Sea and Wolfwalkers, applied to the subject of the request only; no film characters. Full color, textured watercolor palette of moss, ochre and sea blue. Round graphic flattened volumes with decorative shading; lighting direction and time of day follow the request. Elegant rhythmic decorative linework with Celtic-inspired patterns. Textured watercolor fills, paper grain, ornamental surface patterning. For places and environments of any kind the same decorative watercolor treatment on every surface; the setting comes only from the request. Not Disney roundness, not anime.",
+"negative": ""
+},
+{
+"name": "Chomet French Animation",
+"prefix": "",
+"suffix": "French 2D animation still in the look of Sylvain Chomet's The Triplets of Belleville, applied to the subject of the request only; no film characters. Full color, earthy muted palette. Elongated caricatural volumes with soft hand-drawn shading; lighting direction and time of day follow the request. Fine scratchy pencil-like lines. Watercolor-textured surfaces, hand-drawn grain. For places and environments of any kind the same scratchy watercolor treatment on every surface; the setting comes only from the request. Not Disney, not anime.",
+"negative": ""
+},
+{
+"name": "Chuck Jones Theatrical Animation Still",
+"prefix": "",
+"suffix": "Theatrical cartoon still in the look of Chuck Jones and Maurice Noble, applied to the subject of the request only; no Bugs Bunny, no Wile E. Coyote, no studio characters. Full color, stylized midcentury palette. Expressive simplified volumes with flat cel shading; lighting direction and time of day follow the request. Smooth appealing outlines. Flat cel fills over elegant graphic stylized backgrounds. For places and environments of any kind the same graphic midcentury treatment on every surface; the setting comes only from the request. Not anime, not CGI.",
+"negative": ""
+},
+{
+"name": "Creepy Vintage Cartoon",
+"prefix": "",
+"suffix": "Unsettling 1930s rubber-hose animation in the look of Cuphead and Bendy and the Ink Machine, applied to the subject of the request only; no Cuphead, no Bendy. Limited palette of earthy muted tones with ink black and heavy film damage. Rubber-hose volumes with unsettling distortions and flat shading; lighting direction and time of day follow the request. Thick ink outlines. Heavy film scratches, grain and dust over everything. For places and environments of any kind the same damaged-film vintage treatment on every surface; the setting comes only from the request. Not modern cartoon, not anime.",
+"negative": ""
+},
+{
+"name": "Don Bluth Animation Still",
+"prefix": "",
+"suffix": "1980s feature animation still in the look of Don Bluth's The Secret of NIMH, applied to the subject of the request only; no film characters. Full color, warm rich palette. Rounded volumes with soft airbrushed shading and detailed highlights; lighting direction and time of day follow the request. Fluid hand-drawn outlines. Soft airbrushed fills over lush painted surfaces, detailed fur-like textures where appropriate. For places and environments of any kind the same lush painted treatment on every surface; the setting comes only from the request. Not Disney flatness, not CGI.",
+"negative": ""
+},
+{
+"name": "Editorial Cartoon Drawing",
+"prefix": "",
+"suffix": "Editorial pen-and-ink cartoon in the look of Pat Oliphant and Ronald Searle, applied to the subject of the request only. Black and white with quick grey ink washes. Caricatured exaggerated volumes with crosshatched shading; lighting follows the request. Loose expressive pen lines. Crosshatching, ink wash, newspaper print texture; no lettering. For places and environments of any kind the same loose pen-and-wash treatment on every surface; the setting comes only from the request. Not colored, not polished digital.",
+"negative": ""
+},
+{
+"name": "Jorge Gutierrez Style Animation Still",
+"prefix": "",
+"suffix": "Animation still in the look of Jorge R. Gutierrez's The Book of Life and Maya and the Three, applied to the subject of the request only; no film characters. Full color, vivid saturated folk-art palette. Bold angular exaggerated volumes with graphic shading; lighting direction and time of day follow the request. Bold graphic outlines. Patterned folk textures carved into every surface. For places and environments of any kind the same angular patterned folk treatment on every surface; the setting comes only from the request. Not Pixar smoothness, not anime.",
+"negative": ""
+},
+{
+"name": "Kim Possible Cartoon Still",
+"prefix": "",
+"suffix": "2000s Disney Channel cartoon still in the look of Kim Possible by Stephen Silver, applied to the subject of the request only; no Kim Possible, no series characters. Full color, vibrant palette. Sleek geometric volumes with smooth flat-to-cel shading; lighting direction and time of day follow the request. Confident angular contours. Flat fills, sharp stylish shapes. For places and environments of any kind the same sleek angular treatment on every surface; the setting comes only from the request. Not anime, not Pixar.",
+"negative": ""
+},
+{
+"name": "Klasky Csupo Cartoon Still",
+"prefix": "",
+"suffix": "1990s Nickelodeon cartoon still in the look of Klasky Csupo's Rugrats and Aaahh!!! Real Monsters, applied to the subject of the request only; no Rugrats characters. Full color, clashing bright palette. Off-kilter irregular volumes with rough flat shading; lighting direction and time of day follow the request. Jagged scribbly outlines. Rough hand-drawn textures on flat fills. For places and environments of any kind the same scribbly off-kilter treatment on every surface; the setting comes only from the request. Not clean vector cartoon, not anime.",
+"negative": ""
+},
+{
+"name": "Modern TV Cartoon",
+"prefix": "",
+"suffix": "Contemporary Cartoon Network television cartoon rendering, applied to the subject of the request only; no network characters. Full color, flat vibrant palette. Simple geometric volumes with minimal shading; lighting direction and time of day follow the request. Thick even outlines. Clean vector-finish flat fills. For places and environments of any kind the same flat vector treatment on every surface; the setting comes only from the request. Not anime, not Pixar.",
+"negative": ""
+},
+{
+"name": "Owl House Expressive Cartoon Still",
+"prefix": "",
+"suffix": "Expressive cartoon still in the look of The Owl House by Dana Terrace, applied to the subject of the request only; no Luz, no Eda, no series characters. Full color, flat-to-light gradient palette with purple and warm accents. Elastic fluid volumes with light gradient shading; lighting direction and time of day follow the request. Slightly wobbly hand-drawn outlines. Flat fills with soft gradients. For places and environments of any kind the same wobbly expressive treatment on every surface; the setting comes only from the request. Not anime, not Pixar.",
+"negative": ""
+},
+{
+"name": "Paint-on-Glass Animation Frame",
+"prefix": "",
+"suffix": "Paint-on-glass animation frame in the look of Aleksandr Petrov and Caroline Leaf, applied to the subject of the request only. Full color, glowing backlit oil-paint palette. Soft smeared volumes dissolving into fluid brush trails, lit from behind through the glass. No outlines; edges are smeared paint. Visible oil-paint texture, morphing painterly smears on every surface. For places and environments of any kind the same smeared backlit oil treatment on every surface; the setting comes only from the request. Not cel animation, not CGI.",
+"negative": ""
+},
+{
+"name": "Painterly Cartoon Illustration",
+"prefix": "",
+"suffix": "Painterly cartoon illustration in the look of Goro Fujita, Pascal Campion and Lorelay Bove, applied to the subject of the request only. Full color, lush warm palette. Appealing rounded cartoon volumes with soft painterly shading; lighting direction and time of day follow the request. Loose painted edges, no hard outlines. Visible brush texture on every surface. For places and environments of any kind the same loose painterly treatment on every surface; the setting comes only from the request. Not flat cel cartoon, not photoreal.",
+"negative": ""
+},
+{
+"name": "Pencil Test Animation Drawing",
+"prefix": "",
+"suffix": "Rough pencil-test animation drawing in the look of Disney pencil tests and Richard Williams, applied to the subject of the request only. Monochrome graphite with light blue underdrawing on white paper. Volumes built from loose searching construction lines; no shading beyond light hatching; lighting follows the request. Rough graphite lines over blue construction. Soft paper grain, visible erasures. For places and environments of any kind the same loose pencil treatment; the setting comes only from the request. Not inked, not colored.",
+"negative": ""
+},
+{
+"name": "Rotoscope Animation Still",
+"prefix": "",
+"suffix": "Rotoscoped animation still in the look of A Scanner Darkly and Waking Life, applied to the subject of the request only. Full color, posterized flat color shapes. Realistic traced volumes flattened into interpolated graphic shading planes; lighting direction and time of day follow the request. Wobbly traced outline contours that shift slightly. Flat posterized fills over realistic structure. For places and environments of any kind the same traced posterized treatment on every surface; the setting comes only from the request. Not hand-drawn cartoon, not photoreal.",
+"negative": ""
+},
+{
+"name": "Sand Animation Frame",
+"prefix": "",
+"suffix": "Sand animation frame on a lightbox in the look of Caroline Leaf and Ferenc Cakó, applied to the subject of the request only. Monochrome warm sand tones glowing against backlight. Soft grainy silhouettes with light passing through thin sand; lit from below. No outlines; organic smudged edges. Granular sand texture on every surface. For places and environments of any kind the same grainy smudged sand treatment; the setting comes only from the request. Not colored, not drawn cartoon.",
+"negative": ""
+},
+{
+"name": "Soviet Animation",
+"prefix": "",
+"suffix": "Soviet animation in the look of Soyuzmultfilm and Yuri Norstein's Hedgehog in the Fog, applied to the subject of the request only; no Hedgehog, no Cheburashka, no studio characters. Full color, gentle muted folk palette. Simple charming volumes with soft textured shading, a mix of cutout and drawn; lighting direction and time of day follow the request. Soft hand-drawn outlines. Painted folk-inspired textures, soft grain and fog. For places and environments of any kind the same soft painted folk treatment on every surface; the setting comes only from the request. Not Disney, not anime.",
+"negative": ""
+},
+{
+"name": "Super Friends Classic Cartoon Still",
+"prefix": "",
+"suffix": "1970s Saturday-morning cartoon still in the look of Alex Toth's Super Friends for Hanna-Barbera, applied to the subject of the request only; no Superman, no Batman, no DC heroes. Full color, bright flat cel palette. Heroic simplified broad geometric volumes with flat shading; lighting direction and time of day follow the request. Bold clean outlines. Flat cel fills, crisp strong shapes. For places and environments of any kind the same bold flat 1970s treatment on every surface; the setting comes only from the request. Not anime, not modern CGI.",
+"negative": ""
+},
+{
+"name": "Teen Titans Go Cartoon Still",
+"prefix": "",
+"suffix": "Cartoon still in the look of Teen Titans Go!, applied to the subject of the request only; no Robin, no Raven, no Titans. Full color, vibrant flat palette. Compact rounded chibi volumes with oversized heads and minimal shading; lighting direction and time of day follow the request. Clean contour outlines. Flat fills, minimal texture. For places and environments of any kind the same compact rounded flat treatment on every surface; the setting comes only from the request. Not anime, not Pixar.",
+"negative": ""
+},
+{
+"name": "Totally Spies Cartoon Still",
+"prefix": "",
+"suffix": "2000s French cartoon still in the look of Totally Spies! by Marathon Media, applied to the subject of the request only; no Sam, Clover or Alex. Full color, bright flat palette with glossy accents. Elongated fashion-forward volumes with flat cel shading; lighting direction and time of day follow the request. Thick outlines. Flat fills with glossy hair-like highlight shapes. For places and environments of any kind the same bright flat 2000s treatment on every surface; the setting comes only from the request. Not Japanese anime, not Pixar.",
+"negative": ""
+},
+{
+"name": "UPA Limited Animation",
+"prefix": "",
+"suffix": "1950s UPA limited animation still in the look of Gerald McBoing-Boing and John Hubley, applied to the subject of the request only; no studio characters. Full color, warm harmonious midcentury palette. Flat stylized volumes built from triangles and ovals; lighting direction and time of day follow the request. Loose ink lines with color fills deliberately offset from the line. Textured color blocks, subtle surface grain, sparse graphic staging. For places and environments of any kind the same offset-fill geometric treatment on every surface; the setting comes only from the request. Not Disney roundness, not anime.",
+"negative": ""
+},
+{
+"name": "Young Justice Sleek Animation Still",
+"prefix": "",
+"suffix": "Sleek 2D animation still in the look of Young Justice and Phil Bourassa's DC animated designs, applied to the subject of the request only; no Robin, no Superboy, no DC heroes. Full color, muted sophisticated palette. Elongated lean volumes with flat-to-cel shading; lighting direction and time of day follow the request. Clean sharp economical outlines. Flat fills, crisp shapes. For places and environments of any kind the same sleek clean treatment on every surface; the setting comes only from the request. Not anime, not Pixar.",
+"negative": ""
+},
+{
+"name": "Painted Animated Feature Still",
+"prefix": "",
+"suffix": "Painted animated feature still in the look of Klaus, The Wild Robot and Puss in Boots: The Last Wish, applied to the subject of the request only; no film characters. Full color, rich saturated storybook palette with warm glowing light. Bold simplified volumes with soft painterly shading over clean shapes. Minimal outlines dissolved into paint. Soft painterly brush textures on every surface; no lettering. For places and environments of any kind the same hand-painted 2D-3D hybrid treatment on every surface; the setting comes only from the request. Not clean CGI, not flat cel.",
+"negative": ""
+},
+{
+"name": "Toon Glamour Pin-Up illustration",
+"prefix": "",
+"suffix": "1940s cartoon pin-up illustration in the look of Preston Blair and Tex Avery, applied to the subject of the request only. Full color, saturated 1940s palette with glossy satin highlights. Exaggerated S-curve volumes with soft airbrushed gradient shading; lighting direction and time of day follow the request. Clean smooth animation outlines. Glossy satin surfaces, airbrush gradients. For places and environments of any kind the same glossy airbrushed 1940s treatment on every surface; the setting comes only from the request. Not anime, not photoreal.",
+"negative": ""
+},
+{
+"name": "Cory Loftis Style Character Illustration",
+"prefix": "",
+"suffix": "Visual-development illustration in the look of Cory Loftis and Jin Kim, applied to the subject of the request only; no Disney characters. Full color, soft simple palette. Appealing exaggerated shapes with soft simple shading; lighting direction and time of day follow the request. Clean lively outlines. Soft fills, charming simplified surfaces. For places and environments of any kind the same appealing simplified treatment on every surface; the setting comes only from the request. Not photoreal, not anime.",
+"negative": ""
+}
+]

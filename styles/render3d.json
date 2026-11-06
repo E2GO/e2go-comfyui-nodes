@@ -1,0 +1,488 @@
+[
+  {
+    "name": "3D Model",
+    "prefix": "",
+    "suffix": "Professional 3D render of the subject of the request only in Octane. Full color, material-true palette. Smooth volumetric modeling with volumetric light and dramatic directional illumination; lighting direction and time of day follow the request. Densely detailed surfaces, clean specular response, crisp edges. For places and environments of any kind the same treatment; the setting comes only from the request. Not low poly, not a painting.",
+    "negative": ""
+  },
+  {
+    "name": "3D Render",
+    "prefix": "",
+    "suffix": "Physically based 3D render of the subject of the request only. Full color, material-true palette. Smooth volumetric modeling read through simulated geometry and light, soft ambient occlusion in every contour; lighting direction and time of day follow the request. Polished specular response, no drawn lines, crisp CGI edges. For places and environments of any kind the same treatment; the setting comes only from the request. Not a photograph, not an illustration.",
+    "negative": ""
+  },
+  {
+    "name": "Action Figure",
+    "prefix": "",
+    "suffix": "Photograph of a real physical 1:12-scale action figure: the subject of the request only cast in rigid injection-molded ABS plastic with a glossy top coat. Full color, toy-paint palette. Sculpted detail with visible joints and articulation seams, diffused product light unless the request sets another, deep focus. Glossy plastic sheen, molded texture. For places and environments of any kind the whole scene is built as a diorama in the same material; the setting comes only from the request. Not a person, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Adorable 3D Character",
+    "prefix": "",
+    "suffix": "Adorable 3D render of the subject of the request only with a cute toy-like finish; any figures in the picture have soft rounded forms and big friendly eyes. Full color, soft bright palette. Smooth rounded modeling with soft subsurface shading; soft studio light unless the request sets another. Matte-to-satin toy surfaces, soft edges. For places and environments of any kind the same treatment; the setting comes only from the request. Not realistic, not a photograph.",
+    "negative": ""
+  },
+  {
+    "name": "Adorable Thin 3D Character",
+    "prefix": "",
+    "suffix": "Adorable 3D render of the subject of the request only with a simple cute toy-like finish; any figures in the picture have elegant slender intricate forms rather than rounded ones. Full color, soft palette. Smooth refined modeling with soft shading; soft studio light unless the request sets another. Satin toy surfaces, fine delicate edges. For places and environments of any kind the same treatment; the setting comes only from the request. Not chubby, not a photograph.",
+    "negative": ""
+  },
+  {
+    "name": "Cel Shading",
+    "prefix": "",
+    "suffix": "Cel-shaded 3D render of the subject of the request only. Full color, flat stepped palette. Hard-edged tonal division separating light and shadow into uniform steps, bold outline holding every shape; lighting direction and time of day follow the request. No gradients, minimal color banding, crisp graphic edges. For places and environments of any kind the same treatment; the setting comes only from the request. Not smooth shading, not hand-drawn 2D.",
+    "negative": ""
+  },
+  {
+    "name": "Clay Sculpture",
+    "prefix": "",
+    "suffix": "Photograph of a real physical handmade clay sculpture: the subject of the request only modeled in terracotta or unglazed ceramic. Limited palette of earthy natural clay tones. Organic handcrafted form with visible fingerprints and tool marks; soft studio light unless the request sets another. Matte unglazed surface, artisanal imperfections. For places and environments of any kind the whole scene is built as a diorama in the same material; the setting comes only from the request. Not a render, not glazed porcelain.",
+    "negative": ""
+  },
+  {
+    "name": "Claymation",
+    "prefix": "",
+    "suffix": "Photograph of a real physical stop-motion claymation puppet in the Aardman manner, applied to the subject of the request only; no Aardman characters. Full color, warm plasticine colors. Soft rounded forms with fingerprint dents and handcrafted irregularity, slightly rigid hand-posed stance; warm even light unless the request sets another. Plasticine sheen, visible seams. For places and environments of any kind the whole scene is built as a diorama in the same material; the setting comes only from the request. Not a CGI render, not a drawing.",
+    "negative": ""
+  },
+  {
+    "name": "Funko Pop Style",
+    "prefix": "",
+    "suffix": "Funko-Pop-style vinyl figure render of the subject of the request only; any figures in the picture have an oversized head, dot eyes and near-featureless faces. Full color, flat vinyl colors. Glossy uniformly smooth vinyl finish, rigid static collectible stance; soft studio light unless the request sets another. No surface texture, rounded edges. For places and environments of any kind the whole scene is built as a diorama in the same material; the setting comes only from the request. Not realistic, not a photograph of a person.",
+    "negative": ""
+  },
+  {
+    "name": "Ice Sculpture",
+    "prefix": "",
+    "suffix": "Photograph of a real physical ice sculpture: the subject of the request only carved from crystal-clear ice with blue tints. Limited palette of transparent ice blue and white. Expertly carved form with chainsaw and chisel facets, internal reflections and refractions, cool blue light unless the request sets another. Polished glassy surfaces, melting drops. For places and environments of any kind the whole scene is built as a diorama in the same material; the setting comes only from the request. Not glass, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Isometric Low-Poly",
+    "prefix": "",
+    "suffix": "Isometric low-poly 3D render of the subject of the request only in the Blender manner. Full color, pastel palette. Flat-shaded polygonal facets in fixed isometric projection with soft ambient occlusion; soft studio light unless the request sets another. Clean faceted edges, simple textures. For places and environments of any kind the same treatment; the setting comes only from the request. Not high-poly, not perspective.",
+    "negative": ""
+  },
+  {
+    "name": "Isometric Top-Down Chibi",
+    "prefix": "",
+    "suffix": "Isometric top-down 3D render of the subject of the request only as a game-art figurine; any figures in the picture have chibi proportions. Full color, pastel palette. Soft rounded modeling with soft ambient occlusion; soft studio light unless the request sets another. Clean toy-like surfaces, fixed isometric angle. For places and environments of any kind the same treatment; the setting comes only from the request. Not side view, not realistic.",
+    "negative": ""
+  },
+  {
+    "name": "LEGO Bricks",
+    "prefix": "",
+    "suffix": "LEGO-brick render of the subject of the request only built from interlocking studded plastic bricks. Full color, standard brick colors. Blocky modular construction standing in for every form, glossy smooth ABS plastic; soft studio light unless the request sets another. Visible studs, clean seams between pieces. For places and environments of any kind the whole scene is built as a diorama in the same material; the setting comes only from the request. Not minifigure, not a photograph of real objects.",
+    "negative": ""
+  },
+  {
+    "name": "LEGO Minifigure",
+    "prefix": "",
+    "suffix": "LEGO-minifigure render of the subject of the request only; any figures in the picture are minifigures with cylindrical heads, printed faces and clip-jointed limbs; objects become bricks. Full color, standard brick colors. Glossy smooth ABS plastic; soft studio light unless the request sets another. Clean seams, printed-style detail. For places and environments of any kind the whole scene is built as a diorama in the same material; the setting comes only from the request. Not Playmobil, not realistic.",
+    "negative": ""
+  },
+  {
+    "name": "Low Poly",
+    "prefix": "",
+    "suffix": "Low-poly 3D render of the subject of the request only. Full color, clean flat palette. Form abstracted into flat-shaded polygonal facets with crisp hard-edged transitions, visible triangulated structure; lighting direction and time of day follow the request. No textures, geometric minimalism. For places and environments of any kind the same treatment; the setting comes only from the request. Not smooth, not a photograph.",
+    "negative": ""
+  },
+  {
+    "name": "Low Poly (Game Art)",
+    "prefix": "",
+    "suffix": "Low-poly game-art render of the subject of the request only, centered. Full color, simple palette. Jagged blocky polygon mesh with visible wireframe edges; soft studio light unless the request sets another. Flat untextured faces, crisp facets. For places and environments of any kind the same treatment; the setting comes only from the request. Not high detail, not a photograph.",
+    "negative": ""
+  },
+  {
+    "name": "Low Relief Sculpture",
+    "prefix": "",
+    "suffix": "Photograph of a real physical bas-relief carving: the subject of the request only modeled as shallow raised relief projecting slightly from a flat stone or bronze ground. Limited palette of one material tone. Volume read through carved depth under dramatic raking light. Crisp recessed grooves, flat background plane. For places and environments of any kind the whole scene is carved into the same relief panel; the setting comes only from the request. Not freestanding sculpture, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Marble Sculpture",
+    "prefix": "",
+    "suffix": "Photograph of a real physical marble sculpture in the manner of Michelangelo and Canova, applied to the subject of the request only. Monochrome, white marble with subtle translucent glow. Monumental volumetric mass with confident modeling under dramatic raking light. Polished and tool-marked stone, carved hollows, luminous thin edges. For places and environments of any kind the whole scene is built as a diorama in the same material; the setting comes only from the request. Not a render, not painted.",
+    "negative": ""
+  },
+  {
+    "name": "Marble Statue Transformation",
+    "prefix": "",
+    "suffix": "Photograph of a real physical classical marble statue: the subject of the request only carved in white Carrara marble with gray veining in the Greek-Roman manner; no pedestal or museum added unless the request names them. Monochrome, white marble. Heroic proportions with drapery carved in stone, dramatic form-revealing light unless the request sets another. Polished stone surface, veining. For places and environments of any kind the whole scene is built as a diorama in the same material; the setting comes only from the request. Not a render, not bronze.",
+    "negative": ""
+  },
+  {
+    "name": "Octane Unreal PBR",
+    "prefix": "",
+    "suffix": "Octane-and-Unreal-style physically based render of the subject of the request only. Full color, ultra-realistic material palette. Cinematic lighting with accurate reflections and roughness; lighting direction and time of day follow the request. Photoreal materials, crisp edges. For places and environments of any kind the same treatment; the setting comes only from the request. Not flat 2D, not a photograph.",
+    "negative": ""
+  },
+  {
+    "name": "Partial Wireframe 3D",
+    "prefix": "",
+    "suffix": "3D render of the subject of the request only partly finished, partly exposed as wireframe mesh. Full color on the rendered portion, flat line mesh on the rest. Smooth volumetric modeling transitioning abruptly into clean technical grid lines; soft studio light unless the request sets another. Rendered specular surfaces beside diagrammatic polygons. For places and environments of any kind the same treatment; the setting comes only from the request. Not full wireframe, not a photograph.",
+    "negative": ""
+  },
+  {
+    "name": "Pixar 3D Style",
+    "prefix": "",
+    "suffix": "Pixar-style 3D animation render applied to the subject of the request only; no Pixar characters added. Full color, warm cinematic palette. Smooth rounded forms with subsurface scattering, expressive squash-and-stretch on any figures; warm cinematic light unless the request sets another. Detailed hair and cloth, RenderMan-quality polish. For places and environments of any kind the same treatment; the setting comes only from the request. Not DreamWorks, not a photograph.",
+    "negative": ""
+  },
+  {
+    "name": "Pixar Animation",
+    "prefix": "",
+    "suffix": "Feature-animation 3D render in the Pixar manner, applied to the subject of the request only; no Pixar characters added. Full color, warm inviting palette. Smooth volumetric modeling with appealing rounded proportions, warm subsurface-scattered skin, cinematic three-point light with soft ambient occlusion. Polished studio-grade finish. For places and environments of any kind the same treatment; the setting comes only from the request. Not realistic CGI, not a photograph.",
+    "negative": ""
+  },
+  {
+    "name": "Plastic Arts Sculpture",
+    "prefix": "",
+    "suffix": "Photograph of a real physical designer vinyl art toy in the manner of KAWS and Michael Lau, applied to the subject of the request only; no KAWS or brand characters. Full color, glossy and matte vinyl colors. Injection-molded rotocast form with subtle seam lines, sharp specular falloff, translucent edges glowing; soft gradient cyclorama light unless the request sets another. For places and environments of any kind the whole scene is built as a diorama in the same material; the setting comes only from the request. Not a person, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Playmobil",
+    "prefix": "",
+    "suffix": "Playmobil-style figure render of the subject of the request only; any figures in the picture are Playmobil figures with rounded heads, painted simple faces and clip-jointed cylindrical limbs; objects become playset pieces. Full color, bright toy colors. Glossy smooth plastic; soft studio light unless the request sets another. Clean seams. For places and environments of any kind the whole scene is built as a diorama in the same material; the setting comes only from the request. Not LEGO, not realistic.",
+    "negative": ""
+  },
+  {
+    "name": "Plush Toy Transformation",
+    "prefix": "",
+    "suffix": "Photograph of a real physical plush toy: the subject of the request only made as a soft stuffed toy with fuzzy fabric, stitched seams, button eyes and simplified cuddly proportions. Full color, soft fabric colors. Rounded stuffed forms with sewn-on felt details; soft studio light unless the request sets another. Fuzzy fiber texture, handmade slight imperfections. For places and environments of any kind the whole scene is built as a diorama in the same material; the setting comes only from the request. Not a render, not a real animal.",
+    "negative": ""
+  },
+  {
+    "name": "PVC Figurine",
+    "prefix": "",
+    "suffix": "Photograph of a real physical full-body PVC figurine: the subject of the request only as a painted collectible figure on a clear plastic stand on a desk, with its box beside it. Full color, crisp figure paint. Smooth molded PVC with painted details; soft studio light unless the request sets another, shallow depth of field. Glossy and matte plastic, desk surface. For places and environments of any kind the whole scene is built as a diorama in the same material; the setting comes only from the request. Not a person, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Sketchup",
+    "prefix": "",
+    "suffix": "Clean CAD-style 3D model render of the subject of the request only in the SketchUp manner. Limited palette of flat white, gray and a few flat material colors. Simple untextured geometry with thin black edge lines, flat professional design-render shading; soft studio light unless the request sets another, even. Crisp vector-like edges. For places and environments of any kind the same treatment; the setting comes only from the request. Not photoreal, not hand-drawn.",
+    "negative": ""
+  },
+  {
+    "name": "Terragen",
+    "prefix": "",
+    "suffix": "Terragen-style naturalistic render of the subject of the request only; no landscape added unless the request names one. Full color, natural atmospheric palette. Clean atmospheric lighting with realistic terrain-like material cues; lighting direction and time of day follow the request. Photoreal haze, crisp detail. For places and environments of any kind the same naturalistic terrain rendering; the setting comes only from the request. Not stylized, not a photograph.",
+    "negative": ""
+  },
+  {
+    "name": "Toon Shader",
+    "prefix": "",
+    "suffix": "Toon-shaded 3D render of the subject of the request only. Full color, flat stepped palette. Hard-edged cel-style tonal steps with bold outline holding every shape; lighting direction and time of day follow the request. No gradients, crisp graphic edges, dimensional underlying form. For places and environments of any kind the same treatment; the setting comes only from the request. Not smooth shading, not 2D animation.",
+    "negative": ""
+  },
+  {
+    "name": "Toybox Diorama",
+    "prefix": "",
+    "suffix": "Plastic-miniature toybox render of the subject of the request only; no set pieces added unless the request names them. Full color, saturated toy colors. Glossy plastic surfaces with tilt-shift focus; soft studio light unless the request sets another. Playful miniature scale, soft falloff. For places and environments of any kind the whole scene is built as a diorama in the same material; the setting comes only from the request. Not gritty, not a photograph.",
+    "negative": ""
+  },
+  {
+    "name": "Unreal Engine",
+    "prefix": "",
+    "suffix": "Unreal Engine 5 real-time render of the subject of the request only. Full color, cinematic material-true palette. Physically based volumetric modeling with ambient occlusion, dynamic reflections and atmospheric scattering; lighting direction and time of day follow the request. Ray-traced specular, game-cinematic fidelity, crisp edges. For places and environments of any kind the same treatment; the setting comes only from the request. Not stylized, not a photograph.",
+    "negative": ""
+  },
+  {
+    "name": "Wallace and Gromit Style",
+    "prefix": "",
+    "suffix": "Photograph of a real physical stop-motion plasticine puppet in the Nick Park Aardman manner, applied to the subject of the request only; no Wallace, Gromit or Aardman characters. Full color, warm plasticine colors. Soft rounded forms with fingerprint dents, exaggerated expressive proportions with subtle asymmetry, wide mouths on any figures; warm even light unless the request sets another. Wobbly handmade charm. For places and environments of any kind the whole scene is built as a diorama in the same material; the setting comes only from the request. Not CGI, not a drawing.",
+    "negative": ""
+  },
+  {
+    "name": "Acid Graphics Render",
+    "prefix": "",
+    "suffix": "Acid-graphics 3D render of the subject of the request only in the Designers Republic rave-flyer manner; no lettering. Limited palette of acid green, black and chrome. Chrome-distorted warped forms with wireframe grid accents; soft studio light unless the request sets another. Liquid chrome reflections, techno flatness behind. For places and environments of any kind the same treatment; the setting comes only from the request. Not Y2K pastel, not a photograph.",
+    "negative": ""
+  },
+  {
+    "name": "Ambient Occlusion Clay Look Render",
+    "prefix": "",
+    "suffix": "Clay 3D render of the subject of the request only. Monochrome, uniform matte gray material. Soft contact shadows in every crevice with gentle gradient shading on rounded planes; soft dome light unless the request sets another. Clean form readability, crisp outer edges, no textures. For places and environments of any kind the same treatment; the setting comes only from the request. Not textured, not a photograph.",
+    "negative": ""
+  },
+  {
+    "name": "Bean Mouth 3D Render",
+    "prefix": "",
+    "suffix": "Stylized 3D render in the Illumination and Sony Animation manner, applied to the subject of the request only; no studio characters; any figures in the picture have small curved bean-shaped mouths and simplified faces. Full color, bright friendly palette. Rounded modeling with soft subsurface shading; soft studio light unless the request sets another. Glossy friendly finish. For places and environments of any kind the same treatment; the setting comes only from the request. Not Pixar realism, not a photograph.",
+    "negative": ""
+  },
+  {
+    "name": "Bernini Masterpiece Sculpture",
+    "prefix": "",
+    "suffix": "Photograph of a real physical Carrara marble sculpture in the manner of Bernini, applied to the subject of the request only; no saints or mythic figures added. Monochrome, white marble with translucent glow. Virtuoso carving with flesh-like softness, twisting Baroque forms and deeply undercut shadows; soft studio light unless the request sets another. Polished luminous highlights. For places and environments of any kind the whole scene is built as a diorama in the same material; the setting comes only from the request. Not a render, not neoclassical calm.",
+    "negative": ""
+  },
+  {
+    "name": "Bronze Patina",
+    "prefix": "",
+    "suffix": "Photograph of a real physical cast bronze sculpture in the manner of Rodin and Henry Moore, applied to the subject of the request only. Limited palette of dark bronze with green-blue patina. Metallic sculpted form with polished worn highlights on raised areas; soft studio light unless the request sets another. Rough foundry texture, patina pooling in recesses. For places and environments of any kind the whole scene is built as a diorama in the same material; the setting comes only from the request. Not a render, not gold.",
+    "negative": ""
+  },
+  {
+    "name": "Bubblegum Futurism Render",
+    "prefix": "",
+    "suffix": "Bubblegum-futurism 3D render of the subject of the request only in the Verner Panton and Y2K product manner. Full color, pastel candy colors. Soft rounded inflated forms with smooth seamless surfaces; soft studio light unless the request sets another. Glossy translucent plastic, playful optimism. For places and environments of any kind the same treatment; the setting comes only from the request. Not retro chrome, not a photograph.",
+    "negative": ""
+  },
+  {
+    "name": "Clay Render",
+    "prefix": "",
+    "suffix": "Clay 3D render of the subject of the request only. Limited palette of uniform matte gray or one pastel clay tone. Smooth rounded forms with soft ambient occlusion; soft studio light unless the request sets another. Minimal clean matte surfaces, no textures. For places and environments of any kind the same treatment; the setting comes only from the request. Not textured, not a photograph.",
+    "negative": ""
+  },
+  {
+    "name": "Cutaway Render",
+    "prefix": "",
+    "suffix": "Cutaway 3D render of the subject of the request only sectioned to reveal internal layers and mechanisms; no labels or lettering. Full color, material-true palette with clean cut-plane color. Clean cut planes with diagram-like clarity; technical studio light unless the request sets another. Crisp internal detail. For places and environments of any kind the scene is sectioned the same way; the setting comes only from the request. Not exploded view, not a photograph.",
+    "negative": ""
+  },
+  {
+    "name": "Dark Horror 3D Render",
+    "prefix": "",
+    "suffix": "Gritty realistic horror CGI render of the subject of the request only; no game monsters or locations added. Limited palette of sickly desaturated green and rust. Wet decaying textures with harsh flickering light and deep shadows. Grimy surfaces, cinematic grain. For places and environments of any kind the same treatment; the setting comes only from the request. Not clean CGI, not a photograph.",
+    "negative": ""
+  },
+  {
+    "name": "Donghua 3D Render",
+    "prefix": "",
+    "suffix": "Stylized 3D anime render in the donghua manner, applied to the subject of the request only; no series characters; any figures in the picture have glossy skin, elegant features and silky flowing hair strands. Full color, cool restrained palette with soft bloom. Polished cel-like shading on smooth models; soft studio light unless the request sets another. Glossy flowing forms. For places and environments of any kind the same treatment; the setting comes only from the request. Not Western CGI, not 2D anime.",
+    "negative": ""
+  },
+  {
+    "name": "Exploded-View Render",
+    "prefix": "",
+    "suffix": "Exploded-view 3D render of the subject of the request only separated into its components floating along clean axes in precise alignment; no lettering. Full color, material-true palette. Thin guide lines between parts; studio light unless the request sets another. Crisp clean components. For places and environments of any kind the scene is exploded the same way; the setting comes only from the request. Not cutaway, not a photograph.",
+    "negative": ""
+  },
+  {
+    "name": "Fine Voxel Render",
+    "prefix": "",
+    "suffix": "Fine voxel 3D render of the subject of the request only built from thousands of small cubes in the MagicaVoxel manner. Full color, rich detailed palette. Curves approximated by fine voxel steps with crisp beveled cube edges and soft ambient occlusion; soft studio light unless the request sets another. Grid-aligned geometry. For places and environments of any kind the same treatment; the setting comes only from the request. Not coarse voxels, not smooth.",
+    "negative": ""
+  },
+  {
+    "name": "Glass 3D Render",
+    "prefix": "",
+    "suffix": "Glass 3D render of the subject of the request only in translucent frosted and clear glass. Full color, pale tints with soft iridescent edges. Smooth rounded geometry with refraction and caustic accents; soft studio light unless the request sets another. Glassmorphism clarity, soft highlights. For places and environments of any kind the same treatment; the setting comes only from the request. Not opaque, not a photograph.",
+    "negative": ""
+  },
+  {
+    "name": "Glass Art Sculpture",
+    "prefix": "",
+    "suffix": "Photograph of a real physical blown-glass sculpture in the manner of Chihuly and Murano glass, applied to the subject of the request only. Full color, layered colored translucency. Blown organic forms with internal reflections and refraction; soft studio light unless the request sets another. Polished glossy surfaces, swirling color inclusions. For places and environments of any kind the whole scene is built as a diorama in the same material; the setting comes only from the request. Not a render, not clear crystal.",
+    "negative": ""
+  },
+  {
+    "name": "Glossy Specular Highlights Render",
+    "prefix": "",
+    "suffix": "Glossy 3D render of the subject of the request only. Full color, saturated palette. Crisp bright specular highlights on every curved form with wet-look materials; lighting direction and time of day follow the request. Sharp reflected light shapes, strong matte-shiny contrast. For places and environments of any kind the same treatment; the setting comes only from the request. Not matte, not a photograph.",
+    "negative": ""
+  },
+  {
+    "name": "Hellenistic Marble",
+    "prefix": "",
+    "suffix": "Photograph of a real physical ancient Hellenistic marble statue in the Pergamon manner, applied to the subject of the request only; no gods or heroes added. Monochrome, polished white marble. Dynamic twisting deeply carved forms with dramatic carved shadows; soft studio light unless the request sets another. Polished stone, weathered chips. For places and environments of any kind the whole scene is built as a diorama in the same material; the setting comes only from the request. Not a render, not Baroque.",
+    "negative": ""
+  },
+  {
+    "name": "Hologram Wireframe",
+    "prefix": "",
+    "suffix": "Holographic wireframe render of the subject of the request only; no HUD or film interfaces added. Monochrome, glowing cyan lines on dark. Translucent layered mesh geometry with scanline flicker and digital grid accents, light coming from the glowing lines. Transparent faces, soft bloom. For places and environments of any kind the same treatment; the setting comes only from the request. Not solid render, not a photograph.",
+    "negative": ""
+  },
+  {
+    "name": "Inflatable 3D Render",
+    "prefix": "",
+    "suffix": "Inflatable 3D render of the subject of the request only in the Jeff Koons balloon manner; no balloon dogs added. Full color, saturated pastel colors. Puffy balloon-like surfaces with rounded seams and soft bulging forms; soft studio light unless the request sets another. Glossy rubbery material, taut stretched highlights. For places and environments of any kind the same treatment; the setting comes only from the request. Not rigid plastic, not a photograph.",
+    "negative": ""
+  },
+  {
+    "name": "Iridescent Palette Render",
+    "prefix": "",
+    "suffix": "Iridescent 3D render of the subject of the request only. Full color, shifting oil-slick rainbow sheen from teal to violet to gold across surfaces. Pearlescent highlights with holographic shimmer; lighting direction and time of day follow the request. Nacre-like smooth surfaces. For places and environments of any kind the same treatment; the setting comes only from the request. Not flat chrome, not a photograph.",
+    "negative": ""
+  },
+  {
+    "name": "Kintsugi Sculpture",
+    "prefix": "",
+    "suffix": "Photograph of a real physical kintsugi-repaired ceramic sculpture: the subject of the request only formed in cracked ceramic or stone rejoined with luminous gold-filled seams. Limited palette of matte ceramic with metallic gold. Branching gold fracture network over the form; soft studio light unless the request sets another. Matte versus metallic contrast. For places and environments of any kind the whole scene is built as a diorama in the same material; the setting comes only from the request. Not a render, not a crack overlay.",
+    "negative": ""
+  },
+  {
+    "name": "Matte Finish Render",
+    "prefix": "",
+    "suffix": "Matte 3D render of the subject of the request only in the Dieter Rams product manner. Full color, restrained palette. Flat non-reflective materials with soft diffuse shading and gentle broad highlights; soft studio light unless the request sets another. Velvety low-sheen surfaces, minimal clean edges. For places and environments of any kind the same treatment; the setting comes only from the request. Not glossy, not a photograph.",
+    "negative": ""
+  },
+  {
+    "name": "Miniature Figurine",
+    "prefix": "",
+    "suffix": "Macro photograph of a real hand-painted tabletop miniature: the subject of the request only as a tiny painted figure on a round base in the Citadel manner. Full color, layered miniature paint. Crisp sculpted detail with painted highlights; soft studio light unless the request sets another, shallow depth. Tabletop finish. For places and environments of any kind the whole scene is built as a diorama in the same material; the setting comes only from the request. Not a render, not life-size.",
+    "negative": ""
+  },
+  {
+    "name": "Non-Photorealistic Render",
+    "prefix": "",
+    "suffix": "Non-photorealistic 3D render of the subject of the request only in the Guilty Gear Xrd and Klaus manner. Full color, flattened stylized palette. 3D forms with hand-drawn line outlines and painterly or hatched shading; lighting direction and time of day follow the request. Toon-shaded surfaces, drawn-looking edges. For places and environments of any kind the same treatment; the setting comes only from the request. Not photoreal, not 2D.",
+    "negative": ""
+  },
+  {
+    "name": "Orthographic Render",
+    "prefix": "",
+    "suffix": "Orthographic 3D render of the subject of the request only in flat parallel projection, front, side and top views when the request allows. Full color, material-true palette. Distortion-free geometry; neutral studio light unless the request sets another. Technical presentation, crisp edges, no lettering. For places and environments of any kind the same treatment; the setting comes only from the request. Not perspective, not a photograph.",
+    "negative": ""
+  },
+  {
+    "name": "Polychrome Painted Sculpture",
+    "prefix": "",
+    "suffix": "Photograph of a real physical painted wooden sculpture in the Spanish polychrome manner, applied to the subject of the request only; no saints added. Full color, layered pigment with gilding. Carved forms with brush-applied painted surfaces; soft studio light unless the request sets another. Worn paint edges, handcrafted texture. For places and environments of any kind the whole scene is built as a diorama in the same material; the setting comes only from the request. Not a render, not bare wood.",
+    "negative": ""
+  },
+  {
+    "name": "Porcelain Figurine",
+    "prefix": "",
+    "suffix": "Photograph of a real physical porcelain figurine in the Meissen and Lladró manner, applied to the subject of the request only. Full color, glossy white glaze with delicate painted gold and blue details. Smooth flawless glazed surfaces; soft studio light unless the request sets another, shallow depth of field. Delicate glossy edges. For places and environments of any kind the whole scene is built as a diorama in the same material; the setting comes only from the request. Not a render, not matte clay.",
+    "negative": ""
+  },
+  {
+    "name": "Puppet Style",
+    "prefix": "",
+    "suffix": "Photograph of a real physical handmade fabric puppet in the Henson manner, applied to the subject of the request only; no Muppet or Sesame Street characters. Full color, bright felt and fleece colors. Fuzzy felt surfaces with stitched seams and button or ping-pong-ball eyes, soft stuffed forms; warm studio light unless the request sets another. Visible fabric texture. For places and environments of any kind the whole scene is built as a diorama in the same material; the setting comes only from the request. Not a render, not a plush toy.",
+    "negative": ""
+  },
+  {
+    "name": "Ray Tracing Render",
+    "prefix": "",
+    "suffix": "Ray-traced 3D render of the subject of the request only. Full color, material-true palette. Physically accurate light paths with true reflections, refractions and realistic bounced light; lighting direction and time of day follow the request. Soft contact shadows, global illumination. For places and environments of any kind the same treatment; the setting comes only from the request. Not stylized, not a photograph.",
+    "negative": ""
+  },
+  {
+    "name": "Rodin Masterpiece Sculpture",
+    "prefix": "",
+    "suffix": "Photograph of a real physical bronze sculpture in the manner of Rodin and Camille Claudel, applied to the subject of the request only. Limited palette of dark patina bronze with polished warm highlights. Expressive modeled surfaces with thumb and tool marks, rough unfinished passages emerging from smooth forms; soft studio light unless the request sets another. Rich patina. For places and environments of any kind the whole scene is built as a diorama in the same material; the setting comes only from the request. Not a render, not polished chrome.",
+    "negative": ""
+  },
+  {
+    "name": "Sanrio Figurine",
+    "prefix": "",
+    "suffix": "Product photograph of a real vinyl figurine in the Sanrio and Pop Mart manner, applied to the subject of the request only; no Hello Kitty or brand characters. Full color, pastel color blocking. Pillowy rounded vinyl shapes with a perfect soft finish; soft studio light unless the request sets another, shallow depth of field. Pristine collectible sheen. For places and environments of any kind the whole scene is built as a diorama in the same material; the setting comes only from the request. Not a render, not realistic.",
+    "negative": ""
+  },
+  {
+    "name": "Sculpture",
+    "prefix": "",
+    "suffix": "Photograph of a real physical sculpture in the manner of Michelangelo, Rodin and Henry Moore, applied to the subject of the request only. Limited palette of one carved or cast material tone. Three-dimensional carved and modeled forms with material texture; sculptural raking light unless the request sets another. Stone or bronze surface. For places and environments of any kind the whole scene is built as a diorama in the same material; the setting comes only from the request. Not a render, not painted.",
+    "negative": ""
+  },
+  {
+    "name": "Subdivision Smooth Render",
+    "prefix": "",
+    "suffix": "Subdivision-smooth 3D render of the subject of the request only. Full color, glossy uniform material. Perfectly smooth rounded forms with soft beveled edges; soft studio light unless the request sets another, minimal studio background. Glossy seamless surfaces. For places and environments of any kind the same treatment; the setting comes only from the request. Not faceted, not a photograph.",
+    "negative": ""
+  },
+  {
+    "name": "Subsurface Scattering Render",
+    "prefix": "",
+    "suffix": "3D render of the subject of the request only with pronounced subsurface scattering. Full color, warm translucent palette. Light passing through translucent materials with soft warm glow inside and red-orange translucency at thin edges; lighting direction and time of day follow the request. Realistic waxy or skin-like surfaces. For places and environments of any kind the same treatment; the setting comes only from the request. Not opaque, not a photograph.",
+    "negative": ""
+  },
+  {
+    "name": "Toy Style",
+    "prefix": "",
+    "suffix": "Photograph of a real physical glossy plastic toy in the Pop Mart and Kidrobot manner: the subject of the request only as a vinyl collectible with simplified chunky proportions. Full color, bright solid colors. Smooth molded surfaces with visible seam lines; soft studio light unless the request sets another. Soft studio reflections, product-photo finish. For places and environments of any kind the whole scene is built as a diorama in the same material; the setting comes only from the request. Not a render, not realistic.",
+    "negative": ""
+  },
+  {
+    "name": "Translucent Glassmorphism Render",
+    "prefix": "",
+    "suffix": "Glassmorphism 3D render of the subject of the request only in the visionOS manner. Full color, soft gradient tints. Frosted semi-transparent glass layers with thin bright edge highlights over a soft blurred background; soft studio light unless the request sets another. Gentle gradients, UI-clean edges. For places and environments of any kind the same treatment; the setting comes only from the request. Not clear glass, not a photograph.",
+    "negative": ""
+  },
+  {
+    "name": "Ultradetailed 3D Render",
+    "prefix": "",
+    "suffix": "Densely detailed physically based 3D render of the subject of the request only in the Unreal Engine 5 and Megascans manner. Full color, photoreal material palette. Accurate light transport with micro surface imperfections and cinematic depth of field; lighting direction and time of day follow the request. Crisp texture fidelity. For places and environments of any kind the same treatment; the setting comes only from the request. Not stylized, not a photograph.",
+    "negative": ""
+  },
+  {
+    "name": "Vaporwave Prestige Render",
+    "prefix": "",
+    "suffix": "Polished vaporwave 3D render of the subject of the request only; no statues or palm trees added. Full color, dreamy pastel gradients of pink, lilac and teal. Soft chrome sheen with a subtle grid perspective; soft studio light unless the request sets another. Gentle VHS grain, smooth finish. For places and environments of any kind the same treatment; the setting comes only from the request. Not synthwave neon, not a photograph.",
+    "negative": ""
+  },
+  {
+    "name": "Voxel Art Render",
+    "prefix": "",
+    "suffix": "Voxel 3D render of the subject of the request only built from small cubes in the MagicaVoxel manner. Full color, bright cheerful palette. Crisp blocky grid-aligned forms with flat-shaded faces and soft ambient occlusion between cubes; soft studio light unless the request sets another. Toy-like finish. For places and environments of any kind the same treatment; the setting comes only from the request. Not fine voxels, not smooth.",
+    "negative": ""
+  },
+  {
+    "name": "Y2K Chrome Render",
+    "prefix": "",
+    "suffix": "Y2K 3D render of the subject of the request only in the early-2000s Designers Republic manner. Full color, silver and baby-blue palette. Liquid chrome shapes with iridescent bubble textures and glossy translucent plastics; soft studio light unless the request sets another. Mirror reflections, soft bloom. For places and environments of any kind the same treatment; the setting comes only from the request. Not acid graphics, not a photograph.",
+    "negative": ""
+  },
+  {
+    "name": "Scale Model Diorama",
+    "prefix": "",
+    "suffix": "Photograph of a real scale-model diorama: the subject of the request only built as a hobby-scale model with flocked static grass, fine gravel and hand-painted resin details where the request has them. Full color, weathered model paint. Soft tilt-shift falloff; soft studio light unless the request sets another. Miniature texture. For places and environments of any kind the whole scene is built as a diorama in the same material; the setting comes only from the request. Not a render, not life-size.",
+    "negative": ""
+  },
+  {
+    "name": "Miniature Handcrafted Diorama",
+    "prefix": "",
+    "suffix": "Photograph of a handmade miniature diorama: the subject of the request only built from tiny painted clay and felt with visible fingerprints and brush marks. Full color, warm toy-like palette. Shallow tilt-shift depth; warm soft studio light unless the request sets another. Handcrafted charm. For places and environments of any kind the whole scene is built as a diorama in the same material; the setting comes only from the request. Not a render, not life-size.",
+    "negative": ""
+  },
+  {
+    "name": "Prestige Tabletop Miniature",
+    "prefix": "",
+    "suffix": "Macro studio photograph of a competition-painted tabletop miniature: the subject of the request only as a precisely sculpted painted figure. Full color, smooth layered color transitions with fine edge highlights. Controlled weathering; soft studio light unless the request sets another, shallow depth. Museum-quality presentation. For places and environments of any kind the whole scene is built as a diorama in the same material; the setting comes only from the request. Not a render, not life-size.",
+    "negative": ""
+  },
+  {
+    "name": "Pure Wireframe",
+    "prefix": "",
+    "suffix": "Pure wireframe render of the subject of the request only with the entire form drawn as exposed polygon mesh. Monochrome, thin uniform glowing lines on a dark background. Transparent faces, no shading, no fills; light comes from the lines themselves. Clean early-CGI mesh. For places and environments of any kind the same treatment; the setting comes only from the request. Not solid render, not a blueprint drawing.",
+    "negative": ""
+  },
+  {
+    "name": "Cinema 4D Abstract Design",
+    "prefix": "",
+    "suffix": "Abstract Cinema 4D render where the subject of the request only is composed from smooth simple primitives. Full color, soft pastel gradients. Satisfying balanced arrangement with a matte-and-glossy material mix; clean studio light unless the request sets another. Minimal clean surfaces. For places and environments of any kind the same primitive reduction; the setting comes only from the request. Not realistic, not a photograph.",
+    "negative": ""
+  },
+  {
+    "name": "Stop Motion",
+    "prefix": "",
+    "suffix": "Photograph of a real handmade stop-motion puppet set, macro lens, applied to the subject of the request only; no Laika or Aardman characters. Full color, tactile material colors. Clay, felt and fabric with fingerprints, stitched seams and slight asymmetry; warm miniature studio light unless the request sets another, shallow depth of field. Handmade texture. For places and environments of any kind the whole scene is built as a diorama in the same material; the setting comes only from the request. Not CGI, not a drawing.",
+    "negative": ""
+  },
+  {
+    "name": "Laika Puppet Character Design",
+    "prefix": "",
+    "suffix": "Photograph of a real physical stop-motion puppet in the Laika manner, applied to the subject of the request only; no Coraline, Kubo or Laika characters; any figures in the picture have an oversized head on a slender body and glass-bead eyes. Full color, muted handcrafted palette. Stitched fabric details with subtle asymmetry; soft studio light unless the request sets another. Silicone and fabric texture. For places and environments of any kind the whole scene is built as a diorama in the same material; the setting comes only from the request. Not CGI, not Aardman clay.",
+    "negative": ""
+  },
+  {
+    "name": "Felt Stop Motion",
+    "prefix": "",
+    "suffix": "Photograph of a real felt stop-motion puppet, macro lens, applied to the subject of the request only; no film characters. Full color, soft wool colors. Felt and wool fiber textures with stitched seams and fuzzy edges; soft studio light unless the request sets another, shallow depth of field. Handcrafted fabric. For places and environments of any kind the whole scene is built as a diorama in the same material; the setting comes only from the request. Not clay, not a render.",
+    "negative": ""
+  },
+  {
+    "name": "Harryhausen Stop Motion",
+    "prefix": "",
+    "suffix": "Photograph of a real latex stop-motion puppet in the Ray Harryhausen manner, applied to the subject of the request only; no skeletons or Harryhausen creatures added. Full color, rich vintage film colors. Textured latex surfaces with practical-miniature craft; soft studio light unless the request sets another, shallow depth of field. 1960s practical-effects look. For places and environments of any kind the whole scene is built as a diorama in the same material; the setting comes only from the request. Not CGI, not claymation.",
+    "negative": ""
+  }
+]

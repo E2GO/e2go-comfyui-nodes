@@ -1,0 +1,758 @@
+[
+  {
+    "name": "16-bit Fantasy RPG",
+    "prefix": "",
+    "suffix": "16-bit SNES-style pixel art of the subject of the request only; no HUD, lettering or game characters. Limited palette of a vibrant 16-bit indexed set. Crisp hand-placed pixel clusters with readable sprite detailing, stepped shading, no anti-aliasing; lighting is absent. Overhead game perspective only when the request asks. For places and environments of any kind the same treatment; the setting comes only from the request. Not 8-bit, not smooth digital.",
+    "negative": ""
+  },
+  {
+    "name": "8-bit",
+    "prefix": "",
+    "suffix": "8-bit pixel art of the subject of the request only; no HUD, lettering or game characters. Limited palette of a few hard NES-era colors. Chunky aliased pixels with hard contrast, no dithering gradients; lighting is absent. Crisp square pixel edges. For places and environments of any kind the same treatment; the setting comes only from the request. Not 16-bit, not smooth.",
+    "negative": ""
+  },
+  {
+    "name": "Among Us",
+    "prefix": "",
+    "suffix": "Super-flat vector game illustration in the Among Us look, applied to the subject of the request only; no crewmates or spaceship scene added. Full color, bold primary colors. Thick uniform outlines with minimal shading; lighting is absent. Flat fills, rounded simple shapes. For places and environments of any kind the same treatment; the setting comes only from the request. Not detailed, not 3D.",
+    "negative": ""
+  },
+  {
+    "name": "Animal Crossing",
+    "prefix": "",
+    "suffix": "Soft rounded 3D life-sim render in the Animal Crossing look, applied to the subject of the request only; no villagers or island added. Full color, bright cheerful palette. Gentle oversized proportions with smooth subsurface shading, bright wholesome light; lighting direction and time of day follow the request, bright. Soft toy-like surfaces, rounded edges. For places and environments of any kind the same treatment; the setting comes only from the request. Not realistic, not cel-shaded.",
+    "negative": ""
+  },
+  {
+    "name": "ASCII Roguelike",
+    "prefix": "",
+    "suffix": "ASCII roguelike terminal screen rendering the subject of the request only as monochrome bitmap glyphs on a grid; no readable words beyond glyph texture. Monochrome, phosphor green or amber on black. Terminal font characters forming the shapes, no shading; light is the screen glow. Retro DOS grid, scanline sheen. For places and environments of any kind the same glyph map; the setting comes only from the request. Not pixel art, not vector.",
+    "negative": ""
+  },
+  {
+    "name": "Bioshock",
+    "prefix": "",
+    "suffix": "Art-deco retro-futurist game-art look applied to the subject of the request only; no Rapture city, Big Daddies or splicers added. Full color, teal-and-orange mood palette with brass. Volumetric fog with warm practical light against cool water-filtered darkness. Brass details, riveted deco ornament, wet glass. For places and environments of any kind the same treatment; the setting comes only from the request. Not clean sci-fi, not steampunk.",
+    "negative": ""
+  },
+  {
+    "name": "Borderlands",
+    "prefix": "",
+    "suffix": "Ink-outlined cel-shaded game art in the Borderlands look, applied to the subject of the request only; no vault hunters or wasteland added. Full color, grungy saturated palette. Bold black ink lines with comic halftone shading and hard-stepped cel tones; lighting direction and time of day follow the request. Grungy painted textures, crisp outlines. For places and environments of any kind the same treatment; the setting comes only from the request. Not smooth 3D, not photographic.",
+    "negative": ""
+  },
+  {
+    "name": "Bubble Bobble",
+    "prefix": "",
+    "suffix": "Cute 8-bit arcade pixel art in the Bubble Bobble look, applied to the subject of the request only; no dragons or bubbles added. Full color, vibrant arcade palette. Chunky rounded pixel sprites with big simple eyes on any figures; lighting is absent. Crisp aliased pixels. For places and environments of any kind the same treatment; the setting comes only from the request. Not 16-bit detail, not smooth.",
+    "negative": ""
+  },
+  {
+    "name": "Candy Crush Style",
+    "prefix": "",
+    "suffix": "Glossy match-3 game art in the Candy Crush look: the subject of the request only rendered as glossy 3D candy with translucent jelly effects. Full color, vibrant candy colors. Smooth rounded forms with sugary textures and bright specular highlights; soft studio light unless the request sets another. Glossy sweet finish. For places and environments of any kind the same treatment; the setting comes only from the request. Not realistic, not flat vector.",
+    "negative": ""
+  },
+  {
+    "name": "Castlevania Concept Art",
+    "prefix": "",
+    "suffix": "Dark gothic fantasy concept art in the Castlevania look, applied to the subject of the request only; no Belmonts, Dracula or castle added. Limited palette of moody desaturated tones with crimson. Painterly digital linework with dramatic vertical perspective, fog and shadow pooling around sharply lit forms; lighting direction and time of day follow the request, dramatic. Richly textured surfaces. For places and environments of any kind the same treatment; the setting comes only from the request. Not bright fantasy, not photographic.",
+    "negative": ""
+  },
+  {
+    "name": "Casual Mobile Cartoon",
+    "prefix": "",
+    "suffix": "Casual mobile-game cartoon illustration of the subject of the request only. Full color, bright pastel palette. Thick clean outlines with simplified shapes and minimal shading; lighting is absent. Cute icon-like finish, crisp edges. For places and environments of any kind the same treatment; the setting comes only from the request. Not detailed, not 3D.",
+    "negative": ""
+  },
+  {
+    "name": "Cel-Shaded Hero Shooter",
+    "prefix": "",
+    "suffix": "Cel-shaded hero-shooter illustration applied to the subject of the request only; any figures strike an action pose. Full color, high-contrast saturated palette. Dynamic cel shading with bold ink outlines in comic-book style; lighting direction and time of day follow the request. Hard-stepped tones, crisp outlines. For places and environments of any kind the same treatment; the setting comes only from the request. Not smooth 3D, not photographic.",
+    "negative": ""
+  },
+  {
+    "name": "Chalkboard Educational Game",
+    "prefix": "",
+    "suffix": "Chalkboard educational-game drawing of the subject of the request only in white chalk on a dusty blackboard; no lettering. Monochrome, white chalk on dark green-black. Playful diagram-like line art with smudged edges; lighting is absent. Chalk dust, board texture. For places and environments of any kind the same treatment; the setting comes only from the request. Not whiteboard, not digital.",
+    "negative": ""
+  },
+  {
+    "name": "Cinematic Final Fantasy 3D Render",
+    "prefix": "",
+    "suffix": "Cinematic Final Fantasy-style 3D render applied to the subject of the request only; no Final Fantasy characters added. Full color, rich cinematic grade. Meticulously detailed volumetric modeling with near-photographic conviction, film-grade dramatic light with soft subsurface skin; lighting direction and time of day follow the request. Flowing hair and cloth, polished CGI finish. For places and environments of any kind the same treatment; the setting comes only from the request. Not cel-shaded, not a photograph.",
+    "negative": ""
+  },
+  {
+    "name": "Clash of Clans Style",
+    "prefix": "",
+    "suffix": "Clash of Clans-style game art applied to the subject of the request only; no barbarians or village added. Full color, bright high-contrast palette. Chunky 3D models rendered as sprites with Pixar-like proportions and bold stylized texturing; soft bright light unless the request sets another. Distinctive silhouettes, mobile clarity. For places and environments of any kind the same treatment; the setting comes only from the request. Not realistic, not flat 2D.",
+    "negative": ""
+  },
+  {
+    "name": "Clockwork Steampunk Metroidvania",
+    "prefix": "",
+    "suffix": "Side-scroller steampunk game art applied to the subject of the request only; no airships or figures added. Full color, warm sepia palette with brass. Hand-painted textures with intricate brass machinery and cog motifs on built parts; warm sepia light unless the request sets another. Painted surfaces, layered side-scroll depth. For places and environments of any kind the same treatment; the setting comes only from the request. Not dieselpunk, not photographic.",
+    "negative": ""
+  },
+  {
+    "name": "Cozy Cottagecore Builder",
+    "prefix": "",
+    "suffix": "Cozy cottagecore builder-game art applied to the subject of the request only; no cottages or villagers added. Full color, warm pastel tones. Round soft shapes with knitted and wooden textures in gentle sunlight; lighting direction and time of day follow the request, gentle. Wholesome countryside softness. For places and environments of any kind the same treatment; the setting comes only from the request. Not realistic, not dark.",
+    "negative": ""
+  },
+  {
+    "name": "Cozy Farming Sim",
+    "prefix": "",
+    "suffix": "Cozy farming-sim stylized low-poly 3D render applied to the subject of the request only; no farm or crops added. Full color, warm pastel tones. Soft-edged low-poly forms with cute simplified vegetation where the request has it; soft warm light unless the request sets another. Wholesome matte surfaces. For places and environments of any kind the same treatment; the setting comes only from the request. Not realistic, not pixel art.",
+    "negative": ""
+  },
+  {
+    "name": "Cuphead",
+    "prefix": "",
+    "suffix": "1930s rubber-hose cartoon in the Cuphead look, applied to the subject of the request only; no Cuphead or Mugman added. Limited palette of a four-color process with cream paper. Rubber-hose proportions on any figures, bold ink lines over watercolor backgrounds; lighting is absent. Grainy film texture, hand-inked imperfections. For places and environments of any kind the same treatment; the setting comes only from the request. Not modern cartoon, not 3D.",
+    "negative": ""
+  },
+  {
+    "name": "Cyberpunk 2077",
+    "prefix": "",
+    "suffix": "Neon-drenched photoreal game-art look in the Cyberpunk 2077 manner, applied to the subject of the request only; no Night City scenery or figures added. Full color, vibrant magenta-cyan palette. Holographic ad glow with rain-soaked reflections; light from neon practicals. Hi-detail photoreal materials. For places and environments of any kind the same treatment; the setting comes only from the request. Not clean sci-fi, not painterly.",
+    "negative": ""
+  },
+  {
+    "name": "Cyberpunk 3D Action",
+    "prefix": "",
+    "suffix": "Cinematic UE5-quality cyberpunk 3D render of the subject of the request only; no city scenery added. Full color, vivid pink and teal lights on dark. Photoreal materials with rain reflections; light from colored neon sources. Crisp CGI detail. For places and environments of any kind the same treatment; the setting comes only from the request. Not painterly, not a photograph.",
+    "negative": ""
+  },
+  {
+    "name": "Cyberpunk Game",
+    "prefix": "",
+    "suffix": "Cyberpunk video-game art of the subject of the request only; no city or figures added. Full color, neon high-contrast palette. Dystopian futuristic detailing with digital glow; lighting direction and time of day follow the request. Detailed glossy surfaces. For places and environments of any kind the same treatment; the setting comes only from the request. Not fantasy, not photographic.",
+    "negative": ""
+  },
+  {
+    "name": "Darkest Dungeon",
+    "prefix": "",
+    "suffix": "Grim gothic comic art in the Darkest Dungeon look, applied to the subject of the request only; no heroes or dungeon added. Limited palette of desaturated tones with dramatic crimson accents. Thick black linework with heavy shadows and hatched shading; lighting direction and time of day follow the request, harsh. Flat grim fills. For places and environments of any kind the same treatment; the setting comes only from the request. Not painterly, not bright.",
+    "negative": ""
+  },
+  {
+    "name": "Dead or Alive Style",
+    "prefix": "",
+    "suffix": "In-game photo-mode screenshot in the Dead or Alive Xtreme look, applied to the subject of the request only; no game characters; any figures in the picture are high-polygon real-time models with idealized anime-meets-realistic faces, large glossy eyes and soft glossy lips. Full color, bright sunny palette. Smooth glossy skin shading; lighting direction and time of day follow the request, bright. Real-time render polish, no HUD. For places and environments of any kind the same treatment; the setting comes only from the request. Not 2D anime, not photographic.",
+    "negative": ""
+  },
+  {
+    "name": "Diablo",
+    "prefix": "",
+    "suffix": "Dark gothic dungeon game art in the Diablo look, applied to the subject of the request only; no demons or dungeon added. Limited palette of gritty darks with torch orange. Dramatic chiaroscuro from flickering torchlight. Ornate dark-metal detailing on built parts, gritty textures. For places and environments of any kind the same treatment; the setting comes only from the request. Not bright fantasy, not cartoon.",
+    "negative": ""
+  },
+  {
+    "name": "Elden Ring",
+    "prefix": "",
+    "suffix": "Dark epic fantasy concept art in the Elden Ring look, applied to the subject of the request only; no Erdtree, Tarnished or ruins added. Limited palette of muted tones with golden ember accents. Sweeping atmospheric depth with painterly high detail; lighting direction and time of day follow the request, golden. Weathered textures, soft haze. For places and environments of any kind the same treatment; the setting comes only from the request. Not bright fantasy, not photographic.",
+    "negative": ""
+  },
+  {
+    "name": "Fallout",
+    "prefix": "",
+    "suffix": "Retro-futurist post-apocalyptic game art in the Fallout look, applied to the subject of the request only; no power armor, vault dwellers or wasteland added. Limited palette of dusty muted earth tones. 1950s Americana design on built parts with rust and decay; lighting direction and time of day follow the request, dusty. Worn textures, atomic-age shapes. For places and environments of any kind the same treatment; the setting comes only from the request. Not clean sci-fi, not cartoon.",
+    "negative": ""
+  },
+  {
+    "name": "Fallout Poster",
+    "prefix": "",
+    "suffix": "Retro-futurist 1950s atompunk propaganda poster illustration of the subject of the request only; no mascot, extra characters or lettering. Limited palette of faded vintage colors. Propaganda-poster composition with flat printed shading; lighting is absent. Rust and decay texture, atomic green glow only when the request asks. For places and environments of any kind the same treatment; the setting comes only from the request. Not a game screenshot, not clean.",
+    "negative": ""
+  },
+  {
+    "name": "Fighting Game",
+    "prefix": "",
+    "suffix": "Fighting-game character art applied to the subject of the request only; any figures strike dynamic action poses. Full color, vibrant saturated palette. Detailed character design with bold outlines and dynamic rendering; lighting direction and time of day follow the request. Crisp edges, arcade energy. For places and environments of any kind the same treatment; the setting comes only from the request. Not realistic, not pixel.",
+    "negative": ""
+  },
+  {
+    "name": "Fortnite",
+    "prefix": "",
+    "suffix": "Glossy saturated 3D-cartoon game art in the Fortnite look, applied to the subject of the request only; no Fortnite skins or island added. Full color, bright evenly saturated palette. Smooth stylized action-figure proportions with crisp cel-adjacent shading; lighting direction and time of day follow the request, bright. Clean readable silhouettes, glossy surfaces. For places and environments of any kind the same treatment; the setting comes only from the request. Not realistic, not pixel.",
+    "negative": ""
+  },
+  {
+    "name": "Game UI Frame",
+    "prefix": "",
+    "suffix": "Polished fantasy-game UI asset: the subject of the request only designed as an ornate panel, plate or banner in carved wood, stone, metal or scroll material with beveled edges and soft inner glow; no lettering. Full color, rich material palette. Clean readable silhouette; soft even light unless the request sets another. Gem or rivet accents only when the request asks, isolated on a plain ground. Not a scene, not a photograph.",
+    "negative": ""
+  },
+  {
+    "name": "Genshin Impact Style",
+    "prefix": "",
+    "suffix": "Anime game art in the Genshin Impact look, applied to the subject of the request only; no Genshin characters or environment backgrounds added. Full color, vibrant fantasy colors. Cel-shaded rendering with soft shadow transitions and thin dark outlines; lighting direction and time of day follow the request. Elemental particle accents, clean edges. For places and environments of any kind the same treatment; the setting comes only from the request. Not Western cartoon, not photographic.",
+    "negative": ""
+  },
+  {
+    "name": "Glossy Game Icon",
+    "prefix": "",
+    "suffix": "Single polished glossy 3D game icon of the subject of the request only, isolated and centered on a plain ground; no lettering. Full color, vibrant saturated colors. Smooth rounded forms with soft bevel, subtle inner glow and sharp rim light; soft studio light unless the request sets another. Clean silhouette readable at small size. For places and environments of any kind the scene is reduced into the same icon; the setting comes only from the request. Not a scene, not flat vector.",
+    "negative": ""
+  },
+  {
+    "name": "God of War",
+    "prefix": "",
+    "suffix": "Epic mythic-realism game concept art in the God of War look, applied to the subject of the request only; no Kratos, muscular hero or fjord background added. Full color, Nordic material palette of iron, leather, snow and bronze. High-detail 3D concept finish with dramatic rim light; lighting direction and time of day follow the request, dramatic. Weathered carved textures. For places and environments of any kind the same treatment; the setting comes only from the request. Not cartoon, not photographic.",
+    "negative": ""
+  },
+  {
+    "name": "Granblue Fantasy Pin-Up Style",
+    "prefix": "",
+    "suffix": "JRPG character illustration in the Granblue Fantasy look, applied to the subject of the request only; no Granblue characters. Full color, luminous saturated palette. Crisp painterly linework blended into soft airbrushed shading, glossy semi-realistic skin and hair; lighting direction and time of day follow the request. Ornate costume detail, polished finish. For places and environments of any kind the same treatment; the setting comes only from the request. Not cel anime, not photographic.",
+    "negative": ""
+  },
+  {
+    "name": "Grimdark Soulslike",
+    "prefix": "",
+    "suffix": "Grimdark soulslike concept art of the subject of the request only; no knights or ruins added. Limited palette of dark gothic tones. Moody volumetric light with gritty textures and cinematic atmosphere; lighting direction and time of day follow the request, low. Painterly dark surfaces. For places and environments of any kind the same treatment; the setting comes only from the request. Not bright fantasy, not cartoon.",
+    "negative": ""
+  },
+  {
+    "name": "GTA (Gritty Urban)",
+    "prefix": "",
+    "suffix": "Grand Theft Auto-style game art applied to the subject of the request only; no Los Santos streets or figures added. Full color, saturated gritty palette. Urban gritty realism with slightly stylized rendering; lighting direction and time of day follow the request. Street-culture attitude, crisp detail. For places and environments of any kind the same treatment; the setting comes only from the request. Not cartoon, not bright fantasy.",
+    "negative": ""
+  },
+  {
+    "name": "GTA V (Key Art)",
+    "prefix": "",
+    "suffix": "High-contrast GTA V key-art look applied to the subject of the request only; no Los Santos or game characters added. Full color, saturated sunny palette. Cinematic lighting with pseudo-realistic textures; lighting direction and time of day follow the request. Crisp airbrushed edges. For places and environments of any kind the same treatment; the setting comes only from the request. Not photographic, not cartoon.",
+    "negative": ""
+  },
+  {
+    "name": "GTA V Cover Art",
+    "prefix": "",
+    "suffix": "GTA V cover-art illustration of the subject of the request only; no game characters, no lettering. Full color, saturated high-contrast palette. Crisp airbrushed rendering with confident graphic outline isolating the subject into a poster-ready silhouette; lighting direction and time of day follow the request. Dynamic collage-like panel feel. For places and environments of any kind the same treatment; the setting comes only from the request. Not photographic, not painterly.",
+    "negative": ""
+  },
+  {
+    "name": "Hades Style",
+    "prefix": "",
+    "suffix": "Painterly character art in the Hades look of Jen Zee, applied to the subject of the request only; no Hades characters. Limited palette of crimson, black and gold with hot neon rim light. Bold confident brushwork with sharp angular anatomy and chiseled faces with heavy brows on any figures; rim light from a hot colored source. Ornate gold trim, crisp edges. For places and environments of any kind the same treatment; the setting comes only from the request. Not soft anime, not photographic.",
+    "negative": ""
+  },
+  {
+    "name": "Hay Day Style",
+    "prefix": "",
+    "suffix": "Hay Day-style farm game art applied to the subject of the request only; no farm animals or fields added. Full color, warm earth tones. Chunky friendly 3D cartoon models with hand-painted textures; soft warm light unless the request sets another. Cozy rounded surfaces. For places and environments of any kind the same treatment; the setting comes only from the request. Not realistic, not pixel.",
+    "negative": ""
+  },
+  {
+    "name": "High-Fantasy MOBA Splash",
+    "prefix": "",
+    "suffix": "Epic MOBA splash art of the subject of the request only; no lettering, no extra figures. Full color, saturated fantasy palette with glowing magic. Painterly digital rendering with exaggerated perspective and glowing effects; lighting direction and time of day follow the request, dramatic. Crisp focal detail, dynamic motion. For places and environments of any kind the same treatment; the setting comes only from the request. Not cel-shaded, not photographic.",
+    "negative": ""
+  },
+  {
+    "name": "Hollow Knight",
+    "prefix": "",
+    "suffix": "Stylized 2D inked game art in the Hollow Knight look, applied to the subject of the request only; no bug knights or caverns added. Limited palette of dark muted tones with strong glow accents. Ink outlines with flat fills and ethereal glow; lighting is absent, glow from accents. Soft atmospheric depth. For places and environments of any kind the same treatment; the setting comes only from the request. Not painterly, not 3D.",
+    "negative": ""
+  },
+  {
+    "name": "Indie Game",
+    "prefix": "",
+    "suffix": "Indie-game art of the subject of the request only. Full color, vivid palette. Vector-like hand-drawn line art with high contrast and clear silhouettes; lighting is absent. Low-detail readable design, scalable clean edges. For places and environments of any kind the same treatment; the setting comes only from the request. Not realistic, not pixel.",
+    "negative": ""
+  },
+  {
+    "name": "Isometric",
+    "prefix": "",
+    "suffix": "True isometric game-art render of the subject of the request only, camera at 45-degree rotation and 30-degree tilt, 2:1 dimetric projection with no perspective distortion. Full color, clean palette. Tile-based grid construction; lighting direction and time of day follow the request, fixed. Crisp orthographic edges. For places and environments of any kind the same tiled isometric projection; the setting comes only from the request. Not perspective, not pixel art.",
+    "negative": ""
+  },
+  {
+    "name": "Isometric ARPG Dungeon",
+    "prefix": "",
+    "suffix": "Isometric ARPG game art applied to the subject of the request only; no dungeon added unless the request names it. Full color, warm firelit palette. Hand-painted textures in isometric perspective, dramatic firelight. Detailed painted surfaces. For places and environments of any kind the same treatment; the setting comes only from the request. Not pixel art, not perspective.",
+    "negative": ""
+  },
+  {
+    "name": "Isometric Pixel City Sim",
+    "prefix": "",
+    "suffix": "Isometric pixel art in the city-sim look, applied to the subject of the request only; no city added unless the request names it. Full color, detailed pixel palette. Crisp isometric pixel construction with bustling micro-detail where the request allows; lighting direction and time of day follow the request. Clean pixel edges. For places and environments of any kind the same treatment; the setting comes only from the request. Not smooth 3D, not perspective.",
+    "negative": ""
+  },
+  {
+    "name": "Journey",
+    "prefix": "",
+    "suffix": "Minimalist warm cel-shaded game art in the Journey look, applied to the subject of the request only; no robed traveler or desert added. Full color, warm sand and gold gradients. Tranquil cinematic simplicity with soft gradient shading; lighting direction and time of day follow the request, warm. Flowing fabric-like shape language and sand texture only when the request asks. For places and environments of any kind the same treatment; the setting comes only from the request. Not detailed, not photographic.",
+    "negative": ""
+  },
+  {
+    "name": "JRPG Splash Art",
+    "prefix": "",
+    "suffix": "JRPG splash-art illustration applied to the subject of the request only; any figures keep their own faces. Full color, dramatic fantasy palette. Detailed portrait-grade rendering with fantasy ornament and dramatic light; lighting direction and time of day follow the request. Crisp painterly finish. For places and environments of any kind the same treatment; the setting comes only from the request. Not minimalist, not photographic.",
+    "negative": ""
+  },
+  {
+    "name": "League of Legends",
+    "prefix": "",
+    "suffix": "Epic MOBA splash art in the League of Legends look, applied to the subject of the request only; no champions added. Full color, saturated palette with glowing magic. Painterly rendering with exaggerated perspective and dramatic light; lighting direction and time of day follow the request, dramatic. Glowing effects, crisp focal detail. For places and environments of any kind the same treatment; the setting comes only from the request. Not cel-shaded, not photographic.",
+    "negative": ""
+  },
+  {
+    "name": "Legend of Zelda",
+    "prefix": "",
+    "suffix": "Legend of Zelda-style fantasy game art applied to the subject of the request only; no Link, Zelda or Hyrule added. Full color, vibrant heroic palette. Detailed epic fantasy rendering; lighting direction and time of day follow the request. Crisp adventurous finish. For places and environments of any kind the same treatment; the setting comes only from the request. Not dark fantasy, not photographic.",
+    "negative": ""
+  },
+  {
+    "name": "Little Nightmares",
+    "prefix": "",
+    "suffix": "Eerie whimsical diorama game art in the Little Nightmares look, applied to the subject of the request only; no Six or the Maw added. Limited palette of muted tones. Oversized props and moody low-key lighting with deep atmospheric depth; lighting direction and time of day follow the request, low. Soft doll-like textures. For places and environments of any kind the same treatment; the setting comes only from the request. Not bright, not photographic.",
+    "negative": ""
+  },
+  {
+    "name": "Low-Poly PS1 Horror",
+    "prefix": "",
+    "suffix": "Low-poly PlayStation 1 horror graphics of the subject of the request only; no HUD, lettering or game characters. Limited palette of dim muddy colors. Chunky warped textures with dithering and retro vertex lighting; lighting direction and time of day follow the request, dim. Jagged polygons, fog. For places and environments of any kind the same treatment; the setting comes only from the request. Not modern 3D, not pixel art.",
+    "negative": ""
+  },
+  {
+    "name": "Low-Saturation Survival Horror",
+    "prefix": "",
+    "suffix": "Survival-horror game look applied to the subject of the request only; no monsters added. Limited palette of desaturated tones. Flickering flashlight beam in darkness with claustrophobic framing. Film grain, damp textures. For places and environments of any kind the same treatment; the setting comes only from the request. Not bright, not cartoon.",
+    "negative": ""
+  },
+  {
+    "name": "Martial Arts Beat-'em-Up Arcade",
+    "prefix": "",
+    "suffix": "90s arcade beat-'em-up pixel art of the subject of the request only; no fighters or back-alleys added, no HUD, lettering or game characters. Full color, saturated arcade palette. Chunky dynamic sprite pixels with bold impact flashes; lighting is absent. Crisp pixel edges. For places and environments of any kind the same treatment; the setting comes only from the request. Not 16-bit RPG, not smooth.",
+    "negative": ""
+  },
+  {
+    "name": "Marvel Rivals Character Design",
+    "prefix": "",
+    "suffix": "Polished game character illustration in the Marvel Rivals look, applied to the subject of the request only; no Marvel characters. Full color, saturated heroic palette. Sharp digital linework merged with dense painterly cel-to-gradient shading, hand-made brush imperfections for energy; lighting direction and time of day follow the request. Crisp dynamic edges. For places and environments of any kind the same treatment; the setting comes only from the request. Not comic halftone, not photographic.",
+    "negative": ""
+  },
+  {
+    "name": "Mass Effect",
+    "prefix": "",
+    "suffix": "Cinematic sci-fi space-opera game design in the Mass Effect look, applied to the subject of the request only; no Normandy, nebula backdrop or crew added. Full color, deep blue palette with luminous holographic accents. Sleek armor-like surfaces on built parts; lighting direction and time of day follow the request, cool. Holographic glow only when the request asks. For places and environments of any kind the same treatment; the setting comes only from the request. Not fantasy, not retro sci-fi.",
+    "negative": ""
+  },
+  {
+    "name": "Metroidvania Concept",
+    "prefix": "",
+    "suffix": "2.5D hand-painted metroidvania game art applied to the subject of the request only. Full color, moody palette. Layered parallax depth with mysterious lighting; lighting direction and time of day follow the request, mysterious. Painted textures, soft atmospheric layers. For places and environments of any kind the same treatment; the setting comes only from the request. Not pixel art, not photographic.",
+    "negative": ""
+  },
+  {
+    "name": "Minecraft",
+    "prefix": "",
+    "suffix": "Minecraft-style voxel render of the subject of the request only built from hard-edged cubes; no Steve or Creepers added. Full color, low-resolution pixel textures. Rigid right-angle cubic geometry with flat pixelated surfaces; lighting direction and time of day follow the request, blocky. 16-pixel texture blocks. For places and environments of any kind the same treatment; the setting comes only from the request. Not smooth, not fine voxels.",
+    "negative": ""
+  },
+  {
+    "name": "Mobile Game 2D Style",
+    "prefix": "",
+    "suffix": "Professional mobile-game 2D vector art of the subject of the request only; any figures have oversized heads. Full color, bright primary colors. Clean vector rendering with material-specific shine for gold, wood and gems; lighting is absent. Clear readable small-screen design. For places and environments of any kind the same treatment; the setting comes only from the request. Not realistic, not pixel.",
+    "negative": ""
+  },
+  {
+    "name": "Modern Super Mario (Nintendo) Style",
+    "prefix": "",
+    "suffix": "Polished Nintendo 3D-cartoon render in the modern Super Mario look, applied to the subject of the request only; no Mario, Luigi or Mushroom Kingdom added. Full color, bright evenly saturated palette. Smooth rounded appealing proportions with glossy controlled specular; lighting direction and time of day follow the request, bright clean. Toy-like surfaces. For places and environments of any kind the same treatment; the setting comes only from the request. Not realistic, not pixel.",
+    "negative": ""
+  },
+  {
+    "name": "MTG (Magic: The Gathering) Style",
+    "prefix": "",
+    "suffix": "Painterly fantasy card illustration in the Magic: The Gathering look, applied to the subject of the request only; no card frame, no lettering. Full color, dramatic atmospheric palette. Traditional-media brushwork with meticulous narrative clarity; lighting direction and time of day follow the request, dramatic. Richly textured painted surfaces. For places and environments of any kind the same treatment; the setting comes only from the request. Not cartoon, not photographic.",
+    "negative": ""
+  },
+  {
+    "name": "Nintendo 64 Style",
+    "prefix": "",
+    "suffix": "In-game Nintendo 64 screenshot look applied to the subject of the request only; no HUD, lettering or game characters; any figures are chunky low-polygon models of a few hundred triangles with blocky limbs. Full color, flat vertex-lit colors. Blurry low-resolution textures with trilinear smear; lighting direction and time of day follow the request, flat. Jagged edges, fog. For places and environments of any kind the same treatment; the setting comes only from the request. Not PS1 jitter, not modern 3D.",
+    "negative": ""
+  },
+  {
+    "name": "Octopath Traveler HD-2D Style",
+    "prefix": "",
+    "suffix": "HD-2D screenshot look in the Octopath Traveler manner, applied to the subject of the request only; no HUD, lettering or game characters; any figures are small chunky pixel-art sprites with limited palettes. Full color, rich diorama palette. Sprites standing inside a realistically lit 3D diorama with depth of field and bloom; lighting direction and time of day follow the request. Tilt-shift softness. For places and environments of any kind the same treatment; the setting comes only from the request. Not pure pixel art, not smooth 3D.",
+    "negative": ""
+  },
+  {
+    "name": "Overwatch (Concept Art)",
+    "prefix": "",
+    "suffix": "Polished vibrant game concept illustration in the Overwatch look, applied to the subject of the request only; no Overwatch heroes. Full color, bright saturated palette. Clean confident linework with smooth painterly rendering; lighting direction and time of day follow the request, bright heroic. Readable silhouettes, crisp edges. For places and environments of any kind the same treatment; the setting comes only from the request. Not gritty, not photographic.",
+    "negative": ""
+  },
+  {
+    "name": "Overwatch (Game Render)",
+    "prefix": "",
+    "suffix": "Stylized polished 3D hero-shooter render in the Overwatch look, applied to the subject of the request only; no Overwatch heroes; any figures keep their requested pose. Full color, vibrant palette. Glossy materials with sharp rim light; lighting direction and time of day follow the request. Dynamic energy, clean CGI edges. For places and environments of any kind the same treatment; the setting comes only from the request. Not realistic, not cel-shaded.",
+    "negative": ""
+  },
+  {
+    "name": "Persona 5",
+    "prefix": "",
+    "suffix": "Bold anime-noir game art in the Persona 5 look, applied to the subject of the request only; no Phantom Thieves, no lettering. Limited palette of stark black, white and red. Halftone textures with dynamic comic perspective and stylish angular UI-like shapes; lighting is absent. Hard graphic edges. For places and environments of any kind the same treatment; the setting comes only from the request. Not soft anime, not photographic.",
+    "negative": ""
+  },
+  {
+    "name": "Pixel Art",
+    "prefix": "",
+    "suffix": "16-bit-era pixel art of the subject of the request only; no HUD, lettering or game characters. Limited palette of indexed colors. Visible pixel blocks with dithering for shading, no anti-aliasing; lighting is absent. Sprite-based crisp edges. For places and environments of any kind the same treatment; the setting comes only from the request. Not smooth, not 3D.",
+    "negative": ""
+  },
+  {
+    "name": "Pixel Art (16-bit)",
+    "prefix": "",
+    "suffix": "Retro 32x32 pixel-art sprite of the subject of the request only upscaled cleanly; no HUD, lettering or game characters. Full color, vibrant 16-bit palette. Sharp square pixels with simple shading; lighting is absent. 1990s game feel. For places and environments of any kind the same treatment; the setting comes only from the request. Not high-res pixel art, not smooth.",
+    "negative": ""
+  },
+  {
+    "name": "Pixel Art (8-bit)",
+    "prefix": "",
+    "suffix": "8-bit pixel art of the subject of the request only; no HUD, lettering or game characters. Limited palette of a few hard colors. Hard discrete square pixels standing in for all line and shading, gradients forced into stepped bands; lighting is absent. Geometric simplification. For places and environments of any kind the same treatment; the setting comes only from the request. Not 16-bit, not smooth.",
+    "negative": ""
+  },
+  {
+    "name": "Pokémon",
+    "prefix": "",
+    "suffix": "Pokémon-style game art applied to the subject of the request only; no Pikachu or Pokémon added. Full color, bright clean palette. Anime-inspired simplified shapes with fantasy-creature styling and clean outlines; lighting direction and time of day follow the request. Soft cel shading, crisp edges. For places and environments of any kind the same treatment; the setting comes only from the request. Not realistic, not Western cartoon.",
+    "negative": ""
+  },
+  {
+    "name": "Portal",
+    "prefix": "",
+    "suffix": "Clean minimal sci-fi test-chamber game look applied to the subject of the request only; no portals, turrets or signage unless the request asks. Limited palette of white panels, gray and one orange or blue accent. Stark even light with glossy surfaces; lighting direction and time of day follow the request, stark. Simple geometric accents. For places and environments of any kind the same treatment; the setting comes only from the request. Not grungy, not fantasy.",
+    "negative": ""
+  },
+  {
+    "name": "PS1 Graphics",
+    "prefix": "",
+    "suffix": "Low-polygon 1996 PlayStation render of the subject of the request only; no HUD, lettering or game characters. Limited palette of dim low-color textures. Sharp unblended triangular facets with segmented joints, texture maps stretched and warped, vertex jitter; lighting direction and time of day follow the request, flat. No anti-aliasing. For places and environments of any kind the same treatment; the setting comes only from the request. Not N64 smear, not modern 3D.",
+    "negative": ""
+  },
+  {
+    "name": "PS1 Graphics (Alt)",
+    "prefix": "",
+    "suffix": "PS1-era low-poly render of the subject of the request only; no HUD, lettering or game characters. Full color, low-resolution textures. Vertex-snapped geometry jittering with early-3D imprecision, stretched distorted textures over simple polygons; lighting direction and time of day follow the request, harsh unfiltered. Affine warping, jagged edges. For places and environments of any kind the same treatment; the setting comes only from the request. Not pre-rendered, not modern.",
+    "negative": ""
+  },
+  {
+    "name": "Psychedelic Bullet Hell",
+    "prefix": "",
+    "suffix": "Psychedelic bullet-hell shooter art of the subject of the request only; no HUD, lettering or game characters. Full color, glowing rainbow palette. Vibrant fractal patterns with glowing particles and swirling motion blur; light from the glowing effects. Trippy saturated chaos. For places and environments of any kind the same treatment; the setting comes only from the request. Not muted, not pixel.",
+    "negative": ""
+  },
+  {
+    "name": "Red Dead Redemption 2",
+    "prefix": "",
+    "suffix": "Cinematic Wild West realism in the Red Dead Redemption 2 look, applied to the subject of the request only; no cowboys or frontier town added. Full color, dusty warm palette. Detailed frontier textures with golden-hour light and atmospheric haze. Photoreal game-render finish. For places and environments of any kind the same treatment; the setting comes only from the request. Not cartoon, not a photograph.",
+    "negative": ""
+  },
+  {
+    "name": "Retro Arcade",
+    "prefix": "",
+    "suffix": "Retro 80s-90s arcade pixel art of the subject of the request only; no HUD, lettering or game characters. Full color, vibrant arcade palette. Chunky 8-bit pixels; lighting is absent. Classic old-school crispness. For places and environments of any kind the same treatment; the setting comes only from the request. Not smooth, not 3D.",
+    "negative": ""
+  },
+  {
+    "name": "Retro FMV Adventure",
+    "prefix": "",
+    "suffix": "90s VHS full-motion-video adventure-game look applied to the subject of the request only; no live-action actors added. Full color, bled analog colors. Scanlines with low-res composited texture; lighting direction and time of day follow the request. Nostalgic UI-free frame. For places and environments of any kind the same treatment; the setting comes only from the request. Not clean video, not pixel art.",
+    "negative": ""
+  },
+  {
+    "name": "Retro Game",
+    "prefix": "",
+    "suffix": "16-bit retro game art of the subject of the request only; no HUD, lettering or game characters. Full color, vibrant palette. Pixelated charming sprites; lighting is absent. Nostalgic crisp pixels. For places and environments of any kind the same treatment; the setting comes only from the request. Not 8-bit, not smooth.",
+    "negative": ""
+  },
+  {
+    "name": "Retro LCD Handheld",
+    "prefix": "",
+    "suffix": "Retro monochrome LCD handheld screen showing the subject of the request only; no HUD, lettering or game characters. Monochrome, dark olive pixels on pale green. Thick bezel frame around the screen, ghosting trails on pixels, no shading; light is the LCD's flat kind. Chunky pixel grid. For places and environments of any kind the same treatment; the setting comes only from the request. Not color pixel art, not CRT.",
+    "negative": ""
+  },
+  {
+    "name": "Retro Pixel Platformer",
+    "prefix": "",
+    "suffix": "2D 8-bit NES platformer pixel art of the subject of the request only; no HUD, lettering or game characters. Limited palette of the NES set. Crisp limited colors with simple shading; lighting is absent. Arcade screenshot crispness. For places and environments of any kind the same treatment; the setting comes only from the request. Not 16-bit, not smooth.",
+    "negative": ""
+  },
+  {
+    "name": "RPG Fantasy Game",
+    "prefix": "",
+    "suffix": "High-fantasy RPG game art of the subject of the request only. Full color, vibrant immersive palette. Detailed fantasy rendering; lighting direction and time of day follow the request. Crisp painted finish. For places and environments of any kind the same treatment; the setting comes only from the request. Not sci-fi, not photographic.",
+    "negative": ""
+  },
+  {
+    "name": "Skyrim",
+    "prefix": "",
+    "suffix": "Nordic high-fantasy painterly concept art in the Skyrim look, applied to the subject of the request only; no dragons, mountains or ruins added. Limited palette of cold muted tones with rugged stone and metal. Rugged material feel with painterly finish; lighting direction and time of day follow the request, cold. Swirling fog only when the request asks. For places and environments of any kind the same treatment; the setting comes only from the request. Not bright fantasy, not photographic.",
+    "negative": ""
+  },
+  {
+    "name": "Splatoon",
+    "prefix": "",
+    "suffix": "Bright ink-splatter punk game art in the Splatoon look, applied to the subject of the request only; no Inklings added. Full color, candy colors. Cel shading with graffiti patterns and energetic composition; lighting direction and time of day follow the request. Glossy ink splatters, crisp outlines. For places and environments of any kind the same treatment; the setting comes only from the request. Not muted, not realistic.",
+    "negative": ""
+  },
+  {
+    "name": "Stardew Valley",
+    "prefix": "",
+    "suffix": "Cozy 16-bit pixel art in the Stardew Valley look, applied to the subject of the request only; no farm added unless the request names it, no HUD, lettering or game characters. Full color, pastel pixel palette. Simple shading with wholesome charm; lighting is absent. Crisp pixels. For places and environments of any kind the same treatment; the setting comes only from the request. Not smooth, not 8-bit.",
+    "negative": ""
+  },
+  {
+    "name": "Steampunk Hidden Object",
+    "prefix": "",
+    "suffix": "Painterly steampunk hidden-object game art applied to the subject of the request only; no cluttered workshop added unless the request names it. Limited palette of sepia with brass. Intricate gears and brass details on built parts; lighting direction and time of day follow the request, warm. Painterly textured surfaces. For places and environments of any kind the same treatment; the setting comes only from the request. Not clean, not photographic.",
+    "negative": ""
+  },
+  {
+    "name": "Strategy Game",
+    "prefix": "",
+    "suffix": "Real-time-strategy game view of the subject of the request only from an overhead angle; no HUD, lettering or game characters. Full color, readable map palette. Detailed top-down map-like rendering with small units only where the request has them; lighting direction and time of day follow the request, overhead. Crisp tactical clarity. For places and environments of any kind the same overhead strategy view; the setting comes only from the request. Not first-person, not isometric pixel.",
+    "negative": ""
+  },
+  {
+    "name": "Street Fighter",
+    "prefix": "",
+    "suffix": "Street Fighter-style 2D fighting-game art applied to the subject of the request only; no Ryu, Chun-Li or stage added. Full color, vibrant arcade palette. Dynamic detailed character rendering with bold outlines; lighting direction and time of day follow the request. Crisp arcade energy. For places and environments of any kind the same treatment; the setting comes only from the request. Not realistic, not pixel.",
+    "negative": ""
+  },
+  {
+    "name": "Street Fighter IV Style",
+    "prefix": "",
+    "suffix": "Official Street Fighter IV-style character render applied to the subject of the request only on a pale background; no Capcom characters; any figures are real-time models with exaggerated chunky heroic proportions and boldly sculpted forms. Full color, saturated palette. Thick hand-painted sumi-e brush outlines with ink-splash accents; lighting direction and time of day follow the request. Glossy stylized surfaces. For places and environments of any kind the same treatment; the setting comes only from the request. Not 2D sprite, not photographic.",
+    "negative": ""
+  },
+  {
+    "name": "Super Mario",
+    "prefix": "",
+    "suffix": "Super Mario-style game art applied to the subject of the request only; no Mario, Luigi or Mushroom Kingdom added. Full color, vibrant playful palette. Cute cartoony fantasy shapes; lighting direction and time of day follow the request, bright. Clean glossy finish. For places and environments of any kind the same treatment; the setting comes only from the request. Not realistic, not dark.",
+    "negative": ""
+  },
+  {
+    "name": "Super Mario (Restyle)",
+    "prefix": "",
+    "suffix": "Nintendo family-friendly cartoon game art applied to the subject of the request only; any figures keep their own features; no Mario characters added. Full color, bright colors. Simple shapes with playful cartoon design; lighting direction and time of day follow the request, bright. Clean edges. For places and environments of any kind the same treatment; the setting comes only from the request. Not realistic, not dark.",
+    "negative": ""
+  },
+  {
+    "name": "Telltale",
+    "prefix": "",
+    "suffix": "Telltale-style cel-shaded game art applied to the subject of the request only; no Telltale characters. Full color, vivid simple colors. Oil-painting-like flat fills with defined edges and sharp shadows, low detail; lighting direction and time of day follow the request, dark-leaning. Cartoon look with painted texture. For places and environments of any kind the same treatment; the setting comes only from the request. Not smooth 3D, not photographic.",
+    "negative": ""
+  },
+  {
+    "name": "The Sims Game Screenshot",
+    "prefix": "",
+    "suffix": "Polished gently stylized life-sim render in The Sims look, applied to the subject of the request only; no Sims or houses added, no HUD, lettering or game characters. Full color, bright even palette. Smooth rounded proportions balancing cartoon charm with believability, bright even light; lighting direction and time of day follow the request, even. Glossy specular surfaces. For places and environments of any kind the same treatment; the setting comes only from the request. Not realistic, not cel-shaded.",
+    "negative": ""
+  },
+  {
+    "name": "The Witcher 3",
+    "prefix": "",
+    "suffix": "Dark medieval-fantasy game art in The Witcher 3 look, applied to the subject of the request only; no Geralt or monsters added. Limited palette of dark muted tones. Realistic textures with dark atmosphere; lighting direction and time of day follow the request, overcast. Weathered painterly-real finish. For places and environments of any kind the same treatment; the setting comes only from the request. Not bright fantasy, not cartoon.",
+    "negative": ""
+  },
+  {
+    "name": "Ukiyo-e Side-Scroller",
+    "prefix": "",
+    "suffix": "Ukiyo-e-styled side-scroller game art applied to the subject of the request only. Limited palette of muted Edo tones. Edo-period woodblock texture with flat perspective waves and clouds as pattern, flowing outlines; lighting is absent. Washi texture, flat fills. For places and environments of any kind the same treatment; the setting comes only from the request. Not anime, not photographic.",
+    "negative": ""
+  },
+  {
+    "name": "Valorant",
+    "prefix": "",
+    "suffix": "Stylized tactical-shooter key art in the Valorant look, applied to the subject of the request only; no agents added. Full color, neon accent colors on muted base. Sleek cel shading with dynamic composition against abstract graphic backgrounds; lighting direction and time of day follow the request. Crisp edges. For places and environments of any kind the same treatment; the setting comes only from the request. Not realistic, not pixel.",
+    "negative": ""
+  },
+  {
+    "name": "Watercolor Puzzle Adventure",
+    "prefix": "",
+    "suffix": "Watercolor puzzle-adventure game art of the subject of the request only. Full color, airy dreamlike palette. Loose watercolor washes with soft bleeding edges and hand-inked outlines; lighting direction and time of day follow the request, soft. Paper texture. For places and environments of any kind the same treatment; the setting comes only from the request. Not digital-clean, not pixel.",
+    "negative": ""
+  },
+  {
+    "name": "World of Warcraft",
+    "prefix": "",
+    "suffix": "Hand-painted fantasy game art in the World of Warcraft look, applied to the subject of the request only; no orcs or Azeroth added. Full color, rich saturated palette. Bold outlines with exaggerated proportions and hand-painted textures; lighting direction and time of day follow the request. Atmospheric mist, chunky forms. For places and environments of any kind the same treatment; the setting comes only from the request. Not realistic, not anime.",
+    "negative": ""
+  },
+  {
+    "name": "Zelda Wind Waker Style",
+    "prefix": "",
+    "suffix": "Toon-shaded game art in the Wind Waker look, applied to the subject of the request only; no Link or Great Sea added. Full color, warm saturated palette. Crisp hard-edged cel shading with thick outline and clean geometric silhouettes; lighting direction and time of day follow the request. Soft matte-painted sky and terrain textures. For places and environments of any kind the same treatment; the setting comes only from the request. Not realistic, not pixel.",
+    "negative": ""
+  },
+  {
+    "name": "Zelda: Breath of the Wild",
+    "prefix": "",
+    "suffix": "Soft cel-shaded adventure-game art in the Breath of the Wild look, applied to the subject of the request only; no Link, landscape or shrines added. Full color, warm fantasy palette. Painterly gouache textures with gentle atmospheric perspective; lighting direction and time of day follow the request. Soft cel steps, crisp outlines. For places and environments of any kind the same treatment; the setting comes only from the request. Not realistic, not pixel.",
+    "negative": ""
+  },
+  {
+    "name": "Zelda: Breath of the Wild (Alt)",
+    "prefix": "",
+    "suffix": "In-game Nintendo Switch screenshot look in the Breath of the Wild manner, applied to the subject of the request only; no HUD, lettering or game characters; any figures are real-time models with smooth simplified geometry and understated faces with small simple eyes. Full color, soft warm palette. Soft twilight-leaning cel light; lighting direction and time of day follow the request. Gentle bloom, no HUD. For places and environments of any kind the same treatment; the setting comes only from the request. Not photographic, not pixel.",
+    "negative": ""
+  },
+  {
+    "name": "Arcade CRT Pixel Art",
+    "prefix": "",
+    "suffix": "Arcade CRT pixel art of the subject of the request only in the Neo Geo manner; no HUD, lettering or game characters. Full color, saturated arcade palette. Clearly visible large square pixels glowing through scanlines with RGB phosphor bleed and curved screen distortion; light is the CRT glow. For places and environments of any kind the same treatment; the setting comes only from the request. Not clean pixel art, not LCD.",
+    "negative": ""
+  },
+  {
+    "name": "Cel-Shaded Game Screenshot",
+    "prefix": "",
+    "suffix": "Cel-shaded real-time game render of the subject of the request only; no HUD, lettering or game characters. Full color, saturated palette. Hard-stepped two-tone toon shading with bold black outlines of consistent weight; lighting direction and time of day follow the request. Flat bright textures, crisp shadow terminators. For places and environments of any kind the same treatment; the setting comes only from the request. Not smooth 3D, not 2D anime.",
+    "negative": ""
+  },
+  {
+    "name": "Disco Elysium Painterly Game Art",
+    "prefix": "",
+    "suffix": "Painterly game art in the Disco Elysium look of Aleksander Rostov, applied to the subject of the request only; no game characters. Limited palette of muted earthy tones. Loose expressive oil-paint strokes with sketchy rendering; lighting direction and time of day follow the request. Visible rough brush textures. For places and environments of any kind the same treatment; the setting comes only from the request. Not clean, not photographic.",
+    "negative": ""
+  },
+  {
+    "name": "Doom Sprite Game Screenshot",
+    "prefix": "",
+    "suffix": "1993 boomer-shooter screenshot look applied to the subject of the request only; no HUD, lettering or game characters. Limited palette of gritty dithered colors. Pre-rendered pixelated 2D sprites in pseudo-3D with chunky pixel textures; lighting direction and time of day follow the request, sector-lit. Dithering, no filtering. For places and environments of any kind the same treatment; the setting comes only from the request. Not PS1 polygons, not modern.",
+    "negative": ""
+  },
+  {
+    "name": "Dreamcast Era Game Screenshot",
+    "prefix": "",
+    "suffix": "1999 Dreamcast-era screenshot look applied to the subject of the request only; no HUD, lettering or game characters. Full color, bright saturated early-3D palette. Clean smooth shading with crisp vertex-lit colors and glossy arcade sheen; lighting direction and time of day follow the request, bright. Optimistic vivid look. For places and environments of any kind the same treatment; the setting comes only from the request. Not PS1 jitter, not modern.",
+    "negative": ""
+  },
+  {
+    "name": "Fine Detailed Pixel Art",
+    "prefix": "",
+    "suffix": "Modern high-detail pixel art of the subject of the request only in the Waneella manner; no HUD, lettering or game characters. Full color, large palette with hue-shifted ramps. Clearly visible small square pixels in intricate hand-placed clusters with subtle dithering; lighting direction and time of day follow the request. Crisp aliased edges. For places and environments of any kind the same treatment; the setting comes only from the request. Not retro low-res, not smooth.",
+    "negative": ""
+  },
+  {
+    "name": "Hand-Painted Game Art",
+    "prefix": "",
+    "suffix": "Hand-painted stylized game art of the subject of the request only in the Warcraft and Ori manner. Full color, saturated cheerful palette. Textures painted directly with brush strokes on chunky exaggerated forms; lighting direction and time of day follow the request. Soft painted gradients. For places and environments of any kind the same treatment; the setting comes only from the request. Not realistic, not cel-shaded.",
+    "negative": ""
+  },
+  {
+    "name": "Isometric Pixel Art",
+    "prefix": "",
+    "suffix": "Isometric pixel art of the subject of the request only in the eBoy manner; no HUD, lettering or game characters. Full color, clean pixel palette. Clearly visible square pixels at a fixed isometric angle with clean pixel outlines and careful dithering; lighting is absent. Modular crisp shapes. For places and environments of any kind the same treatment; the setting comes only from the request. Not perspective, not smooth 3D.",
+    "negative": ""
+  },
+  {
+    "name": "Nintendo DS Era Game Screenshot",
+    "prefix": "",
+    "suffix": "Nintendo DS-era screenshot look applied to the subject of the request only; no HUD, lettering or game characters. Limited palette of a small bright set. Tiny low-resolution 3D with chunky pixelated textures and soft dithered shading; lighting direction and time of day follow the request, flat. Handheld screen look. For places and environments of any kind the same treatment; the setting comes only from the request. Not N64, not modern.",
+    "negative": ""
+  },
+  {
+    "name": "Point-and-Click Adventure Game Screenshot",
+    "prefix": "",
+    "suffix": "90s LucasArts-style point-and-click adventure screenshot look applied to the subject of the request only; no HUD, lettering or game characters. Full color, warm detailed pixel palette. Hand-painted pixel scenes with rich dithered gradients and cartoony expressive forms; lighting direction and time of day follow the request. Clearly visible large pixels. For places and environments of any kind the same treatment; the setting comes only from the request. Not smooth, not 3D.",
+    "negative": ""
+  },
+  {
+    "name": "Pre-Rendered PS1 Game Screenshot",
+    "prefix": "",
+    "suffix": "Late-90s pre-rendered-background screenshot look applied to the subject of the request only; no HUD, lettering or game characters. Full color, slightly blurry upscaled palette. Crisp pre-rendered CGI surroundings with low-poly real-time forms, fixed camera angle; lighting direction and time of day follow the request, baked. Late-90s render softness. For places and environments of any kind the same treatment; the setting comes only from the request. Not real-time PS1, not modern.",
+    "negative": ""
+  },
+  {
+    "name": "PS2 Era Game Screenshot",
+    "prefix": "",
+    "suffix": "Early-2000s PS2-era screenshot look applied to the subject of the request only; no HUD, lettering or game characters. Full color, glossy early-console palette. Moderate polygon counts with blurry low-res textures, bloom glow and slightly jagged edges; lighting direction and time of day follow the request. Glossy specular sheen. For places and environments of any kind the same treatment; the setting comes only from the request. Not PS1, not modern.",
+    "negative": ""
+  },
+  {
+    "name": "Sable Moebius Game Screenshot",
+    "prefix": "",
+    "suffix": "Flat-colored 3D game render in the Sable and Moebius manner, applied to the subject of the request only; no HUD, lettering or game characters. Full color, pastel desert palette. Fine ink outlines over flat colors with minimal clean shading; lighting is absent. Comic-like linework. For places and environments of any kind the same treatment; the setting comes only from the request. Not cel-shaded anime, not realistic.",
+    "negative": ""
+  },
+  {
+    "name": "Vector Arcade Game Screenshot",
+    "prefix": "",
+    "suffix": "Vector arcade screen rendering the subject of the request only as thin glowing lines on pure black; no HUD, lettering or game characters. Monochrome, neon green or white beams. Minimal wireframe shapes with soft phosphor bloom and faint persistence trails; light is the beam glow. CRT glass sheen, crisp line art. For places and environments of any kind the same treatment; the setting comes only from the request. Not raster pixels, not 3D wireframe.",
+    "negative": ""
+  },
+  {
+    "name": "Video Game Illustration",
+    "prefix": "",
+    "suffix": "Video-game key-art illustration of the subject of the request only in the Blizzard manner; no lettering. Full color, vibrant game palette. Stylized readable shapes with clean rendering and painterly textures; lighting direction and time of day follow the request. Crisp edge highlights, clear focal hierarchy. For places and environments of any kind the same treatment; the setting comes only from the request. Not photographic, not pixel.",
+    "negative": ""
+  },
+  {
+    "name": "Prestige Game Splash Art",
+    "prefix": "",
+    "suffix": "High-production game splash illustration of the subject of the request only; no lettering, no extra figures. Full color, rich polished palette. Dynamic shape flow with painterly character rendering and crisp focal detail; lighting direction and time of day follow the request, dramatic. Rich materials, controlled effects. For places and environments of any kind the same treatment; the setting comes only from the request. Not cel-shaded, not photographic.",
+    "negative": ""
+  },
+  {
+    "name": "Ultradetailed King of Fighters Splash Art",
+    "prefix": "",
+    "suffix": "Premium fighting-game splash illustration in the King of Fighters look, applied to the subject of the request only; no SNK characters; any figures have sharply defined athletic anatomy, expressive faces and action-ready poses. Full color, stylish saturated palette. Dynamic foreshortening with crisp tapered contours and densely layered painterly rendering; lighting direction and time of day follow the request. Smooth airbrushed skin. For places and environments of any kind the same treatment; the setting comes only from the request. Not pixel, not photographic.",
+    "negative": ""
+  },
+  {
+    "name": "Video Game Character Concept Painting",
+    "prefix": "",
+    "suffix": "Full-body game character concept painting applied to the subject of the request only in the Blizzard and Riot manner; no lettering. Full color, cohesive palette. Clear readable silhouette with painterly rendering; neutral concept light unless the request sets another. Plain ground, crisp focal detail. For places and environments of any kind the same treatment; the setting comes only from the request. Not a scene, not photographic.",
+    "negative": ""
+  },
+  {
+    "name": "Akihiko Yoshida Character Art",
+    "prefix": "",
+    "suffix": "Character art in the manner of Akihiko Yoshida, applied to the subject of the request only; any figures have small calm eyes and slim elongated proportions. Full color, soft desaturated watercolor tones. Delicate pencil lines with quiet understated design; lighting is absent. Muted washes, fine edges. For places and environments of any kind the same treatment; the setting comes only from the request. Not glossy anime, not photographic.",
+    "negative": ""
+  },
+  {
+    "name": "JRPG Character Illustration",
+    "prefix": "",
+    "suffix": "JRPG character illustration in the Nomura and Amano manner, applied to the subject of the request only on a white background; any figures have elegant tall forms, detailed expressive eyes and flowing hair. Full color, soft palette. Soft watercolor or digital shading; lighting direction and time of day follow the request, soft. Clean edges. For places and environments of any kind the same treatment; the setting comes only from the request. Not Western cartoon, not photographic.",
+    "negative": ""
+  },
+  {
+    "name": "Leyendecker TF2 Illustration",
+    "prefix": "",
+    "suffix": "Painterly illustration in the Team Fortress 2 and Leyendecker manner, applied to the subject of the request only; no TF2 classes added. Full color, warm saturated colors. Chunky angular forms with sculpted brush highlights and exaggerated shapes; lighting direction and time of day follow the request. Visible brush facets. For places and environments of any kind the same treatment; the setting comes only from the request. Not realistic, not cel-shaded.",
+    "negative": ""
+  },
+  {
+    "name": "Akiman-Inspired Character Design",
+    "prefix": "",
+    "suffix": "Fighting-game character design in the Akiman manner, applied to the subject of the request only; no Capcom characters; any figures have athletic proportions with deliberately exaggerated hands, feet and garment forms. Full color, bold palette. Instantly readable shape language with expressive faces; lighting direction and time of day follow the request. Crisp contours. For places and environments of any kind the same treatment; the setting comes only from the request. Not realistic, not pixel.",
+    "negative": ""
+  },
+  {
+    "name": "Dofus-Inspired Illustration",
+    "prefix": "",
+    "suffix": "Colorful French fantasy-game illustration in the Dofus manner, applied to the subject of the request only; no Dofus classes added. Full color, crisp saturated palette. Highly stylized exaggerated proportions with bold curved contours and smooth painterly cel shading; lighting direction and time of day follow the request. Clean expressive linework. For places and environments of any kind the same treatment; the setting comes only from the request. Not realistic, not anime.",
+    "negative": ""
+  },
+  {
+    "name": "Metal Gear Solid Concept Art",
+    "prefix": "",
+    "suffix": "Science-fiction concept illustration in the Metal Gear Solid look of Yoji Shinkawa, applied to the subject of the request only; no Snake or Metal Gears added. Limited palette of gray, olive, rust and muted red. Loose calligraphic brush-and-ink contours with sweeping dry-brush marks and splatter; lighting direction and time of day follow the request. Details emerging from broad black masses. For places and environments of any kind the same treatment; the setting comes only from the request. Not clean, not photographic.",
+    "negative": ""
+  },
+  {
+    "name": "Game Cinematic Render",
+    "prefix": "",
+    "suffix": "High-end real-time game cinematic render of the subject of the request only in the Blur Studio manner. Full color, filmic grade. Dramatic film lighting with detailed material rendering; lighting direction and time of day follow the request, dramatic. Polished CGI finish. For places and environments of any kind the same treatment; the setting comes only from the request. Not stylized, not a photograph.",
+    "negative": ""
+  }
+]
