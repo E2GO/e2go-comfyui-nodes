@@ -307,6 +307,7 @@ With `stitch_blend > 0`, fully painted pixels keep the full generated change, an
 ## Contributors
 
 - **E2GO** — project author and maintainer.
+- **Claude (Anthropic)** — AI assistance with the project's initial development and early maintenance.
 - **Codex (OpenAI)** — AI assistance with development, testing, release preparation and documentation.
 
 ## License
