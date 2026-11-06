@@ -1,8 +1,8 @@
 {
   "id": "a49c5d56-0eac-51a2-9346-d06615c1e0c8",
   "revision": 0,
-  "last_node_id": 106,
-  "last_link_id": 142,
+  "last_node_id": 107,
+  "last_link_id": 143,
   "nodes": [
     {
       "id": 5,
@@ -414,7 +414,7 @@
       "id": 15,
       "type": "PowderSampler",
       "pos": [
-        3180,
+        3610,
         710
       ],
       "size": [
@@ -806,7 +806,7 @@
       "id": 16,
       "type": "VAEDecode",
       "pos": [
-        3680,
+        4110,
         70
       ],
       "size": [
@@ -877,7 +877,7 @@
       "id": 18,
       "type": "SaveImage",
       "pos": [
-        3680,
+        4110,
         350
       ],
       "size": [
@@ -3003,7 +3003,7 @@
       "id": 24,
       "type": "PowderGridSaver",
       "pos": [
-        4410,
+        4840,
         70
       ],
       "size": [
@@ -3701,7 +3701,7 @@
       "id": 17,
       "type": "PowderCanvasReview",
       "pos": [
-        3680,
+        4110,
         210
       ],
       "size": [
@@ -3775,7 +3775,7 @@
       "id": 35,
       "type": "PowderImageConditioning",
       "pos": [
-        3180,
+        3610,
         70
       ],
       "size": [
@@ -3905,7 +3905,7 @@
           "shape": 7,
           "type": "LATENT",
           "pos": null,
-          "link": null
+          "link": 143
         },
         {
           "color_off": null,
@@ -5405,6 +5405,390 @@
         "e2goWidgetNames": [],
         "e2goWidgetSchemaVersion": 1
       }
+    },
+    {
+      "id": 107,
+      "type": "PowderResolution",
+      "pos": [
+        3180,
+        70
+      ],
+      "size": [
+        280,
+        342
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "showAdvanced": null,
+      "inputs": [
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "model",
+          "locked": null,
+          "name": "model",
+          "nameLocked": null,
+          "removable": null,
+          "shape": 7,
+          "type": "MODEL",
+          "pos": null,
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "aspect_ratio",
+          "locked": null,
+          "name": "aspect_ratio",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "COMBO",
+          "widget": {
+            "name": "aspect_ratio"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "megapixel",
+          "locked": null,
+          "name": "megapixel",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "COMBO",
+          "widget": {
+            "name": "megapixel"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "custom_ratio",
+          "locked": null,
+          "name": "custom_ratio",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "custom_ratio"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "ratio_x",
+          "locked": null,
+          "name": "ratio_x",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "FLOAT",
+          "widget": {
+            "name": "ratio_x"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "ratio_y",
+          "locked": null,
+          "name": "ratio_y",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "FLOAT",
+          "widget": {
+            "name": "ratio_y"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "custom_mode",
+          "locked": null,
+          "name": "custom_mode",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "custom_mode"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "width",
+          "locked": null,
+          "name": "width",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "INT",
+          "widget": {
+            "name": "width"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "height",
+          "locked": null,
+          "name": "height",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "INT",
+          "widget": {
+            "name": "height"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "round_custom",
+          "locked": null,
+          "name": "round_custom",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "round_custom"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "batch_size",
+          "locked": null,
+          "name": "batch_size",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "INT",
+          "widget": {
+            "name": "batch_size"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "latent_type",
+          "locked": null,
+          "name": "latent_type",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "COMBO",
+          "widget": {
+            "name": "latent_type"
+          },
+          "link": null
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "divisible_by",
+          "locked": null,
+          "name": "divisible_by",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "COMBO",
+          "widget": {
+            "name": "divisible_by"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "LATENT",
+          "locked": null,
+          "name": "LATENT",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "LATENT",
+          "pos": null,
+          "slot_index": null,
+          "links": [
+            143
+          ]
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "width",
+          "locked": null,
+          "name": "width",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "INT",
+          "pos": null,
+          "slot_index": null,
+          "links": []
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "height",
+          "locked": null,
+          "name": "height",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "INT",
+          "pos": null,
+          "slot_index": null,
+          "links": []
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "resolution",
+          "locked": null,
+          "name": "resolution",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "STRING",
+          "pos": null,
+          "slot_index": null,
+          "links": []
+        },
+        {
+          "color_off": null,
+          "color_on": null,
+          "dir": null,
+          "label": null,
+          "localized_name": "preview",
+          "locked": null,
+          "name": "preview",
+          "nameLocked": null,
+          "removable": null,
+          "shape": null,
+          "type": "IMAGE",
+          "pos": null,
+          "slot_index": null,
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PowderResolution"
+      },
+      "widgets_values": [
+        "1:1 (Perfect Square)",
+        "1.0",
+        false,
+        1,
+        1,
+        false,
+        960,
+        1656,
+        false,
+        1,
+        "SDXL/SD1 (4ch)",
+        "64"
+      ],
+      "widgets_values_named": {
+        "aspect_ratio": "1:1 (Perfect Square)",
+        "megapixel": "1.0",
+        "custom_ratio": false,
+        "ratio_x": 1,
+        "ratio_y": 1,
+        "custom_mode": false,
+        "width": 960,
+        "height": 1656,
+        "round_custom": false,
+        "batch_size": 1,
+        "latent_type": "SDXL/SD1 (4ch)",
+        "divisible_by": "64"
+      },
+      "color": "#28565C",
+      "e2goInputs": {
+        "aspect_ratio": "1:1 (Perfect Square)",
+        "megapixel": "1.0",
+        "custom_ratio": false,
+        "ratio_x": 1,
+        "ratio_y": 1,
+        "custom_mode": false,
+        "width": 960,
+        "height": 1656,
+        "round_custom": false,
+        "batch_size": 1,
+        "latent_type": "SDXL/SD1 (4ch)",
+        "divisible_by": "64"
+      },
+      "extensions": {
+        "e2goInputs": {
+          "aspect_ratio": "1:1 (Perfect Square)",
+          "megapixel": "1.0",
+          "custom_ratio": false,
+          "ratio_x": 1,
+          "ratio_y": 1,
+          "custom_mode": false,
+          "width": 960,
+          "height": 1656,
+          "round_custom": false,
+          "batch_size": 1,
+          "latent_type": "SDXL/SD1 (4ch)",
+          "divisible_by": "64"
+        }
+      },
+      "title": "Generate size · ignored in Repaint / Edit / Repair"
     }
   ],
   "links": [
@@ -5767,6 +6151,14 @@
       105,
       3,
       "STRING"
+    ],
+    [
+      143,
+      107,
+      0,
+      35,
+      7,
+      "LATENT"
     ]
   ],
   "floatingLinks": null,
@@ -5837,7 +6229,7 @@
       "bounding": [
         3160,
         0,
-        430,
+        860,
         1335
       ],
       "color": "#786149",
@@ -5847,7 +6239,7 @@
       "id": 7,
       "title": "8 · Review & Save",
       "bounding": [
-        3650,
+        4080,
         0,
         670,
         1020
@@ -5859,7 +6251,7 @@
       "id": 8,
       "title": "9 · Grid · Ctrl+B to enable",
       "bounding": [
-        4390,
+        4820,
         0,
         450,
         720

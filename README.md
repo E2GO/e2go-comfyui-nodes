@@ -98,6 +98,8 @@ Select the correct Base, Turbo, Distilled or Edit weights for the recipe. Model 
 3. Enter a prompt, choose the size and queue the workflow. Templates ending in `_full` expose more controls; simpler templates provide a shorter starting point.
 4. For editing, open an Img2Img or Edit template, load an image into Canvas, and follow its notes. A model must support the selected editing mode.
 
+FULL editing templates also connect Resolution to Image Conditioning's `t2i_latent` input. In Generate mode, set the output size in Resolution; Repaint, Edit and Repair use the source image or crop instead. When using Layout, match its dimensions to the generated image with **Match generation size**, or enter the source/crop dimensions for editing.
+
 The [English Node map](example_workflows/powder_node_guide.json) is a readable workflow covering all 16 nodes. Each card explains what the node does, why to use it, its inputs and outputs, and a connection example. A separate section explains independent nodes and features that need companions. The guide's processing nodes are disabled: it is a reference, not a generation workflow.
 
 ## Using Powder in ordinary workflows

@@ -304,6 +304,10 @@ Cache Stats и Clear Conditioning Cache не требуют подключённ
 - Если перебор стилей или wildcard остановился, возможно, закончился список. Выберите Loop или сбросьте позицию.
 - Для воспроизводимой ошибки создайте [GitHub Issue](https://github.com/E2GO/e2go-comfyui-nodes/issues), приложив версию ComfyUI, воркфлоу и текст ошибки.
 
+## Размеры в FULL-workflow
+
+В FULL-шаблонах редактирования Resolution подключён к входу `t2i_latent` ноды Image Conditioning. В режиме Generate размер задаётся в Resolution; Repaint, Edit и Repair используют исходное изображение или кроп. Размер Layout должен совпадать с результатом: для генерации используйте **Match generation size**, для редактирования задайте размеры исходника или кропа.
+
 ## Участники
 
 - **E2GO** — автор и сопровождающий проекта.

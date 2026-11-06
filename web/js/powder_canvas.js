@@ -901,7 +901,8 @@ app.registerExtension({
             { passive: false }
         );
 
-        // Middle-button drag pans the graph on every node; DOM widgets
+        // Layout owns middle-button panning inside its workspace.
+        // Elsewhere middle-button drag pans the graph; DOM widgets
         // swallow the pointer events. Re-dispatch the pointerdown to the
         // graph canvas -- LiteGraph pointer-captures and handles the rest of
         // the drag itself. Capture phase so nav buttons can't stop it first.
@@ -909,6 +910,7 @@ app.registerExtension({
             "pointerdown",
             (e) => {
                 if (e.button !== 1) return;
+                if (e.target.closest?.(".e2go-layout-work")) return;
                 const target = app.canvas?.canvas;
                 if (!target) return;
                 e.preventDefault();
