@@ -11,6 +11,7 @@ import re
 from pathlib import Path
 
 from ._log import log, info, warn
+from ._files import atomic_write, plain_filename
 
 
 def _parse_wildcard_lines(text):
@@ -111,8 +112,7 @@ class WildcardLibrary:
                 raise ValueError("name must match [A-Za-z0-9._-]+\\.txt")
         if not name.lower().endswith(".txt"):
             raise ValueError("name must end with .txt")
-        if ("/" in name or "\\" in name or "\x00" in name
-                or name != os.path.basename(name) or name.startswith("..")):
+        if not plain_filename(name) or name.startswith(".."):
             raise ValueError("name must be a plain file name")
         return name
 
@@ -160,17 +160,7 @@ class WildcardLibrary:
         base_resolved = base.resolve()
         if base_resolved not in target.parents and target != base_resolved:
             raise ValueError("path escapes base")
-        tmp = target.with_suffix(target.suffix + ".tmp")
-        try:
-            tmp.write_bytes(encoded)
-            os.replace(str(tmp), str(target))
-        except Exception:
-            try:
-                if tmp.exists():
-                    tmp.unlink()
-            except OSError:
-                pass
-            raise
+        atomic_write(target, encoded)
         return {"source": "e2go", "name": name}
 
     @classmethod

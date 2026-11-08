@@ -4,6 +4,7 @@ import json
 import re
 import time
 from pathlib import Path
+from ._files import plain_filename
 
 PNG_REF = re.compile(r"(?<![\w.-])[\w.-]+\.png", re.IGNORECASE)
 MIN_AGE = 7 * 86400
@@ -26,7 +27,7 @@ def protected_files(user_dir, live):
 
 
 def _file(root, name):
-    if not isinstance(name, str) or not name or Path(name).name != name or "/" in name or "\\" in name:
+    if not plain_filename(name):
         raise ValueError("Invalid Canvas filename")
     path = root / name
     if path.suffix.lower() != ".png" or path.is_symlink() or path.resolve().parent != root.resolve():

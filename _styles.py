@@ -15,6 +15,7 @@ import threading
 import time
 
 from ._log import log, warn
+from ._files import atomic_write
 
 
 # ---------------------------------------------------------------------------
@@ -242,21 +243,10 @@ def load_user_styles() -> list:
 
 
 def _write_user_styles(styles: list) -> None:
-    # tmp + os.replace: a crash mid-dump must never truncate the user's
-    # hand-authored library (same pattern as WildcardLibrary.upload).
+    # Exclusive temporary sibling + replace preserves the existing library
+    # on failure and never follows a pre-existing temporary file link.
     path = get_user_styles_path()
-    tmp = path + ".tmp"
-    try:
-        with open(tmp, "w", encoding="utf-8") as f:
-            json.dump(styles, f, ensure_ascii=False, indent=2)
-        os.replace(tmp, path)
-    except Exception:
-        try:
-            if os.path.exists(tmp):
-                os.remove(tmp)
-        except OSError:
-            pass
-        raise
+    atomic_write(path, json.dumps(styles, ensure_ascii=False, indent=2).encode("utf-8"))
     invalidate_styles_cache()
 
 

@@ -72,7 +72,9 @@ def _resolve_output_dir(base, subfolder):
         parts = parts[:-1]
     candidate = os.path.abspath(os.path.join(base_abs, *parts)) if parts else base_abs
     try:
-        inside = os.path.commonpath([base_abs, candidate]) == base_abs
+        base_real = os.path.realpath(base_abs)
+        inside = (os.path.commonpath([base_abs, candidate]) == base_abs
+                  and os.path.commonpath([base_real, os.path.realpath(candidate)]) == base_real)
     except ValueError:  # different drives on Windows
         inside = False
     if drive_qualified or not inside:
@@ -462,20 +464,21 @@ class PowderGridSaver:
 
         base_candidate = file_base
         collision_counter = 1
-        while (os.path.exists(os.path.join(output_dir, f"{file_base}.png"))
-               or os.path.exists(os.path.join(output_dir, f"{file_base}.json"))):
+        while (os.path.lexists(os.path.join(output_dir, f"{file_base}.png"))
+               or os.path.lexists(os.path.join(output_dir, f"{file_base}.json"))):
             file_base = f"{base_candidate}_{collision_counter}"
             collision_counter += 1
 
         final_path = os.path.join(output_dir, f"{file_base}.png")
-        final_grid.save(final_path, "PNG")
+        with open(final_path, "xb") as stream:
+            final_grid.save(stream, "PNG")
         saved_paths.append(final_path)
         json_data["files"].append(os.path.basename(final_path))
         log(f"[PowderGridSaver] Saved grid: {os.path.basename(final_path)}")
 
         if save_json:
             json_path = os.path.join(output_dir, f"{file_base}.json")
-            with open(json_path, "w", encoding="utf-8") as f:
+            with open(json_path, "x", encoding="utf-8") as f:
                 json.dump(json_data, f, indent=2, ensure_ascii=False)
             saved_paths.append(json_path)
             log(f"[PowderGridSaver] Saved: {os.path.basename(json_path)}")

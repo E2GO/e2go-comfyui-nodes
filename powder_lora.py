@@ -13,6 +13,7 @@ import os
 
 from ._log import log, info, warn, error
 from ._cache import LRUCache
+from ._files import atomic_write, plain_filename
 
 
 # ---------------------------------------------------------------------------
@@ -52,9 +53,15 @@ LORA_INFO_SCHEMA_VERSION = 2
 def get_trigger_path(lora_name):
     """Path to the trigger .txt file next to the LoRA."""
     import folder_paths  # lazy: not available outside ComfyUI
+    if not isinstance(lora_name, str) or not all(plain_filename(p) for p in lora_name.replace("\\", "/").split("/")):
+        return None
     lora_path = folder_paths.get_full_path("loras", lora_name)
     if lora_path:
-        return os.path.splitext(lora_path)[0] + ".txt"
+        trigger_path = os.path.splitext(lora_path)[0] + ".txt"
+        if (os.path.islink(trigger_path)
+                or os.path.dirname(os.path.realpath(trigger_path)) != os.path.realpath(os.path.dirname(lora_path))):
+            return None
+        return trigger_path
     return None
 
 
@@ -90,8 +97,7 @@ def save_trigger(lora_name, trigger):
             pass
 
     try:
-        with open(trigger_path, "w", encoding="utf-8") as f:
-            f.write(new_content)
+        atomic_write(trigger_path, new_content.encode("utf-8"))
         log(f"Saved trigger: {trigger_path}")
     except Exception as e:
         warn(f"Error saving trigger: {e}")

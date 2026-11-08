@@ -9,13 +9,17 @@ import torch
 from PIL import Image
 
 from ._log import info, log, warn
+from ._files import plain_filename
 
 CANVAS_SUBFOLDER = "e2go_canvas"
 
 
 def _canvas_dir() -> str:
     import folder_paths  # lazy: not available outside ComfyUI
-    d = os.path.join(folder_paths.get_input_directory(), CANVAS_SUBFOLDER)
+    root = os.path.realpath(folder_paths.get_input_directory())
+    d = os.path.join(root, CANVAS_SUBFOLDER)
+    if os.path.realpath(d) != d:
+        raise ValueError("Canvas storage cannot redirect outside its asset directory")
     os.makedirs(d, exist_ok=True)
     return d
 
@@ -23,13 +27,15 @@ def _canvas_dir() -> str:
 def _resolve(name: str) -> str | None:
     """Path inside input/e2go_canvas/ for a config filename, or None.
 
-    basename() strips any path components — the frontend only ever writes
-    plain filenames, so anything else is malformed or malicious.
+    The frontend writes plain PNG filenames. Reject malformed paths rather
+    than interpreting them, and reject file links outside the asset directory.
     """
-    if not name:
+    if not plain_filename(name) or not name.lower().endswith(".png"):
         return None
-    base = os.path.basename(str(name).replace("\\", "/"))
-    path = os.path.join(_canvas_dir(), base)
+    root = os.path.realpath(_canvas_dir())
+    path = os.path.join(root, name)
+    if os.path.islink(path) or os.path.dirname(os.path.realpath(path)) != root:
+        return None
     return path if os.path.isfile(path) else None
 
 
