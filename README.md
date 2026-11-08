@@ -30,6 +30,10 @@ These are combinations of tools, not complete wiring diagrams. The [ready-to-ope
 
 ## Installation
 
+**Temporary Manager installation instructions (November 8, 2026):** open the version selector and choose **2.0.2** explicitly. Avoid `latest` and automatic updates for now: they may select an older version. Version 2.0.2 is awaiting Comfy Registry review. These instructions will be updated when normal installation and updates are available.
+
+After installation, restart ComfyUI and reload the browser. Manager should recognize **2.0.2** as installed. If you previously installed Registry 1.0.0, follow the migration instructions below first; do not install a second copy alongside it.
+
 From your ComfyUI folder:
 
 ```sh
@@ -38,7 +42,7 @@ git clone https://github.com/E2GO/e2go-comfyui-nodes.git custom_nodes/e2go_nodes
 
 Restart ComfyUI and reload the browser. Search for **Powder** in the node menu. The package uses ComfyUI's Python dependencies; model weights, text encoders, VAEs and LoRAs are not included.
 
-For an installation recognized as a Registry package, update **Powder Nodes** in ComfyUI Manager. Registry 1.0.0 needs the special migration below. For a manual Git update, run `git pull` inside the installed package folder. Then restart ComfyUI and reload the browser. Back up your data and read the migration notes before updating from 1.x through either Manager or Git.
+For Registry installations, follow the temporary Manager instructions above. Registry 1.0.0 needs the special migration below. For a manual Git update, run `git pull` inside the installed package folder. Then restart ComfyUI and reload the browser. Back up your data and read the migration notes before updating from 1.x through either Manager or Git.
 
 ### Updating from 1.x to 2.0
 
@@ -46,7 +50,7 @@ For an installation recognized as a Registry package, update **Powder Nodes** in
 
 Before updating, save your workflows and copy the entire installed package folder somewhere **outside ComfyUI's `custom_nodes/`**. This preserves `styles/`, `wildcards/`, and, for Git installs, `.git` and any stashes. Older bundled style files such as `styles/sdxl_styles_custom.json` are removed in 2.0; preserve your edits before updating.
 
-**Registry 1.0.0:** its published archive lacks `pyproject.toml`, so Manager may not recognize the existing installation. Update can fail with “Path not found”, while a new install can fail with “Install path already exists”. After making the backup, stop ComfyUI and move the old package folder (normally `custom_nodes/powder-nodes`) outside `custom_nodes/`. Restart ComfyUI and install Powder Nodes 2.0.0 through Manager once that version is available. Restore your wildcard files and import your personal styles as described below, then restart ComfyUI and reload the browser. Do not copy the old package or its entire `styles/` folder over the new installation, and do not leave two copies of Powder Nodes in `custom_nodes/`.
+**Registry 1.0.0:** its published archive lacks `pyproject.toml`, so Manager may not recognize the existing installation. Update can fail with “Path not found”, while a new install can fail with “Install path already exists”. After making the backup, stop ComfyUI and move the old package folder (normally `custom_nodes/powder-nodes`) outside `custom_nodes/`. Restart ComfyUI and explicitly select Powder Nodes **2.0.2** in Manager's version selector. Restore your wildcard files and import your personal styles as described below, then restart ComfyUI and reload the browser. Do not copy the old package or its entire `styles/` folder over the new installation, and do not leave two copies of Powder Nodes in `custom_nodes/`.
 
 **Git installs:** a manual `git pull` can stop on conflicting local edits. Manager's Git updater can instead stash tracked edits without restoring them, and can reset the checkout; an untracked file whose name is now supplied by 2.0 can also be overwritten. Back up before using either update path. If Manager already stashed edits, inspect `git stash list` and `git stash show -p "stash@{0}"` in the package folder to locate them; extract the needed entries into your user style file rather than blindly applying the whole stash to 2.0. Stashes do not guarantee recovery of overwritten untracked files.
 
