@@ -30,9 +30,9 @@ These are combinations of tools, not complete wiring diagrams. The [ready-to-ope
 
 ## Installation
 
-**Temporary Manager installation instructions (November 8, 2026):** open the version selector and choose **2.0.2** explicitly. Avoid `latest` and automatic updates for now: they may select an older version. Version 2.0.2 is awaiting Comfy Registry review. These instructions will be updated when normal installation and updates are available.
+**Manager installation notice (November 8, 2026):** version **2.0.2** is currently flagged by Comfy Registry; manual review has been requested. It may be unavailable in the version selector or blocked during installation. If this happens, wait for review rather than selecting an older release. Avoid `latest` and automatic updates for now: version selection differs between Manager interfaces. These instructions will be updated when normal installation and updates are available.
 
-After installation, restart ComfyUI and reload the browser. Manager should recognize **2.0.2** as installed. If you previously installed Registry 1.0.0, follow the migration instructions below first; do not install a second copy alongside it.
+If you already installed **2.0.2**, reinstalling is not needed to address this Registry status. After installation, restart ComfyUI and reload the browser. If you previously installed Registry 1.0.0, read the migration instructions below before changing your installation; do not install a second copy alongside it.
 
 From your ComfyUI folder:
 
@@ -48,7 +48,7 @@ For Registry installations, follow the temporary Manager instructions above. Reg
 
 **2.0 is a major update. Existing node identifiers are preserved, but some API inputs and bundled styles have changed. Matching results from old workflows are not guaranteed.**
 
-Before updating, save your workflows and copy the entire installed package folder somewhere **outside ComfyUI's `custom_nodes/`**. This preserves `styles/`, `wildcards/`, and, for Git installs, `.git` and any stashes. Older bundled style files such as `styles/sdxl_styles_custom.json` are removed in 2.0; preserve your edits before updating.
+Before updating, save your workflows and copy the entire installed package folder somewhere **outside ComfyUI's `custom_nodes/`**. This preserves `styles/`, `wildcards/`, and, for Git installs, `.git` and any stashes. Older bundled style files such as `styles/sdxl_styles_custom.json` are removed in 2.0; preserve your edits before updating. For Registry migration, wait until 2.0.2 is available following review before moving the old installation.
 
 **Registry 1.0.0:** its published archive lacks `pyproject.toml`, so Manager may not recognize the existing installation. Update can fail with “Path not found”, while a new install can fail with “Install path already exists”. After making the backup, stop ComfyUI and move the old package folder (normally `custom_nodes/powder-nodes`) outside `custom_nodes/`. Restart ComfyUI and explicitly select Powder Nodes **2.0.2** in Manager's version selector. Restore your wildcard files and import your personal styles as described below, then restart ComfyUI and reload the browser. Do not copy the old package or its entire `styles/` folder over the new installation, and do not leave two copies of Powder Nodes in `custom_nodes/`.
 
