@@ -50,10 +50,15 @@ LORA_INFO_SCHEMA_VERSION = 2
 # just zips triggers and prompts.
 
 
+def _valid_lora_name(name):
+    """Only relative model names, checked before ComfyUI touches the filesystem."""
+    return isinstance(name, str) and all(plain_filename(p) for p in name.replace("\\", "/").split("/"))
+
+
 def get_trigger_path(lora_name):
     """Path to the trigger .txt file next to the LoRA."""
     import folder_paths  # lazy: not available outside ComfyUI
-    if not isinstance(lora_name, str) or not all(plain_filename(p) for p in lora_name.replace("\\", "/").split("/")):
+    if not _valid_lora_name(lora_name):
         return None
     lora_path = folder_paths.get_full_path("loras", lora_name)
     if lora_path:
@@ -501,6 +506,8 @@ class PowderLoraLoader:
 
     def _find_lora_path(self, name):
         import folder_paths  # lazy
+        if not _valid_lora_name(name):
+            return None
         path = folder_paths.get_full_path("loras", name)
         if path:
             return path
