@@ -14,6 +14,10 @@ import os
 from ._log import log, info, warn, error
 from ._cache import LRUCache
 from ._files import atomic_write, plain_filename
+from ._http import is_json_request
+
+MAX_TRIGGER_BYTES = 64 * 1024
+MAX_TRIGGER_REQUEST_BYTES = 512 * 1024
 
 
 # ---------------------------------------------------------------------------
@@ -60,7 +64,12 @@ def get_trigger_path(lora_name):
     import folder_paths  # lazy: not available outside ComfyUI
     if not _valid_lora_name(lora_name):
         return None
-    lora_path = folder_paths.get_full_path("loras", lora_name)
+    # Use the registered spelling, including the platform's path separators.
+    registered = next((name for name in folder_paths.get_filename_list("loras")
+                       if name.replace("\\", "/") == lora_name.replace("\\", "/")), None)
+    if registered is None:
+        return None
+    lora_path = folder_paths.get_full_path("loras", registered)
     if lora_path:
         trigger_path = os.path.splitext(lora_path)[0] + ".txt"
         if (os.path.islink(trigger_path)
@@ -84,6 +93,13 @@ def load_trigger(lora_name):
 
 def save_trigger(lora_name, trigger):
     """Save trigger to file next to the LoRA, only if content differs."""
+    if not isinstance(trigger, str):
+        return False
+    try:
+        if len(trigger.encode("utf-8")) > MAX_TRIGGER_BYTES:
+            return False
+    except UnicodeEncodeError:
+        return False
     trigger_path = get_trigger_path(lora_name)
     if not trigger_path:
         return False
@@ -155,10 +171,30 @@ try:
 
     @PromptServer.instance.routes.post("/powder_lora/set_trigger")
     async def set_trigger_api(request):
-        data = await request.json()
+        if not is_json_request(request.content_type):
+            return web.json_response({"error": "JSON required."}, status=400)
+        if request.content_length is not None and request.content_length > MAX_TRIGGER_REQUEST_BYTES:
+            return web.json_response({"error": "Trigger request is too large."}, status=413)
+        body = bytearray()
+        try:
+            async for chunk in request.content.iter_chunked(16384):
+                body.extend(chunk)
+                if len(body) > MAX_TRIGGER_REQUEST_BYTES:
+                    return web.json_response({"error": "Trigger request is too large."}, status=413)
+            data = json.loads(body)
+        except (ValueError, UnicodeError):
+            return web.json_response({"error": "Invalid JSON."}, status=400)
+        if not isinstance(data, dict):
+            return web.json_response({"error": "JSON object required."}, status=400)
         name, trigger = data.get("lora"), data.get("trigger")
         if not _valid_lora_name(name) or not isinstance(trigger, str):
             return web.json_response({"error": "Invalid LoRA or trigger text."}, status=400)
+        try:
+            trigger_size = len(trigger.encode("utf-8"))
+        except UnicodeEncodeError:
+            return web.json_response({"error": "Invalid trigger text."}, status=400)
+        if trigger_size > MAX_TRIGGER_BYTES:
+            return web.json_response({"error": "Trigger text exceeds 64 KiB."}, status=413)
         if not save_trigger(name, trigger):
             return web.json_response({"error": "Could not save trigger beside the LoRA file."}, status=400)
         return web.json_response({"trigger": trigger.strip(), "exists": True})

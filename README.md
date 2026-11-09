@@ -30,7 +30,9 @@ These are combinations of tools, not complete wiring diagrams. The [ready-to-ope
 
 ## Installation
 
-**Manager installation:** select version **2.0.5** explicitly when it is available. Registry review may delay availability or block installation. If this version is unavailable, use the Git installation below or wait for review. Avoid automatic downgrades to an older release.
+**Manager installation:** select version **2.0.6** explicitly when it is available. Registry review may delay availability or block installation. If this version is unavailable, use the Git installation below or wait for review. Avoid automatic downgrades to an older release.
+
+Before reinstalling, back up the entire package folder outside `custom_nodes/`: personal styles and wildcard files are stored inside it.
 
 After updating, restart ComfyUI and reload the browser. If you previously installed Registry 1.0.0, read the migration instructions below; do not install a second copy alongside it.
 
@@ -48,9 +50,9 @@ For Registry installations, follow the temporary Manager instructions above. Reg
 
 **2.0 is a major update. Existing node identifiers are preserved, but some API inputs and bundled styles have changed. Matching results from old workflows are not guaranteed.**
 
-Before updating, save your workflows and copy the entire installed package folder somewhere **outside ComfyUI's `custom_nodes/`**. This preserves `styles/`, `wildcards/`, and, for Git installs, `.git` and any stashes. Older bundled style files such as `styles/sdxl_styles_custom.json` are removed in 2.0; preserve your edits before updating. For Registry migration, wait until 2.0.5 is available following review before moving the old installation.
+Before updating, save your workflows and copy the entire installed package folder somewhere **outside ComfyUI's `custom_nodes/`**. This preserves `styles/`, `wildcards/`, and, for Git installs, `.git` and any stashes. Older bundled style files such as `styles/sdxl_styles_custom.json` are removed in 2.0; preserve your edits before updating. For Registry migration, wait until 2.0.6 is available following review before moving the old installation.
 
-**Registry 1.0.0:** its published archive lacks `pyproject.toml`, so Manager may not recognize the existing installation. Update can fail with “Path not found”, while a new install can fail with “Install path already exists”. After making the backup, stop ComfyUI and move the old package folder (normally `custom_nodes/powder-nodes`) outside `custom_nodes/`. Restart ComfyUI and explicitly select Powder Nodes **2.0.5** in Manager's version selector. Restore your wildcard files and import your personal styles as described below, then restart ComfyUI and reload the browser. Do not copy the old package or its entire `styles/` folder over the new installation, and do not leave two copies of Powder Nodes in `custom_nodes/`.
+**Registry 1.0.0:** its published archive lacks `pyproject.toml`, so Manager may not recognize the existing installation. Update can fail with “Path not found”, while a new install can fail with “Install path already exists”. After making the backup, stop ComfyUI and move the old package folder (normally `custom_nodes/powder-nodes`) outside `custom_nodes/`. Restart ComfyUI and explicitly select Powder Nodes **2.0.6** in Manager's version selector. Restore your wildcard files and import your personal styles as described below, then restart ComfyUI and reload the browser. Do not copy the old package or its entire `styles/` folder over the new installation, and do not leave two copies of Powder Nodes in `custom_nodes/`.
 
 **Git installs:** a manual `git pull` can stop on conflicting local edits. Manager's Git updater can instead stash tracked edits without restoring them, and can reset the checkout; an untracked file whose name is now supplied by 2.0 can also be overwritten. Back up before using either update path. If Manager already stashed edits, inspect `git stash list` and `git stash show -p "stash@{0}"` in the package folder to locate them; extract the needed entries into your user style file rather than blindly applying the whole stash to 2.0. Stashes do not guarantee recovery of overwritten untracked files.
 
