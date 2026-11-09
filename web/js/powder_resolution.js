@@ -198,24 +198,19 @@ app.registerExtension({
             badge.serialize = false;
             badge.disabled = true;
 
-            badge.computeSize = () => [node.size?.[0] || 320, 44];
+            badge.computeSize = () => [node.size?.[0] || 320, 24];
 
             badge.draw = function (ctx, _node, width, posY) {
                 const live = computeLive(node);
-                const auto = node.widgets?.find(w => w.name === "latent_type")?.value === "Auto (connected model)";
-                const lines = live
-                    ? [`${live[0]} \u00d7 ${live[1]} (${live[2]})`]
-                    : auto ? ["Auto latent format", "Resolved from model on Queue"] : ["Invalid size"];
-                ctx.save();
+                const text = live
+                    ? `${live[0]} × ${live[1]} (${live[2]})`
+                    : (node.widgets?.find(w => w.name === "latent_type")?.value === "Auto (connected model)"
+                        ? "Auto — format resolved from model on Queue" : "— invalid size —");
                 ctx.fillStyle = widgetTextColor();
-                ctx.font = widgetFont(12);
+                ctx.font = "12px monospace";
                 ctx.textAlign = "center";
-                ctx.textBaseline = "middle";
-                const available = Math.max(1, width - 30);
-                for (let i = 0; i < lines.length; i++) {
-                    ctx.fillText(lines[i], width / 2, posY + 22 + (i - (lines.length - 1) / 2) * 18, available);
-                }
-                ctx.restore();
+                ctx.fillText(text, width / 2, posY + 16);
+                ctx.textAlign = "left";
             };
 
             syncLocks(node);

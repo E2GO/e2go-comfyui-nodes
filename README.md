@@ -217,7 +217,7 @@ Bundle the source and up to four additional reference images so text and image c
 
 #### Image Conditioning — prepare the chosen kind of edit
 
-Prepare the model, conditioning and latent for **Generate**, **Repaint**, **Repair** or **Edit**. Repaint redraws the source; Repair works on a crop around the mask; Edit uses model-specific editing/reference support. The node also supplies denoise and the context needed to restore an edited crop. Settings are remembered separately for each mode and saved with the workflow. Use the reset arrow beside the mode selector to restore defaults for the current mode without changing the other modes.
+Prepare the model, conditioning and latent for **Generate**, **Repaint**, **Repair** or **Edit**. Repaint redraws the source; Repair works on a crop around the mask; Edit uses model-specific editing/reference support. The node also supplies denoise and the context needed to restore an edited crop.
 
 **Example:** repair a small area without processing the whole image at full size. Pass the prepared outputs to the sampler, decode the result and send both the image and `stitch` context to Canvas Review. Basic generation and full-image img2img can use standard surrounding nodes; restoring the crop requires Canvas Review. An empty mask selects the whole image. **Edit (native)** encodes the source without injecting Powder reference latents; use it when the model-specific text encoder already supplies native editing conditioning.
 

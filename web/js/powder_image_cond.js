@@ -2,7 +2,7 @@
 // Mirrors the separator pattern used by the wildcard/styler nodes.
 
 import { app } from "../../../scripts/app.js";
-import { widgetSecondaryTextColor, widgetFont, noop, styleBoolToggle, markSeparator, setWidgetVisible, widgetPointerX } from "./e2go_hide_utils.js";
+import { widgetSecondaryTextColor, widgetFont, noop, styleBoolToggle, markSeparator, setWidgetVisible } from "./e2go_hide_utils.js";
 import { autoWireCropChain, autoWireReferences } from "./e2go_graph_wire.js";
 import { installNameKeyedPersistence, alignWithAnchorSlot } from "./e2go_persistence.js";
 
@@ -68,43 +68,6 @@ app.registerExtension({
                 `[e2go] PowderImageCond: widget "${name}" has no SPEC entry — `
                 + "legacy alignment and the repair pass are default-open for it");
         }
-        let activeMode = findW("mode")?.value;
-        let modeSettings = {};
-        const canonicalMode = (mode) => ({ Inpaint: "Repaint", Img2Img: "Repaint",
-            "Edit — whole image": "Edit", "Edit — masked region": "Edit" }[mode] || mode);
-        const defaultsFor = (mode) => {
-            const values = Object.fromEntries(Object.entries(SPEC)
-                .filter(([name]) => name !== "mode").map(([name, spec]) => [name, spec.def]));
-            values.denoise = mode === "Repaint" ? 0.6 : mode === "Repair" ? 0.9 : 1;
-            if (mode === "Repair") { values.crop_to_mask = "auto"; values.mask_grow = 16; }
-            return values;
-        };
-        const captureSettings = () => Object.fromEntries(inputNames
-            .filter((name) => name !== "mode" && SPEC[name] && findW(name))
-            .map((name) => [name, findW(name).value]));
-        const applySettings = (values) => {
-            for (const [name, value] of Object.entries(values)) {
-                if (name !== "mode" && SPEC[name]?.ok(value) && findW(name)) findW(name).value = value;
-            }
-        };
-        const serializeModes = node.onSerialize;
-        node.onSerialize = function (info) {
-            serializeModes?.apply(this, arguments);
-            modeSettings[canonicalMode(activeMode)] = captureSettings();
-            info.e2goModeSettings = structuredClone(modeSettings);
-        };
-        const configureModes = node.onConfigure;
-        node.onConfigure = function (info) {
-            modeSettings = {};
-            for (const [mode, values] of Object.entries(info?.e2goModeSettings || {})) {
-                if (!["Generate", "Repaint", "Repair", "Edit", "Edit (native)"].includes(mode)) continue;
-                modeSettings[mode] = defaultsFor(mode);
-                for (const [name, value] of Object.entries(values || {})) {
-                    if (name !== "mode" && SPEC[name]?.ok(value)) modeSettings[mode][name] = value;
-                }
-            }
-            return configureModes?.apply(this, arguments);
-        };
         installNameKeyedPersistence(node, {
             inputNames,
             sanitize: (name, v) =>
@@ -123,7 +86,6 @@ app.registerExtension({
             applyValues: false,
             afterRestore: (saved) => {
                 sanitizeInputs(saved); // also runs with saved=null: pure repair
-                activeMode = canonicalMode(findW("mode")?.value);
                 // Safety net: re-run visibility here too, in case the
                 // double-rAF below it ever races ahead of this restore.
                 syncCropWidgets?.();
@@ -131,7 +93,10 @@ app.registerExtension({
             },
         });
 
-        // Mode snapshots survive workflow saves; loading never applies presets.
+        // Mode drives the typical denoise (Generate/Edit 1.0, Repaint 0.6).
+        // Fires only on USER interaction: workflow restore assigns w.value
+        // directly (positional configure and the e2goInputs rAF both skip
+        // callbacks), so saved overrides are never clobbered.
         const modeW = findW("mode");
         const denW = findW("denoise");
         // An unwired denoise OUTPUT means the dial does nothing (the
@@ -175,63 +140,26 @@ app.registerExtension({
                 console.warn("[e2go] References.edited_image holds a different image than this node's pixels — the encoder's Picture 1 is not the frame being edited");
             }
         };
-        if (modeW) {
+        if (modeW && denW) {
             const prevCb = modeW.callback;
             modeW.callback = function (v) {
-                const next = canonicalMode(v);
-                if (next !== canonicalMode(activeMode)) {
-                    modeSettings[canonicalMode(activeMode)] = captureSettings();
-                    activeMode = next;
-                    applySettings(modeSettings[next] || defaultsFor(next));
-                    const crop = findW("crop_to_mask");
-                    crop?.callback?.call(crop, crop.value);
+                if (typeof prevCb === "function") { try { prevCb.apply(this, arguments); } catch {} }
+                const auto = { Generate: 1.0, Repaint: 0.6, Edit: 1.0, "Edit (native)": 1.0, Repair: 0.9 };
+                if (v in auto) {
+                    denW.value = auto[v];
+                    if (v === "Repair") {
+
+                        const cw2 = findW("crop_to_mask");
+                        if (cw2 && cw2.value === "off") {
+                            cw2.value = "auto";
+                            try { cw2.callback?.call(cw2, "auto"); } catch {}
+                        }
+
+                        const mg = findW("mask_grow");
+                        if (mg && !mg.value) mg.value = 16;
+                    }
+                    app.graph?.setDirtyCanvas(true, true);
                 }
-                if (typeof prevCb === "function") prevCb.apply(this, arguments);
-                node.setDirtyCanvas?.(true, true);
-            };
-            const resetSettings = () => {
-                const mode = canonicalMode(modeW.value);
-                applySettings(defaultsFor(mode));
-                modeSettings[mode] = captureSettings();
-                const crop = findW("crop_to_mask");
-                crop?.callback?.call(crop, crop.value);
-                syncModeWidgets();
-                node.setDirtyCanvas?.(true, true);
-            };
-            modeW.tooltip = "Choose mode. ↻ Reset settings: restore defaults for the current mode only.";
-            modeW.draw = function (ctx, _node, width, y, height) {
-                this._e2goDrawWidth = width;
-                const h = height || 20;
-                ctx.save();
-                ctx.fillStyle = "#222";
-                ctx.beginPath();
-                ctx.roundRect(15, y, width - 30, h, 5);
-                ctx.fill();
-                ctx.fillStyle = widgetSecondaryTextColor();
-                ctx.font = widgetFont(12);
-                ctx.textAlign = "left";
-                ctx.fillText("‹  mode", 22, y + h / 2 + 4);
-                ctx.textAlign = "right";
-                ctx.fillText(String(this.value), width - 56, y + h / 2 + 4);
-                ctx.fillStyle = "#bbb";
-                ctx.fillText("↻", width - 23, y + h / 2 + 4);
-                ctx.restore();
-            };
-            const isReset = (x) => {
-                const width = modeW._e2goDrawWidth || node.size[0];
-                return x >= width - 47 && x <= width - 15;
-            };
-            const pointerDown = modeW.onPointerDown;
-            modeW.onPointerDown = function (pointer, n, canvas) {
-                if (isReset(widgetPointerX(pointer, node, canvas, this))) { resetSettings(); return true; }
-                return pointerDown?.call(this, pointer, n, canvas) || false;
-            };
-            const mouse = modeW.mouse;
-            modeW.mouse = function (event, pos, ...args) {
-                if ((event.type === "pointerdown" || event.type === "mousedown") && isReset(pos[0])) {
-                    resetSettings(); return true;
-                }
-                return mouse?.call(this, event, pos, ...args) || false;
             };
         }
 
