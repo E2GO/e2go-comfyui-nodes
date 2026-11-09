@@ -85,7 +85,7 @@ git clone https://github.com/E2GO/e2go-comfyui-nodes.git custom_nodes/e2go_nodes
 
 Выбирайте веса Base, Turbo, Distilled или Edit под конкретный рецепт. Модели скачиваются отдельно; имена файлов у разных сборок могут отличаться. Загрузчики и заметки шаблона показывают нужный комплект. Профиль сэмплера не выбирает файлы моделей автоматически.
 
-**Необязательное улучшение промпта:** FULL-шаблоны FLUX.3 используют `qwen3.5_9b_flux3_prompt_upsampler_int8_convrot.safetensors`. Остальные FULL-enhancer вне семейства Krea используют отдельную языковую модель `qwen3vl_4b_int8_convrot.safetensors`. Режим Original обходит эту ветку и не требует её модели. Шаблоны Krea используют настроенный текстовый энкодер Krea. `E2GO_Krea2.json` и `E2GO_Krea2_Prompt_Enhancer_full.json` содержат одинаковую схему генерации с разными префиксами сохранения.
+**Необязательное улучшение промпта:** FULL-шаблоны FLUX.3 используют `qwen3.5_9b_flux3_prompt_upsampler_int8_convrot.safetensors`. Остальные FULL-enhancer вне семейства Krea используют отдельную языковую модель `qwen3vl_4b_int8_convrot.safetensors`. Режим Original обходит эту ветку и не требует её модели. Шаблоны Krea используют настроенный текстовый энкодер Krea. `E2GO_Krea2.json` включает энхансер, Additional instructions и автоматический выбор формата латента. Энхансер BOOGU Turbo доступен в `E2GO_Boogu_Turbo_Generate_full.json`.
 
 **AI assistant и синхронизация сцены Layout** сейчас требуют файл с точным именем `qwen3vl_4b_int8_convrot.safetensors` в путях текстовых энкодеров ComfyUI. Ручное редактирование регионов и самостоятельный ввод описания сцены не требуют этой дополнительной модели.
 

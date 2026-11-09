@@ -89,7 +89,7 @@ All template nodes belong to Powder or ComfyUI core/extras; no other custom-node
 
 Select the correct Base, Turbo, Distilled or Edit weights for the recipe. Model files are separate downloads, and filenames vary between distributions. The loader fields and notes in each template identify its intended files; a sampling profile does not select them for you.
 
-**Optional prompt enhancement:** FLUX.3 FULL templates use `qwen3.5_9b_flux3_prompt_upsampler_int8_convrot.safetensors`. Other non-Krea FULL enhancers use a separate `qwen3vl_4b_int8_convrot.safetensors` language model. Original mode bypasses that branch and does not require the enhancer model. Krea templates use their configured Krea text encoder. `E2GO_Krea2.json` and `E2GO_Krea2_Prompt_Enhancer_full.json` provide the same generation setup with different output filename prefixes.
+**Optional prompt enhancement:** FLUX.3 FULL templates use `qwen3.5_9b_flux3_prompt_upsampler_int8_convrot.safetensors`. Other non-Krea FULL enhancers use a separate `qwen3vl_4b_int8_convrot.safetensors` language model. Original mode bypasses that branch and does not require the enhancer model. Krea templates use their configured Krea text encoder. `E2GO_Krea2.json` includes optional prompt enhancement, per-run additional instructions, and automatic latent format selection. BOOGU Turbo prompt enhancement is included in `E2GO_Boogu_Turbo_Generate_full.json`.
 
 **Layout AI assistant and scene synchronization** currently require the exact file `qwen3vl_4b_int8_convrot.safetensors` in ComfyUI's text-encoder model paths. Manual region editing and manually written scene text do not require this additional model.
 
