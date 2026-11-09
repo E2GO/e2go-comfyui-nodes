@@ -1,7 +1,7 @@
 import { app } from "../../../scripts/app.js";
 import { CUSTOM_ROW_HEIGHT, drawToggleButton } from "./e2go_hide_utils.js";
 import { maintenanceDialog } from "./e2go_maintenance_ui.js";
-import { widgetPointerX, hideNamedWidget, widgetFont, widgetTextColor, widgetSecondaryTextColor, widgetDisabledTextColor } from "./e2go_hide_utils.js";
+import { trackWidgetDraw, redrawNodeWidgets, widgetPointerX, hideNamedWidget, widgetFont, widgetTextColor, widgetSecondaryTextColor, widgetDisabledTextColor } from "./e2go_hide_utils.js";
 
 import { resyncInputLinks, isDeliberateSlotDrop, repairLinkIdCounter, originTypeOfInput } from "./e2go_graph_wire.js";
 
@@ -117,6 +117,7 @@ function addRowWidget(node, name, height, render, previousWidgets) {
     return [width, typeof height === "function" ? height(width) : height];
   };
   w.draw = function (ctx, _n, width, posY) {
+    trackWidgetDraw(this, ctx, _n, width, posY);
     w._e2goDrawWidth = width;
     ctx.save();
     // These rows own their whole look, including the on/off contrast, so they
@@ -286,8 +287,7 @@ app.registerExtension({
 
 
 function redrawRows(node) {
-  for (const widget of node.widgets || []) widget.triggerDraw?.();
-  node.setDirtyCanvas(true, true);
+  redrawNodeWidgets(node);
 }
 
 function renderNode(node) {

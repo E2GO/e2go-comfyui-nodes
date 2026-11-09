@@ -1,8 +1,8 @@
 {
   "id": "624f2918-f4f9-5e82-b5f5-9211f28a20f9",
   "revision": 0,
-  "last_node_id": 106,
-  "last_link_id": 81,
+  "last_node_id": 108,
+  "last_link_id": 83,
   "nodes": [
     {
       "id": 1,
@@ -4131,7 +4131,7 @@
         "Node name for S&R": "MarkdownNote"
       },
       "widgets_values": [
-        "Enhancer output is a caption of the finished image, including for edits. No image is sent to the enhancer: it cannot describe unseen reference details. For image-dependent edit commands, Original retains the exact instruction. Word counts are targets, not a reason to invent details.\n\nEnhanced Prompt Preview shows the selected prompt before Style / LoRA: the enhanced text in Enhanced mode, the original text in Original mode. Original does not run the enhancer. Final Prompt Preview shows the final assembled prompt.\n\n## Prompt Enhancer — FULL\n\nGroup 2c: Enhanced expands each selected Manual/Wildcard prompt. Original passes through the original text without running the enhancer. It uses the loaded Krea Qwen3-VL; no extra model or API key is needed.\n\nEdit the instructions in Enhancer instructions. The default asks for an English description of the final image while preserving the requested style and exact lettering. LoRA triggers and Powder Styler are applied afterwards. Negative prompts pass through. Inspect Final Prompt Preview.\n\nFor precise Edit/Repair instructions, compare against Original: rewriting may change meaning. The enhancer receives text only, not the canvas image. sampling_mode=off gives deterministic text; max_length=1536 limits response tokens. Requires Generate Text with system_prompt support.\n\n## E2GO × Krea 2 Turbo\n\nTurbo recipe: 8 steps, Euler/simple, CFG 1. Repaint at denoise=0.5 uses 4 effective steps with auto_steps. Uses Wan 2.1 VAE. Increasing steps at partial denoise may amplify blotches.\n\n### Prompt source\nPowder Switcher in group 2 selects Manual (Main Prompt and enabled Prompt List slots) or Wildcard (lines from a list or .txt file). count sets the number of lines per run. Repeat last holds the last selection; on_exhausted=loop restarts after the final line.\n\n### Tasks: Image Conditioning mode\n| Task | Mode | Setup |\n|---|---|---|\n| Generate from scratch | Generate | Set size in Powder Resolution; the canvas is ignored |\n| Full-image img2img | Repaint | Load a source, leave the mask empty, denoise 0.4–0.7 |\n| Repaint a region | Repaint | Paint a mask, denoise 0.6–0.85. crop_to_mask=auto renders the crop and stitches it back. Describe the crop contents, not the whole scene |\n| Fix a small defect | Repair | Paint the defect; the mode sets denoise 0.9 and enables cropping |\n| Extend the image | Repaint / Edit | Use Expand in Canvas and drag its edges. The added area is masked automatically |\n| Instruction edit | Edit | Load a source, denoise 1. An empty mask edits the whole frame; a painted mask restricts the area |\n| Edit with references | Edit | Enable Reference 2/3 with Ctrl+M or connect images to image_1..4. Refer to them using the model-compatible image identifiers |\n\nPowder Sampler computes effective steps: auto_steps uses ceil(steps × denoise), with a minimum of one step. For example, 8 full-run steps at denoise=0.5 become 4. Disable auto_steps for an exact manual step count. inpaint_boost requires a mask in the latent.\n\n### Batches and comparisons\n- Combine enabled Prompt List slots or Wildcard lines with Style Sweep and Single LoRA mode to compare prompt/style/LoRA variants.\n- Enable the Grid node in group 9 with Ctrl+B to save a labeled comparison grid in output/grids.\n\n### Results\nPowder Canvas Review stitches the edited crop back into the full image and displays it in Canvas. Use Accept as background to make the result your next source.\n\n### Krea 2 notes\n- Repaint/Repair use VAE latents and masks without requiring a dedicated inpaint model. Increasing the step count at low denoise can amplify artifacts.\n- Krea 2 Turbo is primarily a text-to-image model. Reliable instruction editing requires compatible edit weights/LoRA and references connected to both consumers through Powder References. Without an edit LoRA, object preservation is not guaranteed. Image Conditioning uses the native ComfyUI reference routing.\n- For local edits, crop_to_mask=auto with a full-scene prompt can put a miniature scene inside the crop. Keep crop_to_mask=off, or describe only the area being edited.\n- Canvas is connected to Powder References as edited_image, so the Qwen3-VL encoder can see the source while reading the prompt.\n- At CFG 1, negative conditioning has no effect. Use cond mix in Powder Styler for style strength.\n\n\n## Choose a task\n\nRepaint: describe the desired result and start at denoise=0.5. Edit: write an instruction and start at denoise=1. A painted mask restricts the area; an empty mask edits the whole frame. Krea Edit requires a compatible edit LoRA; Repaint/Repair do not. Edit (native) is only for graphs with a separate native reference encoder; use ordinary Edit here.\n\n### Checked recipe\nKrea2 Turbo: 8 steps, CFG 1, euler / simple. Sampler profile checks model and latent compatibility. Profiles do not select weights: Base, Turbo, Distilled and Edit checkpoints are not interchangeable. Use a fixed seed when comparing changes; increase size only after the prompt and composition work. Negative text has no sampling effect at CFG 1.\n\n## Two-level enhancer\nOriginal skips the language model; Enhanced uses Balanced or High detail instructions. Both instructions are editable. Manual and Wildcard share the same path. Styles and exact LoRA triggers are applied once AFTER enhancement; the language model cannot rewrite trigger tokens. Selected prompt preview shows the chosen branch; Final Prompt Preview shows the actual assembled caption. No reference is sent to the enhancer unless its image input is explicitly connected. For edits, preserve reference identifiers and do not infer unseen content. Non-Krea templates use a separate Qwen3-VL 4B language model; their image encoder is unchanged."
+        "Enhancer output is a caption of the finished image, including for edits. No image is sent to the enhancer: it cannot describe unseen reference details. For image-dependent edit commands, Original retains the exact instruction. Word counts are targets, not a reason to invent details.\n\nEnhanced Prompt Preview shows the selected prompt before Style / LoRA: the enhanced text in Enhanced mode, the original text in Original mode. Original does not run the enhancer. Final Prompt Preview shows the final assembled prompt.\n\n## Prompt Enhancer — FULL\n\nGroup 2c: Enhanced expands each selected Manual/Wildcard prompt. Original passes through the original text without running the enhancer. It uses the loaded Krea Qwen3-VL; no extra model or API key is needed.\n\nEdit the instructions in Enhancer instructions. The default asks for an English description of the final image while preserving the requested style and exact lettering. LoRA triggers and Powder Styler are applied afterwards. Negative prompts pass through. Inspect Final Prompt Preview.\n\nFor precise Edit/Repair instructions, compare against Original: rewriting may change meaning. The enhancer receives text only, not the canvas image. sampling_mode=off gives deterministic text; max_length=1536 limits response tokens. Requires Generate Text with system_prompt support.\n\n## E2GO × Krea 2 Turbo\n\nTurbo recipe: 8 steps, Euler/simple, CFG 1. Repaint at denoise=0.5 uses 4 effective steps with auto_steps. Uses Wan 2.1 VAE. Increasing steps at partial denoise may amplify blotches.\n\n### Prompt source\nPowder Switcher in group 2 selects Manual (Main Prompt and enabled Prompt List slots) or Wildcard (lines from a list or .txt file). count sets the number of lines per run. Repeat last holds the last selection; on_exhausted=loop restarts after the final line.\n\n### Tasks: Image Conditioning mode\n| Task | Mode | Setup |\n|---|---|---|\n| Generate from scratch | Generate | Set size in Powder Resolution; the canvas is ignored |\n| Full-image img2img | Repaint | Load a source, leave the mask empty, denoise 0.4–0.7 |\n| Repaint a region | Repaint | Paint a mask, denoise 0.6–0.85. crop_to_mask=auto renders the crop and stitches it back. Describe the crop contents, not the whole scene |\n| Fix a small defect | Repair | Paint the defect; the mode sets denoise 0.9 and enables cropping |\n| Extend the image | Repaint / Edit | Use Expand in Canvas and drag its edges. The added area is masked automatically |\n| Instruction edit | Edit | Load a source, denoise 1. An empty mask edits the whole frame; a painted mask restricts the area |\n| Edit with references | Edit | Enable Reference 2/3 with Ctrl+M or connect images to image_1..4. Refer to them using the model-compatible image identifiers |\n\nPowder Sampler computes effective steps: auto_steps uses ceil(steps × denoise), with a minimum of one step. For example, 8 full-run steps at denoise=0.5 become 4. Disable auto_steps for an exact manual step count. inpaint_boost requires a mask in the latent.\n\n### Batches and comparisons\n- Combine enabled Prompt List slots or Wildcard lines with Style Sweep and Single LoRA mode to compare prompt/style/LoRA variants.\n- Enable the Grid node in group 9 with Ctrl+B to save a labeled comparison grid in output/grids.\n\n### Results\nPowder Canvas Review stitches the edited crop back into the full image and displays it in Canvas. Use Accept as background to make the result your next source.\n\n### Krea 2 notes\n- Repaint/Repair use VAE latents and masks without requiring a dedicated inpaint model. Increasing the step count at low denoise can amplify artifacts.\n- Krea 2 Turbo is primarily a text-to-image model. Reliable instruction editing requires compatible edit weights/LoRA and references connected to both consumers through Powder References. Without an edit LoRA, object preservation is not guaranteed. Image Conditioning uses the native ComfyUI reference routing.\n- For local edits, crop_to_mask=auto with a full-scene prompt can put a miniature scene inside the crop. Keep crop_to_mask=off, or describe only the area being edited.\n- Canvas is connected to Powder References as edited_image, so the Qwen3-VL encoder can see the source while reading the prompt.\n- At CFG 1, negative conditioning has no effect. Use cond mix in Powder Styler for style strength.\n\n\n## Choose a task\n\nRepaint: describe the desired result and start at denoise=0.5. Edit: write an instruction and start at denoise=1. A painted mask restricts the area; an empty mask edits the whole frame. Krea Edit requires a compatible edit LoRA; Repaint/Repair do not. Edit (native) is only for graphs with a separate native reference encoder; use ordinary Edit here.\n\n### Checked recipe\nKrea2 Turbo: 8 steps, CFG 1, euler / simple. Sampler profile checks model and latent compatibility. Profiles do not select weights: Base, Turbo, Distilled and Edit checkpoints are not interchangeable. Use a fixed seed when comparing changes; increase size only after the prompt and composition work. Negative text has no sampling effect at CFG 1.\n\n## Two-level enhancer\nOriginal skips the language model; Enhanced uses Balanced or High detail instructions. Both instructions are editable. Manual and Wildcard share the same path. Styles and exact LoRA triggers are applied once AFTER enhancement; the language model cannot rewrite trigger tokens. Selected prompt preview shows the chosen branch; Final Prompt Preview shows the actual assembled caption. No reference is sent to the enhancer unless its image input is explicitly connected. For edits, preserve reference identifiers and do not infer unseen content. Non-Krea templates use a separate Qwen3-VL 4B language model; their image encoder is unchanged.\n\nUse Additional instructions for constraints on this run, such as \"Do not describe clothing.\" Leave it blank to use the master prompt unchanged."
       ],
       "widgets_values_named": {
         "text": "Enhancer output is a caption of the finished image, including for edits. No image is sent to the enhancer: it cannot describe unseen reference details. For image-dependent edit commands, Original retains the exact instruction. Word counts are targets, not a reason to invent details.\n\nEnhanced Prompt Preview shows the selected prompt before Style / LoRA: the enhanced text in Enhanced mode, the original text in Original mode. Original does not run the enhancer. Final Prompt Preview shows the final assembled prompt.\n\n## Prompt Enhancer — FULL\n\nGroup 2c: Enhanced expands each selected Manual/Wildcard prompt. Original passes through the original text without running the enhancer. It uses the loaded Krea Qwen3-VL; no extra model or API key is needed.\n\nEdit the instructions in Enhancer instructions. The default asks for an English description of the final image while preserving the requested style and exact lettering. LoRA triggers and Powder Styler are applied afterwards. Negative prompts pass through. Inspect Final Prompt Preview.\n\nFor precise Edit/Repair instructions, compare against Original: rewriting may change meaning. The enhancer receives text only, not the canvas image. sampling_mode=off gives deterministic text; max_length=1536 limits response tokens. Requires Generate Text with system_prompt support.\n\n## E2GO × Krea 2 Turbo\n\nTurbo recipe: 8 steps, Euler/simple, CFG 1. Repaint at denoise=0.5 uses 4 effective steps with auto_steps. Uses Wan 2.1 VAE. Increasing steps at partial denoise may amplify blotches.\n\n### Prompt source\nPowder Switcher in group 2 selects Manual (Main Prompt and enabled Prompt List slots) or Wildcard (lines from a list or .txt file). count sets the number of lines per run. Repeat last holds the last selection; on_exhausted=loop restarts after the final line.\n\n### Tasks: Image Conditioning mode\n| Task | Mode | Setup |\n|---|---|---|\n| Generate from scratch | Generate | Set size in Powder Resolution; the canvas is ignored |\n| Full-image img2img | Repaint | Load a source, leave the mask empty, denoise 0.4–0.7 |\n| Repaint a region | Repaint | Paint a mask, denoise 0.6–0.85. crop_to_mask=auto renders the crop and stitches it back. Describe the crop contents, not the whole scene |\n| Fix a small defect | Repair | Paint the defect; the mode sets denoise 0.9 and enables cropping |\n| Extend the image | Repaint / Edit | Use Expand in Canvas and drag its edges. The added area is masked automatically |\n| Instruction edit | Edit | Load a source, denoise 1. An empty mask edits the whole frame; a painted mask restricts the area |\n| Edit with references | Edit | Enable Reference 2/3 with Ctrl+M or connect images to image_1..4. Refer to them using the model-compatible image identifiers |\n\nPowder Sampler computes effective steps: auto_steps uses ceil(steps × denoise), with a minimum of one step. For example, 8 full-run steps at denoise=0.5 become 4. Disable auto_steps for an exact manual step count. inpaint_boost requires a mask in the latent.\n\n### Batches and comparisons\n- Combine enabled Prompt List slots or Wildcard lines with Style Sweep and Single LoRA mode to compare prompt/style/LoRA variants.\n- Enable the Grid node in group 9 with Ctrl+B to save a labeled comparison grid in output/grids.\n\n### Results\nPowder Canvas Review stitches the edited crop back into the full image and displays it in Canvas. Use Accept as background to make the result your next source.\n\n### Krea 2 notes\n- Repaint/Repair use VAE latents and masks without requiring a dedicated inpaint model. Increasing the step count at low denoise can amplify artifacts.\n- Krea 2 Turbo is primarily a text-to-image model. Reliable instruction editing requires compatible edit weights/LoRA and references connected to both consumers through Powder References. Without an edit LoRA, object preservation is not guaranteed. Image Conditioning uses the native ComfyUI reference routing.\n- For local edits, crop_to_mask=auto with a full-scene prompt can put a miniature scene inside the crop. Keep crop_to_mask=off, or describe only the area being edited.\n- Canvas is connected to Powder References as edited_image, so the Qwen3-VL encoder can see the source while reading the prompt.\n- At CFG 1, negative conditioning has no effect. Use cond mix in Powder Styler for style strength.\n\n\n## Choose a task\n\nRepaint: describe the desired result and start at denoise=0.5. Edit: write an instruction and start at denoise=1. A painted mask restricts the area; an empty mask edits the whole frame. Krea Edit requires a compatible edit LoRA; Repaint/Repair do not. Edit (native) is only for graphs with a separate native reference encoder; use ordinary Edit here.\n\n### Checked recipe\nKrea2 Turbo: 8 steps, CFG 1, euler / simple. Sampler profile checks model and latent compatibility. Profiles do not select weights: Base, Turbo, Distilled and Edit checkpoints are not interchangeable. Use a fixed seed when comparing changes; increase size only after the prompt and composition work. Negative text has no sampling effect at CFG 1.\n\n## Two-level enhancer\nOriginal skips the language model; Enhanced uses Balanced or High detail instructions. Both instructions are editable. Manual and Wildcard share the same path. Styles and exact LoRA triggers are applied once AFTER enhancement; the language model cannot rewrite trigger tokens. Selected prompt preview shows the chosen branch; Final Prompt Preview shows the actual assembled caption. No reference is sent to the enhancer unless its image input is explicitly connected. For edits, preserve reference identifiers and do not infer unseen content. Non-Krea templates use a separate Qwen3-VL 4B language model; their image encoder is unchanged."
@@ -5393,7 +5393,7 @@
           "widget": {
             "name": "prompt"
           },
-          "link": 76
+          "link": 83
         },
         {
           "color_off": null,
@@ -5617,7 +5617,7 @@
         "Node name for S&R": "PrimitiveStringMultiline"
       },
       "widgets_values": [
-        "You are a faithful visual prompt editor. Translate the request into English, preserving the exact subjects, species, counts, actions, relationships, colors, medium, viewpoint and exclusions. Translate nouns by meaning, never by sound. Preserve proper names and reference identifiers. Preserve explicitly requested visible lettering verbatim in its original language, in quotation marks. A subject name is not a request to print that name in the image.\nDo not add unrequested people, animals, props, buildings, narrative events or text. Enrich the appearance of existing subjects, not the number of subjects. Style describes rendering, not new scene content. Do not impose photography, cinematic lighting, blur, bokeh, a color palette or a detailed background when unspecified. A plain background remains plain. Respect minimalist and simple styles. No empty quality boosters or prompt weighting syntax.\nDescribe visible facts only, never sounds, smells or imagined history. Do not add mist, fog or atmospheric haze unless requested. Do not introduce new exclusions such as \"no sky visible\". A named landscape has its requested surroundings; never replace those surroundings with a plain background. Plain backgrounds apply only when requested.\nFor an edit, preserve the exact requested change and invariants. Do not invent the contents of an unseen reference. Reference identifiers must remain unchanged. Negative requirements belong to the user's intent; do not turn excluded objects into positive scene details.\nReturn only the image prompt, without explanations, reasoning, Markdown or chat markers.\n\nBALANCED: clarify ambiguous phrasing conservatively and add only useful visual detail. Usually 50-100 words; preserve a detailed request without needless expansion.\n\nTarget image model: Krea2 Turbo. Use natural-language descriptions, main subject first. For Edit, retain explicit reference identifiers and the requested change.\n\nDescribe the intended finished image."
+        "You are a faithful visual prompt editor. Translate the request into English, preserving the exact subjects, species, counts, actions, relationships, colors, medium, viewpoint and exclusions. Translate nouns by meaning, never by sound. Preserve proper names and reference identifiers. Preserve explicitly requested visible lettering verbatim in its original language, in quotation marks. A subject name is not a request to print that name in the image.\nDo not add unrequested people, animals, props, buildings, narrative events or text. Enrich the appearance of existing subjects, not the number of subjects. Style describes rendering, not new scene content. Do not impose photography, cinematic lighting, blur, bokeh, a color palette or a detailed background when unspecified. A plain background remains plain. Respect minimalist and simple styles. No empty quality boosters or prompt weighting syntax.\nDescribe visible facts only, never sounds, smells or imagined history. Do not add mist, fog or atmospheric haze unless requested. Do not introduce new exclusions such as \"no sky visible\". A named landscape has its requested surroundings; never replace those surroundings with a plain background. Plain backgrounds apply only when requested.\nFor an edit, preserve the exact requested change and invariants. Do not invent the contents of an unseen reference. Reference identifiers must remain unchanged. Negative requirements belong to the user's intent; do not turn excluded objects into positive scene details.\nReturn only the image prompt, without explanations, reasoning, Markdown or chat markers.\n\nBALANCED: clarify ambiguous phrasing conservatively and add only useful visual detail. Usually 50-100 words; preserve a detailed request without needless expansion.\n\nTarget image model: Krea2 Turbo. Use natural-language descriptions, main subject first. For Edit, retain explicit reference identifiers and the requested change.\n\nDescribe the intended finished image.\n\nPER-RUN ADDITIONAL INSTRUCTIONS: The section ADDITIONAL INSTRUCTIONS FOR THIS RUN contains user constraints that override conflicting requirements in this master prompt. If empty, follow the master prompt normally. Apply these constraints to the output without quoting them. A request not to describe clothing does not mean the subject is nude."
       ],
       "widgets_values_named": {
         "value": "You are a faithful visual prompt editor. Translate the request into English, preserving the exact subjects, species, counts, actions, relationships, colors, medium, viewpoint and exclusions. Translate nouns by meaning, never by sound. Preserve proper names and reference identifiers. Preserve explicitly requested visible lettering verbatim in its original language, in quotation marks. A subject name is not a request to print that name in the image.\nDo not add unrequested people, animals, props, buildings, narrative events or text. Enrich the appearance of existing subjects, not the number of subjects. Style describes rendering, not new scene content. Do not impose photography, cinematic lighting, blur, bokeh, a color palette or a detailed background when unspecified. A plain background remains plain. Respect minimalist and simple styles. No empty quality boosters or prompt weighting syntax.\nDescribe visible facts only, never sounds, smells or imagined history. Do not add mist, fog or atmospheric haze unless requested. Do not introduce new exclusions such as \"no sky visible\". A named landscape has its requested surroundings; never replace those surroundings with a plain background. Plain backgrounds apply only when requested.\nFor an edit, preserve the exact requested change and invariants. Do not invent the contents of an unseen reference. Reference identifiers must remain unchanged. Negative requirements belong to the user's intent; do not turn excluded objects into positive scene details.\nReturn only the image prompt, without explanations, reasoning, Markdown or chat markers.\n\nBALANCED: clarify ambiguous phrasing conservatively and add only useful visual detail. Usually 50-100 words; preserve a detailed request without needless expansion.\n\nTarget image model: Krea2 Turbo. Use natural-language descriptions, main subject first. For Edit, retain explicit reference identifiers and the requested change.\n\nDescribe the intended finished image."
@@ -5692,7 +5692,7 @@
         "Node name for S&R": "PrimitiveStringMultiline"
       },
       "widgets_values": [
-        "You are a faithful visual prompt editor. Translate the request into English, preserving the exact subjects, species, counts, actions, relationships, colors, medium, viewpoint and exclusions. Translate nouns by meaning, never by sound. Preserve proper names and reference identifiers. Preserve explicitly requested visible lettering verbatim in its original language, in quotation marks. A subject name is not a request to print that name in the image.\nDo not add unrequested people, animals, props, buildings, narrative events or text. Enrich the appearance of existing subjects, not the number of subjects. Style describes rendering, not new scene content. Do not impose photography, cinematic lighting, blur, bokeh, a color palette or a detailed background when unspecified. A plain background remains plain. Respect minimalist and simple styles. No empty quality boosters or prompt weighting syntax.\nDescribe visible facts only, never sounds, smells or imagined history. Do not add mist, fog or atmospheric haze unless requested. Do not introduce new exclusions such as \"no sky visible\". A named landscape has its requested surroundings; never replace those surroundings with a plain background. Plain backgrounds apply only when requested.\nFor an edit, preserve the exact requested change and invariants. Do not invent the contents of an unseen reference. Reference identifiers must remain unchanged. Negative requirements belong to the user's intent; do not turn excluded objects into positive scene details.\nReturn only the image prompt, without explanations, reasoning, Markdown or chat markers.\n\nHIGH DETAIL: develop shape, materials, texture and spatial relationships of the requested subjects. Usually 100-180 words, up to 260 for complex scenes; do not pad or invent subjects to reach a count.\n\nTarget image model: Krea2 Turbo. Use natural-language descriptions, main subject first. For Edit, retain explicit reference identifiers and the requested change.\n\nDescribe the intended finished image."
+        "You are a faithful visual prompt editor. Translate the request into English, preserving the exact subjects, species, counts, actions, relationships, colors, medium, viewpoint and exclusions. Translate nouns by meaning, never by sound. Preserve proper names and reference identifiers. Preserve explicitly requested visible lettering verbatim in its original language, in quotation marks. A subject name is not a request to print that name in the image.\nDo not add unrequested people, animals, props, buildings, narrative events or text. Enrich the appearance of existing subjects, not the number of subjects. Style describes rendering, not new scene content. Do not impose photography, cinematic lighting, blur, bokeh, a color palette or a detailed background when unspecified. A plain background remains plain. Respect minimalist and simple styles. No empty quality boosters or prompt weighting syntax.\nDescribe visible facts only, never sounds, smells or imagined history. Do not add mist, fog or atmospheric haze unless requested. Do not introduce new exclusions such as \"no sky visible\". A named landscape has its requested surroundings; never replace those surroundings with a plain background. Plain backgrounds apply only when requested.\nFor an edit, preserve the exact requested change and invariants. Do not invent the contents of an unseen reference. Reference identifiers must remain unchanged. Negative requirements belong to the user's intent; do not turn excluded objects into positive scene details.\nReturn only the image prompt, without explanations, reasoning, Markdown or chat markers.\n\nHIGH DETAIL: develop shape, materials, texture and spatial relationships of the requested subjects. Usually 100-180 words, up to 260 for complex scenes; do not pad or invent subjects to reach a count.\n\nTarget image model: Krea2 Turbo. Use natural-language descriptions, main subject first. For Edit, retain explicit reference identifiers and the requested change.\n\nDescribe the intended finished image.\n\nPER-RUN ADDITIONAL INSTRUCTIONS: The section ADDITIONAL INSTRUCTIONS FOR THIS RUN contains user constraints that override conflicting requirements in this master prompt. If empty, follow the master prompt normally. Apply these constraints to the output without quoting them. A request not to describe clothing does not mean the subject is nude."
       ],
       "widgets_values_named": {
         "value": "You are a faithful visual prompt editor. Translate the request into English, preserving the exact subjects, species, counts, actions, relationships, colors, medium, viewpoint and exclusions. Translate nouns by meaning, never by sound. Preserve proper names and reference identifiers. Preserve explicitly requested visible lettering verbatim in its original language, in quotation marks. A subject name is not a request to print that name in the image.\nDo not add unrequested people, animals, props, buildings, narrative events or text. Enrich the appearance of existing subjects, not the number of subjects. Style describes rendering, not new scene content. Do not impose photography, cinematic lighting, blur, bokeh, a color palette or a detailed background when unspecified. A plain background remains plain. Respect minimalist and simple styles. No empty quality boosters or prompt weighting syntax.\nDescribe visible facts only, never sounds, smells or imagined history. Do not add mist, fog or atmospheric haze unless requested. Do not introduce new exclusions such as \"no sky visible\". A named landscape has its requested surroundings; never replace those surroundings with a plain background. Plain backgrounds apply only when requested.\nFor an edit, preserve the exact requested change and invariants. Do not invent the contents of an unseen reference. Reference identifiers must remain unchanged. Negative requirements belong to the user's intent; do not turn excluded objects into positive scene details.\nReturn only the image prompt, without explanations, reasoning, Markdown or chat markers.\n\nHIGH DETAIL: develop shape, materials, texture and spatial relationships of the requested subjects. Usually 100-180 words, up to 260 for complex scenes; do not pad or invent subjects to reach a count.\n\nTarget image model: Krea2 Turbo. Use natural-language descriptions, main subject first. For Edit, retain explicit reference identifiers and the requested change.\n\nDescribe the intended finished image."
@@ -6055,6 +6055,142 @@
         "e2goWidgetNames": [],
         "e2goWidgetSchemaVersion": 1
       }
+    },
+    {
+      "id": 107,
+      "type": "PrimitiveStringMultiline",
+      "pos": [
+        560,
+        3200
+      ],
+      "size": [
+        420,
+        180
+      ],
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "value",
+          "name": "value",
+          "type": "STRING",
+          "widget": {
+            "name": "value"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "STRING",
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            82
+          ]
+        }
+      ],
+      "title": "Additional instructions",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.43.0",
+        "Node name for S&R": "PrimitiveStringMultiline",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "value": true
+          },
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        ""
+      ],
+      "widgets_values_named": {
+        "value": ""
+      },
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 108,
+      "type": "StringConcatenate",
+      "pos": [
+        1040,
+        3200
+      ],
+      "size": [
+        320,
+        130
+      ],
+      "flags": {},
+      "order": 20,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "string_a",
+          "name": "string_a",
+          "type": "STRING",
+          "widget": {
+            "name": "string_a"
+          },
+          "link": 76
+        },
+        {
+          "localized_name": "string_b",
+          "name": "string_b",
+          "type": "STRING",
+          "widget": {
+            "name": "string_b"
+          },
+          "link": 82
+        },
+        {
+          "localized_name": "delimiter",
+          "name": "delimiter",
+          "type": "STRING",
+          "widget": {
+            "name": "delimiter"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "STRING",
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            83
+          ]
+        }
+      ],
+      "title": "Enhancer input + additional instructions",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.43.0",
+        "Node name for S&R": "StringConcatenate",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "string_a": true,
+            "string_b": true,
+            "delimiter": true
+          },
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "",
+        "",
+        "\n\nADDITIONAL INSTRUCTIONS FOR THIS RUN:\n"
+      ],
+      "widgets_values_named": {
+        "string_a": "",
+        "string_b": "",
+        "delimiter": "\n\nADDITIONAL INSTRUCTIONS FOR THIS RUN:\n"
+      }
     }
   ],
   "links": [
@@ -6302,8 +6438,8 @@
       76,
       21,
       0,
-      100,
-      5,
+      108,
+      0,
       "STRING"
     ],
     [
@@ -6473,6 +6609,22 @@
       11,
       0,
       "MODEL"
+    ],
+    [
+      82,
+      107,
+      0,
+      108,
+      1,
+      "STRING"
+    ],
+    [
+      83,
+      108,
+      0,
+      100,
+      5,
+      "STRING"
     ]
   ],
   "floatingLinks": null,
@@ -6593,6 +6745,18 @@
         2200,
         950,
         860
+      ],
+      "color": "#34495e",
+      "flags": {}
+    },
+    {
+      "id": 11,
+      "title": "Prompt Enhancer - Additional instructions",
+      "bounding": [
+        530,
+        3130,
+        860,
+        300
       ],
       "color": "#34495e",
       "flags": {}

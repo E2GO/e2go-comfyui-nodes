@@ -1120,7 +1120,12 @@ class PowderConditioner:
             layout_data = json.loads(layout[0])
             if layout_data.get('enabled'):
                 stamp = [layout_data.get('target'), layout_data.get('width'), layout_data.get('height')]
-                positive_results = [[[tensor, {**meta, 'e2go_layout': stamp}] for tensor, meta in cond] for cond in positive_results]
+                source = link_source(graph, (graph.get(str(unique_id), {}).get('inputs', {}).get('layout'))) if isinstance(graph, dict) else None
+                origin = source[0] if source and graph.get(source[0], {}).get('class_type') == 'PowderCanvas' else None
+                layout_meta = {'e2go_layout': stamp}
+                if origin is not None:
+                    layout_meta['e2go_layout_source'] = origin
+                positive_results = [[[tensor, {**meta, **layout_meta}] for tensor, meta in cond] for cond in positive_results]
         return (positive_results, negative_results, final_prompts, final_negatives)
 
 

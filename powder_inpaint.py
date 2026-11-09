@@ -14,6 +14,27 @@ from ._families import family_of
 _STITCH_SLOT = 5
 
 
+def _send_input_status(unique_id, mode, mask, ignore_mask, references):
+    """Report facts only available after upstream nodes have executed."""
+    if unique_id is None:
+        return
+    notices = []
+    if mode == "Repair" and not ignore_mask and (mask is None or float(mask.max()) <= 0):
+        notices.append({"id": "empty_mask", "severity": "warning", "message":
+                        "No painted mask. Repair will process the whole image. Paint the area to repair."})
+    if mode not in ("Edit", "Generate") and unpack_references(references):
+        notices.append({"id": "references", "severity": "warning", "message":
+                        "This node does not add the reference bundle to image conditioning in this mode. Use Edit for that. The text encoder may still use references."})
+    try:
+        from server import PromptServer
+        server = PromptServer.instance
+        if server.client_id is not None:
+            server.send_sync("e2go_image_input_status", {
+                "node_id": str(unique_id), "mode": mode, "notices": notices}, server.client_id)
+    except (ImportError, AttributeError):
+        pass  # API-only execution without the ComfyUI event server.
+
+
 def _stitch_consumed(prompt, unique_id):
     """True if any graph node links to our stitch output (slot _STITCH_SLOT).
 
@@ -453,7 +474,7 @@ class PowderImageConditioning:
                 "batch_size": ("INT", {"default": 1, "min": 1, "max": 64,
                                        "tooltip": "N variants: the latent is repeated N times (video-VAE safe). Wire PowderCanvas's batch_size output here."}),
                 "denoise": ("FLOAT", {"default": 1.0, "min": 0.0, "max": 1.0, "step": 0.05,
-                                      "tooltip": "Passthrough dial: wire the denoise OUTPUT to the sampler. Auto-set on mode change (Generate/Edit 1.0, Repaint 0.6, Repair 0.9) — override freely."}),
+                                      "tooltip": "Passthrough dial: wire the denoise OUTPUT to the sampler. Settings are remembered per mode. Defaults: Generate/Edit 1.0, Repaint 0.6, Repair 0.9. Use the reset arrow beside mode to restore its defaults."}),
                 "seamless_mask_blend": ("BOOLEAN", {"default": True,
                                                     "tooltip": "Differential Diffusion: gray mask levels set per-pixel edit strength, feathered edges blend seamlessly. Needs the model input; no-op in unmasked modes."}),
                 "concat": (["auto", "on", "off"], {"default": "auto",
@@ -542,6 +563,7 @@ class PowderImageConditioning:
         mode = _LEGACY_MODES.get(mode, mode)
         if mode != 'Generate' and getattr(pixels, '_e2go_empty_canvas', False):
             raise ValueError('Canvas is empty. Load an image before Repaint, Edit or Repair.')
+        _send_input_status(unique_id, mode, mask, ignore_mask, references)
         # Repair is a spot fix in its own crop; the frontend pre-sets this when
         # the mode is picked, an API prompt may not.
         if mode == "Repair" and crop_to_mask == "off":

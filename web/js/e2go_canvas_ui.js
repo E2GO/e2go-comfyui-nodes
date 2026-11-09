@@ -446,6 +446,16 @@ export function mountCanvasEditor(node, state, container) {
     };
     bActual.addEventListener("pointerdown", e => e.stopPropagation());
     nav.append(bActual);
+    const bTransparency = el("button", "", "\u25a6");
+    bTransparency.setAttribute("aria-label", "Transparency grid");
+    bTransparency.addEventListener("pointerdown", e => e.stopPropagation());
+    bTransparency.onclick = () => {
+        node.properties ||= {};
+        node.properties.e2goTransparencyGrid = node.properties.e2goTransparencyGrid === false;
+        node.graph?.change?.();
+        redraw();
+    };
+    nav.append(bTransparency);
     bReset.textContent = "Fit";
     view.appendChild(nav);
 
@@ -1688,7 +1698,38 @@ export function mountCanvasEditor(node, state, container) {
 
     // ---- render ----
     const tint = document.createElement("canvas");
+    // Editor decoration only: never draw into model layers or export buffers.
+    const checkerTile = document.createElement("canvas");
+    checkerTile.width = checkerTile.height = 24;
+    const checkerCtx = checkerTile.getContext("2d");
+    checkerCtx.fillStyle = "#383b40";
+    checkerCtx.fillRect(0, 0, 24, 24);
+    checkerCtx.fillStyle = "#484c52";
+    checkerCtx.fillRect(0, 0, 12, 12);
+    checkerCtx.fillRect(12, 12, 12, 12);
+    function drawTransparency(ctx, x, y, width, height, scale = 1) {
+        if (node.properties?.e2goTransparencyGrid === false) return;
+        ctx.save();
+        const pattern = ctx.createPattern(checkerTile, "repeat");
+        const k = (window.devicePixelRatio || 1) / scale;
+        pattern.setTransform(new DOMMatrix().translate(x, y).scale(k));
+        ctx.fillStyle = pattern;
+        ctx.fillRect(x, y, width, height);
+        ctx.restore();
+    }
+    function drawImageBoundary(ctx, x, y, width, height, scale = 1) {
+        ctx.save();
+        ctx.setLineDash([]);
+        ctx.lineWidth = (window.devicePixelRatio || 1) / scale;
+        ctx.strokeStyle = "#a1a5ac";
+        ctx.strokeRect(x, y, width, height);
+        ctx.restore();
+    }
     function redraw() {
+        const showGrid = node.properties?.e2goTransparencyGrid !== false;
+        bTransparency.setAttribute("aria-pressed", String(showGrid));
+        bTransparency.title = `Transparency grid: ${showGrid ? "ON" : "OFF"} (display only)`;
+        bTransparency.style.opacity = showGrid ? "1" : ".55";
         // Backing store = layout size × graph zoom × devicePixelRatio so the
         // canvas stays crisp under the CSS transform ComfyUI applies to DOM
         // widgets. CSS size stays at layout px; when the backing rescales,
@@ -1706,17 +1747,15 @@ export function mountCanvasEditor(node, state, container) {
         const bw = Math.max(1, Math.round(lw * zoom * dpr));
         const bh = Math.max(1, Math.round(lh * zoom * dpr));
         if (display.width !== bw || display.height !== bh) {
-            const prevW = display.width;
+            // Workflow switches can resize width and height independently.
+            // Scaling by width alone shifts the image off-screen when the
+            // editor's aspect ratio changes, and that bad view gets stashed.
+            const relView = ui.view.fitted ? getRelView() : null;
             display.width = bw;
             display.height = bh;
             display.style.width = lw + "px";
             display.style.height = lh + "px";
-            if (ui.view.fitted && prevW > 0) {
-                const r = bw / prevW;
-                ui.view.scale *= r;
-                ui.view.ox *= r;
-                ui.view.oy *= r;
-            }
+            if (relView) applyRelView(relView);
         }
         const vw = bw, vh = bh;
         const ctx = display.getContext("2d");
@@ -1760,7 +1799,9 @@ export function mountCanvasEditor(node, state, container) {
                 emptyHint.style.display = "none";
                 const k = Math.min(vw / rimg.naturalWidth, vh / rimg.naturalHeight);
                 const dw = rimg.naturalWidth * k, dh = rimg.naturalHeight * k;
+                drawTransparency(ctx, (vw - dw) / 2, (vh - dh) / 2, dw, dh);
                 ctx.drawImage(rimg, (vw - dw) / 2, (vh - dh) / 2, dw, dh);
+                drawImageBoundary(ctx, (vw - dw) / 2, (vh - dh) / 2, dw, dh);
                 persistentInfo.textContent = `Result ${ui.review.idx + 1}/${ui.review.imgs.length} · ${rimg.naturalWidth}×${rimg.naturalHeight} · no canvas loaded`;
                 syncLayersPanel();
                 return;
@@ -1800,6 +1841,7 @@ export function mountCanvasEditor(node, state, container) {
         ctx.rotate(ui.view.angle);
         ctx.scale(ui.view.scale, ui.view.scale);
 
+        drawTransparency(ctx, 0, 0, state.width, state.height, ui.view.scale);
         for (const [i, layer] of state.layers.entries()) {
             if (ui.previewResult) break;
             if (!layer.visible || !layer.canvas) continue;
@@ -1846,6 +1888,7 @@ export function mountCanvasEditor(node, state, container) {
                 ctx.drawImage(rimg, (state.width - dw) / 2, (state.height - dh) / 2, dw, dh);
             }
         }
+        drawImageBoundary(ctx, 0, 0, state.width, state.height, ui.view.scale);
         if (ui.previewResult && ui.review?.cropBox) {
             const [x, y, w, h] = ui.review.cropBox;
             ctx.strokeStyle = "#ffe570";

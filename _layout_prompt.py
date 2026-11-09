@@ -4,6 +4,31 @@ import math
 import re
 
 
+def layout_model_error(target, family):
+    families = {'moss': 'moss_image', 'ideogram4': 'ideogram4', 'flux3': 'flux3'}
+    names = {'moss_image': 'MOSS-Image', 'ideogram4': 'Ideogram 4', 'flux3': 'FLUX.3 Klein'}
+    if family is not None and family == families.get(target):
+        return ''
+    prefix = 'Canvas Layout target does not match the image model. '
+    if family in names:
+        return prefix + f'Select {names[family]} in Layout, or load the model selected there.'
+    reason = f'The connected {family} model does not support Canvas Layout.' if family else 'Canvas Layout support could not be verified for this model.'
+    return prefix + reason + ' Use Ideogram 4, MOSS-Image or FLUX.3 Klein, or turn off Use layout.'
+
+
+def send_layout_status(source_id, target, message):
+    if source_id is None:
+        return
+    try:
+        from server import PromptServer
+        server = PromptServer.instance
+        if server.client_id is not None:
+            server.send_sync('e2go_layout_status', {
+                'node_id': str(source_id), 'target': target, 'message': message}, server.client_id)
+    except (ImportError, AttributeError):
+        pass
+
+
 def visible_text(region):
     if region.get('text', '').strip():
         return region['text']

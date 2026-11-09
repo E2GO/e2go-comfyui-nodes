@@ -210,7 +210,7 @@ export function containBox(imgW, imgH, width, height) {
 }
 
 
-export function setBackground(state, img, width, height, { fit = false, undoable = false } = {}) {
+export function setBackground(state, img, width, height, { fit = false, undoable = false, preserveAlpha = false } = {}) {
     if (undoable) pushUndo(state, "document");
     const sameSize = state.width === width && state.height === height;
     if (!sameSize || !state.layers.length) {
@@ -236,8 +236,10 @@ export function setBackground(state, img, width, height, { fit = false, undoable
         // (the server bakes the composite over black anyway, and expandCanvas
         // fills its new area the same way) — so what the editor shows is what
         // the model will be handed.
-        bg.fillStyle = "#000";
-        bg.fillRect(0, 0, width, height);
+        if (!preserveAlpha) {
+            bg.fillStyle = "#000";
+            bg.fillRect(0, 0, width, height);
+        }
         const b = containBox(
             img.naturalWidth || img.width, img.naturalHeight || img.height, width, height);
         bg.drawImage(img, b.x, b.y, b.w, b.h);

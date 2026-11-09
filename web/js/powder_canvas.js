@@ -348,7 +348,7 @@ function applyBackgroundFromUrl(node, state, url, sizing = {}) {
         node._e2goCanvasCancelExpand?.();
         node._e2goCanvasCommitXform?.();
         const prevW = state.width, prevH = state.height;
-        model.setBackground(state, img, targetW, targetH, { fit, undoable: !!sizing.undoable });
+        model.setBackground(state, img, targetW, targetH, { fit, undoable: !!sizing.undoable, preserveAlpha: !!sizing.preserveAlpha });
         node._e2goBackgroundReady?.();
         if (fit && (img.naturalWidth !== targetW || img.naturalHeight !== targetH)) {
             // Never silent: the picture on screen is no longer the file's own
@@ -409,6 +409,7 @@ function loadBackgroundFromMessage(node, state, message) {
 // and adopted wholesale when it is re-created, bypassing the snapshot restore.
 // Keyed by workflow + node id so two workflows with colliding node ids don't
 // bleed into each other. Nothing here ever touches the workflow file.
+let loadingCanvasWorkflow = false;
 const sessionCanvas = new Map(); // "wfKey|nodeId" -> live state object
 // Entries hold full-res canvases + up-to-20-deep undo/redo snapshots — a
 // worst-case entry is hundreds of MB, so an entry-count cap alone could pin
@@ -443,17 +444,6 @@ function activeWfKey() {
         const wf = app.extensionManager?.workflow?.activeWorkflow;
         return String(wf?.path || wf?.key || "");
     } catch { return ""; }
-}
-
-// The nodeFileKey part ("<hash>_<id>") of a file this node uploaded.
-function fileKeyOf(name) {
-    return typeof name === "string" ? name.replace(/_(dropped|layer\d+)\.png$/, "") : "";
-}
-
-function openWfKeys() {
-    try {
-        return (app.extensionManager?.workflow?.openWorkflows || []).map((w) => String(w?.path || w?.key || ""));
-    } catch { return []; }
 }
 
 function canvasStashKey(node) {
@@ -552,6 +542,17 @@ api.addEventListener("executed", (ev) => {
 
 app.registerExtension({
     name: "e2go_nodes.PowderCanvas",
+    beforeLoadGraph() { loadingCanvasWorkflow = true; },
+    onGraphLoadError() { loadingCanvasWorkflow = false; },
+    afterLoadGraph() {
+        loadingCanvasWorkflow = false;
+        for (const node of collectCanvasNodes(app.graph)) {
+            const restore = node._e2goRestoreAfterWorkflow;
+            node._e2goRestoreAfterWorkflow = null;
+            restore?.();
+            node._e2goPendingCanvasInfo = null;
+        }
+    },
 
     async beforeRegisterNodeDef(nodeType, nodeData) {
         if (nodeData.name !== "PowderCanvas") return;
@@ -560,6 +561,10 @@ app.registerExtension({
         nodeType.prototype.onSerialize = function (info) {
             origOnSerialize?.apply(this, arguments);
 
+            if (this._e2goPendingCanvasInfo) {
+                info.e2goCanvasEditor = this._e2goPendingCanvasInfo.e2goCanvasEditor;
+                return;
+            }
             if (this._e2goCanvasState) {
                 info.e2goCanvasEditor = model.serializeState(this._e2goCanvasState);
             }
@@ -579,114 +584,87 @@ app.registerExtension({
             // editor was built — refresh the toolbar toggle. Before the early
             // returns below: the mode is independent of canvas content.
             this._e2goCanvasSyncBgMode?.();
-            const state = this._e2goCanvasState;
-            if (!state) return;
+            const restore = () => {
+                const state = this._e2goCanvasState;
+                if (!state) return;
 
-            if (model.hasContent(state)) return;
-            // Node re-created within this session (workflow undo/redo, tab
-            // switch): adopt the LIVE canvas wholesale — strokes, mask, undo
-            // stack, compare results — and ignore the graph snapshot. Checked
-            // INDEPENDENTLY of the snapshot: undoing past the point where the
-            // canvas first got content re-configures with ed=null, and the
-            // stashed live canvas must still come back.
-            const ed = info?.e2goCanvasEditor;
-            // Re-learn the workflow identity: onConfigure runs while this
-            // node's workflow is being made active, so activeWfKey() is
-            // authoritative here (except at initial page load, where it can
-            // still be "" — the legacy fallback below covers that).
-            const wfNow = activeWfKey();
-            if (wfNow) this._e2goWfKey = wfNow;
-            // Primary key, then the ""-prefix legacy key: a node whose key
-            // was captured before activeWorkflow settled stashes under
-            // "|<id>" while the re-created node derives the real-prefix key.
-            let stashKey = canvasStashKey(this);
-            let stash = sessionCanvas.get(stashKey);
-            if (!stash) {
-                // Last resort: any stash whose node-id suffix matches — the
-                // prefix may be "" (initial page load) or even a WRONG
-                // workflow (key learned mid-tab-switch). Only adopt when the
-                // match is UNAMBIGUOUS: two same-id canvases from different
-                // workflows stashed at once must not cross-adopt.
-                // And never across workflows that merely share a node id (the
-                // same template in two tabs): the server files carry the
-                // workflow in their name, so a stash whose files belong to
-                // another workflow than this node's saved ones is not ours.
-                const suffix = `|${this.id}`;
-                const mine = fileKeyOf(ed?.droppedBg || ed?.paintLayers?.[0]?.file);
-                // A canvas with no files yet (graph-fed, nothing painted) has
-                // no such identity; there a stash filed under ANOTHER open
-                // tab is that tab's, as long as this node has its own saved
-                // snapshot to restore from.
-                const otherTabs = ed?.width ? openWfKeys().filter((k) => k && k !== wfNow) : [];
-                const candidates = [...sessionCanvas.keys()].filter((k) => {
-                    const s = sessionCanvas.get(k);
-                    return k.endsWith(suffix) && s?.state?.width
-                        && !(mine && s.fileKey && mine !== s.fileKey)
-                        && !otherTabs.includes(k.slice(0, -suffix.length));
-                });
-                if (candidates.length === 1) {
-                    stashKey = candidates[0];
-                    stash = sessionCanvas.get(stashKey);
+                if (model.hasContent(state)) return;
+                // Node re-created within this session (workflow undo/redo, tab
+                // switch): adopt the LIVE canvas wholesale — strokes, mask, undo
+                // stack, compare results — and ignore the graph snapshot. Checked
+                // INDEPENDENTLY of the snapshot: undoing past the point where the
+                // canvas first got content re-configures with ed=null, and the
+                // stashed live canvas must still come back.
+                const ed = info?.e2goCanvasEditor;
+                // afterLoadGraph runs after ComfyUI activates the destination tab.
+                // A matching node id in another workflow is never a valid fallback.
+                const wfNow = activeWfKey();
+                this._e2goWfKey = wfNow;
+                const stashKey = canvasStashKey(this);
+                const stash = wfNow ? sessionCanvas.get(stashKey) : null;
+                if (stash?.state && (stash.state.width || stash.review?.imgs?.length)) {
+                    sessionCanvas.delete(stashKey);
+                    adoptState(state, stash.state);
+                    this._e2goDroppedBg = stash.droppedBg || ed?.droppedBg || null;
+                    if (stash.uiState) this._e2goCanvasSetUiState?.(stash.uiState);
+                    if (stash.review) this._e2goCanvasSetReview?.(stash.review);
+                    this._e2goLastReviewKey = stash.lastReviewKey;
+                    // A restored relView is applied via pendingRelView on the next
+                    // sized redraw — do NOT force a refit (refit=false), which
+                    // would arm the ResizeObserver to clobber it. No stored view
+                    // -> refit for a clean fit.
+                    this._e2goCanvasRedraw?.(stash.uiState?.relView ? false : true);
+                    return;
                 }
-            }
-            if (stash?.state && (stash.state.width || stash.review?.imgs?.length)) {
-                sessionCanvas.delete(stashKey);
-                adoptState(state, stash.state);
-                if (ed?.droppedBg) this._e2goDroppedBg = ed.droppedBg;
-                if (stash.uiState) this._e2goCanvasSetUiState?.(stash.uiState);
-                if (stash.review) this._e2goCanvasSetReview?.(stash.review);
-                this._e2goLastReviewKey = stash.lastReviewKey;
-                // A restored relView is applied via pendingRelView on the next
-                // sized redraw — do NOT force a refit (refit=false), which
-                // would arm the ResizeObserver to clobber it. No stored view
-                // -> refit for a clean fit.
-                this._e2goCanvasRedraw?.(stash.uiState?.relView ? false : true);
-                return;
-            }
-            if (!ed) return;
-            // sizing: the recovery bg is the ORIGINAL file, which may be larger
-            // than the canvas it was fitted into. Restoring a saved size must
-            // reproduce the workflow exactly, so that path forces "fit"; with
-            // no saved size the normal mode decides (there is no canvas yet
-            // anyway, so the picture wins).
-            const finishWithDroppedBg = (sizing = {}) => {
-                if (ed.droppedBg) {
-                    this._e2goDroppedBg = ed.droppedBg;
-                    return applyBackgroundFromUrl(this, state, droppedBgUrl(ed.droppedBg), sizing);
+                if (!ed) return;
+                // sizing: the recovery bg is the ORIGINAL file, which may be larger
+                // than the canvas it was fitted into. Restoring a saved size must
+                // reproduce the workflow exactly, so that path forces "fit"; with
+                // no saved size the normal mode decides (there is no canvas yet
+                // anyway, so the picture wins).
+                const finishWithDroppedBg = (sizing = {}) => {
+                    if (ed.droppedBg) {
+                        this._e2goDroppedBg = ed.droppedBg;
+                        return applyBackgroundFromUrl(this, state, droppedBgUrl(ed.droppedBg), sizing);
+                    }
+                };
+                if (ed.width && ed.height) {
+                    // New saves reference paint layers by server filename; turn
+                    // those into /view URLs restoreState can load (old saves keep
+                    // their inline dataUrl and pass through untouched). A restored
+                    // layer's filename is also re-seeded onto _layerFiles so the
+                    // first serialize after load doesn't drop it before the next
+                    // persist runs.
+                    if (Array.isArray(ed.paintLayers)) {
+                        for (const l of ed.paintLayers) {
+                            if (l && l.file && !l.dataUrl) l.dataUrl = e2goInputUrl(l.file);
+                        }
+                        state._layerFiles = ed.paintLayers
+                            .filter((l) => l && l.file)
+                            .map((l) => ({ file: l.file, visible: l.visible !== false, name: l.name || null }));
+                    }
+                    if (ed.rememberMask && ed.maskFile) ed.maskDataUrl = e2goInputUrl(ed.maskFile);
+                    this._e2goRestoreLoad = model.restoreState(state, ed).then(() => {
+                        this._e2goCanvasRedraw?.();
+                        // setBackground preserves same-size paint/mask, so the
+                        // dropped bg loads AFTER strokes are back.
+                        return finishWithDroppedBg({ force: "fit", preserveAlpha: true });
+                    }).catch((e) => {
+                        // A corrupt layer dataUrl rejects mid-loop; recover what
+                        // we can (bg at least) instead of a dead half-state.
+                        console.warn("[PowderCanvas] snapshot restore failed:", e);
+                        this._e2goCanvasRedraw?.();
+                        finishWithDroppedBg({ force: "fit", preserveAlpha: true });
+                        return false;
+                    });
+                } else {
+                    finishWithDroppedBg();
                 }
             };
-            if (ed.width && ed.height) {
-                // New saves reference paint layers by server filename; turn
-                // those into /view URLs restoreState can load (old saves keep
-                // their inline dataUrl and pass through untouched). A restored
-                // layer's filename is also re-seeded onto _layerFiles so the
-                // first serialize after load doesn't drop it before the next
-                // persist runs.
-                if (Array.isArray(ed.paintLayers)) {
-                    for (const l of ed.paintLayers) {
-                        if (l && l.file && !l.dataUrl) l.dataUrl = e2goInputUrl(l.file);
-                    }
-                    state._layerFiles = ed.paintLayers
-                        .filter((l) => l && l.file)
-                        .map((l) => ({ file: l.file, visible: l.visible !== false, name: l.name || null }));
-                }
-                if (ed.rememberMask && ed.maskFile) ed.maskDataUrl = e2goInputUrl(ed.maskFile);
-                this._e2goRestoreLoad = model.restoreState(state, ed).then(() => {
-                    this._e2goCanvasRedraw?.();
-                    // setBackground preserves same-size paint/mask, so the
-                    // dropped bg loads AFTER strokes are back.
-                    return finishWithDroppedBg({ force: "fit" });
-                }).catch((e) => {
-                    // A corrupt layer dataUrl rejects mid-loop; recover what
-                    // we can (bg at least) instead of a dead half-state.
-                    console.warn("[PowderCanvas] snapshot restore failed:", e);
-                    this._e2goCanvasRedraw?.();
-                    finishWithDroppedBg({ force: "fit" });
-                    return false;
-                });
-            } else {
-                finishWithDroppedBg();
-            }
+            if (loadingCanvasWorkflow) {
+                this._e2goPendingCanvasInfo = info;
+                this._e2goRestoreAfterWorkflow = restore;
+            } else restore();
         };
     },
 
@@ -778,7 +756,7 @@ app.registerExtension({
             if (st && (model.hasContent(st) || review?.imgs?.length)) {
                 stashSet(canvasStashKey(this), {
                     state: st,
-                    fileKey: fileKeyOf(this._e2goDroppedBg || st._layerFiles?.[0]?.file),
+                    droppedBg: this._e2goDroppedBg,
                     review,
                     lastReviewKey: this._e2goLastReviewKey,
                     uiState: this._e2goCanvasGetUiState?.() || null,

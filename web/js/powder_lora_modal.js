@@ -57,6 +57,7 @@ export function getLoraLibrary() {
 // both successes (including empty-string triggers) and failures, so a lora
 // is only ever fetched once per session regardless of how many times its
 // row is rendered/re-rendered across modal opens.
+export function invalidateTriggerTooltip(name) { _triggerCache.delete(name); }
 const _triggerCache = new Map(); // name -> Promise<string>
 
 function fetchTriggerTooltip(loraName) {

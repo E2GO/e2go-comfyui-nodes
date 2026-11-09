@@ -2,12 +2,38 @@
 // Mirrors the separator pattern used by the wildcard/styler nodes.
 
 import { app } from "../../../scripts/app.js";
-import { widgetSecondaryTextColor, widgetFont, noop, styleBoolToggle, markSeparator, setWidgetVisible } from "./e2go_hide_utils.js";
+import { api } from "../../../scripts/api.js";
+import { startInputNoticeLayer, updateInputNotice } from "./e2go_input_notice.js";
+import { imageInputChecks } from "./e2go_input_checks.js";
+import { trackWidgetDraw, widgetSecondaryTextColor, widgetFont, noop, styleBoolToggle, markSeparator, setWidgetVisible, widgetPointerX, redrawNodeWidgets } from "./e2go_hide_utils.js";
 import { autoWireCropChain, autoWireReferences } from "./e2go_graph_wire.js";
 import { installNameKeyedPersistence, alignWithAnchorSlot } from "./e2go_persistence.js";
 
 app.registerExtension({
     name: "e2go_nodes.PowderImageConditioning",
+
+    setup() {
+        startInputNoticeLayer();
+        // One graph-scoped poll also observes Canvas painting and rewiring.
+        setInterval(() => {
+            for (const node of app.graph?._nodes || []) {
+                node._e2goRefreshInputChecks?.();
+                node._e2goRefreshLayoutStatus?.();
+            }
+        }, 500);
+        api.addEventListener("execution_error", ({ detail }) => {
+            if (detail?.node_type !== "PowderImageConditioning") return;
+            const node = app.graph?.getNodeById(detail.node_id);
+            node?._e2goSetInputError?.(detail.exception_message);
+        });
+        api.addEventListener("executing", ({ detail }) => {
+            const node = app.graph?.getNodeById(detail?.node);
+            node?._e2goSetInputError?.("");
+        });
+        api.addEventListener("e2go_image_input_status", ({ detail }) => {
+            app.graph?.getNodeById(detail?.node_id)?._e2goSetRuntimeNotices?.(detail);
+        });
+    },
 
     nodeCreated(node) {
         if (node.comfyClass !== "PowderImageConditioning") return;
@@ -68,6 +94,44 @@ app.registerExtension({
                 `[e2go] PowderImageCond: widget "${name}" has no SPEC entry — `
                 + "legacy alignment and the repair pass are default-open for it");
         }
+        let activeMode = findW("mode")?.value;
+        let modeSettings = {};
+        const canonicalMode = (mode) => ({ Inpaint: "Repaint", Img2Img: "Repaint",
+            "Edit — whole image": "Edit", "Edit — masked region": "Edit" }[mode] || mode);
+        const defaultsFor = (mode) => {
+            const values = Object.fromEntries(Object.entries(SPEC)
+                .filter(([name]) => name !== "mode").map(([name, spec]) => [name, spec.def]));
+            values.denoise = mode === "Repaint" ? 0.6 : mode === "Repair" ? 0.9 : 1;
+            if (mode === "Repair") { values.crop_to_mask = "auto"; values.mask_grow = 16; }
+            return values;
+        };
+        const captureSettings = () => Object.fromEntries(inputNames
+            .filter((name) => name !== "mode" && SPEC[name] && findW(name))
+            .map((name) => [name, findW(name).value]));
+        const applySettings = (values) => {
+            for (const [name, value] of Object.entries(values)) {
+                if (name !== "mode" && SPEC[name]?.ok(value) && findW(name)) findW(name).value = value;
+            }
+            redrawNodeWidgets(node);
+        };
+        const serializeModes = node.onSerialize;
+        node.onSerialize = function (info) {
+            serializeModes?.apply(this, arguments);
+            modeSettings[canonicalMode(activeMode)] = captureSettings();
+            info.e2goModeSettings = structuredClone(modeSettings);
+        };
+        const configureModes = node.onConfigure;
+        node.onConfigure = function (info) {
+            modeSettings = {};
+            for (const [mode, values] of Object.entries(info?.e2goModeSettings || {})) {
+                if (!["Generate", "Repaint", "Repair", "Edit", "Edit (native)"].includes(mode)) continue;
+                modeSettings[mode] = defaultsFor(mode);
+                for (const [name, value] of Object.entries(values || {})) {
+                    if (name !== "mode" && SPEC[name]?.ok(value)) modeSettings[mode][name] = value;
+                }
+            }
+            return configureModes?.apply(this, arguments);
+        };
         installNameKeyedPersistence(node, {
             inputNames,
             sanitize: (name, v) =>
@@ -86,6 +150,7 @@ app.registerExtension({
             applyValues: false,
             afterRestore: (saved) => {
                 sanitizeInputs(saved); // also runs with saved=null: pure repair
+                activeMode = canonicalMode(findW("mode")?.value);
                 // Safety net: re-run visibility here too, in case the
                 // double-rAF below it ever races ahead of this restore.
                 syncCropWidgets?.();
@@ -93,10 +158,7 @@ app.registerExtension({
             },
         });
 
-        // Mode drives the typical denoise (Generate/Edit 1.0, Repaint 0.6).
-        // Fires only on USER interaction: workflow restore assigns w.value
-        // directly (positional configure and the e2goInputs rAF both skip
-        // callbacks), so saved overrides are never clobbered.
+        // Mode snapshots survive workflow saves; loading never applies presets.
         const modeW = findW("mode");
         const denW = findW("denoise");
         // An unwired denoise OUTPUT means the dial does nothing (the
@@ -140,26 +202,85 @@ app.registerExtension({
                 console.warn("[e2go] References.edited_image holds a different image than this node's pixels — the encoder's Picture 1 is not the frame being edited");
             }
         };
-        if (modeW && denW) {
+        if (modeW) {
             const prevCb = modeW.callback;
             modeW.callback = function (v) {
-                if (typeof prevCb === "function") { try { prevCb.apply(this, arguments); } catch {} }
-                const auto = { Generate: 1.0, Repaint: 0.6, Edit: 1.0, "Edit (native)": 1.0, Repair: 0.9 };
-                if (v in auto) {
-                    denW.value = auto[v];
-                    if (v === "Repair") {
-
-                        const cw2 = findW("crop_to_mask");
-                        if (cw2 && cw2.value === "off") {
-                            cw2.value = "auto";
-                            try { cw2.callback?.call(cw2, "auto"); } catch {}
-                        }
-
-                        const mg = findW("mask_grow");
-                        if (mg && !mg.value) mg.value = 16;
-                    }
-                    app.graph?.setDirtyCanvas(true, true);
+                const next = canonicalMode(v);
+                if (next !== canonicalMode(activeMode)) {
+                    modeSettings[canonicalMode(activeMode)] = captureSettings();
+                    activeMode = next;
+                    node._e2goSetInputError?.("");
+                    applySettings(modeSettings[next] || defaultsFor(next));
+                    const crop = findW("crop_to_mask");
+                    crop?.callback?.call(crop, crop.value);
                 }
+                if (typeof prevCb === "function") prevCb.apply(this, arguments);
+                node.setDirtyCanvas?.(true, true);
+            };
+            const resetSettings = () => {
+                const mode = canonicalMode(modeW.value);
+                applySettings(defaultsFor(mode));
+                modeSettings[mode] = captureSettings();
+                const crop = findW("crop_to_mask");
+                crop?.callback?.call(crop, crop.value);
+                syncModeWidgets();
+                node.setDirtyCanvas?.(true, true);
+            };
+            modeW.tooltip = "Choose mode. The separate reset button restores defaults for this mode only.";
+            const nativeDraw = modeW.draw;
+            const nativeDrawWidget = modeW.drawWidget;
+            modeW.draw = function (ctx, n, width, y, height) {
+                trackWidgetDraw(this, ctx, n, width, y, height);
+                this._e2goDrawWidth = width;
+                const h = this.height || height || 20;
+                const comboWidth = width - 36;
+                ctx.save();
+                ctx.font = widgetFont(12);
+                if (nativeDraw) nativeDraw.call(this, ctx, n, comboWidth, y, h);
+                else nativeDrawWidget?.call(this, ctx, { width: comboWidth, showText: true });
+                ctx.fillStyle = this.background_color || "#222";
+                ctx.strokeStyle = this.outline_color || "#555";
+                ctx.beginPath();
+                ctx.roundRect(width - 39, y, 24, h, 5);
+                ctx.fill();
+                ctx.stroke();
+                ctx.fillStyle = this.text_color || widgetSecondaryTextColor();
+                ctx.font = widgetFont(14);
+                ctx.textAlign = "center";
+                ctx.textBaseline = "middle";
+                ctx.fillText("↻", width - 27, y + h / 2);
+                ctx.restore();
+            };
+            const hitModeRow = (x, event, canvas) => {
+                const width = modeW._e2goDrawWidth || node.size[0];
+                if (x >= width - 39 && x <= width - 15) {
+                    resetSettings();
+                    node.graph?.incrementVersion?.();
+                    return true;
+                }
+                // The gap belongs to neither control. Arrow hit areas follow
+                // the reduced native combo width, not the full node width.
+                if (x > width - 51) return true;
+                const direction = x >= 15 && x < 40 ? -1 : x > width - 76 ? 1 : 0;
+                if (!direction) return false;
+                const values = modeW.options?.values || ["Generate", "Repaint", "Edit", "Edit (native)", "Repair"];
+                const index = values.indexOf(modeW.value);
+                const value = values[Math.max(0, Math.min(values.length - 1, index + direction))];
+                if (value !== modeW.value) {
+                    if (modeW.setValue && canvas) modeW.setValue(value, { e: event, node, canvas });
+                    else { modeW.value = value; modeW.callback?.(value); }
+                }
+                return true;
+            };
+            const pointerDown = modeW.onPointerDown;
+            modeW.onPointerDown = function (pointer, n, canvas) {
+                if (hitModeRow(widgetPointerX(pointer, node, canvas, this), pointer.eDown || pointer.event, canvas)) return true;
+                return pointerDown?.call(this, pointer, n, canvas) || false;
+            };
+            const mouse = modeW.mouse;
+            modeW.mouse = function (event, pos, ...args) {
+                if ((event.type === "pointerdown" || event.type === "mousedown") && hitModeRow(pos[0], event, app.canvas)) return true;
+                return mouse?.call(this, event, pos, ...args) || false;
             };
         }
 
@@ -319,6 +440,53 @@ app.registerExtension({
             ctx.fillText("Keep structure: try denoise 0.4–0.6; 0.9 rewrites.", 15, y + 46);
         };
         cropHint.onPointerDown = () => true;
+
+        let executionError = "", executionState = "", signature = "";
+        let runtimeNotices = [], runtimeState = "";
+        const inputState = () => JSON.stringify({
+            settings: captureSettings(), mode: modeW?.value,
+            inputs: node.inputs?.map(i => [i.name, i.link]),
+            // Source files and Canvas pixels can change without rewiring.
+            sources: (node.inputs || []).filter(i => ["pixels", "mask", "references", "model", "vae"].includes(i.name)).map(i => {
+                const link = node.graph?.links?.get?.(i.link) ?? node.graph?.links?.[i.link];
+                const source = node.graph?.getNodeById(link?.origin_id);
+                return [i.name, source?.id, source?._e2goCanvasState?.dirty,
+                    source?.widgets?.map(w => [w.name, w.value])];
+            }),
+        });
+        node._e2goRefreshInputChecks = () => {
+            const checks = imageInputChecks(node);
+            const currentState = inputState();
+            if (runtimeState !== currentState) runtimeNotices = [];
+            if (executionError && executionState !== currentState) executionError = "";
+            for (const notice of runtimeNotices) if (!checks.some(n => n.id === notice.id)) checks.push(notice);
+            if (checks.some(n => n.message === executionError)) executionError = "";
+            if (executionError) checks.unshift({id: "execution", severity: "error", message: executionError});
+            checks.sort((a, b) => (a.severity === "error" ? 0 : 1) - (b.severity === "error" ? 0 : 1));
+            const next = JSON.stringify(checks);
+            if (signature === next) return;
+            signature = next;
+            node._e2goInputNotices = checks;
+            updateInputNotice(node, checks);
+        };
+        node._e2goSetRuntimeNotices = ({mode, notices: incoming}) => {
+            if (canonicalMode(mode) !== canonicalMode(modeW?.value)) return;
+            runtimeNotices = Array.isArray(incoming) ? incoming : [];
+            runtimeState = inputState();
+            node._e2goRefreshInputChecks();
+        };
+        node._e2goSetInputError = message => {
+            const text = String(message || "").trim();
+            if (!text) runtimeNotices = [];
+            executionError = text.includes("Canvas is empty")
+                ? "Image required. Load an image into Canvas, or select Generate."
+                : text.replace(/^(?:\w*Error:\s*)+/, "").split("\n")[0].slice(0, 240);
+            executionState = inputState();
+            node._e2goRefreshInputChecks();
+        };
+        // New nodes start with the same defaults as Reset. Workflow configure
+        // runs afterwards and restores the user's saved values by name.
+        applySettings(defaultsFor(canonicalMode(activeMode)));
         syncModeWidgets();
         node.setDirtyCanvas(true, true);
     },

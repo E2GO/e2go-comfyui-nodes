@@ -3,11 +3,29 @@ import { app } from "../../../scripts/app.js";
 // trigger fetch still resolves when ComfyUI is served under a sub-path (reverse
 // proxy). Every custom route is mirrored under /api by server.py's add_routes.
 import { api } from "../../../scripts/api.js";
-import { widgetPointerX, redrawNodeWidgets, noop, hideNamedWidget, scheduleReHide, widgetTextColor, widgetSecondaryTextColor, widgetDisabledTextColor, widgetFont, setWidgetVisible } from "./e2go_hide_utils.js";
-import { openLoraModal, getLoraLibrary } from "./powder_lora_modal.js";
+import { trackWidgetDraw, widgetPointerX, redrawNodeWidgets, noop, hideNamedWidget, scheduleReHide, widgetTextColor, widgetSecondaryTextColor, widgetDisabledTextColor, widgetFont, setWidgetVisible } from "./e2go_hide_utils.js";
+import { openLoraModal, getLoraLibrary, invalidateTriggerTooltip } from "./powder_lora_modal.js";
 
 import { TOGGLE_ROW_HEIGHT, drawToggleButton } from "./e2go_hide_utils.js";
 const CONFIG_WIDGET_NAME = "lora_config";
+const sharedTriggers = new Map();
+const triggerRevisions = new Map();
+const triggerSaves = new Map();
+function triggerKey(name) { return name.replaceAll("\\", "/"); }
+function applySharedTrigger(node, name, value) {
+    for (const entry of node.selectedLoras || []) {
+        if (triggerKey(entry.lora) === triggerKey(name)) { entry.trigger = value; entry.manualTrigger = true; }
+    }
+    syncConfig(node);
+}
+function publishSharedTrigger(graph, name, value, seen = new Set()) {
+    if (!graph || seen.has(graph)) return;
+    seen.add(graph);
+    for (const node of graph._nodes || []) {
+        if (node.comfyClass === "PowderLoraLoader") applySharedTrigger(node, name, value);
+        if (node.subgraph) publishSharedTrigger(node.subgraph, name, value, seen);
+    }
+}
 
 function requestResize(node) {
     const graphRef = app.graph;
@@ -80,15 +98,35 @@ function removeRowWidgets(node) {
 }
 
 function rowZones(width) {
+    const strengthWidth = Math.min(80, Math.max(58, (width - 140) / 2));
     // Right-aligned hit zones: [S] [C] [T] [+] [✕]; name fills the middle.
     return {
         toggle: [0, 38],
-        model: [width - 188, width - 130],
-        clip: [width - 130, width - 72],
+        model: [width - 72 - 2 * strengthWidth, width - 72 - strengthWidth],
+        clip: [width - 72 - strengthWidth, width - 72],
         trigger: [width - 72, width - 48],
         duplicate: [width - 48, width - 24],
         remove: [width - 24, width],
     };
+}
+
+function strengthHit(node, item, field, label, zone, x, event) {
+    const direction = x < zone[0] + 15 ? -1 : x >= zone[1] - 15 ? 1 : 0;
+    if (!direction) return editStrength(node, item, field, label, event);
+    const step = event?.shiftKey ? 0.01 : 0.05;
+    item[field] = Math.max(-10, Math.min(10, Math.round((item[field] + direction * step) * 100) / 100));
+    syncConfig(node);
+}
+function drawStrength(ctx, zone, y, value, disabled) {
+    ctx.save();
+    ctx.fillStyle = disabled ? widgetSecondaryTextColor() : widgetTextColor();
+    ctx.textAlign = "center";
+    if (!disabled) {
+        ctx.fillText("\u25c0", zone[0] + 8, y + 15);
+        ctx.fillText("\u25b6", zone[1] - 8, y + 15);
+    }
+    ctx.fillText(disabled ? "--" : fmtStr(value), (zone[0] + zone[1]) / 2, y + 15);
+    ctx.restore();
 }
 
 // Opens the native LiteGraph canvas prompt for a strength value. The frontend
@@ -135,26 +173,36 @@ function loraBasename(name) {
 function editTrigger(node, item, event, bindUseTrigger) {
     const canvas = app.canvas;
     const title = `Trigger words — ${loraBasename(item.lora)}`;
-    const cb = (val) => {
+    const cb = async (val) => {
         const trimmed = String(val ?? "").trim();
-        // Check row identity at commit time (see editStrength): never mutate
-        // the closed-over object of a row that no longer exists.
-        const live = node.selectedLoras?.includes(item) ? item : null;
-        if (!live) {
-            console.info("[PowderLora] row removed while dialog was open — edit dropped");
-            return;
+        if (!node.selectedLoras?.includes(item)) return;
+        const key = triggerKey(item.lora);
+        const revision = (triggerRevisions.get(key) || 0) + 1;
+        triggerRevisions.set(key, revision);
+        const previous = triggerSaves.get(key) || Promise.resolve();
+        const save = previous.catch(() => {}).then(async () => {
+            const response = await api.fetchApi("/powder_lora/set_trigger", {
+                method: "POST", headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ lora: item.lora, trigger: trimmed }),
+            });
+            if (!response.ok) throw new Error(`HTTP ${response.status}`);
+            return response.json();
+        });
+        triggerSaves.set(key, save);
+        try {
+            await save;
+            if (triggerRevisions.get(key) !== revision) return;
+            sharedTriggers.set(key, trimmed);
+            invalidateTriggerTooltip(item.lora);
+            publishSharedTrigger(app.graph, item.lora, trimmed);
+            applySharedTrigger(node, item.lora, trimmed);
+            if (bindUseTrigger && node.selectedLoras?.includes(item)) item.useTrigger = !!trimmed;
+            syncConfig(node);
+        } catch (error) {
+            window.alert(`Trigger was not saved for all workflows. Restart ComfyUI if it was just updated, then try again. (${error.message})`);
+        } finally {
+            if (triggerSaves.get(key) === save) triggerSaves.delete(key);
         }
-        live.trigger = trimmed;
-        // Any dialog save — empty or not — is a deliberate manual edit. Marks
-        // the entry so _e2goFetchTrigger's no-clobber guard can distinguish
-        // "never fetched yet" (empty, unmarked) from "user cleared it on
-        // purpose" (empty, marked): without this flag an in-flight auto-fetch
-        // that resolves after the user clears the field would silently
-        // overwrite their deliberate empty save.
-        live.manualTrigger = true;
-        if (bindUseTrigger) live.useTrigger = trimmed.length > 0;
-        syncConfig(node);
-        redrawNodeWidgets(node);
     };
     if (canvas?.prompt) {
         canvas.prompt(title, item.trigger || "", cb, event ?? null, true);
@@ -190,9 +238,9 @@ function rowHit(node, index, x, event) {
         syncConfig(node);
     } else if (x >= z.clip[0]) {
         if (clipDisabled) return true; // clip strength ignored by backend
-        editStrength(node, item, "clipStr", "Clip strength", event);
+        strengthHit(node, item, "clipStr", "Clip strength", z.clip, x, event);
     } else if (x >= z.model[0]) {
-        editStrength(node, item, "modelStr", "Model strength", event);
+        strengthHit(node, item, "modelStr", "Model strength", z.model, x, event);
     } else if (x < z.toggle[1]) {
         item.enabled = !item.enabled;
         syncConfig(node);
@@ -219,6 +267,7 @@ function makeRowWidget(node, index, existing) {
     w.computeSize = () => [Math.max(node.size?.[0] || 300, 300), TOGGLE_ROW_HEIGHT];
 
     w.draw = function (ctx, _n, width, posY) {
+        trackWidgetDraw(this, ctx, _n, width, posY);
         posY += (TOGGLE_ROW_HEIGHT - 22) / 2;
         w._e2goDrawWidth = width;
         const item = node.selectedLoras[index];
@@ -253,13 +302,8 @@ function makeRowWidget(node, index, existing) {
         if (text && text !== label) text += "…";
         ctx.fillText(text, 48, posY + 15);
 
-        // M / C strength values — primary widget text, dimmed when clip disabled.
-        ctx.fillStyle = widgetTextColor();
-        ctx.fillText(`S ${fmtStr(item.modelStr)}`, z.model[0] + 2, posY + 15);
-        // disable_clip dims C to secondary (#999) — readable, just quieter than
-        // active columns; disabled #666 read too dark on this node background.
-        ctx.fillStyle = clipDisabled ? widgetSecondaryTextColor() : widgetTextColor();
-        ctx.fillText(clipDisabled ? "--" : `C ${fmtStr(item.clipStr)}`, z.clip[0] + 2, posY + 15);
+        drawStrength(ctx, z.model, posY, item.modelStr, false);
+        drawStrength(ctx, z.clip, posY, item.clipStr, clipDisabled);
 
         // T (use-trigger) — three states: bright green when on with trigger text,
         // dim green when on but trigger is empty (armed but nothing to send),
@@ -268,7 +312,7 @@ function makeRowWidget(node, index, existing) {
             ? (item.trigger ? "#8fd18f" : "#5c8f5c") // semantic: trigger on / armed-empty
             : widgetDisabledTextColor();
         ctx.fillText(!item.trigger ? "T?" : item.useTrigger ? "T+" : "T-", z.trigger[0] + 2, posY + 15);
-        w.tooltip = `${item.lora}\nLoRA: ${item.enabled ? "enabled" : "disabled"}. CLIP: ${clipDisabled ? "bypassed" : fmtStr(item.clipStr)}.\nTrigger: ${item.trigger || "not set"} (${item.useTrigger ? "enabled" : "disabled"}).\nCheck/arrow: enable LoRA. Name/pencil: edit trigger words. T?: add trigger. T+/T-: toggle trigger. S/C: edit weight. +: duplicate. x: remove.`;
+        w.tooltip = `${item.lora}\nLoRA: ${item.enabled ? "enabled" : "disabled"}. CLIP: ${clipDisabled ? "bypassed" : fmtStr(item.clipStr)}.\nTrigger: ${item.trigger || "not set"} (${item.useTrigger ? "enabled" : "disabled"}).\nCheck/arrow: enable LoRA. Name/pencil: edit trigger words. T?: add trigger. T+/T-: toggle trigger. Weight arrows: +/-0.05 (Shift: 0.01). Click value: enter weight. +: duplicate. x: remove.`;
         ctx.fillStyle = widgetTextColor();
         ctx.fillText("+", z.duplicate[0] + 6, posY + 15);
 
@@ -306,6 +350,7 @@ function makeLegendWidget(node) {
     w.computeSize = () => [Math.max(node.size?.[0] || 300, 300), 20];
 
     w.draw = function (ctx, _n, width, posY) {
+        trackWidgetDraw(this, ctx, _n, width, posY);
         const clipDisabled = !!findWidget(node, "disable_clip")?.value;
         const z = rowZones(width);
         // Match native widget labels exactly: NODE_FONT size 12 + secondary
@@ -446,6 +491,11 @@ function restoreFromInfo(node, info) {
         node.selectedLoras = selectionFromConfigSnapshot(node);
     }
 
+    for (const entry of node.selectedLoras) {
+        const key = triggerKey(entry.lora);
+        if (sharedTriggers.has(key)) entry.trigger = sharedTriggers.get(key);
+        node._e2goFetchTrigger?.(entry);
+    }
     applyLayout(node);
     scheduleReHide(node, CONFIG_WIDGET_NAME, requestResize);
     node._e2goPreLayoutConfig = undefined; // consumed; later calls read live state
@@ -575,17 +625,16 @@ app.registerExtension({
             node._e2goFetchTrigger = (entry) => {
                 const name = entry?.lora;
                 if (!name || name === "None") return;
-                api.fetchApi(`/powder_lora/get_trigger?lora=${encodeURIComponent(name)}`)
+                const key = triggerKey(name), revision = triggerRevisions.get(key) || 0;
+                const pending = triggerSaves.get(key);
+                if (pending) { pending.then(() => node._e2goFetchTrigger?.(entry), () => {}); return; }
+                return api.fetchApi(`/powder_lora/get_trigger?lora=${encodeURIComponent(name)}`)
                     .then((r) => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.json(); })
                     .then((data) => {
-                        // Guard the stale case (entry removed before response) and
-                        // never clobber a user-edited/restored trigger. manualTrigger
-                        // catches the race where the user deliberately clears the
-                        // trigger (dialog save, empty result) before this in-flight
-                        // fetch resolves — !entry.trigger alone can't tell "never
-                        // fetched" from "cleared on purpose".
-                        if (node.selectedLoras?.includes(entry) && data?.trigger && !entry.trigger && !entry.manualTrigger) {
-                            entry.trigger = data.trigger;
+                        if (node.selectedLoras?.includes(entry) && (triggerRevisions.get(key) || 0) === revision
+                            && (data?.exists || (data?.trigger && !entry.trigger && !entry.manualTrigger))) {
+                            entry.trigger = data.trigger || "";
+                            if (data.exists) sharedTriggers.set(key, entry.trigger);
                             syncConfig(node);
                             redrawNodeWidgets(node);
                         }

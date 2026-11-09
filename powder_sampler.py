@@ -224,9 +224,11 @@ class PowderSampler:
             stamp = metadata.get('e2go_layout')
             if stamp:
                 target, width, height = stamp
-                expected_family = {'moss': 'moss_image', 'ideogram4': 'ideogram4', 'flux3': 'flux3'}.get(target)
-                if image_model_of(model) != expected_family:
-                    raise ValueError('Canvas Layout target does not match the image model.')
+                from ._layout_prompt import layout_model_error, send_layout_status
+                compatibility_error = layout_model_error(target, image_model_of(model))
+                send_layout_status(metadata.get('e2go_layout_source'), target, compatibility_error)
+                if compatibility_error:
+                    raise ValueError(compatibility_error)
                 scale = latent.get('downscale_ratio_spacial')
                 if scale is None:
                     scale = getattr(getattr(getattr(model, 'model', None), 'latent_format', None), 'spacial_downscale_ratio', 16)
@@ -234,7 +236,7 @@ class PowderSampler:
                 if actual != (width, height):
                     raise ValueError(f'Canvas Layout is {width}x{height}, but the sampled image is {actual[0]}x{actual[1]}. Match the layout size; cropped inpainting needs a layout of the crop.')
         if layout_conditions:
-            positive = [[tensor, {k: v for k, v in metadata.items() if k != 'e2go_layout'}] for tensor, metadata in positive]
+            positive = [[tensor, {k: v for k, v in metadata.items() if k not in ('e2go_layout', 'e2go_layout_source')}] for tensor, metadata in positive]
         if ideogram and (model_negative is None or image_model_of(model_negative) != "ideogram4"):
             raise ValueError("Powder Sampler: connect an Ideogram 4 unconditional model to model_negative.")
         if not ideogram and (model_negative is not None or scheduler == "ideogram4"):

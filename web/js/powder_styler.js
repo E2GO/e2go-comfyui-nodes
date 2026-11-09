@@ -2,7 +2,7 @@ import { cursorScope, installCursorControls } from "./e2go_cursor_ui.js";
 import { app } from "../../../scripts/app.js";
 import { TOGGLE_ROW_HEIGHT, drawToggleButton } from "./e2go_hide_utils.js";
 import { api } from "../../../scripts/api.js";
-import { widgetPointerX, redrawNodeWidgets, noop, hideNamedWidget, scheduleReHide, styleBoolToggle, widgetTextColor, widgetSecondaryTextColor, widgetDisabledTextColor, widgetFont, markSeparator, setWidgetVisible } from "./e2go_hide_utils.js";
+import { trackWidgetDraw, widgetPointerX, redrawNodeWidgets, noop, hideNamedWidget, scheduleReHide, styleBoolToggle, widgetTextColor, widgetSecondaryTextColor, widgetDisabledTextColor, widgetFont, markSeparator, setWidgetVisible } from "./e2go_hide_utils.js";
 import { installNameKeyedPersistence } from "./e2go_persistence.js";
 import { getStyleLibrary, openStyleModal, openStylePicker } from "./powder_styler_modal.js";
 
@@ -184,6 +184,7 @@ function makeRowWidget(node, index, existing) {
     w.computeSize = () => [Math.max(node.size?.[0] || 300, 300), TOGGLE_ROW_HEIGHT];
 
     w.draw = function (ctx, _n, width, posY) {
+        trackWidgetDraw(this, ctx, _n, width, posY);
         posY += (TOGGLE_ROW_HEIGHT - 22) / 2;
         w._e2goDrawWidth = width;
         const item = node.selectedStyles[index];
@@ -310,6 +311,7 @@ function reorderWidgets(node) {
 // which then fails backend combo validation on Queue. Mirrors the SPEC +
 // sanitizeInputs pattern in powder_image_cond.js:39-74.
 const HEAD_SPEC = {
+    style_sweep: { ok: v => typeof v === "boolean", def: false },
     repeat_last: { ok: v => typeof v === "boolean", def: false },
     style_category: { ok: v => typeof v === "string" && v.length > 0, def: "All styles" },
     on_exhausted: { ok: v => ["stop", "loop"].includes(v), def: "stop" },
@@ -607,6 +609,7 @@ app.registerExtension({
             // strength_mode may arrive with the restored value only here —
             // re-sync the style_mix disabled state it drives.
             afterRestore: saved => {
+                sanitizeHeadWidgets(node, saved);
                 const repeat = findWidget(node, "repeat_last");
                 if (repeat) repeat.value = saved?.repeat_last === true;
                 syncMixWidgets(node); syncStyleCategory(node);

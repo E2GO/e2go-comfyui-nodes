@@ -39,6 +39,17 @@ def register():
         from ._families import MODEL_PROFILES
         return web.json_response(MODEL_PROFILES)
 
+    @routes.get('/e2go/layout_model')
+    async def _layout_model(request):
+        from ._layout_model_probe import probe_layout_model
+        from ._layout_prompt import layout_model_error
+        try:
+            family = await asyncio.to_thread(probe_layout_model, request.query.get('category'), request.query.get('name'))
+        except (ValueError, OSError) as exc:
+            return web.json_response({'error': str(exc)}, status=400)
+        target = request.query.get('target')
+        return web.json_response({'family': family, 'message': layout_model_error(target, family) if family else ''})
+
     # PowderConditioner reads the mode of a node downstream of it; the stamp
     # puts that mode into its own inputs so ComfyUI's cache re-runs it.
     def _stamp_prompt(json_data):

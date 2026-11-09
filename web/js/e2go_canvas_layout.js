@@ -4,6 +4,7 @@ import { blankLayout, readLayout, region, clone, uid, caption, importLayout, val
 import { canvasDialog } from "./e2go_canvas_dialog.js";
 import { reviewLayoutProposal } from "./e2go_layout_review.js";
 import { computeLive } from "./powder_resolution.js";
+import { layoutModelSource, probeLayoutModel } from "./e2go_layout_model_probe.js";
 
 const COLORS = ["#77c9bd", "#efbd79", "#a6a0ec", "#dc92ac", "#83bbef", "#bcd58a"];
 function element(tag, text, cls) {
@@ -133,7 +134,44 @@ export function mountLayoutEditor(node, state, host) {
     enabled.title = "Controls generation. Opening this editor alone does not enable layout conditioning.";
     const target = element("select"); target.setAttribute("aria-label", "Layout model");
     for (const [v, text] of [["ideogram4", "Ideogram 4"], ["moss", "MOSS-Image"], ["flux3", "FLUX.3 Klein"]]) { const o = element("option", text); o.value = v; target.append(o); }
-    const modelLabel = element("label", "Model", "e2go-layout-model"); modelLabel.append(target); modelTools.append(modelLabel);
+    const modelLabel = element("label", "Layout format", "e2go-layout-model"); modelLabel.append(target); modelTools.append(modelLabel);
+    const compatibilityHint = element("small", "", "e2go-layout-compatibility");
+    compatibilityHint.setAttribute("role", "status");
+    compatibilityHint.style.cssText = "display:block;flex:0 0 auto;padding:8px 10px;border-top:1px solid #343d48;white-space:normal;overflow-wrap:anywhere;line-height:1.45;font-size:12px";
+    root.insertBefore(compatibilityHint, status);
+    let probeKey = "", probeTime = 0, probeResult = null, probeError = "";
+    function syncCompatibility() {
+        const source = layoutModelSource(node);
+        const key = JSON.stringify([source, data.target]);
+        if (key !== probeKey) { probeKey = key; probeTime = 0; probeResult = null; probeError = ""; }
+        if (source && Date.now() - probeTime > 5000) {
+            probeTime = Date.now();
+            probeLayoutModel(source, data.target).then(result => {
+                if (disposed || probeKey !== key) return;
+                probeResult = result; probeError = ""; syncCompatibility();
+            }).catch(error => {
+                if (disposed || probeKey !== key) return;
+                probeResult = null; probeError = error.message; syncCompatibility();
+            });
+        }
+        const status = node._e2goLayoutCompatibility;
+        const message = probeResult?.family ? probeResult.message : (!source && status?.target === data.target ? status.message : "");
+        const detail = source ? probeError || (!probeResult ? "Checking connected model…" : probeResult.family ? `Connected model: ${probeResult.family}. Layout format is compatible.` : "Could not identify the connected model from its header. Compatibility will be checked at sampling.")
+            : "Connected model is unknown or ambiguous. Compatibility will be checked at sampling.";
+        const family = probeResult?.family;
+        compatibilityHint.title = message || detail;
+        compatibilityHint.textContent = message
+            ? (family === "krea2" ? "Krea2 does not support native Layout."
+                : ["ideogram4", "moss_image", "flux3"].includes(family)
+                    ? "Layout format does not match the connected model."
+                    : "Layout is not compatible with the connected model. See details.")
+            : probeError ? "Could not check Layout compatibility. See details."
+                : family ? "Layout format is compatible."
+                    : source && !probeResult ? "Checking connected model..."
+                        : "Layout compatibility is unverified. Checked at sampling.";
+        compatibilityHint.style.color = message ? "#ffb8ad" : probeError ? "#efd18b" : "#aebbc8";
+        compatibilityHint.style.fontWeight = message ? "600" : "400";
+    }
     target.onchange = () => change(() => { data.target = target.value; });
     generationTools.classList.add("e2go-layout-generation");
     const sourceGroup = element("div", "", "e2go-layout-source");
@@ -309,6 +347,7 @@ export function mountLayoutEditor(node, state, host) {
         change(() => { [data.width, data.height] = dims; data.followResolution = true; });
     }
     function render() {
+        syncCompatibility();
         updateDrawTool();
         target.value = data.target; enabled.textContent = `Use layout: ${data.enabled ? "ON" : "OFF"}`; enabled.classList.toggle("active", data.enabled);
         enabled.disabled = !widget();
@@ -552,7 +591,7 @@ export function mountLayoutEditor(node, state, host) {
             data = latest; persist(); if (!root.hidden) render();
         }
     };
-    const sizeTimer = setInterval(() => { if (!root.hidden && !gesture) { try { node._e2goLayoutPrepare(); } catch (err) { say(err.message, true); } } }, 500);
+    const sizeTimer = setInterval(() => { if (!root.hidden && !gesture) { try { node._e2goLayoutPrepare(); syncCompatibility(); } catch (err) { say(err.message, true); } } }, 500);
     node._e2goLayoutReload = () => {
         if (root.hidden) return;
         try { data = readLayout(widget()?.value); selected.clear(); undo = []; redo = []; render(); }

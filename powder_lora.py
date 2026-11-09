@@ -84,12 +84,9 @@ def load_trigger(lora_name):
 
 def save_trigger(lora_name, trigger):
     """Save trigger to file next to the LoRA, only if content differs."""
-    if not trigger.strip():
-        return
-
     trigger_path = get_trigger_path(lora_name)
     if not trigger_path:
-        return
+        return False
 
     # Check existing content to avoid unnecessary writes
     new_content = trigger.strip()
@@ -97,15 +94,25 @@ def save_trigger(lora_name, trigger):
         try:
             with open(trigger_path, "r", encoding="utf-8") as f:
                 if f.read().strip() == new_content:
-                    return
+                    return True
         except Exception:
             pass
 
     try:
         atomic_write(trigger_path, new_content.encode("utf-8"))
         log(f"Saved trigger: {trigger_path}")
+        return True
     except Exception as e:
         warn(f"Error saving trigger: {e}")
+        return False
+
+
+def resolved_trigger(item):
+    """The shared file wins over stale workflow text, including explicit empty text."""
+    path = get_trigger_path(item.get("name", ""))
+    if path and os.path.isfile(path):
+        return load_trigger(item["name"])
+    return item.get("trigger", "").strip()
 
 
 def _lora_entries(names):
@@ -143,7 +150,18 @@ try:
             trigger = load_trigger(lora_name)
         except ValueError:  # relpath across drives for an absolute name
             trigger = ""
-        return web.json_response({"trigger": trigger})
+        path = get_trigger_path(lora_name)
+        return web.json_response({"trigger": trigger, "exists": bool(path and os.path.isfile(path))})
+
+    @PromptServer.instance.routes.post("/powder_lora/set_trigger")
+    async def set_trigger_api(request):
+        data = await request.json()
+        name, trigger = data.get("lora"), data.get("trigger")
+        if not _valid_lora_name(name) or not isinstance(trigger, str):
+            return web.json_response({"error": "Invalid LoRA or trigger text."}, status=400)
+        if not save_trigger(name, trigger):
+            return web.json_response({"error": "Could not save trigger beside the LoRA file."}, status=400)
+        return web.json_response({"trigger": trigger.strip(), "exists": True})
 
     @PromptServer.instance.routes.get("/powder_lora/get_loras")
     async def get_loras_api(request):
@@ -244,6 +262,22 @@ class PowderLoraLoader:
     CATEGORY = "e2go"
 
     @classmethod
+    def IS_CHANGED(cls, lora_config="[]", **kwargs):
+        # INPUT_IS_LIST also applies to ComfyUI's cache fingerprint callback.
+        if isinstance(lora_config, list):
+            lora_config = lora_config[0] if lora_config else "[]"
+        try:
+            config = json.loads(lora_config or "[]")
+            if isinstance(config, dict):
+                config = config.get("loras", [])
+            if not isinstance(config, list):
+                config = []
+        except (ValueError, TypeError):
+            config = []
+        values = [(item.get("name"), resolved_trigger(item)) for item in config if isinstance(item, dict)]
+        return hashlib.sha256(json.dumps(values, ensure_ascii=False).encode()).hexdigest()
+
+    @classmethod
     def VALIDATE_INPUTS(cls, mode, combination_order, trigger_position, **kwargs):
         """Accept boolean values from new ComfyUI frontend for 2-option combos."""
         return True
@@ -333,7 +367,7 @@ class PowderLoraLoader:
         name = item.get("name")
         str_model = float(item.get("strength_model", 1.0))
         str_clip = float(item.get("strength_clip", 1.0))
-        trigger = item.get("trigger", "").strip()
+        trigger = resolved_trigger(item)
         use_trigger = item.get("use_trigger", True)
 
         lora_path = self._find_lora_path(name)

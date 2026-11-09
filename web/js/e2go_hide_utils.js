@@ -19,18 +19,46 @@ export const CUSTOM_ROW_HEIGHT = 26;
 
 // Vue draws legacy widgets in individual canvases with their own origin and
 // zoom. Classic widgets use node-local graph coordinates instead.
+const widgetDraws = new WeakMap();
+
+// Nodes 2.0 and the properties panel share one widget but own separate canvases.
+// Its single triggerDraw callback only refreshes the most recently mounted view.
+export function trackWidgetDraw(widget, ctx, node, width, y, height) {
+    const canvas = ctx.canvas;
+    if (!canvas?.isConnected || canvas === app.canvas?.canvas) return;
+    let views = widgetDraws.get(widget);
+    if (!views) widgetDraws.set(widget, views = new Map());
+    for (const c of views.keys()) if (!c.isConnected) views.delete(c);
+    views.set(canvas, { ctx, args: [node, width, y, height], transform: ctx.getTransform() });
+}
+
 export function widgetPointerX(pointer, node, canvas, widget) {
     const event = pointer?.eDown ?? pointer?.event;
     const target = event?.target;
-    if (target?.tagName === "CANVAS" && target.closest?.("[data-widget-name]")) {
+    if (target?.tagName === "CANVAS" && (widgetDraws.get(widget)?.has(target) || target.closest?.("[data-widget-name]"))) {
         const rect = target.getBoundingClientRect();
-        return (event.clientX - rect.left) * (widget._e2goDrawWidth || widget.width || rect.width) / rect.width;
+        const width = widgetDraws.get(widget)?.get(target)?.args[1] || rect.width;
+        widget._e2goDrawWidth = width;
+        return (event.clientX - rect.left) * width / rect.width;
     }
     return (canvas?.graph_mouse?.[0] ?? 0) - (node.pos?.[0] ?? 0);
 }
 
 export function redrawNodeWidgets(node) {
-    for (const widget of node.widgets || []) widget.triggerDraw?.();
+    for (const widget of node.widgets || []) {
+        widget.triggerDraw?.();
+        const views = widgetDraws.get(widget);
+        for (const [canvas, view] of views || []) {
+            if (!canvas.isConnected) { views.delete(canvas); continue; }
+            const { ctx, args, transform } = view;
+            ctx.save();
+            ctx.resetTransform();
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.setTransform(transform);
+            widget.draw?.(ctx, ...args);
+            ctx.restore();
+        }
+    }
     node.setDirtyCanvas?.(true, true);
 }
 
@@ -285,7 +313,14 @@ export function styleBoolToggle(node, widgetName) {
     w.label = BOOLEAN_LABELS[widgetName] || w.label || widgetName.replaceAll("_", " ");
     const help = BOOLEAN_HELP[widgetName] || w.tooltip || w.options?.tooltip || "Click the row to toggle this option.";
     w.tooltip = help;
+    const callback = w.callback;
+    w.callback = function (...args) {
+        const result = callback?.apply(this, args);
+        redrawNodeWidgets(node);
+        return result;
+    };
     w.draw = function (ctx, _n, width, posY, H) {
+        trackWidgetDraw(this, ctx, _n, width, posY, H);
         const h = H || 20;
         const on = !!this.value;
         ctx.save();
