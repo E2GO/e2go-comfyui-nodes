@@ -453,7 +453,7 @@ class PowderImageConditioning:
                 "batch_size": ("INT", {"default": 1, "min": 1, "max": 64,
                                        "tooltip": "N variants: the latent is repeated N times (video-VAE safe). Wire PowderCanvas's batch_size output here."}),
                 "denoise": ("FLOAT", {"default": 1.0, "min": 0.0, "max": 1.0, "step": 0.05,
-                                      "tooltip": "Passthrough dial: wire the denoise OUTPUT to the sampler. Auto-set on mode change (Generate/Edit 1.0, Repaint 0.6, Repair 0.9) — override freely."}),
+                                      "tooltip": "Passthrough dial: wire the denoise OUTPUT to the sampler. Settings are remembered per mode. Defaults: Generate/Edit 1.0, Repaint 0.6, Repair 0.9. Use the reset arrow beside mode to restore its defaults."}),
                 "seamless_mask_blend": ("BOOLEAN", {"default": True,
                                                     "tooltip": "Differential Diffusion: gray mask levels set per-pixel edit strength, feathered edges blend seamlessly. Needs the model input; no-op in unmasked modes."}),
                 "concat": (["auto", "on", "off"], {"default": "auto",
