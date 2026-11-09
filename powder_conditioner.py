@@ -795,14 +795,15 @@ class PowderConditioner:
         if isinstance(unique_id, list):
             unique_id = unique_id[0] if unique_id else None
         profile = profile_for_clip(clip[0] if isinstance(clip, list) and clip else clip)
-        # t2i: the canvas is wired as edited_image for the edit scenarios of
-        # the same graph, but there is no picture being edited — showing the
-        # (placeholder) canvas as Picture 1 would condition the prompt on it.
-        # Extras stay: a style plate is a deliberate reference in any mode.
+        # Only instruction-edit modes need the canvas as Picture 1 in the VLM.
+        # Repaint/Repair already consume it through the masked image latent.
+        # Sending the full canvas to the VLM as well can reconstruct its scene
+        # inside a small crop and overpower the replacement prompt.
+        # Explicit extra references remain intentional in every mode.
         # The stamped input when the prompt came through the server's /prompt;
         # the graph itself for direct calls.
         mode = consumer_mode or _bundle_consumer_mode(graph, unique_id)
-        if mode == "Generate" and isinstance(references, dict):
+        if mode in ("Generate", "Repaint", "Repair", "Inpaint", "Img2Img") and isinstance(references, dict):
             references = dict(references, edited=None)
         vl_images = _prepare_vl_images(references, profile.vl_max_pixels)
         keep_vision = None
