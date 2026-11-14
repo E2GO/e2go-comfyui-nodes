@@ -1,3 +1,5 @@
+import { mountBottomLayout } from "./e2go_canvas_bottom.js";
+import { mountSidebarResize } from "./e2go_canvas_sidebar.js";
 import { canvasIcon } from "./e2go_canvas_icons.js";
 // e2go_canvas_ui.js — PowderCanvas editor: DOM toolbar + display canvas.
 // Deliberately a DOM widget (not LiteGraph hit-zones): real buttons, native
@@ -8,6 +10,27 @@ import { findDownstream } from "./e2go_graph_wire.js";
 import { computeLive as resolutionLive } from "./powder_resolution.js";
 import { canvasDialog, canvasSizeDialog } from "./e2go_canvas_dialog.js";
 import { mountLayoutEditor } from "./e2go_canvas_layout.js";
+
+// One guard for all editors; inactive or removed editors claim no shortcuts.
+function blockHistoryShortcut(e) {
+    const root = document.activeElement?.closest?.(".e2go-cv-root");
+    if (!root?.isConnected) return;
+    if (!(e.ctrlKey || e.metaKey) || e.altKey) return;
+    // Physical keys work identically in Latin and Cyrillic layouts.
+    if (!["KeyZ", "KeyY"].includes(e.code)) return;
+    const editingText = e.target?.closest?.('textarea, input:not([type="range"]):not([type="checkbox"]):not([type="button"]), [contenteditable="true"]');
+    // Native text undo remains useful for layer names and numeric fields;
+    // neither it nor canvas history shortcuts may reach graph history.
+    if (!editingText) {
+        e.preventDefault();
+        // ComfyUI may already have queued graph undo in a window capture
+        // listener. Its deferred callback reads key and ignores defaultPrevented.
+        // Neutralize only this consumed event, not global keyboard bindings.
+        Object.defineProperty(e, "key", { value: "", configurable: true });
+    }
+    e.stopImmediatePropagation();
+}
+window.addEventListener("keydown", blockHistoryShortcut, true);
 
 const CSS_ID = "e2go-canvas-css";
 const CSS = `
@@ -77,31 +100,32 @@ button.e2go-cv-refresh:hover { background:#38724a; }
 .e2go-cv-picker .pkrow { display:flex; gap:3px; align-items:center; }
 .e2go-cv-picker .circle { width:18px; height:18px; border-radius:50%; border:1px solid #666; flex-shrink:0; }
 .e2go-cv-picker .pkrow { justify-content:space-between; }
+.e2go-cv-eyedropper.e2go-canvas-icon::before { margin-right:0; }
 .e2go-cv-picker input[type=number] { width:30px; text-align:center; background:#1b1c1e; color:#ccc; border:1px solid #4a4a4a; border-radius:3px; font:11px Arial; padding:1px 2px; }
 .e2go-cv-picker input[type=number]::-webkit-inner-spin-button { display:none; }
 .e2go-cv-cmpctl { display:none; gap:3px; align-items:center; }
 .e2go-cv-cmpctl.open { display:flex; }
 .e2go-cv-bar .cnt { min-width:28px; text-align:center; }
 
-.e2go-cv-float .pg { background:#2d3f52; border-color:#5a7a9a; color:#dfe9f5; }
-.e2go-cv-float .pg:hover { background:#385070; }
-.e2go-cv-float .peek { background:#463a5e; border-color:#7a68a8; color:#e9e2f5; }
-.e2go-cv-float .peek:hover { background:#544672; }
-.e2go-cv-float .peek.on { background:#5d4d85; border-color:#a892d8; color:#fff; }
-.e2go-cv-float .adopt { background:#2e5d3a; border-color:#4a8f5c; color:#dff5e3; }
-.e2go-cv-float .adopt:hover { background:#38724a; }
-.e2go-cv-float .layer { background:#2d5050; border-color:#4a8f8a; color:#dff5f2; }
-.e2go-cv-float .layer:hover { background:#376560; }
-.e2go-cv-float .close { background:#502d31; border-color:#9a5a5f; color:#f5dfe1; }
-.e2go-cv-float .close:hover { background:#663a3f; }
+.e2go-cv-result-panel .pg { background:#2d3f52; border-color:#5a7a9a; color:#dfe9f5; }
+.e2go-cv-result-panel .pg:hover { background:#385070; }
+.e2go-cv-result-panel .peek { background:#463a5e; border-color:#7a68a8; color:#e9e2f5; }
+.e2go-cv-result-panel .peek:hover { background:#544672; }
+.e2go-cv-result-panel .peek.on { background:#5d4d85; border-color:#a892d8; color:#fff; }
+.e2go-cv-result-panel .adopt { background:#2e5d3a; border-color:#4a8f5c; color:#dff5e3; }
+.e2go-cv-result-panel .adopt:hover { background:#38724a; }
+.e2go-cv-result-panel .layer { background:#2d5050; border-color:#4a8f8a; color:#dff5f2; }
+.e2go-cv-result-panel .layer:hover { background:#376560; }
+.e2go-cv-result-panel .close { background:#502d31; border-color:#9a5a5f; color:#f5dfe1; }
+.e2go-cv-result-panel .close:hover { background:#663a3f; }
 .e2go-cv-nav { position:absolute; top:6px; right:6px; display:flex; gap:4px; z-index:5; }
-.e2go-cv-xfbar { position:absolute; top:6px; left:6px; display:flex; gap:4px; z-index:6; }
-.e2go-cv-xfbar button { width:28px; height:28px; padding:0; border-radius:4px; cursor:pointer; font:14px Arial; }
+.e2go-cv-xfbar { position:static; }
+.e2go-cv-xfbar button { width:auto; }
 .e2go-cv-xfbar .ok { background:#2e5d3a; border:1px solid #4a8f5c; color:#dff5e3; }
 .e2go-cv-xfbar .no { background:#502d31; border:1px solid #9a5a5f; color:#f5dfe1; }
-.e2go-cv-float { position:absolute; left:0; right:0; bottom:10px; margin:0 auto; width:fit-content; white-space:nowrap; z-index:6; display:flex; align-items:center; gap:4px; background:rgba(35,37,39,.92); border:1px solid #4a4a4a; border-radius:6px; padding:4px 8px; box-shadow:0 4px 16px rgba(0,0,0,.5); }
-.e2go-cv-float .grip { cursor:grab; user-select:none; color:#999; font:11px Arial; letter-spacing:.08em; padding:0 4px; }
-.e2go-cv-float .grip:active { cursor:grabbing; }
+.e2go-cv-result-panel { display:flex; flex:none; flex-wrap:wrap; align-items:center; gap:8px; width:100%; min-width:0; box-sizing:border-box; background:#232527; border-top:1px solid #4a4a4a; padding:8px; font:12px Arial,sans-serif; color:#ccc; }
+.e2go-cv-result-panel .result-label { flex-basis:100%; text-align:center; color:#999; font:11px Arial; letter-spacing:.08em; padding:0 4px; }
+.e2go-cv-result-panel button { border:1px solid #555; border-radius:4px; padding:4px 7px; background:#303338; color:#eee; cursor:pointer; font:12px Arial,sans-serif; }
 .e2go-cv-nav button { width:28px; height:28px; padding:0; opacity:.72; background:#2c2e31; color:#ccc; border:1px solid #4a4a4a; border-radius:4px; cursor:grab; font:14px Arial; touch-action:none; }
 .e2go-cv-nav button:hover { opacity:1; }
 .e2go-cv-nav button:active { cursor:grabbing; background:#2d3f52; }
@@ -144,6 +168,10 @@ const UX_CSS = `
 .e2go-cv-results { border-left:1px solid #52606a; padding-left:8px; }
 .e2go-cv-command-actions { border-top:1px solid #333b42; padding-top:6px; }
 .e2go-cv-command-tools { margin-left:auto; }
+.e2go-cv-navigation { display:grid; grid-template-columns:minmax(0,1fr) max-content minmax(0,1fr); }
+.e2go-cv-navigation-tabs { display:flex; flex-wrap:wrap; align-items:center; gap:7px; min-width:0; }
+.e2go-cv-navigation .e2go-cv-history { display:flex; align-items:center; gap:5px; padding:0 10px; border-left:1px solid #555; border-right:1px solid #555; }
+.e2go-cv-navigation .e2go-cv-command-tools { grid-column:3; justify-content:flex-end; }
 .e2go-cv-command [hidden] { display:none!important; }
 .e2go-cv-command button, .e2go-cv-command select, .e2go-cv-root .e2go-cv-result-size { background:#303338; color:#eee; border:1px solid #555; border-radius:4px; padding:4px 7px; }
 .e2go-cv-command button.on { background:#2d4e6b; border-color:#86b5df; }
@@ -160,10 +188,10 @@ const UX_CSS = `
 .e2go-cv-mask-note { font:11px Arial; color:#b8b8b8; padding:4px 5px 8px; }
 .e2go-cv-help { padding:8px; color:#ddd; background:#28313b; font:12px/1.6 Arial; }
 .e2go-cv-help[hidden] { display:none; }
-.e2go-cv-root .e2go-cv-float { max-width:calc(100% - 16px); box-sizing:border-box; flex-wrap:wrap; justify-content:center; }
-.e2go-cv-root .e2go-cv-cmpctl { flex-wrap:wrap; justify-content:center; }
+.e2go-cv-root .e2go-cv-result-panel { justify-content:center; }
+.e2go-cv-root .e2go-cv-cmpctl { flex:1 1 100%; min-width:0; flex-wrap:wrap; gap:6px; justify-content:center; }
 .e2go-cv-result-index { width:48px; background:#202226; border:1px solid #666; color:#fff; padding:4px; }
-.e2go-cv-result-thumbs { display:flex; gap:5px; overflow-x:auto; max-width:100%; flex-basis:100%; padding:4px 0; }
+.e2go-cv-result-thumbs { display:flex; justify-content:safe center; gap:5px; overflow-x:auto; max-width:100%; flex-basis:100%; padding:4px 0; }
 .e2go-cv-result-thumbs[hidden] { display:none; }
 .e2go-cv-root .e2go-cv-thumbs-toggle.on { background:#2d4e6b; border-color:#86b5df; color:#fff; }
 .e2go-cv-result-thumbs button { flex-shrink:0; padding:2px; background:#222; border:2px solid transparent; color:#ddd; }
@@ -171,6 +199,73 @@ const UX_CSS = `
 .e2go-cv-result-thumbs img { display:block; width:48px; height:42px; object-fit:contain; }
 .e2go-cv-expanded { position:fixed; inset:12px; z-index:10001; border:1px solid #666; border-radius:8px; overflow:hidden; box-shadow:0 0 0 30px #000a; }
 .e2go-cv-expanded .e2go-cv-root { width:100%; height:100%; }
+.e2go-cv-root .e2go-cv-side { width:var(--e2go-side-width,216px); box-sizing:border-box; border-left:0; min-height:0; overflow:hidden; }
+.e2go-cv-side > .hdr { flex:none; }
+.e2go-cv-layers-scroll { flex:1 1 0; min-height:0; overflow-y:auto; overscroll-behavior:contain; }
+.e2go-cv-side > .e2go-cv-color-details { flex:none; border-top:1px solid #444; background:#1b1c1e; }
+.e2go-cv-side-resizer { flex:0 0 7px; position:relative; cursor:col-resize; touch-action:none; }
+.e2go-cv-side-resizer::after { content:""; position:absolute; top:0; bottom:0; left:3px; width:1px; background:#444; }
+.e2go-cv-side-resizer:hover::after, .e2go-cv-side-resizer:focus-visible::after, .e2go-cv-side-resizer.dragging::after { left:2px; width:3px; background:#86b5df; }
+.e2go-cv-root .e2go-cv-side .hdr { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:5px; }
+.e2go-cv-root .e2go-cv-side .hdr > span { grid-column:1 / -1; }
+.e2go-cv-root .e2go-cv-side .hdr button { width:100%; height:28px; padding:3px 4px; white-space:nowrap; }
+.e2go-cv-root .e2go-cv-nav { display:flex; flex-wrap:nowrap; gap:4px; padding:4px 36px 4px 4px; border:1px solid #444; border-radius:5px; background:#232527e8; max-width:100%; box-sizing:border-box; overflow-x:auto; }
+.e2go-cv-root .e2go-cv-nav button { flex:0 0 32px; width:32px; height:30px; padding:0; margin:0; font:12px Arial; opacity:1; }
+.e2go-cv-root .e2go-cv-nav[data-orientation="vertical"] { flex-direction:column; padding:35px 4px 4px; max-height:calc(100% - 12px); overflow-y:auto; }
+.e2go-cv-root .e2go-cv-nav .e2go-cv-nav-orientation { position:absolute; top:7px; right:8px; width:24px; height:24px; min-height:24px; }
+.e2go-cv-nav .e2go-canvas-icon::before, .e2go-cv-lrow .eye.e2go-canvas-icon::before, .e2go-cv-lrow .del.e2go-canvas-icon::before { margin-right:0; }
+.e2go-cv-bottom { display:grid; grid-template-columns:minmax(0,1fr) max-content; align-items:center; flex:none; gap:10px; padding:6px 8px; border-top:1px solid #444; background:#232527; font:12px Arial; color:#ccc; }
+.e2go-cv-bottom[hidden] { display:none; }
+.e2go-cv-root .e2go-cv-bottom .e2go-cv-result-panel { grid-column:1; grid-row:1; justify-self:center; border:0; padding:0; gap:4px; width:max-content; max-width:100%; }
+.e2go-cv-bottom .e2go-cv-cmpctl { flex-wrap:nowrap; }
+.e2go-cv-mask-groups { grid-column:2; grid-row:1; display:flex; align-items:stretch; flex-wrap:wrap; justify-content:flex-end; justify-self:end; max-width:100%; gap:6px 0; }
+.e2go-cv-bottom-group { display:flex; flex-direction:column; align-items:center; gap:4px; min-width:0; padding:0 8px; border-left:1px solid #4a4a4a; }
+.e2go-cv-bottom-group:last-child { padding-right:0; }
+.e2go-cv-bottom[data-layout="stacked"] .e2go-cv-bottom-group:first-child,
+.e2go-cv-bottom[data-layout="mask-only"] .e2go-cv-bottom-group:first-child { border-left:0; padding-left:0; }
+.e2go-cv-bottom-title, .e2go-cv-bottom .result-label { color:#999; font:11px/14px Arial; letter-spacing:.08em; text-align:center; white-space:nowrap; }
+.e2go-cv-mask-controls, .e2go-cv-bottom .grp { display:flex; align-items:center; justify-content:center; flex-wrap:wrap; gap:6px; }
+.e2go-cv-bottom button { min-height:26px; padding:4px 7px; border:1px solid #555; border-radius:4px; background:#303338; color:#eee; cursor:pointer; font:12px Arial; white-space:nowrap; }
+.e2go-cv-bottom button:hover:not(:disabled) { filter:brightness(1.18); }
+.e2go-cv-bottom .e2go-cv-lrow { padding:0; gap:5px; background:none; }
+.e2go-cv-bottom .e2go-cv-lrow .eye { width:auto; }
+.e2go-cv-bottom .e2go-cv-mask-note { display:flex; align-items:center; gap:4px; padding:0; white-space:nowrap; }
+.e2go-cv-root .e2go-cv-bottom .e2go-cv-cmpctl { flex-wrap:nowrap; }
+.e2go-cv-bottom .e2go-cv-cmpctl > * { flex-shrink:0; }
+/* Give each mask group its natural width; never squeeze it into a fraction
+   of an otherwise empty footer. Only actual lack of room creates a new row. */
+.e2go-cv-bottom[data-layout="mask-only"], .e2go-cv-bottom[data-layout="stacked"] { grid-template-columns:minmax(0,1fr); }
+.e2go-cv-bottom[data-layout="mask-only"] .e2go-cv-mask-groups { grid-column:1; grid-row:1; justify-self:center; justify-content:center; }
+.e2go-cv-bottom[data-layout="stacked"] .e2go-cv-mask-groups { grid-column:1; grid-row:2; justify-self:center; justify-content:center; }
+.e2go-cv-root .e2go-cv-bottom[data-layout="stacked"] .e2go-cv-result-panel { grid-column:1; grid-row:1; justify-self:center; }
+.e2go-cv-root .e2go-cv-bottom[data-wrap-results="true"] .e2go-cv-result-panel { width:100%; }
+.e2go-cv-root .e2go-cv-bottom[data-wrap-results="true"] .e2go-cv-cmpctl { flex-wrap:wrap; }
+.e2go-cv-mask-groups { width:max-content; max-width:100%; }
+.e2go-cv-bottom-group { flex:0 1 auto; width:max-content; max-width:100%; box-sizing:border-box; }
+.e2go-cv-mask-controls > *, .e2go-cv-bottom .grp > * { flex-shrink:0; }
+.e2go-cv-bottom .grp { max-width:100%; }
+@container (max-width:640px) {
+ .e2go-cv-side-resizer { display:none; }
+}
+
+.e2go-cv-bottom .pg { background:#2d3f52; border-color:#5a7a9a; color:#dfe9f5; }
+.e2go-cv-bottom .peek { background:#463a5e; border-color:#7a68a8; color:#e9e2f5; }
+.e2go-cv-bottom .peek.on { background:#5d4d85; border-color:#a892d8; color:#fff; }
+.e2go-cv-bottom .adopt { background:#2e5d3a; border-color:#4a8f5c; color:#dff5e3; }
+.e2go-cv-bottom .layer { background:#2d5050; border-color:#4a8f8a; color:#dff5f2; }
+.e2go-cv-bottom .close { background:#502d31; border-color:#9a5a5f; color:#f5dfe1; }
+.e2go-cv-bottom .e2go-cv-cmpctl .pg::before, .e2go-cv-bottom .peek::before, .e2go-cv-bottom .close::before { margin-right:0; }
+
+.e2go-cv-root .e2go-cv-tools { flex:0 0 112px; width:112px; box-sizing:border-box; padding:5px; }
+.e2go-cv-root .e2go-cv-tools button { display:flex; align-items:center; justify-content:flex-start; width:100%; height:30px; padding:0 8px; white-space:nowrap; box-sizing:border-box; }
+.e2go-cv-root .e2go-cv-tools .e2go-canvas-icon::before { margin-right:6px; }
+.e2go-cv-bottom .e2go-cv-xfbar .ok { background:#2e5d3a; border-color:#4a8f5c; color:#dff5e3; }
+.e2go-cv-bottom .e2go-cv-xfbar .no { background:#502d31; border-color:#9a5a5f; color:#f5dfe1; }
+
+.e2go-cv-root .e2go-cv-mid { min-height:320px; flex-shrink:0; }
+.e2go-cv-root { overflow:auto; }
+.e2go-cv-expanded { overflow:auto; }
+
 `;
 
 function ensureCss() {
@@ -199,6 +294,7 @@ export function mountCanvasEditor(node, state, container) {
     const display = document.createElement("canvas");
     view.appendChild(display);
     mid.append(toolStrip, view, side);
+    const sidebarResize = mountSidebarResize(node, root, mid, side);
     root.append(bar, mid);
     container.appendChild(root);
 
@@ -218,6 +314,7 @@ export function mountCanvasEditor(node, state, container) {
         canvasActions.hidden = active;
         ui.hover = false;
         bar.style.display = active ? "none" : "";
+        gHist.hidden = active; // Layout owns a separate history and its own buttons.
         mid.style.display = active ? "none" : "";
         layoutTab.classList.toggle("on", active);
         layoutEditor.show(active);
@@ -229,6 +326,7 @@ export function mountCanvasEditor(node, state, container) {
         resultTab.setAttribute("aria-pressed", String(!active && !!ui.previewResult));
         if (active) stateLabel.textContent = "Layout · regions are not masks";
         footer.style.display = active ? "none" : "";
+        bottomPanel.hidden = active;
     }
     const stateLabel = el("span", "e2go-cv-state");
     let canvasModal = null;
@@ -274,7 +372,7 @@ export function mountCanvasEditor(node, state, container) {
         finally { saveWorkflow.disabled = false; }
     };
     for (const [button, icon] of [[editorTab, "edit"], [resultTab, "image"], [layoutTab, "layout"], [canvasMenu, "image"], [clearCanvas, "clear"], [exportMenu, "export"], [saveWorkflow, "save"], [expandEditor, "expand"]]) canvasIcon(button, icon);
-    const navigation = el("div", "e2go-cv-command-row");
+    const navigation = el("div", "e2go-cv-command-row e2go-cv-navigation");
     const editors = el("div", "e2go-cv-command-group e2go-cv-editors");
     editors.setAttribute("role", "group"); editors.setAttribute("aria-label", "Editors");
     editors.append(editorTab, layoutTab);
@@ -282,7 +380,9 @@ export function mountCanvasEditor(node, state, container) {
     results.setAttribute("role", "group"); results.setAttribute("aria-label", "Generated results"); results.append(resultTab);
     const viewTools = el("div", "e2go-cv-command-group e2go-cv-command-tools");
     viewTools.setAttribute("role", "group"); viewTools.setAttribute("aria-label", "Editor view"); viewTools.append(helpButton, expandEditor);
-    navigation.append(editors, results, viewTools);
+    const navigationTabs = el("div", "e2go-cv-navigation-tabs");
+    navigationTabs.append(editors, results);
+    navigation.append(navigationTabs, viewTools);
     const actions = el("div", "e2go-cv-command-row e2go-cv-command-actions");
     const canvasActions = el("div", "e2go-cv-command-group");
     canvasActions.setAttribute("role", "group"); canvasActions.setAttribute("aria-label", "Canvas files and tools");
@@ -457,17 +557,46 @@ export function mountCanvasEditor(node, state, container) {
     };
     nav.append(bTransparency);
     bReset.textContent = "Fit";
+    [...nav.children].slice(0, 3).forEach((b, i) => {
+        b.textContent = "";
+        b.setAttribute("aria-label", b.title);
+        canvasIcon(b, ["hand", "zoom", "rotate"][i]);
+    });
+    bTransparency.textContent = ""; canvasIcon(bTransparency, "transparency");
+    const bNavOrientation = el("button", "e2go-cv-nav-orientation");
+    canvasIcon(bNavOrientation, "layout");
+    function syncNavOrientation() {
+        const vertical = node.properties?.powderCanvasNavOrientation !== "horizontal";
+        nav.dataset.orientation = vertical ? "vertical" : "horizontal";
+        bNavOrientation.title = vertical ? "Arrange navigation horizontally" : "Arrange navigation vertically";
+        bNavOrientation.setAttribute("aria-label", bNavOrientation.title);
+        bNavOrientation.setAttribute("aria-pressed", String(vertical));
+    }
+    bNavOrientation.addEventListener("pointerdown", e => e.stopPropagation());
+    bNavOrientation.onclick = () => {
+        node.properties ||= {};
+        node.properties.powderCanvasNavOrientation = nav.dataset.orientation === "vertical" ? "horizontal" : "vertical";
+        syncNavOrientation();
+        node.graph?.change?.();
+    };
+    nav.append(bNavOrientation);
+    syncNavOrientation();
     view.appendChild(nav);
 
 
-    const xfBar = el("div", "e2go-cv-xfbar");
-    const bXfOk = el("button", "ok", "✓");
+    const xfBar = el("div", "e2go-cv-result-panel e2go-cv-xfbar");
+    const xfLabel = el("div", "result-label", "TRANSFORM");
+    const xfControls = el("div", "e2go-cv-cmpctl open");
+    const bXfOk = el("button", "ok", "Apply");
+    canvasIcon(bXfOk, "check");
     bXfOk.title = "Apply transform (Enter)";
-    const bXfCancel = el("button", "no", "✕");
+    const bXfCancel = el("button", "no", "Cancel");
+    canvasIcon(bXfCancel, "close");
     bXfCancel.title = "Cancel transform (Esc)";
-    xfBar.append(bXfOk, bXfCancel);
+    xfControls.append(bXfOk, bXfCancel);
+    xfBar.append(xfLabel, xfControls);
     xfBar.style.display = "none";
-    view.appendChild(xfBar);
+
     xfBar.addEventListener("pointerdown", (e) => e.stopPropagation());
     // The ✓/✕ bar is shared by the Move frame and the Expand-canvas frame.
     bXfOk.addEventListener("click", () => {
@@ -546,7 +675,8 @@ export function mountCanvasEditor(node, state, container) {
         for (const name of ["none", "mask", "paint", "brush", "erase", "fill", "move"]) {
             btns[name].setAttribute("aria-pressed", String(btns[name].classList.contains("on")));
         }
-        for (const name of ["brush", "erase", "fill", "move"]) btns[name].disabled = ui.mode === "none";
+        for (const name of ["brush", "erase", "fill"]) btns[name].disabled = ui.mode === "none";
+        btns.move.disabled = !model.hasContent(state);
         syncBrushControls();
         rebuildLayersPanel();
     }
@@ -558,7 +688,7 @@ export function mountCanvasEditor(node, state, container) {
         // symbolic "paint" — activeLayer can move (add/duplicate/paste-as-
         // layer all switch to the new layer) while a frame is still live,
         // and the bake must land on the layer the frame was opened on.
-        const target = ui.mode === "mask" ? "mask" : `p${state.activeLayer}`;
+        const target = ui.transformTarget === "mask" ? "mask" : `p${state.activeLayer}`;
         const canvas = target === "mask" ? state.mask : state.layers[state.activeLayer]?.canvas;
         if (!canvas) return;
         const bbox = model.contentBBox(canvas);
@@ -576,15 +706,20 @@ export function mountCanvasEditor(node, state, container) {
         ui.xform = null;
         if (!xf) return;
         if (xf.dx || xf.dy || xf.scale !== 1 || xf.angle) {
-            model.pushUndo(state, xf.target);
+            if (!xf.copyTransaction) model.pushUndo(state, xf.target);
             model.bakeTransform(state, xf.target, xf);
         }
+        if (xf.copyTransaction) model.finishPaintLayerCopy(state, xf.copyTransaction, true);
         scheduleRedraw();
     }
     function cancelXform() {
-        if (!ui.xform) return;
+        if (!ui.xform) return false;
+        const copy = ui.xform.copyTransaction;
         ui.xform = null;
+        ui.xformDrag = null;
+        if (copy) model.finishPaintLayerCopy(state, copy, false);
         scheduleRedraw();
+        return !!copy;
     }
     node._e2goCanvasCommitXform = commitXform;
 
@@ -595,13 +730,14 @@ export function mountCanvasEditor(node, state, container) {
         cancelExpand();
         commitXform();                       // leaving the old target bakes it
         ui.mode = mode;
+        ui.transformTarget = mode === "mask" ? "mask" : "layer";
         ui.instrument = mode === "none" ? null : "brush";
         applyModeInstrument();
         scheduleRedraw();
     }
     function setInstrument(instrument) {
         if (instrument === null) { setMode("none"); return; }
-        if (ui.mode === "none") return;
+        if (ui.mode === "none" && instrument !== "move") return;
         if (ui.previewResult) {
             setStatus("Viewing a result — choose Edit canvas or Use as background before drawing.", { warn: false });
             return;
@@ -663,6 +799,7 @@ export function mountCanvasEditor(node, state, container) {
         inp.click();
     }
     const bLoadBase = el("button", "", "📂 BG");
+    bLoadBase.textContent = "Load background"; canvasIcon(bLoadBase, "folder");
     bLoadBase.title = "Load base image… REPLACES the background (same as drag-and-drop)";
     bLoadBase.addEventListener("click", () => pickImageFile((f) => node._e2goCanvasLoadBase?.(f)));
 
@@ -762,7 +899,9 @@ export function mountCanvasEditor(node, state, container) {
     hueSlider.type = "range"; hueSlider.className = "hue";
     hueSlider.min = 0; hueSlider.max = 360; hueSlider.value = 0;
     const pkRow = el("div", "pkrow");
-    const sysPick = el("button", "", "⊚");
+    const sysPick = el("button", "e2go-cv-eyedropper", "");
+    canvasIcon(sysPick, "eyedropper");
+    sysPick.setAttribute("aria-label", "Pick color from screen");
     const circle = el("div", "circle");
     const numIn = () => {
         const i = document.createElement("input");
@@ -862,37 +1001,6 @@ export function mountCanvasEditor(node, state, container) {
         sysPick.title = "System eyedropper needs a Chromium browser";
     }
 
-    // --- persistent palette (global across canvases/sessions) ---------------
-    const PALETTE_KEY = "e2go.canvas.palette";
-    const PALETTE_DEFAULT = ["#ffffff", "#000000", "#ff3030", "#ffa500", "#ffe100",
-                             "#37d67a", "#2ccce4", "#4a90e2", "#9013fe", "#f78da7"];
-    function loadPalette() {
-        try {
-            const p = JSON.parse(localStorage.getItem(PALETTE_KEY) || "null");
-            if (Array.isArray(p) && p.length === PALETTE_DEFAULT.length) return p;
-        } catch {}
-        return [...PALETTE_DEFAULT];
-    }
-    const palette = loadPalette();
-    const gPalette = el("span", "e2go-cv-pal");
-    gPalette.title = "Palette: click = use color, right-click = store the active tool's color";
-    palette.forEach((c, i) => {
-        const b = el("button", "");
-        b.style.background = c;
-        b.addEventListener("click", () => setActiveColor(palette[i]));
-        b.addEventListener("contextmenu", (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            palette[i] = brush().color;
-            b.style.background = palette[i];
-            // Green outline flash confirms the (otherwise invisible) store.
-            b.classList.add("stored");
-            setTimeout(() => b.classList.remove("stored"), 350);
-            try { localStorage.setItem(PALETTE_KEY, JSON.stringify(palette)); } catch {}
-        });
-        gPalette.appendChild(b);
-    });
-
     function slider(label, min, max, value, title, onInput) {
         const wrap = el("span", "grp");
         const lbl = el("span", "", label);
@@ -914,7 +1022,9 @@ export function mountCanvasEditor(node, state, container) {
     const sFeather = slider("Softness", 0, 100, 35, "Edge softness % (per tool)", (v) => (brush().feather = v / 100));
     const sOpacity = slider("Opac", 10, 100, 100, "Paint: opacity. Mask: overlay density (display only)", (v) => { brush().opacity = v / 100; scheduleRedraw(); });
 
-    const gHist = el("span", "grp");
+    const gHist = el("span", "e2go-cv-history");
+    gHist.setAttribute("role", "group");
+    gHist.setAttribute("aria-label", "Canvas undo and redo");
     const bUndo = el("button", "", "Undo");
     canvasIcon(bUndo, "undo");
     bUndo.title = "Undo canvas edit, layer operation or resize";
@@ -924,6 +1034,7 @@ export function mountCanvasEditor(node, state, container) {
     bRedo.title = "Redo canvas edit";
     bRedo.addEventListener("click", () => runHistory(model.redo));
     gHist.append(bUndo, bRedo);
+    navigation.insertBefore(gHist, viewTools);
 
     // undo/redo are async and mutate shared canvases; a second call fired
     // before the first resolves (rapid double Ctrl+Z, or button + hotkey
@@ -931,9 +1042,10 @@ export function mountCanvasEditor(node, state, container) {
     // through a busy flag shared by both entry points (undo/redo buttons).
     function runHistory(fn) {
         if (ui.historyBusy) return;
-        cancelXform();
+        const cancelledCopy = cancelXform();
         cancelExpand();
         setPreview(false);
+        if (cancelledCopy && fn === model.undo) { redraw(); return; }
         ui.historyBusy = true;
         const structural = (fn === model.undo ? state.undoStack : state.redoStack).at(-1)?.target === "document";
         Promise.resolve(fn(state)).then(async () => {
@@ -955,7 +1067,8 @@ export function mountCanvasEditor(node, state, container) {
         b.addEventListener("click", (e) => {
             if (!model.hasContent(state)) return;
             if (ui.historyBusy) return;
-            model.pushUndo(state, undoTarget);
+            commitXform();
+            model.pushUndo(state, typeof undoTarget === "function" ? undoTarget() : undoTarget);
             fn(e);
             redraw();
         });
@@ -968,28 +1081,17 @@ export function mountCanvasEditor(node, state, container) {
         const idx = state.activeLayer;
         return state.layers[idx]?.name || `Paint ${idx}`;
     };
-    const bClearP = el("button", "", "Clear selected layer");
-    bClearP.title = "Clear the active paint layer (its name shows in the status bar / Layers panel)";
-    bClearP.addEventListener("click", () => {
-        if (!model.hasContent(state) || ui.historyBusy) return;
-        const idx = state.activeLayer;
-        if (idx < 1 || !state.layers[idx]) { setStatus("no active paint layer to clear"); return; }
-        const name = activePaintName();
-        const had = model.paintLayerHasContent(state, idx);
-        const hidden = state.layers[idx].visible === false ? " (hidden)" : "";
-        model.pushUndo(state, "paint");
-        model.clearLayer(state, "paint");
-        setStatus(had ? `cleared “${name}”${hidden}` : `“${name}” was already empty${hidden}`,
-                  { warn: !had, ms: 3000 });
-        redraw();
-    });
+    const actionTarget = () => ui.mode === "paint" ? "paint" : "mask";
+    const blurAction = opBtn("Blur", "Blur mask", actionTarget, e =>
+        ui.mode === "paint" ? model.paintBlur(state, opPx(e)) : model.maskBlur(state, opPx(e)));
+    const sharpenAction = opBtn("Sharpen", "Sharpen mask", actionTarget, e =>
+        ui.mode === "paint" ? model.paintSharpen(state, e.shiftKey ? 2 : 1) : model.maskSharpen(state, e.shiftKey ? 4 : 2));
+    const clearAction = opBtn("Clear mask", "Clear mask", actionTarget, () => model.clearLayer(state, actionTarget()));
     gMask.append(
-        el("span", "e2go-cv-grouplabel", "mask"),
         opBtn("Invert", "Invert mask", "mask", () => model.maskInvert(state)),
-        opBtn("+8", "Grow mask 8px (Shift: 32px)", "mask", (e) => model.maskGrow(state, opPx(e))),
-        opBtn("−8", "Shrink mask 8px (Shift: 32px)", "mask", (e) => model.maskGrow(state, -opPx(e))),
-        opBtn("Blur", "Blur mask 8px (Shift: 32px)", "mask", (e) => model.maskBlur(state, opPx(e))),
-        opBtn("Clear mask", "Clear mask", "mask", () => model.clearLayer(state, "mask")),
+        opBtn("Expand +8", "Grow mask 8px (Shift: 32px)", "mask", (e) => model.maskGrow(state, opPx(e))),
+        opBtn("Shrink −8", "Shrink mask 8px (Shift: 32px)", "mask", (e) => model.maskGrow(state, -opPx(e))),
+        blurAction, sharpenAction, clearAction,
     );
 
     const status = el("div", "e2go-cv-notice", "");
@@ -1020,9 +1122,9 @@ export function mountCanvasEditor(node, state, container) {
     // mask ops — matches the approved layout mockup.
     // --- Photoshop-style layout assembly ------------------------------------
     // Top bar: refresh/load + brush params + history + mask ops + status.
-    bar.append(gRefresh, sSize.wrap, sFeather.wrap, sOpacity.wrap, gHist, gMask);
+    bar.append(gRefresh, sSize.wrap, sFeather.wrap, sOpacity.wrap);
     // Messages replace the footer visually, without resizing the view or
-    // moving the floating result navigation when they appear or expire.
+    // moving the result navigation when they appear or expire.
     footer.append(status);
     // Left strip: MODE (mask/paint) + TOOL (brush/erase) + system eyedropper.
     const stripLbl = (t) => el("div", "striplbl", t);
@@ -1032,10 +1134,20 @@ export function mountCanvasEditor(node, state, container) {
         stripLbl("Tool"), btns.brush, btns.erase, btns.fill, btns.move,
     );
     // Right side: Color panel + Layers panel.
-    const layersList = el("div");
+    const layersList = el("div", "e2go-cv-layers-scroll");
+    // Nodes 2.0 handles graph zoom before wheel events reach the widget.
+    // Own only wheel events over this layer list, including at scroll limits.
+    function scrollLayers(e) {
+        if (!layersList.contains(e.target) || e.ctrlKey || e.metaKey) return;
+        e.preventDefault(); e.stopImmediatePropagation();
+        const unit = e.deltaMode === 1 ? 16 : e.deltaMode === 2 ? layersList.clientHeight : 1;
+        layersList.scrollTop += e.deltaY * unit;
+    }
+    window.addEventListener("wheel", scrollLayers, { capture: true, passive: false });
     const bAddLayer = el("button", "", "+");
     bAddLayer.title = "Add an empty paint layer";
     bAddLayer.addEventListener("click", () => {
+        commitXform();
         if (model.addPaintLayer(state) > 0) setMode("paint");
 
         else setStatus("no canvas yet — right-click → New blank canvas, or drop an image");
@@ -1121,6 +1233,7 @@ export function mountCanvasEditor(node, state, container) {
             const img = new Image();
             img.onload = () => {
                 URL.revokeObjectURL(url);
+                commitXform();
                 if (model.addImageLayer(state, img) > 0) setMode("paint");
                 scheduleRedraw();
             };
@@ -1140,11 +1253,8 @@ export function mountCanvasEditor(node, state, container) {
     layersHdr.append(el("span", "", "Layers"), bAddLayer, bLoadLayer);
     const colorDetails = el("details", "e2go-cv-color-details");
     const colorSummary = el("summary", "", "Mask overlay color");
-    colorDetails.append(colorSummary, colorHdr, gPicker, gPalette);
-    const maskHdr = el("div", "hdr");
-    maskHdr.appendChild(el("span", "", "Inpaint mask"));
+    colorDetails.append(colorSummary, colorHdr, gPicker);
     const maskList = el("div");
-    const maskNote = el("div", "e2go-cv-mask-note", "Temporary mask · not saved in workflow");
     const rememberMaskLabel = el("label", "e2go-cv-mask-note");
     const rememberMask = document.createElement("input");
     rememberMask.type = "checkbox";
@@ -1156,22 +1266,48 @@ export function mountCanvasEditor(node, state, container) {
         if (state.rememberMask) await node._e2goCanvasPersistLayers?.();
         node.graph?.setDirtyCanvas(true, true);
     };
-    side.append(colorDetails, maskHdr, maskList, rememberMaskLabel, maskNote, layersHdr, layersList, bClearP);
+    side.append(layersHdr, layersList, colorDetails);
+    const bottomPanel = el("div", "e2go-cv-bottom");
+    const maskGroups = el("div", "e2go-cv-mask-groups");
+    const maskActions = el("section", "e2go-cv-bottom-group");
+    maskActions.setAttribute("aria-label", "Mask actions");
+    maskActions.append(el("div", "e2go-cv-bottom-title", "MASK ACTIONS"), gMask);
+    const maskSettings = el("section", "e2go-cv-bottom-group");
+    maskSettings.setAttribute("aria-label", "Inpaint mask");
+    const maskControls = el("div", "e2go-cv-mask-controls");
+    maskControls.append(maskList, rememberMaskLabel);
+    maskSettings.append(el("div", "e2go-cv-bottom-title", "INPAINT MASK"), maskControls);
+    maskGroups.append(maskActions, maskSettings);
+    bottomPanel.append(maskGroups);
+    root.insertBefore(bottomPanel, footer);
+    bottomPanel.addEventListener("pointerdown", e => e.stopPropagation());
+    bAddLayer.textContent = "Add layer";
+    bLoadLayer.textContent = "Load layer";
+    for (const [button, icon] of [[bAddLayer, "plus"], [bLoadLayer, "image"],
+        [bRefresh, "sync"], [colorSummary, "brush"]]) canvasIcon(button, icon);
+    canvasIcon(helpButton, "help");
+    bRefresh.textContent = "";
+    bRefresh.setAttribute("aria-label", bRefresh.title || "Refresh background");
+    gMask.querySelectorAll("button").forEach((b, i) => canvasIcon(b, ["mask", "plus", "minus", "blur", "sharpen", "clear"][i]));
+    btns.move.title += " · Alt-drag inside the frame to move a copy of the paint layer · Shift-drag a corner to scale from the opposite corner";
+    Object.entries(btns).forEach(([key, button]) => canvasIcon(button,
+        ({ none:"none", mask:"mask", paint:"brush", brush:"brush", erase:"eraser", fill:"fill", move:"move" })[key] || "object"));
 
     // --- layers panel ---------------------------------------------------------
     // Two-step deletion also remains undoable in the canvas history.
     function delButton(title, onConfirm) {
-        const del = el("button", "del", "🗑");
+        const del = el("button", "del", "");
         del.title = title;
         let t = null;
         del.addEventListener("click", (e) => {
             e.stopPropagation();
             if (!del.classList.contains("arm")) {
+                const idleLabel = del.textContent;
                 del.classList.add("arm");
                 del.textContent = "sure?";
                 t = setTimeout(() => {
                     del.classList.remove("arm");
-                    del.textContent = "🗑";
+                    del.textContent = idleLabel;
                 }, 1500);
                 return;
             }
@@ -1185,7 +1321,7 @@ export function mountCanvasEditor(node, state, container) {
         const t = document.createElement("canvas");
         t.width = 30; t.height = 22;
         t.className = "thumb";
-        ui._thumbs.push({ t, src: srcCanvas });
+        ui._thumbs.push({ t, src: srcCanvas, index: state.layers.findIndex(l => l.canvas === srcCanvas) });
         return t;
     }
     function refreshThumbs(force = false) {
@@ -1196,7 +1332,8 @@ export function mountCanvasEditor(node, state, container) {
         if (!force && (ui._thumbDirty === state.dirty || now - (ui._thumbAt || 0) < 400)) return;
         ui._thumbDirty = state.dirty;
         ui._thumbAt = now;
-        for (const { t, src } of ui._thumbs) {
+        for (const { t, src: original, index } of ui._thumbs) {
+            const src = state.layers[index]?.canvas || original;
             const c = t.getContext("2d");
             c.clearRect(0, 0, t.width, t.height);
             if (!src || !src.width || !src.height) continue;
@@ -1223,19 +1360,33 @@ export function mountCanvasEditor(node, state, container) {
         });
         const msw = el("span", "swatch");
         msw.style.background = ui.tools.mask.color;
-        mrow.append(meye, msw, makeThumb(state.mask), el("span", "", "Mask"));
-        mrow.addEventListener("click", () => setMode("mask"));
+        msw.tabIndex = 0;
+        msw.setAttribute("role", "button");
+        msw.setAttribute("aria-label", "Open mask overlay color picker");
+        msw.title = "Choose mask overlay color";
+        msw.addEventListener("keydown", e => {
+            if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault(); e.stopPropagation(); msw.click();
+            }
+        });
+        canvasIcon(meye, "eye");
+        mrow.append(meye, msw, el("span", "", "Mask"));
+        mrow.addEventListener("click", () => {
+            setMode("mask");
+            colorDetails.open = true;
+            root.dataset.panels = "open";
+            panelToggle.setAttribute("aria-expanded", "true");
+        });
         maskList.appendChild(mrow);
         // Paint layers, topmost first (Photoshop order).
         for (let i = state.layers.length - 1; i >= 1; i--) {
             const layer = state.layers[i];
             const isActive = state.activeLayer === i;
 
-            const activeCls = isActive && !maskActive ? " active" : "";
+            const activeCls = isActive && (!maskActive || ui.transformTarget === "layer") ? " active" : "";
             const row = el("div", "e2go-cv-lrow" + activeCls);
-            row.title = isActive && maskActive
-                ? "Clear P target. Click: paint on this layer. Double-click: rename"
-                : "Click: paint on this layer. Double-click: rename";
+            row.dataset.layerIndex = String(i);
+            row.title = "Click: select layer. Double-click name or thumbnail: rename";
             const eye = el("span", "eye" + (layer.visible !== false ? "" : " off"), "👁");
             eye.title = "Show/hide layer (hidden layers are excluded from the output)";
             eye.addEventListener("click", (e) => {
@@ -1247,10 +1398,14 @@ export function mountCanvasEditor(node, state, container) {
             const name = el("span", "lname", layer.name || `Paint ${i}`);
             // Double-click renames in place (Photoshop-style) — commit on
             // Enter/blur, cancel on Esc.
-            name.addEventListener("dblclick", (e) => {
+            row.addEventListener("dblclick", (e) => {
+                if (e.target.closest("button, input, .eye")) return;
+                e.preventDefault();
                 e.stopPropagation();
                 const inp = document.createElement("input");
                 inp.className = "lname";
+                inp.maxLength = 40;
+                inp.setAttribute("aria-label", "Layer name");
                 inp.value = layer.name || `Paint ${i}`;
                 inp.addEventListener("click", (ev) => ev.stopPropagation());
                 inp.addEventListener("pointerdown", (ev) => ev.stopPropagation());
@@ -1262,6 +1417,7 @@ export function mountCanvasEditor(node, state, container) {
                 inp.addEventListener("blur", () => {
                     model.renameLayer(state, i, inp.value);
                     rebuildLayersPanel();
+                    scheduleRedraw();
                 });
                 name.replaceWith(inp);
                 inp.select();
@@ -1269,6 +1425,9 @@ export function mountCanvasEditor(node, state, container) {
             });
             const del = delButton("Delete layer (Undo restores it)", (btn) => {
 
+                if (ui.xform?.copyTransaction && ui.xform.target === `p${i}`) {
+                    cancelXform(); rebuildLayersPanel(); scheduleRedraw(); return;
+                }
                 if (ui.xform && ui.xform.target === `p${i}`) cancelXform();
                 else commitXform();
                 if (model.removePaintLayer(state, i)) {
@@ -1281,21 +1440,41 @@ export function mountCanvasEditor(node, state, container) {
                     model.clearLayer(state, `p${i}`);
                     setStatus("the last paint layer stays — cleared it instead (↶ undoes)", { warn: false });
                     btn.classList.remove("arm");
-                    btn.textContent = "🗑";
+                    btn.textContent = "";
                     scheduleRedraw();
                 }
             });
-            row.append(eye, makeThumb(layer.canvas), name, del);
+            eye.textContent = ""; canvasIcon(eye, "eye");
+            del.textContent = ""; canvasIcon(del, "clear");
+            const clear = el("button", "del clear-layer");
+            clear.title = `Clear contents of ${layer.name || `Paint ${i}`} (keep layer; Undo restores contents)`;
+            clear.setAttribute("aria-label", clear.title);
+            canvasIcon(clear, "eraser");
+            clear.addEventListener("pointerdown", e => e.stopPropagation());
+            clear.addEventListener("click", e => {
+                e.stopPropagation();
+                if (clear.disabled || ui.historyBusy || !model.hasContent(state)) return;
+                commitXform();
+                cancelExpand();
+                model.pushUndo(state, `p${i}`);
+                model.clearLayer(state, `p${i}`);
+                rebuildLayersPanel();
+                redraw();
+            });
+            row.append(eye, makeThumb(layer.canvas), name, clear, del);
             row.addEventListener("click", () => {
                 commitXform();
 
                 cancelExpand();
                 state.activeLayer = i;
-                if (ui.mode === "mask") setMode("paint");
-                else {
-                    rebuildLayersPanel();
-                    if (ui.instrument === "move") startXform();
+                ui.transformTarget = "layer";
+                // Keep click targets alive so the browser can dispatch dblclick.
+                for (const item of layersList.querySelectorAll("[data-layer-index]")) {
+                    item.classList.toggle("active", Number(item.dataset.layerIndex) === i);
                 }
+                _layersSig = layersSignature();
+                if (ui.instrument === "move") startXform();
+                scheduleRedraw();
             });
             row.addEventListener("contextmenu", (e) => e.preventDefault());
             layersList.appendChild(row);
@@ -1313,15 +1492,8 @@ export function mountCanvasEditor(node, state, container) {
                 scheduleRedraw();
             }
         });
-        const bdel = delButton("Clear whole canvas: background, layers and mask (Undo restores them)", () => {
-            cancelXform(); // everything is being wiped — a live frame has nothing left to bake onto
-            node._e2goCanvasClearBase?.();
-            rebuildLayersPanel();
-            scheduleRedraw();
-        });
-        brow.append(beye, makeThumb(bg?.canvas || null), el("span", "lname", "Background"), bdel);
-        bdel.textContent = "Clear all";
-        bdel.style.width = "auto";
+        beye.textContent = ""; canvasIcon(beye, "eye");
+        brow.append(beye, makeThumb(bg?.canvas || null), el("span", "lname", "Background"));
         layersList.appendChild(brow);
         refreshThumbs(true); // fresh rows always paint their previews at once
     }
@@ -1329,9 +1501,12 @@ export function mountCanvasEditor(node, state, container) {
     // don't go through the panel's own handlers — refresh it when the layer
     // signature drifts (checked once per painted frame, cheap string compare).
     let _layersSig = "";
-    function syncLayersPanel() {
-        const sig = state.layers.map((l, i) => `${i}${l.visible === false ? "h" : "v"}${l.name || ""}`).join(",") +
+    function layersSignature() {
+        return state.layers.map((l, i) => `${i}${l.visible === false ? "h" : "v"}${l.name || ""}`).join(",") +
             `|a${state.activeLayer}|t${ui.tool}|m${ui.maskOverlay}|c${ui.tools.mask.color}`;
+    }
+    function syncLayersPanel() {
+        const sig = layersSignature();
         if (sig !== _layersSig) {
             _layersSig = sig;
             rebuildLayersPanel();
@@ -1340,9 +1515,9 @@ export function mountCanvasEditor(node, state, container) {
 
 
     const cmpPrev = el("button", "pg", "◄");
-    cmpPrev.title = "Previous batch result";
+    cmpPrev.title = "Previous batch result (Left arrow in active Canvas)";
     const cmpNext = el("button", "pg", "►");
-    cmpNext.title = "Next batch result";
+    cmpNext.title = "Next batch result (Right arrow in active Canvas)";
     const cmpCnt = el("span", "cnt", "");
     const resultIndex = el("input", "e2go-cv-result-index");
     resultIndex.type = "number"; resultIndex.min = "1";
@@ -1380,48 +1555,23 @@ export function mountCanvasEditor(node, state, container) {
         thumbsButton.setAttribute("aria-pressed", String(visible));
         thumbsButton.title = visible ? "Hide thumbnails" : "Show thumbnails";
     };
+    for (const [button, icon] of [[bPreview,"eye"], [cmpPrev,"left"], [cmpNext,"right"], [cmpClose,"close"]]) {
+        button.textContent = ""; button.setAttribute("aria-label", button.title); canvasIcon(button, icon);
+    }
+    for (const [button, icon] of [[cmpAdopt,"image"], [cmpLayer,"layers"], [thumbsButton,"thumbnails"]]) canvasIcon(button, icon);
     cmpCtl.append(bPreview, cmpPrev, resultIndex, cmpCnt, cmpNext, resultSize, cmpAdopt, cmpLayer, thumbsButton, cmpClose);
 
-    const gCompare = el("div", "e2go-cv-float");
-    const cmpGrip = el("span", "grip", "RESULT");
-    cmpGrip.title = "Drag to move this palette";
-    gCompare.append(cmpGrip, cmpCtl);
-    gCompare.appendChild(resultThumbs);
+    const gCompare = el("div", "e2go-cv-result-panel");
+    const resultLabel = el("span", "result-label", "RESULT");
+    gCompare.setAttribute("role", "region");
+    gCompare.setAttribute("aria-label", "Generation results");
+    gCompare.append(resultLabel, cmpCtl, resultThumbs);
     gCompare.style.display = "none"; // hidden until results arrive
-    view.appendChild(gCompare);
-    // Same contract as the nav cluster: palette interactions must never
-    // start a paint stroke on the canvas underneath.
+    bottomPanel.prepend(gCompare, xfBar);
+    let resultsOpen = false;
+    const bottomLayout = mountBottomLayout(root, bottomPanel, gCompare, cmpCtl, gMask, maskControls, { panel: xfBar, controls: xfControls });
+    // Keep result actions separate from canvas and graph gestures.
     gCompare.addEventListener("pointerdown", (e) => e.stopPropagation());
-    cmpGrip.addEventListener("pointerdown", (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        // LiteGraph zooms the DOM widget via CSS transform: convert screen
-        // deltas into view-local px through the rect/offset ratio.
-        const vr = view.getBoundingClientRect();
-        const scale = vr.width / (view.clientWidth || 1);
-        const fr = gCompare.getBoundingClientRect();
-        const start = { x: e.clientX, y: e.clientY,
-                        left: (fr.left - vr.left) / scale, top: (fr.top - vr.top) / scale };
-        cmpGrip.setPointerCapture(e.pointerId);
-        const move = (ev) => {
-            const left = Math.max(0, Math.min(start.left + (ev.clientX - start.x) / scale,
-                                              view.clientWidth - gCompare.offsetWidth));
-            const top = Math.max(0, Math.min(start.top + (ev.clientY - start.y) / scale,
-                                             view.clientHeight - gCompare.offsetHeight));
-            gCompare.style.left = `${left}px`;
-            gCompare.style.top = `${top}px`;
-            gCompare.style.bottom = "auto";
-            gCompare.style.right = "auto";
-            gCompare.style.margin = "0";
-        };
-        const up = (ev) => {
-            cmpGrip.releasePointerCapture?.(ev.pointerId);
-            cmpGrip.removeEventListener("pointermove", move);
-            cmpGrip.removeEventListener("pointerup", up);
-        };
-        cmpGrip.addEventListener("pointermove", move);
-        cmpGrip.addEventListener("pointerup", up);
-    });
 
     function reviewImg() { return ui.review?.imgs[ui.review.idx] || null; }
     function updateCmpCnt() {
@@ -1450,14 +1600,30 @@ export function mountCanvasEditor(node, state, container) {
             ? "A different size starts fresh paint layers and mask. Undo restores the previous canvas."
             : "Fit the result into the current canvas and keep paint layers. The mask is cleared. Undo restores it.";
         cmpAdopt.title = resultSize.title;
+        bottomLayout.refresh();
     }
     // The whole "result" group (label + strip) shows only while a batch is
     // armed — otherwise it's an empty label taking bar space.
-    function showResults(open) {
-        const on = !!open && !!ui.review;
-        gCompare.style.display = on ? "" : "none";
-        cmpCtl.classList.toggle("open", on);
+    function syncBottomActions() {
+        const editing = !!(ui.xform || ui.expand);
+        const nextEdit = editing ? "" : "none";
+        const nextResult = !editing && resultsOpen && ui.review ? "" : "none";
+        const changed = xfBar.style.display !== nextEdit || gCompare.style.display !== nextResult;
+        xfBar.style.display = nextEdit;
+        gCompare.style.display = nextResult;
+        const label = ui.expand ? "EXPAND CANVAS" : "TRANSFORM";
+        if (xfLabel.textContent !== label) xfLabel.textContent = label;
+        bXfOk.title = ui.expand ? "Apply canvas expansion (Enter)" : "Apply transform (Enter)";
+        bXfCancel.title = ui.expand ? "Cancel canvas expansion (Esc)" : "Cancel transform (Esc)";
+        if (changed) bottomLayout.refresh();
     }
+    function showResults(open) {
+        resultsOpen = !!open && !!ui.review;
+        cmpCtl.classList.toggle("open", resultsOpen);
+        syncBottomActions();
+        bottomLayout.refresh();
+    }
+
     // Full-frame preview of the current result (display only): painted over the
     // layers in image space by redraw(). Replaces the old divider compare.
     // Needs a canvas to paint over — on an empty canvas (results after a bg
@@ -1516,6 +1682,7 @@ export function mountCanvasEditor(node, state, container) {
         const img = reviewImg();
         if (!img) return;
         if (!model.hasContent(state)) { setStatus("no canvas yet — ✓ BG first, then add other results as layers"); return; }
+        commitXform();
         if (model.addImageLayer(state, img) > 0) setMode("paint");
         closeReview();
     });
@@ -1526,9 +1693,11 @@ export function mountCanvasEditor(node, state, container) {
     // Editor session prefs (brush sets, tool, view transform, mask-overlay
     // eye) also live only in this closure — restore them too, or an undo
     // resets brushes and the zoom/pan the user was working at.
+    node._e2goCanvasIsInteracting = () => !!(ui.stroke || ui.xformDrag || ui.expandDrag);
     node._e2goCanvasGetUiState = () => ({
         tools: ui.tools,
         mode: ui.mode,
+        transformTarget: ui.transformTarget,
         instrument: ui.instrument,
         maskOverlay: ui.maskOverlay,
         // Resolution-independent view (image-space centre + zoomRel + angle);
@@ -1539,6 +1708,8 @@ export function mountCanvasEditor(node, state, container) {
         if (!s) return;
         if (s.tools) ui.tools = s.tools;
         if (s.mode) ui.mode = s.mode;
+        ui.transformTarget = ["mask", "layer"].includes(s.transformTarget)
+            ? s.transformTarget : (ui.mode === "mask" ? "mask" : "layer");
 
         ui.instrument = ui.mode === "none" ? null : (["brush", "erase", "fill"].includes(s.instrument) ? s.instrument : "brush");
         if (typeof s.maskOverlay === "boolean") ui.maskOverlay = s.maskOverlay;
@@ -1726,6 +1897,7 @@ export function mountCanvasEditor(node, state, container) {
         ctx.restore();
     }
     function redraw() {
+        syncNavOrientation();
         const showGrid = node.properties?.e2goTransparencyGrid !== false;
         bTransparency.setAttribute("aria-pressed", String(showGrid));
         bTransparency.title = `Transparency grid: ${showGrid ? "ON" : "OFF"} (display only)`;
@@ -1771,11 +1943,19 @@ export function mountCanvasEditor(node, state, container) {
         resultTab.disabled = !ui.review;
         stateLabel.textContent = layoutActive ? "Layout · regions are not masks" : viewingResult
             ? `Result ${ui.review.idx + 1} / ${ui.review.imgs.length} · viewing only`
-            : hasCanvas ? (ui.mode === "none" ? "Editing off · choose Mask or Paint" : `${ui.mode === "mask" ? "Mask" : activePaintName()} · ${ui.instrument}`) : "Empty canvas";
-        for (const name of ["brush", "erase", "fill", "move"]) btns[name].disabled = viewingResult || !hasCanvas || ui.mode === "none";
-        for (const button of gMask.querySelectorAll("button")) button.disabled = viewingResult || !hasCanvas;
-        bClearP.disabled = viewingResult || !hasCanvas;
-        bClearP.textContent = `Clear ${activePaintName()}`;
+            : hasCanvas ? (ui.instrument === "move" ? `${ui.transformTarget === "mask" ? "Mask" : activePaintName()} · transform` : ui.mode === "none" ? "Editing off · choose Mask or Paint" : `${ui.mode === "mask" ? "Mask" : activePaintName()} · ${ui.instrument}`) : "Empty canvas";
+        for (const name of ["brush", "erase", "fill"]) btns[name].disabled = viewingResult || !hasCanvas || ui.mode === "none";
+        btns.move.disabled = viewingResult || !hasCanvas;
+        const paintActions = ui.mode === "paint";
+        for (const [i, button] of [...gMask.querySelectorAll("button")].entries()) {
+            button.disabled = viewingResult || !hasCanvas || ui.mode === "none" || (paintActions && i < 3);
+        }
+        maskActions.querySelector(".e2go-cv-bottom-title").textContent = paintActions ? "PAINT ACTIONS" : "MASK ACTIONS";
+        clearAction.textContent = paintActions ? "Clear paint" : "Clear mask";
+        clearAction.title = paintActions ? `Clear ${activePaintName()}` : "Clear mask";
+        blurAction.title = paintActions ? `Blur ${activePaintName()} 8px (Shift: 32px)` : "Blur mask 8px (Shift: 32px)";
+        sharpenAction.title = paintActions ? `Sharpen ${activePaintName()} (Shift: stronger)` : "Sharpen soft mask edges (Shift: stronger)";
+        for (const button of layersList.querySelectorAll(".clear-layer")) button.disabled = viewingResult || !hasCanvas;
         side.style.opacity = viewingResult ? "0.6" : "1";
         saveInfo.textContent = hasCanvas ? `${node._e2goCanvasSaveState || "Layers saved"} · ${state.rememberMask ? "mask persistence on" : "mask is temporary"}` : "";
         rememberMask.checked = !!state.rememberMask;
@@ -1783,12 +1963,12 @@ export function mountCanvasEditor(node, state, container) {
             ui.maskStatusDirty = state.dirty;
             ui.maskStatus = model.maskHasContent(state);
         }
-        maskNote.textContent = `${ui.maskStatus ? "Mask applies to generation" : "Mask is empty"} · ${state.rememberMask ? "saved with workflow after upload" : "temporary, not saved"}`;
+        rememberMaskLabel.title = `${ui.maskStatus ? "Mask applies to generation" : "Mask is empty"} · ${state.rememberMask ? "saved with workflow after upload" : "temporary, not saved"}`;
         // History buttons mirror the stacks — a disabled ↶ says "nothing to undo".
         bUndo.disabled = state.undoStack.length === 0;
         bRedo.disabled = state.redoStack.length === 0;
         emptyHint.style.display = model.hasContent(state) ? "none" : "flex";
-        xfBar.style.display = (ui.xform || ui.expand) ? "" : "none";
+        syncBottomActions();
         if (!model.hasContent(state)) {
             // Results on an EMPTY canvas (bg cleared, then generated): draw
             // the current one fitted into the viewport so ◄ ► paging isn't
@@ -1985,6 +2165,11 @@ export function mountCanvasEditor(node, state, container) {
             ctx.beginPath(); ctx.moveTo(top.x, top.y); ctx.lineTo(rot.x, rot.y); ctx.stroke();
             ctx.fillStyle = "#7ab4ff";
             for (const p of [...P, rot]) { ctx.beginPath(); ctx.arc(p.x, p.y, 5, 0, Math.PI * 2); ctx.fill(); }
+            // A hollow center guide stays legible over both light and dark pixels.
+            ctx.beginPath(); ctx.arc(c.x, c.y, 4, 0, Math.PI * 2);
+            ctx.fillStyle = "#1b1c1e"; ctx.fill(); ctx.stroke();
+            ctx.beginPath(); ctx.arc(c.x, c.y, 1.5, 0, Math.PI * 2);
+            ctx.fillStyle = "#7ab4ff"; ctx.fill();
             ctx.restore();
             ui._xformScreen = { P, rot, c };     // hit-test cache for pointerdown
         } else ui._xformScreen = null;
@@ -2081,12 +2266,27 @@ export function mountCanvasEditor(node, state, container) {
             const bp = toBacking(e);
             const hit = (p) => Math.hypot(bp.x - p.x, bp.y - p.y) <= 10;
             let kind = null;
+            const corner = s.P.findIndex(hit);
             if (hit(s.rot)) kind = "rotate";
-            else if (s.P.some(hit)) kind = "scale";
+            else if (corner >= 0) kind = "scale";
             else if (pointInQuad(bp, s.P)) kind = "move";
             if (!kind) return;
             const ip = toImage(e);
+            const opposite = corner >= 0 ? s.P[(corner + 2) % 4] : null;
+            const matrix = model.xformMatrix(ui.xform);
+            const bb = ui.xform.bbox;
+            const oppositeLocal = corner >= 0 ? [
+                [bb.x + bb.w, bb.y + bb.h], [bb.x, bb.y + bb.h],
+                [bb.x, bb.y], [bb.x + bb.w, bb.y],
+            ][corner] : null;
             ui.xformDrag = { kind, start: ip, startScreen: bp,
+                             centerScreen: { ...s.c }, oppositeScreen: opposite,
+                             oppositeImage: oppositeLocal ? {
+                                 x: matrix.a * oppositeLocal[0] + matrix.c * oppositeLocal[1] + matrix.e,
+                                 y: matrix.b * oppositeLocal[0] + matrix.d * oppositeLocal[1] + matrix.f,
+                             } : null,
+                             copyOnMove: e.altKey && kind === "move" && ui.xform.target !== "mask",
+                             clientStart: { x: e.clientX, y: e.clientY },
                              base: { ...ui.xform },
                              a0: Math.atan2(bp.y - s.c.y, bp.x - s.c.x),
                              r0: Math.hypot(bp.x - s.c.x, bp.y - s.c.y) || 1 };
@@ -2157,12 +2357,29 @@ export function mountCanvasEditor(node, state, container) {
         if (ui.xformDrag) {
             const d = ui.xformDrag, s = ui._xformScreen, bp = toBacking(e);
             if (d.kind === "move") {
+                if (d.copyOnMove) {
+                    if (Math.hypot(e.clientX - d.clientStart.x, e.clientY - d.clientStart.y) < 3) return;
+                    d.copyOnMove = false;
+                    // Keep the original at its current visible transform before copying it.
+                    commitXform();
+                    const copy = model.beginPaintLayerCopy(state, state.activeLayer);
+                    if (!copy) { ui.xformDrag = null; return; }
+                    startXform();
+                    if (!ui.xform) { model.finishPaintLayerCopy(state, copy, false); ui.xformDrag = null; return; }
+                    ui.xform.copyTransaction = copy;
+                    d.base = { ...ui.xform };
+                    rebuildLayersPanel();
+                }
                 const ip = toImage(e);
                 ui.xform.dx = d.base.dx + (ip.x - d.start.x);
                 ui.xform.dy = d.base.dy + (ip.y - d.start.y);
             } else if (d.kind === "scale") {
-                const r = Math.hypot(bp.x - s.c.x, bp.y - s.c.y);
-                ui.xform.scale = Math.min(16, Math.max(0.05, d.base.scale * (r / d.r0)));
+                const fixedCorner = e.shiftKey && d.oppositeScreen;
+                const pivot = fixedCorner ? d.oppositeScreen : d.centerScreen;
+                const r0 = Math.hypot(d.startScreen.x - pivot.x, d.startScreen.y - pivot.y) || 1;
+                const r = Math.hypot(bp.x - pivot.x, bp.y - pivot.y);
+                Object.assign(ui.xform, model.scaleXformAround(d.base, r / r0,
+                    fixedCorner ? d.oppositeImage : null));
             } else {
                 let a = d.base.angle + (Math.atan2(bp.y - s.c.y, bp.x - s.c.x) - d.a0);
                 if (e.shiftKey) a = Math.round(a / (Math.PI / 12)) * (Math.PI / 12); // 15°
@@ -2269,6 +2486,7 @@ export function mountCanvasEditor(node, state, container) {
             const img = new Image();
             img.onload = () => {
                 URL.revokeObjectURL(url);
+                commitXform();
                 if (model.addImageLayer(state, img) > 0) setMode("paint");
                 scheduleRedraw();
             };
@@ -2313,6 +2531,25 @@ export function mountCanvasEditor(node, state, container) {
         node._e2goCanvasRedraw?.(true);
     }
 
+    function clearEntireCanvas() {
+        canvasModal?.close();
+        canvasModal = canvasDialog("Clear entire canvas?");
+        const note = el("p", "", "Clear the background, all paint layers and the mask. Undo restores them. Results and layout are kept.");
+        const cancel = el("button", "", "Cancel");
+        const clear = el("button", "", "Clear entire canvas");
+        cancel.onclick = () => canvasModal.close();
+        clear.onclick = () => {
+            if (ui.historyBusy) return;
+            cancelXform(); cancelExpand(); ui.stroke = null;
+            node._e2goCanvasClearBase?.();
+            rebuildLayersPanel();
+            scheduleRedraw();
+            canvasModal.close();
+        };
+        canvasModal.append(note, cancel, clear);
+        cancel.focus();
+    }
+
     function showCanvasMenu(x, y, section = "all") {
         closeMenu();
         const has = model.hasContent(state);
@@ -2324,6 +2561,7 @@ export function mountCanvasEditor(node, state, container) {
         const clipR = !!navigator.clipboard?.read;
         const items = [
             { label: "🆕 New blank canvas…", fn: newBlankCanvas },
+            { label: "Clear entire canvas", icon: "clear", fn: clearEntireCanvas, disabled: !has || ui.historyBusy },
             { label: "Canvas storage…", icon: "storage", fn: () => node._e2goCanvasOpenStorage?.() },
             { label: "↔ Expand canvas (outpaint)", fn: startExpand, disabled: !has },
             { label: "⤢ Fit node to canvas aspect", fn: fitNodeToAspect, disabled: !has },
@@ -2338,9 +2576,11 @@ export function mountCanvasEditor(node, state, container) {
             { label: "Copy mask", icon: "mask", fn: () => canvasToClipboard(model.exportMaskCanvas(state), "mask copied"), disabled: !hasMask || !clipW },
             { label: `Copy layer${active?.name ? ` (${active.name})` : ""}`, icon: "copy", fn: () => canvasToClipboard(active.canvas, "layer copied"), disabled: !has || !active || state.activeLayer < 1 || !clipW },
             { label: "Duplicate layer", icon: "layers", fn: () => {
+                commitXform();
                 if (model.duplicatePaintLayer(state, state.activeLayer) > 0) { setMode("paint"); scheduleRedraw(); }
             }, disabled: !has || state.activeLayer < 1 },
             { label: "Duplicate background as layer", icon: "layers", fn: () => {
+                commitXform();
                 if (model.duplicateBackgroundAsLayer(state) > 0) { setMode("paint"); scheduleRedraw(); }
             }, disabled: !has },
         ];
@@ -2389,7 +2629,18 @@ export function mountCanvasEditor(node, state, container) {
         scheduleRedraw();
     }
 
-    // ---- hotkeys (active only while hovering the editor) ----
+    // Keyboard ownership follows focus/clicks, never mere pointer hover.
+    root.tabIndex = -1;
+    function activateKeyboard(e) {
+        if (!root.contains(e.target)) {
+            if (root.contains(document.activeElement)) document.activeElement?.blur?.();
+            return;
+        }
+        if (!e.target?.closest?.("input, textarea, select, button, summary, [contenteditable]")) root.focus({ preventScroll: true });
+    }
+    document.addEventListener("pointerdown", activateKeyboard, true);
+    // Hover still controls the brush cursor preview.
+
     view.addEventListener("pointerenter", () => (ui.hover = true));
     view.addEventListener("pointerleave", () => {
         ui.hover = false;
@@ -2397,17 +2648,30 @@ export function mountCanvasEditor(node, state, container) {
         if (model.hasContent(state)) scheduleRedraw();
     });
     function onKey(e) {
-        if (!ui.hover) return;
-        if (e.type !== "keydown") return;
-        if (e.target?.closest?.("input, textarea, select, [contenteditable=true]")) return;
+        if (!root.isConnected || !root.contains(document.activeElement)) return;
+        if (e.type !== "keydown" || e.defaultPrevented || e.isComposing || e.ctrlKey || e.metaKey || e.altKey || e.shiftKey) return;
+        if (e.target?.closest?.('input, textarea, select, [contenteditable], [role="separator"]')) return;
 
-        if (e.code === "BracketLeft") { const b = brush(); b.size = Math.max(1, b.size - 5); sSize.set(b.size); scheduleRedraw(); }
-        else if (e.code === "BracketRight") { const b = brush(); b.size = Math.min(200, b.size + 5); sSize.set(b.size); scheduleRedraw(); }
+        if (e.code === "BracketLeft" || e.code === "BracketRight") {
+            if (ui.previewResult || layoutActive || ui.historyBusy || !model.hasContent(state)
+                || ui.mode === "none" || !["brush", "erase"].includes(ui.instrument)) return;
+            const b = brush();
+            b.size = Math.max(1, Math.min(200, b.size + (e.code === "BracketRight" ? 5 : -5)));
+            sSize.set(b.size);
+            scheduleRedraw();
+        }
+        else if (e.code === "ArrowLeft" || e.code === "ArrowRight") {
+            if (!ui.previewResult || layoutActive || ui.xform || ui.expand || (ui.review?.imgs.length || 0) < 2) return;
+            (e.code === "ArrowLeft" ? cmpPrev : cmpNext).click();
+        }
         else if (ui.expand && (e.code === "Enter" || e.code === "NumpadEnter")) { applyExpand(); }
         else if (ui.expand && e.code === "Escape") { cancelExpand(); }
         else if (ui.xform && (e.code === "Enter" || e.code === "NumpadEnter")) { commitXform(); setInstrument(null); }
         else if (ui.xform && e.code === "Escape") { cancelXform(); setInstrument(null); }
         else if (e.code === "Escape") { setInstrument(null); }
+        else return;
+        e.preventDefault();
+        e.stopImmediatePropagation();
 
     }
     // Capture phase: run before ComfyUI's own document-level undo handler.
@@ -2447,7 +2711,11 @@ export function mountCanvasEditor(node, state, container) {
             try { prevOnRemoved.apply(this, args); } catch {}
         }
         document.removeEventListener("keydown", onKey, true);
+        document.removeEventListener("pointerdown", activateKeyboard, true);
+        window.removeEventListener("wheel", scrollLayers, true);
         resizeObserver.disconnect();
+        bottomLayout.destroy();
+        sidebarResize.destroy();
         layoutEditor.destroy();
         canvasModal?.close();
         expandedHost?.remove();

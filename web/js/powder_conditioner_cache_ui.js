@@ -7,7 +7,7 @@ app.registerExtension({
     name: "e2go.powder_conditioner.cache_ui",
 
     nodeCreated(node) {
-        if (node.comfyClass !== "PowderConditioner") return;
+        if (!["PowderConditioner", "PowderEnhancerContext"].includes(node.comfyClass)) return;
 
         // consumer_mode is written by the server when the prompt is queued
         // (powder_conditioner.stamp_consumer_modes) — nothing to show or edit.

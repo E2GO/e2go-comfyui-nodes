@@ -1,3 +1,4 @@
+import { installCanvasMinimumSize, CANVAS_EDITOR_MIN_HEIGHT } from "./e2go_canvas_size.js";
 import { app } from "../../../scripts/app.js";
 import { api } from "../../../scripts/api.js";
 import { hideNamedWidget, scheduleReHide } from "./e2go_hide_utils.js";
@@ -164,9 +165,15 @@ async function persistLayers(node, state) {
             for (let i = 1; targetPaint !== node._e2goLayersPersistedPaint && i < state.layers.length; i++) {
                 const layer = state.layers[i];
                 if (!layer?.canvas) continue;
-                const blob = await canvasToBlob(layer.canvas);
-                const name = `${await digest(new Uint8Array(await blob.arrayBuffer()))}_layer.png`;
-                await uploadPng(blob, name);
+                // Freeze pixels before awaiting: edits may continue during upload.
+                const dataUrl = model.canvasPng(layer.canvas);
+                let name = model.uploadedLayerFile(state, layer.canvas, dataUrl);
+                if (!name) {
+                    const blob = await (await fetch(dataUrl)).blob();
+                    name = `${await digest(new Uint8Array(await blob.arrayBuffer()))}_layer.png`;
+                    await uploadPng(blob, name);
+                }
+                model.rememberLayerFile(state, dataUrl, name, layer.canvas);
                 files.push({ file: name, visible: layer.visible !== false, name: layer.name || null });
             }
             if (targetPaint !== node._e2goLayersPersistedPaint) state._layerFiles = files;
@@ -192,6 +199,9 @@ async function persistLayers(node, state) {
         return await run;
     } finally {
         node._e2goPersistBusy = null;
+        if (targetPaint !== state.paintDirty || (state.rememberMask && targetMask !== state.dirty)) {
+            node._e2goOnCanvasChanged?.();
+        }
     }
 }
 
@@ -453,6 +463,7 @@ function canvasStashKey(node) {
 // Move the stashed state's fields into the fresh node's state object (the UI
 // closure captured the object identity, so fields are copied, not swapped).
 function adoptState(state, st) {
+    state._sessionId = st._sessionId;
     state.width = st.width;
     state.height = st.height;
     state.layers = st.layers;
@@ -468,6 +479,7 @@ function adoptState(state, st) {
     // adopt (tab switch / graph undo) still references the layers; the pixels
     // are unchanged by the adopt, so the files stay valid.
     state._layerFiles = st._layerFiles;
+    state._uploadedLayerContent = st._uploadedLayerContent;
     state.paintDirty = st.paintDirty || 0;
     state.dirty++;
 }
@@ -565,8 +577,16 @@ app.registerExtension({
                 info.e2goCanvasEditor = this._e2goPendingCanvasInfo.e2goCanvasEditor;
                 return;
             }
+            if (this._e2goRestoreSnapshot) {
+                info.e2goCanvasEditor = structuredClone(this._e2goRestoreSnapshot);
+                return;
+            }
             if (this._e2goCanvasState) {
-                info.e2goCanvasEditor = model.serializeState(this._e2goCanvasState);
+                info.e2goCanvasEditor = model.serializeState(this._e2goCanvasState,
+                    this._e2goLayersPersistedPaint, this._e2goMaskPersistedDirty);
+                if (!info.e2goCanvasEditor && this._e2goCanvasGetReview?.()?.imgs?.length) {
+                    info.e2goCanvasEditor = { sessionRevision: model.sessionRevision(this._e2goCanvasState) };
+                }
             }
             if (this._e2goDroppedBg) {
                 info.e2goCanvasEditor = { ...(info.e2goCanvasEditor || {}), droppedBg: this._e2goDroppedBg };
@@ -602,7 +622,8 @@ app.registerExtension({
                 this._e2goWfKey = wfNow;
                 const stashKey = canvasStashKey(this);
                 const stash = wfNow ? sessionCanvas.get(stashKey) : null;
-                if (stash?.state && (stash.state.width || stash.review?.imgs?.length)) {
+                if (stash?.state && ed?.sessionRevision === model.sessionRevision(stash.state)
+                    && (stash.state.width || stash.review?.imgs?.length)) {
                     sessionCanvas.delete(stashKey);
                     adoptState(state, stash.state);
                     this._e2goDroppedBg = stash.droppedBg || ed?.droppedBg || null;
@@ -629,6 +650,10 @@ app.registerExtension({
                     }
                 };
                 if (ed.width && ed.height) {
+                    // Save As / tab autosave can serialize before image decoding
+                    // finishes. Keep the incoming document, not empty canvases.
+                    const restoringSnapshot = structuredClone(ed);
+                    this._e2goRestoreSnapshot = restoringSnapshot;
                     // New saves reference paint layers by server filename; turn
                     // those into /view URLs restoreState can load (old saves keep
                     // their inline dataUrl and pass through untouched). A restored
@@ -643,8 +668,13 @@ app.registerExtension({
                             .filter((l) => l && l.file)
                             .map((l) => ({ file: l.file, visible: l.visible !== false, name: l.name || null }));
                     }
-                    if (ed.rememberMask && ed.maskFile) ed.maskDataUrl = e2goInputUrl(ed.maskFile);
+                    if (ed.rememberMask && ed.maskFile && !ed.maskDataUrl) ed.maskDataUrl = e2goInputUrl(ed.maskFile);
                     this._e2goRestoreLoad = model.restoreState(state, ed).then(() => {
+                        for (let i = 0; i < (ed.paintLayers?.length || 0); i++) {
+                            const file = ed.paintLayers[i]?.file;
+                            const layer = state.layers[i + 1];
+                            if (file && layer) model.rememberLayerFile(state, model.canvasPng(layer.canvas), file, layer.canvas);
+                        }
                         this._e2goCanvasRedraw?.();
                         // setBackground preserves same-size paint/mask, so the
                         // dropped bg loads AFTER strokes are back.
@@ -654,8 +684,9 @@ app.registerExtension({
                         // we can (bg at least) instead of a dead half-state.
                         console.warn("[PowderCanvas] snapshot restore failed:", e);
                         this._e2goCanvasRedraw?.();
-                        finishWithDroppedBg({ force: "fit", preserveAlpha: true });
-                        return false;
+                        return finishWithDroppedBg({ force: "fit", preserveAlpha: true });
+                    }).finally(() => {
+                        if (this._e2goRestoreSnapshot === restoringSnapshot) this._e2goRestoreSnapshot = null;
                     });
                 } else {
                     finishWithDroppedBg();
@@ -689,6 +720,7 @@ app.registerExtension({
 
         node._e2goCanvasPersistLayers = () => {
             clearTimeout(persistTimer);
+            persistTimer = null;
             return persistLayers(node, state);
         };
         node._e2goCanvasOpenStorage = () => openCanvasStorage();
@@ -740,8 +772,16 @@ app.registerExtension({
             if ((state.paintDirty || 0) === node._e2goLayersPersistedPaint
                 && (!state.rememberMask || (state.dirty || 0) === node._e2goMaskPersistedDirty)) return;
             if (!node._e2goPersistBusy) node._e2goCanvasSetSaveState?.("Layer changes pending");
-            clearTimeout(persistTimer);
-            persistTimer = setTimeout(() => persistLayers(node, state), 2000);
+            // A redraw/continuous transform must not postpone persistence forever.
+            if (persistTimer || node._e2goPersistBusy) return;
+            persistTimer = setTimeout(() => {
+                persistTimer = null;
+                if (node._e2goCanvasIsInteracting?.()) {
+                    node._e2goOnCanvasChanged?.();
+                    return;
+                }
+                persistLayers(node, state);
+            }, 250);
         };
         // Stash the whole live canvas when the node dies (undo/redo, workflow
         // switch) — canvas objects are kept by reference, no encode cost.
@@ -751,6 +791,7 @@ app.registerExtension({
                 try { prevOnRemoved.apply(this, args); } catch {}
             }
             clearTimeout(persistTimer);
+            persistTimer = null;
             const st = this._e2goCanvasState;
             const review = this._e2goCanvasGetReview?.() || null;
             if (st && (model.hasContent(st) || review?.imgs?.length)) {
@@ -817,6 +858,7 @@ app.registerExtension({
             await node._e2goCanvasWaitForLoad();
             while (node._e2goPersistBusy) await node._e2goPersistBusy;
             clearTimeout(persistTimer);
+            persistTimer = null;
             node._e2goDroppedBg = null;
             node._e2goLastReviewKey = null;
             node._e2goLastPreparedDirty = null;
@@ -849,7 +891,7 @@ app.registerExtension({
 
         const container = document.createElement("div");
         container.style.cssText =
-            "display:flex;flex-direction:column;width:100%;height:100%;min-height:220px;overflow:hidden;";
+            "display:flex;flex-direction:column;width:100%;height:100%;min-height:680px;overflow:hidden;";
 
         container.addEventListener("pointerdown", () => {
             const wf = activeWfKey();
@@ -858,7 +900,7 @@ app.registerExtension({
         const widget = node.addDOMWidget("e2go_canvas_ui", "div", container, {
             serialize: false,
             hideOnZoom: false,
-            getMinHeight: () => 260,
+            getMinHeight: () => CANVAS_EDITOR_MIN_HEIGHT,
         });
         node._e2goCanvasContainer = container;
 
@@ -958,7 +1000,7 @@ app.registerExtension({
             }
         };
 
-        if (!node.size || node.size[1] < 420) node.setSize([420, 480]);
+        installCanvasMinimumSize(node);
         scheduleReHide(node, CONFIG_WIDGET_NAME, () => {});
         scheduleReHide(node, "layout_config", () => {});
     },

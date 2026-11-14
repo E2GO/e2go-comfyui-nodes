@@ -1,10 +1,12 @@
 # Powder Nodes for ComfyUI
 
-16 ComfyUI nodes for exploring image ideas, comparing variations and editing the results. Keep prompts, styles and LoRAs separate while you experiment; choose sizes and sampling settings; then repair an image on Canvas or collect variants in a comparison grid.
+![Powder Nodes — Create. Edit. Iterate.](assets/branding/banner.svg)
+
+17 ComfyUI nodes for exploring image ideas, comparing variations and editing the results. Keep prompts, styles and LoRAs separate while you experiment; choose sizes and sampling settings; then repair an image on Canvas or collect variants in a comparison grid.
 
 **Start with one useful node or use a complete workflow.** Many Powder nodes work with standard ComfyUI nodes. The visual editing tools also work together: prepare an edit, generate variants, review them and accept one as your next source.
 
-[Choose a task](#what-can-you-do-with-powder) · [Installation](#installation) · [Use-one-node example](#using-powder-in-ordinary-workflows) · [All 16 nodes](#the-nodes-in-practice) · [Example workflows](#example-workflows)
+[Choose a task](#what-can-you-do-with-powder) · [Installation](#installation) · [Use-one-node example](#using-powder-in-ordinary-workflows) · [All 17 nodes](#the-nodes-in-practice) · [Example workflows](#example-workflows)
 
 ![Powder Canvas: image, layers and mask tools in one editor](assets/images/canvas.png)
 
@@ -26,11 +28,11 @@ These are combinations of tools, not complete wiring diagrams. The [ready-to-ope
 
 - **Improve an existing graph:** replace its size node with Resolution, add a Switcher, or send decoded images to Grid Saver. No full Powder pipeline is required.
 - **Explore a subject:** write a few prompts, choose styles or LoRAs, generate variants and compare them in a grid. Change one factor at a time to understand its effect.
-- **Refine an image:** open an Img2Img template, load the source in Canvas, paint a mask, describe the change and run it. Review the result before making it the new source.
+- **Refine an image:** open a FULL template and choose Repaint, Edit or Repair, load the source in Canvas, paint a mask, describe the change and run it. Review the result before making it the new source.
 
 ## Installation
 
-**Manager installation:** select version **2.0.6** explicitly when it is available. Registry review may delay availability or block installation. If this version is unavailable, use the Git installation below or wait for review. Avoid automatic downgrades to an older release.
+**Manager installation:** select version **2.1.0** explicitly when it is available. Registry review may delay availability or block installation. If this version is unavailable, use the Git installation below or wait for review. Avoid automatic downgrades to an older release.
 
 Before reinstalling, back up the entire package folder outside `custom_nodes/`: personal styles and wildcard files are stored inside it.
 
@@ -46,13 +48,13 @@ Restart ComfyUI and reload the browser. Search for **Powder** in the node menu. 
 
 For Registry installations, follow the temporary Manager instructions above. Registry 1.0.0 needs the special migration below. For a manual Git update, run `git pull` inside the installed package folder. Then restart ComfyUI and reload the browser. Back up your data and read the migration notes before updating from 1.x through either Manager or Git.
 
-### Updating from 1.x to 2.0
+### Updating from 1.x to 2.x
 
 **2.0 is a major update. Existing node identifiers are preserved, but some API inputs and bundled styles have changed. Matching results from old workflows are not guaranteed.**
 
-Before updating, save your workflows and copy the entire installed package folder somewhere **outside ComfyUI's `custom_nodes/`**. This preserves `styles/`, `wildcards/`, and, for Git installs, `.git` and any stashes. Older bundled style files such as `styles/sdxl_styles_custom.json` are removed in 2.0; preserve your edits before updating. For Registry migration, wait until 2.0.6 is available following review before moving the old installation.
+Before updating, save your workflows and copy the entire installed package folder somewhere **outside ComfyUI's `custom_nodes/`**. This preserves `styles/`, `wildcards/`, and, for Git installs, `.git` and any stashes. Older bundled style files such as `styles/sdxl_styles_custom.json` are removed in 2.0; preserve your edits before updating. For Registry migration, wait until 2.1.0 is available following review before moving the old installation.
 
-**Registry 1.0.0:** its published archive lacks `pyproject.toml`, so Manager may not recognize the existing installation. Update can fail with “Path not found”, while a new install can fail with “Install path already exists”. After making the backup, stop ComfyUI and move the old package folder (normally `custom_nodes/powder-nodes`) outside `custom_nodes/`. Restart ComfyUI and explicitly select Powder Nodes **2.0.6** in Manager's version selector. Restore your wildcard files and import your personal styles as described below, then restart ComfyUI and reload the browser. Do not copy the old package or its entire `styles/` folder over the new installation, and do not leave two copies of Powder Nodes in `custom_nodes/`.
+**Registry 1.0.0:** its published archive lacks `pyproject.toml`, so Manager may not recognize the existing installation. Update can fail with “Path not found”, while a new install can fail with “Install path already exists”. After making the backup, stop ComfyUI and move the old package folder (normally `custom_nodes/powder-nodes`) outside `custom_nodes/`. Restart ComfyUI and explicitly select Powder Nodes **2.1.0** in Manager's version selector. Restore your wildcard files and import your personal styles as described below, then restart ComfyUI and reload the browser. Do not copy the old package or its entire `styles/` folder over the new installation, and do not leave two copies of Powder Nodes in `custom_nodes/`.
 
 **Git installs:** a manual `git pull` can stop on conflicting local edits. Manager's Git updater can instead stash tracked edits without restoring them, and can reset the checkout; an untracked file whose name is now supplied by 2.0 can also be overwritten. Back up before using either update path. If Manager already stashed edits, inspect `git stash list` and `git stash show -p "stash@{0}"` in the package folder to locate them; extract the needed entries into your user style file rather than blindly applying the whole stash to 2.0. Stashes do not guarantee recovery of overwritten untracked files.
 
@@ -91,20 +93,20 @@ All template nodes belong to Powder or ComfyUI core/extras; no other custom-node
 
 Select the correct Base, Turbo, Distilled or Edit weights for the recipe. Model files are separate downloads, and filenames vary between distributions. The loader fields and notes in each template identify its intended files; a sampling profile does not select them for you.
 
-**Optional prompt enhancement:** FLUX.3 FULL templates use `qwen3.5_9b_flux3_prompt_upsampler_int8_convrot.safetensors`. Other non-Krea FULL enhancers use a separate `qwen3vl_4b_int8_convrot.safetensors` language model. Original mode bypasses that branch and does not require the enhancer model. Krea templates use their configured Krea text encoder. `E2GO_Krea2.json` includes optional prompt enhancement, per-run additional instructions, and automatic latent format selection. BOOGU Turbo prompt enhancement is included in `E2GO_Boogu_Turbo_Generate_full.json`.
+**Optional prompt enhancement:** FLUX.3 FULL templates use `qwen3.5_9b_flux3_prompt_upsampler_int8_convrot.safetensors`. Other non-Krea FULL enhancers use a separate `qwen3vl_4b_int8_convrot.safetensors` language model. Original mode bypasses that branch and does not require the enhancer model. Krea templates use their configured Krea text encoder. `E2GO_Krea2_Turbo_FULL.json` includes optional prompt enhancement, per-run additional instructions, and automatic latent format selection. BOOGU Turbo prompt enhancement is included in `E2GO_Boogu_Turbo_FULL.json`.
 
 **Layout AI assistant and scene synchronization** currently require the exact file `qwen3vl_4b_int8_convrot.safetensors` in ComfyUI's text-encoder model paths. Manual region editing and manually written scene text do not require this additional model.
 
 ## Start here
 
-1. Open a JSON from [workflows](example_workflows) in ComfyUI. Start with [SDXL Generate](example_workflows/E2GO_SDXL_Generate.json) for a checkpoint-based workflow, or choose the template for your model family.
+1. Open a JSON from [workflows](example_workflows) in ComfyUI. Start with [SDXL FULL](example_workflows/E2GO_SDXL_FULL.json) for a checkpoint-based workflow, or choose the template for your model family.
 2. Select your installed model files in the loaders. Choose a matching latent format in Resolution and a matching profile in Sampler.
-3. Enter a prompt, choose the size and queue the workflow. Templates ending in `_full` expose more controls; simpler templates provide a shorter starting point.
-4. For editing, open an Img2Img or Edit template, load an image into Canvas, and follow its notes. A model must support the selected editing mode.
+3. Enter a prompt, choose the size and queue the workflow. Each FULL template includes the supported task modes and optional prompt enhancement.
+4. For editing, select a supported editing mode in the FULL template, load an image into Canvas, and follow its notes. A model must support the selected editing mode.
 
 FULL editing templates also connect Resolution to Image Conditioning's `t2i_latent` input. In Generate mode, set the output size in Resolution; Repaint, Edit and Repair use the source image or crop instead. When using Layout, match its dimensions to the generated image with **Match generation size**, or enter the source/crop dimensions for editing.
 
-The [English Node map](example_workflows/powder_node_guide.json) is a readable workflow covering all 16 nodes. Each card explains what the node does, why to use it, its inputs and outputs, and a connection example. A separate section explains independent nodes and features that need companions. The guide's processing nodes are disabled: it is a reference, not a generation workflow.
+The [English Node map](docs/powder_node_guide.json) is a readable workflow covering all 17 nodes. Each card explains what the node does, why to use it, its inputs and outputs, and a connection example. A separate section explains independent nodes and features that need companions. The guide's processing nodes are disabled: it is a reference, not a generation workflow.
 
 ## Using Powder in ordinary workflows
 
@@ -170,6 +172,10 @@ Choose reusable style descriptions without rewriting your subject prompt. Enable
 **Example:** keep “a house beside a lake” as the subject and compare a photograph with a watercolor treatment. Send `style` to Conditioner for the full settings. The ordinary `style_text` output can be combined with your prompt for a standard encoder, but it does not reproduce negative styles or conditioning-mix weights.
 
 ![Powder Styler with two selected styles and independent controls](assets/images/styler.png)
+
+#### Enhancer Context — give the prompt enhancer the right source
+
+Routes the Canvas image to TextGenerate only for Edit, including Edit (native). Generate, Repaint and Repair send text only. Connect Canvas.image to Enhancer Context.image and its output to TextGenerate.image; the enhanced prompt must lead to Image Conditioning so the task mode can be resolved. Mode changes invalidate the context cache. This node routes context; TextGenerate performs the enhancement.
 
 #### Conditioner — assemble and encode the final prompt
 
@@ -263,7 +269,7 @@ Clear Powder Conditioner's cached text encodings when you want them computed aga
 
 **Example:** execute the cleanup separately, then rerun the generation graph. No connections are required. It does not delete images, clear standard encoders' caches or unload all models from GPU memory.
 
-For port-by-port examples and compatibility notes inside ComfyUI, open the [English Guide — Node map](example_workflows/powder_node_guide.json).
+For port-by-port examples and compatibility notes inside ComfyUI, open the [English Guide — Node map](docs/powder_node_guide.json).
 
 ## Canvas and Layout
 
@@ -275,27 +281,46 @@ Use **Edit canvas** for image layers and masks. Repaint redraws the source; Repa
 
 ![Powder Layout](assets/images/layout.png)
 
-Enable **Save mask in workflow** if the mask should return when you reopen the graph. Wait for saving to finish before saving the workflow. Canvas assets and queued snapshots live in `ComfyUI/input/e2go_canvas`; keep them while saved workflows, queue items or history still need them. A workflow JSON alone does not include every external image or model file.
+**Layers and controls in 2.1.0:**
+
+- The initial paint layer is **Paint 0**. Double-click a layer name to rename it. Duplicates get numbered copy names. Clear removes that layer's pixels; Delete removes the layer.
+- In **Transform**, Alt-drag duplicates a layer. Corner scaling uses the center by default; hold Shift to anchor the opposite corner. A point marks the layer center. Use Apply or Cancel to finish.
+- `[` and `]` change brush size; Left/Right arrows browse available results. These shortcuts apply only while the Canvas editor is active, not while entering text.
+- Use the Canvas **Undo / Redo buttons**. Graph undo/redo shortcuts are blocked while the editor is active; outside it, ComfyUI keeps its usual shortcuts.
+- **Mask** supports Invert, Expand, Shrink, Blur, Sharpen and Clear mask. **Paint** supports Blur, Sharpen and Clear paint on the active paint layer. These bottom-panel editing actions are disabled in **None** mode.
+- The color picker stays below the scrollable layer list. Clicking the mask-color swatch opens it. The old preset color swatches have been removed.
+- Review results with the arrows or Thumbnails, then choose **Use as background** or **Add as layer**. Adding a result as a layer closes the current result set.
+
+**Saving:** paint layers are retained in workflow saves; the mask is temporary unless **Save mask in workflow** is enabled. Recent unsaved pixel changes are embedded when the graph is serialized, so you can save immediately after a stroke using ComfyUI's own Save/Save As command. **Save Canvas + workflow** explicitly saves Canvas assets and the workflow together. Browser “Save page” is not a workflow save. Canvas assets and queued snapshots live in `ComfyUI/input/e2go_canvas`; keep them while saved workflows, queue items or history still need them. A workflow JSON alone does not include every external image or model file.
 
 ## Example workflows
 
-The [workflow folder](example_workflows) contains 43 templates for SDXL, FLUX.2 Klein, FLUX.3 Klein, BOOGU, Z-Image, MOSS SFT, Krea 2, Qwen 2.1 and Ideogram 4. The notes inside each graph explain its intended mode and model setup. Model names in templates are examples: select the corresponding files installed on your machine. Some families need recent model-specific ComfyUI core nodes; use the supported versions listed above.
+The [workflow folder](example_workflows) contains 14 FULL templates, one per model variant. These replace the older Simple, Generate, Edit and Img2Img templates. Choose a supported mode inside each graph. Each includes four prompt-enhancement levels: MINIMAL, SIMPLE, HIGH DETAILS and SUPER DETAILS. Select your installed model files in the loaders. SIMPLE outputs English; HIGH DETAILS and SUPER DETAILS may invent details. Additional instructions apply to the current enhancement. Enhanced mode can rerun the language model for each queued job.
 
-**FLUX.2 Klein:** Install both checkpoints before using these switchable templates: ComfyUI validates both loaders even though only one branch runs. Each template offers **Standard / KV**: `flux-2-klein-9b-fp8.safetensors` or `flux-2-klein-9b-kv-fp8.safetensors`. Only the selected model runs; the KV branch includes FluxKVCache. Both use Qwen3 8B (`flux2`), Flux2 VAE and the Flux 2 Klein Distilled sampler profile: 4 steps, CFG 1, Euler/simple. For reference-image editing, use FULL Img2Img and select **Edit (native)**. Repaint is ordinary img2img; KV caching benefits reference-image editing. These templates do not use the separate Base checkpoint.
+**FLUX.2 Klein:** Install both checkpoints before using this switchable template: ComfyUI validates both loaders even though only one branch runs. The FLUX.2 template offers **Standard / KV**: `flux-2-klein-9b-fp8.safetensors` or `flux-2-klein-9b-kv-fp8.safetensors`. Only the selected model runs; the KV branch includes FluxKVCache. Both use Qwen3 8B (`flux2`), Flux2 VAE and the Flux 2 Klein Distilled sampler profile: 4 steps, CFG 1, Euler/simple. For reference-image editing, use the FULL workflow and select **Edit**. Repaint is ordinary img2img; KV caching benefits reference-image editing. This template does not use the separate Base checkpoint.
 
 | Start with | Workflow |
 | --- | --- |
-| SDXL text to image | [Generate](example_workflows/E2GO_SDXL_Generate.json) / [Full](example_workflows/E2GO_SDXL_Generate_full.json) |
-| SDXL image to image | [Img2Img](example_workflows/E2GO_SDXL_Img2Img_full.json) |
-| FLUX.3 Klein | [Generate](example_workflows/E2GO_Flux3_Klein_Base_Generate.json) / [Edit](example_workflows/E2GO_Flux3_Klein_Base_Edit.json) |
-| BOOGU | [Generate](example_workflows/E2GO_Boogu_Base_Generate.json) / [Edit](example_workflows/E2GO_Boogu_Edit.json) |
-| Krea 2 | [Generate](example_workflows/E2GO_Krea2_Generate_simple.json) / [Edit](example_workflows/E2GO_Krea2_Edit_simple.json) |
-| Qwen 2.1 | [Generate](example_workflows/E2GO_Qwen21_Generate_simple.json) / [Edit](example_workflows/E2GO_Qwen21_Edit_simple.json) |
-| Learn the nodes | [Guide — Node map](example_workflows/powder_node_guide.json) |
+| SDXL | [FULL](example_workflows/E2GO_SDXL_FULL.json) |
+| Z-Image Base | [FULL](example_workflows/E2GO_ZImage_Base_FULL.json) |
+| Z-Image Turbo | [FULL](example_workflows/E2GO_ZImage_Turbo_FULL.json) |
+| Flux 2 Klein Distilled | [FULL](example_workflows/E2GO_Flux2_Klein_FULL.json) |
+| Flux 3 Klein Base | [FULL](example_workflows/E2GO_Flux3_Klein_Base_FULL.json) |
+| Boogu Base | [FULL](example_workflows/E2GO_Boogu_Base_FULL.json) |
+| Boogu Turbo | [FULL](example_workflows/E2GO_Boogu_Turbo_FULL.json) |
+| Boogu Edit | [FULL](example_workflows/E2GO_Boogu_Edit_FULL.json) |
+| Boogu Edit Turbo | [FULL](example_workflows/E2GO_Boogu_Edit_Turbo_FULL.json) |
+| MOSS SFT | [FULL](example_workflows/E2GO_MOSS_SFT_FULL.json) |
+| Krea2 Turbo | [FULL](example_workflows/E2GO_Krea2_Turbo_FULL.json) |
+| Qwen 2.1 | [FULL](example_workflows/E2GO_Qwen21_FULL.json) |
+| Ideogram 4 | [FULL (experimental)](example_workflows/E2GO_Ideogram4_FULL_EXPERIMENTAL.json) |
+| Flux 3 Klein Distilled | [FULL](example_workflows/E2GO_Flux3_Klein_Distilled_FULL.json) |
 
-**Ideogram 4:** [LITE](example_workflows/E2GO_Ideogram4_Generate.json) contains a complete editable JSON caption. [FULL](example_workflows/E2GO_Ideogram4_Generate_full.json) defaults to **Enhanced**, using a separate local Qwen3-VL 4B model to describe the scene, style, background and objects. **Original** skips the enhancer; use a complete manual caption on that path. Plain text remains accepted, but wrapping it in empty JSON fields does not provide the same structure. The enhancer describes placement in words and is instructed to preserve supplied coordinates instead of inventing them; use Canvas Layout for explicit regions. Review the generated caption: an enhancer can change details, and valid JSON alone does not guarantee a usable image.
+**FLUX.3 Klein:** Base uses 50 steps and CFG 3.5; Distilled uses 16 steps and CFG 1. Both use Euler/simple and require their respective model weights.
 
-In Powder Sampler, **Ideogram sampling** offers **Standard** (default) and **First sigma +0.005 (experimental)**. The alternative changes only the first sampled sigma, keeping the step count and model weights. It can help with gray placeholders but may alter composition or introduce artifacts. It is independent of Original / Enhanced, and other model families ignore it. Compare with the same fixed seed. Restart ComfyUI after updating to see the control; saved workflows without it retain Standard.
+**Ideogram 4:** The experimental FULL template remains seed-sensitive: some runs produce a safety-message placeholder or unwanted icons/text. Standard sampling remains problematic. The four enhancer levels have produced images with experimental sampling, but this is not a guarantee for every seed. Review the generated JSON caption and output.
+
+In Powder Sampler, **Ideogram sampling** offers **Standard** (the default for a newly added node) and **First sigma +0.005 (experimental)**. The bundled Ideogram FULL template selects the experimental option. The alternative changes only the first sampled sigma, keeping the step count and model weights. It can help with gray placeholders but may alter composition or introduce artifacts. It is independent of Original / Enhanced, and other model families ignore it. Compare with the same fixed seed. Restart ComfyUI after updating to see the control; saved workflows without it retain Standard.
 
 ![Ideogram sampling options](assets/images/ideogram-modes.png)
 
@@ -304,7 +329,6 @@ In Powder Sampler, **Ideogram sampling** offers **Standard** (default) and **Fir
 Wildcard and Style Sweep progress is session-local: reloading the browser or restarting the server starts a fresh cursor. Reset sets `start_index` to zero. Repeat last holds the selected text/style for subsequent runs; it does not queue a job or restore a seed.
 
 With `stitch_blend > 0`, fully painted pixels keep the full generated change, and a surrounding feather band can also change within the decoded crop. Pixels beyond that band remain unchanged. Use `stitch_blend=0` for strict preservation outside the effective mask; `mask_grow` deliberately enlarges that mask. Cropped batches retain each source and use a shared crop enclosing all active masks.
-
 
 - Personal styles are stored in `styles/sdxl_styles_user.json`; local wildcard files are stored in `wildcards/`. Both are ignored by Git so normal updates preserve them.
 - If the UI looks outdated after an update, restart ComfyUI and reload the browser.

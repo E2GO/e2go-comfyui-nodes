@@ -12,6 +12,7 @@ import asyncio
 from ._http import is_json_request
 from ._log import warn
 from .powder_conditioner import stamp_consumer_modes
+from .powder_enhancer_context import stamp_enhancer_modes
 from .powder_prompt_wildcard import WildcardLibrary, _CURSOR
 from .powder_styler import _STYLE_CURSOR
 
@@ -55,6 +56,7 @@ def register():
     def _stamp_prompt(json_data):
         if isinstance(json_data, dict):
             stamp_consumer_modes(json_data.get("prompt"))
+            stamp_enhancer_modes(json_data.get("prompt"))
         return json_data
 
     if hasattr(instance, "add_on_prompt_handler"):

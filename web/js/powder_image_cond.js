@@ -82,7 +82,11 @@ app.registerExtension({
                 const savedVal = saved && name in saved ? saved[name] : undefined;
                 const pick = savedVal !== undefined && spec.ok(savedVal) ? savedVal
                     : (spec.ok(w.value) ? w.value : spec.def);
-                if (w.value !== pick) fixed.push(`${name}: ${JSON.stringify(w.value)} -> ${JSON.stringify(pick)}`);
+                // Named values normally override LiteGraph's positional load
+                // after cosmetic widget reordering. That is not a damaged save.
+                if (w.value !== pick && !(savedVal !== undefined && spec.ok(savedVal))) {
+                    fixed.push(`${name}: ${JSON.stringify(w.value)} -> ${JSON.stringify(pick)}`);
+                }
                 w.value = pick; // value only; no callbacks
             }
             if (fixed.length) console.warn("[e2go] PowderImageCond repaired shifted widget values:", fixed.join(", "));

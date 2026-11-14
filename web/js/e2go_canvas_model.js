@@ -11,11 +11,41 @@
 
 const UNDO_LIMIT = 20; // full-res canvas snapshots (~10MB each at 2.5MP) — keep bounded
 const HISTORY_BYTES = 256 * 1024 * 1024;
+const uploadedCanvas = new WeakMap();
+const encodedCanvas = new WeakMap();
+
+export function canvasPng(canvas) {
+    let png = encodedCanvas.get(canvas);
+    if (!png) {
+        png = canvas.toDataURL("image/png");
+        encodedCanvas.set(canvas, png);
+    }
+    return png;
+}
+
+export function copyLayerName(state, name) {
+    const base = (name || "Paint").replace(/(?: copy(?: \d+)?)+$/i, "");
+    const used = new Set(state.layers.map(layer => layer.name));
+    let candidate = `${base} copy`, number = 2;
+    while (used.has(candidate)) candidate = `${base} copy ${number++}`;
+    return candidate;
+}
 
 function makeCanvas(w, h) {
     const c = document.createElement("canvas");
     c.width = w;
     c.height = h;
+    // Track writes on our own canvases (including direct writes by integrations).
+    // Unchanged layers must not be synchronously PNG-encoded on every save.
+    const ctx = c.getContext("2d");
+    for (const key of ["clearRect", "fillRect", "strokeRect", "drawImage", "putImageData", "fill", "stroke", "fillText", "strokeText", "reset"]) {
+        const original = ctx[key];
+        if (typeof original !== "function") continue;
+        ctx[key] = function (...args) {
+            encodedCanvas.delete(c);
+            return original.apply(this, args);
+        };
+    }
     return c;
 }
 
@@ -66,15 +96,46 @@ export function addPaintLayer(state, name) {
 }
 
 export function duplicatePaintLayer(state, index) {
-    const src = state.layers[index];
-    if (!src || index === 0 || !hasContent(state)) return -1;
-    const idx = addPaintLayer(state, `${src.name || "Paint"} copy`);
-    if (idx < 0) return -1;
-    state.layers[idx].visible = src.visible;
-    state.layers[idx].canvas.getContext("2d").drawImage(src.canvas, 0, 0);
-    state.dirty++;
-    bumpPaint(state);
-    return idx;
+    const transaction = beginPaintLayerCopy(state, index);
+    if (!transaction) return -1;
+    finishPaintLayerCopy(state, transaction, true);
+    return state.activeLayer;
+}
+
+// A pending Alt-drag copy is one history operation, including its transform.
+// Cancel removes only the new layer and leaves prior history/redo untouched.
+export function beginPaintLayerCopy(state, index) {
+    const source = state.layers[index];
+    if (!source || index < 1 || !hasContent(state)) return null;
+    const before = { activeLayer: state.activeLayer, paintSeq: state.paintSeq };
+    const layer = makeLayer("paint", state.width, state.height, copyLayerName(state, source.name));
+    layer.visible = source.visible;
+    layer.canvas.getContext("2d").drawImage(source.canvas, 0, 0);
+    if (uploadedCanvas.has(source.canvas)) uploadedCanvas.set(layer.canvas, uploadedCanvas.get(source.canvas));
+    if (encodedCanvas.has(source.canvas)) encodedCanvas.set(layer.canvas, encodedCanvas.get(source.canvas));
+    state.layers.push(layer);
+    state.activeLayer = state.layers.length - 1;
+    state.dirty++; bumpPaint(state);
+    return { before, layer, source, done: false };
+}
+
+export function finishPaintLayerCopy(state, transaction, accept) {
+    if (!transaction || transaction.done) return false;
+    transaction.done = true;
+    const index = state.layers.indexOf(transaction.layer);
+    if (index < 1) return false;
+    if (accept) {
+        // Inserting one layer needs no full-document pixel snapshot.
+        state.undoStack.push({ target: "removeCopiedLayer", index, ...transaction.before });
+        state.redoStack.length = 0;
+        trimHistory(state.undoStack);
+    } else {
+        state.layers.splice(index, 1);
+        state.activeLayer = Math.max(1, state.layers.indexOf(transaction.source));
+        state._layerFiles = [];
+    }
+    state.dirty++; bumpPaint(state);
+    return true;
 }
 
 // Copy the background's pixels into a NEW paint layer on top — lets the user
@@ -218,9 +279,9 @@ export function setBackground(state, img, width, height, { fit = false, undoable
         const hadContent = state.layers.length > 0;
         state.width = width;
         state.height = height;
-        state.layers = [makeLayer("background", width, height), makeLayer("paint", width, height, "Paint 1")];
+        state.layers = [makeLayer("background", width, height), makeLayer("paint", width, height, "Paint 0")];
         state.activeLayer = 1;
-        state.paintSeq = 2;
+        state.paintSeq = 1;
         state.mask = makeCanvas(width, height);
         if (hadContent && !undoable) {
             state.undoStack.length = 0;
@@ -457,7 +518,7 @@ function trimHistory(stack) {
     const bytes = entry => {
         const canvases = entry.document
             ? [...entry.document.layers.map(layer => layer.canvas), entry.document.mask]
-            : [entry.canvas];
+            : [entry.canvas || entry.layer?.canvas];
         return canvases.reduce((total, canvas) => total + (canvas ? canvas.width * canvas.height * 4 : 0), 0);
     };
     let total = stack.reduce((sum, entry) => sum + bytes(entry), 0);
@@ -468,6 +529,8 @@ function copyCanvas(canvas) {
     if (!canvas) return null;
     const copy = makeCanvas(canvas.width, canvas.height);
     copy.getContext("2d").drawImage(canvas, 0, 0);
+    if (uploadedCanvas.has(canvas)) uploadedCanvas.set(copy, uploadedCanvas.get(canvas));
+    if (encodedCanvas.has(canvas)) encodedCanvas.set(copy, encodedCanvas.get(canvas));
     return copy;
 }
 
@@ -497,6 +560,22 @@ function loadInto(canvas, dataUrl) {
 async function shiftBetween(state, fromStack, toStack) {
     const entry = fromStack.pop();
     if (!entry) return false;
+    if (entry.target === "removeCopiedLayer" || entry.target === "restoreCopiedLayer") {
+        const inverse = { index: entry.index, activeLayer: state.activeLayer, paintSeq: state.paintSeq };
+        if (entry.target === "removeCopiedLayer") {
+            const [layer] = state.layers.splice(entry.index, 1);
+            toStack.push({ ...inverse, target: "restoreCopiedLayer", layer });
+        } else {
+            state.layers.splice(entry.index, 0, entry.layer);
+            toStack.push({ ...inverse, target: "removeCopiedLayer" });
+        }
+        state.activeLayer = entry.activeLayer;
+        state.paintSeq = entry.paintSeq;
+        state._layerFiles = [];
+        state.dirty++; bumpPaint(state);
+        trimHistory(toStack);
+        return true;
+    }
     if (entry.target === "document") {
         toStack.push({ target: "document", document: snapshotDocument(state) });
         trimHistory(toStack);
@@ -551,6 +630,74 @@ export function maskBlur(state, px) {
     state.dirty++;
 }
 
+export function paintBlur(state, px) {
+    const canvas = targetCanvas(state, "paint");
+    if (!canvas || !Number.isFinite(px) || px <= 0) return;
+    const tmp = makeCanvas(canvas.width, canvas.height);
+    const ctx = tmp.getContext("2d");
+    ctx.filter = `blur(${px}px)`;
+    ctx.drawImage(canvas, 0, 0);
+    const target = canvas.getContext("2d");
+    target.clearRect(0, 0, canvas.width, canvas.height);
+    target.drawImage(tmp, 0, 0);
+    state.dirty++; bumpPaint(state);
+}
+
+// Tighten translucent edges monotonically instead of high-pass filtering alpha.
+// Canvas quantizes premultiplied colors; sharpening low-alpha RGB amplifies
+// those rounding errors into colored speckles. Sharpen color only in opaque
+// neighbourhoods, with a small noise threshold.
+export function sharpenPaintPixels(data, width, height, amount = 1) {
+    const out = new Uint8ClampedArray(data);
+    if (!Number.isFinite(amount) || amount <= 0) return out;
+    const strength = 1 + Math.min(amount, 2) * 0.5;
+    for (let y = 0; y < height; y++) for (let x = 0; x < width; x++) {
+        const i = (y * width + x) * 4;
+        const alpha = data[i + 3];
+        out[i + 3] = Math.max(0, Math.min(255, 127.5 + (alpha - 127.5) * strength));
+        if (!out[i + 3]) { out[i] = out[i + 1] = out[i + 2] = 0; continue; }
+        const left = (y * width + Math.max(0, x - 1)) * 4;
+        const right = (y * width + Math.min(width - 1, x + 1)) * 4;
+        const up = (Math.max(0, y - 1) * width + x) * 4;
+        const down = (Math.min(height - 1, y + 1) * width + x) * 4;
+        if (alpha < 255 || data[left + 3] < 255 || data[right + 3] < 255
+            || data[up + 3] < 255 || data[down + 3] < 255) continue;
+        for (let c = 0; c < 3; c++) {
+            const low = Math.min(data[i + c], data[left + c], data[right + c], data[up + c], data[down + c]);
+            const high = Math.max(data[i + c], data[left + c], data[right + c], data[up + c], data[down + c]);
+            if (high - low <= 16) continue;
+            const mean = (data[left + c] + data[right + c] + data[up + c] + data[down + c]) / 4;
+            const detail = data[i + c] - mean;
+            if (Math.abs(detail) > 3) out[i + c] = data[i + c] + Math.min(amount, 2) * detail;
+        }
+    }
+    return out;
+}
+
+export function paintSharpen(state, amount = 1) {
+    const canvas = targetCanvas(state, "paint");
+    if (!canvas || !Number.isFinite(amount) || amount <= 0) return;
+    const ctx = canvas.getContext("2d");
+    const pixels = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    pixels.data.set(sharpenPaintPixels(pixels.data, canvas.width, canvas.height, amount));
+    ctx.putImageData(pixels, 0, 0);
+    state.dirty++; bumpPaint(state);
+}
+
+// Tighten the alpha transition around 50% without adding a halo or growing
+// the mask. Repeated applications progressively harden soft edges.
+export function maskSharpen(state, strength = 2) {
+    if (!state.mask || !Number.isFinite(strength) || strength <= 1) return;
+    const ctx = state.mask.getContext("2d");
+    const pixels = ctx.getImageData(0, 0, state.width, state.height);
+    for (let i = 3; i < pixels.data.length; i += 4) {
+        pixels.data[i] = Math.round(Math.max(0, Math.min(255,
+            127.5 + (pixels.data[i] - 127.5) * strength)));
+    }
+    ctx.putImageData(pixels, 0, 0);
+    state.dirty++;
+}
+
 export function maskGrow(state, px) {
     if (!state.mask || !px) return;
     const shrink = px < 0;
@@ -597,6 +744,17 @@ export function xformMatrix({ cx, cy, dx, dy, scale, angle }) {
         a: c, b: s, c: -s, d: c,
         e: cx + dx - c * cx + s * cy,
         f: cy + dy - s * cx - c * cy,
+    };
+}
+
+// Keep an image-space anchor fixed while uniformly scaling a transform.
+export function scaleXformAround(base, ratio, anchor = null) {
+    const scale = Math.min(16, Math.max(0.05, base.scale * ratio));
+    const k = scale / base.scale;
+    return {
+        scale,
+        dx: anchor ? anchor.x + (base.cx + base.dx - anchor.x) * k - base.cx : base.dx,
+        dy: anchor ? anchor.y + (base.cy + base.dy - anchor.y) * k - base.cy : base.dy,
     };
 }
 
@@ -649,22 +807,58 @@ export function bakeTransform(state, target, t) {
 
 // --- persistence (workflow save/restore; bg comes back from the next Queue) --
 
-export function serializeState(state) {
+let sessionSequence = 0;
+const sessionPrefix = Date.now().toString(36);
+export function sessionRevision(state) {
+    state._sessionId ||= `${sessionPrefix}-${++sessionSequence}`;
+    return `${state._sessionId}:${state.paintDirty}:${state.dirty}`;
+}
+
+// Reuse uploaded pixels across copies, structural undo and pending edits.
+// Compare exact PNG content, never layer indices or a document-wide dirty flag.
+export function rememberLayerFile(state, dataUrl, file, canvas = null) {
+    if (canvas) uploadedCanvas.set(canvas, { dataUrl, file });
+    const cache = state._uploadedLayerContent ||= new Map();
+    cache.delete(dataUrl);
+    cache.set(dataUrl, file);
+    let bytes = 0;
+    for (const key of cache.keys()) bytes += key.length * 2;
+    while (cache.size > 1 && bytes > 32 * 1024 * 1024) {
+        const oldest = cache.keys().next().value;
+        bytes -= oldest.length * 2;
+        cache.delete(oldest);
+    }
+}
+
+export function uploadedLayerFile(state, canvas, dataUrl) {
+    const own = uploadedCanvas.get(canvas);
+    return own?.dataUrl === dataUrl ? own.file : state._uploadedLayerContent?.get(dataUrl);
+}
+
+export function serializeState(state, persistedPaint = -1, persistedMask = -1) {
     if (!hasContent(state)) return null;
 
     const files = Array.isArray(state._layerFiles) ? state._layerFiles : [];
     return {
         width: state.width,
         height: state.height,
-        paintLayers: files.map((f) => ({
-            file: f.file,
-            visible: f.visible !== false,
-            name: f.name || null,
-        })),
+        sessionRevision: sessionRevision(state),
+        paintLayers: state.layers.slice(1).map((layer, i) => {
+            const dataUrl = persistedPaint === state.paintDirty && files[i]?.file
+                ? null : canvasPng(layer.canvas);
+            const file = dataUrl ? uploadedLayerFile(state, layer.canvas, dataUrl) : files[i].file;
+            return {
+                ...(file ? { file } : { dataUrl }),
+                visible: layer.visible !== false,
+                name: layer.name || null,
+            };
+        }),
         activeLayer: state.activeLayer,
         paintSeq: state.paintSeq,
         rememberMask: !!state.rememberMask,
         maskFile: state.rememberMask ? state._maskFile || null : null,
+        ...(state.rememberMask && persistedMask !== state.dirty
+            ? { maskDataUrl: canvasPng(state.mask) } : {}),
         // Old workflows remain unmasked unless persistence was opted into.
     };
 }
